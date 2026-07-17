@@ -256,6 +256,8 @@ function toggleList(uid){
 }
 
 let activeCl = '', activeAcc = '';
+var _lmarkers = []; // {marker, cl, acc, name}
+
 function filterCl(cl, btn){
   activeCl = cl;
   document.querySelectorAll('.fpill').forEach(b=>b.classList.remove('active'));
@@ -273,6 +275,16 @@ function applyFilter(){
     if(activeAcc==='ALTPRIV') accMatch = (li.textContent||'').includes('🔄');
     li.classList.toggle('hidden-li', !accMatch);
   });
+  // Filtrar marcadores Leaflet
+  if(_lmap && _lmarkers.length){
+    _lmarkers.forEach(function(m){
+      var clOk = !activeCl || m.cl===activeCl;
+      var accOk = !activeAcc || m.acc===activeAcc;
+      if(activeAcc==='ALTPRIV') accOk = (m.name||'').includes('🔄');
+      if(clOk && accOk){ if(!_lmap.hasLayer(m.marker)) m.marker.addTo(_lmap); }
+      else { if(_lmap.hasLayer(m.marker)) _lmap.removeLayer(m.marker); }
+    });
+  }
 }
 // ── MAPA INTERACTIVO (canvas puro, sin CDN) ──────────────────────────────────
 var _LATMIN=-41.2,_LATMAX=-33.3,_LNGMIN=-64.0,_LNGMAX=-56.5;
@@ -374,7 +386,8 @@ function _linitMap(){
         hk+sc+
         '<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:3px">'+ej+ca+'</div>'+
         ju+'</div>';
-      L.marker([p.lat,p.lng],{icon:icon}).addTo(_lmap).bindPopup(html,{maxWidth:280,className:'pba-lf-popup'});
+      var mk=L.marker([p.lat,p.lng],{icon:icon}).addTo(_lmap).bindPopup(html,{maxWidth:280,className:'pba-lf-popup'});
+      _lmarkers.push({marker:mk, cl:p.cl, acc:p.acc, name:p.n});
     });
   }
 
