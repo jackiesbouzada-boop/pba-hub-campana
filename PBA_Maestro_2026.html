@@ -585,6 +585,12 @@ document.addEventListener('DOMContentLoaded', function(){
   print-color-adjust: exact !important;
 }
 
+/* ── Control de visibilidad por rol ─────────────────────────────────────── */
+body:not([data-admin="true"]) #t-met,
+body:not([data-admin="true"]) #s-met {
+  display: none !important;
+}
+
 body {
   font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 14pt;
