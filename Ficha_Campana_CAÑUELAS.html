@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAÑUELAS — Ficha de Campaña · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.header { color: white; padding: 22px 28px; display: flex; justify-content: space-between; align-items: flex-start; }
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.85; line-height: 1.95; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-aliado { background: rgba(212,164,44,0.75); }
+.banner { background: #0f2944; color: white; padding: 20px 28px; border-left: 7px solid #C8A030; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #C8A030; margin-bottom: 7px; }
+.b-title  { font-size: 15.5px; font-weight: 800; margin-bottom: 13px; line-height: 1.35; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #F5D87A; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 19px; font-weight: 900; color: #F5D87A; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+.main { padding: 18px 22px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; background: #eef2f7; }
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+.card { background: white; border-radius: 10px; box-shadow: 0 1px 5px rgba(0,0,0,0.07); overflow: hidden; }
+.ch { padding: 10px 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.9px; }
+.cbody { padding: 13px; }
+.st { font-size: 9.5px; font-weight: 700; color: #1C3A10; padding-bottom: 5px; border-bottom: 2px solid #4A7A28; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.st2 { font-size: 9.5px; font-weight: 700; color: #1F4E79; padding-bottom: 5px; border-bottom: 2px solid #1F4E79; margin-top: 14px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #EDE9FE; border: 1px solid #C4B5FD; color: #4C1D95; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+.ca { background: #FFFBEB; border: 1px solid #C8A030; color: #6B4C00; }
+.t { width: 100%; border-collapse: collapse; font-size: 11px; }
+.t th { background: #f5f6f8; color: #555; padding: 5px 7px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 5px 7px; border-bottom: 1px solid #f3f4f6; vertical-align: top; word-break: break-word; }
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child { width: 44%; color: #555; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 11px 12px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 21px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9px; color: #999; margin-top: 3px; line-height: 1.35; }
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.sc   { border-radius: 7px; padding: 11px 12px; border-left: 4px solid; }
+.sc.p { border-color: #2563EB; background: #EFF6FF; }
+.sc.s { border-color: #059669; background: #ECFDF5; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #7C3AED; background: #F5F3FF; }
+.sc.r { border-color: #DC2626; background: #FEF2F2; }
+.sc.g { border-color: #4A7A28; background: #F0FDF4; }
+.sc.a { border-color: #C8A030; background: #FFFBEB; }
+.sl { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.sn { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.sp { font-size: 18px; font-weight: 900; margin: 3px 0 6px; }
+.sd { font-size: 10px; line-height: 1.65; color: #444; }
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.pbl { width: 120px; font-size: 9.5px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; height: 16px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 5px; }
+.pbt { font-size: 9px; font-weight: 700; color: white; white-space: nowrap; }
+.pbp { width: 32px; font-size: 9.5px; font-weight: 700; text-align: right; flex-shrink: 0; }
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pi   { border-radius: 7px; padding: 11px 13px; border-left: 4px solid; }
+.pi.o { background: #F0FDF4; border-color: #4A7A28; }
+.pi.r { background: #FFF7ED; border-color: #F97316; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pi.p { background: #F5F3FF; border-color: #7C3AED; }
+.pi.a { background: #FFFBEB; border-color: #C8A030; }
+.pt   { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.pti  { font-size: 11px; font-weight: 700; margin-bottom: 5px; }
+.pd   { font-size: 10px; line-height: 1.65; color: #444; }
+.ar   { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f0f0f0; }
+.ar:last-child { border-bottom: none; }
+.ai   { font-size: 18px; min-width: 24px; flex-shrink: 0; }
+.ain  { flex: 1; min-width: 0; }
+.an   { font-size: 11px; font-weight: 700; color: #1C3A10; margin-bottom: 3px; }
+.ad   { font-size: 10px; color: #555; line-height: 1.6; }
+.ats  { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+.at   { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 7px; }
+.ag   { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px dashed #e8e8e8; }
+.ag:last-child { border-bottom: none; }
+.agi  { font-size: 17px; min-width: 22px; flex-shrink: 0; }
+.agt  { min-width: 0; }
+.agt strong { font-size: 11px; display: block; margin-bottom: 3px; color: #1C3A10; font-weight: 700; }
+.agt p { font-size: 10px; color: #666; line-height: 1.6; }
+.al   { border-radius: 7px; padding: 10px 12px; margin-top: 10px; font-size: 10px; line-height: 1.6; }
+.al-v { background: #F0FDF4; border: 1px solid #86EFAC; color: #14532D; }
+.al-a { background: #FFFBEB; border: 1px solid #C8A030; color: #6B4C00; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al-r { background: #FEF2F2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.al-k { background: #0f2944; color: white; }
+.al strong { display: block; margin-bottom: 3px; font-size: 11px; }
+.al-k strong { color: #F5D87A; }
+.nt   { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 7px; padding: 9px 12px; font-size: 10px; color: #1E3A5F; margin-top: 10px; line-height: 1.6; }
+.nt strong { display: block; font-size: 11px; margin-bottom: 3px; color: #1E40AF; }
+.hist { background: #FFFBEB; border: 1px solid #C8A030; border-radius: 7px; padding: 10px 12px; margin-top: 10px; }
+.hist strong { font-size: 11px; font-weight: 700; color: #6B4C00; display: block; margin-bottom: 4px; }
+.hist p { font-size: 10px; color: #6B4C00; line-height: 1.65; }
+.corr { background: linear-gradient(135deg, #1C3A10 0%, #4A7A28 100%); color: white; border-radius: 8px; padding: 13px 15px; margin-top: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.corr h3 { font-size: 11px; font-weight: 800; margin-bottom: 5px; color: #F5D87A; }
+.corr p  { font-size: 10px; line-height: 1.65; opacity: 0.9; }
+.cms { display: flex; gap: 7px; margin-top: 9px; flex-wrap: wrap; }
+.cm  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; padding: 6px 9px; flex: 1; text-align: center; font-size: 10px; font-weight: 700; min-width: 70px; }
+.cm span { display: block; font-size: 8.5px; font-weight: 400; opacity: 0.65; margin-top: 2px; }
+.acc-nac  { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#dde3f5; color:#1d3461; border:1px solid #1d346144; white-space:nowrap; }
+.acc-prot { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#fef3c7; color:#5c3317; border:1px solid #5c331744; white-space:nowrap; }
+.locs { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+.loc  { border-radius: 6px; padding: 8px 10px; border-left: 3px solid; font-size: 10px; line-height: 1.55; }
+.loc strong { font-size: 10.5px; display: block; margin-bottom: 2px; }
+.footer { text-align: center; padding: 12px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+@media print {
+  @page { size: A4 portrait; margin: 6mm 7mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; padding: 0 !important; font-size: 7pt !important; background: #eef2f7 !important; }
+  .main { padding: 7px 9px !important; gap: 7px !important; }
+  .card { box-shadow: none !important; page-break-inside: avoid; break-inside: avoid; }
+  .ch { font-size: 6pt !important; padding: 5px 7px !important; }
+  .cbody { padding: 7px !important; }
+  .header h1 { font-size: 15pt !important; }
+  .banner { page-break-inside: avoid; }
+  .t { font-size: 6pt !important; }
+  .t td, .t th { padding: 3px 4px !important; }
+  .kv { font-size: 13pt !important; }
+  .kpis { grid-template-columns: 1fr 1fr 1fr 1fr !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header" style="background: linear-gradient(135deg, #1C3A10 0%, #4A7A28 100%);">
+  <div class="header-left">
+    <h1>🐄 CAÑUELAS</h1>
+    <div class="sub">Ficha de Campaña · MAG · Polo · Capital del Dulce de Leche · PAC · 2026</div>
+    <div class="tag">3ª Sección Electoral · Interior Bonaerense Sur · 1.186,2 km² · 8 localidades</div>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente:</strong> Marisa Fassi <span class="badge badge-aliado">UxP · Aliada</span></div>
+    <div><strong>Cargo:</strong> Presidenta PJ Cañuelas · 2° mandato (2023–2027)</div>
+    <div><strong>PJ Intendencia 2023:</strong> 47,0% — Base sólida, 2° mandato</div>
+    <div><strong>PJ Concejales Prov. 2025:</strong> 45,8% — Liderazgo local intacto</div>
+    <div><strong>LLA Dip. Nac. 2025:</strong> 43,2% — Supera al PJ en categoría nacional</div>
+    <div><strong>Padrón 2025:</strong> 58.109 · creciendo (+4.037 en 2 años)</div>
+    <div style="margin-top:5px;font-size:9.5px;opacity:0.5;">PBA Analytics 2026 · Uso reservado</div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="b-label">⚠️ VOTO CRUZADO ESTRUCTURAL · PJ 46% LOCAL — LLA 43% NACIONAL · MAG = EL MAYOR MERCADO DE HACIENDA DEL MUNDO</div>
+  <div class="b-title">Cañuelas concentra tres fenómenos únicos y simultáneos: el mayor mercado de hacienda del mundo, el epicentro global del polo de alto handicap, y el más marcado voto cruzado local/nacional de la 3ª Sección — peronismo robusto en la intendencia y LLA superando al PJ en la categoría nacional por 4 puntos</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>La paradoja del elector cañuelense:</strong> En 2025 el elector de Cañuelas votó en dos elecciones simultáneas de forma completamente opuesta. En la categoría local (concejales), el PJ obtuvo 45,8% contra 31,4% de LLA — una diferencia de 14 puntos. En la categoría nacional (diputado), LLA superó al PJ por primera vez: 43,2% vs. 38,8%, una brecha de 4 puntos. El mismo elector, el mismo día, votando en dos lógicas distintas: aprueba la gestión de Fassi pero apoya la dirección económica nacional de Milei. Son dos marcos de referencia que coexisten sin contradecirse en la cabeza del votante.</p>
+      <p><strong>El MAG como eje transformador:</strong> El Mercado Agroganadero de Cañuelas — el mayor y más moderno del mundo en 110 hectáreas — está traccionando un ecosistema de inversiones que cambia la economía estructural del partido. Logística, hotelería, servicios, el PAC (Polo Agroganadero Comercial) con u$s 250 millones en inversión, 7.000 empleos proyectados. La Provincia fue partícipe activa de ese proceso.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>Polo ecuestre: Cañuelas es capital mundial:</strong> La Dolfina (Adolfo Cambiaso y Bartolomé Castagnola), La Natividad y más de 15 organizaciones de polo tienen su base en Cañuelas. Más de 3.000 hectáreas dedicadas al polo de alto handicap. La Natividad-La Dolfina ganó la Triple Corona 2025 (Tortugas, Hurlingham, Palermo). En abril 2026 se anunció La Dolfina Polo Ranch, un desarrollo inmobiliario de Cambiaso en sus campos de Cañuelas. La localidad es visitada regularmente por figuras de primer nivel mundial.</p>
+      <p><strong>La identidad que no se puede imitar:</strong> Capital Nacional del Dulce de Leche, cuna de La Martona (primera industria lechera del país, 1889), el municipio tiene una identidad productiva e histórica que ningún otro tiene en la zona. Y la Fiesta del Costillar Criollo en Uribelarrea: 35.000 personas en un pueblo de 1.600 habitantes el 1° de Mayo — 22 veces la población local convocada por un evento que ya es referencia gastronómica nacional.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">47,0%</div><div class="l">PJ Intendencia 2023<br>Marisa Fassi · UxP · 2° mandato</div></div>
+    <div class="b-num"><div class="n">43,2%</div><div class="l">LLA Dip. Nac. 2025<br>Supera al PJ en nac. (+4 pts)</div></div>
+    <div class="b-num"><div class="n">110 has</div><div class="l">MAG · el mayor mercado<br>de hacienda del mundo</div></div>
+    <div class="b-num"><div class="n">35.000</div><div class="l">visitantes Fiesta Costillar<br>Uribelarrea · 1° de Mayo</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- KPIs -->
+<div class="card full">
+  <div class="ch" style="background:#1C3A10;color:white;">📊 Datos Electorales y Demográficos Clave · Cañuelas</div>
+  <div class="cbody" style="padding:14px 16px;">
+    <div class="kpis">
+      <div class="kpi" style="background:#F0FDF4;border-color:#86EFAC;">
+        <div class="kl">PJ Intendencia 2023</div>
+        <div class="kv" style="color:#15803D;">47,0%</div>
+        <div class="ks">18.478 votos · JxC 25,2% · LLA 24,1% · FIT 3,5%<br>Padrón: 54.072 · Total positivos: 39.329</div>
+      </div>
+      <div class="kpi" style="background:#F0FDF4;border-color:#86EFAC;">
+        <div class="kl">PJ Concejales Prov. 2025</div>
+        <div class="kv" style="color:#15803D;">45,8%</div>
+        <div class="ks">15.919 votos · LLA 31,4% · FIT 5,2%<br>Padrón: 58.109 · Total positivos: 34.772</div>
+      </div>
+      <div class="kpi" style="background:#FEF3C7;border-color:#C8A030;">
+        <div class="kl">LLA Dip. Nac. 2025 — Alerta</div>
+        <div class="kv" style="color:#A05C00;">43,2%</div>
+        <div class="ks">14.681 votos · PJ 38,8% (13.184) · FIT 5,3%<br>Total positivos: 33.981 · LLA supera PJ por 4 pts</div>
+      </div>
+      <div class="kpi" style="background:#EFF6FF;border-color:#93C5FD;">
+        <div class="kl">Crecimiento padrón 2023–2025</div>
+        <div class="kv" style="color:#1D4ED8;font-size:17px;">+4.037</div>
+        <div class="ks">De 54.072 (2023) a 58.109 (2025)<br>+7,5% en 2 años · ritmo: ~2.000/año</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDAD Y LOCALIDADES -->
+<div class="card one">
+  <div class="ch" style="background:#ECFDF5;color:#1C3A10;">🗺️ Identidad y Localidades</div>
+  <div class="cbody">
+    <div class="chips">
+      <span class="chip cg">🐄 MAG · mercado hacienda mundial</span>
+      <span class="chip ca">🐎 Polo · La Dolfina</span>
+      <span class="chip co">🍮 Capital del Dulce de Leche</span>
+      <span class="chip cz">🌾 Agropecuario</span>
+      <span class="chip cb">🏭 Industria alimentaria</span>
+    </div>
+
+    <div class="st">8 Localidades · Perfiles diferenciados</div>
+    <div class="locs">
+      <div class="loc" style="border-color:#4A7A28;background:#F0FDF4;">
+        <strong>Cañuelas (cabecera)</strong>
+        Ciudad principal. Centro urbano, administrativo e industrial. Concentra la mayor parte de la población del partido. Núcleo de la base PJ histórica. Sede del MAG y del PAC. Polo universitario (UCES, UBA, Morón).
+      </div>
+      <div class="loc" style="border-color:#C8A030;background:#FFFBEB;">
+        <strong>Uribelarrea</strong>
+        Joya turística criollista. ~1.600 hab. Identidad gaucha preservada. La Fiesta del Costillar Criollo convoca 35.000+ personas el 1° de Mayo (22x su población). Pueblo pintoresco de fin de semana, referencia gastronómica regional.
+      </div>
+      <div class="loc" style="border-color:#2563EB;background:#EFF6FF;">
+        <strong>Vicente Casares</strong>
+        Lleva el nombre de Vicente Casares, fundador de La Martona (1889), primera industria lechera del país. Tradición agropecuaria y láctea. Vínculo histórico con la identidad productiva del partido.
+      </div>
+      <div class="loc" style="border-color:#D97706;background:#FFFBEB;">
+        <strong>Máximo Paz</strong>
+        Localidad con presencia industrial y trabajadores del sector. Voto PJ consolidado. Integrada a la trama periurbana de la cabecera. Base de la estructura territorial municipal.
+      </div>
+      <div class="loc" style="border-color:#7C3AED;background:#F5F3FF;">
+        <strong>Gobernador Udaondo</strong>
+        Pequeña localidad rural en el noroeste del partido. Perfil agropecuario. Vínculo con la tradición ganadera histórica del municipio.
+      </div>
+      <div class="loc" style="border-color:#0284C7;background:#F0F9FF;">
+        <strong>La Noria · Los Aromos · Villa Adriana</strong>
+        Localidades menores con perfil mixto (rural/periurbano). Baja densidad poblacional. Integradas a la red de servicios municipales desde la cabecera.
+      </div>
+    </div>
+
+    <div class="hist">
+      <strong>🍮 La Martona · 1889 · El origen de la industria láctea argentina</strong>
+      <p>En la Estancia San Martín de Cañuelas, Vicente Casares fundó en 1889 La Martona, la primera industria lechera de la Argentina. La estancia desarrolló la producción de leche pasteurizada, manteca y dulce de leche a escala industrial por primera vez en el país. Esa estancia es hoy también el campo donde se desarrolla el proyecto Cañuelas Polo Club & Farms, vinculado al ecosistema del polo. La historia del lugar une el origen de la gastronomía nacional con el deporte de élite global.</p>
+    </div>
+    <div class="nt">
+      <strong>📌 Polo Universitario Cañuelas</strong>
+      La municipalidad donó terrenos y facilitó edificios históricos (como el antiguo colegio) para que universidades públicas y privadas (UCES, UBA, Morón) se instalen en el partido. Cañuelas tiene hoy educación universitaria presencial accesible sin salir del municipio — un diferencial notable para un partido del interior bonaerense.
+    </div>
+  </div>
+</div>
+
+<!-- MATRIZ PRODUCTIVA -->
+<div class="card two">
+  <div class="ch" style="background:#1d3461;color:white;">⚙️ Matriz Productiva · Cuatro economías que definen el municipio</div>
+  <div class="cbody">
+    <div class="st">Economías que coexisten y determinan el perfil social y electoral</div>
+    <div class="sgrid">
+      <div class="sc g">
+        <div class="sl">🥇 Eje agroganadero — activo global</div>
+        <div class="sn">MAG — Mercado Agroganadero de Cañuelas</div>
+        <div class="sp" style="color:#4A7A28;">110 has · el mayor del mundo</div>
+        <div class="sd">El MAG reemplazó al histórico mercado de Liniers (Mataderos, 120 años de operación, 32 has) con un predio de 110 hectáreas —3,4 veces más grande— con capacidad para 12.000 cabezas diarias. Opera desde mayo 2022 con consolidación progresiva. Para la industria cárnica significa un ahorro de u$s 12,5M anuales en logística. El MAG tracciona logística, hotelería, estaciones de servicio y empresas de servicios al agro en toda la zona circundante. El traslado fue facilitado activamente por la Provincia de Buenos Aires.</div>
+      </div>
+      <div class="sc a">
+        <div class="sl">🐎 Polo ecuestre — capital mundial</div>
+        <div class="sn">La Dolfina · La Natividad · 15+ clubs</div>
+        <div class="sp" style="color:#C8A030;">3.000+ has dedicadas</div>
+        <div class="sd">Cañuelas concentra el polo de más alto handicap del mundo. La Dolfina, fundada en 2000 por Adolfo Cambiaso (el mejor jugador de la historia) y Bartolomé Castagnola, tiene su base en el partido. La Natividad-La Dolfina ganó la Triple Corona 2025 (Tortugas + Hurlingham + Palermo). En abril 2026 se anunció La Dolfina Polo Ranch en la Estancia San Martín: un desarrollo inmobiliario de Cambiaso que combina polo con residencias de lujo. Genera turismo de élite, empleos en mantenimiento de caballos, instalaciones y servicios premium.</div>
+      </div>
+      <div class="sc t">
+        <div class="sl">🏭 Industria alimentaria — base histórica</div>
+        <div class="sn">Lácteos · Cárnico · Dulce de Leche</div>
+        <div class="sp" style="color:#D97706;">Sector sec.: 53,6%</div>
+        <div class="sd">El sector secundario domina la estructura económica: carnes (preparación y conservas), productos lácteos (continuando la tradición de La Martona), molienda, ladrilleras y fábricas de confitería y panificación. Los lácteos y el dulce de leche son el corazón de la identidad productiva histórica. La Capital Nacional del Dulce de Leche tracciona turismo gastronómico de fin de semana desde toda la región metropolitana.</div>
+      </div>
+      <div class="sc p">
+        <div class="sl">🏗️ PAC — inversión estructural en curso</div>
+        <div class="sn">Polo Agroganadero Comercial · u$s 250M</div>
+        <div class="sp" style="color:#2563EB;">7.000 empleos proyectados</div>
+        <div class="sd">El PAC es el desarrollo comercial y de servicios que se construye junto al MAG. Con una inversión total de u$s 250M incluye: hotel de cadena internacional (120 habitaciones), barrio cerrado residencial, paseo de compras, centro de exhibición y exposiciones. Cuando esté operativo creará hasta 7.000 empleos directos e indirectos. Transforma a Cañuelas en un hub de agronegocios con escala regional.</div>
+      </div>
+    </div>
+
+    <div class="st2">Distribución estimada de actividad económica</div>
+    <div class="pbr"><div class="pbl">Industrial · manufactura</div><div class="pbo"><div class="pbi" style="width:62%;background:#D97706"><div class="pbt">~31%</div></div></div><div class="pbp" style="color:#D97706;">31%</div></div>
+    <div class="pbr"><div class="pbl">Agropecuario · ganadería</div><div class="pbo"><div class="pbi" style="width:48%;background:#4A7A28"><div class="pbt">~24%</div></div></div><div class="pbp" style="color:#4A7A28;">24%</div></div>
+    <div class="pbr"><div class="pbl">Comercio y servicios</div><div class="pbo"><div class="pbi" style="width:44%;background:#2563EB"><div class="pbt">~22%</div></div></div><div class="pbp" style="color:#2563EB;">22%</div></div>
+    <div class="pbr"><div class="pbl">Turismo · gastronomía · polo</div><div class="pbo"><div class="pbi" style="width:22%;background:#C8A030"><div class="pbt">~11%</div></div></div><div class="pbp" style="color:#C8A030;">11%</div></div>
+    <div class="pbr"><div class="pbl">Estado · salud · educación</div><div class="pbo"><div class="pbi" style="width:24%;background:#7C3AED"><div class="pbt">~12%</div></div></div><div class="pbp" style="color:#7C3AED;">12%</div></div>
+
+    <div class="st2">Actores productivos clave</div>
+    <div class="ar">
+      <div class="ai">🐄</div>
+      <div class="ain">
+        <div class="an">MAG — Mercado Agroganadero de Cañuelas S.A.</div>
+        <div class="ad">Empresa privada que opera el mercado de hacienda más grande del mundo. Los consignatarios (martilleros de hacienda) son actores clave: organizan la operación diaria, representan a productores y frigoríficos, tienen influencia política y mediática en el sector agropecuario nacional. La visita al MAG tiene proyección mediática garantizada.</div>
+        <div class="ats"><span class="at" style="background:#dde3f5;color:#1d3461;">🏛️ NACIONAL · 9.0</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🐎</div>
+      <div class="ain">
+        <div class="an">La Dolfina Polo Club · Adolfo Cambiaso</div>
+        <div class="ad">La Dolfina es la organización de polo más reconocida a nivel mundial. Adolfo Cambiaso es el jugador con mayor handicap activo en el mundo (10/10, récord histórico). La Natividad-La Dolfina ganó la Triple Corona 2025. La Dolfina Polo Ranch (anunciado abril 2026) es un desarrollo inmobiliario de lujo en Cañuelas. Proyección mediática internacional: cualquier actividad en La Dolfina tiene cobertura en medios globales.</div>
+        <div class="ats"><span class="at" style="background:#FFFBEB;color:#6B4C00;">🐎 PRIVADO 🟢 9.1</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🍮</div>
+      <div class="ain">
+        <div class="an">Industria láctea · dulce de leche · Capital Nacional</div>
+        <div class="ad">Cañuelas lleva el título de Capital Nacional del Dulce de Leche. La Fiesta Nacional del Dulce de Leche congrega gastrónomos, turistas y productores. La tradición arranca en La Martona (1889). Cámaras de productores lácteos, pequeños fabricantes artesanales, y el ecosistema gastronómico que genera la identidad de fin de semana.</div>
+        <div class="ats"><span class="at" style="background:#FEF3C7;color:#92400E;">Identidad gastronómica provincial</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🏥</div>
+      <div class="ain">
+        <div class="an">Hospital SAMIC Cañuelas — Alta complejidad regional</div>
+        <div class="ad">Uno de los centros de salud de mayor complejidad tecnológica de la Provincia. Atiende ACV y traumas graves. Dispone de terapia intensiva premium, resonador magnético y angiógrafo. Sirve no solo a Cañuelas sino también a pacientes de Las Heras y municipios vecinos — funciona como referencia regional de salud pública de calidad.</div>
+        <div class="ats"><span class="at" style="background:#fef3c7;color:#5c3317;">🤝 PROTOCOLAR · 7.8</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSPECTIVA PROVINCIAL -->
+<div class="card full">
+  <div class="ch" style="background:#0f2944;color:#F5D87A;">🏛️ Perspectiva Provincial · Inversiones y agenda que solo el nivel provincial activa</div>
+  <div class="cbody">
+    <div class="pgrid">
+      <div class="pi o">
+        <div class="pt">✅ Articulación activa en el MAG — acción provincial verificada</div>
+        <div class="pti">La Provincia facilitó el mayor traslado ganadero de la historia argentina</div>
+        <div class="pd">El Ministerio de Desarrollo Agrario de la Provincia (ex Ministro Javier Rodríguez y Basterra) recorrió las obras y acompañó el proceso de traslado del mercado de Liniers a Cañuelas. La Provincia articuló con el municipio de Cañuelas, con la Ciudad de Buenos Aires (que cedió el predio de Mataderos) y con los consignatarios. Este antecedente es concreto y narrable: la Provincia fue parte activa de una transformación que tiene impacto económico nacional. Ya se visitó el parque industrial — la visita al MAG es el cierre natural de ese recorrido.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 PAC — infraestructura provincial para la inversión privada</div>
+        <div class="pti">El Polo Agroganadero Comercial necesita vialidad, agua y energía provincial</div>
+        <div class="pd">La inversión privada de u$s 250M en el PAC depende de infraestructura que solo la Provincia puede garantizar: ampliación de la capacidad eléctrica, red cloacal para el polo comercial y residencial, y mantenimiento de los accesos viales (Ruta Nacional 3 y rutas provinciales) que absorben el tráfico del MAG y el PAC. La Provincia puede posicionarse como el socio que hace posible la mayor inversión de la historia del partido.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">✅ SAMIC · inversión en salud de alta complejidad</div>
+        <div class="pti">Hospital de referencia regional financiado desde la Provincia</div>
+        <div class="pd">El Hospital SAMIC de Cañuelas es parte de la red provincial de hospitales de alta complejidad. Su equipamiento (resonador, angiógrafo, UTI) es financiado con fondos provinciales. Este es un activo concreto y medible en términos de impacto en la vida de los vecinos: evita derivaciones a CABA o La Plata para los casos más graves. Puede comunicarse como inversión provincial en salud para los trabajadores del MAG y sus familias.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 Ruta 3 y accesos · infraestructura estratégica</div>
+        <div class="pti">El MAG mueve 500+ camiones diarios por rutas provinciales</div>
+        <div class="pd">El Mercado Agroganadero de Cañuelas tiene un flujo estimado de 500 o más camiones diarios que acceden por la Ruta Nacional 3 y las rutas provinciales. El mantenimiento y ensanche de esos accesos, la construcción de playas de estacionamiento de camiones y la mejora de los cruces viales son demandas concretas del sector ganadero y camionero — dos actores de alto peso electoral en el municipio. La inversión vial provincial en esa área tiene efecto directo en la operación del mayor mercado de hacienda del mundo.</div>
+      </div>
+      <div class="pi a">
+        <div class="pt">🟡 Polo ecuestre · agenda turística provincial</div>
+        <div class="pti">Cañuelas como destino del turismo internacional de polo</div>
+        <div class="pd">Con más de 15 organizaciones de polo y más de 3.000 hectáreas dedicadas, Cañuelas es el destino de polo más importante de la Argentina y uno de los principales del mundo. La Provincia puede articular una agenda de turismo rural y deportivo que ponga a Cañuelas en la vidriera internacional: circuitos, infraestructura de recepción, conectividad. La Dolfina Polo Ranch es una inversión privada de u$s 250M+ que necesita soporte de servicios provinciales.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">✅ "Cañuelas Mi Lugar" · acceso provincial al suelo urbano</div>
+        <div class="pti">Lotes con servicios al 50% del precio de mercado para familias jóvenes</div>
+        <div class="pd">El programa municipal "Cañuelas, Mi Lugar" provee lotes con servicios a familias y jóvenes locales al 50% del precio de mercado, con barrios como Parque Matilda, El Taladro y Ayres de Casares. Para escalar el programa, se requiere extensión de redes de agua, gas y cloacas que la Provincia financia. Cada etapa nueva del programa es un hecho político concreto para la base electoral de Fassi en la cabecera.</div>
+      </div>
+    </div>
+    <div class="corr">
+      <h3>🗺️ Cañuelas como puerta de entrada al interior bonaerense · Nodo de la Ruta 3</h3>
+      <p>Cañuelas está sobre la Ruta Nacional 3 — la arteria que conecta CABA con el interior agropecuario patagónico. Su posición la convierte en el primer municipio del "interior" para quien sale de la metrópolis hacia el sur. El MAG amplifica ese rol: hoy Cañuelas es el nodo central del comercio ganadero nacional. Las decisiones provinciales sobre Cañuelas tienen efecto en toda la cadena agroalimentaria bonaerense.</p>
+      <div class="cms">
+        <div class="cm">🐄 CAÑUELAS<span>MAG · Polo · Dulce leche</span></div>
+        <div class="cm">↔ LAS HERAS<span>Vecino · SAMIC compartido</span></div>
+        <div class="cm">↔ EZEIZA<span>Acceso norte · aeropuerto</span></div>
+        <div class="cm">↔ LOBOS<span>Corredor agropecuario</span></div>
+        <div class="cm">↔ MARCO PAZ<span>Interior sur</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISIS POLÍTICO -->
+<div class="card two">
+  <div class="ch" style="background:#1C3A10;color:#F5D87A;">🗳️ Análisis Político · El voto cruzado más marcado de la 3ª Sección</div>
+  <div class="cbody">
+    <div class="st">Tabla electoral completa · Cañuelas 2023 y 2025</div>
+    <table class="t">
+      <tr><th>Elección</th><th>PJ/UxP</th><th>JxC</th><th>LLA</th><th>FIT</th><th>Positivos</th><th>Padrón</th></tr>
+      <tr><td>2023 · Intendente</td><td class="ok">47,0% — 18.478</td><td>25,2% — 9.912</td><td>24,1% — 9.467</td><td>3,5% — 1.382</td><td>39.329</td><td>54.072</td></tr>
+      <tr><td>2025 · Concejales Prov.</td><td class="ok">45,8% — 15.919</td><td>—</td><td>31,4% — 10.908</td><td>5,2% — 1.802</td><td>34.772</td><td>58.109</td></tr>
+      <tr><td>2025 · Dip. Nacional</td><td class="warn">38,8% — 13.184</td><td>—</td><td class="bad">43,2% — 14.681</td><td>5,3% — 1.805</td><td>33.981</td><td>54.684</td></tr>
+    </table>
+
+    <div class="st2">Análisis del voto cruzado · Lo que los números revelan</div>
+    <div class="ag">
+      <div class="agi">📊</div>
+      <div class="agt">
+        <strong>La brecha local/nacional: 14 puntos de diferencia</strong>
+        <p>En concejales (categoría local) PJ gana por 14 puntos (45,8% vs. 31,4%). En diputado nacional LLA gana por 4 puntos (43,2% vs. 38,8%). La diferencia entre las dos lecturas es de 18 puntos. El elector aprueba a Fassi y rechaza al peronismo nacional — o más precisamente: apoya la dirección económica de Milei pero valora la gestión local de la intendenta.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">📈</div>
+      <div class="agt">
+        <strong>LLA fue creciendo desde 2023: de 24% a 43%</strong>
+        <p>En 2023, LLA obtuvo 24,1% en la categoría local (intendencia). En 2025 concejales subió a 31,4%. En 2025 nacional llegó a 43,2%. El crecimiento es consistente y en ascenso. No es un fenómeno que se frenó: en Cañuelas LLA crece elección tras elección, y lo hace con mayor velocidad en las categorías nacionales. Esto sugiere que la base LLA en Cañuelas no es solo voto de protesta sino un electorado que está construyendo identidad.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏛️</div>
+      <div class="agt">
+        <strong>Fassi en su pico: presidente PJ local, intendenta consolidada</strong>
+        <p>Marisa Fassi fue reelecta en 2023, lidera el PJ de Cañuelas, y es aliada del espacio provincial. Su gestión tiene activos tangibles: el MAG, el SAMIC, el polo universitario. El problema no es su imagen sino el contexto nacional: el elector que la aprueba localmente puede votar en contra en la boleta nacional. La tarea es que esa distinción no contamine la categoría provincial en 2027.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🌾</div>
+      <div class="agt">
+        <strong>El sector agropecuario: PJ históricamente débil, MAG como oportunidad</strong>
+        <p>El campo suele votar PRO/LLA por razones estructurales (impuestos, retenciones, campo vs. Estado). Pero el MAG es un caso particular: la Provincia fue activa en facilitar el traslado. Los consignatarios y productores del MAG tienen una deuda simbólica con la gestión. Esa es la ventana para trabajar un segmento que en otras circunstancias está cerrado.</p>
+      </div>
+    </div>
+    <div class="al al-a">
+      <strong>⚠️ Señal de alerta para 2027</strong>
+      Si la tendencia de crecimiento de LLA no se revierte, en 2027 el PJ podría perder la intendencia por primera vez en décadas. La estrategia no es detener el crecimiento de LLA en la categoría nacional (eso es improbable) sino construir una diferenciación territorial tan sólida que el elector mantenga la distinción: "voto LLA para el país, PJ para Cañuelas". El MAG, el SAMIC y el polo universitario son los activos para sostener ese argumento.
+    </div>
+  </div>
+</div>
+
+<!-- AGENDA DISCURSIVA -->
+<div class="card one">
+  <div class="ch" style="background:#FFFBEB;color:#6B4C00;">💬 Agenda Discursiva · Por segmento de electorado</div>
+  <div class="cbody">
+    <div class="ag">
+      <div class="agi">🐄</div>
+      <div class="agt">
+        <strong>Sector ganadero · consignatarios · MAG</strong>
+        <p>El municipio tiene el mayor mercado de hacienda del mundo gracias a una articulación entre el sector privado, el municipio y la Provincia. Esa es la escala en la que se trabaja: no en lo chico, sino en lo que define la economía nacional.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏭</div>
+      <div class="agt">
+        <strong>Trabajadores industriales · sindicatos</strong>
+        <p>La industria alimentaria, el frigorífico, el sector lácteo y la logística del MAG son el núcleo del empleo formal del partido. Las condiciones laborales, la salud ocupacional y el acceso al SAMIC son demandas directas de este segmento.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🐎</div>
+      <div class="agt">
+        <strong>Polo · turismo · gastronomía</strong>
+        <p>Cañuelas tiene una identidad turística única: el polo de alto handicap y el dulce de leche. La provincia puede potenciar esa identidad con infraestructura de recepción y conectividad que multiplique el turismo de fin de semana.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🎓</div>
+      <div class="agt">
+        <strong>Jóvenes · universitarios · primer empleo</strong>
+        <p>El polo universitario (UCES, UBA, Morón) y el PAC generan oportunidades que no existían. Los jóvenes de Cañuelas no tienen que irse al gran Buenos Aires para estudiar — y el PAC va a generar empleos calificados que los retengan.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏘️</div>
+      <div class="agt">
+        <strong>Familias · acceso a la vivienda</strong>
+        <p>"Cañuelas, Mi Lugar" es el programa que permite a familias jóvenes del partido acceder a lotes propios al 50% del precio de mercado. La Provincia escala ese programa. Tener un lote en el partido con servicios es el primer paso de la construcción familiar.</p>
+      </div>
+    </div>
+    <div class="al al-k">
+      <strong>🎯 Síntesis del mensaje para Cañuelas</strong>
+      Cañuelas tiene el mayor mercado de hacienda del mundo, el mejor jugador de polo de la historia, el hospital que atiende ACV de toda la región, y la primera industria lechera del país. No es un municipio que pide: es un municipio que produce. La Provincia es el socio que potencia lo que ya tiene, no el que viene a dar lo que falta.
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS ESTRATÉGICAS -->
+<div class="card full">
+  <div class="ch" style="background:#2C2C2C;color:white;">📍 Visitas Estratégicas · Cañuelas 2026</div>
+  <div class="cbody">
+    <table class="t">
+      <tr>
+        <th>Lugar / Actor</th>
+        <th>Tipo</th>
+        <th>Score</th>
+        <th>Hook discursivo · por qué esta visita</th>
+      </tr>
+      <tr>
+        <td class="bld">🐄 MAG — Mercado Agroganadero de Cañuelas</td>
+        <td><span class="acc-nac">🏛️ NACIONAL</span></td>
+        <td class="ok">9.0</td>
+        <td>El mayor mercado de hacienda del mundo está en Cañuelas, Provincia de Buenos Aires. La Provincia fue parte activa del traslado histórico desde Mataderos. Visita con proyección mediática nacional garantizada. Ya se visitó el parque industrial — el MAG es el cierre natural.</td>
+      </tr>
+      <tr>
+        <td class="bld">🎉 Fiesta del Costillar Criollo · Uribelarrea · 1° Mayo</td>
+        <td><span class="acc-prot">🤝 PROTOCOLAR</span></td>
+        <td class="ok">9.2</td>
+        <td>35.000 personas en un pueblo de 1.600 habitantes. La 4ª edición consolida un festival gastronómico que ya es referencia nacional. El costillar criollo como símbolo de la identidad bonaerense. Alta visibilidad mediática en un contexto festivo y popular. La intendenta Fassi invitó específicamente a esta fecha.</td>
+      </tr>
+      <tr>
+        <td class="bld">🏥 Hospital SAMIC Cañuelas</td>
+        <td><span class="acc-prot">🤝 PROTOCOLAR</span></td>
+        <td class="warn">7.8</td>
+        <td>Hospital de alta complejidad con angiógrafo, resonador y UTI. Atiende ACV y traumas de Cañuelas y Las Heras. Inversión provincial en salud pública de calidad en el interior bonaerense. Narrativa: "el interior con el mismo nivel de salud que el área metropolitana".</td>
+      </tr>
+      <tr>
+        <td class="bld">🐎 La Dolfina · Adolfo Cambiaso</td>
+        <td>🟢 PRIVADO</td>
+        <td class="ok">9.1</td>
+        <td>Adolfo Cambiaso es el mejor jugador de polo de la historia. La Dolfina ganó la Triple Corona 2025. La Dolfina Polo Ranch (anunciado abril 2026) representa inversión internacional en Cañuelas. Una visita al predio tiene proyección de medios globales y posiciona a Cañuelas como destino de clase mundial.</td>
+      </tr>
+      <tr>
+        <td class="bld">🤝 Marisa Fassi — Intendenta</td>
+        <td>🟢 PRIVADO</td>
+        <td>—</td>
+        <td>Aliada del grupo de los 4. Presidenta del PJ local. Gestión de alto perfil con el MAG, SAMIC y polo universitario. Articulación directa para la agenda de visitas y para el apoyo territorial en 2027.</td>
+      </tr>
+      <tr>
+        <td class="bld">🐄 Consignatarios MAG</td>
+        <td>🟡 PRIVADO</td>
+        <td class="warn">8.0</td>
+        <td>Los consignatarios organizan la operación del mayor mercado de hacienda del mundo. Son líderes de opinión en el sector agropecuario nacional. La deuda simbólica con la gestión provincial que facilitó el traslado es el punto de entrada para la conversación.</td>
+      </tr>
+      <tr>
+        <td class="bld">🍮 Productores · Dulce de Leche · Capital Nacional</td>
+        <td>🟡 PRIVADO</td>
+        <td class="warn">7.5</td>
+        <td>Cámaras de productores lácteos y artesanos del dulce de leche. Identidad gastronómica que tracciona turismo. Contexto: Fiesta Nacional del Dulce de Leche. Segmento con alta presencia en medios regionales y en redes sociales gastronómicas.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">PBA Analytics 2026 · Ficha de Campaña — CAÑUELAS · Uso reservado · Elaborado en base a datos electorales oficiales y fuentes públicas verificadas</div>
+
+</div><!-- /main -->
+
+<!-- ============================================================ -->
+<!-- ANEXO I — INDICADORES TERRITORIALES Y DEMOGRÁFICOS -->
+<!-- ============================================================ -->
+
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div style="background:linear-gradient(135deg,#1C3A10 0%,#4A7A28 100%);color:white;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+  <div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Cañuelas · PBA 2026</div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO I — INDICADORES TERRITORIALES Y DEMOGRÁFICOS</div>
+  </div>
+  <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">3ª Sección Electoral · Interior Agropecuario<br>Marisa Fassi · UxP · Aliada</div>
+</div>
+<div style="padding:16px 20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;background:#eef2f7;">
+
+  <div class="card">
+    <div class="ch" style="background:#1C3A10;color:white;">📊 Indicadores Socioeconómicos</div>
+    <div class="cbody">
+      <table class="t">
+        <tr><td>Población estimada</td><td class="bld">~70.684 hab.</td></tr>
+        <tr><td>Superficie</td><td class="bld">1.186,2 km²</td></tr>
+        <tr><td>Sección Electoral</td><td class="bld">3ª Sección</td></tr>
+        <tr><td>Localidades</td><td class="bld">8 (cabecera + 7)</td></tr>
+        <tr><td>Hospital SAMIC</td><td class="ok">Alta complejidad · resonador · UTI</td></tr>
+        <tr><td>Universidades presenciales</td><td class="ok">UCES · UBA · Morón</td></tr>
+        <tr><td>Empleo sector secundario</td><td class="bld">53,6% de la base económica</td></tr>
+        <tr><td>Empleo sector primario</td><td class="bld">24,3%</td></tr>
+        <tr><td>Empleo sector terciario</td><td class="bld">22,1%</td></tr>
+        <tr><td>Distancia a CABA</td><td class="bld">~55 km (Ruta 3)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#1C3A10;color:white;">🐄 MAG · Datos del Mercado Agroganadero</div>
+    <div class="cbody">
+      <table class="t">
+        <tr><td>Escala del predio</td><td class="ok">110 has · el mayor del mundo</td></tr>
+        <tr><td>Predio anterior (Liniers)</td><td class="bld">32 has · 120 años de operación</td></tr>
+        <tr><td>Capacidad diaria</td><td class="bld">12.000 cabezas de ganado</td></tr>
+        <tr><td>Inicio de operaciones</td><td class="bld">Mayo 2022</td></tr>
+        <tr><td>Traslado completo</td><td class="bld">2022 (operaciones regulares)</td></tr>
+        <tr><td>Ahorro industria cárnica</td><td class="ok">u$s 12,5M / año</td></tr>
+        <tr><td>Inversión total MAG + PAC</td><td class="ok">u$s 250 millones</td></tr>
+        <tr><td>Empleos proyectados (PAC)</td><td class="ok">7.000 directos e indirectos</td></tr>
+        <tr><td>Rol de la Provincia</td><td class="ok">Facilitó el traslado activamente</td></tr>
+        <tr><td>PAC: hotel internacional</td><td class="bld">120 habitaciones · en desarrollo</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#C8A030;color:white;">🐎 Polo Ecuestre · Ecosistema Cañuelas</div>
+    <div class="cbody">
+      <table class="t">
+        <tr><td>Principal organización</td><td class="ok">La Dolfina (Cambiaso + Castagnola)</td></tr>
+        <tr><td>Fundación La Dolfina</td><td class="bld">2000 · base en Cañuelas</td></tr>
+        <tr><td>Handicap Adolfo Cambiaso</td><td class="ok">10/10 · récord histórico activo</td></tr>
+        <tr><td>Triple Corona 2025</td><td class="ok">La Natividad-La Dolfina ganó todo</td></tr>
+        <tr><td>Clubes de polo en el partido</td><td class="bld">15+ organizaciones</td></tr>
+        <tr><td>Hectáreas dedicadas al polo</td><td class="bld">3.000+ has</td></tr>
+        <tr><td>La Dolfina Polo Ranch</td><td class="ok">Anunciado abril 2026 · inversión inmob.</td></tr>
+        <tr><td>Estancia San Martín</td><td class="bld">Sede histórica · La Martona + polo</td></tr>
+        <tr><td>Cañuelas Polo Club</td><td class="bld">Club con proyección turística</td></tr>
+        <tr><td>Proyección mediática</td><td class="ok">Cobertura global de medios de polo</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#1C3A10;color:white;">🗳️ Padrón · Evolución Electoral</div>
+    <div class="cbody">
+      <table class="t">
+        <tr><th>Año</th><th>Padrón</th><th>Variación</th></tr>
+        <tr><td>2023</td><td class="bld">54.072</td><td>—</td></tr>
+        <tr><td>2025</td><td class="bld">58.109</td><td class="ok">+4.037 (+7,5%)</td></tr>
+        <tr><td>2027 (proyección)</td><td class="bld">~62.000–64.000</td><td class="warn">+4.000–6.000 aprox.</td></tr>
+      </table>
+      <div class="st2">Dinámica del padrón</div>
+      <table class="t">
+        <tr><td>Ritmo de crecimiento</td><td class="bld">~2.000 nuevos electores/año</td></tr>
+        <tr><td>Origen del crecimiento</td><td class="bld">Nuevas viviendas + jóvenes inscriptos</td></tr>
+        <tr><td>Perfil de nuevos electores</td><td class="warn">Mayor proporción anti-PJ histórico</td></tr>
+        <tr><td>Proyección 2027</td><td class="warn">+4.000 a +6.000 electores más</td></tr>
+        <tr><td>Impacto en resultado</td><td class="warn">Si voto LLA sigue creciendo: riesgo</td></tr>
+        <tr><td>Diferencial 2025 Nac–Local</td><td class="bld">14 pts brecha local vs. nacional</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#1C3A10;color:white;">🏘️ Localidades · Perfil y peso electoral</div>
+    <div class="cbody">
+      <table class="t">
+        <tr><th>Localidad</th><th>Perfil</th><th>Voto estimado</th></tr>
+        <tr><td class="bld">Cañuelas (cab.)</td><td>Urbano · industrial</td><td class="ok">PJ sólido</td></tr>
+        <tr><td class="bld">Uribelarrea</td><td>Rural · turístico</td><td class="bld">Mixto</td></tr>
+        <tr><td class="bld">Vicente Casares</td><td>Rural · lácteos</td><td class="ok">PJ histórico</td></tr>
+        <tr><td class="bld">Máximo Paz</td><td>Industrial · obrero</td><td class="ok">PJ consolidado</td></tr>
+        <tr><td class="bld">Gob. Udaondo</td><td>Rural · ganadero</td><td class="warn">Mixto · LLA campo</td></tr>
+        <tr><td class="bld">La Noria</td><td>Rural menor</td><td class="bld">No determinante</td></tr>
+        <tr><td class="bld">Los Aromos</td><td>Rural menor</td><td class="bld">No determinante</td></tr>
+        <tr><td class="bld">Villa Adriana</td><td>Periurbano</td><td class="bld">Mixto</td></tr>
+      </table>
+      <div class="nt" style="margin-top:8px;"><strong>📌 Concentración urbana</strong>La cabecera de Cañuelas concentra la mayoría del padrón del partido. Las localidades rurales tienen peso simbólico pero no determinan el resultado electoral por volumen.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#FFFBEB;color:#6B4C00;">🍮 Capital del Dulce de Leche · Turismo y Gastronomía</div>
+    <div class="cbody">
+      <table class="t">
+        <tr><td>Título oficial</td><td class="ok">Capital Nacional del Dulce de Leche</td></tr>
+        <tr><td>Origen histórico</td><td class="bld">La Martona · 1889 · Vicente Casares</td></tr>
+        <tr><td>Fiesta Nacional</td><td class="bld">Fiesta Nacional del Dulce de Leche</td></tr>
+        <tr><td>Fiesta Costillar Criollo</td><td class="ok">35.000+ visitantes · 1° de Mayo</td></tr>
+        <tr><td>Pueblo sede del Costillar</td><td class="bld">Uribelarrea (1.600 hab.)</td></tr>
+        <tr><td>Ediciones del Costillar</td><td class="bld">4ª edición 2026 (desde 2023)</td></tr>
+        <tr><td>Múltiplo turístico</td><td class="ok">22x la población de Uribelarrea</td></tr>
+        <tr><td>Identidad gastronómica</td><td class="ok">Destino fin de semana desde CABA</td></tr>
+        <tr><td>Potencial provincial</td><td class="ok">Ruta gastronómica · turismo rural</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ANEXO II — ANÁLISIS POLÍTICO-TERRITORIAL -->
+<!-- ============================================================ -->
+
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div style="background:linear-gradient(135deg,#0f2944 0%,#1d3461 100%);color:white;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+  <div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Cañuelas · PBA 2026</div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO II — ANÁLISIS POLÍTICO-TERRITORIAL</div>
+  </div>
+  <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">Segmentos electorales · Agenda provincial<br>Dinámica electoral 2023–2027</div>
+</div>
+<div style="padding:16px 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#eef2f7;">
+
+  <div class="card">
+    <div class="ch" style="background:#0f2944;color:#F5D87A;">📈 Electoral completo · Tendencia y comparativa</div>
+    <div class="cbody">
+      <div class="st">Resultado por elección y categoría</div>
+      <table class="t">
+        <tr><th>Categoría</th><th>Año</th><th>PJ</th><th>LLA/JxC</th><th>Brecha</th></tr>
+        <tr><td>Intendente</td><td>2023</td><td class="ok">47,0%</td><td>24,1% LLA</td><td class="ok">+22,9 PJ</td></tr>
+        <tr><td>Concejales</td><td>2025</td><td class="ok">45,8%</td><td>31,4% LLA</td><td class="ok">+14,4 PJ</td></tr>
+        <tr><td>Dip. Nacional</td><td>2025</td><td class="warn">38,8%</td><td>43,2% LLA</td><td class="bad">-4,4 PJ</td></tr>
+      </table>
+      <div class="st2">Lectura de la tendencia</div>
+      <table class="t">
+        <tr><td>Crecimiento LLA local</td><td class="warn">24,1% (2023) → 31,4% (2025): +7,3 pts</td></tr>
+        <tr><td>Crecimiento LLA nacional</td><td class="bad">De 0 a 43,2% en 2 años</td></tr>
+        <tr><td>Resistencia PJ local</td><td class="ok">Fassi mantiene ~46% sostenido</td></tr>
+        <tr><td>Riesgo electoral 2027</td><td class="warn">Si LLA consolida 30%+ en local</td></tr>
+        <tr><td>JxC en 2023</td><td class="bld">25,2% (9.912 votos)</td></tr>
+        <tr><td>Destino del voto JxC</td><td class="warn">Migró mayoritariamente a LLA 2025</td></tr>
+      </table>
+      <div class="al al-a" style="margin-top:10px;">
+        <strong>📌 El voto JxC que migró a LLA</strong>
+        En 2023, JxC obtuvo 9.912 votos (25,2%). En 2025 JxC ya no existe como fuerza. LLA en concejales obtuvo 10.908 votos. La ecuación es clara: el voto JxC se trasladó a LLA casi en su totalidad. El PJ mantiene su base histórica pero está solo frente a una oposición unificada.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#0f2944;color:#F5D87A;">👥 Segmentos electorales · Mapa del electorado</div>
+    <div class="cbody">
+      <table class="t">
+        <tr><th>Segmento</th><th>Est. %</th><th>Demanda principal</th><th>Voto</th></tr>
+        <tr><td class="bld">Peronismo clásico (obrero · industrial)</td><td>32%</td><td>Empleo, salud, sindicatos</td><td class="ok">PJ fiel</td></tr>
+        <tr><td class="bld">Sector agropecuario · MAG · campo</td><td>12%</td><td>Retenciones, acceso, infraestructura</td><td class="warn">Mixto · LLA tendencia</td></tr>
+        <tr><td class="bld">Clase media urbana · cabecera</td><td>20%</td><td>Seguridad, gestión, costos</td><td class="warn">PJ local · LLA nacional</td></tr>
+        <tr><td class="bld">Polo ecuestre · turismo premium</td><td>5%</td><td>Infraestructura, conectividad</td><td class="warn">No definido</td></tr>
+        <tr><td class="bld">Jóvenes · primer voto</td><td>10%</td><td>Empleo, vivienda, educación</td><td class="warn">LLA en nacional</td></tr>
+        <tr><td class="bld">Trabajadores informales · periferia</td><td>12%</td><td>Asistencia, vivienda, transporte</td><td class="ok">PJ consolidado</td></tr>
+        <tr><td class="bld">Izquierda · FIT · activismo</td><td>5%</td><td>Derechos laborales, distribución</td><td class="bld">FIT</td></tr>
+        <tr><td class="bld">Resto · no alineados</td><td>4%</td><td>Variable</td><td class="bld">Indefinido</td></tr>
+      </table>
+      <div class="al al-b" style="margin-top:10px;">
+        <strong>📌 El segmento clave: clase media urbana</strong>
+        El 20% de clase media urbana que vota PJ en local y LLA en nacional es el electorado que define el resultado. Si en 2027 ese segmento mantiene la distinción (PJ para el partido, otra cosa para la nación), Fassi y el espacio provincial mantienen Cañuelas. Si la distinción se rompe, el municipio se vuelve competitivo.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#0f2944;color:#F5D87A;">🏛️ Agenda Provincial · Oportunidades y riesgos</div>
+    <div class="cbody">
+      <table class="t">
+        <tr><th>Intervención provincial</th><th>Impacto</th><th>Urgencia</th></tr>
+        <tr><td class="bld">Infraestructura vial MAG/PAC (Ruta 3)</td><td class="ok">Alto · 7.000 empleos PAC</td><td class="bad">Alta</td></tr>
+        <tr><td class="bld">SAMIC · mantenimiento y equipamiento</td><td class="ok">Alto · salud regional</td><td class="ok">Media</td></tr>
+        <tr><td class="bld">PAC · red cloacal y energética</td><td class="ok">Alto · inversión privada</td><td class="warn">Media-alta</td></tr>
+        <tr><td class="bld">Polo Universitario · articulación</td><td class="ok">Medio · retención de jóvenes</td><td class="ok">Baja</td></tr>
+        <tr><td class="bld">Polo turístico · circuitos provinciales</td><td class="warn">Medio · turismo internacional</td><td class="ok">Media</td></tr>
+        <tr><td class="bld">"Cañuelas Mi Lugar" · extensión de redes</td><td class="ok">Alto · base PJ jóvenes</td><td class="warn">Media-alta</td></tr>
+      </table>
+      <div class="st2">Riesgos a monitorear</div>
+      <table class="t">
+        <tr><td>LLA consolida voto local</td><td class="bad">Riesgo electoral 2027 real</td></tr>
+        <tr><td>JxC inexistente como alternativa</td><td class="warn">Polarización PJ vs. LLA</td></tr>
+        <tr><td>PAC demora en construir</td><td class="warn">Promesas sin concreción</td></tr>
+        <tr><td>Vínculo campo-campo vs. campo PJ</td><td class="warn">Sector agropecuario tiende a LLA</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#0f2944;color:#F5D87A;">🗺️ Análisis territorial · MAG como transformador</div>
+    <div class="cbody">
+      <div class="st">Antes y después del MAG en Cañuelas</div>
+      <table class="t">
+        <tr><th>Variable</th><th>Antes (pre-2022)</th><th>Ahora (2022+)</th></tr>
+        <tr><td>Rol territorial</td><td>Interior agropecuario</td><td class="ok">Hub ganadero mundial</td></tr>
+        <tr><td>Flujo de camiones</td><td>Bajo · ganadero local</td><td class="ok">500+ camiones/día</td></tr>
+        <tr><td>Inversión privada entrante</td><td>Puntual</td><td class="ok">u$s 250M (PAC)</td></tr>
+        <tr><td>Empleo proyectado</td><td>Estable</td><td class="ok">+7.000 empleos (PAC)</td></tr>
+        <tr><td>Visibilidad nacional</td><td>Media</td><td class="ok">Alta · medios nacionales</td></tr>
+        <tr><td>Municipio vecino impactado</td><td>Las Heras</td><td class="ok">Crecimiento conjunto</td></tr>
+      </table>
+      <div class="st2">Comparativa MAG vs. Liniers</div>
+      <table class="t">
+        <tr><th>Indicador</th><th>Liniers (hist.)</th><th>MAG Cañuelas</th></tr>
+        <tr><td>Superficie</td><td>32 has</td><td class="ok">110 has (+244%)</td></tr>
+        <tr><td>Capacidad diaria</td><td>~8.000 cab.</td><td class="ok">12.000 cab.</td></tr>
+        <tr><td>Corrales</td><td>Sin techo</td><td class="ok">Techados</td></tr>
+        <tr><td>Acceso logístico</td><td>Urbano · restringido</td><td class="ok">Rural · Ruta 3 directa</td></tr>
+        <tr><td>Años de operación (prev.)</td><td>120 años</td><td class="bld">Desde 2022 · en expansión</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /grid -->
+</div><!-- /anexo-ii-wrapper -->
+
+<div class="footer">PBA Analytics 2026 · CAÑUELAS — Fichas de Campaña Completas · Uso reservado</div>
+
+</body>
+</html>

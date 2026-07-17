@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EZEIZA — Ficha de Campaña · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.header { color: white; padding: 22px 28px; display: flex; justify-content: space-between; align-items: flex-start; }
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.85; line-height: 1.95; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-aliado { background: rgba(34,197,94,0.7); }
+.banner { background: #0f2944; color: white; padding: 20px 28px; border-left: 7px solid #22C55E; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #22C55E; margin-bottom: 7px; }
+.b-title  { font-size: 15.5px; font-weight: 800; margin-bottom: 13px; line-height: 1.35; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #86EFAC; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 19px; font-weight: 900; color: #86EFAC; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+.main { padding: 18px 22px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; background: #eef2f7; }
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+.card { background: white; border-radius: 10px; box-shadow: 0 1px 5px rgba(0,0,0,0.07); overflow: hidden; }
+.ch { padding: 10px 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.9px; }
+.cbody { padding: 13px; }
+.st { font-size: 9.5px; font-weight: 700; color: #14532D; padding-bottom: 5px; border-bottom: 2px solid #16A34A; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.st2 { font-size: 9.5px; font-weight: 700; color: #1F4E79; padding-bottom: 5px; border-bottom: 2px solid #1F4E79; margin-top: 14px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #EDE9FE; border: 1px solid #C4B5FD; color: #4C1D95; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+.t { width: 100%; border-collapse: collapse; font-size: 11px; }
+.t th { background: #f5f6f8; color: #555; padding: 5px 7px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 5px 7px; border-bottom: 1px solid #f3f4f6; vertical-align: top; word-break: break-word; }
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child { width: 44%; color: #555; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 11px 12px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 21px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9px; color: #999; margin-top: 3px; line-height: 1.35; }
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.sc   { border-radius: 7px; padding: 11px 12px; border-left: 4px solid; }
+.sc.p { border-color: #2563EB; background: #EFF6FF; }
+.sc.s { border-color: #059669; background: #ECFDF5; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #7C3AED; background: #F5F3FF; }
+.sc.r { border-color: #DC2626; background: #FEF2F2; }
+.sc.g { border-color: #16A34A; background: #F0FDF4; }
+.sl { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.sn { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.sp { font-size: 18px; font-weight: 900; margin: 3px 0 6px; }
+.sd { font-size: 10px; line-height: 1.65; color: #444; }
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.pbl { width: 120px; font-size: 9.5px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; height: 16px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 5px; }
+.pbt { font-size: 9px; font-weight: 700; color: white; white-space: nowrap; }
+.pbp { width: 32px; font-size: 9.5px; font-weight: 700; text-align: right; flex-shrink: 0; }
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pi   { border-radius: 7px; padding: 11px 13px; border-left: 4px solid; }
+.pi.o { background: #F0FDF4; border-color: #22C55E; }
+.pi.r { background: #FFF7ED; border-color: #F97316; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pi.p { background: #F5F3FF; border-color: #7C3AED; }
+.pt   { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.pti  { font-size: 11px; font-weight: 700; margin-bottom: 5px; }
+.pd   { font-size: 10px; line-height: 1.65; color: #444; }
+.ar   { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f0f0f0; }
+.ar:last-child { border-bottom: none; }
+.ai   { font-size: 18px; min-width: 24px; flex-shrink: 0; }
+.ain  { flex: 1; min-width: 0; }
+.an   { font-size: 11px; font-weight: 700; color: #14532D; margin-bottom: 3px; }
+.ad   { font-size: 10px; color: #555; line-height: 1.6; }
+.ats  { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+.at   { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 7px; }
+.ag   { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px dashed #e8e8e8; }
+.ag:last-child { border-bottom: none; }
+.agi  { font-size: 17px; min-width: 22px; flex-shrink: 0; }
+.agt  { min-width: 0; }
+.agt strong { font-size: 11px; display: block; margin-bottom: 3px; color: #14532D; font-weight: 700; }
+.agt p { font-size: 10px; color: #666; line-height: 1.6; }
+.al   { border-radius: 7px; padding: 10px 12px; margin-top: 10px; font-size: 10px; line-height: 1.6; }
+.al-v { background: #F0FDF4; border: 1px solid #86EFAC; color: #14532D; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al-r { background: #FEF2F2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.al-k { background: #0f2944; color: white; }
+.al strong { display: block; margin-bottom: 3px; font-size: 11px; }
+.al-k strong { color: #86EFAC; }
+.nt   { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 7px; padding: 9px 12px; font-size: 10px; color: #1E3A5F; margin-top: 10px; line-height: 1.6; }
+.nt strong { display: block; font-size: 11px; margin-bottom: 3px; color: #1E40AF; }
+.hist { background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 7px; padding: 10px 12px; margin-top: 10px; }
+.hist strong { font-size: 11px; font-weight: 700; color: #78350F; display: block; margin-bottom: 4px; }
+.hist p { font-size: 10px; color: #78350F; line-height: 1.65; }
+.corr { background: linear-gradient(135deg, #1e3a5f 0%, #2563EB 100%); color: white; border-radius: 8px; padding: 13px 15px; margin-top: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.corr h3 { font-size: 11px; font-weight: 800; margin-bottom: 5px; color: #86EFAC; }
+.corr p  { font-size: 10px; line-height: 1.65; opacity: 0.9; }
+.cms { display: flex; gap: 7px; margin-top: 9px; flex-wrap: wrap; }
+.cm  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; padding: 6px 9px; flex: 1; text-align: center; font-size: 10px; font-weight: 700; min-width: 70px; }
+.cm span { display: block; font-size: 8.5px; font-weight: 400; opacity: 0.65; margin-top: 2px; }
+.acc-nac  { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#dde3f5; color:#1d3461; border:1px solid #1d346144; white-space:nowrap; }
+.acc-prot { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#fef3c7; color:#5c3317; border:1px solid #5c331744; white-space:nowrap; }
+.locs { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+.loc  { border-radius: 6px; padding: 8px 10px; border-left: 3px solid; font-size: 10px; line-height: 1.55; }
+.loc strong { font-size: 10.5px; display: block; margin-bottom: 2px; }
+.footer { text-align: center; padding: 12px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+@media print {
+  @page { size: A4 portrait; margin: 6mm 7mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; padding: 0 !important; font-size: 7pt !important; background: #eef2f7 !important; }
+  .main { padding: 7px 9px !important; gap: 7px !important; }
+  .card { box-shadow: none !important; page-break-inside: avoid; break-inside: avoid; }
+  .ch { font-size: 6pt !important; padding: 5px 7px !important; }
+  .cbody { padding: 7px !important; }
+  .header h1 { font-size: 15pt !important; }
+  .banner { page-break-inside: avoid; }
+  .t { font-size: 6pt !important; }
+  .t td, .t th { padding: 3px 4px !important; }
+  .kv { font-size: 13pt !important; }
+  .kpis { grid-template-columns: 1fr 1fr 1fr 1fr !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header" style="background: linear-gradient(135deg, #14532D 0%, #16A34A 100%);">
+  <div class="header-left">
+    <h1>✈️ EZEIZA</h1>
+    <div class="sub">Ficha de Campaña · Aeropuerto · CNEA · Canning · Parques Industriales · 2026</div>
+    <div class="tag">3ª Sección Electoral · Conurbano Sur · Municipio creado 1994 · ex Esteban Echeverría · 6 localidades</div>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente:</strong> Gastón Granados <span class="badge badge-aliado">UxP · Aliado</span></div>
+    <div><strong>Padre:</strong> Alejandro Granados · intendente histórico</div>
+    <div><strong>PJ Intendencia 2023:</strong> 60,3% — Fortaleza histórica</div>
+    <div><strong>PJ Concejales Prov. 2025:</strong> 63,4% — Estructura intacta</div>
+    <div><strong>LLA Dip. Nac. 2025:</strong> 38,2% — Señal de alerta</div>
+    <div><strong>Padrón 2025:</strong> 165.707 · creciendo (+8.716 en 2 años)</div>
+    <div style="margin-top:5px;font-size:9.5px;opacity:0.5;">PBA Analytics 2026 · Uso reservado</div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="b-label">⚠️ BASTIÓN EN EVOLUCIÓN · PJ 60%+ LOCAL — LLA 38% NACIONAL · CANNING REPLICA EL MODELO PILAR EN EL SUR</div>
+  <div class="b-title">Ezeiza es la suma de tres municipios en uno: la zona aeroportuaria-industrial del norte, la expansión de barrios cerrados de Canning al este, y el cinturón popular histórico en el centro y sur — cada zona con su propia dinámica electoral</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>La estructura dual del territorio:</strong> Ezeiza tiene una base PJ consolidada en los barrios históricos — 20 de Junio, La Unión, el área periférica al aeropuerto — con una estructura territorial heredada y reforzada por Gastón Granados. Pero tiene simultáneamente uno de los corredores de barrios cerrados de mayor crecimiento del GBA: Canning sobre la Ruta 58 replica exactamente la dinámica que Pilar tuvo sobre la Panamericana en los 90. Ese sector es estructuralmente hostil al peronismo, vota PRO/LLA, y crece más rápido que la base propia.</p>
+      <p><strong>El riesgo si no se actúa:</strong> El padrón creció 8.716 electores entre 2023 y 2025 — casi 5.500 por año. Los nuevos inscriptos en Canning votan LLA en categoría nacional (38,2%). Si esa tendencia contamina las categorías locales, el municipio pasa de bastión a territorio competitivo. El modelo Pilar tomó 15 años en suceder; Ezeiza tiene menos tiempo porque el proceso arrancó más acelerado.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>Los activos que compensan:</strong> Ezeiza tiene tres activos industriales únicos en el GBA sur que ningún municipio del corredor de countries puede ofrecer: el polo aeroportuario con su economía de 14M de pasajeros anuales, la CNEA con su producción de radiofármacos exportados a 40 países, y los parques industriales y logísticos que concentran empleo azul y sindicalizado — el núcleo de la base PJ. Esos activos son irreproducibles y generan una lealtad electoral estructural que ninguna ola libertaria puede erosionar rápidamente.</p>
+      <p><strong>Lo que Gastón Granados enfrenta en 2027:</strong> Administrar esa tensión: consolidar los barrios históricos, no perder más terreno en Canning, y apostar a que los trabajadores industriales y aeroportuarios mantengan la lealtad local aunque en la categoría nacional se comporten distinto. El voto dividido por categoría — 63% local vs. 44% nacional — es la brecha que hay que entender y trabajar.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">60,3%</div><div class="l">PJ Intendencia 2023<br>Gastón Granados · UxP</div></div>
+    <div class="b-num"><div class="n">63,4%</div><div class="l">PJ Conc. Prov. 2025<br>Estructura local intacta</div></div>
+    <div class="b-num"><div class="n">38,2%</div><div class="l">LLA Dip. Nac. 2025<br>+15 pts sobre 2023</div></div>
+    <div class="b-num"><div class="n">+8.716</div><div class="l">Nuevos electores 2023–25<br>Mayoría: Canning</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- KPIs -->
+<div class="card full">
+  <div class="ch" style="background:#14532D;color:white;">📊 Datos Electorales y Demográficos Clave · Ezeiza</div>
+  <div class="cbody" style="padding:14px 16px;">
+    <div class="kpis">
+      <div class="kpi" style="background:#F0FDF4;border-color:#86EFAC;">
+        <div class="kl">PJ Intendencia 2023</div>
+        <div class="kv" style="color:#15803D;">60,3%</div>
+        <div class="ks">66.710 votos · JxC 13% · LLA 23,4% · FI 3,3%<br>Padrón: 156.991 · Total positivos: 110.568</div>
+      </div>
+      <div class="kpi" style="background:#F0FDF4;border-color:#86EFAC;">
+        <div class="kl">PJ Concejales Prov. 2025</div>
+        <div class="kv" style="color:#15803D;">63,4%</div>
+        <div class="ks">62.639 votos · LLA 24,7% · FI 3,4%<br>Padrón: 165.707 · Total positivos: 98.722</div>
+      </div>
+      <div class="kpi" style="background:#FEF3C7;border-color:#FCD34D;">
+        <div class="kl">LLA Dip. Nac. 2025 — Alerta</div>
+        <div class="kv" style="color:#D97706;">38,2%</div>
+        <div class="ks">37.172 votos · PJ 44,5% (43.268) · FI 4,9%<br>Total positivos: 97.262 · Brecha PJ-LLA: 6 pts</div>
+      </div>
+      <div class="kpi" style="background:#EFF6FF;border-color:#93C5FD;">
+        <div class="kl">Crecimiento padrón</div>
+        <div class="kv" style="color:#1D4ED8;font-size:17px;">+8.716</div>
+        <div class="ks">De 156.991 (2023) a 165.707 (2025)<br>+5,5% en 2 años · ritmo: ~4.400/año</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDAD Y LOCALIDADES -->
+<div class="card one">
+  <div class="ch" style="background:#ECFDF5;color:#065F46;">🗺️ Identidad y Localidades</div>
+  <div class="cbody">
+    <div class="chips">
+      <span class="chip cg">✈️ Polo aeroportuario</span>
+      <span class="chip cb">⚛️ CNEA</span>
+      <span class="chip co">🏘️ Canning — barrios cerrados</span>
+      <span class="chip cp">🏭 Parques industriales</span>
+      <span class="chip cz">🌿 Cinturón rural sur</span>
+    </div>
+
+    <div class="st">6 Localidades · Perfiles distintos</div>
+    <div class="locs">
+      <div class="loc" style="border-color:#16A34A;background:#F0FDF4;">
+        <strong>Ezeiza (cabecera)</strong>
+        Zona aeroportuaria. Clase trabajadora. Empleados del aeropuerto, servicios y Estado. Base PJ histórica. Área de mayor densidad institucional.
+      </div>
+      <div class="loc" style="border-color:#DC2626;background:#FEF2F2;">
+        <strong>Canning</strong>
+        Corredor Ruta 58. Explosión de barrios cerrados y countries. Clase media-alta. Perfil PRO/LLA. Crecimiento más rápido del municipio. La "nueva frontera" política.
+      </div>
+      <div class="loc" style="border-color:#D97706;background:#FFFBEB;">
+        <strong>Tristán Suárez</strong>
+        Sur del municipio. Carácter mixto: sectores populares y algunos emprendimientos rurales. Agricultura periurbana. Base PJ moderada.
+      </div>
+      <div class="loc" style="border-color:#2563EB;background:#EFF6FF;">
+        <strong>20 de Junio</strong>
+        Nombrada en homenaje al 20/6/1973. Barrio popular consolidado. Base PJ tradicional. Alta densidad de organización territorial municipal.
+      </div>
+      <div class="loc" style="border-color:#7C3AED;background:#F5F3FF;">
+        <strong>La Unión</strong>
+        Localidad pequeña. Perfil obrero. Próxima a zona industrial. Integrada a la trama urbana del municipio.
+      </div>
+      <div class="loc" style="border-color:#0284C7;background:#F0F9FF;">
+        <strong>Carlos Spegazzini</strong>
+        Sur del partido. Rural y semi-rural. Agricultores periurbanos. Presencia de planteos hortícolas. Baja densidad poblacional pero peso simbólico en la identidad municipal.
+      </div>
+    </div>
+
+    <div class="nt" style="margin-top:10px;">
+      <strong>📌 Origen del nombre</strong>
+      "Ezeiza" proviene de la familia vasca Ezeiza, propietaria de tierras en la zona en el s. XIX. El municipio se creó el 29/12/1994 por división de Esteban Echeverría. La localidad 20 de Junio lleva el nombre del regreso de Perón en 1973 — un guiño histórico que define la identidad política del municipio.
+    </div>
+    <div class="hist">
+      <strong>📜 El 20 de junio de 1973 · El peso del nombre</strong>
+      <p>El 20 de junio de 1973 más de 3 millones de personas esperaban el regreso de Perón en el aeropuerto de Ezeiza. La masacre — grupos armados de la derecha peronista abrieron fuego sobre la multitud izquierdista — dejó decenas de muertos. Perón aterrizó en Morón y habló por radio. La "Masacre de Ezeiza" prefiguró el fracturamiento que terminaría con el golpe del 76. El nombre del municipio, una de sus localidades y el aeropuerto cargan ese peso histórico.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MATRIZ PRODUCTIVA -->
+<div class="card two">
+  <div class="ch" style="background:#1d3461;color:white;">⚙️ Matriz Productiva · Tres economías en un municipio</div>
+  <div class="cbody">
+    <div class="st">Economías que coexisten y definen el perfil social y electoral</div>
+    <div class="sgrid">
+      <div class="sc p">
+        <div class="sl">🥇 Economía aeroportuaria</div>
+        <div class="sn">Polo Aeroportuario Pistarini</div>
+        <div class="sp" style="color:#2563EB;">14M pax/año</div>
+        <div class="sd">El aeropuerto más importante de Argentina genera miles de empleos directos: aerolíneas, handling, carga, seguridad, gastronomía, hotelería. El empleo aeroportuario es en su mayoría sindicalizado y constituye uno de los núcleos de la base peronista. El problema: muchos trabajadores viajan desde otros municipios, reduciendo el impacto electoral local de ese empleo.</div>
+      </div>
+      <div class="sc s">
+        <div class="sl">🔹 Soberanía tecnológica</div>
+        <div class="sn">CNEA — Centro Atómico Ezeiza</div>
+        <div class="sp" style="color:#059669;">40 países</div>
+        <div class="sd">El CAE produce radiofármacos (Mo-99/Tc-99m) exportados a 40 países. Argentina enriquece uranio con tecnología propia. Los trabajadores del CNEA son en su mayoría profesionales universitarios — un segmento educado, moderadamente progresista, distinto del perfil obrero del aeropuerto. Representan un segmento fiel pero autónomo del PJ.</div>
+      </div>
+      <div class="sc t">
+        <div class="sl">🔸 Tejido industrial y logístico</div>
+        <div class="sn">Parques Industriales · Zona Logística</div>
+        <div class="sp" style="color:#D97706;">Creciente</div>
+        <div class="sd">Ezeiza alberga parques industriales con empresas del sector alimentario, químico, metalúrgico y de logística. La proximidad al aeropuerto convierte a estos parques en zonas de valor para la logística de importación/exportación, carga aérea y distribución refrigerada. Empleo mayoritariamente azul y sindicalizado — base PJ tradicional irreductible.</div>
+      </div>
+      <div class="sc r">
+        <div class="sl">⚠️ Tensión electoral — economía de countries</div>
+        <div class="sn">Canning · Barrios Cerrados</div>
+        <div class="sp" style="color:#DC2626;">Anti-PJ</div>
+        <div class="sd">La economía de barrios cerrados genera servicios (gastronomía, comercio premium, construcción, seguridad privada) pero concentra una demografía estructuralmente hostil al peronismo. Los residentes de countries tienen menor dependencia del Estado, menor afinidad sindical y mayor inclinación hacia el voto PRO/LLA. Es el sector de más rápido crecimiento del municipio.</div>
+      </div>
+    </div>
+
+    <div class="st2">Distribución estimada de actividad económica</div>
+    <div class="pbr"><div class="pbl">Aeroportuaria · logística</div><div class="pbo"><div class="pbi" style="width:62%;background:#2563EB"><div class="pbt">~31%</div></div></div><div class="pbp" style="color:#2563EB;">31%</div></div>
+    <div class="pbr"><div class="pbl">Comercio y servicios</div><div class="pbo"><div class="pbi" style="width:44%;background:#059669"><div class="pbt">~22%</div></div></div><div class="pbp" style="color:#059669;">22%</div></div>
+    <div class="pbr"><div class="pbl">Industrial · manufactura</div><div class="pbo"><div class="pbi" style="width:36%;background:#D97706"><div class="pbt">~18%</div></div></div><div class="pbp" style="color:#D97706;">18%</div></div>
+    <div class="pbr"><div class="pbl">Real estate · countries</div><div class="pbo"><div class="pbi" style="width:30%;background:#DC2626"><div class="pbt">~15%</div></div></div><div class="pbp" style="color:#DC2626;">15%</div></div>
+    <div class="pbr"><div class="pbl">Estado · salud · educ.</div><div class="pbo"><div class="pbi" style="width:20%;background:#7C3AED"><div class="pbt">~10%</div></div></div><div class="pbp" style="color:#7C3AED;">10%</div></div>
+    <div class="pbr"><div class="pbl">CNEA · tecnología</div><div class="pbo"><div class="pbi" style="width:8%;background:#1d3461"><div class="pbt">~4%</div></div></div><div class="pbp" style="color:#1d3461;">4%</div></div>
+
+    <div class="st2">Actores productivos clave</div>
+    <div class="ar">
+      <div class="ai">✈️</div>
+      <div class="ain">
+        <div class="an">Aeropuerto Internacional Ministro Pistarini · AA2000</div>
+        <div class="ad">Concesionado a AA2000 (Corporación América · Eurnekian). Hub internacional: 14M pasajeros anuales, 90+ aerolíneas. Cargo aérea: principal hub de importaciones sensibles (electroelectrónica, farmacéutica, perecederos). Empleo sindical: APTA, AAA, UOCRA en obras.</div>
+        <div class="ats"><span class="at" style="background:#fef3c7;color:#5c3317;">🤝 PROTOCOLAR · 7.45</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">⚛️</div>
+      <div class="ain">
+        <div class="an">CNEA — Centro Atómico Ezeiza</div>
+        <div class="ad">Planta de producción de Mo-99/Tc-99m, enriquecimiento de uranio, reactores de investigación, agua pesada. ~1.500 empleados directos entre investigadores, técnicos y personal de apoyo. Dependencia del Estado nacional.</div>
+        <div class="ats"><span class="at" style="background:#dde3f5;color:#1d3461;">🏛️ NACIONAL · 8.35</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🏭</div>
+      <div class="ain">
+        <div class="an">Parques Industriales · Zona Logística Aeroportuaria</div>
+        <div class="ad">Industria alimentaria, química, metalúrgica y de embalaje. Logística de carga aérea: frío, farmacéutica, distribución. Cadenas de frío para exportaciones agropecuarias. Empleo azul sindicalizado — nuclea SMATA, UOM, UATRE, Camioneros.</div>
+        <div class="ats"><span class="at" style="background:#D1FAE5;color:#065F46;">Base PJ estructural</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🏘️</div>
+      <div class="ain">
+        <div class="an">Barrios Cerrados y Countries · Corredor Canning</div>
+        <div class="ad">Ruta 58 y accesos: Canning Club, Greenville, Los Potrillos, San Jorge Village, Country Las Praderas, entre otros. Real estate residencial premium. Comercio de alta gama, colegios privados bilingües, sanatorios privados. Padrón creciente con votantes de perfil LLA.</div>
+        <div class="ats"><span class="at" style="background:#FEE2E2;color:#7F1D1D;">⚠️ Demografía LLA</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSPECTIVA PROVINCIAL -->
+<div class="card full">
+  <div class="ch" style="background:#0f2944;color:#86EFAC;">🏛️ Perspectiva Provincial · Inversiones y agenda que solo el nivel provincial activa</div>
+  <div class="cbody">
+    <div class="pgrid">
+      <div class="pi d">
+        <div class="pt">🔵 Infraestructura vial · deuda histórica</div>
+        <div class="pti">Accesos al aeropuerto: más allá de la Ricchieri</div>
+        <div class="pd">La Autopista Ricchieri es el único acceso rápido al aeropuerto más importante de Argentina. La Ruta Provincial 58 (acceso a Canning) tiene déficit de mantenimiento y capacidad. Un plan provincial de vialidad sobre estos ejes tiene impacto en logística, empleo y calidad de vida de toda la población del municipio — tanto la clase trabajadora que llega al aeropuerto como la de Canning que necesita los accesos.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">✅ Empleo local en el polo aeroportuario</div>
+        <div class="pti">Programa provincial para que ezeizenses trabajen en Ezeiza</div>
+        <div class="pd">El aeropuerto emplea miles de personas pero gran parte viaja desde otros municipios. Un programa provincial de formación y articulación laboral con aerolíneas, operadores de handling y empresas de logística, con prioridad para residentes del partido de Ezeiza, cierra una brecha histórica y tiene impacto directo en los barrios populares: el aeropuerto quedaría, en la percepción local, como "el empleador de los vecinos de Ezeiza".</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 CNEA · Soberanía tecnológica como agenda provincial</div>
+        <div class="pti">Ezeiza como nodo del ecosistema provincial de ciencia y tecnología</div>
+        <div class="pd">La CNEA es un organismo nacional pero el municipio y la provincia pueden articular una agenda de vinculación tecnológica: proveedores locales de servicios al CAE, formación técnica con orientación en ciencias nucleares, integración con UNTreF (que tiene convenio con CNEA), y comunicación de la producción de radiofármacos como orgullo productivo bonaerense.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">✅ Parques industriales · escalar la capacidad</div>
+        <div class="pti">Inversión provincial para ampliar la zona industrial logística</div>
+        <div class="pd">Los parques industriales de Ezeiza tienen demanda de ampliación. Infraestructura provincial — cloacas industriales, tendido eléctrico de alta tensión, vialidad de acceso — permite incorporar nuevas empresas, especialmente del sector logístico-aeroportuario que busca proximidad al aeropuerto. Cada empresa nueva son puestos de trabajo para el sector popular del municipio.</div>
+      </div>
+      <div class="pi r">
+        <div class="pt">⚠️ Infraestructura básica · barrios populares</div>
+        <div class="pti">Cloaca, pavimento e iluminación en 20 de Junio, La Unión y periferia de Ezeiza</div>
+        <div class="pd">Los barrios populares históricos del municipio tienen déficit de cloacas, pavimento e iluminación. El municipio joven (creado en 1994) heredó infraestructura insuficiente de Esteban Echeverría. Con presupuesto propio limitado, Ezeiza depende de fondos provinciales para cerrar esas brechas. Son las obras que la base PJ espera y mide directamente.</div>
+      </div>
+      <div class="pi p">
+        <div class="pt">🟣 Canning · estrategia de neutralización</div>
+        <div class="pti">Lo que puede hacer la provincia para que Canning no sea solo voto LLA</div>
+        <div class="pd">Canning necesita seguridad en los accesos, mantenimiento de rutas provinciales, transporte público hacia CABA (el corredor tiene servicio deficiente). Son demandas concretas del sector de countries que la Provincia puede resolver. Si Gastón Granados puede decir "la Provincia nos dio los accesos y el transporte que pedíamos", neutraliza parte del descontento que alimenta a LLA en Canning.</div>
+      </div>
+    </div>
+    <div class="corr">
+      <h3>🗺️ Ezeiza como nodo del Conurbano Sur · Lo que el municipio ancla regionalmente</h3>
+      <p>Ezeiza es el nodo logístico, de conectividad y tecnológico del sur del GBA. Sus activos (aeropuerto, CNEA, parques industriales) prestan servicios que van más allá de sus propios límites. Las decisiones provinciales sobre Ezeiza tienen efecto multiplicador en todos los municipios del corredor sur.</p>
+      <div class="cms">
+        <div class="cm">✈️ EZEIZA<span>Aeropuerto · CNEA · Industria</span></div>
+        <div class="cm">↔ LA MATANZA<span>Corredor oeste</span></div>
+        <div class="cm">↔ CAÑUELAS<span>Acceso sur · agro</span></div>
+        <div class="cm">↔ MARCOS PAZ<span>Conurbano sur</span></div>
+        <div class="cm">↔ PDTE. PERÓN<span>Expansión residencial</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISIS POLÍTICO DE GRANADOS -->
+<div class="card two">
+  <div class="ch" style="background:#F0FDF4;color:#14532D;">🔬 Análisis Político · Gastón Granados y la tensión estructural del municipio</div>
+  <div class="cbody">
+    <div class="st">El mapa electoral por segmento · dónde gana y dónde pierde</div>
+    <table class="t" style="margin-bottom:14px;">
+      <thead><tr><th>Elección</th><th>PJ/UxP</th><th>JxC</th><th>LLA</th><th>FI</th><th>Lectura</th></tr></thead>
+      <tbody>
+        <tr><td class="bld">Intendencia 2023</td><td class="ok">60,3%</td><td class="warn">13,0%</td><td class="warn">23,4%</td><td>3,3%</td><td style="color:#15803D;font-weight:700;">Victoria neta · estructura Granados</td></tr>
+        <tr><td class="bld">Conc. Prov. 2025</td><td class="ok">63,4%</td><td>—</td><td class="warn">24,7%</td><td>3,4%</td><td style="color:#15803D;font-weight:700;">Consolidación · JxC absorbida por PJ</td></tr>
+        <tr><td class="bld">Dip. Nac. 2025</td><td class="warn">44,5%</td><td>—</td><td class="bad">38,2%</td><td>4,9%</td><td style="color:#D97706;font-weight:700;">Brecha achicada · señal de alerta</td></tr>
+      </tbody>
+    </table>
+    <div class="st2">La brecha que importa: voto local vs. voto nacional</div>
+    <div class="ag">
+      <div class="agi">📊</div>
+      <div class="agt">
+        <strong>El voto dividido por categoría: 63% local — 44% nacional</strong>
+        <p>La diferencia entre el 63,4% en concejales y el 44,5% en diputados nacionales no es inconsistencia: es comportamiento racional del electorado. El votante que elige a Granados para intendente (confía en su gestión local) puede votar LLA para diputado nacional (apoya la dirección económica nacional de Milei o quiere darle respaldo legislativo). Son dos marcos de referencia distintos: gestión municipal por un lado, propuesta nacional por el otro. La tarea de Granados es que esa disociación no se transfiera a las categorías locales.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏘️</div>
+      <div class="agt">
+        <strong>El problema Canning: la replicación del modelo Pilar</strong>
+        <p>Pilar sobre la Panamericana en los 90 y Canning sobre la Ruta 58 en los 2010s son el mismo fenómeno: avenida rápida hacia CABA + explosión de barrios cerrados + llegada masiva de clase media que huye de la inseguridad urbana. En Pilar eso tardó 15 años en transformar la ecuación electoral. En Canning el proceso está acelerado. El padrón de Ezeiza crece a ~4.400 electores por año; si el 60% de eso viene de Canning (plausible dado el boom inmobiliario), son ~2.600 nuevos votantes anti-PJ por año.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🔵</div>
+      <div class="agt">
+        <strong>La absorción de JxC: el voto que ya cambió de dirección</strong>
+        <p>JxC tuvo el 13% en 2023 (intendencia). En 2025 ese caudal no aparece como fuerza propia: la mitad fue a LLA (explica el salto de 23,4% a 38,2% en dip. nac.) y la otra mitad aparentemente fue a PJ en local (explica el salto de 60,3% a 63,4% en concejales). Eso significa que Granados absorbió el voto moderado de centro; lo que creció en LLA viene de otro lado: nuevos votantes de Canning y jóvenes del municipio.</p>
+      </div>
+    </div>
+    <div class="ag" style="border-bottom:none;">
+      <div class="agi">⚠️</div>
+      <div class="agt">
+        <strong>Gastón Granados: la transición de segunda generación</strong>
+        <p>Gastón es hijo de Alejandro Granados, el intendente histórico de Ezeiza. Heredó una estructura territorial sólida pero enfrenta el reto clásico de la segunda generación: consolidar como propio un capital político que fue construido por otro. La señal positiva es que los resultados de 2023 y 2025 muestran que la estructura se mantuvo. El desafío de 2027 es demostrar que puede ganar también el voto nuevo — el de Canning — que no tiene memoria de su padre.</p>
+      </div>
+    </div>
+    <div class="al al-a">
+      <strong>⚠️ El indicador que hay que seguir: crecimiento del padrón en Canning</strong>
+      Si el padrón de Ezeiza crece a 170.000-175.000 en 2027 y ese incremento se concentra en Canning, la brecha entre voto local y nacional puede achicarse más. El escenario crítico es LLA superando el 45% en nacional con PJ cayendo al 42% — ahí el ecosistema de voto dividido deja de funcionar como escudo.
+    </div>
+  </div>
+</div>
+
+<!-- DISCURSO -->
+<div class="card one">
+  <div class="ch" style="background:#0f2944;color:white;">🎤 Agenda Discursiva</div>
+  <div class="cbody">
+    <div class="st">Ejes · Por segmento de electorado</div>
+    <div class="ag">
+      <div class="agi">⚛️</div>
+      <div class="agt">
+        <strong>Para el segmento CNEA / educado</strong>
+        <p>"Desde Ezeiza, Argentina exporta la ciencia que diagnostica enfermedades en 40 países. Eso es lo que hace el Estado cuando apuesta por sus propios científicos. La Provincia va a seguir apostando por ese modelo."</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">✈️</div>
+      <div class="agt">
+        <strong>Para el segmento aeroportuario / sindical</strong>
+        <p>"Los trabajadores del aeropuerto construyen la conectividad de Argentina. La Provincia los acompaña con formación, con infraestructura de acceso y con el reconocimiento que merecen los que mueven la economía."</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏭</div>
+      <div class="agt">
+        <strong>Para el segmento industrial / barrios populares</strong>
+        <p>"Los parques industriales de Ezeiza emplean a los vecinos de 20 de Junio, de La Unión, del municipio entero. La Provincia va a invertir en esa infraestructura para que esos puestos de trabajo sigan creciendo."</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏘️</div>
+      <div class="agt">
+        <strong>Para el segmento Canning / countries</strong>
+        <p>"La seguridad en los accesos, el mantenimiento de la Ruta 58, el transporte hacia CABA: son demandas concretas que la Provincia puede resolver. Ezeiza crece y merece infraestructura a la altura de ese crecimiento."</p>
+      </div>
+    </div>
+    <div class="ag" style="border-bottom:none;">
+      <div class="agi">🔧</div>
+      <div class="agt">
+        <strong>Para los barrios históricos / base propia</strong>
+        <p>"Los vecinos de 20 de Junio, de La Unión, de Ezeiza centro esperan cloacas, pavimento e iluminación. La Provincia va a acompañar con inversión concreta en las obras que el municipio necesita."</p>
+      </div>
+    </div>
+    <div class="al al-k">
+      <strong>⚡ La síntesis del municipio</strong>
+      "Ezeiza tiene el aeropuerto, el átomo y las fábricas — la combinación de activos que ningún otro municipio del sur tiene. Y tiene también el desafío de crecer sin perder lo que le dio su identidad. Ahí está el Estado provincial para acompañar ese crecimiento."
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS ESTRATÉGICAS -->
+<div class="card full">
+  <div class="ch" style="background:#1d3461;color:white;">🏛️ Visitas Estratégicas · CNEA y Aeropuerto</div>
+  <div class="cbody">
+    <table class="t">
+      <thead>
+        <tr>
+          <th style="width:25%;">Lugar</th>
+          <th style="width:9%;">Score</th>
+          <th style="width:12%;">Acceso</th>
+          <th style="width:54%;">Hook · Eje de visita</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CNEA — Centro Atómico Ezeiza</strong><br><span style="font-size:9px;color:#6b7280;">Av. Presbítero Juan González y Aragón 15</span></td>
+          <td style="font-weight:700;color:#1d3461;">8.35</td>
+          <td><span class="acc-nac">🏛️ NACIONAL</span></td>
+          <td style="font-size:10px;line-height:1.55;">Argentina enriquece uranio soberanamente y exporta radiofármacos a 40 países. Recorrida por producción de Mo-99/Tc-99m, instalaciones de investigación. Coordinar con presidencia CNEA. Eje: soberanía tecnológica del Estado.</td>
+        </tr>
+        <tr>
+          <td><strong>Aeropuerto Internacional Ministro Pistarini</strong><br><span style="font-size:9px;color:#6b7280;">Autopista Ricchieri km 33,5 · AA2000</span></td>
+          <td style="font-weight:700;color:#5c3317;">7.45</td>
+          <td><span class="acc-prot">🤝 PROTOCOLAR</span></td>
+          <td style="font-size:10px;line-height:1.55;">El principal aeropuerto del país: conectividad, logística internacional y empleo aeroportuario. Agenda: articulación laboral para residentes de Ezeiza, infraestructura de acceso, logística de exportaciones. Notificar AA2000.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Ficha Ezeiza · PBA Analytics 2026</div>
+
+<!-- ANEXO I -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+  <div style="background:linear-gradient(135deg,#14532D,#16A34A);color:white;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Ezeiza · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO I — INDICADORES TERRITORIALES Y ELECTORALES</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">3ª Sección Electoral · Conurbano Sur<br>Gastón Granados · UxP · Aliado</div>
+  </div>
+  <div style="padding:16px 20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;background:#eef2f7;">
+
+    <div class="card">
+      <div class="ch" style="background:#D1FAE5;color:#065F46;">🗳️ Evolución Electoral Completa</div>
+      <div class="cbody">
+        <table class="t">
+          <thead><tr><th>Elección</th><th>PJ</th><th>LLA</th><th>JxC</th><th>FI</th></tr></thead>
+          <tbody>
+            <tr><td>Intend. 2023</td><td class="ok">60,3%</td><td class="warn">23,4%</td><td class="warn">13,0%</td><td>3,3%</td></tr>
+            <tr><td>Conc. 2025</td><td class="ok">63,4%</td><td class="warn">24,7%</td><td>—</td><td>3,4%</td></tr>
+            <tr><td>Dip. 2025</td><td class="warn">44,5%</td><td class="bad">38,2%</td><td>—</td><td>4,9%</td></tr>
+          </tbody>
+        </table>
+        <table class="t" style="margin-top:8px;">
+          <tr><td>PJ votos 2023</td><td class="ok">66.710</td></tr>
+          <tr><td>LLA votos 2023</td><td class="warn">25.869</td></tr>
+          <tr><td>PJ votos 2025 loc.</td><td class="ok">62.639</td></tr>
+          <tr><td>LLA votos 2025 nac.</td><td class="bad">37.172</td></tr>
+          <tr><td>Padrón 2023</td><td class="inf">156.991</td></tr>
+          <tr><td>Padrón 2025</td><td class="inf">165.707</td></tr>
+          <tr><td>Crecimiento padrón</td><td class="warn">+8.716 · +5,5%</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#EFF6FF;color:#1E40AF;">🏘️ Localidades · Perfil Electoral</div>
+      <div class="cbody">
+        <table class="t">
+          <thead><tr><th>Localidad</th><th>Perfil</th><th>Voto estimado</th></tr></thead>
+          <tbody>
+            <tr><td class="bld">Ezeiza (cab.)</td><td>Aeroportuario · obrero</td><td class="ok">PJ fuerte</td></tr>
+            <tr><td class="bld">20 de Junio</td><td>Popular histórico</td><td class="ok">PJ muy fuerte</td></tr>
+            <tr><td class="bld">La Unión</td><td>Industrial obrero</td><td class="ok">PJ fuerte</td></tr>
+            <tr><td class="bld">Tristán Suárez</td><td>Mixto · clase media</td><td class="warn">PJ moderado</td></tr>
+            <tr><td class="bld">Carlos Spegazzini</td><td>Rural · periurbano</td><td class="warn">PJ moderado</td></tr>
+            <tr><td class="bld">Canning</td><td>Countries · clase media-alta</td><td class="bad">LLA creciente</td></tr>
+          </tbody>
+        </table>
+        <div class="al al-a" style="margin-top:8px;">
+          <strong>⚠️ La ecuación territorial</strong>
+          Los primeros 5 segmentos votan PJ local con márgenes amplios. Canning es el único que vota LLA sistemáticamente. El problema es que Canning crece más rápido que todos los demás.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#FFFBEB;color:#92400E;">📈 Canning vs. Pilar · El Paralelo</div>
+      <div class="cbody">
+        <table class="t">
+          <thead><tr><th>Variable</th><th>Pilar (90s)</th><th>Canning (2010s-hoy)</th></tr></thead>
+          <tbody>
+            <tr><td>Ruta madre</td><td>Panamericana</td><td class="warn">Ruta 58 / E-C</td></tr>
+            <tr><td>Trigger</td><td>Inseguridad + auto</td><td class="warn">Ídem + aeropuerto</td></tr>
+            <tr><td>Perfil resid.</td><td>Media-alta</td><td class="warn">Media-alta</td></tr>
+            <tr><td>Voto histórico</td><td>UCR → PRO</td><td class="warn">PRO → LLA</td></tr>
+            <tr><td>Velocidad</td><td>15-20 años</td><td class="bad">8-12 años (acelerado)</td></tr>
+            <tr><td>Efecto PJ</td><td>Pasó de bastión a competitivo</td><td class="bad">En proceso</td></tr>
+            <tr><td>Diferenciador</td><td>Industria Pilar (VW, GE)</td><td class="ok">Aeropuerto + CNEA</td></tr>
+          </tbody>
+        </table>
+        <div class="al al-r" style="margin-top:8px;">
+          <strong>⚠️ La diferencia clave vs. Pilar</strong>
+          Ezeiza tiene la CNEA y el aeropuerto — activos que generan empleo sindicalizado en el mismo municipio. Eso es el contrapeso que Pilar no tenía. Si Granados logra que esos trabajadores sigan siendo base local, el efecto Pilar se frena.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#1d3461;color:white;">⚛️ CNEA · Centro Atómico Ezeiza</div>
+      <div class="cbody">
+        <table class="t">
+          <tr><td>Organismo</td><td class="inf">CNEA · Estado Nacional</td></tr>
+          <tr><td>Producción key</td><td class="ok">Mo-99/Tc-99m · radiofármacos</td></tr>
+          <tr><td>Exportaciones</td><td class="ok">+40 países</td></tr>
+          <tr><td>Enriquecimiento U</td><td class="ok">Tecnología propia · soberano</td></tr>
+          <tr><td>Empleo directo</td><td class="ok">~1.500 empleados</td></tr>
+          <tr><td>Perfil trabajador</td><td class="inf">Profesional universitario</td></tr>
+          <tr><td>Voto estimado</td><td class="warn">Centro-progresista · moderado PJ</td></tr>
+          <tr><td>Score hub PBA</td><td class="inf">8.35 · NACIONAL</td></tr>
+        </table>
+        <div class="al al-b" style="margin-top:8px;">
+          <strong>💡 Dato de impacto</strong>
+          Tc-99m: el radioisótopo más usado en medicina nuclear del mundo. 30M+ procedimientos/año globalmente. Producido en Ezeiza.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#FFFBEB;color:#92400E;">✈️ Aeropuerto Pistarini · Economía</div>
+      <div class="cbody">
+        <table class="t">
+          <tr><td>Concesionario</td><td class="inf">AA2000 · Corp. América</td></tr>
+          <tr><td>Pasajeros anuales</td><td class="ok">~14M (pre-pandemia)</td></tr>
+          <tr><td>Aerolíneas</td><td class="ok">90+ internacionales</td></tr>
+          <tr><td>Cargo aérea</td><td class="ok">Hub principal de importación</td></tr>
+          <tr><td>Empleo directo</td><td class="ok">Miles · aerolíneas + handling</td></tr>
+          <tr><td>Sindicatos</td><td class="ok">APTA · AAA · UOCRA</td></tr>
+          <tr><td>Residencia trabajadores</td><td class="bad">Mayoría: otros municipios</td></tr>
+          <tr><td>Score hub PBA</td><td class="warn">7.45 · PROTOCOLAR</td></tr>
+        </table>
+        <div class="al al-a" style="margin-top:8px;">
+          <strong>⚠️ Brecha de localización laboral</strong>
+          Oportunidad concreta: programa que oriente empleo aeroportuario hacia residentes de Ezeiza. Hoy la mayoría de los trabajadores viaja desde otros municipios.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#F5F3FF;color:#4C1D95;">🏭 Parques Industriales</div>
+      <div class="cbody">
+        <table class="t">
+          <tr><td>Tipo de actividad</td><td class="inf">Alimentaria · química · metalúrgica · logística</td></tr>
+          <tr><td>Perfil logístico</td><td class="ok">Cadena de frío · farmacéutica · distribución</td></tr>
+          <tr><td>Conexión aeropuerto</td><td class="ok">Carga aérea · import/export</td></tr>
+          <tr><td>Sindicatos</td><td class="ok">SMATA · UOM · UATRE · Camioneros</td></tr>
+          <tr><td>Perfil voto</td><td class="ok">Obrero sindicalizado · PJ estructural</td></tr>
+          <tr><td>Demanda principal</td><td class="warn">Infraestructura cloacal y eléctrica</td></tr>
+          <tr><td>Potencial crecimiento</td><td class="ok">Alto · demanda logística aeroportuaria</td></tr>
+        </table>
+        <div class="al al-v" style="margin-top:8px;">
+          <strong>✅ El contrapeso a Canning</strong>
+          Los parques industriales y el aeropuerto generan el empleo sindicalizado que sostiene la base PJ. Son el contrapeso estructural al crecimiento de Canning.
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;padding:10px;font-family:'Segoe UI',Arial,sans-serif;font-size:9.5px;color:#aaa;background:white;border-top:1px solid #e5e7eb;">
+    🔒 USO RESERVADO · ANEXO I · Ezeiza · PBA Analytics 2026
+  </div>
+</div>
+
+<!-- ANEXO II -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+  <div style="background:linear-gradient(135deg,#78350F,#D97706);color:white;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Ezeiza · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO II — ANÁLISIS POLÍTICO, DEMOGRÁFICO Y TERRITORIAL</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">Gastón Granados · UxP · Aliado<br>Segunda generación · Conurbano Sur</div>
+  </div>
+  <div style="padding:16px 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#eef2f7;">
+
+    <div class="card">
+      <div class="ch" style="background:#F0FDF4;color:#14532D;">👤 Gastón Granados · Perfil Político Local</div>
+      <div class="cbody">
+        <table class="t" style="margin-bottom:10px;">
+          <tr><td>Origen</td><td class="inf">Hijo de Alejandro Granados · intendente histórico</td></tr>
+          <tr><td>Generación</td><td class="inf">Segunda generación · continuidad + renovación</td></tr>
+          <tr><td>Mandato</td><td class="ok">Primera gestión propia · ganó 2023</td></tr>
+          <tr><td>Resultado 2023</td><td class="ok">60,3% intendencia</td></tr>
+          <tr><td>Resultado 2025</td><td class="ok">63,4% concejales</td></tr>
+          <tr><td>Estructura heredada</td><td class="ok">Máquina territorial sólida</td></tr>
+          <tr><td>Desafío generacional</td><td class="warn">Ganar el voto nuevo · Canning</td></tr>
+          <tr><td>Fortaleza clave</td><td class="ok">Lealtad base popular histórica</td></tr>
+        </table>
+        <div class="st">Desafíos políticos locales de Granados</div>
+        <div class="ag">
+          <div class="agi">🏘️</div>
+          <div class="agt">
+            <strong>El electorado de Canning</strong>
+            <p>La clase media-alta de los countries históricamente no vota PJ. Granados no necesita ganarlos — necesita que no sean tan hostiles como para contaminar las categorías locales. La clave es entrega de servicios concretos: seguridad vial, transporte, mantenimiento de accesos.</p>
+          </div>
+        </div>
+        <div class="ag">
+          <div class="agi">📱</div>
+          <div class="agt">
+            <strong>El voto joven en todo el municipio</strong>
+            <p>Los jóvenes de 18-25 años del municipio entero — incluyendo los de los barrios históricos — mostraron mayor afinidad con LLA en categoría nacional. La segunda generación Granados tiene que desarrollar una agenda para ese segmento sin alienar a la base tradicional.</p>
+          </div>
+        </div>
+        <div class="ag" style="border-bottom:none;">
+          <div class="agi">💼</div>
+          <div class="agt">
+            <strong>La promesa de empleo local</strong>
+            <p>El desempleo y el subempleo en los barrios populares del municipio se manifiesta en que los grandes empleadores (aeropuerto, CNEA, parques industriales) contratan principalmente gente de otros municipios. Cerrar esa brecha es la agenda social más urgente de Granados para 2025-2027.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#FEF3C7;color:#92400E;">📊 Perfil Demográfico · Segmentación Social</div>
+      <div class="cbody">
+        <div class="st">Composición social estimada del municipio</div>
+        <table class="t" style="margin-bottom:10px;">
+          <thead><tr><th>Segmento</th><th>% aprox.</th><th>Localización</th><th>Voto</th></tr></thead>
+          <tbody>
+            <tr><td class="bld">Obreros industriales y aeroportuarios</td><td>~28%</td><td>Ezeiza · La Unión</td><td class="ok">PJ estructural</td></tr>
+            <tr><td class="bld">Clase media popular</td><td>~25%</td><td>20 de Junio · periféria</td><td class="ok">PJ sólido</td></tr>
+            <tr><td class="bld">Clase media (empleados, comercio)</td><td>~20%</td><td>Tristán Suárez · Ezeiza</td><td class="warn">PJ moderado · disputado</td></tr>
+            <tr><td class="bld">Profesionales (CNEA · educación)</td><td>~10%</td><td>Área CNEA · Ezeiza</td><td class="warn">Centro progresista</td></tr>
+            <tr><td class="bld">Clase media-alta · countries</td><td>~12%</td><td>Canning</td><td class="bad">LLA / PRO</td></tr>
+            <tr><td class="bld">Rural · periurbano</td><td>~5%</td><td>Spegazzini · sur</td><td class="warn">PJ moderado</td></tr>
+          </tbody>
+        </table>
+        <div class="st">Indicadores de infraestructura</div>
+        <table class="t">
+          <tr><td>Cloacas (cobertura estimada)</td><td class="warn">~55-65% · déficit en barrios pop.</td></tr>
+          <tr><td>Calles pavimentadas</td><td class="warn">Parcial · deuda en localidades sur</td></tr>
+          <tr><td>Transporte a CABA</td><td class="warn">Limitado · dependencia Ricchieri</td></tr>
+          <tr><td>Salud pública</td><td class="ok">Hospital Municipal + CAPS</td></tr>
+          <tr><td>Educación</td><td class="ok">Red escolar · demanda creciente</td></tr>
+          <tr><td>Seguridad</td><td class="warn">Demanda alta en countries y barrios</td></tr>
+          <tr><td>Inundaciones</td><td class="warn">Zonas bajas vulnerables</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#EFF6FF;color:#1E40AF;">🌆 Canning · Análisis del Corredor</div>
+      <div class="cbody">
+        <div class="st">El factor de mayor impacto en la dinámica electoral futura</div>
+        <div class="ag">
+          <div class="agi">🏡</div>
+          <div class="agt">
+            <strong>Crecimiento en barrios cerrados · el boom inmobiliario</strong>
+            <p>Canning sobre la Ruta 58 es uno de los corredores de mayor desarrollo de barrios cerrados del GBA. Countries como Canning Club, Greenville, San Jorge Village, Los Potrillos, Las Praderas y decenas más. La construcción de estos complejos atrajo comercio premium, colegios bilingües, sanatorios privados y servicios de alto nivel. Es el sector que más creció en el municipio en la última década.</p>
+          </div>
+        </div>
+        <div class="ag">
+          <div class="agi">🗳️</div>
+          <div class="agt">
+            <strong>Comportamiento electoral del sector</strong>
+            <p>Los residentes de barrios cerrados votan PRO/LLA de manera consistente a nivel nacional. Su dependencia del municipio es menor (usan servicios privados: escuelas, salud, seguridad), lo que reduce el efecto "gratitud por gestión" que funciona en los barrios populares. Para este segmento el voto es ideológico-económico, no de gestión local.</p>
+          </div>
+        </div>
+        <div class="ag" style="border-bottom:none;">
+          <div class="agi">📐</div>
+          <div class="agt">
+            <strong>Lo que Granados puede hacer con Canning</strong>
+            <p>No puede ganar en Canning — pero sí puede neutralizarlo. Las demandas concretas del sector son: mantenimiento de Ruta 58 (provincial), acceso al transporte público (líneas de ómnibus hacia CABA), seguridad vial en los accesos. Si el municipio entrega eso, el voto de Canning puede quedarse en LLA a nivel nacional pero abstenerse de votar activamente en contra de Granados a nivel local.</p>
+          </div>
+        </div>
+        <div class="al al-a">
+          <strong>⚠️ El riesgo de Pilar</strong>
+          Pilar tardó ~15 años en que los countries cambiaran la ecuación municipal. Canning tiene ese proceso acelerado: menos tiempo, más densidad, mayor presión. El 38,2% de LLA ya en categoría nacional es el indicador adelantado.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#F5F3FF;color:#4C1D95;">🔭 Oportunidades y Riesgos · Síntesis</div>
+      <div class="cbody">
+        <div class="st">Oportunidades que Granados puede capitalizar</div>
+        <div class="ag">
+          <div class="agi">✅</div>
+          <div class="agt">
+            <strong>Localización del empleo aeroportuario</strong>
+            <p>Programa de priorización de residentes de Ezeiza para empleos del aeropuerto. Alto impacto en barrios populares. Da resultado visible en el corto plazo.</p>
+          </div>
+        </div>
+        <div class="ag">
+          <div class="agi">✅</div>
+          <div class="agt">
+            <strong>CNEA como orgullo municipal</strong>
+            <p>La producción de radiofármacos es un dato sorprendente que la mayoría de los ezeizenses no conoce. Comunicarlo como orgullo local — "desde Ezeiza exportamos al mundo" — tiene efecto identitario transversal.</p>
+          </div>
+        </div>
+        <div class="ag">
+          <div class="agi">✅</div>
+          <div class="agt">
+            <strong>Expansión de parques industriales</strong>
+            <p>Más empresas logísticas/industriales = más empleo azul = más base PJ. Con infraestructura provincial, el corredor industrial de Ezeiza puede duplicar su capacidad en el período 2025-2028.</p>
+          </div>
+        </div>
+        <div class="st" style="margin-top:14px;border-color:#DC2626;color:#7F1D1D;">Riesgos estructurales</div>
+        <div class="ag">
+          <div class="agi">⚠️</div>
+          <div class="agt">
+            <strong>Canning supera al resto en crecimiento</strong>
+            <p>Si el padrón sigue creciendo a 4.400/año con mayoría en Canning, de 2021 a 2027 se acumulan entre 12.000 y 18.000 nuevos electores de perfil LLA — y más si el ritmo se acelera, que es lo que indica el mercado inmobiliario. Sin contrarrestar con empleo industrial y servicios concretos en Canning, puede cambiar la aritmética local.</p>
+          </div>
+        </div>
+        <div class="ag">
+          <div class="agi">⚠️</div>
+          <div class="agt">
+            <strong>Voto joven en toda la geografía municipal</strong>
+            <p>Los jóvenes de los propios barrios PJ mostraron más afinidad con LLA en nacional. Si eso baja a categorías locales, la base propia se erosiona desde adentro.</p>
+          </div>
+        </div>
+        <div class="ag" style="border-bottom:none;">
+          <div class="agi">⚠️</div>
+          <div class="agt">
+            <strong>Infraestructura urbana como deuda política</strong>
+            <p>El déficit de cloacas, pavimento e iluminación en los barrios históricos puede volverse en contra si los vecinos perciben que el municipio cuida más a los countries que a los barrios. Es una tensión interna del peronismo local.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;padding:10px;font-family:'Segoe UI',Arial,sans-serif;font-size:9.5px;color:#aaa;background:white;border-top:1px solid #e5e7eb;">
+    🔒 USO RESERVADO · ANEXO II · Ezeiza · PBA Analytics 2026
+  </div>
+</div>
+
+</body>
+</html>

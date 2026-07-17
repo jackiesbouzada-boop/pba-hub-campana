@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GENERAL PAZ — Narrativa Política · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Georgia, serif;
+  font-size: 13px; line-height: 1.7; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.header { color: white; padding: 24px 30px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.header h1 { font-size: 30px; font-weight: 900; letter-spacing: 2px; margin-bottom: 5px; }
+.header .sub { font-size: 12px; opacity: 0.8; margin-bottom: 3px; }
+.header .tag { font-size: 10px; opacity: 0.55; }
+.epig { background: #F0FDFA; border-left: 5px solid #0F766E; padding: 15px 22px; font-style: italic; font-size: 13px; color: #444; line-height: 1.8; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.epig span { display: block; margin-top: 7px; font-size: 11px; font-style: normal; color: #888; }
+.body-wrap { padding: 24px 30px; }
+h2 { font-size: 16px; font-weight: 800; color: #134E4A; margin: 28px 0 10px; padding-bottom: 7px; border-bottom: 2px solid #2DD4BF; }
+h3 { font-size: 13.5px; font-weight: 700; color: #1d3461; margin: 20px 0 7px; }
+p { margin-bottom: 12px; text-align: justify; font-size: 13px; line-height: 1.8; }
+strong { color: #134E4A; }
+em { color: #1d3461; }
+.dato { display: inline-block; background: #CCFBF1; border: 1px solid #5EEAD4; border-radius: 4px; padding: 1px 6px; font-weight: 700; font-size: 11px; color: #134E4A; margin: 0 2px; }
+.warn { display: inline-block; background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 4px; padding: 1px 6px; font-weight: 700; font-size: 11px; color: #78350F; margin: 0 2px; }
+.alerta { display: inline-block; background: #FEE2E2; border: 1px solid #FCA5A5; border-radius: 4px; padding: 1px 6px; font-weight: 700; font-size: 11px; color: #7F1D1D; margin: 0 2px; }
+.azul { display: inline-block; background: #EFF6FF; border: 1px solid #93C5FD; border-radius: 4px; padding: 1px 6px; font-weight: 700; font-size: 11px; color: #1E40AF; margin: 0 2px; }
+.ag1 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+.ag2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.blk { border-radius: 8px; padding: 14px 16px; break-inside: avoid; }
+.blk-v { background: #F0FDFA; border-left: 4px solid #0F766E; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-a { background: #FFFBEB; border-left: 4px solid #D97706; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-r { background: #FEF2F2; border-left: 4px solid #DC2626; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-b { background: #EFF6FF; border-left: 4px solid #2563EB; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-d { background: #F5F3FF; border-left: 4px solid #7C3AED; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-k { background: #0D2B28; color: white; border-left: 4px solid #2DD4BF; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk h4 { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 6px; opacity: 0.7; }
+.blk-k h4 { color: #99F6E4; opacity: 1; }
+.blk p  { font-size: 11px; line-height: 1.7; color: #444; margin-bottom: 0; }
+.blk-k p { color: rgba(255,255,255,0.9); }
+.blk .num { font-size: 24px; font-weight: 900; line-height: 1; margin-bottom: 4px; color: #134E4A; }
+.blk-r .num { color: #DC2626; }
+.blk-a .num { color: #D97706; }
+.blk-b .num { color: #2563EB; }
+.blk-d .num { color: #7C3AED; }
+.hr { border: none; border-top: 1px solid #e5e7eb; margin: 20px 0; }
+.pull { border-left: 4px solid #0F766E; padding: 12px 18px; margin: 18px 0; font-size: 14px; font-weight: 700; color: #134E4A; font-style: italic; line-height: 1.6; background: #F0FDFA; border-radius: 0 8px 8px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.pull-d { border-left: 4px solid #DC2626; background: #FEF2F2; color: #7F1D1D; }
+.pull-a { border-left: 4px solid #D97706; background: #FFFBEB; color: #78350F; }
+.pull-b { border-left: 4px solid #1d3461; background: #EFF6FF; color: #1d3461; }
+.nota { background: #f8f4ed; border: 1px solid #e5c97e; border-radius: 7px; padding: 12px 15px; margin: 14px 0; font-size: 11px; color: #5c3317; line-height: 1.7; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.nota strong { color: #5c3317; display: block; margin-bottom: 4px; }
+.visita { border-radius: 8px; padding: 13px 16px; margin-bottom: 10px; break-inside: avoid; }
+.v-nac  { background: #EFF6FF; border-left: 5px solid #1d3461; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.v-prot { background: #FFFBEB; border-left: 5px solid #D97706; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.v-nac  .vlabel { font-size: 9px; font-weight: 700; background: #1d3461; color: white; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-bottom: 6px; }
+.v-prot .vlabel { font-size: 9px; font-weight: 700; background: #D97706; color: white; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-bottom: 6px; }
+.vscore { float: right; font-size: 18px; font-weight: 900; color: #1d3461; }
+.v-prot .vscore { color: #D97706; }
+.vname  { font-size: 13px; font-weight: 800; margin-bottom: 5px; }
+.vbody  { font-size: 11px; color: #555; line-height: 1.7; }
+.footer { text-align: center; padding: 14px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+.anx-header { padding: 18px 26px; display: flex; justify-content: space-between; align-items: center; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.anx-body { padding: 18px 22px; background: #eef2f7; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.tbl { width: 100%; border-collapse: collapse; font-size: 11px; margin: 8px 0 16px; }
+.tbl th { background: rgba(0,0,0,0.07); padding: 6px 9px; text-align: left; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid rgba(0,0,0,0.12); }
+.tbl td { padding: 6px 9px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+.tbl tr:last-child td { border-bottom: none; }
+.ok { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.ww { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bb { background: #FEE2E2; color: #7F1D1D; font-weight: 700; }
+.ii { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+@media print {
+  @page { size: A4 portrait; margin: 7mm 8mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; padding: 0 !important; font-size: 8pt !important; }
+  h2 { font-size: 11pt !important; margin: 14px 0 6px !important; }
+  h3 { font-size: 10pt !important; margin: 10px 0 5px !important; }
+  p { margin-bottom: 7px !important; font-size: 8pt !important; }
+  .body-wrap { padding: 12px 16px !important; }
+  .ag1, .ag2 { gap: 7px !important; margin: 8px 0 !important; }
+  .blk { padding: 8px 10px !important; }
+  .blk p { font-size: 7.5pt !important; }
+  .pull { font-size: 9pt !important; padding: 8px 12px !important; margin: 10px 0 !important; }
+  .visita { padding: 8px 10px !important; }
+  .vbody { font-size: 7.5pt !important; }
+  .header { padding: 14px 18px !important; }
+  .header h1 { font-size: 16pt !important; }
+  .nota { font-size: 7.5pt !important; padding: 7px 10px !important; }
+  .anx-keep { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="header" style="background: linear-gradient(135deg, #134E4A 0%, #0F766E 100%);">
+  <h1>🏞️ GENERAL PAZ (RANCHOS) — NARRATIVA</h1>
+  <div class="sub">Análisis Político Territorial · Juan Manuel Álvarez (UxP — Aliado) · 5ª Sección Electoral · Interior Bonaerense · PBA 2026</div>
+  <div class="tag">Laguna de Ranchos · Turismo de Escapada · Ganadería Cuenca del Salado · Padrón 2025: 12.197 · PJ 52% local → 55,9% provinciales</div>
+</div>
+
+<div class="epig">
+  "General Paz es el municipio más pequeño de la 5ª Sección Electoral en padrón, pero tiene uno de los activos turísticos más concretos de todo el interior bonaerense: la Laguna de Ranchos a 130 kilómetros de CABA. El intendente Álvarez ya hizo la inversión central — puso en valor el espejo de agua, construyó la costanera, mejoró los accesos. La tarea del nivel provincial es amplificar esa apuesta antes de que el crecimiento de LLA en lo nacional amenace también lo local."
+  <span>— Síntesis estratégica del territorio</span>
+</div>
+
+<div class="body-wrap">
+
+<h2>1. El Municipio: Laguna, Campo y Pueblo de Historia</h2>
+
+<p>El Partido de General Paz — cuya cabecera es Ranchos — es uno de los municipios más pequeños de la 5ª Sección Electoral. Con apenas 12.197 electores en 2025, se ubica por debajo de General Belgrano (su vecino termal) y muy lejos de los grandes partidos del conurbano bonaerense. Pero esa escala reducida no lo convierte en un municipio sin interés estratégico: todo lo contrario. En el territorio de General Paz conviven dos economías muy distintas — el turismo de escapada de la Laguna de Ranchos y la ganadería extensiva de la Cuenca del Salado — que definen su identidad, su composición social y, en consecuencia, su mapa electoral.</p>
+
+<p>La <strong>Laguna de Ranchos</strong> es el activo que cambió la ecuación económica del municipio. A 130 kilómetros de CABA por la Ruta 2 y variantes, el espejo de agua y su entorno de gastronomía, cabañas y actividades náuticas convirtieron a Ranchos en uno de los destinos de fin de semana más buscados por familias del AMBA que buscan agua, tranquilidad y cercanía a la capital. La inversión del intendente Álvarez en la puesta en valor de la laguna — defensas costeras, iluminación, paseos peatonales — aceleró ese proceso y le dio una identidad territorial concreta al municipio.</p>
+
+<p>La <strong>ganadería de cría extensiva</strong> sobre los campos de la Cuenca del Salado es la otra cara del municipio: silenciosa, con campos bajos e inundables, productores de terneros para el mercado de invernada, con una demanda muy concreta de caminos rurales y crédito. El campo vota históricamente JxC o LLA, no PJ. La tensión entre la base PJ de Ranchos y el voto opositor del campo es el denominador electoral permanente de General Paz.</p>
+
+<div class="ag1">
+  <div class="blk blk-v">
+    <h4>Ranchos · base PJ</h4>
+    <div class="num">PJ ~55%</div>
+    <p>Cabecera urbana. Empleo estatal, comercio, turismo. Base PJ histórica amplificada por la gestión visible de Álvarez (laguna, desagüe, becas). El núcleo del resultado electoral.</p>
+  </div>
+  <div class="blk blk-a">
+    <h4>Villanueva + Loma Verde</h4>
+    <div class="num">Mixto</div>
+    <p>Localidades rurales menores. Perfil ganadero y agrícola. Beneficiarias del programa de vivienda (Loma Verde) y becas estudiantiles (Villanueva). Más expuestas a LLA en lo nacional.</p>
+  </div>
+  <div class="blk blk-r">
+    <h4>Campo · Cuenca Salado</h4>
+    <div class="num">JxC/LLA</div>
+    <p>Productores ganaderos de cría extensiva. Votaron JxC en 2023. Sin candidatos JxC en 2025, migran a LLA en lo nacional. El campo es el segmento más desafiante para el PJ.</p>
+  </div>
+</div>
+
+<h2>2. Juan Manuel Álvarez: El Intendente que Puso en Valor el Agua</h2>
+
+<p>Juan Manuel Álvarez gobierna General Paz con una agenda de gestión que se construyó alrededor de un activo central: la Laguna de Ranchos. La decisión de invertir en la puesta en valor del espejo de agua — defensas costeras, iluminación, paseos peatonales, recuperación del entorno — fue la apuesta estratégica de su mandato y el resultado fue visible: el turismo de fin de semana se consolidó, la gastronomía local creció, las cabañas se multiplicaron y Ranchos pasó de ser "el pueblo de la laguna" a ser un destino activo de escapada para familias del AMBA y La Plata.</p>
+
+<p>Los resultados electorales confirman que la gestión de Álvarez es percibida positivamente por el electorado local. En 2023 ganó con el <span class="dato">52,0%</span> — una victoria cómoda con más de 21 puntos de ventaja sobre el candidato de JxC. En los concejales provinciales de 2025, el PJ subió al <span class="dato">55,9%</span> — 3,9 puntos más que en la ejecutiva. Ese incremento en la categoría legislativa local, donde los votantes no están evaluando al intendente directamente sino al partido y su gestión de conjunto, es una señal particularmente sólida: indica que el PJ no está dependiendo exclusivamente de la figura de Álvarez sino que hay un arrastre más amplio de la marca partidaria.</p>
+
+<div class="pull">
+  "La diferencia entre el 55,9% en concejales locales 2025 y el 47,0% en diputados nacionales 2025 no describe un electorado inconsistente — describe un electorado que confía en la gestión de Álvarez para los asuntos de Ranchos y al mismo tiempo evalúa con otras consideraciones la dirección económica nacional. Son dos marcos de referencia distintos, y la tarea política es que la fortaleza local no se erosione por la presión de LLA en lo nacional."
+</div>
+
+<h3>Los hitos de gestión que definen el mandato de Álvarez</h3>
+
+<p>El primer hito es la <strong>puesta en valor de la Laguna de Ranchos</strong> — la inversión de mayor visibilidad y mayor impacto en la identidad del municipio. Defensas costeras, iluminación nocturna, paseos peatonales y acceso renovado al espejo de agua transformaron la laguna en un activo concreto que ya funciona como destino y que puede potenciarse aún más con inversión provincial complementaria.</p>
+
+<p>El segundo hito es la <strong>obra de desagüe pluvial Etapa II</strong> en Ranchos — descrita en los documentos de gestión como "la obra más crítica del período 2024-2026." Los anegamientos en el sector sur de Ranchos eran un problema histórico que afectaba la calidad de vida de los vecinos y el valor inmobiliario de los barrios. La construcción de colectores y sumideros que conducen los excedentes pluviales al Canal de Desvío Norte resuelve ese problema de raíz. Es el tipo de obra que los vecinos sienten en su vida cotidiana.</p>
+
+<p>El tercer hito es el <strong>programa de Residencias Estudiantiles y Becas</strong> — el más singular de todos. El municipio alquila, mantiene y paga los servicios de residencias en La Plata y Chascomús para que los jóvenes de Ranchos y Villanueva puedan estudiar sin desarraigarse. Más de 100 estudiantes universitarios y terciarios reciben beca mensual. En un municipio de 14.000 habitantes, ese número de beneficiarios directos tiene una escala muy significativa — son familias completas que perciben que el municipio está invirtiendo en el futuro de sus hijos.</p>
+
+<p>El cuarto hito es el <strong>mejoramiento del hábitat en Loma Verde</strong> — 34 viviendas en licitación pública con $495 millones de inversión, parte de un programa que acumuló más de 130 unidades gestionadas ante organismos provinciales. El programa de vivienda tiene un impacto directo, emotivo y muy visible en las familias beneficiarias.</p>
+
+<h2>3. El Fenómeno LLA: El Riesgo Latente en el Municipio Aliado</h2>
+
+<p>La Libertad Avanza obtuvo el <span class="warn">17,5%</span> en la intendencia de 2023 — una presencia moderada, de tercera fuerza, detrás del JxC con el 30,6%. En los concejales provinciales de 2025, LLA creció al <span class="warn">27,4%</span> cuando JxC ya no tenía candidatos. En el Diputado Nacional de 2025, LLA llegó al <span class="alerta">42,7%</span> — casi el doble de su resultado en la categoría ejecutiva de 2023.</p>
+
+<p>La trayectoria es clara: LLA en General Paz creció 25 puntos en dos años en las categorías nacionales, absorbiendo en gran parte el voto de JxC que quedó sin candidatos propios. El bloque anti-PJ, que en 2023 sumaba el 48% entre JxC (30,6%) y LLA (17,5%), en 2025 se concentra casi enteramente en LLA en la categoría nacional. Si ese bloque se mantiene unificado en la categoría ejecutiva local de 2027 — es decir, si LLA o una coalición LLA-JxC presenta un candidato único — el PJ pasa de tener una ventaja de 21 puntos a competir en un municipio con dos fuerzas de tamaño comparable.</p>
+
+<div class="pull pull-a">
+  "El dato clave para 2027 no es el 55,9% del PJ en concejales 2025 — ese número es reconfortante pero no garantiza nada si cambia la estructura de la competencia. El dato clave es el 42,7% de LLA en diputados nacionales 2025: indica que hay un bloque opositor potencial de casi 43% que, si se unifica en candidato local, convierte a General Paz en un municipio competitivo. La inversión provincial activa en los próximos 18 meses es lo que previene ese escenario."
+</div>
+
+<h3>¿Por qué el PJ sube local pero cae nacional?</h3>
+
+<p>La disociación entre el resultado local (PJ sube a 55,9%) y el nacional (PJ cae a 47%) no es una contradicción — es el reflejo de dos marcos de evaluación distintos. En la categoría local, el electorado evalúa la gestión concreta de Álvarez: la laguna renovada, el desagüe pluvial, las becas estudiantiles, las viviendas de Loma Verde. En esa evaluación, Álvarez sale bien parado. En la categoría nacional, el mismo electorado evalúa la dirección económica del país — un debate donde LLA tiene un discurso propio y donde el PJ no tiene los mismos activos de gestión visible que en el plano municipal.</p>
+
+<p>El riesgo para 2027 es que esa disociación se collapse: que la evaluación nacional negativa del PJ contamine la evaluación local, o que LLA con candidato propio logre hacer campaña con la agenda nacional dentro de la categoría ejecutiva municipal. La defensa más efectiva contra ese riesgo es exactamente lo que Álvarez ya está haciendo — construir gestión local visible que ancle la evaluación del votante en el plano municipal, donde el PJ tiene ventaja.</p>
+
+<div class="ag2">
+  <div class="blk blk-v">
+    <h4>La fortaleza: gestión que ancla el voto local</h4>
+    <p>Laguna renovada · desagüe que se ve · viviendas entregadas · becas para los hijos. Álvarez tiene 4 hitos de gestión con beneficiarios identificables que anclan el voto del electorado en la evaluación local. El PJ sube en categorías locales mientras cae en nacionales — la gestión es el escudo.</p>
+  </div>
+  <div class="blk blk-r">
+    <h4>El riesgo: LLA local en 2027</h4>
+    <p>42,7% LLA en nacional 2025 equivale a un bloque potencial de ~5.000 votos si se cristaliza en candidato local. Con ese número, el PJ deja de tener margen cómodo. El indicador a monitorear: si LLA empieza a construir estructura territorial local en los próximos 12 meses.</p>
+  </div>
+</div>
+
+<h2>4. La Economía Local: El Turismo que Llegó para Quedarse</h2>
+
+<p>El turismo de escapada de la Laguna de Ranchos no es un fenómeno nuevo, pero la inversión de Álvarez en la puesta en valor del espejo de agua le dio una escala y una visibilidad que antes no tenía. El espejo de agua, las defensas costeras renovadas, la iluminación nocturna y los paseos peatonales convirtieron a la laguna en un destino que funciona todo el año — no solo en verano — con picos de afluencia en fines de semana largos y feriados.</p>
+
+<p>La red de prestadores turísticos que se desarrolló en torno a la laguna — restoranes, cabañas, guías de pesca y kayak, negocios de proximidad — es el sector económico más dinámico del municipio y el que más empleos nuevos generó en la última década. Es también el sector electoralmente más volátil: sin lealtad política fija, los prestadores turísticos votan a quien resuelve sus demandas concretas — más turistas, mejor acceso, más infraestructura.</p>
+
+<p>La <strong>ganadería de cría extensiva</strong> sigue siendo la actividad que ocupa la mayor parte del territorio pero con menor impacto en el empleo urbano directo. Los productores ganaderos de la Cuenca del Salado operan en campos bajos con riesgo hídrico permanente y tienen una demanda muy específica: caminos rurales transitables en época de lluvia para sacar los terneros al mercado, y crédito de campaña accesible para sostener la cría. Este sector migró a LLA en 2025 y es sensible a la presencia directa del Ministerio de Agroindustria provincial con agenda concreta.</p>
+
+<h2>5. El Mapa Electoral: Fortaleza Local con Presión Nacional</h2>
+
+<p>Los tres resultados electorales de General Paz entre 2023 y 2025 cuentan una historia de dos velocidades: el PJ crece en lo local y retrocede en lo nacional. En la <strong>intendencia de 2023</strong>, Álvarez ganó con el 52,0% y una ventaja de 21,4 puntos sobre JxC — un resultado sólido en un municipio donde la base peronista histórica se combinó con la gestión visible del intendente. LLA obtuvo el 17,5%, una tercera fuerza que en ese momento no representaba una amenaza directa.</p>
+
+<p>En los <strong>concejales provinciales de 2025</strong>, el PJ subió al 55,9% — 3,9 puntos más que en la ejecutiva 2023. JxC no presentó candidatos, y LLA creció al 27,4%. El crecimiento de LLA es significativo pero la absorción del voto JxC fue parcial — una parte del bloque JxC claramente fue al PJ (que subió) o no fue a votar (el total de positivos cayó de 9.153 a 8.110).</p>
+
+<p>En el <strong>Diputado Nacional de 2025</strong>, el PJ cayó al 47,0% y LLA llegó al 42,7%. La brecha entre el PJ local (55,9%) y el nacional (47,0%) es de 8,9 puntos — un split electoral muy claro. Ese mismo split explica por qué el panorama para 2027 en las categorías locales no es tan preocupante como el número nacional sugiere: hay un segmento del electorado que separa su evaluación de la gestión municipal de su evaluación de la política nacional.</p>
+
+<h2>6. La Agenda Provincial: Co-Gestión con Álvarez</h2>
+
+<p>General Paz es municipio aliado: la lógica de la agenda provincial es distinta a la de un municipio opositor. Aquí no se trata de presencia directa sin intermediación — se trata de co-gestión: la Provincia amplifica la agenda del intendente, co-financia sus obras y aparece en los actos de inauguración como socio, no como actor separado. Esa articulación tiene retorno para ambas partes: el intendente potencia su gestión con recursos provinciales, y la Provincia construye presencia en el municipio a través del aliado local.</p>
+
+<p>La intervención de mayor retorno es el <strong>co-financiamiento de mejoras en la Laguna de Ranchos</strong>. La puesta en valor ya fue hecha por Álvarez — la Provincia puede agregar señalética turística oficial, accesibilidad para personas con movilidad reducida, sendero de pesca habilitado y mejora del equipamiento de la costanera. El acto conjunto Provincia-Municipio en la laguna tiene audiencia directa en los turistas del AMBA que visitan el lugar los fines de semana — una proyección de visibilidad que trasciende los 12.000 electores locales.</p>
+
+<p>La segunda intervención es el <strong>apoyo provincial al programa de vivienda en Loma Verde</strong> a través del IVBA. Si la Provincia amplía el programa habitacional que el municipio licitó, los actos de entrega de llaves son de máximo retorno emocional con las familias beneficiarias — el tipo de presencia provincial que más impacta en la relación directa con el electorado.</p>
+
+<p>La tercera intervención es la <strong>articulación del circuito turístico regional</strong> Ranchos-Chascomús-Belgrano. Los tres municipios tienen activos complementarios de agua y naturaleza que por separado son destinos locales pero que articulados con señalética provincial y comunicación conjunta se convierten en un circuito de escala regional con proyección al AMBA. Chascomús y General Paz son aliados — la coordinación es directa. Belgrano es opositor pero el activo turístico (las termas) es de interés provincial independientemente del color del intendente.</p>
+
+<p>La cuarta intervención es el <strong>programa MinAgrario en el campo</strong>. El sector ganadero migró a LLA en las categorías nacionales. Un programa concreto de caminos rurales y asistencia técnica veterinaria, gestionado directamente por el Ministerio de Agroindustria de la Provincia en coordinación con Álvarez, puede recuperar parte de ese electorado para el PJ al mostrar que la Provincia atiende al campo incluso cuando el campo no está votando PJ en lo nacional.</p>
+
+<h2>7. Visitas Estratégicas: La Laguna y la Gestión Social</h2>
+
+<div class="visita v-prot">
+  <div class="vlabel">PROTOCOLAR</div>
+  <div class="vscore">9.5</div>
+  <div class="vname">🏞️ Laguna de Ranchos · Costanera puesta en valor</div>
+  <div class="vbody">Recorrida de la costanera renovada por Álvarez + anuncio de mejoras adicionales con co-financiamiento provincial (accesibilidad, señalética, sendero de pesca). Acto conjunto Provincia-Municipio. La laguna es el activo que define la identidad del municipio y el hito central de la gestión Álvarez — la presencia provincial amplifica ese hito sin competir con el intendente. Los turistas del AMBA que visitan el lugar los fines de semana son una audiencia adicional de proyección regional.</div>
+</div>
+
+<div class="visita v-prot">
+  <div class="vlabel">PROTOCOLAR</div>
+  <div class="vscore">9.0</div>
+  <div class="vname">🏗️ Barrio sur de Ranchos · Obra de desagüe pluvial Etapa II</div>
+  <div class="vbody">Recorrida de la obra de desagüe pluvial en el sector sur de Ranchos + acto de avance o inauguración con Álvarez y vecinos beneficiarios. La obra resuelve el problema histórico de anegamientos que afectaba la calidad de vida y el valor inmobiliario. Es el tipo de obra de infraestructura básica que los vecinos sienten directamente en su cotidianidad — el acto tiene alta carga emocional y visibilidad en la comunidad.</div>
+</div>
+
+<div class="visita v-prot">
+  <div class="vlabel">PROTOCOLAR</div>
+  <div class="vscore">8.5</div>
+  <div class="vname">🏘️ Loma Verde · Entrega de viviendas</div>
+  <div class="vbody">Entrega de unidades del programa de mejoramiento habitacional en Loma Verde (34 viviendas licitadas, $495 millones). Co-financiamiento IVBA provincial. Los actos de entrega de llaves son de máximo retorno emocional — familias que mejoran su situación habitacional. La localidad de Loma Verde es la más rural y la más alejada del centro, lo que hace que la presencia provincial allí tenga mayor impacto relativo.</div>
+</div>
+
+<div class="visita v-prot">
+  <div class="vlabel">PROTOCOLAR</div>
+  <div class="vscore">8.0</div>
+  <div class="vname">🐄 Sociedad Rural de General Paz</div>
+  <div class="vbody">Reunión con productores ganaderos de la Cuenca del Salado. Presentación de programa MinAgrario provincial: mejora de caminos rurales, asistencia técnica veterinaria, crédito de campaña. El campo migró a LLA en las categorías nacionales — la presencia directa conjunta Provincia-Municipio con agenda concreta construye diferenciación en el sector más desafiante para el PJ local. El mensaje: la Provincia atiende al campo que produce, independientemente de su voto.</div>
+</div>
+
+<div class="visita v-prot">
+  <div class="vlabel">PROTOCOLAR</div>
+  <div class="vscore">7.5</div>
+  <div class="vname">🎓 Residencia estudiantil · La Plata</div>
+  <div class="vbody">Visita a la residencia universitaria que el municipio sostiene en La Plata para estudiantes de Ranchos y Villanueva + anuncio de ampliación del programa con becas provinciales adicionales. El programa es el hito más diferenciador y más singular de Álvarez — un municipio de 14.000 habitantes pagando residencias en La Plata. Proyectar el modelo con fondos provinciales le da escala y proyección al programa.</div>
+</div>
+
+<h2>8. Síntesis Ejecutiva: El Aliado que Construye con el Agua</h2>
+
+<p>General Paz es el municipio aliado que tomó su activo más concreto — la Laguna de Ranchos — y lo convirtió en la palanca central de su gestión. Álvarez invirtió en la puesta en valor del espejo de agua, resolvió el problema histórico del desagüe pluvial de Ranchos, construyó un programa de vivienda en Loma Verde y creó el programa de becas estudiantiles más singular de los municipios pequeños de la 5ª Sección. El resultado electoral es coherente con esa gestión: el PJ subió 3,9 puntos en las categorías locales 2025.</p>
+
+<p>La señal de alerta es el 42,7% de LLA en la categoría nacional. Ese número no amenaza inmediatamente al PJ en lo local — mientras Álvarez siga teniendo gestión visible, la evaluación local seguirá siendo favorable. Pero señala que hay un bloque opositor potencial que, si se cristaliza en candidato único para las categorías ejecutivas municipales de 2027, convierte a General Paz en un municipio competitivo. La respuesta correcta es exactamente lo que la Provincia puede hacer: amplificar la gestión visible de Álvarez con co-financiamiento en la laguna, en la vivienda y en el campo.</p>
+
+<div class="blk blk-k" style="margin-top:24px;">
+  <h4>⚡ General Paz (Ranchos) · La síntesis</h4>
+  <p>General Paz es la laguna, los fines de semana del AMBA, la ganadería de la Cuenca del Salado y los jóvenes que estudian en La Plata con la beca del municipio. Álvarez construyó con esos elementos una gestión visible y un resultado electoral sólido: 52% en la ejecutiva, 56% en los concejales. La Provincia tiene aquí la tarea más cómoda de los municipios de la región — amplificar la gestión de un aliado que ya mostró saber gobernar. La inversión en la laguna, en la vivienda y en el campo es la que sostiene esa fortaleza ante el avance de LLA en las categorías nacionales.</p>
+</div>
+
+</div>
+
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Narrativa General Paz (Ranchos) · PBA Analytics 2026</div>
+
+<!-- ANEXO I -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div class="anx-header" style="background:linear-gradient(135deg,#134E4A,#0F766E);color:white;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">General Paz · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO I — INDICADORES TERRITORIALES Y ELECTORALES</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">5ª Sección Electoral · Juan Manuel Álvarez · UxP · Aliado</div>
+  </div>
+  <div class="anx-body" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#134E4A;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">🗳️ Electoral completo · 2023–2025</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Elección</th><th>PJ</th><th>JxC</th><th>LLA</th><th>Padrón</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Intend. 2023</strong></td><td class="ok">52,0%<br>4.756 ✓</td><td class="ww">30,6%<br>2.798</td><td>17,5%<br>1.599</td><td>11.885</td></tr>
+            <tr><td><strong>Conc. 2025</strong></td><td class="ok">55,9%<br>4.531</td><td>— sin cand.</td><td class="ww">27,4%<br>2.220</td><td>12.197</td></tr>
+            <tr><td><strong>Nac. 2025</strong></td><td class="ww">47,0%<br>3.933</td><td>— sin cand.</td><td class="ww">42,7%<br>3.569</td><td>11.942</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;margin-bottom:0;"><strong>Split electoral:</strong> PJ sube +3,9 pts local (52%→56%) y cae -5 pts nacional (52%→47%). LLA: 17,5% → 27,4% → 42,7%. El JxC 2023 (30,6%) sin candidatos propios migró mayoritariamente a LLA en nacional 2025.</p>
+      </div>
+    </div>
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#134E4A;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">📊 Demografía · Padrón · Territorio</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Indicador</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>Población 2022</td><td><strong>~14.207 hab.</strong></td></tr>
+            <tr><td>Padrón 2025</td><td><strong>12.197 electores</strong></td></tr>
+            <tr><td>Crecimiento 2023–25</td><td class="ok">+312 · +2,6%</td></tr>
+            <tr><td>Proyección 2027</td><td class="ok">~12.500–12.600</td></tr>
+            <tr><td>Superficie</td><td>1.199,9 km²</td></tr>
+            <tr><td>Distancia CABA</td><td>~130 km · Ruta 2/variantes</td></tr>
+            <tr><td>Turismo laguna</td><td class="ok">Consolidado</td></tr>
+            <tr><td>Intendente</td><td class="ok">Álvarez · UxP · Aliado</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div class="anx-body" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:0;">
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#0F766E;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">🏞️ Localidades · Perfiles y voto estimado</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Localidad</th><th>Perfil</th><th>Electoral est.</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ranchos (cab.)</strong></td><td>Urbano · turismo · comercio · Estado</td><td class="ok">PJ ~56% base</td></tr>
+            <tr><td><strong>Villanueva</strong></td><td>Rural · ganadería · jóvenes estudian LP</td><td class="ww">PJ ~45% · LLA creciendo</td></tr>
+            <tr><td><strong>Loma Verde</strong></td><td>Rural · vivienda · ganadería extensiva</td><td class="ww">Mixto · programa hábitat</td></tr>
+            <tr><td><strong>Laguna de Ranchos</strong></td><td>Espejo de agua · turismo activo</td><td class="ok">Activo · puesta en valor</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#9B1C1C;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">⚠️ Riesgos y oportunidades</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Factor</th><th>Tipo</th><th>Lectura</th></tr></thead>
+          <tbody>
+            <tr><td>LLA 42,7% nac. 2025</td><td class="bb">Riesgo latente</td><td class="ww">Monitorear</td></tr>
+            <tr><td>PJ +3,9 pts local 2025</td><td class="ok">Señal positiva</td><td class="ok">Gestión validada</td></tr>
+            <tr><td>Laguna de Ranchos</td><td class="ok">Activo central</td><td class="ok">Potenciar provincial</td></tr>
+            <tr><td>Álvarez candidato 2027</td><td class="ok">Continuidad</td><td class="ok">Variable clave</td></tr>
+            <tr><td>Campo migró a LLA</td><td class="bb">Riesgo rural</td><td class="ww">MinAgrario activo</td></tr>
+            <tr><td>JxC sin candidatos</td><td class="ww">Cambio estructura</td><td class="ww">LLA absorbe</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ANEXO II -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div class="anx-header" style="background:linear-gradient(135deg,#0F766E,#134E4A);color:white;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">General Paz · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO II — ANÁLISIS POLÍTICO-TERRITORIAL</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">Segmentos · Agenda provincial · Escenarios 2027<br>Split local vs. nacional</div>
+  </div>
+  <div class="anx-body" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#1d3461;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">📍 Comparativa regional · Paz en 5ª Sección</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Variable</th><th>Gral. Paz</th><th>Prom. región</th></tr></thead>
+          <tbody>
+            <tr><td>PJ ejecutivo 2023</td><td class="ok">52,0%</td><td class="ok">~45%</td></tr>
+            <tr><td>PJ concejales 2025</td><td class="ok">55,9%</td><td class="ok">~46%</td></tr>
+            <tr><td>LLA nacional 2025</td><td class="ww">42,7%</td><td class="ww">~44%</td></tr>
+            <tr><td>Crec. padrón 2 años</td><td class="ok">+2,6%</td><td>+2,8%</td></tr>
+            <tr><td>Color intendente</td><td class="ok">ALIADO UxP</td><td class="ok">~65% aliados</td></tr>
+            <tr><td>Padrón absoluto</td><td class="ww">12.197 (menor)</td><td>~18.000</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;margin-bottom:0;">El PJ supera el promedio regional en categorías locales. General Paz es el municipio con menor padrón absoluto de la 5ª Sección — pero con el mayor diferencial PJ-local vs. PJ-nacional (+8,9 pts), indicando alta dependencia de la gestión de Álvarez.</p>
+      </div>
+    </div>
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#1d3461;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">👥 Segmentos electorales</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Segmento</th><th>%</th><th>Patrón · Demanda clave</th></tr></thead>
+          <tbody>
+            <tr><td>PJ base dura</td><td class="ok">~35%</td><td>PJ en todo · gestión Álvarez</td></tr>
+            <tr><td>PJ soft afín gestión</td><td class="ok">~18%</td><td>PJ local · evalúa en nacional</td></tr>
+            <tr><td>JxC migrado a LLA</td><td class="ww">~20%</td><td>LLA nacional · anti-kirchner</td></tr>
+            <tr><td>LLA convencido</td><td class="ww">~12%</td><td>LLA todo · antipolítica</td></tr>
+            <tr><td>Campo ganadero</td><td class="ww">~10%</td><td>JxC→LLA · caminos, precios</td></tr>
+            <tr><td>Joven volátil</td><td class="ww">~5%</td><td>LLA creciente · empleo</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;margin-bottom:0;">El PJ tiene base local de ~53% (base dura + soft). El segmento JxC-migrado (~20%) es el que determina si 2027 sigue siendo cómodo o se vuelve competitivo.</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="anx-body" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:0;">
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#D97706;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">🏛️ Agenda provincial · Co-gestión aliado</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Intervención</th><th>Modalidad</th><th>Urgencia</th></tr></thead>
+          <tbody>
+            <tr><td>Laguna · mejoras co-financiadas</td><td class="ok">Co-gestión</td><td class="ok">Alta</td></tr>
+            <tr><td>Desagüe pluvial · apoyo</td><td class="ok">Co-financiamiento</td><td class="ok">Alta</td></tr>
+            <tr><td>Vivienda Loma Verde · IVBA</td><td class="ok">Co-gestión</td><td class="ok">Alta</td></tr>
+            <tr><td>Becas · ampliar provincial</td><td class="ok">Escalar</td><td class="ww">Media</td></tr>
+            <tr><td>Caminos rurales MinAgrario</td><td class="ww">Directa</td><td class="ww">Media</td></tr>
+            <tr><td>Circuito turístico regional</td><td class="ok">Coordinación</td><td class="ww">Media</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#9B1C1C;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">🔮 Escenarios electorales 2027</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Escenario</th><th>Condición</th><th>PJ exec.</th></tr></thead>
+          <tbody>
+            <tr><td class="ok">A · Base</td><td>Álvarez + gestión continuada</td><td class="ok">~52–55%</td></tr>
+            <tr><td class="ww">B · Competitivo</td><td>LLA con candidato local fuerte</td><td class="ww">~46–49%</td></tr>
+            <tr><td class="bb">C · Riesgo</td><td>JxC+LLA unificados + PJ sin candidato</td><td class="bb">~40–44%</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;margin-bottom:0;">Escenario más probable: A. La variable decisiva es si Álvarez presenta candidatura propia (reelección o sucesor) con gestión visible consolidada. El escenario C requiere una unificación opositor poco probable pero no imposible dado el 42,7% LLA nacional.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Narrativa General Paz (Ranchos) · PBA Analytics 2026</div>
+
+</body>
+</html>

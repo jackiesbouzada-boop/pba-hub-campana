@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAUCH — Ficha de Campaña · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.header { color: white; padding: 22px 28px; display: flex; justify-content: space-between; align-items: flex-start; }
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.85; line-height: 1.95; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-aliado { background: rgba(52,211,153,0.3); color: #A7F3D0; }
+.badge-rival  { background: rgba(239,68,68,0.3);  color: #FCA5A5; }
+.banner { background: #0C2340; color: white; padding: 20px 28px; border-left: 7px solid #4FC3F7; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #B0E0FA; margin-bottom: 7px; }
+.b-title  { font-size: 15.5px; font-weight: 800; margin-bottom: 13px; line-height: 1.35; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #B0E0FA; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 19px; font-weight: 900; color: #4FC3F7; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+.main { padding: 18px 22px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; background: #eef2f7; }
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+.card { background: white; border-radius: 10px; box-shadow: 0 1px 5px rgba(0,0,0,0.07); overflow: hidden; }
+.ch { padding: 10px 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.9px; }
+.cbody { padding: 13px; }
+.st  { font-size: 9.5px; font-weight: 700; color: #1C4872; padding-bottom: 5px; border-bottom: 2px solid #4FC3F7; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.st2 { font-size: 9.5px; font-weight: 700; color: #1C4872; padding-bottom: 5px; border-bottom: 2px solid #4FC3F7; margin-top: 14px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+.ct { background: #EFF6FF; border: 1px solid #4FC3F7; color: #0C2A3E; }
+.t { width: 100%; border-collapse: collapse; font-size: 11px; }
+.t th { background: #f5f6f8; color: #555; padding: 5px 7px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 5px 7px; border-bottom: 1px solid #f3f4f6; vertical-align: top; word-break: break-word; }
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child { color: #555; }
+.t.two-col td:first-child { width: 44%; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 11px 12px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 21px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9px; color: #999; margin-top: 3px; line-height: 1.35; }
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.sc   { border-radius: 7px; padding: 11px 12px; border-left: 4px solid; }
+.sc.p { border-color: #1C4872; background: #EFF6FF; }
+.sc.s { border-color: #059669; background: #F0FDF4; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #0369A1; background: #F0F9FF; }
+.sc.r { border-color: #DC2626; background: #FEF2F2; }
+.sc.g { border-color: #0C2A3E; background: #EFF6FF; }
+.sl { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.sn { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.sp { font-size: 18px; font-weight: 900; margin: 3px 0 6px; }
+.sd { font-size: 10px; line-height: 1.65; color: #444; }
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.pbl { width: 120px; font-size: 9.5px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; height: 16px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 5px; }
+.pbt { font-size: 9px; font-weight: 700; color: white; white-space: nowrap; }
+.pbp { width: 32px; font-size: 9.5px; font-weight: 700; text-align: right; flex-shrink: 0; }
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pi   { border-radius: 7px; padding: 11px 13px; border-left: 4px solid; }
+.pi.o { background: #EFF6FF; border-color: #1C4872; }
+.pi.r { background: #FEF2F2; border-color: #EF4444; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pi.p { background: #F0F9FF; border-color: #0369A1; }
+.pi.a { background: #FFFBEB; border-color: #D97706; }
+.pt   { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.pti  { font-size: 11px; font-weight: 700; margin-bottom: 5px; }
+.pd   { font-size: 10px; line-height: 1.65; color: #444; }
+.ar   { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f0f0f0; }
+.ar:last-child { border-bottom: none; }
+.ai   { font-size: 18px; min-width: 24px; flex-shrink: 0; }
+.ain  { flex: 1; min-width: 0; }
+.an   { font-size: 11px; font-weight: 700; color: #1C4872; margin-bottom: 3px; }
+.ad   { font-size: 10px; color: #555; line-height: 1.6; }
+.ats  { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+.at   { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 7px; }
+.ag   { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px dashed #e8e8e8; }
+.ag:last-child { border-bottom: none; }
+.agi  { font-size: 17px; min-width: 22px; flex-shrink: 0; }
+.agt  { min-width: 0; }
+.agt strong { font-size: 11px; display: block; margin-bottom: 3px; color: #1C4872; font-weight: 700; }
+.agt p { font-size: 10px; color: #666; line-height: 1.6; }
+.al   { border-radius: 7px; padding: 10px 12px; margin-top: 10px; font-size: 10px; line-height: 1.6; }
+.al-v { background: #EFF6FF; border: 1px solid #4FC3F7; color: #0C2A3E; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al-r { background: #FEF2F2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.al-k { background: #0C2340; color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.al strong { display: block; margin-bottom: 3px; font-size: 11px; }
+.al-k strong { color: #4FC3F7; }
+.nt   { background: #EFF6FF; border: 1px solid #4FC3F7; border-radius: 7px; padding: 9px 12px; font-size: 10px; color: #0C2A3E; margin-top: 10px; line-height: 1.6; }
+.nt strong { display: block; font-size: 11px; margin-bottom: 3px; color: #1C4872; }
+.hist { background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 7px; padding: 10px 12px; margin-top: 10px; }
+.hist strong { font-size: 11px; font-weight: 700; color: #78350F; display: block; margin-bottom: 4px; }
+.hist p { font-size: 10px; color: #78350F; line-height: 1.65; }
+.corr { background: linear-gradient(135deg, #0C2A3E 0%, #1C4872 100%); color: white; border-radius: 8px; padding: 13px 15px; margin-top: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.corr h3 { font-size: 11px; font-weight: 800; margin-bottom: 5px; color: #B0E0FA; }
+.corr p  { font-size: 10px; line-height: 1.65; opacity: 0.9; }
+.cms { display: flex; gap: 7px; margin-top: 9px; flex-wrap: wrap; }
+.cm  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; padding: 6px 9px; flex: 1; text-align: center; font-size: 10px; font-weight: 700; min-width: 70px; }
+.cm span { display: block; font-size: 8.5px; font-weight: 400; opacity: 0.65; margin-top: 2px; }
+.acc-nac  { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#dde3f5; color:#1d3461; border:1px solid #1d346144; white-space:nowrap; }
+.acc-prot { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#fef3c7; color:#5c3317; border:1px solid #5c331744; white-space:nowrap; }
+.acc-priv { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#DBEAFE; color:#1E40AF; border:1px solid #93C5FD; white-space:nowrap; }
+.locs { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+.loc  { border-radius: 6px; padding: 8px 10px; border-left: 3px solid; font-size: 10px; line-height: 1.55; }
+.loc strong { font-size: 10.5px; display: block; margin-bottom: 2px; }
+.footer { text-align: center; padding: 12px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+@media print {
+  @page { size: A4 portrait; margin: 6mm 7mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; padding: 0 !important; font-size: 7pt !important; background: #eef2f7 !important; }
+  .main { padding: 7px 9px !important; gap: 7px !important; }
+  .card { box-shadow: none !important; page-break-inside: avoid; break-inside: avoid; }
+  .ch { font-size: 6pt !important; padding: 5px 7px !important; }
+  .cbody { padding: 7px !important; }
+  .header h1 { font-size: 15pt !important; }
+  .banner { page-break-inside: avoid; }
+  .t { font-size: 6pt !important; }
+  .t td, .t th { padding: 3px 4px !important; }
+  .kv { font-size: 13pt !important; }
+  .kpis { grid-template-columns: 1fr 1fr 1fr 1fr !important; }
+  .anx-break { break-before: page; }
+  .anx-keep  { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header" style="background: linear-gradient(135deg, #0C2A3E 0%, #1C4872 100%);">
+  <div class="header-left">
+    <h1>🐓 RAUCH</h1>
+    <div class="sub">Ficha de Campaña · Capital Nacional del Ave de Raza · Ganadería Bovina · PBA 2026</div>
+    <div class="tag">5ª Sección Electoral · Cluster 7 · Cuenca del Salado · 4.312,8 km² · Padrón 2025: 14.180</div>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente:</strong> Maximiliano Suescun <span class="badge badge-rival">JxC · Opositor</span></div>
+    <div><strong>PJ Intendencia 2023:</strong> 41,9% · 2° lugar · JxC 49,0% · LLA 9,1%</div>
+    <div><strong>PJ Conc. Prov. 2025:</strong> 48,5% — ✅ PRIMERO · +6,6 pts vs 2023</div>
+    <div><strong>PJ Dip. Nac. 2025:</strong> 44,1% PRIMERO · LLA 39,7% — ⚡ ~400 votos</div>
+    <div><strong>Población:</strong> 16.635 (CENSO 2022) · Ave de Raza · Ganadería · SIP</div>
+    <div style="margin-top:5px;font-size:9.5px;opacity:0.5;">PBA Analytics 2026 · Uso reservado</div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="b-label">🐓 CAPITAL NACIONAL DEL AVE DE RAZA · PJ PRIMERO EN 2025 (48,5% PROV · 44,1% NAC) · LLA SOLO 12,5% PROV vs 39,7% NAC · TICKET SPLIT · GANADERÍA BOVINA · SIP VALOR AGREGADO CÁRNICO · SOCIEDAD RURAL · FIESTA NACIONAL DEL AVE DE RAZA</div>
+  <div class="b-title">Rauch es el municipio del Cluster 7 con la señal electoral más clara del ciclo: el PJ ganó las dos elecciones de 2025 — concejales PBA (48,5%) y Diputado Nacional (44,1% vs LLA 39,7%, ~400 votos). Pasó de 41,9% en la intendencia 2023 al primer lugar en ambas contiendas 2025. Capital Nacional del Ave de Raza, ganadería bovina extensiva y apuesta productiva al Sector Industrial Planificado.</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>El PJ ganó las dos elecciones 2025 en un municipio JxC:</strong> En 2023, JxC ganó la intendencia de Rauch con el 49,0% (4.917 votos) sobre el PJ (41,9%, 4.206 votos) y LLA (9,1%, 912). En 2025, el mapa se invirtió en los dos niveles: en las concejales PBA, el PJ obtuvo el 48,5% (4.363 votos) y quedó primero. En el Diputado Nacional, el PJ (44,1%, 4.002 votos) ganó sobre LLA (39,7%, 3.603 votos) por apenas ~400 votos. Rauch es uno de los pocos municipios de la Cuenca del Salado donde el PJ ganó ambas elecciones 2025 en un distrito con intendente JxC.</p>
+      <p><strong>El ticket split de Rauch — LLA fuerte en lo nacional, débil en lo provincial:</strong> La paradoja de Rauch en 2025 es la brecha entre LLA nacional (39,7%) y LLA provincial (12,5%) — una diferencia de 27 puntos en el mismo año electoral. El votante de Rauch que eligió LLA para la legislativa nacional votó PJ (o JxC/otros) para los concejales provinciales. Este comportamiento muestra que hay un electorado significativo que distingue entre los niveles — y que el PJ puede capitalizar en el nivel provincial si la agenda provincial es concreta y visible.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>Capital Nacional del Ave de Raza — identidad cultural y motor turístico:</strong> Rauch ostenta la designación de Capital Nacional del Ave de Raza, que ancla su identidad en la avicultura de exhibición (razas ornamentales, gallinas de raza, aves de competición). La Fiesta Nacional del Ave de Raza es el evento cultural más importante del partido y genera un movimiento turístico y comercial de expositores de todo el país. Es la palanca de presencia más directa y con mayor retorno de visibilidad en el municipio: la Provincia puede llegar como patrocinadora y co-organizadora.</p>
+      <p><strong>Ganadería bovina y el Sector Industrial Planificado (SIP) — la agenda productiva real:</strong> La economía de Rauch gira en torno a la ganadería bovina extensiva — remates de hacienda, agronomías, servicios para el campo, la Sociedad Rural. El gran salto productivo de la gestión Suescun es el Sector Industrial Planificado (SIP): pequeñas unidades de procesamiento de derivados cárnicos y textiles/lana, para que la riqueza generada por el campo no salga del partido sin valor agregado local. MinProducción provincial puede ser socio clave del SIP con programas de radicación industrial y créditos productivos.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">41,9%</div><div class="l">PJ Intendencia 2023<br>4.206 votos · 2° · JxC 49,0% · LLA 9,1%</div></div>
+    <div class="b-num"><div class="n">48,5%</div><div class="l">PJ Conc. Prov. 2025<br>✅ PRIMERO · 4.363 votos · +6,6 pts</div></div>
+    <div class="b-num"><div class="n">44,1%</div><div class="l">PJ Dip. Nac. 2025<br>✅ PRIMERO · 4.002 vs LLA 3.603 · ~400 vts</div></div>
+    <div class="b-num"><div class="n">12,5%</div><div class="l">LLA en Provinciales 2025<br>vs 39,7% en nacionales — split de 27 pts</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- KPIs -->
+<div class="card full">
+  <div class="ch" style="background:#EFF6FF; color:#1C4872;">📊 INDICADORES CLAVE</div>
+  <div class="cbody">
+    <div class="kpis">
+      <div class="kpi" style="background:#F0FDF4; border-color:#86EFAC;">
+        <div class="kl">PJ Conc. Prov. 2025</div>
+        <div class="kv" style="color:#14532D;">48,5%</div>
+        <div class="ks">✅ PRIMERO · 4.363 votos · +6,6 pts sobre 2023</div>
+      </div>
+      <div class="kpi" style="background:#F0FDF4; border-color:#86EFAC;">
+        <div class="kl">PJ Dip. Nac. 2025</div>
+        <div class="kv" style="color:#14532D;">44,1%</div>
+        <div class="ks">✅ PRIMERO · 4.002 vs LLA 3.603 · ~400 votos</div>
+      </div>
+      <div class="kpi" style="background:#EFF6FF; border-color:#93C5FD;">
+        <div class="kl">Padrón Electoral 2025</div>
+        <div class="kv" style="color:#1C4872;">14.180</div>
+        <div class="ks">5ª Sección · Cuenca del Salado · 16.635 hab.</div>
+      </div>
+      <div class="kpi" style="background:#FEF3C7; border-color:#FCD34D;">
+        <div class="kl">Intendente</div>
+        <div class="kv" style="color:#92400E; font-size:14px;">Suescun JxC</div>
+        <div class="ks">Opositor · 2023: 49,0% · LLA split 27 pts</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDAD TERRITORIAL -->
+<div class="card two">
+  <div class="ch" style="background:#EFF6FF; color:#1C4872;">🐓 IDENTIDAD TERRITORIAL</div>
+  <div class="cbody">
+    <div class="st">Capital Nacional del Ave de Raza</div>
+    <div class="chips">
+      <span class="chip cb">5ª Sección Electoral</span>
+      <span class="chip cb">Cuenca del Salado · Cluster 7</span>
+      <span class="chip co">JxC · Opositor</span>
+      <span class="chip cg">PJ Primero 2025</span>
+      <span class="chip cb">Disputado</span>
+    </div>
+    <div class="sgrid">
+      <div class="sc p">
+        <div class="sl">Identidad 1</div>
+        <div class="sn">🐓 Capital Nacional del Ave de Raza</div>
+        <div class="sd">La Fiesta Nacional del Ave de Raza posiciona a Rauch como el epicentro de la avicultura de exhibición del país: razas ornamentales, gallinas de pura raza, aves de competición y concurso. El evento moviliza expositores y coleccionistas de todo el país, generando movimiento turístico y comercial con identidad única en PBA. Es el eje cultural más diferenciador del partido.</div>
+      </div>
+      <div class="sc s">
+        <div class="sl">Identidad 2</div>
+        <div class="sn">🐄 Matriz Ganadera Extensiva</div>
+        <div class="sd">La economía real de Rauch gira alrededor de la ganadería bovina de cría y engorde: remates de hacienda, agronomías, servicios rurales, Sociedad Rural. Los ciclos del pueblo (ingresos, comercio, empleo) son estacionales y siguen los ritmos del campo. El Campo es el eje productivo dominante — y la agenda provincial que llega al productor impacta en el centro del tejido económico.</div>
+      </div>
+    </div>
+    <div class="st2">Datos Básicos</div>
+    <table class="t two-col">
+      <tbody>
+        <tr><td>Superficie</td><td class="bld">4.312,8 km²</td></tr>
+        <tr><td>Población (CENSO 2022)</td><td class="bld">16.635 habitantes</td></tr>
+        <tr><td>Padrón Electoral 2025</td><td class="bld">14.180 electores</td></tr>
+        <tr><td>Sección Electoral</td><td class="bld">5ª Sección</td></tr>
+        <tr><td>Cluster</td><td class="bld">7 · Cuenca del Salado</td></tr>
+        <tr><td>Intendente</td><td class="bld">Maximiliano Suescun (JxC)</td></tr>
+        <tr><td>Clave de Distrito</td><td class="bld">Capital Nacional del Ave de Raza</td></tr>
+        <tr><td>Categoría Electoral</td><td class="bld">Disputado — PJ ganó 2025 ×2</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ESCENARIO ELECTORAL -->
+<div class="card one">
+  <div class="ch" style="background:#EFF6FF; color:#1C4872;">🗳️ ESCENARIO ELECTORAL</div>
+  <div class="cbody">
+    <div class="st">2023 Intendencia</div>
+    <div class="pbr">
+      <div class="pbl">JxC · Suescun ✓</div>
+      <div class="pbo"><div class="pbi" style="width:49%; background:#1C4872;"><span class="pbt">49,0%</span></div></div>
+      <div class="pbp" style="color:#1C4872;">4.917</div>
+    </div>
+    <div class="pbr">
+      <div class="pbl">PJ</div>
+      <div class="pbo"><div class="pbi" style="width:41.9%; background:#2563EB;"><span class="pbt">41,9%</span></div></div>
+      <div class="pbp" style="color:#2563EB;">4.206</div>
+    </div>
+    <div class="pbr">
+      <div class="pbl">LLA</div>
+      <div class="pbo"><div class="pbi" style="width:9.1%; background:#7C3AED;"><span class="pbt">9,1%</span></div></div>
+      <div class="pbp" style="color:#7C3AED;">912</div>
+    </div>
+    <div class="st2">2025 Concejales PBA ✅</div>
+    <div class="pbr">
+      <div class="pbl">PJ ✅ PRIMERO</div>
+      <div class="pbo"><div class="pbi" style="width:48.5%; background:#16A34A;"><span class="pbt">48,5%</span></div></div>
+      <div class="pbp" style="color:#16A34A;">4.363</div>
+    </div>
+    <div class="pbr">
+      <div class="pbl">LLA</div>
+      <div class="pbo"><div class="pbi" style="width:12.5%; background:#9333EA;"><span class="pbt">12,5%</span></div></div>
+      <div class="pbp" style="color:#9333EA;">1.127</div>
+    </div>
+    <div class="pbr">
+      <div class="pbl">JxC / Otros</div>
+      <div class="pbo"><div class="pbi" style="width:39%; background:#6B7280;"><span class="pbt">~39%</span></div></div>
+      <div class="pbp" style="color:#6B7280;">~3.501</div>
+    </div>
+    <div class="st2">2025 Diputado Nac. ✅</div>
+    <div class="pbr">
+      <div class="pbl">PJ ✅ PRIMERO</div>
+      <div class="pbo"><div class="pbi" style="width:44.1%; background:#16A34A;"><span class="pbt">44,1%</span></div></div>
+      <div class="pbp" style="color:#16A34A;">4.002</div>
+    </div>
+    <div class="pbr">
+      <div class="pbl">LLA</div>
+      <div class="pbo"><div class="pbi" style="width:39.7%; background:#9333EA;"><span class="pbt">39,7%</span></div></div>
+      <div class="pbp" style="color:#9333EA;">3.603</div>
+    </div>
+    <div class="pbr">
+      <div class="pbl">FIT</div>
+      <div class="pbo"><div class="pbi" style="width:2.5%; background:#DC2626;"></div></div>
+      <div class="pbp" style="color:#DC2626;">228</div>
+    </div>
+    <div class="al al-k" style="margin-top:11px;">
+      <strong>⚡ Rauch ganó el ciclo 2025 completo</strong>
+      El PJ ganó los dos niveles electorales 2025 — concejales PBA (48,5%) y Dip. Nacional (44,1%) — en un municipio con intendente JxC. La brecha LLA nacional (39,7%) vs provincial (12,5%) muestra un split de 27 pts: el votante Rauch distingue niveles, y el PJ consolida el nivel provincial.
+    </div>
+  </div>
+</div>
+
+<!-- GESTIÓN SUESCUN (JxC) -->
+<div class="card two">
+  <div class="ch" style="background:#FEF2F2; color:#7F1D1D;">🏛️ GESTIÓN SUESCUN (JxC) — TRES EJES 2026</div>
+  <div class="cbody">
+    <div class="pgrid">
+      <div class="pi o">
+        <div class="pt">Eje 1 · Producción</div>
+        <div class="pti">Sector Industrial Planificado (SIP)</div>
+        <div class="pd">Radicación de pequeñas unidades productivas de derivados cárnicos y textiles (lana) para que la riqueza generada por el campo se procese localmente. El SIP busca que la cadena de valor cárnica y textil no salga del distrito sin generar empleo y valor agregado en Rauch. Ventana de co-gestión: MinProducción puede ser socio del SIP con financiamiento y acompañamiento técnico.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Eje 2 · Desarrollo Económico</div>
+        <div class="pti">Fiesta Nacional de la Ternera y Día de la Yerra — feria de negocios</div>
+        <div class="pd">Suescun potenció el evento ganadero más importante del partido: la Fiesta Nacional de la Ternera y Día de la Yerra, repositionada en 2026 no solo como celebración cultural sino como feria de negocios ganaderos, atrayendo cabañas y productores de toda la provincia para posicionar la calidad genética de Rauch. Oportunidad: la Provincia puede participar con agenda MinAgrario en el evento.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Eje 3 · Medio Ambiente</div>
+        <div class="pti">URRA — Planta de Reciclado de Rauch</div>
+        <div class="pd">La Unidad de Reciclado de Rauch (URRA) es una de las plantas de tratamiento de residuos más eficientes de la región. En 2026, ampliación del programa de compostaje domiciliario y venta de materiales reciclados — el beneficio se reinvierte en la misma planta. Modelo de economía circular municipal replicable. Oportunidad: MinAmbiente puede articular URRA como caso de referencia provincial.</div>
+      </div>
+      <div class="pi p">
+        <div class="pt">Programa Local</div>
+        <div class="pti">Rauch Emprende + Adultos Mayores + Vivienda Social</div>
+        <div class="pd"><strong>Rauch Emprende:</strong> microcréditos a tasa baja + acompañamiento contable para comercios. +30 pequeños comercios y talleres formalizados en los últimos ciclos. <strong>Adultos Mayores:</strong> Encuentro Regional (11/4); residencias municipales modelo en infraestructura y calidad humana. <strong>Vivienda Social:</strong> autoconstrucción asistida + loteos con servicios para familias jóvenes — arraigo generacional.</div>
+      </div>
+    </div>
+    <div class="corr">
+      <h3>🌐 Rauch en el Corredor de la Cuenca del Salado</h3>
+      <p>Rauch está en el centro geográfico de la Cuenca del Salado — el corredor ganadero que atraviesa la depresión del Salado desde Chascomús (norte) hasta General Belgrano y Dolores (sur-este). Lo que pasa en Rauch electoralmente resuena en el corredor: es el municipio disputado de referencia en la 5ª Sección. Con el PJ primero en los dos niveles 2025, Rauch puede funcionar como ancla electoral para los municipios vecinos del Cluster 7 en 2027.</p>
+      <div class="cms">
+        <div class="cm">4.912,8 km²<span>Superficie</span></div>
+        <div class="cm">16.635 hab.<span>Población CENSO 2022</span></div>
+        <div class="cm">14.180<span>Padrón 2025</span></div>
+        <div class="cm">Cluster 7<span>Cuenca del Salado</span></div>
+        <div class="cm">5ª Sección<span>Electoral</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACTORES CLAVE -->
+<div class="card one">
+  <div class="ch" style="background:#EFF6FF; color:#1C4872;">🤝 ACTORES CLAVE</div>
+  <div class="cbody">
+    <div class="ar">
+      <div class="ai">🐓</div>
+      <div class="ain">
+        <div class="an">Fiesta Nacional del Ave de Raza · Organizadores</div>
+        <div class="ad">El comité organizador de la Fiesta Nacional del Ave de Raza y la Asociación de Criadores locales son los actores culturales más importantes del partido. Pueden ser socios para una presencia de la Provincia en el evento como co-organizadora/patrocinadora. Alta visibilidad + impacto comunicacional.</div>
+        <div class="ats"><span class="at" style="background:#DBEAFE;color:#1E40AF;">Cultural</span><span class="at" style="background:#D1FAE5;color:#065F46;">Turismo</span><span class="at" style="background:#EDE9FE;color:#4C1D95;">Palanca #1</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🐄</div>
+      <div class="ain">
+        <div class="an">Sociedad Rural de Rauch</div>
+        <div class="ad">El actor institucional más representativo de la economía real del partido. Los remates de hacienda, las ferias ganaderas y los programas de mejoramiento genético pasan por la Sociedad Rural. Es la puerta de entrada a los productores ganaderos de Rauch y la plataforma para un acto de agenda MinAgrario (programa bovino).</div>
+        <div class="ats"><span class="at" style="background:#D1FAE5;color:#065F46;">Agropecuario</span><span class="at" style="background:#DBEAFE;color:#1E40AF;">Palanca #2</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🏭</div>
+      <div class="ain">
+        <div class="an">Empresas del Sector Industrial Planificado (SIP)</div>
+        <div class="ad">Las unidades productivas del SIP (procesamiento cárnico y textil/lana) son el brazo de industrialización de Rauch. Son los actores con mayor potencial de crecimiento económico local y los destinatarios directos de un programa MinProducción de crédito y apoyo técnico. Articulación activa con el municipio.</div>
+        <div class="ats"><span class="at" style="background:#FEF3C7;color:#92400E;">Industrial</span><span class="at" style="background:#DBEAFE;color:#1E40AF;">Palanca #3</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">♻️</div>
+      <div class="ain">
+        <div class="an">URRA · Unidad de Reciclado de Rauch</div>
+        <div class="ad">La URRA es un proyecto municipal de referencia en gestión ambiental y economía circular. El MinAmbiente provincial puede articular el modelo URRA como caso de estudio y escalarlo a otros municipios de la Cuenca del Salado — reforzando al mismo tiempo la agenda ambiental en el territorio.</div>
+        <div class="ats"><span class="at" style="background:#D1FAE5;color:#065F46;">Ambiental</span><span class="at" style="background:#DBEAFE;color:#1E40AF;">Co-gestión</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">👴</div>
+      <div class="ain">
+        <div class="an">Centros de Adultos Mayores · Encuentro Regional (11/4)</div>
+        <div class="ad">Rauch es reconocido por sus políticas de cuidado a adultos mayores — residencias modelo y programas de atención integral. El Encuentro Regional de Adultos Mayores (11 de abril) concentra participantes de varios municipios del corredor. Presencia provincial en el evento con agenda de cuidado y asistencia social tiene alto retorno simbólico.</div>
+        <div class="ats"><span class="at" style="background:#F3F4F6;color:#374151;">Social</span><span class="at" style="background:#D1FAE5;color:#065F46;">Comunitario</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISIS ELECTORAL DETALLADO -->
+<div class="card full">
+  <div class="ch" style="background:#EFF6FF; color:#1C4872;">📈 ANÁLISIS ELECTORAL · RAUCH 2023-2025</div>
+  <div class="cbody">
+    <table class="t">
+      <thead>
+        <tr>
+          <th>Elección</th>
+          <th>PJ</th>
+          <th>JxC</th>
+          <th>LLA</th>
+          <th>FIT/Otros</th>
+          <th>Total Positivos</th>
+          <th>Electores</th>
+          <th>Observación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bld">Int. & Conc. 2023</td>
+          <td class="warn">41,9% · 4.206 · 2°</td>
+          <td class="ok">49,0% · 4.917 ✓</td>
+          <td class="inf">9,1% · 912</td>
+          <td class="inf">—</td>
+          <td>10.035</td>
+          <td>14.086</td>
+          <td>JxC gana · LLA minoritario · diferencia 7,1 pts</td>
+        </tr>
+        <tr>
+          <td class="bld">Conc. PBA 2025</td>
+          <td class="ok">48,5% ✅ · 4.363 · 1°</td>
+          <td class="inf">~39% · ~3.501</td>
+          <td class="warn">12,5% · 1.127</td>
+          <td class="inf">—</td>
+          <td>8.991</td>
+          <td>14.180</td>
+          <td>PJ primero · LLA sólo 12,5% · split de 27 pts vs nac.</td>
+        </tr>
+        <tr>
+          <td class="bld">Dip. Nacional 2025</td>
+          <td class="ok">44,1% ✅ · 4.002 · 1°</td>
+          <td class="inf">—</td>
+          <td class="warn">39,7% · 3.603 · 2°</td>
+          <td>2,5% · 228</td>
+          <td>9.073</td>
+          <td>14.091</td>
+          <td>⚡ ~400 votos PJ-LLA · PJ gana · ticket split confirmado</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="al al-v" style="margin-top:11px;">
+      <strong>📊 Lectura del ticket split de Rauch 2025</strong>
+      LLA obtuvo el 12,5% en concejales PBA y el 39,7% en Diputado Nacional — una diferencia de 27 puntos en el mismo año. Eso significa que ~27 puntos de electores de Rauch votaron LLA para el Congreso pero no para la Provincia. El PJ capturó esa brecha en el nivel provincial: 48,5% en PBA vs 44,1% en nacionales. La conclusión estratégica es que el nivel provincial es favorable al PJ en Rauch — y que la agenda provincial concreta (ganadería, SIP, Fiesta del Ave de Raza) puede consolidar ese piso para 2027.
+    </div>
+  </div>
+</div>
+
+<!-- PALANCAS PROVINCIALES -->
+<div class="card two">
+  <div class="ch" style="background: linear-gradient(90deg,#0C2A3E,#1C4872); color:white;">🎯 PALANCAS PROVINCIALES · RAUCH</div>
+  <div class="cbody">
+    <div class="pgrid">
+      <div class="pi o">
+        <div class="pt">Palanca 1 · Máxima prioridad</div>
+        <div class="pti">🐓 Fiesta Nacional del Ave de Raza — Patrocinadora + presencia</div>
+        <div class="pd">La Fiesta Nacional del Ave de Raza es el evento de mayor alcance y visibilidad posible en Rauch. La Provincia puede participar como patrocinadora y co-organizadora oficial a través del MinTurismo — presencia en el escenario, logo en la cartelería, acto de apertura. El retorno político es incomparable: toda la comunidad de Rauch más expositores de todo el país ven a la Provincia acompañando el evento más querido del partido. Encuadre: "La Fiesta del Ave de Raza es patrimonio de toda la Provincia".</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Palanca 2 · Alta prioridad</div>
+        <div class="pti">🐄 Sociedad Rural — Programa MinAgrario bovino</div>
+        <div class="pd">Visita a la Sociedad Rural de Rauch con la comisión directiva y consignatarios + anuncio de programa MinAgrario de apoyo a la ganadería bovina (mejoramiento genético — inseminación subsidiada, sanidad animal, financiamiento de infraestructura productiva). El acto llega al corazón económico de Rauch: el productor ganadero, no el militante. Encuadre: "La Provincia invierte en la cadena bovina de Rauch y la Cuenca del Salado".</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Palanca 3 · Alta prioridad</div>
+        <div class="pti">🏭 Sector Industrial Planificado (SIP) — MinProducción como socio</div>
+        <div class="pd">El SIP de Rauch es la apuesta de industrialización local más concreta de la gestión Suescun. MinProducción puede llegar con un programa de crédito y asistencia técnica para las unidades productivas del SIP (procesamiento cárnico y textil). Acto en el SIP con empresarios locales + anuncio de línea de crédito. Encuadre: "La Provincia acompaña a Rauch en agregar valor al campo — que el ternero se procese acá".</div>
+      </div>
+      <div class="pi p">
+        <div class="pt">Palanca 4 · Complementaria</div>
+        <div class="pti">♻️ URRA — MinAmbiente + Encuentro Regional Adultos Mayores</div>
+        <div class="pd"><strong>URRA:</strong> MinAmbiente puede articular la Unidad de Reciclado de Rauch como modelo de economía circular y replicarlo en la Cuenca del Salado — visita + reconocimiento provincial. <strong>Adultos Mayores:</strong> Presencia en el Encuentro Regional de Adultos Mayores (11/4) con agenda de cuidado y asistencia provincial — evento que concentra participantes de varios municipios del corredor. Alta visibilidad, bajo costo político.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LUGARES DE VISITA -->
+<div class="card one">
+  <div class="ch" style="background:#EFF6FF; color:#1C4872;">📍 LUGARES DE VISITA · RAUCH</div>
+  <div class="cbody">
+    <div class="ag">
+      <div class="agi">🐓</div>
+      <div class="agt">
+        <strong>Fiesta Nacional del Ave de Raza · Palanca 1</strong>
+        <p>Evento cultural identitario de Rauch. Presencia como patrocinadora y co-organizadora MinTurismo. Alcance: toda la comunidad local + expositores nacionales. Encuadre: "la Fiesta del Ave de Raza es de toda la Provincia".</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🐄</div>
+      <div class="agt">
+        <strong>Sociedad Rural de Rauch · Palanca 2</strong>
+        <p>Visita con comisión directiva + consignatarios de hacienda. Anuncio de programa MinAgrario bovino. El acto más próximo al corazón económico del partido. Alta resonancia con el productor ganadero.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏭</div>
+      <div class="agt">
+        <strong>Sector Industrial Planificado (SIP) · Palanca 3</strong>
+        <p>Visita a unidades productivas del SIP (derivados cárnicos, textiles/lana). Anuncio de línea MinProducción. Acto con empresarios locales. Encuadre: valor agregado local.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">♻️</div>
+      <div class="agt">
+        <strong>URRA · Unidad de Reciclado de Rauch</strong>
+        <p>Visita a la planta modelo de tratamiento de residuos + reconocimiento MinAmbiente. Oportunidad de posicionar Rauch como modelo ambiental de la Cuenca del Salado.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">👴</div>
+      <div class="agt">
+        <strong>Encuentro Regional Adultos Mayores (11/4)</strong>
+        <p>Presencia con agenda de cuidado social provincial. Evento que concentra participantes de varios municipios del corredor. Alta visibilidad, muy alto retorno simbólico comunitario.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏛️</div>
+      <div class="agt">
+        <strong>Municipalidad · Maximiliano Suescun (JxC)</strong>
+        <p>Visita breve y focalizada en convenio u obra concreta. Co-gestión institucional, no foto política. Encuadre: la Provincia trabaja con todos los municipios. Abre puerta al SIP y a la Fiesta del Ave de Raza.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS OPERATIVA -->
+<div class="card full anx-keep">
+  <div class="ch" style="background:linear-gradient(90deg,#0C2A3E,#1C4872); color:white;">🎯 SÍNTESIS OPERATIVA · RAUCH</div>
+  <div class="cbody">
+    <div class="pgrid" style="margin-bottom:12px;">
+      <div class="pi o">
+        <div class="pt">Oportunidad electoral</div>
+        <div class="pti">PJ ganó los dos niveles 2025 — piso sólido para 2027</div>
+        <div class="pd">El PJ ganó concejales PBA (48,5%) y Diputado Nacional (44,1%) en 2025 — el único municipio de la Cuenca del Salado con intendente JxC donde el PJ ganó ambos niveles. El piso del 48,5% en provinciales es el más alto del ciclo para el PJ en la 5ª Sección. Para 2027, consolidar ese piso y ampliarlo 3-5 puntos para competir la intendencia con Suescun.</div>
+      </div>
+      <div class="pi r">
+        <div class="pt">Riesgo / Atención</div>
+        <div class="pti">LLA fuerte en nacionales (39,7%) — riesgo de crecimiento en provinciales</div>
+        <div class="pd">El 39,7% de LLA en Diputado Nacional 2025 es señal de alerta para 2027. Si LLA capitaliza el gobierno nacional hacia 2027 y cierra el split de 27 puntos en el nivel provincial, el escenario para el PJ se complica. La agenda provincial concreta — ganadería, SIP, Fiesta del Ave de Raza — es el dique contra ese avance.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Vectores de crecimiento</div>
+        <div class="pti">Tres palancas con agenda provincial concreta</div>
+        <div class="pd">1. Fiesta Nacional del Ave de Raza (MinTurismo, patrocinio) — identidad + visibilidad masiva. 2. Ganadería bovina (Sociedad Rural, MinAgrario, programa bovino) — economía real del partido. 3. SIP (MinProducción, crédito productivo) — agenda de trabajo e industrialización local. Las tres juntas construyen presencia provincial concreta en los tres ejes que el votante de Rauch reconoce como propios.</div>
+      </div>
+      <div class="pi p">
+        <div class="pt">Encuadre para 2026-2027</div>
+        <div class="pti">La Provincia que trabaja con Rauch — sin distinción de banderías</div>
+        <div class="pd">Suescun (JxC) gestiona el municipio. La Provincia puede trabajar con el municipio en obra concreta (SIP, URRA, Sociedad Rural, Fiesta del Ave de Raza) sin darle rédito político exclusivo al intendente opositor — y posicionarse como el nivel de gobierno que llega con recursos y agenda al interior de la Cuenca del Salado.</div>
+      </div>
+    </div>
+    <table class="t">
+      <thead>
+        <tr><th>Dimensión</th><th>Lectura</th><th>Prioridad</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>PJ en Conc. PBA 2025</td><td class="ok">48,5% — PRIMERO · señal sólida</td><td class="ok">Alta · consolidar</td></tr>
+        <tr><td>PJ en Dip. Nac. 2025</td><td class="ok">44,1% — PRIMERO · +400 votos</td><td class="ok">Alta · mantener</td></tr>
+        <tr><td>PJ vs JxC en Ejecutivo 2023</td><td class="warn">41,9% vs 49,0% · 7,1 pts abajo</td><td class="warn">Media · construir candidato</td></tr>
+        <tr><td>LLA en Provinciales</td><td class="ok">12,5% — bajo · split 27 pts</td><td class="ok">Favorable · explotar brecha</td></tr>
+        <tr><td>LLA en Nacionales</td><td class="warn">39,7% · crecimiento desde 9,1% en 2023</td><td class="warn">Atención · agenda provincial como dique</td></tr>
+        <tr><td>Fiesta Nacional Ave de Raza</td><td class="ok">Palanca identitaria #1</td><td class="ok">Alta · MinTurismo presente</td></tr>
+        <tr><td>Ganadería / Sociedad Rural</td><td class="ok">Corazón económico del partido</td><td class="ok">Alta · MinAgrario programa bovino</td></tr>
+        <tr><td>SIP · Industrialización local</td><td class="ok">Apuesta productiva Suescun — ventana co-gestión</td><td class="ok">Alta · MinProducción crédito</td></tr>
+        <tr><td>URRA · Ambiental</td><td class="ok">Modelo replicable Cuenca Salado</td><td class="warn">Media · MinAmbiente reconocimiento</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div><!-- /main -->
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Ficha de Campaña — Rauch · PBA Analytics 2026</div>
+
+</body>
+</html>

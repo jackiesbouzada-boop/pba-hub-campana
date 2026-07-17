@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Quilmes — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#0C3B1E;--accent:#22C55E;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#0C3B1E 0%,#165F35 55%,#16a34a 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2.2rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(34,197,94,.3);color:#bbf7d0;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(34,197,94,.45);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bbf7d0}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#0C3B1E,#165F35);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#0C3B1E;border-color:#0C3B1E}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bbf7d0}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#16a34a;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#0C3B1E,#16a34a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dcfce7;color:#15803d}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#15803d;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dcfce7;color:#15803d;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#15803d}
+.tbl-ok{color:#15803d;font-weight:700}
+.tbl-warn{color:#b45309;font-weight:700}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-color:#86efac}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#15803d}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-fit{color:#dc2626}.v-grey{color:#374151}
+.split-box{background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.split-title{font-size:.72rem;font-weight:800;color:#15803d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.split-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid #dcfce7}
+.split-row:last-child{border-bottom:none}
+.split-lbl{font-size:.77rem;color:#374151}
+.split-val{font-size:.82rem;font-weight:800;color:#15803d}
+.split-neg{color:#b91c1c}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#0C3B1E,#16a34a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prot{background:#dcfce7;color:#15803d}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#0C3B1E,#165F35);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bbf7d0;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CLUSTER 1 · Conurbano Sur &nbsp;|&nbsp; 3ª Sección Electoral</div>
+  <div class="h-name">QUILMES</div>
+  <div class="h-sub">Partido de Quilmes · Buenos Aires · Cabecera: Quilmes / Bernal / Berazategui</div>
+  <div><span class="badge-al">✅ INTENDENTE ALIADA — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">479,621</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">~633,000</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">91.6 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">48.4%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">31.3%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">−2.7 pts</span><span class="h-stat-l">Split Prov&gt;Nac PJ</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏭 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>La Cerveza · El Río · El Sur</h4>
+        <p>Quilmes es uno de los partidos con mayor carga identitaria del Conurbano. En 1888, la Cervecería Bieckert fundó en su territorio lo que se convertiría en <strong>Cerveza Quilmes</strong> — la marca de cerveza más reconocida de Argentina. El nombre del municipio es hoy sinónimo del producto. Sobre el Río de la Plata, el EcoParque Quilmes es uno de los espacios de biodiversidad costera más importantes del Conurbano. La ciudad cabecera tiene una arquitectura de casco histórico sólida y una identidad de partido con historia larga desde la fundación jesuítica.</p>
+      </div>
+      <div class="blk">
+        <h4>Conurbano Sur: El Corredor de la 3ª Sección</h4>
+        <p>Con 633,000 habitantes en 91.6 km², Quilmes es uno de los partidos más poblados y densos del sur del GBA. Limita con Avellaneda, Berazategui, Florencio Varela y Lanús. Es parte del corredor industrial y residencial que se extiende desde el sur de CABA hacia el sureste bonaerense. El partido integra la 3ª Sección Electoral — la sección con mayor peso en la Cámara de Diputados de PBA después de la 1ª.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">#1</span>
+        <span class="l">Origen de "Cerveza Quilmes" — la marca de cerveza más vendida de Argentina</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">633,000</span>
+        <span class="l">Habitantes — 5º partido más poblado de la Provincia de Buenos Aires</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">✅</div>
+      <div class="int-info">
+        <h3>Mayra Mendoza</h3>
+        <div class="meta">Unión por la Patria (La Cámpora) &nbsp;·&nbsp; <span class="badge-pol badge-al-pol">ALIADA</span></div>
+        <div class="desc">Intendenta de Quilmes desde 2019. Referente nacional de La Cámpora y de la línea kirchnerista del PJ bonaerense. Su gestión combina inversión en infraestructura social (salud, educación, primera infancia) con fuerte identidad kirchnerista. Quilmes es históricamente uno de los bastiones más sólidos del PJ en el Conurbano Sur. Mendoza es candidata a mantener su posicionamiento político más allá del municipio. La coordinación con el gobierno provincial es fluida.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">EcoParque Quilmes</div>
+        <div class="gest-txt">Espacio de biodiversidad costera sobre el Río de la Plata. Recuperación ambiental del borde costero, senderos de naturaleza, educación ambiental. Uno de los activos de gestión con mayor visibilidad del partido.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Centro de Salud Quilmes</div>
+        <div class="gest-txt">Fuerte expansión de la red de Centros de Atención Primaria de la Salud (CAPS). Cobertura de barrios populares y villas. Articulación con el sistema provincial de salud.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Quilmes Educa / Primera Infancia</div>
+        <div class="gest-txt">Expansión de jardines municipales y espacios de primera infancia en barrios populares. Articulación con PNUD y programas provinciales de desarrollo social.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Puerto Quilmes · Costera</div>
+        <div class="gest-txt">Recuperación del Puerto Quilmes y la franja costera del Río de la Plata. Proyecto de parque costero integrado. Alta valoración vecinal como espacio de esparcimiento público.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>% aprox.</th><th>Localización</th><th>Perfil de Voto</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Clase media popular</strong> (empleados, comerciantes, operarios)</td><td class="tbl-num">35%</td><td>Quilmes centro, Bernal, Don Bosco</td><td>PJ sólido histórico. Con LLA como segunda fuerza creciente desde 2023.</td></tr>
+        <tr><td><strong>Sectores populares y barrios</strong> (informales, villas, asentamientos)</td><td class="tbl-num">30%</td><td>Barrios sur y oeste del partido</td><td>PJ muy consolidado. Base más estable del partido. Alta dependencia de programas sociales.</td></tr>
+        <tr><td><strong>Clase media acomodada</strong> (profesionales, comercio establecido)</td><td class="tbl-num">20%</td><td>Quilmes Oeste, Bernal residencial</td><td>JxC histórico, migró a LLA. Difícil de recuperar en corto plazo.</td></tr>
+        <tr><td><strong>Jóvenes y estudiantes</strong></td><td class="tbl-num">15%</td><td>Todo el partido</td><td>Alta volatilidad. FIT creciente. PJ con presencia pero compite con LLA y FIT.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Valor</th><th>Ref. PBA</th><th>Observación</th></tr></thead>
+      <tbody>
+        <tr><td><strong>NBI</strong></td><td class="tbl-warn">~18%</td><td>~12%</td><td>Por encima de la media; zonas de vulnerabilidad en barrios populares del oeste</td></tr>
+        <tr><td><strong>Agua corriente</strong></td><td class="tbl-ok">~84%</td><td>~84%</td><td>En línea con la media; déficit puntual en asentamientos perimetrales</td></tr>
+        <tr><td><strong>Red cloacal</strong></td><td class="tbl-warn">~60%</td><td>~68%</td><td>Déficit notable; uno de los principales reclamos vecinales históricos</td></tr>
+        <tr><td><strong>Gas natural</strong></td><td class="tbl-ok">~73%</td><td>~65%</td><td>Algo por encima de la media del Conurbano Sur</td></tr>
+        <tr><td><strong>Pavimento</strong></td><td class="tbl-warn">~60%</td><td>~60%</td><td>En línea con la media; barrios populares con déficit marcado</td></tr>
+        <tr><td><strong>Conectividad</strong></td><td class="tbl-ok">~68%</td><td>~66%</td><td>Levemente por encima de la media; perfil urbano denso favorece la cobertura</td></tr>
+        <tr><td><strong>Efectores de salud</strong></td><td>Hospital Mi Pueblo (IOMA ref.) + 18 CAPS</td><td>—</td><td>Red primaria relativamente extensa; Hospital Mi Pueblo como referencia regional</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">2023 — General (Intendente)</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val v-pj">50.9% <small style="font-weight:400;color:#64748b">(184,225)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Juntos x el Cambio</span><span class="arc-val v-jxc">28.6% <small style="font-weight:400;color:#64748b">(103,460)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">17.1% <small style="font-weight:400;color:#64748b">(61,907)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val v-fit">3.4% <small style="font-weight:400;color:#64748b">(12,245)</small></span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Provincial</div>
+        <div class="arc-row"><span class="arc-lbl">PJ</span><span class="arc-val v-pj">48.4% <small style="font-weight:400;color:#64748b">(153,458)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">31.3% <small style="font-weight:400;color:#64748b">(99,280)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">525,087</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">PJ</span><span class="arc-val v-pj">45.7% <small style="font-weight:400;color:#64748b">(148,977)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">37.3% <small style="font-weight:400;color:#64748b">(121,603)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val v-fit">5.6% <small style="font-weight:400;color:#64748b">(18,384)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">479,621</span></div>
+      </div>
+    </div>
+    <div class="split-box">
+      <div class="split-title">📐 Análisis Ticket Split 2025</div>
+      <div class="split-row"><span class="split-lbl">PJ Elección Provincial</span><span class="split-val">48.4%</span></div>
+      <div class="split-row"><span class="split-lbl">PJ Elección Nacional</span><span class="split-val">45.7%</span></div>
+      <div class="split-row"><span class="split-lbl">Diferencia (Nac − Prov)</span><span class="split-val split-neg">−2.7 pts</span></div>
+      <div class="split-row"><span class="split-lbl" style="max-width:55%">Lectura estratégica</span><span class="split-lbl" style="max-width:45%;text-align:right;font-size:.74rem">Split mínimo: Quilmes vota de manera muy consistente entre boleta provincial y nacional. Distrito sólido sin fracturas internas importantes.</span></div>
+    </div>
+    <div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:8px;padding:12px 14px">
+      <div style="font-size:.72rem;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px">⚠️ LLA Creció 20 puntos en Dos Años</div>
+      <div style="font-size:.79rem;color:#374151;line-height:1.6">En 2023, LLA obtuvo 17.1% como tercera fuerza. En 2025 nac alcanzó 37.3% (+20.2 pts). La casi totalidad del voto JxC (28.6% en 2023) migró a LLA. El PJ resistió bien — bajó solo 5.2 pts (50.9% → 45.7%) — pero LLA es hoy la segunda fuerza establecida en Quilmes. La brecha sigue siendo sólida a favor del PJ: +8.4 pts nacional, +17.1 pts provincial.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <p style="color:#64748b;font-size:.78rem;margin-bottom:14px;">Personas, lugares y tradiciones que dan textura humana a la visita.</p>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🍺</div>
+        <div class="cl-tipo">Identidad histórica única</div>
+        <div class="cl-nm">La Cerveza Quilmes</div>
+        <div class="cl-desc">En 1890, la Cervecería y Maltería Quilmes comenzó a producir en este partido lo que sería la cerveza más vendida de Argentina. El nombre del municipio se volvió sinónimo del producto en todo el país. Los quilmeños lo mencionan con orgullo casi automático: "somos los de la cerveza". Es el activo identitario más potente del partido — más que cualquier monumento, plaza o evento.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🦜</div>
+        <div class="cl-tipo">Espacio verde · Patrimonio ambiental</div>
+        <div class="cl-nm">EcoParque sobre el Río de la Plata</div>
+        <div class="cl-desc">El EcoParque Quilmes sobre la ribera del Río de la Plata es el espacio de biodiversidad costera más activo del Conurbano Sur. Aves, humedales, senderos de naturaleza y educación ambiental. Los fines de semana convoca familias de todo el partido y municipios vecinos. Es el pulmón verde y el lugar de disfrute colectivo más querido del partido.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🔥</div>
+        <div class="cl-tipo">Tradición popular · Fé</div>
+        <div class="cl-nm">Fogones de Bernal</div>
+        <div class="cl-desc">Las Fiestas Patronales de Bernal y sus fogones son una tradición religiosa y comunitaria de enorme convocatoria popular. Cada septiembre, vecinos de toda la localidad de Bernal se congregan en una procesión y festejo que mezcla devoción, gastronomía popular y sociabilidad de barrio. Un evento de raíz que el partido siente como propio.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🌎</div>
+        <div class="cl-tipo">Diversidad cultural</div>
+        <div class="cl-nm">Fiesta de las Colectividades</div>
+        <div class="cl-desc">Cada diciembre, Quilmes celebra su Fiesta Anual de las Colectividades — un evento que refleja la diversidad de origen de sus vecinos: comunidades boliviana, paraguaya, peruana, italiana, española, árabe y coreana. Gastronomía, danzas y música. El mejor escenario para mostrar la diversidad real del Conurbano Sur.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎸</div>
+        <div class="cl-tipo">Escena cultural · Música</div>
+        <div class="cl-nm">Quilmes Rock y la escena musical</div>
+        <div class="cl-desc">Quilmes fue sede histórica del Quilmes Rock, uno de los festivales de rock más grandes de Argentina. Esa herencia musical sigue presente en la escena local: bandas de barrio, ensayos en sótanos, una cultura rockera popular muy arraigada. El vecino de Quilmes tiene una relación orgánica con la música en vivo que no tiene ningún otro partido del Conurbano Sur.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⛵</div>
+        <div class="cl-tipo">Costanera · Vida ribereña</div>
+        <div class="cl-nm">Puerto Quilmes</div>
+        <div class="cl-desc">El Puerto Quilmes sobre el Río de la Plata tiene historia de pesca artesanal, clubes náuticos y sociabilidad ribereña. La recuperación del frente costero es uno de los proyectos de gestión con mayor tracción vecinal. Los pescadores y los clubes náuticos son parte del tejido de identidad costero que distingue a Quilmes del Conurbano sin litoral.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 1</div>
+          <div class="pal-ttl">Cervecería y Maltería Quilmes · Identidad + Empleo</div>
+        </div>
+        <div class="pal-body">
+          <p>La Cervecería Quilmes es una planta industrial activa con empleo de calidad. El vínculo entre identidad local y producción industrial es único en Argentina. Visita a la planta con trabajadores — eje: <strong>industria argentina con historia, empleo calificado, marca que el mundo conoce como quilmeña</strong>. Coordinar con ABINBEV Argentina (propietaria actual).</p>
+          <span class="pal-tag acc-priv">🏭 PRIVADO — ABINBEV Argentina</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 2</div>
+          <div class="pal-ttl">EcoParque · Costera del Río de la Plata</div>
+        </div>
+        <div class="pal-body">
+          <p>El espacio ambiental más activo del Conurbano Sur. Articulación con programas provinciales de gestión ambiental, humedales y biodiversidad costera. Eje: <strong>Estado que cuida el ambiente, acceso popular a espacios verdes, patrimonio natural del Gran Buenos Aires</strong>. Coordinar con la intendenta Mendoza — aliada.</p>
+          <span class="pal-tag acc-prot">✅ PROTOCOLAR — Municipio aliado (Mendoza)</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 3</div>
+          <div class="pal-ttl">Red de Salud y Primera Infancia</div>
+        </div>
+        <div class="pal-body">
+          <p>Quilmes tiene una red de CAPS extensa pero con déficit de infraestructura en barrios populares. Los programas provinciales de primera infancia, maternidad y salud comunitaria tienen llegada directa. Eje: <strong>salud pública como política de Estado, cada barrio con su centro, Estado presente donde el mercado no llega</strong>. Coordinación directa con la gestión Mendoza.</p>
+          <span class="pal-tag acc-prot">✅ PROTOCOLAR — Municipio aliado (Mendoza)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Cervecería Quilmes (planta industrial) <span style="background:#fef3c7;color:#92400e;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PRIVADO — ABINBEV</span></div>
+          <div class="vis-desc">La planta industrial más emblemática del partido. Recorrida con trabajadores. Discurso: industria argentina con identidad, empleo calificado, marca global que nació acá. Escenario único en PBA.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">EcoParque · Costera Río de la Plata <span style="background:#dcfce7;color:#15803d;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PROTOCOLAR — Municipio aliado</span></div>
+          <div class="vis-desc">Espacio ambiental costero con alta valoración vecinal. Articular con programas provinciales de humedales. Audiencia: vecinos, grupos ambientales, familias. Escenario fotogénico sobre el Río de la Plata.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">CAPS / Centro de Primera Infancia en barrio popular <span style="background:#dcfce7;color:#15803d;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PROTOCOLAR — Municipio aliado</span></div>
+          <div class="vis-desc">Red de salud comunitaria del municipio. Articular con servicios provinciales. Audiencia: madres, cuidadores, vecinos de sectores populares. Mensaje de Estado presente en el barrio.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Fogones de Bernal (septiembre) / Fiesta Colectividades (diciembre) <span style="background:#f3e8ff;color:#6b21a8;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PROTOCOLAR</span></div>
+          <div class="vis-desc">Los dos eventos de máxima convocatoria popular del partido. Alta diversidad cultural y participación familiar. Presencia directa sin protocolo excesivo. Efecto multiplicador en redes comunitarias.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Puerto Quilmes · Clubes náuticos <span style="background:#fef3c7;color:#92400e;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PRIVADO — Clubes</span></div>
+          <div class="vis-desc">Frente costero ribereño con pescadores, remeros y familias. Coordinar con clubes náuticos. Discurso: patrimonio ambiental, espacio público para todos, río de los quilmeños.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🎯 Síntesis Ejecutiva</h3>
+  <p>Quilmes es el partido más sólido del Conurbano Sur para el PJ: 50.9% en 2023, 48.4% en 2025 provincial, con Mayra Mendoza como intendenta aliada activa y articulada con el gobierno bonaerense. La distancia con LLA es la más amplia del cluster: +17.1 pts provincialmente, +8.4 pts en la boleta nacional.</p>
+  <p>El riesgo no es perder Quilmes — el riesgo es no aprovechar la escala de este partido. Con 479,000 electores en padrón, cada punto porcentual en Quilmes equivale a casi 5,000 votos. Maximizar el resultado en un bastión como este tiene tanta importancia electoral como competir en un municipio en disputa.</p>
+  <p>Los activos son claros: la Cervecería Quilmes es el único escenario industrial con ese nivel de identidad cultural en el Conurbano, el EcoParque tiene impacto ambiental-costero de alta visibilidad, y Mendoza es una aliada con capital político propio. La visita a Quilmes debe ser de afirmación y volumen — no de rescate.</p>
+</div>
+
+</body>
+</html>

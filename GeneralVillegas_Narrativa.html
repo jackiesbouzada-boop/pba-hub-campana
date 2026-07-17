@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Villegas — Narrativa Política · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: Georgia, 'Times New Roman', serif; font-size: 13.5px; line-height: 1.75; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.cover { color: white; padding: 38px 36px 32px; min-height: 200px; display: flex; flex-direction: column; justify-content: flex-end; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.cover-eyebrow { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.6; margin-bottom: 10px; }
+.cover-title { font-size: 38px; font-weight: 700; line-height: 1.1; margin-bottom: 8px; letter-spacing: -0.5px; }
+.cover-sub { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; opacity: 0.8; line-height: 1.7; margin-bottom: 16px; max-width: 600px; }
+.cover-meta { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10.5px; opacity: 0.55; border-top: 1px solid rgba(255,255,255,0.25); padding-top: 12px; }
+.art { padding: 0 42px; background: white; }
+h2 { font-family: 'Segoe UI', Arial, sans-serif; font-size: 17px; font-weight: 800; color: #0D3A28; margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 2px solid #34D399; letter-spacing: -0.2px; }
+h3 { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; font-weight: 700; color: #1A5C3A; margin: 18px 0 7px; }
+p { margin-bottom: 13px; text-align: justify; hyphens: auto; }
+.lead { font-size: 15px; font-weight: 600; line-height: 1.65; color: #0D3A28; margin-bottom: 18px; border-left: 4px solid #34D399; padding-left: 16px; font-family: 'Segoe UI', Arial, sans-serif; }
+.pull { border-left: 4px solid #1A5C3A; background: #ECFDF5; padding: 13px 16px; margin: 18px 0; font-style: italic; font-size: 13px; color: #0D3A28; border-radius: 0 6px 6px 0; break-inside: avoid; page-break-inside: avoid; }
+.pull strong { font-style: normal; display: block; font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; color: #1A5C3A; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+.epig { background: #ECFDF5; border-left: 5px solid #1A5C3A; padding: 13px 16px; margin: 18px 0; font-size: 12px; line-height: 1.65; border-radius: 0 6px 6px 0; break-inside: avoid; page-break-inside: avoid; }
+.epig strong { display: block; font-family: 'Segoe UI', Arial, sans-serif; color: #0D3A28; font-size: 11px; margin-bottom: 3px; }
+.blk { border: 1px solid #e5e7eb; border-radius: 8px; padding: 15px 18px; margin: 18px 0; break-inside: avoid; page-break-inside: avoid; }
+.blk h4 { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; font-weight: 700; margin-bottom: 8px; color: #1A5C3A; }
+.blk p { font-size: 12px; margin-bottom: 8px; }
+.blk p:last-child { margin-bottom: 0; }
+.blk-g { background: #F0FDF4; border-color: #6EE7B7; }
+.blk-k { background: #091F15; border: none; border-left: 4px solid #34D399; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-k h4 { color: #34D399; }
+.blk-k p { color: rgba(255,255,255,0.88); font-size: 12px; }
+.blk-w { background: #FFFBEB; border-color: #FCD34D; }
+.blk-w h4 { color: #78350F; }
+.blk-r { background: #FEF2F2; border-color: #FCA5A5; }
+.blk-r h4 { color: #7F1D1D; }
+.nota { background: #ECFDF5; border: 1px solid #34D399; border-radius: 6px; padding: 10px 14px; margin: 14px 0; font-size: 11.5px; color: #0D3A28; line-height: 1.65; break-inside: avoid; page-break-inside: avoid; }
+.nota strong { font-family: 'Segoe UI', Arial, sans-serif; display: block; margin-bottom: 3px; color: #1A5C3A; }
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 28px 0; }
+.kv-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6; font-size: 12px; }
+.kv-row:last-child { border-bottom: none; }
+.kv-label { color: #666; font-family: 'Segoe UI', Arial, sans-serif; }
+.kv-val { font-weight: 700; color: #0D3A28; font-family: 'Segoe UI', Arial, sans-serif; }
+.anx-break { break-before: page; height: 0; margin: 0; padding: 0; font-size: 0; }
+.anx-keep { break-inside: avoid; page-break-inside: avoid; }
+.anx-hdr { color: white; padding: 18px 26px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.anx-body { padding: 18px 26px; break-inside: avoid; page-break-inside: avoid; }
+table { width: 100%; border-collapse: collapse; font-size: 11.5px; font-family: 'Segoe UI', Arial, sans-serif; margin: 12px 0; }
+th { background: #f5f6f8; color: #555; padding: 5px 8px; text-align: left; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+td { padding: 5px 8px; border-bottom: 1px solid #f3f4f6; vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+td:first-child { color: #555; }
+.ok  { color: #14532D; font-weight: 700; }
+.bad { color: #7F1D1D; font-weight: 700; }
+.warn { color: #78350F; font-weight: 700; }
+.inf  { color: #1E40AF; font-weight: 700; }
+.footer { text-align: center; padding: 14px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; font-family: 'Segoe UI', Arial, sans-serif; }
+@media print {
+  @page { size: A4 portrait; margin: 7mm 8mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; font-size: 8pt !important; }
+  .art { padding: 0 28px !important; }
+  h2 { font-size: 11pt !important; margin: 18px 0 7px !important; }
+  .lead { font-size: 9pt !important; }
+  p { margin-bottom: 7px !important; }
+  .blk, .pull, .epig, .nota { break-inside: avoid !important; page-break-inside: avoid !important; }
+  .anx-break { break-before: page !important; }
+  .anx-keep { break-inside: avoid !important; page-break-inside: avoid !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover" style="background: linear-gradient(135deg, #0D3A28 0%, #1A5C3A 100%);">
+  <div class="cover-eyebrow">Análisis Político Territorial · Gilberto Alegre (UxP — Aliado) · 4ª Sección Electoral · Cluster 4 · Interior Agropecuario Pampeano · PBA 2026</div>
+  <div class="cover-title">🌾 General Villegas</div>
+  <div class="cover-sub">Aliado UxP en el bastión opositor más vasto de la pampa bonaerense. 7.261 km² en la triple frontera con La Pampa, Córdoba y Santa Fe. El PJ gobierna donde el 74% vota en su contra — y lo hace con gestión concreta.</div>
+  <div class="cover-meta">4ª Sección Electoral · Cluster 4 · Interior Agropecuario Pampeano · Padrón 2025: 26.161 · Triple Frontera · Soja · Maíz · Tambos · CEAM · Score 17 · Bastión Opositor</div>
+</div>
+
+<div class="art">
+
+<!-- I. EL MUNICIPIO -->
+<h2>I. El Municipio: El Gigante Agrícola de la Triple Frontera</h2>
+
+<div class="lead">General Villegas es el segundo partido más grande de la Provincia de Buenos Aires — 7.261 km² de pampa abierta en el vértice donde convergen los límites con La Pampa, Córdoba y Santa Fe. No es una metáfora: es la geografía que define la política y la economía del distrito.</div>
+
+<p>La identidad de Villegas la construye el campo. La soja y el maíz no son una parte de la economía local — son la economía local. Los acopios, las agronomías, los talleres de cosechadoras, el transporte cerealero: todo el tejido comercial y de servicios del casco urbano existe porque existe el campo que lo rodea. Cuando el rinde es bueno, los negocios trabajan; cuando la cosecha falla o los precios caen, el municipio lo siente en cada rubro.</p>
+
+<p>Esta dependencia del agro crea una identidad política muy clara: el productor de General Villegas tiende al anti-intervencionismo, desconfía de la presión fiscal sobre el campo y mantiene un escepticismo histórico hacia el peronismo que se traduce en números con consistencia electoral desde hace décadas. En 2023, el anti-PJ sumó el 74,2% entre JxC (43,9%), LLA (25,0%) y Vecinalistas (5,3%). Gilberto Alegre ganó la intendencia con el 25,8% en ese escenario.</p>
+
+<div class="epig">
+  <strong>📍 Geografía que define política</strong>
+  Un partido de 7.261 km² con cinco localidades — General Villegas (cabecera), Piedritas, Charlone, Bunge y Banderaló — separadas entre sí por decenas de kilómetros de campo abierto crea desafíos de gestión únicos: cómo garantizar salud, educación y servicios básicos en pueblos donde el vecino más cercano puede estar a 40 minutos de la cabecera por Ruta 188.
+</div>
+
+<p>La ganadería y los tambos complementan la agricultura en una cuenca tambera significativa, especialmente en la zona de Charlone y Piedritas. La leche producida en el distrito alimenta usinas de la región. Los tamberos tienen demandas de infraestructura rural y financiamiento similares a los de la cuenca lechera del sur — y comparten el perfil político opositor del resto del sector agropecuario.</p>
+
+<p>La "triple frontera" bonaerense no es solo un dato geográfico. Genera una identidad cultural de distancia y autonomía respecto de los poderes centrales: la pampa profunda que se siente más cerca de La Pampa o de la Pampa cordobesa que de La Plata o Buenos Aires. Esa identidad configura expectativas sobre el Estado — que no interfiera, que mantenga la infraestructura, que no grave lo que produce — y define el marco en el que cualquier intendente de Villegas debe operar.</p>
+
+<!-- II. ALEGRE Y EL DESAFÍO DE GOBERNAR EN OPOSICIÓN -->
+<h2>II. Alegre: Cómo Gobernar Donde el 74% Vota en Contra</h2>
+
+<div class="lead">Que Gilberto Alegre (UxP) haya ganado la intendencia de General Villegas en 2023 es en sí mismo un dato político notable. No lo ganó por ser el partido con más votos — el PJ fue segundo con el 25,8%, 18 puntos debajo de JxC. Lo ganó porque la fragmentación del espacio opositor y su propia identidad territorial le permitieron acumular suficiente voto para imponerse en la tercera vuelta.</div>
+
+<p>Esa condición de origen — intendente elegido en una segunda vuelta con apenas el 25% en el escenario de primera vuelta — define la lógica política de la gestión de Alegre. Su legitimidad no viene del mandato mayoritario sino de la capacidad de demostrar que puede gestionar bien en un partido que no lo eligió con comodidad. Cada obra, cada programa, cada inversión es también un argumento para el elector de Villegas que en 2023 votó JxC o LLA: "este intendente, aunque sea del PJ, trabaja por el municipio".</p>
+
+<div class="pull">
+  <strong>La apuesta de gestión</strong>
+  "El único peronismo que sobrevive en Villegas es el que resuelve problemas concretos. En un municipio donde el campo vota opositor y donde LLA ya llegó al 56%, la gestión de Alegre es la única palanca electoral que tiene el PJ — y eso hace que cada programa sea también política."
+</div>
+
+<p>El CEAM (Centro de Educación Abierta Municipal) es el programa más innovador de la gestión Alegre y el que mejor captura la lógica de lo que intenta construir. Con más de 400 alumnos anuales y tecnicaturas en convenio con universidades nacionales dictadas a costo cero en la cabecera de Villegas, el CEAM responde al problema más grave del interior profundo: la emigración juvenil. Los jóvenes de Villegas que quieren estudiar históricamente tenían que irse — a General Pico, a Rosario, a Buenos Aires. El CEAM les da la opción de quedarse, calificarse y aportar al mercado laboral local.</p>
+
+<p>El programa de médicos radicados en los pueblos es el segundo hito de gestión más visible. Piedritas, Charlone, Bunge y Banderaló tienen Unidades Sanitarias con médicos permanentes: incentivos salariales, vivienda y guardias pasivas garantizan la permanencia. El resultado son 3.000 consultas mensuales in situ en los pueblos, sin que el vecino deba recorrer 60 u 80 km por Ruta 188 hasta la cabecera.</p>
+
+<div class="epig">
+  <strong>💊 El médico en el pueblo</strong>
+  Antes del programa de médicos radicados, un vecino de Banderaló o Bunge con una urgencia debía llegar a la cabecera — 40 minutos por campo abierto en buen tiempo, más en lluvia. El programa cambió esa realidad con una intervención concreta y costosa (vivienda más incentivo salarial) que solo un intendente comprometido con el interior profundo podía sostener.
+</div>
+
+<p>La política de infraestructura rural — alteo de caminos, canalización, defensa hídrica — es el tercer eje de la gestión Alegre. En 7.261 km² de pampa llana, las inundaciones son la amenaza más recurrente para la producción y para los pueblos del interior. El mantenimiento de la red vial rural es la infraestructura que hace posible que la producción llegue al acopio y que el vecino de los pueblos pueda circular en invierno. Un municipio de ese tamaño no puede mantener esa red solo con recursos propios — la co-inversión provincial es estructuralmente necesaria.</p>
+
+<!-- III. EL FENÓMENO LLA -->
+<h2>III. La Libertad Avanza: Del 25% al 56,8% en Dos Años</h2>
+
+<div class="lead">En 2023, La Libertad Avanza obtuvo el 25,0% en la intendencia de General Villegas — tercer lugar, detrás de JxC (43,9%) y PJ (25,8%). En los concejales provinciales 2025, LLA llegó al 38,0%, superando por primera vez al PJ (22,0%). En el Diputado Nacional 2025, LLA alcanzó el 56,8% con 8.680 votos sobre un padrón de 25.824 — dominando en todos los circuitos del partido.</div>
+
+<p>El ascenso de LLA en Villegas no es sorprendente si se entiende la estructura del voto anti-PJ del distrito. El 74,2% que votó contra el PJ en 2023 entre JxC, LLA y Vecinalistas no era un bloque ideológicamente diferenciado: era un voto anti-peronismo que se distribuía entre la opción histórica (JxC) y la opción nueva (LLA). Con el colapso de JxC como fuerza competitiva en 2025 — sin candidatos propios en las provinciales — ese voto migró masivamente hacia LLA.</p>
+
+<div class="blk blk-r">
+  <h4>⚠️ La absorción del voto JxC</h4>
+  <p>JxC obtuvo 8.115 votos (43,9%) en la intendencia 2023. En 2025, sin candidatos propios, ese caudal se repartió: LLA recibió la mayor parte. En el Diputado Nacional, LLA llegó a 8.680 votos — prácticamente los mismos que JxC en 2023, más el voto LLA propio de ese año. El anti-PJ del 74% está hoy concentrado en LLA con una eficiencia notable.</p>
+</div>
+
+<p>El perfil del votante LLA en Villegas es, en lo esencial, el mismo que el del votante JxC de los años anteriores: productor o empleado vinculado al agro, comerciante, profesional de la cabecera, vecino de los pueblos del interior que desconfía históricamente del peronismo. LLA no creó un electorado nuevo en Villegas — reorganizó el electorado anti-PJ preexistente bajo una nueva bandera.</p>
+
+<p>Lo que sí agrega LLA respecto de JxC es la intensidad del rechazo al Estado y la identificación con la agenda económica del gobierno nacional: desregulación, baja de impuestos, anti-inflación. En un municipio donde el campo es todo, la narrativa libertaria de "el Estado no debe ahogar al campo" tiene resonancia genuina. El productor de Villegas que en 2019 votaba Macri y en 2023 votó Milei no cambió de valores — encontró una expresión más intensa de los mismos valores.</p>
+
+<div class="pull">
+  <strong>La lógica electoral en Villegas</strong>
+  "LLA al 56,8% en nacionales no es un fenómeno efímero en Villegas — es la consolidación del anti-PJ histórico bajo una nueva identidad. El camino para el PJ no es convencer a ese electorado: es gestionar tan bien que el elector de Villegas, aunque vote LLA en nacionales, mantenga a Alegre en la intendencia porque resuelve los problemas reales del distrito."
+</div>
+
+<!-- IV. LA ECONOMÍA LOCAL -->
+<h2>IV. La Economía del Agro y sus Demandas Concretas</h2>
+
+<p>La economía de General Villegas tiene una característica que la diferencia de los municipios del conurbano o de las ciudades intermedias de la Provincia: no tiene diversificación significativa. El agro no es el sector más importante de la economía local — es la economía local. Todo lo demás existe en función de él.</p>
+
+<p>El ciclo económico del municipio sigue el ciclo agrícola. La siembra y la cosecha de soja y maíz determinan el flujo de camiones, el nivel de actividad en los acopios, el volumen de ventas en los negocios de la cabecera, la demanda de servicios de mantenimiento y reparación de maquinaria. Un año de buen rendimiento y buenos precios es un año de actividad económica intensa en Villegas; un año de sequía o de precios bajos lo siente toda la cadena.</p>
+
+<div class="blk blk-g">
+  <h4>🌾 Los actores económicos que importan políticamente</h4>
+  <p>El acopio o cooperativa de granos (identificado en la matriz de análisis como "Gigante del Agro") es el actor económico más influyente del partido. Concentra el movimiento de camiones, el precio de referencia local, el financiamiento de campaña agrícola y la información de mercado. Históricamente JxC, en 2025 migró parcialmente hacia LLA. Es el actor que tiene más gravitación sobre el voto del sector productivo.</p>
+  <p>La Sociedad Rural aglutina a ganaderos y tamberos con demandas de vialidad rural, financiamiento y defensa hídrica. Con el mismo perfil político (JxC → LLA), es el canal natural para que la agenda del Ministerio de Agroindustria llegue al sector productor del partido.</p>
+</div>
+
+<p>Las demandas del sector productivo de Villegas ante la Provincia son concretas y recurrentes: vialidad rural (en 7.261 km², el mantenimiento de caminos es una necesidad permanente), defensa hídrica (la topografía llana hace a los campos vulnerables a inundaciones), financiamiento para campaña y para inversión en tecnología agrícola. Son demandas que la Provincia puede atender con inversión directa y que tienen alto impacto en el sector que más vota opositor.</p>
+
+<p>El CEAM merece un párrafo adicional en el análisis económico: es también una política de desarrollo económico local. Las tecnicaturas en gestión agropecuaria, administración rural, informática aplicada y otras áreas forman mano de obra calificada que el mercado local absorbe. El joven de Villegas que se recibe en el CEAM puede trabajar en el acopio, en la agronomía, en el municipio o montar un emprendimiento propio — sin tener que emigrar. Eso tiene valor económico y valor político.</p>
+
+<!-- V. EL MAPA ELECTORAL -->
+<h2>V. El Mapa Electoral: PJ Segundo, Ahora Tercero</h2>
+
+<p>La trayectoria electoral del PJ en General Villegas describe una curva que va del segundo al tercer lugar con tendencia descendente en términos de share. En la intendencia 2023, el PJ fue segundo con el 25,8%. En los concejales PBA 2025, el PJ obtuvo el 22,0% — tercero, detrás de LLA (38,0%). En el Diputado Nacional 2025, el PJ obtuvo el 27,8% (segundo de nuevo, pero con LLA en el 56,8%).</p>
+
+<div class="epig">
+  <strong>📊 La aritmética del piso electoral</strong>
+  El PJ en Villegas tiene un piso que oscila entre el 22% y el 28% según el tipo de elección. En ejecutivo local (con Alegre como candidato conocido), sube al extremo superior. En legislativas provinciales (sin candidato de tracción local), baja al extremo inferior. El techo del PJ en Villegas en el corto plazo difícilmente supere el 30-32% sin cambios estructurales en el escenario político.
+</div>
+
+<p>La distribución geográfica del voto dentro del partido muestra que el PJ es más competitivo en la cabecera (General Villegas ciudad) que en los pueblos del interior (Piedritas, Charlone, Bunge, Banderaló), donde el campo es más directo y el voto opositor más concentrado. La gestión de Alegre en los pueblos — médicos radicados, gas, pavimento, obras — apunta precisamente a construir apoyo donde el PJ tiene el piso más bajo.</p>
+
+<p>El escenario 2027 para el PJ en Villegas depende esencialmente de dos variables: el desempeño electoral de LLA en el plano nacional (si el gobierno enfrenta desgaste, parte del voto LLA puede volver a la competencia) y la calidad percibida de la gestión de Alegre. Si ambas variables juegan a favor del PJ, Alegre puede aspirar a mejorar su share y consolidar la intendencia con más comodidad. Si LLA mantiene su atractivo y la gestión no tiene hitos suficientemente visibles, el riesgo de perder en 2027 es real.</p>
+
+<!-- VI. LA AGENDA PROVINCIAL -->
+<h2>VI. La Agenda Provincial: Invertir en Alegre, Invertir en el Campo</h2>
+
+<p>La estrategia provincial en General Villegas tiene una lógica sencilla: fortalecer a Alegre con co-inversión en los programas que definen su gestión. No hay atajos electorales en un municipio con anti-PJ del 74% — la única palanca es que el intendente aliado sea percibido como el mejor administrador posible del partido, y para eso necesita recursos que el municipio no puede generar solo.</p>
+
+<div class="blk blk-k">
+  <h4>🎯 Las intervenciones provinciales de mayor impacto en Villegas</h4>
+  <p><strong>CEAM:</strong> Co-financiamiento para ampliar el programa — más tecnicaturas, equipamiento, residencias para alumnos de los pueblos del interior. El CEAM con apoyo provincial puede duplicar su capacidad y convertirse en referencia regional.</p>
+  <p><strong>Médicos en pueblos:</strong> Escalar el modelo de médicos radicados con convenio provincial — más incentivos, más especialidades, más pueblos cubiertos. 3.000 consultas mensuales son el argumento más concreto que tiene Alegre.</p>
+  <p><strong>Vialidad rural:</strong> Alteo, canalización y mantenimiento de caminos rurales en los 7.261 km² del partido. Ningún municipio del interior puede sostener esa red solo. La inversión provincial en vialidad rural de Villegas tiene impacto en miles de hectáreas de campo productivo.</p>
+  <p><strong>Defensa hídrica:</strong> Canales aliviadores y obras de protección para los pueblos del interior. Las inundaciones históricas en la pampa llana son la amenaza más recurrente para la producción y la habitabilidad de los pueblos de Villegas.</p>
+</div>
+
+<p>La agenda MinAgrario también tiene espacio en Villegas. Reuniones con la Sociedad Rural, visitas al acopio en temporada de cosecha, anuncio de líneas de financiamiento para el campo: estas acciones no recuperan votantes para el PJ a corto plazo, pero construyen imagen de presencia provincial en el sector que define el municipio. El mensaje es que la Provincia conoce Villegas, conoce su economía y trabaja por el campo — aunque el campo vote diferente.</p>
+
+<p>La escala de las visitas también importa. General Villegas no es el municipio más rentable electoralmente del interior bonaerense (score 17 — bastión opositor, baja competitividad electoral). Pero mantener un aliado en un municipio de 7.261 km² en la triple frontera, con un intendente que gestiona bien y necesita respaldo, tiene valor político que excede el cálculo inmediato de votos. Muestra que la Provincia no abandona a sus aliados en los bastiones opositores.</p>
+
+<div class="nota">
+  <strong>📌 Encuadre correcto para las visitas</strong>
+  Las visitas a Villegas deben encuadrarse como co-gestión con el intendente aliado — no como presencia electoral en territorio hostil. El mensaje es: "la Provincia acompaña la gestión de Alegre con inversión concreta". Ese encuadre fortalece a Alegre ante su propio electorado y evita la lectura de "vienen a hacer campaña donde saben que pierden".
+</div>
+
+<!-- VII. VISITAS -->
+<h2>VII. Visitas Estratégicas · Priorización para General Villegas</h2>
+
+<p>La lógica de visitas en Villegas es la de fortalecer al aliado con anuncios y co-inversiones concretas. Cada visita debe ir acompañada de un anuncio o una obra verificable — el intendente aliado necesita resultados que mostrar.</p>
+
+<div class="blk">
+  <h4>🏫 Visita 1 — CEAM · Centro de Educación Abierta Municipal (Score 9.0)</h4>
+  <p>Recorrida por el CEAM con alumnos, docentes y autoridades universitarias convenio. Anuncio de co-financiamiento provincial para ampliar el programa: más tecnicaturas, equipamiento nuevo, residencias para alumnos del interior. Marco discursivo: "el Estado que invierte en los jóvenes del campo para que no tengan que emigrar". Alta resonancia en un municipio donde la emigración juvenil es el problema más sentido por las familias de la cabecera. Posibilidad de anunciar que el modelo CEAM se extiende a otros municipios del interior — posiciona a Villegas como referencia provincial.</p>
+</div>
+
+<div class="blk">
+  <h4>🏥 Visita 2 — Unidad Sanitaria Rural · Piedritas o Charlone (Score 8.5)</h4>
+  <p>Visita a una Unidad Sanitaria del interior con el médico radicado, el intendente Alegre y vecinos del pueblo. Anuncio de co-financiamiento MinSalud para el programa de médicos en pueblos: más incentivos, más plazas, más especialidades. Testimonio de vecinos que antes debían viajar a la cabecera. Marco discursivo: "que vivir en un pueblo del interior no sea sinónimo de no tener médico". Emocionalmente potente — la salud rural es el programa de Alegre con mayor impacto en la vida cotidiana de los vecinos más alejados.</p>
+</div>
+
+<div class="blk">
+  <h4>🏛️ Visita 3 — Municipalidad · Acto con Alegre (Score 8.0)</h4>
+  <p>Reunión con el intendente Alegre y anuncio de obra provincial de defensa hídrica o vialidad rural. Marco: co-gestión activa entre Provincia y Municipio. El acto en la municipalidad con Alegre como anfitrión refuerza su imagen local y muestra que la Provincia respalda a su intendente aliado con inversión real. Opción: anuncio de primera etapa de obra de canal aliviador o de alteo de Ruta rural + cronograma de etapas siguientes.</p>
+</div>
+
+<div class="blk">
+  <h4>🌾 Visita 4 — Gigante del Agro · Acopio en Cosecha (Score 7.5)</h4>
+  <p>Visita al acopio o cooperativa principal del municipio con agenda MinAgrario. Presencia durante la temporada de cosecha — el momento de máxima actividad del campo. Reunión con productores, dirigentes rurales y representantes de la Sociedad Rural. Sin anuncios electorales — agenda productiva pura: financiamiento, infraestructura, mercados. El sector agroexportador de Villegas vota LLA, pero la presencia provincial en el acopio construye imagen de interlocución con el campo real.</p>
+</div>
+
+<!-- VIII. SÍNTESIS EJECUTIVA -->
+<h2>VIII. Síntesis Ejecutiva · General Villegas</h2>
+
+<div class="lead">General Villegas es el caso más extremo de aliado en bastión opositor en el interior bonaerense. Anti-PJ del 74%, LLA al 56,8% en nacionales, PJ segundo con el 25,8% en la intendencia. Gilberto Alegre gobierna bien — CEAM, médicos en pueblos, infraestructura rural — en un municipio de 7.261 km² donde cada política de gestión es también un argumento electoral ante un electorado que históricamente lo descarta.</div>
+
+<div class="blk blk-k">
+  <h4>🎯 Los cuatro puntos que definen a Villegas en 2026</h4>
+  <p><strong>1. Bastión opositor consolidado en LLA.</strong> El anti-PJ del 74,2% de 2023 está hoy mayoritariamente concentrado en LLA (56,8% en nacionales 2025). No hay señales de reversión en el corto plazo. La estrategia correcta es de mantenimiento — no de recuperación agresiva de electores LLA.</p>
+  <p><strong>2. Alegre es el único activo político del PJ en el distrito.</strong> Su gestión concreta (CEAM, médicos en pueblos, infraestructura) es la única diferencia que puede sostener un intendente peronista en un municipio que no vota PJ en ninguna otra elección.</p>
+  <p><strong>3. La Provincia puede amplificar los programas de Alegre.</strong> CEAM, médicos en pueblos, vialidad rural y defensa hídrica en 7.261 km² son intervenciones que el municipio solo no puede financiar completamente. La co-inversión provincial es la forma más directa de fortalecer al aliado.</p>
+  <p><strong>4. La presencia discursiva importa.</strong> Villegas es la triple frontera, la pampa profunda, la Argentina del campo que produce pero no tiene poder político. Hablar de ese municipio con esa identidad — no como "la periferia del conurbano extendido" sino como el corazón del interior agrícola bonaerense — construye presencia real en un territorio que históricamente no se siente representado por La Plata.</p>
+</div>
+
+</div><!-- /art -->
+
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Narrativa Política — General Villegas · PBA Analytics 2026</div>
+
+<!-- ANEXO I -->
+<div class="anx-break"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div class="anx-hdr" style="background:linear-gradient(135deg,#0D3A28,#1A5C3A);display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">General Villegas · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:18px;font-weight:900;">ANEXO I — DATOS ELECTORALES</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">Gilberto Alegre · UxP · Aliado · Score 17<br>4ª Sección · Cluster 4 · Interior Agropecuario Pampeano</div>
+  </div>
+  <div class="anx-body" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;background:#eef2f7;">
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div style="background:#1A5C3A;color:white;padding:8px 12px;font-family:'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;">📊 Intendencia 2023</div>
+      <div style="padding:12px;">
+        <table>
+          <tbody>
+            <tr><td>JxC (ganó)</td><td class="ok">43,9% · 8.115 ✓</td></tr>
+            <tr><td>PJ (Alegre)</td><td class="bad">25,8% · 4.765 · 2°</td></tr>
+            <tr><td>LLA</td><td class="warn">25,0% · 4.621</td></tr>
+            <tr><td>Vecinalistas</td><td>5,3% · 973</td></tr>
+            <tr><td>Anti-PJ</td><td class="bad">74,2%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div style="background:#1A5C3A;color:white;padding:8px 12px;font-family:'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;">📊 Concejales PBA 2025</div>
+      <div style="padding:12px;">
+        <table>
+          <tbody>
+            <tr><td>LLA</td><td class="bad">38,0% · 5.289 ✓</td></tr>
+            <tr><td>PJ</td><td class="bad">22,0% · 3.062</td></tr>
+            <tr><td>JxC</td><td class="inf">— sin candidatos</td></tr>
+            <tr><td>Padrón</td><td>26.161</td></tr>
+            <tr><td>LLA supera PJ</td><td class="bad">+16,0 pts</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div style="background:#1A5C3A;color:white;padding:8px 12px;font-family:'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;">📊 Dip. Nacional 2025</div>
+      <div style="padding:12px;">
+        <table>
+          <tbody>
+            <tr><td>LLA</td><td class="bad">56,8% · 8.680 ✓</td></tr>
+            <tr><td>PJ</td><td class="bad">27,8% · 4.247</td></tr>
+            <tr><td>FIT</td><td>2,2% · 341</td></tr>
+            <tr><td>Padrón</td><td>25.824</td></tr>
+            <tr><td>LLA vs PJ</td><td class="bad">+29,0 pts</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div style="padding:0 26px 18px;background:#eef2f7;">
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div style="background:#0D3A28;color:white;padding:8px 12px;font-family:'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;">📈 Evolución Electoral · Tendencia</div>
+      <div style="padding:12px;">
+        <table style="table-layout:fixed;">
+          <colgroup><col style="width:30%"><col style="width:23%"><col style="width:23%"><col style="width:24%"></colgroup>
+          <thead><tr><th>Elección</th><th>PJ %</th><th>LLA %</th><th>JxC %</th></tr></thead>
+          <tbody>
+            <tr><td>Intend. 2023</td><td class="bad">25,8% · 2°</td><td class="warn">25,0% · 3°</td><td class="ok">43,9% ✓</td></tr>
+            <tr><td>Conc. PBA 2025</td><td class="bad">22,0%</td><td class="bad">38,0% ✓</td><td class="inf">— sin cand.</td></tr>
+            <tr><td>Dip. Nac. 2025</td><td class="bad">27,8%</td><td class="bad">56,8% ✓</td><td class="inf">— sin cand.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ANEXO II -->
+<div class="anx-break"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div class="anx-hdr" style="background:linear-gradient(135deg,#0D3A28,#1A5C3A);display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">General Villegas · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:18px;font-weight:900;">ANEXO II — ACTORES Y AGENDA PROVINCIAL</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">CEAM · Médicos · Vialidad Rural · Defensa Hídrica</div>
+  </div>
+  <div class="anx-body" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;background:#eef2f7;">
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div style="background:#1A5C3A;color:white;padding:8px 12px;font-family:'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;">👥 Actores Clave</div>
+      <div style="padding:12px;">
+        <table>
+          <thead><tr><th style="width:30%">Actor</th><th style="width:22%">Perfil</th><th>Relevancia</th></tr></thead>
+          <tbody>
+            <tr><td>Alegre (Intendente)</td><td class="ok">UxP · Aliado</td><td>Único activo político PJ en el partido. Requiere respaldo visible.</td></tr>
+            <tr><td>Gigante del Agro / Acopio</td><td class="warn">JxC→LLA</td><td>Actor económico dominante. MinAgrario.</td></tr>
+            <tr><td>Sociedad Rural</td><td class="warn">JxC→LLA</td><td>Ganaderos/tamberos. Agenda de campo.</td></tr>
+            <tr><td>CEAM · Docentes</td><td class="ok">Aliado</td><td>400+ alumnos. Mano de obra calificada. Co-financiar.</td></tr>
+            <tr><td>Red sanitaria rural</td><td class="ok">Aliado</td><td>3.000 consultas/mes in situ en pueblos.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div style="background:#1A5C3A;color:white;padding:8px 12px;font-family:'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;">🏛️ Agenda Provincial Sugerida</div>
+      <div style="padding:12px;">
+        <table>
+          <thead><tr><th>Ministerio</th><th>Acción</th><th style="width:22%">Impacto</th></tr></thead>
+          <tbody>
+            <tr><td>Educación</td><td>Co-financiamiento CEAM · ampliar</td><td class="ok">Alto</td></tr>
+            <tr><td>Salud</td><td>Médicos en pueblos · escalar modelo</td><td class="ok">Alto</td></tr>
+            <tr><td>Infraestructura</td><td>Vialidad rural + defensa hídrica</td><td class="ok">Alto</td></tr>
+            <tr><td>Agroindustria</td><td>Mesa sectorial campo + fin. campaña</td><td class="warn">Medio</td></tr>
+            <tr><td>Des. Social</td><td>Microcréditos + clubes/bibliotecas</td><td class="warn">Medio</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div style="padding:0 26px 18px;background:#eef2f7;">
+    <div style="background:white;border-radius:8px;padding:14px 16px;">
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:800;color:#0D3A28;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #34D399;">🗺️ Visitas · Ranking</div>
+      <table style="table-layout:fixed;">
+        <colgroup><col style="width:4%"><col style="width:30%"><col style="width:10%"><col></colgroup>
+        <thead><tr><th>#</th><th>Lugar</th><th>Score</th><th>Objetivo</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>🏫 CEAM</td><td class="ok">9.0</td><td>Anuncio ampliación CEAM + arraigo juvenil</td></tr>
+          <tr><td>2</td><td>🏥 Unidad Sanitaria Rural</td><td class="ok">8.5</td><td>Médicos en pueblos + escalar con MinSalud</td></tr>
+          <tr><td>3</td><td>🏛️ Municipalidad · Alegre</td><td class="warn">8.0</td><td>Co-gestión + anuncio vialidad/hídrica</td></tr>
+          <tr><td>4</td><td>🌾 Acopio · Gigante del Agro</td><td class="warn">7.5</td><td>Presencia MinAgrario en cosecha</td></tr>
+          <tr><td>5</td><td>💧 Obra Defensa Hídrica</td><td class="warn">7.5</td><td>Recorrida obra + anuncio próxima etapa</td></tr>
+          <tr><td>6</td><td>⚽ Club / Biblioteca Pueblo</td><td class="inf">6.5</td><td>Instituciones comunitarias del interior</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

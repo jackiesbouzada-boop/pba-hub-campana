@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PERGAMINO — Ficha de Campaña · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.header { color: white; padding: 22px 28px; display: flex; justify-content: space-between; align-items: flex-start; }
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.85; line-height: 1.95; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-aliado { background: rgba(52,211,153,0.3); color: #A7F3D0; }
+.badge-rival  { background: rgba(239,68,68,0.3);  color: #FCA5A5; }
+.banner { background: #0C2340; color: white; padding: 20px 28px; border-left: 7px solid #4B8EFF; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #93C5FF; margin-bottom: 7px; }
+.b-title  { font-size: 15.5px; font-weight: 800; margin-bottom: 13px; line-height: 1.35; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #93C5FF; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 19px; font-weight: 900; color: #4B8EFF; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+.main { padding: 18px 22px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; background: #eef2f7; }
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+.card { background: white; border-radius: 10px; box-shadow: 0 1px 5px rgba(0,0,0,0.07); overflow: hidden; }
+.ch { padding: 10px 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.9px; }
+.cbody { padding: 13px; }
+.st  { font-size: 9.5px; font-weight: 700; color: #1B4F8A; padding-bottom: 5px; border-bottom: 2px solid #4B8EFF; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.st2 { font-size: 9.5px; font-weight: 700; color: #1B4F8A; padding-bottom: 5px; border-bottom: 2px solid #4B8EFF; margin-top: 14px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+.ct { background: #EFF6FF; border: 1px solid #4B8EFF; color: #0A2342; }
+.t { width: 100%; border-collapse: collapse; font-size: 11px; }
+.t th { background: #f5f6f8; color: #555; padding: 5px 7px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 5px 7px; border-bottom: 1px solid #f3f4f6; vertical-align: top; word-break: break-word; }
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child { color: #555; }
+.t.two-col td:first-child { width: 44%; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 11px 12px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 21px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9px; color: #999; margin-top: 3px; line-height: 1.35; }
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.sc   { border-radius: 7px; padding: 11px 12px; border-left: 4px solid; }
+.sc.p { border-color: #1B4F8A; background: #EFF6FF; }
+.sc.s { border-color: #059669; background: #F0FDF4; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #0369A1; background: #F0F9FF; }
+.sc.r { border-color: #DC2626; background: #FEF2F2; }
+.sc.g { border-color: #0A2342; background: #EFF6FF; }
+.sl { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.sn { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.sp { font-size: 18px; font-weight: 900; margin: 3px 0 6px; }
+.sd { font-size: 10px; line-height: 1.65; color: #444; }
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.pbl { width: 120px; font-size: 9.5px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; height: 16px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 5px; }
+.pbt { font-size: 9px; font-weight: 700; color: white; white-space: nowrap; }
+.pbp { width: 32px; font-size: 9.5px; font-weight: 700; text-align: right; flex-shrink: 0; }
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pi   { border-radius: 7px; padding: 11px 13px; border-left: 4px solid; }
+.pi.o { background: #EFF6FF; border-color: #1B4F8A; }
+.pi.r { background: #FEF2F2; border-color: #EF4444; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pi.p { background: #F0F9FF; border-color: #0369A1; }
+.pi.a { background: #FFFBEB; border-color: #D97706; }
+.pt   { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.pti  { font-size: 11px; font-weight: 700; margin-bottom: 5px; }
+.pd   { font-size: 10px; line-height: 1.65; color: #444; }
+.ar   { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f0f0f0; }
+.ar:last-child { border-bottom: none; }
+.ai   { font-size: 18px; min-width: 24px; flex-shrink: 0; }
+.ain  { flex: 1; min-width: 0; }
+.an   { font-size: 11px; font-weight: 700; color: #1B4F8A; margin-bottom: 3px; }
+.ad   { font-size: 10px; color: #555; line-height: 1.6; }
+.ats  { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+.at   { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 7px; }
+.ag   { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px dashed #e8e8e8; }
+.ag:last-child { border-bottom: none; }
+.agi  { font-size: 17px; min-width: 22px; flex-shrink: 0; }
+.agt  { min-width: 0; }
+.agt strong { font-size: 11px; display: block; margin-bottom: 3px; color: #1B4F8A; font-weight: 700; }
+.agt p { font-size: 10px; color: #666; line-height: 1.6; }
+.al   { border-radius: 7px; padding: 10px 12px; margin-top: 10px; font-size: 10px; line-height: 1.6; }
+.al-v { background: #EFF6FF; border: 1px solid #4B8EFF; color: #0A2342; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al-r { background: #FEF2F2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.al-k { background: #0C2340; color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.al strong { display: block; margin-bottom: 3px; font-size: 11px; }
+.al-k strong { color: #4B8EFF; }
+.nt   { background: #EFF6FF; border: 1px solid #4B8EFF; border-radius: 7px; padding: 9px 12px; font-size: 10px; color: #0A2342; margin-top: 10px; line-height: 1.6; }
+.nt strong { display: block; font-size: 11px; margin-bottom: 3px; color: #1B4F8A; }
+.hist { background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 7px; padding: 10px 12px; margin-top: 10px; }
+.hist strong { font-size: 11px; font-weight: 700; color: #78350F; display: block; margin-bottom: 4px; }
+.hist p { font-size: 10px; color: #78350F; line-height: 1.65; }
+.corr { background: linear-gradient(135deg, #0A2342 0%, #1B4F8A 100%); color: white; border-radius: 8px; padding: 13px 15px; margin-top: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.corr h3 { font-size: 11px; font-weight: 800; margin-bottom: 5px; color: #93C5FF; }
+.corr p  { font-size: 10px; line-height: 1.65; opacity: 0.9; }
+.cms { display: flex; gap: 7px; margin-top: 9px; flex-wrap: wrap; }
+.cm  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; padding: 6px 9px; flex: 1; text-align: center; font-size: 10px; font-weight: 700; min-width: 70px; }
+.cm span { display: block; font-size: 8.5px; font-weight: 400; opacity: 0.65; margin-top: 2px; }
+.acc-nac  { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#dde3f5; color:#1d3461; border:1px solid #1d346144; white-space:nowrap; }
+.acc-prot { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#fef3c7; color:#5c3317; border:1px solid #5c331744; white-space:nowrap; }
+.acc-priv { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#DBEAFE; color:#1E40AF; border:1px solid #93C5FD; white-space:nowrap; }
+.locs { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+.loc  { border-radius: 6px; padding: 8px 10px; border-left: 3px solid; font-size: 10px; line-height: 1.55; }
+.loc strong { font-size: 10.5px; display: block; margin-bottom: 2px; }
+.footer { text-align: center; padding: 12px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+@media print {
+  @page { size: A4 portrait; margin: 6mm 7mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; padding: 0 !important; font-size: 7pt !important; background: #eef2f7 !important; }
+  .main { padding: 7px 9px !important; gap: 7px !important; }
+  .card { box-shadow: none !important; page-break-inside: avoid; break-inside: avoid; }
+  .ch { font-size: 6pt !important; padding: 5px 7px !important; }
+  .cbody { padding: 7px !important; }
+  .header h1 { font-size: 15pt !important; }
+  .banner { page-break-inside: avoid; }
+  .t { font-size: 6pt !important; }
+  .t td, .t th { padding: 3px 4px !important; }
+  .kv { font-size: 13pt !important; }
+  .kpis { grid-template-columns: 1fr 1fr 1fr 1fr !important; }
+  .anx-break { break-before: page; }
+  .anx-keep  { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header" style="background: linear-gradient(135deg, #0A2342 0%, #1B4F8A 100%);">
+  <div class="header-left">
+    <h1>🌾 PERGAMINO</h1>
+    <div class="sub">Ficha de Campaña · Capital Nacional de la Semilla · Polo Textil Norte Bonaerense · 2026</div>
+    <div class="tag">2ª Sección Electoral · Cluster 2 · Ciudades Intermedias Regionales · Superficie: 3.004,7 km² · Padrón 2025: 94.181</div>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente:</strong> Javier Martínez <span class="badge badge-rival">JxC · Opositor</span></div>
+    <div><strong>PJ Intendencia 2023:</strong> 28,2% — 3° lugar · JxC ganó con 40,6%</div>
+    <div><strong>PJ Conc. Prov. 2025:</strong> 30,3% — ✅ PRIMERO · supera LLA (25,0%)</div>
+    <div><strong>LLA Dip. Nac. 2025:</strong> 51,2% · PJ 31,8% — diferencial prov/nac enorme</div>
+    <div><strong>Población:</strong> 115.340 (CENSO 2022) · INTA · Biotech · Textil · Jeans</div>
+    <div style="margin-top:5px;font-size:9.5px;opacity:0.5;">PBA Analytics 2026 · Uso reservado</div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="b-label">🌾 CIUDAD INTERMEDIA · JxC INTENDENCIA 2023 · PJ PRIMERO EN CONCEJALES PBA 2025 · 30,3% · CAPITAL NACIONAL DE LA SEMILLA · INTA PERGAMINO · POLO TEXTIL NORTE PBA · 115.340 HABITANTES · RECUPERACIÓN PJ EN CIUDAD CLAVE</div>
+  <div class="b-title">Pergamino es la ciudad más importante del norte bonaerense después de San Nicolás: 115.340 habitantes, Capital Nacional de la Semilla con presencia del INTA y las principales multinacionales biotecnológicas, y el polo textil e indumentaria más grande del norte provincial. JxC gobierna con Martínez (reelegido 2023) pero el PJ fue primero en los concejales provinciales 2025 con el 30,3% — la señal más alentadora del interior norte bonaerense.</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>La doble identidad económica de Pergamino:</strong> Pergamino tiene algo que pocos municipios del norte bonaerense pueden mostrar: una economía dual. Por un lado, es la Capital Nacional de la Semilla — el INTA Pergamino es una de las estaciones experimentales más importantes del país, y las multinacionales biotecnológicas (Bayer, Corteva, Syngenta) tienen aquí sus plantas procesadoras de semillas de maíz, trigo y soja. Por el otro, el polo textil e indumentaria (jeans, ropa de trabajo, calzado) genera empleo industrial independiente de la cosecha — un segmento obrero urbano que no existe en los municipios 100% agropecuarios del interior.</p>
+      <p><strong>El PJ primero en provinciales 2025 — señal clave:</strong> El PJ fue tercero en la intendencia 2023 (28,2%, detrás de JxC 40,6% y LLA 28,5%). Pero en las concejales provinciales 2025 el PJ fue primero con el 30,3%, superando a LLA (25,0%). Esta inversión de posiciones respecto de 2023 muestra que el PJ tiene piso sólido en Pergamino y que puede crecer en legislativas cuando el electorado castiga a JxC o LLA. El diferencial entre el 30% en provinciales y el 51% de LLA en nacionales muestra que hay un electorado que vota PJ en PBA y LLA en nación — el segmento que la campaña provincial debe activar.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>Martínez y la gestión JxC — qué hizo y qué no:</strong> Javier Martínez (JxC) fue reelegido en 2023 con el 40,6% — en un municipio donde también compitió LLA al 28,5% dividiendo el voto opositor. Su gestión tiene hitos concretos: la presa de regulación hídrica sobre el Arroyo Pergamino (financiada con BID y fondos provinciales), el anillo digital con 400+ cámaras, Pergamino 100% LED y la digitalización total de trámites. Es un intendente con obra visible — eso hace más difícil la competencia PJ en la intendencia 2027 pero no cierra la puerta.</p>
+      <p><strong>La estrategia provincial en Pergamino:</strong> El INTA es la palanca más poderosa. Las multinacionales biotech de semillas tienen interlocución con el MinAgrario. El polo textil necesita financiamiento productivo y política laboral que la Provincia puede ofrecer. La presa hídrica (donde la Provincia ya co-financió con BID) es un activo para reclamar ante los vecinos. Pergamino no tiene un aliado local sólido pero es el municipio del norte bonaerense con mayor potencial de crecimiento PJ en legislativas.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">28,2%</div><div class="l">PJ Intendencia 2023<br>17.720 votos · 3° lugar · JxC 40,6% ganó</div></div>
+    <div class="b-num"><div class="n">30,3%</div><div class="l">PJ Conc. Prov. 2025<br>✅ PRIMERO · 16.896 votos · +2,1 pts</div></div>
+    <div class="b-num"><div class="n">51,2%</div><div class="l">LLA Dip. Nac. 2025<br>⚠️ 30.595 votos · dominio en nacionales</div></div>
+    <div class="b-num"><div class="n">115.340</div><div class="l">Población 2022 (CENSO)<br>3° ciudad norte bonaerense · ciudad media</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- KPIs -->
+<div class="card full">
+  <div class="ch" style="background:#1B4F8A;color:white;">📊 Datos Electorales y Demográficos Clave · Pergamino</div>
+  <div class="cbody" style="padding:14px 16px;">
+    <div class="kpis">
+      <div class="kpi bad">
+        <div class="kl">PJ Ejecutivo 2023</div>
+        <div class="kv" style="color:#7F1D1D;">28,2%</div>
+        <div class="ks">17.720 votos · 3° lugar · JxC ganó con 40,6% · LLA 28,5% · casi empate LLA-PJ</div>
+      </div>
+      <div class="kpi ok">
+        <div class="kl">PJ Concejales PBA 2025</div>
+        <div class="kv" style="color:#14532D;">30,3% ✅</div>
+        <div class="ks">16.896 votos · PRIMERO · supera LLA (25,0%) · señal de recuperación</div>
+      </div>
+      <div class="kpi bad">
+        <div class="kl">LLA Nacional 2025</div>
+        <div class="kv" style="color:#7F1D1D;">51,2%</div>
+        <div class="ks">30.595 votos · dominio en nacionales · PJ 31,8% · diferencial prov/nac: 20 pts LLA</div>
+      </div>
+      <div class="kpi warn">
+        <div class="kl">Padrón 2025</div>
+        <div class="kv" style="color:#92400E;">94.181</div>
+        <div class="ks">Electores · Pobl. 115.340 (CENSO 2022) · ciudad intermedia · 3.004 km²</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDAD -->
+<div class="card one">
+  <div class="ch" style="background:#1B4F8A;color:white;">📍 Identidad Territorial</div>
+  <div class="cbody">
+    <div class="chips">
+      <span class="chip ct">🌾 Capital Nacional de la Semilla</span>
+      <span class="chip cz">2ª Sección Electoral</span>
+      <span class="chip cp">INTA · Biotech · Multinacionales</span>
+      <span class="chip cb">Polo Textil · Jeans · Indumentaria</span>
+      <span class="chip co">Ciudad Media · 115k hab</span>
+      <span class="chip cz">Presa Hídrica · BID</span>
+    </div>
+    <div class="st">Datos Básicos</div>
+    <table class="t two-col">
+      <tbody>
+        <tr><td>Intendente</td><td class="bld">Javier Martínez <span class="badge-rival" style="border-radius:10px;padding:1px 7px;font-size:9px;font-weight:700;background:#7F1D1D;color:#FCA5A5;">JxC · Opositor</span></td></tr>
+        <tr><td>Partido</td><td>Juntos por el Cambio</td></tr>
+        <tr><td>Sección</td><td>2ª Sección Electoral</td></tr>
+        <tr><td>Superficie</td><td>3.004,7 km²</td></tr>
+        <tr><td>Población 2022</td><td class="bld">115.340 (CENSO)</td></tr>
+        <tr><td>Padrón 2025</td><td class="warn">94.181 electores</td></tr>
+        <tr><td>Identidad 1</td><td>🌾 Capital Nacional de la Semilla</td></tr>
+        <tr><td>Identidad 2</td><td>👕 Polo Textil Norte Bonaerense</td></tr>
+        <tr><td>Privado clave</td><td>INTA + Plantas Biotech Multinac.</td></tr>
+      </tbody>
+    </table>
+    <div class="st2">Economía Dual</div>
+    <div class="locs">
+      <div class="loc" style="border-color:#1B4F8A;background:#EFF6FF;">
+        <strong>🌾 Semillas · Biotech · INTA</strong>
+        Capital Nac. de la Semilla. INTA Pergamino — investigación agropecuaria de primer nivel. Plantas procesadoras de Bayer, Corteva y Syngenta.
+      </div>
+      <div class="loc" style="border-color:#1B4F8A;background:#EFF6FF;">
+        <strong>👕 Polo Textil e Indumentaria</strong>
+        El polo de confección más grande del norte bonaerense. Jeans, ropa de trabajo. Empleo industrial independiente de la cosecha.
+      </div>
+      <div class="loc" style="border-color:#4B8EFF;background:#F0F9FF;">
+        <strong>🌊 Presa Hídrica · Arroyo Pergamino</strong>
+        Obra estructural post-inundación 1995. Financiada BID + fondos provinciales. Protege el casco urbano de anegamientos.
+      </div>
+      <div class="loc" style="border-color:#4B8EFF;background:#F0F9FF;">
+        <strong>🌾 Ganadería · Cereales</strong>
+        Matriz agropecuaria complementaria. Soja, maíz, trigo. Ganadería. Economía rural que rodea la cabecera urbana.
+      </div>
+    </div>
+    <div class="nt">
+      <strong>📍 Pergamino en el norte bonaerense</strong>
+      Pergamino es la tercera ciudad más importante del norte bonaerense después de San Nicolás y Junín. Su peso demográfico (115k hab), su economía dual (semillas + textil) y su posición sobre la Ruta 8 — el corredor que une Buenos Aires con el interior — la convierten en el nodo urbano más relevante del interior norte de la Provincia. Lo que pasa electoralmente en Pergamino define el norte.
+    </div>
+  </div>
+</div>
+
+<!-- MATRIZ PRODUCTIVA -->
+<div class="card two">
+  <div class="ch" style="background:#1B4F8A;color:white;">🏭 Matriz Productiva · Pergamino · Semilla, Textil y Agro</div>
+  <div class="cbody">
+    <div class="sgrid">
+      <div class="sc p">
+        <div class="sl">Sector Estrella</div>
+        <div class="sn">Semillas Biotecnológicas · INTA</div>
+        <div class="sp" style="color:#1B4F8A;">~35%</div>
+        <div class="sd">Pergamino es la Capital Nacional de la Semilla. El INTA Pergamino es una de las estaciones experimentales más importantes del país — investigación en biotecnología, ensayos varietales, generación de conocimiento agropecuario. Las plantas procesadoras de Bayer, Corteva y Syngenta concentran el empleo más calificado del municipio y anclan la economía a la cadena agroexportadora global.</div>
+      </div>
+      <div class="sc e">
+        <div class="sl">Sector Diferenciador</div>
+        <div class="sn">Polo Textil e Indumentaria</div>
+        <div class="sp" style="color:#0369A1;">~25%</div>
+        <div class="sd">El polo textil de Pergamino — jeans, ropa de trabajo, indumentaria — es el más grande del norte bonaerense. Genera empleo industrial urbano independiente del ciclo agrícola: un segmento obrero que trabaja en las fábricas todo el año, que no depende de la cosecha y que tiene perfiles sindicales y laborales más típicos del conurbano que del interior agropecuario puro.</div>
+      </div>
+      <div class="sc t">
+        <div class="sl">Sector Base</div>
+        <div class="sn">Agricultura · Ganadería</div>
+        <div class="sp" style="color:#D97706;">~30%</div>
+        <div class="sd">La base agropecuaria (soja, maíz, trigo, ganadería) rodea la cabecera urbana y aporta el grueso del movimiento de camiones, acopios y servicios rurales. Es el sector que conecta a Pergamino con la economía del norte pampeano y que abastece de materias primas a las plantas biotecnológicas locales.</div>
+      </div>
+      <div class="sc s">
+        <div class="sl">Servicios</div>
+        <div class="sn">Comercio · Servicios Urbanos</div>
+        <div class="sp" style="color:#059669;">~10%</div>
+        <div class="sd">El comercio y los servicios urbanos de una ciudad de 115k habitantes completan la matriz económica. Pergamino funciona como centro de servicios para la región — educación, salud, finanzas — para los municipios del norte bonaerense que orbitan en su área de influencia.</div>
+      </div>
+    </div>
+    <div class="st">Desagregado por actividad</div>
+    <div class="pbr"><div class="pbl">Agricultura / semillas</div><div class="pbo"><div class="pbi" style="width:35%;background:#1B4F8A;"><span class="pbt">Dominante</span></div></div><div class="pbp">35%</div></div>
+    <div class="pbr"><div class="pbl">Textil / indumentaria</div><div class="pbo"><div class="pbi" style="width:25%;background:#0369A1;"></div></div><div class="pbp">25%</div></div>
+    <div class="pbr"><div class="pbl">Ganadería / granos</div><div class="pbo"><div class="pbi" style="width:30%;background:#D97706;"></div></div><div class="pbp">30%</div></div>
+    <div class="pbr"><div class="pbl">Servicios urbanos</div><div class="pbo"><div class="pbi" style="width:10%;background:#059669;"></div></div><div class="pbp">10%</div></div>
+    <div class="st2">Actores Económicos Clave</div>
+    <div class="ar">
+      <div class="ai">🌾</div>
+      <div class="ain">
+        <div class="an">INTA Pergamino · Estación Experimental</div>
+        <div class="ad">Una de las estaciones experimentales más importantes del país. Investigación en biotecnología de semillas, mejoramiento genético, agronomía. Personal científico altamente calificado. Perjudicado por recortes del gobierno nacional (LLA). La Provincia puede articular co-financiamiento de investigación con el INTA y generar visibilidad de respaldo al sistema científico agropecuario. Perfil político: educado, no PJ pero sensible al discurso de inversión en ciencia.</div>
+        <div class="ats"><span class="at acc-priv">PRIVADO ★</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🧬</div>
+      <div class="ain">
+        <div class="an">Plantas Biotech Multinacionales · Bayer, Corteva, Syngenta</div>
+        <div class="ad">Las principales multinacionales de semillas tienen plantas procesadoras en Pergamino. Empleo calificado, exportación, inversión en tecnología. MinAgrario puede tener agenda de política de semillas con estos actores. Perfil: productores globales con interlocución protocolal.</div>
+        <div class="ats"><span class="at acc-priv">PRIVADO</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">👕</div>
+      <div class="ain">
+        <div class="an">Polo Textil · Cámaras de Indumentaria y Confección</div>
+        <div class="ad">El polo textil más grande del norte bonaerense. Empleadores de jeans y ropa de trabajo con perfiles sindicales activos (SOIVA, AOITA). Demanda política laboral: crédito productivo, certificación de calidad, acceso a mercados regionales. MinTrabajo y MinDesarrolloProductivo tienen agenda natural con este sector.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">📡</div>
+      <div class="ain">
+        <div class="an">Sindicatos Textiles · SOIVA · AOITA</div>
+        <div class="ad">Los trabajadores del polo textil organizados sindicalmente son uno de los núcleos del voto PJ en Pergamino. El SOIVA (Sindicato Obrero de la Industria del Vestido y Afines) y el AOITA tienen presencia relevante. Son el segmento que explica el 30% del PJ en concejales 2025 — trabajadores industriales urbanos con historia peronista.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSPECTIVA PROVINCIAL -->
+<div class="card full">
+  <div class="ch" style="background:#0A2342;color:white;">🏛️ Perspectiva Provincial · Pergamino en la Agenda PBA</div>
+  <div class="cbody">
+    <div class="pgrid">
+      <div class="pi o">
+        <div class="pt">Oportunidad · INTA + Biotech</div>
+        <div class="pti">Capital Nacional de la Semilla — agenda ciencia y producción agropecuaria</div>
+        <div class="pd">El INTA Pergamino es la palanca más poderosa de presencia provincial en la ciudad. Los recortes del gobierno nacional (LLA) al sistema científico-tecnológico generaron malestar en el personal del INTA y en el ecosistema biotech. La Provincia puede anunciar co-financiamiento provincial de investigación con el INTA Pergamino, convenios de extensión y apoyo a la investigación varietal. Es un movimiento que distingue a la Provincia del gobierno nacional y que llega al segmento más calificado del municipio.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Oportunidad · Polo Textil</div>
+        <div class="pti">El polo de jeans más grande del norte bonaerense necesita política productiva</div>
+        <div class="pd">El polo textil de Pergamino tiene demandas concretas de crédito productivo, actualización tecnológica y acceso a mercados. MinDesarrolloProductivo puede articular una línea de crédito para modernización de equipamiento, un programa de certificación de calidad para exportación de indumentaria y una agenda de compras estatales que beneficie a las Pymes textiles locales. Es el segmento que da empleo a los trabajadores industriales peronistas del municipio — la base del 30% de PJ en concejales 2025.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Oportunidad · Presa hídrica</div>
+        <div class="pti">Obra provincial financiada con BID — la Provincia ya invirtió, puede reclamar</div>
+        <div class="pd">La presa de regulación hídrica sobre el Arroyo Pergamino fue financiada con fondos del BID y articulación provincial. Es una obra que protege el casco urbano de la inundación histórica de 1995. La Provincia puede visibilizar esa inversión ante los vecinos de Pergamino — la obra que la Provincia trajo a la ciudad — y co-anunciar una segunda etapa o mantenimiento con Martínez, mostrando que la Provincia trabaja por el municipio independientemente de quién gobierna.</div>
+      </div>
+      <div class="pi x">
+        <div class="pt">Riesgo · Intendente JxC reelegido</div>
+        <div class="pti">Martínez tiene gestión visible y no hay aliado local fuerte del espacio</div>
+        <div class="pd">Javier Martínez fue reelegido en 2023 con una diferencia de 12 puntos sobre LLA y de 12 puntos sobre el PJ. Tiene obra concreta: presa hídrica, LED, cámaras, digitalización. No hay un candidato PJ de peso en Pergamino que ancle la presencia provincial local. La competencia en 2027 en ejecutiva será difícil — pero los legislativos son una oportunidad real dada la señal del 30,3% en 2025.</div>
+      </div>
+      <div class="pi p">
+        <div class="pt">Potencial · Diferencial PBA/Nac en el voto</div>
+        <div class="pti">PJ 30% en prov. vs LLA 51% en nac. — hay votantes que el PJ puede activar</div>
+        <div class="pd">El diferencial entre el 30,3% del PJ en provinciales 2025 y el 51,2% de LLA en nacionales indica que hay un segmento que vota LLA en lo nacional pero puede votar PJ en lo provincial cuando percibe que la Provincia le da respuestas concretas. Ese segmento — trabajador industrial, obrero del textil, empleado del agro — es el objetivo de la campaña provincial en Pergamino. La agenda de empleo y producción es el puente.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">Contexto · Seguridad urbana</div>
+        <div class="pti">Anillo digital municipal — la seguridad es demanda activa de la ciudad</div>
+        <div class="pd">Martínez instaló un anillo digital con 400+ cámaras y lectoras de patentes en las rutas 8 y 188. La seguridad urbana es una demanda activa en Pergamino — ciudad de 115k habitantes con complejidad urbana mayor que la del interior agropecuario puro. La Provincia puede articular con el MinSeguridad una agenda de refuerzo del sistema de videovigilancia con conectividad provincial al sistema de Pergamino.</div>
+      </div>
+    </div>
+    <div class="corr">
+      <h3>🛤️ Corredor Ruta 8 · 2ª Sección · Pergamino – Junín – Rojas – Chacabuco</h3>
+      <p>Pergamino es el nodo principal del corredor de la Ruta 8 en el norte bonaerense — la autopista que conecta Buenos Aires con el interior pampeano. Al este, San Nicolás y el corredor del Paraná. Al oeste, Junín y el corredor noroeste. Al sur, Rojas y Chacabuco. Pergamino concentra los servicios, la universidad, la industria y el comercio de toda la región norte. Lo que pasa en Pergamino reverbera en la 2ª Sección entera.</p>
+      <div class="cms">
+        <div class="cm">San Nicolás<span>Este · Paraná</span></div>
+        <div class="cm">← Ruta 8<span>A Buenos Aires</span></div>
+        <div class="cm">Pergamino ★<span>Nodo Norte</span></div>
+        <div class="cm">→ Junín<span>Noroeste PBA</span></div>
+        <div class="cm">Rojas · Chacabuco<span>Sur 2ª Sección</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISIS POLÍTICO -->
+<div class="card two">
+  <div class="ch" style="background:#0A2342;color:white;">🗳️ Análisis Político · Pergamino · PJ Tercero en 2023, Primero en 2025</div>
+  <div class="cbody">
+    <div class="st">Resultados electorales comparados</div>
+    <table class="t" style="table-layout:fixed;">
+      <colgroup><col style="width:20%"><col style="width:17%"><col style="width:17%"><col style="width:17%"><col style="width:14%"><col></colgroup>
+      <thead><tr><th>Elección</th><th>PJ</th><th>JxC</th><th>LLA</th><th>FIT/Vec</th><th>Padrón</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Intend. 2023</td>
+          <td class="bad">28,2%<br>17.720 · 3°</td>
+          <td class="ok">40,6%<br>25.545 ✓</td>
+          <td class="warn">28,5%<br>17.927 · 2°</td>
+          <td>2,8%<br>1.734 Vec.</td>
+          <td>93.050</td>
+        </tr>
+        <tr>
+          <td>Conc. PBA 2025</td>
+          <td class="ok">30,3%<br>16.896 ✅ 1°</td>
+          <td class="inf">—</td>
+          <td class="warn">25,0%<br>13.969</td>
+          <td>1,5%<br>837 FIT</td>
+          <td>94.181</td>
+        </tr>
+        <tr>
+          <td>Dip. Nac. 2025</td>
+          <td class="bad">31,8%<br>18.988</td>
+          <td class="inf">—</td>
+          <td class="bad">51,2%<br>30.595</td>
+          <td>3,2%<br>1.911 FIT</td>
+          <td>92.691</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="nt" style="margin-top:10px;">
+      <strong>⚠️ Nota: Concejales PBA 2025 — otros partidos</strong>
+      PJ (16.896) + LLA (13.969) + FIT (837) = 31.702 sobre 55.800 votos totales positivos. Los ~24.100 restantes (43,2%) corresponden a otras fuerzas — presumiblemente JxC/PRO y partidos locales — no desagregadas en los datos disponibles. El % PJ del 30,3% es sobre el total de positivos y confirma el primer lugar.
+    </div>
+    <div class="st2">Análisis por eje</div>
+    <div class="ag">
+      <div class="agi">✅</div>
+      <div class="agt">
+        <strong>PJ primero en concejales PBA 2025 — la señal más importante del ciclo</strong>
+        <p>El PJ pasó de tercero en la intendencia 2023 (28,2%, detrás de JxC 40,6% y LLA 28,5%) a primero en los concejales PBA 2025 (30,3%, superando a LLA 25,0%). Esa inversión refleja que el PJ tiene piso propio en Pergamino que puede crecer cuando el electorado evalúa la gestión provincial separada de la nacional. Es la señal de recuperación más clara del ciclo en una ciudad media del interior bonaerense.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">📊</div>
+      <div class="agt">
+        <strong>LLA cae 3,5 pts en provinciales pero sube al 51,2% en nacionales</strong>
+        <p>LLA bajó de 28,5% (intendencia 2023) a 25,0% (conc. PBA 2025) en Pergamino — una caída de 3,5 puntos en legislativas provinciales. Pero en el Diputado Nacional 2025 subió al 51,2%. El diferencial de 26 puntos entre nacionales y provinciales describe a un electorado que distingue claramente entre el voto a Milei y el voto a la gestión provincial/municipal.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">👕</div>
+      <div class="agt">
+        <strong>El textil como base del voto PJ urbano en Pergamino</strong>
+        <p>El polo textil e indumentaria de Pergamino genera un núcleo de trabajadores industriales con historia sindical peronista — el SOIVA y el AOITA articulan a los trabajadores de jeans y ropa de trabajo. Ese segmento explica en parte el piso del 28-30% del PJ en Pergamino y es el que más se activa con agenda de empleo y producción provincial. Es el núcleo del voto que la campaña provincial debe consolidar y ampliar.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🔬</div>
+      <div class="agt">
+        <strong>El INTA y los investigadores como segmento no-tradicional PJ</strong>
+        <p>El personal del INTA Pergamino y el ecosistema biotech (técnicos, investigadores, agrónomos) no es el núcleo histórico del PJ pero puede ser sensible a la distinción entre un gobierno nacional que corta presupuesto científico (LLA) y una provincia que co-invierte en investigación. La Provincia puede construir un voto de ciencia y tecnología en Pergamino que no tiene en el interior agropecuario puro.</p>
+      </div>
+    </div>
+    <div class="al al-k">
+      <strong>🎯 DIAGNÓSTICO: CIUDAD DISPUTADA CON RECUPERACIÓN PJ EN 2025 · OPORTUNIDAD LEGISLATIVA 2027</strong>
+      JxC gobierna con Martínez pero el PJ fue primero en concejales 2025. La agenda productiva (INTA + textil) y la presa hídrica (co-financiada por la Provincia) son los vectores de presencia. El objetivo es consolidar el 30% PJ en legislativas y construir el piso para disputar la intendencia con credenciales concretas en 2027.
+    </div>
+  </div>
+</div>
+
+<!-- ACTORES -->
+<div class="card one">
+  <div class="ch" style="background:#0A2342;color:white;">👥 Actores Clave</div>
+  <div class="cbody">
+    <div class="ar">
+      <div class="ai">🔴</div>
+      <div class="ain">
+        <div class="an">Javier Martínez · Intendente</div>
+        <div class="ad">JxC · Opositor. Reelegido 2023 con 40,6%. Gestión visible: presa hídrica, LED, cámaras, digitalización. Interlocutor municipal para obras con financiamiento provincial. La Provincia debe trabajar con él en obras concretas sin darle rédito electoral excesivo — co-gestión más que foto.</div>
+        <div class="ats"><span class="badge-rival" style="border-radius:10px;padding:2px 8px;font-size:9px;font-weight:700;background:#7F1D1D;color:#FCA5A5;">OPOSITOR JxC</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🌾</div>
+      <div class="ain">
+        <div class="an">INTA Pergamino · Estación Experimental</div>
+        <div class="ad">Institución científica más importante del norte bonaerense. Afectada por recortes nacionales. La Provincia puede distinguirse con co-financiamiento de investigación. Personal calificado con potencial de voto reflexivo hacia la Provincia que defiende la ciencia.</div>
+        <div class="ats"><span class="at acc-priv">PRIVADO ★</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🧬</div>
+      <div class="ain">
+        <div class="an">Bayer · Corteva · Syngenta · Plantas Biotech</div>
+        <div class="ad">Multinacionales con plantas procesadoras de semillas. Empleo calificado. MinAgrario puede articular política de semillas y biotecnología con estos actores. Perfil: interlocutores protocolares con demandas de marco regulatorio y mercados.</div>
+        <div class="ats"><span class="at acc-priv">PRIVADO</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">👕</div>
+      <div class="ain">
+        <div class="an">Polo Textil · SOIVA · AOITA · Fábricas Jeans</div>
+        <div class="ad">Los trabajadores del textil organizados sindicalmente son el núcleo del voto PJ en Pergamino. Demandan crédito productivo, política laboral y acceso a mercados. El sector que da empleo estable todo el año en una ciudad donde la semilla es estacional. Base PJ que la Provincia debe consolidar con agenda concreta.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">📡</div>
+      <div class="ain">
+        <div class="an">Cooperativa de Trabajo / Residuos · CTGR</div>
+        <div class="ad">El Centro de Tratamiento y Gestión de Residuos de Martínez emplea operarios en blanco en la cinta de clasificación. Política ambiental con empleo real — MinAmbiente puede articular un programa de economía circular que refuerce esta iniciativa con fondos provinciales.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AGENDA DISCURSIVA -->
+<div class="card two">
+  <div class="ch" style="background:#0A2342;color:white;">💬 Agenda Discursiva · Pergamino</div>
+  <div class="cbody">
+    <div class="ag">
+      <div class="agi">🔬</div>
+      <div class="agt">
+        <strong>La Provincia invierte en ciencia cuando la Nación la corta: el INTA Pergamino como bandera</strong>
+        <p>El INTA Pergamino genera el conocimiento agropecuario que hace posible que la soja argentina sea competitiva en los mercados mundiales. El gobierno nacional recortó presupuesto científico — la Provincia puede ser la que compensa esa brecha con co-financiamiento provincial de investigación en la estación experimental más importante del norte bonaerense. Una Provincia que apuesta a la ciencia cuando otros la abandonan.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">👕</div>
+      <div class="agt">
+        <strong>El trabajo en el textil no se improvisa: apoyar al polo de jeans que da empleo todo el año</strong>
+        <p>Las fábricas de jeans y ropa de trabajo de Pergamino generan empleo industrial estable — los mismos trabajadores que costuran en enero y en julio, que no dependen de si llueve o si el precio de la soja subió. La Provincia puede llegar con crédito productivo, capacitación y acceso a mercados para el polo textil más grande del norte bonaerense. Hablar del trabajo del interior que no se ve en los números agropecuarios pero que da de comer a miles de familias de Pergamino.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">💧</div>
+      <div class="agt">
+        <strong>La presa que la Provincia trajo a Pergamino: agua contenida, barrio protegido</strong>
+        <p>La presa de regulación hídrica sobre el Arroyo Pergamino — financiada con BID y articulación de fondos provinciales — protege el casco urbano de la inundación histórica que en 1995 anegó la ciudad. Ese es un activo que la Provincia puede reclamar ante los vecinos: "la obra que asegura que tu barrio no se inunde la trajo la Provincia, con financiamiento internacional que el gobierno provincial consiguió".</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🌾</div>
+      <div class="agt">
+        <strong>Pergamino, el lugar donde nace la semilla que alimenta al mundo</strong>
+        <p>Las plantas procesadoras de Bayer, Corteva y Syngenta en Pergamino hacen posible que la semilla de maíz y soja que se usa en todo el país salga con calidad certificada al campo bonaerense. La Capital Nacional de la Semilla no es un título honorífico — es la descripción de una ciudad que concentra el conocimiento biotecnológico agropecuario más avanzado de la Argentina. La Provincia puede hacer agenda con ese sector y potenciar la marca "Pergamino" en los mercados globales de semillas.</p>
+      </div>
+    </div>
+    <div class="al al-k">
+      <strong>🎯 Síntesis de Pergamino</strong>
+      Pergamino es la oportunidad de recuperación PJ más clara del norte bonaerense en una ciudad media. El PJ fue primero en concejales PBA 2025 con 30,3%. La agenda es doble: INTA + biotech para el segmento calificado (que el recorte nacional de ciencia tiene sensible) y polo textil para el trabajador industrial peronista (que necesita crédito y mercados). La presa hídrica es el activo provincial ya ejecutado que permite reclamar presencia ante los 115k habitantes de la ciudad.
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS -->
+<div class="card full">
+  <div class="ch" style="background:#0A2342;color:white;">🗺️ Visitas Estratégicas · Pergamino · Ciudad Media con Agenda Dual</div>
+  <div class="cbody">
+    <table class="t" style="table-layout:fixed;">
+      <colgroup><col style="width:4%"><col style="width:22%"><col style="width:12%"><col style="width:8%"><col></colgroup>
+      <thead>
+        <tr><th>#</th><th>Lugar / Evento</th><th>Tipo</th><th>Score</th><th>Descripción estratégica</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bld">1</td>
+          <td class="bld">🌾 INTA Pergamino · Estación Experimental</td>
+          <td><span class="acc-priv">PRIVADO ★</span></td>
+          <td class="ok bld">9.5</td>
+          <td>Visita a la Estación Experimental del INTA Pergamino con el equipo científico + anuncio de convenio provincial de co-financiamiento de investigación biotecnológica. El INTA afectado por recortes nacionales — la Provincia que compensa. Marco discursivo: "la Provincia invierte en ciencia cuando la Nación corta". Alta resonancia entre personal calificado, investigadores y la ciudad universitaria de Pergamino. El acto más diferenciador posible respecto del gobierno nacional.</td>
+        </tr>
+        <tr>
+          <td class="bld">2</td>
+          <td class="bld">👕 Fábrica del Polo Textil · Jeans / Indumentaria</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="ok bld">9.0</td>
+          <td>Visita a una de las grandes fábricas de jeans o ropa de trabajo del polo textil con obreros, sindicato (SOIVA/AOITA) y dueños + anuncio de línea de crédito MinDesarrolloProductivo para modernización de equipamiento. El textil es el núcleo del voto PJ de Pergamino — trabajadores industriales con historia sindical. Marco: "la Provincia apoya el trabajo que no depende de la cosecha". El acto más electoralmente rentable en términos de activación de base PJ.</td>
+        </tr>
+        <tr>
+          <td class="bld">3</td>
+          <td class="bld">💧 Presa Hídrica · Arroyo Pergamino</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="ok bld">8.5</td>
+          <td>Recorrida por la presa con Martínez + anuncio de mantenimiento o segunda etapa con co-financiamiento BID/provincial. La Provincia ya pagó esta obra — puede reclamarla ante los vecinos. Marco: "la obra que asegura que su barrio no se inunde la trajo la Provincia". Alta visibilidad urbana en una ciudad donde la inundación de 1995 es memoria colectiva activa. Conviene hacer el acto con Martínez pero dejar claro que el financiamiento es provincial.</td>
+        </tr>
+        <tr>
+          <td class="bld">4</td>
+          <td class="bld">🌾 Planta Biotech · Bayer o Corteva</td>
+          <td><span class="acc-priv">PRIVADO</span></td>
+          <td class="warn bld">8.0</td>
+          <td>Visita a una planta procesadora de semillas de multinacional biotecnológica + agenda MinAgrario. Marco: Pergamino como Capital Nacional de la Semilla, la Provincia que acompaña la cadena exportadora biotecnológica. Impacto en el sector más calificado y mejor pagado del municipio. El acto refuerza la imagen de una Provincia que conoce la economía del norte bonaerense en profundidad.</td>
+        </tr>
+        <tr>
+          <td class="bld">5</td>
+          <td class="bld">🏛️ Municipalidad · Martínez (JxC)</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="warn bld">7.5</td>
+          <td>Visita al intendente Martínez con co-anuncio de obra o convenio. La Provincia trabaja con todos los municipios bonaerenses independientemente del color político. Marco de co-gestión en seguridad (articulación con el anillo digital de 400+ cámaras) o en infraestructura urbana. Conviene que el acto sea breve y enfocado en la obra — no en la foto política con el opositor.</td>
+        </tr>
+        <tr>
+          <td class="bld">6</td>
+          <td class="bld">♻️ CTGR · Centro de Tratamiento de Residuos</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="inf bld">7.0</td>
+          <td>Visita al Centro de Tratamiento y Gestión de Residuos con operarios y gestión ambiental municipal + anuncio de apoyo MinAmbiente. La política de residuos y economía circular de Pergamino tiene empleo en blanco real y visibilidad ambiental. Una agenda de medioambiente concreto (no abstracto) que conecta con la ciudadanía urbana activa.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="nt">
+      <strong>📌 Nota de coordinación — Municipio Opositor JxC</strong>
+      Todas las visitas deben calibrarse para no darle rédito electoral excesivo a Martínez. En obras provinciales, el encuadre es que la Provincia invierte en Pergamino — el intendente es el receptor, no el co-protagonista. En agenda productiva (INTA, textil, biotech), la Provincia actúa directo con el sector privado y sindical — Martínez puede estar presente pero no lidera la agenda.
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Ficha Estructurada — Pergamino · PBA Analytics 2026</div>
+
+<!-- ANEXO I -->
+<div class="anx-break" style="height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div style="background:linear-gradient(135deg,#0A2342,#1B4F8A);color:white;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Pergamino · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO I — DATOS ELECTORALES Y DEMOGRÁFICOS</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:11px;opacity:0.7;text-align:right;">2ª Sección Electoral · Cluster 2 · Ciudades Intermedias Regionales<br>Martínez JxC · PJ 1° en Conc. PBA 2025 (30,3%) · 115.340 hab</div>
+  </div>
+  <div style="padding:18px 22px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+    <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+      <div class="ch" style="background:#1B4F8A;color:white;">📊 Resultado Intendencia 2023</div>
+      <div class="cbody">
+        <table class="t two-col">
+          <tbody>
+            <tr><td>JxC (Martínez, ganó)</td><td class="ok">40,6% · 25.545 ✓</td></tr>
+            <tr><td>La Libertad Avanza</td><td class="warn">28,5% · 17.927 · 2°</td></tr>
+            <tr><td>PJ</td><td class="bad">28,2% · 17.720 · 3°</td></tr>
+            <tr><td>Vecinalistas</td><td>2,8% · 1.734</td></tr>
+            <tr><td>Total votos pos.</td><td>62.926</td></tr>
+            <tr><td>Total electores</td><td>93.050</td></tr>
+            <tr><td>Anti-PJ</td><td class="bad">71,8%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+      <div class="ch" style="background:#1B4F8A;color:white;">📊 Concejales PBA 2025</div>
+      <div class="cbody">
+        <table class="t two-col">
+          <tbody>
+            <tr><td>PJ</td><td class="ok">30,3% · 16.896 ✅ 1°</td></tr>
+            <tr><td>La Libertad Avanza</td><td class="warn">25,0% · 13.969</td></tr>
+            <tr><td>FIT</td><td>1,5% · 837</td></tr>
+            <tr><td>Otras fuerzas</td><td>~43,2% (JxC/PRO et al.)</td></tr>
+            <tr><td>Total votos pos.</td><td>55.800</td></tr>
+            <tr><td>Total electores</td><td>94.181</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+      <div class="ch" style="background:#1B4F8A;color:white;">📊 Diputado Nacional 2025</div>
+      <div class="cbody">
+        <table class="t two-col">
+          <tbody>
+            <tr><td>La Libertad Avanza</td><td class="bad">51,2% · 30.595</td></tr>
+            <tr><td>PJ</td><td class="bad">31,8% · 18.988</td></tr>
+            <tr><td>FIT</td><td>3,2% · 1.911</td></tr>
+            <tr><td>Total votos pos.</td><td>59.770</td></tr>
+            <tr><td>Total electores</td><td>92.691</td></tr>
+            <tr><td>LLA vs PJ</td><td class="bad">+19,4 pts LLA</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="padding:0 22px 18px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+  <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+    <div class="ch" style="background:#0A2342;color:white;">📈 Evolución Electoral</div>
+    <div class="cbody">
+      <table class="t" style="table-layout:fixed;">
+        <colgroup><col style="width:32%"><col style="width:23%"><col style="width:23%"><col></colgroup>
+        <thead><tr><th>Elección</th><th>PJ %</th><th>LLA %</th><th>JxC %</th></tr></thead>
+        <tbody>
+          <tr><td>Intend. 2023</td><td class="bad">28,2% · 3°</td><td class="warn">28,5% · 2°</td><td class="ok">40,6% ✓</td></tr>
+          <tr><td>Conc. PBA 2025</td><td class="ok">30,3% ✅ 1°</td><td class="warn">25,0%</td><td class="inf">—</td></tr>
+          <tr><td>Dip. Nac. 2025</td><td class="bad">31,8%</td><td class="bad">51,2%</td><td class="inf">—</td></tr>
+        </tbody>
+      </table>
+      <div class="hist">
+        <strong>✅ Tendencia: PJ recupera en legislativas PBA</strong>
+        <p>PJ: 28,2% (2023) → 30,3% (conc. PBA 2025) → 31,8% (nac. 2025). Crecimiento consistente. LLA: fuerte en nacionales (51,2%) pero baja en provinciales (25,0%). Diferencial 26 pts entre LLA nac. y prov. — electorado diferenciador.</p>
+      </div>
+    </div>
+  </div>
+  <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+    <div class="ch" style="background:#0A2342;color:white;">🏙️ Datos Demográficos · Pergamino</div>
+    <div class="cbody">
+      <table class="t two-col">
+        <tbody>
+          <tr><td>Sección Electoral</td><td>2ª · Norte Bonaerense</td></tr>
+          <tr><td>Cluster</td><td>2 · Ciudades Intermedias Regionales</td></tr>
+          <tr><td>Superficie</td><td>3.004,7 km²</td></tr>
+          <tr><td>Población 2022</td><td class="bld">115.340 (CENSO)</td></tr>
+          <tr><td>Padrón 2023</td><td>93.050</td></tr>
+          <tr><td>Padrón 2025</td><td>94.181</td></tr>
+          <tr><td>Intendente</td><td>Martínez · JxC · Opositor</td></tr>
+          <tr><td>Privado clave</td><td>🌾 INTA · Biotech Multinac.</td></tr>
+          <tr><td>Ruta principal</td><td>Ruta 8 · Nodo norte PBA</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ANEXO II -->
+<div class="anx-break" style="height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div style="background:linear-gradient(135deg,#0A2342,#1B4F8A);color:white;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Pergamino · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO II — ACTORES Y AGENDA PROVINCIAL</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">INTA · Biotech · Polo Textil · Presa Hídrica · PJ 1° en Prov. 2025</div>
+  </div>
+  <div style="padding:18px 22px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div class="ch" style="background:#1B4F8A;color:white;">🎯 Agenda Provincial Sugerida</div>
+      <div class="cbody">
+        <table class="t">
+          <thead><tr><th>Ministerio</th><th style="width:55%">Acción</th></tr></thead>
+          <tbody>
+            <tr><td>Agroindustria</td><td>Co-financiamiento INTA + agenda semillas</td></tr>
+            <tr><td>Desarro. Productivo</td><td>Crédito textil + modernización Polo</td></tr>
+            <tr><td>Infraestructura</td><td>Presa hídrica — 2ª etapa / mantenimiento</td></tr>
+            <tr><td>Seguridad</td><td>Articulación anillo digital municipal</td></tr>
+            <tr><td>Medioambiente</td><td>Apoyo CTGR / economía circular</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div class="ch" style="background:#1B4F8A;color:white;">⚡ Score · Priorización</div>
+      <div class="cbody">
+        <table class="t two-col">
+          <tbody>
+            <tr><td>PJ Conc. 2025</td><td class="ok bld">30,3% ✅ 1°</td></tr>
+            <tr><td>PJ Intend. 2023</td><td class="bad">28,2% · 3°</td></tr>
+            <tr><td>Población</td><td class="bld">115.340 (ciudad media)</td></tr>
+            <tr><td>Cluster</td><td>2 · Ciudades Intermedias</td></tr>
+            <tr><td>Potencial elec.</td><td class="ok">Alto · recuperación</td></tr>
+            <tr><td>Visita prioritaria</td><td class="ok">INTA ★ 9.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div class="ch" style="background:#1B4F8A;color:white;">🗺️ Visitas · Ranking</div>
+      <div class="cbody">
+        <table class="t">
+          <thead><tr><th>#</th><th>Lugar</th><th>Score</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>🌾 INTA Pergamino</td><td class="ok">9.5</td></tr>
+            <tr><td>2</td><td>👕 Fábrica Polo Textil</td><td class="ok">9.0</td></tr>
+            <tr><td>3</td><td>💧 Presa Hídrica</td><td class="ok">8.5</td></tr>
+            <tr><td>4</td><td>🧬 Planta Biotech Multinac.</td><td class="warn">8.0</td></tr>
+            <tr><td>5</td><td>🏛️ Municipalidad · Martínez</td><td class="warn">7.5</td></tr>
+            <tr><td>6</td><td>♻️ CTGR Residuos</td><td class="inf">7.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBA Analítica</title>
+
+<style>:root{--bg:#F8FAFC;--surface:#fff;--border:#E2E8F0;--border2:#CBD5E1;--navy:#0F172A;--text:#0F172A;--text2:#64748B;--text3:#94A3B8;--accent:#1D4ED8;--pj:#1D4ED8;--pj-bg:#EFF6FF;--pj-b:#BFDBFE;--jxc:#D97706;--jxc-bg:#FFFBEB;--jxc-b:#FDE68A;--lla:#DC2626;--lla-bg:#FFF1F2;--lla-b:#FECACA;--vec:#059669;--vec-bg:#ECFDF5;--vec-b:#A7F3D0;--hechos:#7C3AED;--hechos-bg:#F5F3FF;--r:8px;--rl:12px;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;-webkit-font-smoothing:antialiased;}.topbar{background:var(--surface);border-bottom:1px solid var(--border);height:52px;display:flex;align-items:center;padding:0 28px;position:sticky;top:0;z-index:100;gap:24px;}.logo{font-size:15px;font-weight:700;color:var(--navy);letter-spacing:-.02em;flex-shrink:0;}.logo em{color:var(--accent);font-style:normal;}.topnav{display:flex;gap:2px;}.tnav{padding:6px 14px;border-radius:var(--r);font-size:13px;font-weight:500;color:var(--text2);cursor:pointer;border:none;background:none;font-family:inherit;transition:all .12s;}.tnav:hover{color:var(--text);background:#F1F5F9;}.tnav.active{color:var(--accent);background:var(--pj-bg);font-weight:600;}.main{max-width:1180px;margin:0 auto;padding:28px 24px 60px;}.section{display:none;}.section.active{display:block;}.kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px;}.kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:16px 18px;}.kpi .val{font-size:24px;font-weight:700;color:var(--navy);line-height:1;}.kpi .lbl{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:5px;}.kpi.blue .val{color:var(--pj);}.kpi.yellow .val{color:var(--jxc);}.kpi.red .val{color:var(--lla);}.kpi.green .val{color:var(--vec);}.legend{display:flex;gap:18px;margin-bottom:18px;align-items:center;flex-wrap:wrap;}.leg{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text2);}.leg-sq{width:11px;height:11px;border-radius:3px;}.leg-hint{margin-left:auto;font-size:12px;color:var(--text3);font-style:italic;}.cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:4px;}@media(max-width:1100px){.cards-grid{grid-template-columns:repeat(2,1fr);}}.card-t{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:18px;cursor:pointer;transition:border-color .15s,box-shadow .15s;position:relative;user-select:none;}.card-t:hover{border-color:var(--border2);box-shadow:0 4px 12px rgba(0,0,0,.08);}.card-t.open{border-color:var(--accent);box-shadow:0 0 0 2px rgba(29,78,216,.12);}.ct-eyebrow{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;}.ct-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.25;}.pbar{height:5px;border-radius:3px;overflow:hidden;background:#F1F5F9;display:flex;gap:1px;margin-bottom:10px;}.pb{height:100%;}.ct-val{font-size:20px;font-weight:700;color:var(--navy);line-height:1;}.ct-sub{font-size:11px;color:var(--text2);margin-top:3px;line-height:1.4;}.ct-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}.ct-tag{font-size:10px;background:#F1F5F9;color:var(--text2);padding:2px 7px;border-radius:10px;}.ct-chevron{position:absolute;top:14px;right:14px;font-size:11px;color:var(--text3);transition:transform .2s;}.card-t.open .ct-chevron{transform:rotate(180deg);color:var(--accent);}.expand-box{display:none;background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:20px 22px;margin-top:0;margin-bottom:4px;}.expand-box.show{display:block;}.exp-hdr{display:flex;align-items:flex-start;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border);}.exp-hdr-text .exp-title{font-size:14px;font-weight:700;color:var(--navy);}.exp-hdr-text .exp-meta{font-size:12px;color:var(--text2);margin-top:2px;}.exp-close{margin-left:auto;flex-shrink:0;background:none;border:1px solid var(--border);border-radius:var(--r);padding:5px 12px;font-size:12px;color:var(--text2);cursor:pointer;font-family:inherit;}.exp-close:hover{border-color:var(--border2);color:var(--text);}.mun-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}@media(max-width:900px){.mun-grid{grid-template-columns:1fr 1fr;}}.mc{border-radius:var(--r);padding:11px 13px;border-left:3px solid;}.mc.uxp{background:var(--pj-bg);border-left-color:var(--pj);}.mc.jxc{background:var(--jxc-bg);border-left-color:var(--jxc);}.mc.lla{background:var(--lla-bg);border-left-color:var(--lla);}.mc.vec{background:var(--vec-bg);border-left-color:var(--vec);}.mc.hechos{background:var(--hechos-bg);border-left-color:var(--hechos);}.mc-name{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:2px;}.mc-pop{font-size:11px;color:var(--text2);}.mc-cat{font-size:10px;color:var(--text3);font-style:italic;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.mc-foot{display:flex;align-items:center;gap:6px;margin-top:5px;}.mc-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;}.mc-badge.uxp{background:var(--pj-b);color:var(--pj);}.mc-badge.jxc{background:var(--jxc-b);color:#92400E;}.mc-badge.lla{background:var(--lla-b);color:var(--lla);}.mc-badge.vec{background:var(--vec-b);color:var(--vec);}.mc-badge.hechos{background:#DDD6FE;color:var(--hechos);}.mc-ag{font-size:10px;color:var(--text3);margin-left:auto;}.tbl-section{margin-top:28px;}.tbl-hdr{display:flex;align-items:center;gap:12px;margin-bottom:12px;}.tbl-title{font-size:14px;font-weight:700;color:var(--navy);}.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px;}.search-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:7px 12px;font-size:13px;font-family:inherit;color:var(--text);width:200px;}.search-box:focus{outline:none;border-color:var(--accent);}select.filter{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:7px 12px;font-size:13px;font-family:inherit;color:var(--text);cursor:pointer;}select.filter:focus{outline:none;border-color:var(--accent);}.res-count{margin-left:auto;font-size:12px;color:var(--text2);}.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--rl);}table{width:100%;border-collapse:collapse;font-size:13px;}thead tr{border-bottom:1.5px solid var(--border);}th{text-align:left;padding:9px 12px;font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;background:#FAFBFC;white-space:nowrap;}td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle;}tr:last-child td{border-bottom:none;}tbody tr:hover td{background:#F8FAFF;}.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;}.b-pj{background:var(--pj-bg);color:var(--pj);}.b-jxc{background:var(--jxc-bg);color:#92400E;}.b-lla{background:var(--lla-bg);color:var(--lla);}.b-vec{background:var(--vec-bg);color:var(--vec);}.b-fi{background:var(--hechos-bg);color:var(--hechos);}.b-ok{background:#ECFDF5;color:#059669;}.b-warn{background:#FFFBEB;color:#B45309;}.b-crit{background:#FEF2F2;color:#DC2626;}.b-sec{background:#F1F5F9;color:#475569;}.map-btn{display:inline-block;background:var(--accent);color:#fff;border:none;border-radius:var(--r);padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:none;margin-bottom:16px;margin-right:8px;}.map-btn.sec{background:var(--surface);color:var(--text2);border:1px solid var(--border);}.fin-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}.fin-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:18px;}.fin-card .fval{font-size:22px;font-weight:700;color:var(--navy);}.fin-card .flbl{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:5px;}.fin-card .fsub{font-size:11px;color:var(--text2);margin-top:4px;}
+.mc-fichas{display:flex;gap:4px;margin-top:6px;flex-wrap:wrap;}
+.mc-ficha-btn{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;cursor:pointer;border:none;font-family:inherit;text-decoration:none;transition:opacity .15s;}
+.mc-ficha-btn:hover{opacity:0.8;}
+.mc-ficha-btn.f-main{background:#1D4ED8;color:#fff;}
+.mc-ficha-btn.f-narr{background:#059669;color:#fff;}</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="logo">PBA <em>Analítica</em></div>
+  <nav class="topnav">
+    <button class="tnav active" onclick="showTab('pba')">PBA</button>
+    <button class="tnav" onclick="showTab('clusters')">Clusters Productivos</button>
+    <button class="tnav" onclick="showTab('electoral')">Circuitos Electorales</button>
+    <button class="tnav" onclick="showTab('finanzas')">Finanzas</button>
+  </nav>
+</div>
+<div class="main">
+
+<!-- ═══ PBA ═══ -->
+<div id="tab-pba" class="section active">
+  <div class="kpi-strip" id="pba-kpis"></div>
+  <div class="legend">
+    <div class="leg"><div class="leg-sq" style="background:var(--pj)"></div>UxP / PJ</div>
+    <div class="leg"><div class="leg-sq" style="background:var(--jxc)"></div>JxC / Cambiemos</div>
+    <div class="leg"><div class="leg-sq" style="background:var(--lla)"></div>La Libertad Avanza</div>
+    <div class="leg"><div class="leg-sq" style="background:var(--vec)"></div>Vecinal</div>
+    <div class="leg-hint">Clic en una sección para ver sus municipios</div>
+  </div>
+  <div class="cards-grid" id="pba-grid"></div>
+  <div class="expand-box" id="pba-exp"></div>
+  <div class="tbl-section">
+    <div class="tbl-hdr"><div class="tbl-title">Detalle municipal</div></div>
+    <div class="toolbar">
+      <input class="search-box" id="pba-search" placeholder="Buscar municipio..." oninput="filterPbaTable()">
+      <select class="filter" id="pba-sec" onchange="filterPbaTable()">
+        <option value="">Todas las secciones</option>
+        <option>1ª</option><option>2ª</option><option>3ª</option><option>4ª</option>
+        <option>5ª</option><option>6ª</option><option>7ª</option><option>8ª</option>
+      </select>
+      <select class="filter" id="pba-partido" onchange="filterPbaTable()">
+        <option value="">Todos los partidos</option>
+        <option value="UxP">UxP / PJ</option>
+        <option value="JxC">JxC</option>
+        <option value="LLA">LLA</option>
+        <option value="Vec">Vecinal</option>
+      </select>
+      <span class="res-count" id="pba-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table><thead><tr>
+        <th>Municipio</th><th>Sección</th><th>Cluster</th><th>Partido</th>
+        <th>Intendente</th><th>Población</th><th>Perfil territorial</th><th>Agentes/1000h</th><th>Fichas</th>
+      </tr></thead><tbody id="pba-tbody"></tbody></table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CLUSTERS ═══ -->
+<div id="tab-clusters" class="section">
+  <div class="cards-grid" id="cl-grid"></div>
+  <div class="expand-box" id="cl-exp"></div>
+  <div class="tbl-section">
+    <div class="tbl-hdr"><div class="tbl-title">Todos los municipios</div></div>
+    <div class="toolbar">
+      <input class="search-box" id="cl-search" placeholder="Buscar municipio..." oninput="filterClTable()">
+      <select class="filter" id="cl-cluster" onchange="filterClTable()">
+        <option value="">Todos los clusters</option>
+        <option value="conurbano">Conurbano Bonaerense</option>
+        <option value="ciudades">Ciudades Intermedias</option>
+        <option value="corredor">Corredor Industrial Norte</option>
+        <option value="interior">Interior Agropecuario</option>
+        <option value="costero">Litoral Atlántico</option>
+        <option value="salado">Cuenca del Salado</option>
+        <option value="sur">Sur Bonaerense</option>
+      </select>
+      <select class="filter" id="cl-partido" onchange="filterClTable()">
+        <option value="">Todos los partidos</option>
+        <option value="UxP">UxP / PJ</option>
+        <option value="JxC">JxC</option>
+        <option value="LLA">LLA</option>
+        <option value="Vec">Vecinal</option>
+      </select>
+      <span class="res-count" id="cl-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table><thead><tr>
+        <th>Municipio</th><th>Cluster</th><th>Sección</th><th>Partido</th>
+        <th>Población</th><th>Perfil territorial</th>
+      </tr></thead><tbody id="cl-tbody"></tbody></table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ELECTORAL ═══ -->
+<div id="tab-electoral" class="section">
+  <div class="cards-grid" id="el-grid"></div>
+  <div class="expand-box" id="el-exp"></div>
+  <div class="tbl-section">
+    <div class="tbl-hdr"><div class="tbl-title">Resultados por municipio</div></div>
+    <div class="toolbar">
+      <input class="search-box" id="el-search" placeholder="Buscar municipio..." oninput="filterElTable()">
+      <select class="filter" id="el-sec" onchange="filterElTable()">
+        <option value="">Todas las secciones</option>
+        <option>1ª</option><option>2ª</option><option>3ª</option><option>4ª</option>
+        <option>5ª</option><option>6ª</option><option>7ª</option><option>8ª</option>
+      </select>
+      <select class="filter" id="el-ganador" onchange="filterElTable()">
+        <option value="">Todos</option>
+        <option value="PJ">UxP ganó 2023</option>
+        <option value="JxC">JxC ganó 2023</option>
+        <option value="LLA">LLA ganó 2023</option>
+      </select>
+      <span class="res-count" id="el-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table><thead><tr>
+        <th>Municipio</th><th>Secc.</th><th>Partido</th>
+        <th>PJ 2023</th><th>JxC 2023</th><th>LLA 2023</th><th>Ganó 2023</th>
+        <th>PJ Conc.25</th><th>LLA Conc.25</th>
+        <th>PJ Dip.25</th><th>LLA Dip.25</th>
+      </tr></thead><tbody id="el-tbody"></tbody></table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FINANZAS ═══ -->
+<div id="tab-finanzas" class="section">
+  <div class="fin-strip" id="fin-kpis"></div>
+  <div class="tbl-section">
+    <div class="tbl-hdr"><div class="tbl-title">Finanzas municipales 2025</div></div>
+    <div class="toolbar">
+      <input class="search-box" id="fin-search" placeholder="Buscar municipio..." oninput="filterFinTable()">
+      <select class="filter" id="fin-sec" onchange="filterFinTable()">
+        <option value="">Todas las secciones</option>
+        <option>1ª</option><option>2ª</option><option>3ª</option><option>4ª</option>
+        <option>5ª</option><option>6ª</option><option>7ª</option><option>8ª</option>
+      </select>
+      <select class="filter" id="fin-sort" onchange="filterFinTable()">
+        <option value="mun">Ordenar: Municipio</option>
+        <option value="auto">Mayor autonomía</option>
+        <option value="deuda">Mayor deuda flotante</option>
+        <option value="nomina">Mayor índice nómina</option>
+        <option value="transf">Mayor incremento transferencias</option>
+      </select>
+      <span class="res-count" id="fin-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table><thead><tr>
+        <th>Municipio</th><th>Secc.</th><th>Partido</th>
+        <th>Autonomía</th><th>Agentes/1000h</th>
+        <th>% Gasto personal</th><th>Deuda flotante</th>
+        <th>Resultado fin.</th>
+        <th>Transf. 2026</th><th>Var. %</th>
+      </tr></thead><tbody id="fin-tbody"></tbody></table>
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+<script>
+
+const MUN=[
+  {m:'La Matanza',cl:'conurbano',p:'UxP',pop:1841247,sec:'3ª',clave:'Gigante del Conurbano'},
+  {m:'Lomas de Zamora',cl:'conurbano',p:'UxP',pop:690480,sec:'3ª',clave:'La Salada'},
+  {m:'La Plata',cl:'conurbano',p:'UxP',pop:768547,sec:'8ª',clave:'Capital / Horticultura'},
+  {m:'Quilmes',cl:'conurbano',p:'UxP',pop:633391,sec:'3ª',clave:'EcoParque / Cerveza'},
+  {m:'Almirante Brown',cl:'conurbano',p:'UxP',pop:584827,sec:'3ª',clave:'Parque Industrial Burzaco'},
+  {m:'Merlo',cl:'conurbano',p:'UxP',pop:582486,sec:'1ª',clave:'Economía Popular'},
+  {m:'Moreno',cl:'conurbano',p:'UxP',pop:576632,sec:'1ª',clave:'Economía Popular'},
+  {m:'Florencio Varela',cl:'conurbano',p:'UxP',pop:496433,sec:'3ª',clave:'Frutihorticola'},
+  {m:'Lanús',cl:'conurbano',p:'UxP',pop:461267,sec:'3ª',clave:'Curtiembres'},
+  {m:'General San Martín',cl:'conurbano',p:'UxP',pop:450518,sec:'1ª',clave:'PyMEs'},
+  {m:'Tigre',cl:'conurbano',p:'UxP',pop:446949,sec:'1ª',clave:'Delta / Inmobiliario'},
+  {m:'Tres de Febrero',cl:'conurbano',p:'LLA',pop:364176,sec:'1ª',clave:'Sábato'},
+  {m:'Avellaneda',cl:'conurbano',p:'UxP',pop:367554,sec:'3ª',clave:'Puerto Dock Sud'},
+  {m:'Esteban Echeverría',cl:'conurbano',p:'UxP',pop:338480,sec:'3ª',clave:'Nodo Logístico'},
+  {m:'Morón',cl:'conurbano',p:'UxP',pop:331183,sec:'1ª',clave:'H. Posadas'},
+  {m:'Berazategui',cl:'conurbano',p:'UxP',pop:358712,sec:'3ª',clave:'Capital del Vidrio'},
+  {m:'Malvinas Argentinas',cl:'conurbano',p:'UxP',pop:350674,sec:'1ª',clave:'Salud'},
+  {m:'José C. Paz',cl:'conurbano',p:'UxP',pop:326992,sec:'1ª',clave:'Salud'},
+  {m:'San Miguel',cl:'conurbano',p:'JxC',pop:328835,sec:'1ª',clave:'Ojos en Alerta'},
+  {m:'San Isidro',cl:'conurbano',p:'JxC',pop:297282,sec:'1ª',clave:'Recuperación Costera'},
+  {m:'Vicente López',cl:'conurbano',p:'JxC',pop:282280,sec:'1ª',clave:'Polo Corporativo'},
+  {m:'Escobar',cl:'conurbano',p:'UxP',pop:256268,sec:'1ª',clave:'Innovación'},
+  {m:'Pilar',cl:'conurbano',p:'UxP',pop:394754,sec:'1ª',clave:'Polo Industrial'},
+  {m:'Ezeiza',cl:'conurbano',p:'UxP',pop:201511,sec:'3ª',clave:'Tolerancia Cero'},
+  {m:'Hurlingham',cl:'conurbano',p:'UxP',pop:185641,sec:'1ª',clave:'Cuna del Rock'},
+  {m:'Ituzaingó',cl:'conurbano',p:'UxP',pop:180232,sec:'1ª',clave:'El Jardín del Oeste'},
+  {m:'General Rodríguez',cl:'conurbano',p:'UxP',pop:142709,sec:'1ª',clave:'Alimentos'},
+  {m:'Presidente Perón',cl:'conurbano',p:'UxP',pop:102106,sec:'3ª',clave:'Nuevas localidades'},
+  {m:'Berisso',cl:'conurbano',p:'UxP',pop:100930,sec:'3ª',clave:'YPF / Inmigrante'},
+  {m:'General Pueyrredón',cl:'ciudades',p:'JxC',pop:667082,sec:'5ª',clave:'Cluster ATICMA / IA'},
+  {m:'Bahía Blanca',cl:'ciudades',p:'UxP',pop:336557,sec:'6ª',clave:'Puerto / Petroquímica'},
+  {m:'Olavarría',cl:'ciudades',p:'UxP',pop:125751,sec:'7ª',clave:'Loma Negra / Cemento'},
+  {m:'Tandil',cl:'ciudades',p:'JxC',pop:145575,sec:'5ª',clave:'Silicon Valley Bonaerense'},
+  {m:'San Fernando',cl:'ciudades',p:'UxP',pop:171616,sec:'1ª',clave:'Náutica'},
+  {m:'San Nicolás',cl:'ciudades',p:'Hechos',pop:168041,sec:'2ª',clave:'Siderurgia / Religión'},
+  {m:'Zárate',cl:'ciudades',p:'JxC',pop:132221,sec:'2ª',clave:'Atucha / Automotriz'},
+  {m:'Junín',cl:'ciudades',p:'JxC',pop:103787,sec:'4ª',clave:'Epicentro 4ª Sección'},
+  {m:'Campana',cl:'ciudades',p:'JxC',pop:110566,sec:'1ª',clave:'Tenaris / Puerto'},
+  {m:'Luján',cl:'ciudades',p:'UxP',pop:111251,sec:'1ª',clave:'Turismo Religioso'},
+  {m:'San Pedro',cl:'corredor',p:'UxP',pop:68613,sec:'2ª',clave:'Durazno / Vivero'},
+  {m:'Baradero',cl:'corredor',p:'UxP',pop:40002,sec:'2ª',clave:'Polo Logístico'},
+  {m:'Exaltación de la Cruz',cl:'corredor',p:'UxP',pop:40159,sec:'2ª',clave:'Industria Equina'},
+  {m:'Ramallo',cl:'corredor',p:'UxP',pop:39730,sec:'2ª',clave:'Ternium'},
+  {m:'Salto',cl:'corredor',p:'UxP',pop:39425,sec:'2ª',clave:'Capital de la Semilla'},
+  {m:'Arrecifes',cl:'corredor',p:'JxC',pop:32215,sec:'2ª',clave:'Automovilismo'},
+  {m:'Colón',cl:'corredor',p:'JxC',pop:27504,sec:'2ª',clave:'Polo Semillero'},
+  {m:'San Antonio de Areco',cl:'corredor',p:'JxC',pop:26897,sec:'2ª',clave:'Tradición / Talabartería'},
+  {m:'San Andrés de Giles',cl:'corredor',p:'UxP',pop:26510,sec:'2ª',clave:'Avícola / Porcina'},
+  {m:'Rojas',cl:'corredor',p:'JxC',pop:25627,sec:'2ª',clave:'Polo Semillero'},
+  {m:'Carmen de Areco',cl:'corredor',p:'UxP',pop:17499,sec:'2ª',clave:'Semillero / Porcina'},
+  {m:'Capitán Sarmiento',cl:'corredor',p:'UxP',pop:15965,sec:'2ª',clave:'Polo Avícola'},
+  {m:'Pergamino',cl:'corredor',p:'JxC',pop:109000,sec:'2ª',clave:'Capital del Agro'},
+  {m:'San Vicente',cl:'interior',p:'UxP',pop:98215,sec:'3ª',clave:'Universidad 2024'},
+  {m:'Azul',cl:'interior',p:'UxP',pop:75905,sec:'7ª',clave:'Ciudad Cervantina'},
+  {m:'Mercedes',cl:'interior',p:'UxP',pop:72980,sec:'1ª',clave:'Salame Quintero'},
+  {m:'Cañuelas',cl:'interior',p:'UxP',pop:70684,sec:'3ª',clave:'Dulce de Leche'},
+  {m:'Chivilcoy',cl:'interior',p:'Vec',pop:70839,sec:'4ª',clave:'AgroGanadero'},
+  {m:'Marcos Paz',cl:'interior',p:'UxP',pop:67011,sec:'1ª',clave:'Billetera propia'},
+  {m:'Ensenada',cl:'interior',p:'UxP',pop:63997,sec:'3ª',clave:'YPF / Astillero'},
+  {m:'Chacabuco',cl:'interior',p:'UxP',pop:52729,sec:'4ª',clave:'Capital del Maíz'},
+  {m:'9 de Julio',cl:'interior',p:'JxC',pop:52607,sec:'4ª',clave:'Metalmecánica / TC'},
+  {m:'Trenque Lauquen',cl:'interior',p:'JxC',pop:49499,sec:'4ª',clave:'Capital Lechera'},
+  {m:'Bragado',cl:'interior',p:'UxP',pop:46504,sec:'4ª',clave:'Ferroviaria / Caballo'},
+  {m:'Lincoln',cl:'interior',p:'JxC',pop:45506,sec:'4ª',clave:'Carnaval / Lechero'},
+  {m:'Pehuajó',cl:'interior',p:'UxP',pop:44783,sec:'4ª',clave:'AgroGanadero'},
+  {m:'Lobos',cl:'interior',p:'JxC',pop:41760,sec:'3ª',clave:'Lechero / Turismo'},
+  {m:'General Villegas',cl:'interior',p:'UxP',pop:35251,sec:'4ª',clave:'Gigante del Agro'},
+  {m:'Bolívar',cl:'interior',p:'UxP',pop:37594,sec:'7ª',clave:'Agro / Voleibol'},
+  {m:'25 de Mayo',cl:'interior',p:'JxC',pop:35563,sec:'7ª',clave:'Carnaval / Ganadería'},
+  {m:'Saladillo',cl:'interior',p:'JxC',pop:35656,sec:'7ª',clave:'Helicópteros Cícaro'},
+  {m:'Brandsen',cl:'interior',p:'UxP',pop:32448,sec:'3ª',clave:'Cuenca Lechera'},
+  {m:'Magdalena',cl:'interior',p:'JxC',pop:26613,sec:'3ª',clave:'Nuevo Parque'},
+  {m:'Carlos Casares',cl:'interior',p:'UxP',pop:23100,sec:'4ª',clave:'Cuna del Girasol'},
+  {m:'General Viamonte',cl:'interior',p:'JxC',pop:22649,sec:'4ª',clave:'Casa Evita'},
+  {m:'Navarro',cl:'interior',p:'UxP',pop:19899,sec:'1ª',clave:'Tambero'},
+  {m:'Rivadavia',cl:'interior',p:'UxP',pop:19849,sec:'4ª',clave:'Soja Monocultivo'},
+  {m:'Leandro N. Alem',cl:'interior',p:'UxP',pop:17266,sec:'4ª',clave:'Agro / Fiambres'},
+  {m:'General Las Heras',cl:'interior',p:'UxP',pop:18022,sec:'1ª',clave:'Capital del Pato'},
+  {m:'General Arenales',cl:'interior',p:'JxC',pop:16350,sec:'4ª',clave:'Polo Textil'},
+  {m:'Carlos Tejedor',cl:'interior',p:'UxP',pop:14079,sec:'4ª',clave:'AgroGanadero'},
+  {m:'Roque Pérez',cl:'interior',p:'UxP',pop:13977,sec:'7ª',clave:'Noche Almacenes'},
+  {m:'Punta Indio',cl:'interior',p:'UxP',pop:12297,sec:'3ª',clave:'Tronador II'},
+  {m:'Alberti',cl:'interior',p:'UxP',pop:12982,sec:'4ª',clave:'Arq. Salamone'},
+  {m:'General Pinto',cl:'interior',p:'UxP',pop:12941,sec:'4ª',clave:'Cuenca Lechera'},
+  {m:'General Alvear',cl:'interior',p:'JxC',pop:12631,sec:'7ª',clave:'Ganadería'},
+  {m:'Tapalqué',cl:'interior',p:'UxP',pop:10783,sec:'7ª',clave:'Ganado / Termas'},
+  {m:'Florentino Ameghino',cl:'interior',p:'UxP',pop:10790,sec:'4ª',clave:'Ganado / Lácteos'},
+  {m:'Hipólito Yrigoyen',cl:'interior',p:'UxP',pop:10661,sec:'4ª',clave:'Agrícola'},
+  {m:'Suipacha',cl:'interior',p:'UxP',pop:11786,sec:'1ª',clave:'Ruta del Queso'},
+  {m:'La Costa',cl:'costero',p:'UxP',pop:100689,sec:'5ª',clave:'Turismo Popular'},
+  {m:'Pinamar',cl:'costero',p:'JxC',pop:39449,sec:'5ª',clave:'Costa Premium'},
+  {m:'Villa Gesell',cl:'costero',p:'UxP',pop:37463,sec:'5ª',clave:'Colonia Alemana'},
+  {m:'Mar Chiquita',cl:'costero',p:'UxP',pop:33110,sec:'5ª',clave:'Albufera única'},
+  {m:'Necochea',cl:'costero',p:'Vec',pop:102110,sec:'5ª',clave:'Puerto Quequén 2026'},
+  {m:'General Alvarado',cl:'costero',p:'UxP',pop:45526,sec:'5ª',clave:'Kiwi / BioTec'},
+  {m:'Monte Hermoso',cl:'costero',p:'UxP',pop:8465,sec:'6ª',clave:'Balneario'},
+  {m:'Balcarce',cl:'salado',p:'JxC',pop:48982,sec:'5ª',clave:'Papa / Fangio'},
+  {m:'Chascomús',cl:'salado',p:'UxP',pop:42452,sec:'5ª',clave:'Alfonsín'},
+  {m:'Dolores',cl:'salado',p:'UxP',pop:32032,sec:'5ª',clave:'Termas'},
+  {m:'Las Flores',cl:'salado',p:'UxP',pop:27239,sec:'5ª',clave:'Bioy Casares / Textil'},
+  {m:'San Miguel del Monte',cl:'salado',p:'UxP',pop:24868,sec:'5ª',clave:'Enclave Rosista'},
+  {m:'General Juan Madariaga',cl:'salado',p:'JxC',pop:22624,sec:'5ª',clave:'Textil Bangladesh'},
+  {m:'Ayacucho',cl:'salado',p:'JxC',pop:21977,sec:'5ª',clave:'Capital del Ternero'},
+  {m:'General Belgrano',cl:'salado',p:'UxP',pop:20791,sec:'5ª',clave:'Termas del Salado'},
+  {m:'Lobería',cl:'salado',p:'JxC',pop:18243,sec:'5ª',clave:'Ed. Tecnológica'},
+  {m:'Rauch',cl:'salado',p:'JxC',pop:16635,sec:'5ª',clave:'Capital del Ave Raza'},
+  {m:'General Paz',cl:'salado',p:'UxP',pop:14207,sec:'5ª',clave:'Laguna'},
+  {m:'Maipú',cl:'salado',p:'JxC',pop:11323,sec:'5ª',clave:'Crisis Política HCD'},
+  {m:'Castelli',cl:'salado',p:'UxP',pop:9594,sec:'5ª',clave:'Cuenca del Salado'},
+  {m:'San Cayetano',cl:'salado',p:'JxC',pop:8994,sec:'5ª',clave:'19 años gestión'},
+  {m:'General Guido',cl:'salado',p:'UxP',pop:3174,sec:'5ª',clave:'Emergencia Económica'},
+  {m:'General Lavalle',cl:'salado',p:'UxP',pop:4870,sec:'5ª',clave:'Torta Negra / Pesca'},
+  {m:'Lezama',cl:'salado',p:'UxP',pop:6221,sec:'5ª',clave:'Municipio más joven'},
+  {m:'Pila',cl:'salado',p:'UxP',pop:4642,sec:'5ª',clave:'100% Ganadería'},
+  {m:'Tordillo',cl:'salado',p:'UxP',pop:2542,sec:'5ª',clave:'Menos poblado PBA'},
+  {m:'Coronel Rosales',cl:'sur',p:'UxP',pop:67503,sec:'6ª',clave:'Puerto Vaca Muerta'},
+  {m:'Tres Arroyos',cl:'sur',p:'UxP',pop:62426,sec:'6ª',clave:'Fiesta del Trigo'},
+  {m:'Coronel Suárez',cl:'sur',p:'UxP',pop:42110,sec:'6ª',clave:'Colonia Alemana / Calzado'},
+  {m:'Patagones',cl:'sur',p:'UxP',pop:37646,sec:'6ª',clave:'ADN Patagónico'},
+  {m:'Villarino',cl:'sur',p:'Vec',pop:32717,sec:'6ª',clave:'Puerta Patagonia / Ajo'},
+  {m:'Benito Juárez',cl:'sur',p:'UxP',pop:22292,sec:'6ª',clave:'Frambuesa / Cemento'},
+  {m:'Coronel Pringles',cl:'sur',p:'JxC',pop:24420,sec:'6ª',clave:'Arq. Salamone'},
+  {m:'Saavedra',cl:'sur',p:'UxP',pop:22347,sec:'6ª',clave:'Colonia Francesa'},
+  {m:'Daireaux',cl:'sur',p:'UxP',pop:18422,sec:'6ª',clave:'Sorgo / Tasa Vial'},
+  {m:'Adolfo Alsina',cl:'sur',p:'JxC',pop:17552,sec:'6ª',clave:'Termas / Colonia Judía'},
+  {m:'Coronel Dorrego',cl:'sur',p:'JxC',pop:15968,sec:'6ª',clave:'Aceite de Oliva'},
+  {m:'Adolfo G. Chaves',cl:'sur',p:'UxP',pop:12914,sec:'6ª',clave:'Vuelo a Vela'},
+  {m:'Puán',cl:'sur',p:'JxC',pop:16613,sec:'6ª',clave:'Cebada'},
+  {m:'Tornquist',cl:'sur',p:'JxC',pop:14810,sec:'6ª',clave:'Turismo de Montaña'},
+  {m:'General La Madrid',cl:'sur',p:'JxC',pop:11618,sec:'6ª',clave:'Cannabis'},
+  {m:'Guaminí',cl:'sur',p:'UxP',pop:11801,sec:'6ª',clave:'Lagunas Encadenadas'},
+  {m:'Laprida',cl:'sur',p:'UxP',pop:11646,sec:'6ª',clave:'Capital del Reciclaje'},
+  {m:'Salliqueló',cl:'sur',p:'UxP',pop:9427,sec:'6ª',clave:'Capital Novillo Tipo'},
+  {m:'Tres Lomas',cl:'sur',p:'UxP',pop:9164,sec:'6ª',clave:'Autonomía 1986'},
+  {m:'Pellegrini',cl:'sur',p:'JxC',pop:7143,sec:'6ª',clave:'Arraigo Joven'},
+];
+const ELEC={"LA PLATA":{"a":{"j":38.3,"x":38.2,"l":18.5,"w":"PJ"},"b":{"j":43.7,"l":36.4,"w":"PJ"},"c":{"j":38.9,"l":44.1,"w":"LLA"}},"CAMPANA":{"a":{"j":26.6,"x":57.1,"l":13.9,"w":"JxC"},"b":{"j":41.6,"l":42.7,"w":"LLA"},"c":{"j":36.3,"l":45.8,"w":"LLA"}},"ESCOBAR":{"a":{"j":52.4,"x":18.5,"l":25.9,"w":"PJ"},"b":{"j":51.6,"l":34.3,"w":"PJ"},"c":{"j":40.4,"l":44.0,"w":"LLA"}},"GENERAL LAS HERAS":{"a":{"j":51.9,"x":32.3,"l":14.0,"w":"PJ"},"b":{"j":33.8,"l":22.1,"w":"PJ"},"c":{"j":44.0,"l":41.0,"w":"PJ"}},"GENERAL RODRIGUEZ":{"a":{"j":54.4,"x":24.7,"l":18.3,"w":"PJ"},"b":{"j":43.1,"l":36.3,"w":"PJ"},"c":{"j":44.5,"l":40.1,"w":"PJ"}},"GENERAL SAN MARTIN":{"a":{"j":46.8,"x":27.1,"l":22.0,"w":"PJ"},"b":{"j":52.3,"l":36.2,"w":"PJ"},"c":{"j":42.4,"l":40.9,"w":"PJ"}},"SAN MIGUEL":{"a":{"j":31.1,"x":48.0,"l":17.4,"w":"JxC"},"b":{"j":32.7,"l":19.2,"w":"PJ"},"c":{"j":38.6,"l":43.6,"w":"LLA"}},"LUJAN":{"a":{"j":59.1,"x":21.0,"l":17.7,"w":"PJ"},"b":{"j":55.1,"l":31.5,"w":"PJ"},"c":{"j":37.5,"l":46.4,"w":"LLA"}},"MARCOS PAZ":{"a":{"j":43.0,"x":13.4,"l":18.0,"w":"PJ"},"b":{"j":49.8,"l":27.4,"w":"PJ"},"c":{"j":49.8,"l":35.7,"w":"PJ"}},"MERCEDES":{"a":{"j":52.8,"x":25.9,"l":21.3,"w":"PJ"},"b":{"j":39.8,"l":34.6,"w":"PJ"},"c":{"j":35.3,"l":50.0,"w":"LLA"}},"MERLO":{"a":{"j":43.1,"x":18.0,"l":23.5,"w":"PJ"},"b":{"j":44.2,"l":29.2,"w":"PJ"},"c":{"j":48.0,"l":33.0,"w":"PJ"}},"MORENO":{"a":{"j":57.5,"x":13.9,"l":24.5,"w":"PJ"},"b":{"j":54.2,"l":29.9,"w":"PJ"},"c":{"j":49.8,"l":33.8,"w":"PJ"}},"MORON":{"a":{"j":43.8,"x":31.6,"l":20.5,"w":"PJ"},"b":{"j":44.0,"l":39.3,"w":"PJ"},"c":{"j":38.1,"l":43.2,"w":"LLA"}},"NAVARRO":{"a":{"j":39.1,"x":33.3,"l":18.2,"w":"PJ"},"b":{"j":30.9,"l":20.9,"w":"PJ"},"c":{"j":33.7,"l":52.2,"w":"LLA"}},"PILAR":{"a":{"j":57.5,"x":17.4,"l":22.8,"w":"PJ"},"b":{"j":60.7,"l":28.9,"w":"PJ"},"c":{"j":44.2,"l":42.3,"w":"PJ"}},"SAN FERNANDO":{"a":{"j":57.5,"x":20.5,"l":19.1,"w":"PJ"},"b":{"j":61.4,"l":27.7,"w":"PJ"},"c":{"j":42.8,"l":42.0,"w":"PJ"}},"SAN ISIDRO":{"a":{"j":26.8,"x":48.5,"l":21.0,"w":"JxC"},"b":{"j":23.9,"l":48.8,"w":"LLA"},"c":{"j":25.9,"l":57.7,"w":"LLA"}},"TIGRE":{"a":{"j":50.3,"x":24.3,"l":21.7,"w":"PJ"},"b":{"j":34.6,"l":32.7,"w":"PJ"},"c":{"j":38.0,"l":45.9,"w":"LLA"}},"TRES DE FEBRERO":{"a":{"j":33.1,"x":47.0,"l":16.1,"w":"JxC"},"b":{"j":41.2,"l":45.8,"w":"LLA"},"c":{"j":39.1,"l":42.8,"w":"LLA"}},"VICENTE LOPEZ":{"a":{"j":26.0,"x":49.8,"l":19.5,"w":"JxC"},"b":{"j":28.6,"l":55.4,"w":"LLA"},"c":{"j":26.0,"l":55.3,"w":"LLA"}},"JOSE C PAZ":{"a":{"j":52.7,"x":18.0,"l":24.2,"w":"PJ"},"b":{"j":52.8,"l":27.9,"w":"PJ"},"c":{"j":51.1,"l":31.8,"w":"PJ"}},"MALVINAS ARGENTINAS":{"a":{"j":60.0,"x":14.9,"l":21.4,"w":"PJ"},"b":{"j":68.1,"l":22.8,"w":"PJ"},"c":{"j":50.1,"l":34.2,"w":"PJ"}},"ITUZAINGO":{"a":{"j":43.1,"x":32.7,"l":19.5,"w":"PJ"},"b":{"j":43.6,"l":36.5,"w":"PJ"},"c":{"j":42.2,"l":40.3,"w":"PJ"}},"HURLINGHAM":{"a":{"j":45.2,"x":31.6,"l":19.4,"w":"PJ"},"b":{"j":43.3,"l":29.8,"w":"PJ"},"c":{"j":43.5,"l":38.8,"w":"PJ"}},"BARADERO":{"a":{"j":55.7,"x":16.7,"l":18.7,"w":"PJ"},"b":{"j":24.4,"l":14.1,"w":"PJ"},"c":{"j":42.5,"l":41.1,"w":"PJ"}},"CAPITAN SARMIENTO":{"a":{"j":28.2,"x":53.3,"l":18.6,"w":"JxC"},"b":{"j":37.8,"l":42.9,"w":"LLA"},"c":{"j":34.4,"l":51.6,"w":"LLA"}},"CARMEN DE ARECO":{"a":{"j":57.2,"x":29.7,"l":13.1,"w":"PJ"},"b":{"j":39.6,"l":38.2,"w":"PJ"},"c":{"j":33.5,"l":52.8,"w":"LLA"}},"COLON":{"a":{"j":48.3,"x":36.4,"l":12.8,"w":"PJ"},"b":{"j":32.8,"l":22.2,"w":"PJ"},"c":{"j":42.7,"l":41.5,"w":"PJ"}},"EXALTACION DE LA CRUZ":{"a":{"j":47.2,"x":32.0,"l":20.8,"w":"PJ"},"b":{"j":42.2,"l":35.9,"w":"PJ"},"c":{"j":33.3,"l":50.3,"w":"LLA"}},"PERGAMINO":{"a":{"j":28.2,"x":40.6,"l":28.5,"w":"JxC"},"b":{"j":30.3,"l":25.0,"w":"PJ"},"c":{"j":31.8,"l":51.2,"w":"LLA"}},"RAMALLO":{"a":{"j":43.4,"x":36.3,"l":10.7,"w":"PJ"},"b":{"j":39.6,"l":10.5,"w":"PJ"},"c":{"j":39.0,"l":43.1,"w":"LLA"}},"ROJAS":{"a":{"j":20.6,"x":53.6,"l":20.5,"w":"JxC"},"b":{"j":48.7,"l":41.9,"w":"PJ"},"c":{"j":31.4,"l":47.0,"w":"LLA"}},"SALTO":{"a":{"j":52.8,"x":23.0,"l":24.2,"w":"PJ"},"b":{"j":45.7,"l":30.9,"w":"PJ"},"c":{"j":35.3,"l":50.5,"w":"LLA"}},"SAN ANDRES DE GILES":{"a":{"j":47.4,"x":29.4,"l":21.7,"w":"PJ"},"b":{"j":46.2,"l":42.4,"w":"PJ"},"c":{"j":35.1,"l":51.1,"w":"LLA"}},"SAN ANTONIO DE ARECO":{"a":{"j":36.9,"x":47.3,"l":13.2,"w":"JxC"},"b":{"j":33.1,"l":35.7,"w":"LLA"},"c":{"j":28.7,"l":54.3,"w":"LLA"}},"SAN NICOLAS":{"a":{"j":30.0,"x":42.2,"l":20.4,"w":"JxC"},"b":{"j":23.9,"l":18.5,"w":"PJ"},"c":{"j":32.9,"l":46.0,"w":"LLA"}},"SAN PEDRO":{"a":{"j":37.2,"x":30.6,"l":25.1,"w":"PJ"},"b":{"j":28.1,"l":40.3,"w":"LLA"},"c":{"j":32.9,"l":48.2,"w":"LLA"}},"ZARATE":{"a":{"j":39.7,"x":42.4,"l":15.9,"w":"JxC"},"b":{"j":39.7,"l":32.9,"w":"PJ"},"c":{"j":41.7,"l":40.7,"w":"PJ"}},"ALMIRANTE BROWN":{"a":{"j":54.1,"x":18.9,"l":22.3,"w":"PJ"},"b":{"j":54.2,"l":28.4,"w":"PJ"},"c":{"j":49.1,"l":33.7,"w":"PJ"}},"AVELLANEDA":{"a":{"j":56.7,"x":22.6,"l":17.5,"w":"PJ"},"b":{"j":64.4,"l":26.6,"w":"PJ"},"c":{"j":47.3,"l":36.1,"w":"PJ"}},"BERAZATEGUI":{"a":{"j":55.7,"x":17.4,"l":22.8,"w":"PJ"},"b":{"j":64.3,"l":25.3,"w":"PJ"},"c":{"j":46.1,"l":36.5,"w":"PJ"}},"BERISSO":{"a":{"j":46.9,"x":25.2,"l":19.1,"w":"PJ"},"b":{"j":46.9,"l":31.0,"w":"PJ"},"c":{"j":44.8,"l":37.6,"w":"PJ"}},"BRANDSEN":{"a":{"j":41.4,"x":37.4,"l":18.0,"w":"PJ"},"b":{"j":39.5,"l":26.5,"w":"PJ"},"c":{"j":37.3,"l":46.6,"w":"LLA"}},"CANUELAS":{"a":{"j":47.0,"x":25.2,"l":24.1,"w":"PJ"},"b":{"j":45.8,"l":31.4,"w":"PJ"},"c":{"j":38.8,"l":43.2,"w":"LLA"}},"ENSENADA":{"a":{"j":62.9,"x":16.1,"l":17.3,"w":"PJ"},"b":{"j":68.8,"l":23.7,"w":"PJ"},"c":{"j":52.9,"l":32.0,"w":"PJ"}},"ESTEBAN ECHEVERRIA":{"a":{"j":48.5,"x":22.1,"l":25.1,"w":"PJ"},"b":{"j":48.2,"l":27.2,"w":"PJ"},"c":{"j":27.8,"l":36.1,"w":"LLA"}},"FLORENCIO VARELA":{"a":{"j":56.6,"x":14.2,"l":24.6,"w":"PJ"},"b":{"j":56.1,"l":23.8,"w":"PJ"},"c":{"j":51.6,"l":30.8,"w":"PJ"}},"LA MATANZA":{"a":{"j":53.7,"x":18.4,"l":22.4,"w":"PJ"},"b":{"j":52.9,"l":28.9,"w":"PJ"},"c":{"j":48.4,"l":32.5,"w":"PJ"}},"LANUS":{"a":{"j":44.6,"x":34.8,"l":16.4,"w":"PJ"},"b":{"j":49.4,"l":32.2,"w":"PJ"},"c":{"j":45.1,"l":36.9,"w":"PJ"}},"LOBOS":{"a":{"j":37.7,"x":43.5,"l":16.3,"w":"JxC"},"b":{"j":40.2,"l":31.2,"w":"PJ"},"c":{"j":31.3,"l":52.8,"w":"LLA"}},"LOMAS DE ZAMORA":{"a":{"j":49.8,"x":25.5,"l":20.2,"w":"PJ"},"b":{"j":56.4,"l":27.7,"w":"PJ"},"c":{"j":48.3,"l":35.0,"w":"PJ"}},"QUILMES":{"a":{"j":50.9,"x":28.6,"l":17.1,"w":"PJ"},"b":{"j":48.4,"l":31.3,"w":"PJ"},"c":{"j":45.7,"l":37.3,"w":"PJ"}},"SAN VICENTE":{"a":{"j":67.2,"x":12.8,"l":18.0,"w":"PJ"},"b":{"j":66.6,"l":22.8,"w":"PJ"},"c":{"j":47.6,"l":36.4,"w":"PJ"}},"PRESIDENTE PERON":{"a":{"j":51.2,"x":12.2,"l":21.9,"w":"PJ"},"b":{"j":40.8,"l":23.9,"w":"PJ"},"c":{"j":47.7,"l":32.3,"w":"PJ"}},"EZEIZA":{"a":{"j":60.3,"x":13.0,"l":23.4,"w":"PJ"},"b":{"j":63.4,"l":24.7,"w":"PJ"},"c":{"j":44.5,"l":38.2,"w":"PJ"}},"ALBERTI":{"a":{"j":57.6,"x":42.4,"l":0.0,"w":"PJ"},"b":{"j":50.7,"l":22.6,"w":"PJ"},"c":{"j":37.8,"l":48.1,"w":"LLA"}},"BRAGADO":{"a":{"j":48.0,"x":37.1,"l":14.9,"w":"PJ"},"b":{"j":44.1,"l":39.5,"w":"PJ"},"c":{"j":34.8,"l":48.7,"w":"LLA"}},"CARLOS CASARES":{"a":{"j":46.1,"x":13.3,"l":16.5,"w":"PJ"},"b":{"j":39.8,"l":20.9,"w":"PJ"},"c":{"j":32.8,"l":53.5,"w":"LLA"}},"CARLOS TEJEDOR":{"a":{"j":60.7,"x":39.3,"l":0.0,"w":"PJ"},"b":{"j":59.2,"l":20.3,"w":"PJ"},"c":{"j":47.8,"l":39.9,"w":"PJ"}},"CHACABUCO":{"a":{"j":48.7,"x":26.9,"l":24.4,"w":"PJ"},"b":{"j":51.0,"l":22.2,"w":"PJ"},"c":{"j":42.4,"l":43.8,"w":"LLA"}},"CHIVILCOY":{"a":{"j":31.0,"x":7.8,"l":8.6,"w":"Vec"},"b":{"j":38.1,"l":24.4,"w":"PJ"},"c":{"j":32.6,"l":41.6,"w":"LLA"}},"GENERAL ARENALES":{"a":{"j":35.1,"x":48.5,"l":16.4,"w":"JxC"},"b":{"j":30.9,"l":22.8,"w":"PJ"},"c":{"j":32.1,"l":53.7,"w":"LLA"}},"GENERAL PINTO":{"a":{"j":52.6,"x":47.4,"l":0.0,"w":"PJ"},"b":{"j":59.1,"l":20.6,"w":"PJ"},"c":{"j":48.4,"l":41.9,"w":"PJ"}},"GENERAL VIAMONTE":{"a":{"j":36.9,"x":50.2,"l":12.9,"w":"JxC"},"b":{"j":46.5,"l":18.5,"w":"PJ"},"c":{"j":41.9,"l":44.9,"w":"LLA"}},"GENERAL VILLEGAS":{"a":{"j":25.8,"x":43.9,"l":25.0,"w":"JxC"},"b":{"j":22.0,"l":38.0,"w":"LLA"},"c":{"j":27.8,"l":56.8,"w":"LLA"}},"HIPOLITO YRIGOYEN":{"a":{"j":54.6,"x":45.4,"l":0.0,"w":"PJ"},"b":{"j":46.0,"l":42.4,"w":"PJ"},"c":{"j":36.2,"l":51.9,"w":"LLA"}},"JUNIN":{"a":{"j":38.4,"x":44.3,"l":17.3,"w":"JxC"},"b":{"j":35.2,"l":22.8,"w":"PJ"},"c":{"j":34.8,"l":48.1,"w":"LLA"}},"LEANDRO N ALEM":{"a":{"j":51.6,"x":39.3,"l":9.2,"w":"PJ"},"b":{"j":52.9,"l":30.2,"w":"PJ"},"c":{"j":42.9,"l":47.5,"w":"LLA"}},"LINCOLN":{"a":{"j":33.9,"x":48.0,"l":15.5,"w":"JxC"},"b":{"j":28.0,"l":30.3,"w":"LLA"},"c":{"j":30.0,"l":53.1,"w":"LLA"}},"NUEVE DE JULIO":{"a":{"j":25.0,"x":49.4,"l":25.5,"w":"JxC"},"b":{"j":24.7,"l":29.9,"w":"LLA"},"c":{"j":28.7,"l":53.7,"w":"LLA"}},"PEHUAJO":{"a":{"j":48.9,"x":40.3,"l":10.8,"w":"PJ"},"b":{"j":51.2,"l":28.3,"w":"PJ"},"c":{"j":40.2,"l":47.4,"w":"LLA"}},"RIVADAVIA":{"a":{"j":51.8,"x":48.2,"l":0.0,"w":"PJ"},"b":{"j":45.5,"l":16.1,"w":"PJ"},"c":{"j":32.8,"l":48.4,"w":"LLA"}},"TRENQUE LAUQUEN":{"a":{"j":27.4,"x":50.6,"l":22.1,"w":"JxC"},"b":{"j":31.3,"l":32.4,"w":"LLA"},"c":{"j":28.8,"l":54.0,"w":"LLA"}},"FLORENTINO AMEGHINO":{"a":{"j":44.3,"x":55.7,"l":0.0,"w":"JxC"},"b":{"j":39.3,"l":19.4,"w":"PJ"},"c":{"j":36.8,"l":48.7,"w":"LLA"}},"AYACUCHO":{"a":{"j":32.2,"x":67.8,"l":0.0,"w":"JxC"},"b":{"j":39.9,"l":25.1,"w":"PJ"},"c":{"j":39.2,"l":42.1,"w":"LLA"}},"BALCARCE":{"a":{"j":22.0,"x":56.4,"l":21.7,"w":"JxC"},"b":{"j":20.0,"l":32.9,"w":"LLA"},"c":{"j":25.2,"l":56.9,"w":"LLA"}},"CASTELLI":{"a":{"j":59.0,"x":31.1,"l":9.9,"w":"PJ"},"b":{"j":52.5,"l":17.0,"w":"PJ"},"c":{"j":44.4,"l":44.1,"w":"PJ"}},"CHASCOMUS":{"a":{"j":46.9,"x":41.9,"l":11.2,"w":"PJ"},"b":{"j":32.2,"l":22.2,"w":"PJ"},"c":{"j":31.3,"l":50.0,"w":"LLA"}},"DOLORES":{"a":{"j":45.3,"x":44.1,"l":10.6,"w":"PJ"},"b":{"j":60.0,"l":15.5,"w":"PJ"},"c":{"j":38.4,"l":49.9,"w":"LLA"}},"GENERAL ALVARADO":{"a":{"j":45.0,"x":39.2,"l":15.8,"w":"PJ"},"b":{"j":28.5,"l":28.1,"w":"PJ"},"c":{"j":34.3,"l":48.8,"w":"LLA"}},"GENERAL BELGRANO":{"a":{"j":36.7,"x":50.2,"l":13.1,"w":"JxC"},"b":{"j":41.2,"l":23.4,"w":"PJ"},"c":{"j":34.7,"l":51.1,"w":"LLA"}},"GENERAL GUIDO":{"a":{"j":55.6,"x":39.8,"l":4.7,"w":"PJ"},"b":{"j":48.8,"l":18.0,"w":"PJ"},"c":{"j":45.7,"l":41.0,"w":"PJ"}},"GENERAL LAVALLE":{"a":{"j":44.7,"x":46.5,"l":8.8,"w":"JxC"},"b":{"j":33.1,"l":12.0,"w":"PJ"},"c":{"j":34.2,"l":51.1,"w":"LLA"}},"GENERAL MADARIAGA":{"a":{"j":27.8,"x":67.2,"l":5.0,"w":"JxC"},"b":{"j":28.6,"l":23.2,"w":"PJ"},"c":{"j":31.7,"l":51.2,"w":"LLA"}},"GENERAL PAZ":{"a":{"j":52.0,"x":30.6,"l":17.5,"w":"PJ"},"b":{"j":55.9,"l":27.4,"w":"PJ"},"c":{"j":47.0,"l":42.7,"w":"PJ"}},"GENERAL PUEYRREDON":{"a":{"j":0.0,"x":41.2,"l":19.3,"w":"JxC"},"b":{"j":20.4,"l":38.1,"w":"LLA"},"c":{"j":31.0,"l":49.3,"w":"LLA"}},"LAS FLORES":{"a":{"j":50.1,"x":30.3,"l":19.6,"w":"PJ"},"b":{"j":39.4,"l":38.4,"w":"PJ"},"c":{"j":35.5,"l":48.4,"w":"LLA"}},"LOBERIA":{"a":{"j":40.7,"x":59.3,"l":0.0,"w":"JxC"},"b":{"j":38.4,"l":21.8,"w":"PJ"},"c":{"j":37.7,"l":45.9,"w":"LLA"}},"MAIPU":{"a":{"j":34.8,"x":47.4,"l":17.8,"w":"JxC"},"b":{"j":40.2,"l":21.2,"w":"PJ"},"c":{"j":33.4,"l":46.4,"w":"LLA"}},"MAR CHIQUITA":{"a":{"j":50.3,"x":27.0,"l":22.7,"w":"PJ"},"b":{"j":49.9,"l":31.8,"w":"PJ"},"c":{"j":40.7,"l":45.0,"w":"LLA"}},"MONTE":{"a":{"j":30.9,"x":52.7,"l":16.3,"w":"JxC"},"b":{"j":42.3,"l":27.2,"w":"PJ"},"c":{"j":35.0,"l":49.7,"w":"LLA"}},"NECOCHEA":{"a":{"j":13.2,"x":12.4,"l":14.8,"w":"Vec"},"b":{"j":20.4,"l":31.8,"w":"LLA"},"c":{"j":30.2,"l":53.1,"w":"LLA"}},"PILA":{"a":{"j":67.6,"x":32.4,"l":0.0,"w":"PJ"},"b":{"j":56.2,"l":18.7,"w":"PJ"},"c":{"j":46.4,"l":41.8,"w":"PJ"}},"PARTIDO DE PINAMAR":{"a":{"j":37.2,"x":37.2,"l":25.6,"w":"JxC"},"b":{"j":30.2,"l":50.7,"w":"LLA"},"c":{"j":24.6,"l":58.4,"w":"LLA"}},"RAUCH":{"a":{"j":41.9,"x":49.0,"l":9.1,"w":"JxC"},"b":{"j":48.5,"l":12.5,"w":"PJ"},"c":{"j":44.1,"l":39.7,"w":"PJ"}},"SAN CAYETANO":{"a":{"j":24.1,"x":57.7,"l":18.2,"w":"JxC"},"b":{"j":23.3,"l":18.9,"w":"PJ"},"c":{"j":28.4,"l":55.6,"w":"LLA"}},"TANDIL":{"a":{"j":30.4,"x":43.9,"l":23.0,"w":"JxC"},"b":{"j":35.2,"l":34.5,"w":"PJ"},"c":{"j":28.9,"l":52.8,"w":"LLA"}},"TORDILLO":{"a":{"j":51.9,"x":48.1,"l":0.0,"w":"PJ"},"b":{"j":43.7,"l":38.0,"w":"PJ"},"c":{"j":43.5,"l":47.6,"w":"LLA"}},"PARTIDO DE LA COSTA":{"a":{"j":36.7,"x":35.5,"l":23.7,"w":"PJ"},"b":{"j":36.6,"l":24.5,"w":"PJ"},"c":{"j":37.1,"l":46.7,"w":"LLA"}},"LEZAMA":{"a":{"j":33.4,"x":52.9,"l":13.7,"w":"JxC"},"b":{"j":43.0,"l":20.3,"w":"PJ"},"c":{"j":36.4,"l":49.8,"w":"LLA"}},"ADOLFO ALSINA":{"a":{"j":35.1,"x":39.3,"l":25.6,"w":"JxC"},"b":{"j":32.7,"l":40.8,"w":"LLA"},"c":{"j":28.4,"l":55.1,"w":"LLA"}},"BAHIA BLANCA":{"a":{"j":36.8,"x":24.8,"l":32.4,"w":"PJ"},"b":{"j":31.2,"l":46.5,"w":"LLA"},"c":{"j":26.3,"l":54.1,"w":"LLA"}},"PATAGONES":{"a":{"j":40.6,"x":38.6,"l":20.8,"w":"PJ"},"b":{"j":41.6,"l":34.3,"w":"PJ"},"c":{"j":37.2,"l":48.1,"w":"LLA"}},"CORONEL DORREGO":{"a":{"j":37.7,"x":49.4,"l":12.9,"w":"JxC"},"b":{"j":27.7,"l":37.1,"w":"LLA"},"c":{"j":28.9,"l":54.6,"w":"LLA"}},"CORONEL PRINGLES":{"a":{"j":22.1,"x":54.8,"l":19.2,"w":"JxC"},"b":{"j":26.9,"l":48.0,"w":"LLA"},"c":{"j":26.1,"l":55.7,"w":"LLA"}},"CORONEL ROSALES":{"a":{"j":35.4,"x":30.1,"l":29.3,"w":"PJ"},"b":{"j":22.6,"l":45.1,"w":"LLA"},"c":{"j":20.7,"l":61.6,"w":"LLA"}},"CORONEL SUAREZ":{"a":{"j":42.4,"x":39.7,"l":15.2,"w":"PJ"},"b":{"j":10.6,"l":24.3,"w":"LLA"},"c":{"j":28.4,"l":52.5,"w":"LLA"}},"DAIREAUX":{"a":{"j":56.8,"x":43.2,"l":0.0,"w":"PJ"},"b":{"j":46.8,"l":26.1,"w":"PJ"},"c":{"j":37.4,"l":50.8,"w":"LLA"}},"GENERAL LA MADRID":{"a":{"j":28.2,"x":55.3,"l":16.5,"w":"JxC"},"b":{"j":35.4,"l":24.7,"w":"PJ"},"c":{"j":34.3,"l":51.4,"w":"LLA"}},"GUAMINI":{"a":{"j":48.4,"x":41.3,"l":10.2,"w":"PJ"},"b":{"j":45.1,"l":26.7,"w":"PJ"},"c":{"j":38.6,"l":50.0,"w":"LLA"}},"BENITO JUAREZ":{"a":{"j":45.5,"x":13.3,"l":0.0,"w":"PJ"},"b":{"j":44.1,"l":23.8,"w":"PJ"},"c":{"j":44.5,"l":42.4,"w":"PJ"}},"LAPRIDA":{"a":{"j":48.4,"x":41.0,"l":10.6,"w":"PJ"},"b":{"j":45.8,"l":34.1,"w":"PJ"},"c":{"j":44.4,"l":44.4,"w":"PJ"}},"PELLEGRINI":{"a":{"j":48.1,"x":51.9,"l":0.0,"w":"JxC"},"b":{"j":38.1,"l":22.3,"w":"PJ"},"c":{"j":32.4,"l":53.5,"w":"LLA"}},"PUAN":{"a":{"j":27.7,"x":45.4,"l":26.9,"w":"JxC"},"b":{"j":17.8,"l":42.4,"w":"LLA"},"c":{"j":21.5,"l":58.3,"w":"LLA"}},"SAAVEDRA":{"a":{"j":15.3,"x":32.0,"l":15.1,"w":"Vec"},"b":{"j":21.3,"l":31.9,"w":"LLA"},"c":{"j":25.2,"l":58.0,"w":"LLA"}},"SALLIQUELO":{"a":{"j":49.4,"x":43.1,"l":7.4,"w":"PJ"},"b":{"j":52.5,"l":19.1,"w":"PJ"},"c":{"j":42.2,"l":47.4,"w":"LLA"}},"TRES ARROYOS":{"a":{"j":34.7,"x":26.8,"l":11.7,"w":"PJ"},"b":{"j":40.8,"l":23.1,"w":"PJ"},"c":{"j":35.0,"l":48.5,"w":"LLA"}},"MONTE HERMOSO":{"a":{"j":65.5,"x":34.5,"l":0.0,"w":"PJ"},"b":{"j":57.0,"l":23.2,"w":"PJ"},"c":{"j":42.5,"l":44.2,"w":"LLA"}},"VILLARINO":{"a":{"j":13.8,"x":32.4,"l":21.0,"w":"Vec"},"b":{"j":19.0,"l":19.6,"w":"LLA"},"c":{"j":26.7,"l":58.8,"w":"LLA"}},"TRES LOMAS":{"a":{"j":47.4,"x":52.6,"l":0.0,"w":"JxC"},"b":{"j":42.1,"l":19.6,"w":"PJ"},"c":{"j":39.2,"l":48.6,"w":"LLA"}},"AZUL":{"a":{"j":34.3,"x":32.4,"l":31.3,"w":"PJ"},"b":{"j":35.0,"l":35.5,"w":"LLA"},"c":{"j":33.0,"l":48.7,"w":"LLA"}},"BOLIVAR":{"a":{"j":43.0,"x":41.5,"l":13.6,"w":"PJ"},"b":{"j":37.9,"l":21.6,"w":"PJ"},"c":{"j":33.1,"l":51.7,"w":"LLA"}},"GENERAL ALVEAR":{"a":{"j":44.1,"x":45.1,"l":10.8,"w":"JxC"},"b":{"j":28.3,"l":12.2,"w":"PJ"},"c":{"j":34.3,"l":47.9,"w":"LLA"}},"OLAVARRIA":{"a":{"j":41.6,"x":28.1,"l":28.1,"w":"PJ"},"b":{"j":38.9,"l":35.2,"w":"PJ"},"c":{"j":33.9,"l":49.7,"w":"LLA"}},"ROQUE PEREZ":{"a":{"j":51.9,"x":38.7,"l":9.3,"w":"PJ"},"b":{"j":21.8,"l":14.7,"w":"PJ"},"c":{"j":33.1,"l":51.0,"w":"LLA"}},"SALADILLO":{"a":{"j":33.9,"x":46.3,"l":19.8,"w":"JxC"},"b":{"j":28.9,"l":22.2,"w":"PJ"},"c":{"j":29.1,"l":53.9,"w":"LLA"}},"TAPALQUE":{"a":{"j":47.5,"x":44.4,"l":8.1,"w":"PJ"},"b":{"j":47.8,"l":24.0,"w":"PJ"}},"25 DE MAYO":{"b":{"j":36.9,"l":14.2,"w":"PJ"},"c":{"j":31.6,"l":50.8,"w":"LLA"}}};
+
+// ══ AUTH ══
+
+// ══ NAVIGATION ══
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n=>{
+    if(n.getAttribute('onclick')===`showSection('${id}')`)n.classList.add('active');
+  });
+}
+
+// ══ HELPERS ══
+const CL_N={conurbano:'Conurbano',ciudades:'Ciudades Intermedias',corredor:'Corredor Industrial',interior:'Interior Agropecuario',costero:'Litoral Atlántico',salado:'Cuenca del Salado',sur:'Sur Bonaerense'};
+const CL_C={conurbano:'#3b82f6',ciudades:'#06b6d4',corredor:'#22c55e',interior:'#eab308',costero:'#38bdf8',sur:'#f97316',salado:'#a78bfa'};
+const FINANZAS={
+  'ADOLFO ALSINA':{cud_2025:0.43836,cud_2026:0.45859,recursos_2025_m:26371.0,autonomia_2025:20.0,gastos_2025_m:29419.0,gasto_personal_pct:69,agentes:741,agentes_x1000_hab:42,agentes_prom_urbano:46,resultado_corriente_2025:-2964.0,resultado_financiero_2025:-3048.0,nomina_mensual_m:1138.5,deuda_flotante_pct:15.0,deuda_flotante_2025_m:1639.1,transferencias_2025_m:19338.0,transferencias_2026_m:26380.0,var_transferencias_2026_pct:36},
+  'ADOLFO GONZALES CHAVES':{cud_2025:0.24313,cud_2026:0.24058,recursos_2025_m:16977.0,autonomia_2025:27.0,gastos_2025_m:18479.0,gasto_personal_pct:57,agentes:581,agentes_x1000_hab:45,agentes_prom_urbano:46,resultado_corriente_2025:-815.0,resultado_financiero_2025:-1501.0,activos_financieros_m:377.3,nomina_mensual_m:570.3,relacion_activos_nomina:0.66,deuda_flotante_pct:9.9,deuda_flotante_2025_m:1225.3,transferencias_2025_m:11318.0,transferencias_2026_m:14820.0,var_transferencias_2026_pct:31},
+  'ALBERTI':{cud_2025:0.25937,cud_2026:0.25526,recursos_2025_m:17063.0,autonomia_2025:22.0,gastos_2025_m:20208.0,gasto_personal_pct:49,agentes:458,agentes_x1000_hab:35,agentes_prom_urbano:27,resultado_corriente_2025:-298.0,resultado_financiero_2025:-3145.0,activos_financieros_m:887.3,nomina_mensual_m:619.0,relacion_activos_nomina:1.43,deuda_flotante_pct:5.9,deuda_flotante_2025_m:628.0,transferencias_2025_m:11275.0,transferencias_2026_m:14600.0,var_transferencias_2026_pct:29},
+  'ALMIRANTE BROWN':{cud_2025:2.01026,cud_2026:2.01042,recursos_2025_m:246445.0,autonomia_2025:36.0,gastos_2025_m:251613.0,gasto_personal_pct:21,agentes:1871,agentes_x1000_hab:3,agentes_prom_urbano:7,resultado_corriente_2025:3227.0,resultado_financiero_2025:-5168.0,activos_financieros_m:13084.7,nomina_mensual_m:4147.3,relacion_activos_nomina:3.15,deuda_flotante_pct:0.0,deuda_flotante_2025_m:67.2,transferencias_2025_m:100469.0,transferencias_2026_m:130565.0,var_transferencias_2026_pct:30},
+  'ARRECIFES':{cud_2025:0.26481,cud_2026:0.26331,recursos_2025_m:19895.0,autonomia_2025:31.0,gastos_2025_m:21012.0,gasto_personal_pct:57,agentes:581,agentes_x1000_hab:18,agentes_prom_urbano:27,resultado_corriente_2025:-768.0,resultado_financiero_2025:-1117.0,activos_financieros_m:1158.3,nomina_mensual_m:665.7,relacion_activos_nomina:1.74,deuda_flotante_pct:7.1,deuda_flotante_2025_m:1103.0,transferencias_2025_m:12640.0,transferencias_2026_m:16460.0,var_transferencias_2026_pct:30},
+  'AVELLANEDA':{cud_2025:1.1938,cud_2026:1.19838,recursos_2025_m:342633.0,autonomia_2025:74.0,gastos_2025_m:335275.0,gasto_personal_pct:47,agentes:8293,agentes_x1000_hab:23,agentes_prom_urbano:15,resultado_corriente_2025:74005.0,resultado_financiero_2025:7358.0,activos_financieros_m:104826.5,nomina_mensual_m:10258.2,relacion_activos_nomina:10.22,deuda_flotante_pct:5.5,deuda_flotante_2025_m:13039.5,transferencias_2025_m:59858.0,transferencias_2026_m:78067.0,var_transferencias_2026_pct:30},
+  'AYACUCHO':{cud_2025:0.4336,cud_2026:0.41972,recursos_2025_m:32019.0,autonomia_2025:33.0,gastos_2025_m:33424.0,gasto_personal_pct:65,agentes:1298,agentes_x1000_hab:59,agentes_prom_urbano:44,resultado_corriente_2025:-423.0,resultado_financiero_2025:-1405.0,activos_financieros_m:1217.4,nomina_mensual_m:1307.7,relacion_activos_nomina:0.93,deuda_flotante_pct:3.5,deuda_flotante_2025_m:1086.6,transferencias_2025_m:20075.0,transferencias_2026_m:25719.0,var_transferencias_2026_pct:28},
+  'AZUL':{cud_2025:0.73371,cud_2026:0.70491,recursos_2025_m:57496.0,autonomia_2025:37.0,gastos_2025_m:60365.0,gasto_personal_pct:62,agentes:1749,agentes_x1000_hab:23,agentes_prom_urbano:44,resultado_corriente_2025:337.0,resultado_financiero_2025:-2870.0,activos_financieros_m:663.6,nomina_mensual_m:2134.7,relacion_activos_nomina:0.31,deuda_flotante_pct:11.3,deuda_flotante_2025_m:2487.9,transferencias_2025_m:34146.0,transferencias_2026_m:43382.0,var_transferencias_2026_pct:27},
+  'BAHIA BLANCA':{cud_2025:1.32992,cud_2026:1.32772,recursos_2025_m:297718.0,autonomia_2025:69.0,gastos_2025_m:296271.0,gasto_personal_pct:47,agentes:4207,agentes_x1000_hab:12,agentes_prom_urbano:35,resultado_corriente_2025:10777.0,resultado_financiero_2025:1447.0,activos_financieros_m:23258.8,nomina_mensual_m:7542.4,relacion_activos_nomina:3.08,deuda_flotante_pct:5.2,deuda_flotante_2025_m:14683.8,transferencias_2025_m:63281.0,transferencias_2026_m:81980.0,var_transferencias_2026_pct:30},
+  'BALCARCE':{cud_2025:0.51487,cud_2026:0.51257,recursos_2025_m:46312.0,autonomia_2025:41.0,gastos_2025_m:47433.0,gasto_personal_pct:65,agentes:1081,agentes_x1000_hab:22,agentes_prom_urbano:46,resultado_corriente_2025:-100.0,resultado_financiero_2025:-1121.0,activos_financieros_m:2527.1,nomina_mensual_m:1647.6,relacion_activos_nomina:1.53,deuda_flotante_pct:10.5,deuda_flotante_2025_m:1343.9,transferencias_2025_m:24289.0,transferencias_2026_m:31832.0,var_transferencias_2026_pct:31},
+  'BARADERO':{cud_2025:0.28909,cud_2026:0.28912,recursos_2025_m:25598.0,autonomia_2025:36.0,gastos_2025_m:26597.0,gasto_personal_pct:67,agentes:1011,agentes_x1000_hab:25,agentes_prom_urbano:17,resultado_corriente_2025:-965.0,resultado_financiero_2025:-999.0,activos_financieros_m:465.4,nomina_mensual_m:998.7,relacion_activos_nomina:0.47,deuda_flotante_pct:14.0,deuda_flotante_2025_m:1134.3,transferencias_2025_m:13875.0,transferencias_2026_m:18173.0,var_transferencias_2026_pct:31},
+  'BENITO JUAREZ':{cud_2025:0.46594,cud_2026:0.46948,recursos_2025_m:36736.0,autonomia_2025:39.0,gastos_2025_m:37216.0,gasto_personal_pct:53,agentes:1093,agentes_x1000_hab:49,agentes_prom_urbano:44,resultado_corriente_2025:2813.0,resultado_financiero_2025:-480.0,activos_financieros_m:8233.1,nomina_mensual_m:1254.2,relacion_activos_nomina:6.56,deuda_flotante_pct:1.9,deuda_flotante_2025_m:195.0,transferencias_2025_m:20752.0,transferencias_2026_m:27462.0,var_transferencias_2026_pct:32},
+  'BERAZATEGUI':{cud_2025:1.66889,cud_2026:1.67827,recursos_2025_m:155732.0,autonomia_2025:43.0,gastos_2025_m:147216.0,gasto_personal_pct:45,agentes:3242,agentes_x1000_hab:9,agentes_prom_urbano:7,resultado_corriente_2025:21409.0,resultado_financiero_2025:8517.0,activos_financieros_m:22420.7,nomina_mensual_m:4050.3,relacion_activos_nomina:5.54,deuda_flotante_pct:1.2,deuda_flotante_2025_m:1818.6,transferencias_2025_m:78646.0,transferencias_2026_m:102723.0,var_transferencias_2026_pct:31},
+  'BERISSO':{cud_2025:0.72437,cud_2026:0.72468,recursos_2025_m:55214.0,autonomia_2025:27.0,gastos_2025_m:59888.0,gasto_personal_pct:60,agentes:1773,agentes_x1000_hab:18,agentes_prom_urbano:17,resultado_corriente_2025:-3334.0,resultado_financiero_2025:-4674.0,activos_financieros_m:859.3,nomina_mensual_m:2082.4,relacion_activos_nomina:0.41,deuda_flotante_pct:2.3,deuda_flotante_2025_m:762.1,transferencias_2025_m:32201.0,transferencias_2026_m:41984.0,var_transferencias_2026_pct:30},
+  'BOLIVAR':{cud_2025:0.59303,cud_2026:0.60707,recursos_2025_m:41334.0,autonomia_2025:31.0,gastos_2025_m:45220.0,gasto_personal_pct:64,agentes:1570,agentes_x1000_hab:42,agentes_prom_urbano:36,resultado_corriente_2025:-3765.0,resultado_financiero_2025:-3886.0,activos_financieros_m:1334.8,nomina_mensual_m:1747.0,relacion_activos_nomina:0.76,deuda_flotante_pct:12.3,deuda_flotante_2025_m:3279.3,transferencias_2025_m:26193.0,transferencias_2026_m:34980.0,var_transferencias_2026_pct:34},
+  'BRAGADO':{cud_2025:0.55937,cud_2026:0.552,recursos_2025_m:35381.0,autonomia_2025:21.0,gastos_2025_m:37355.0,gasto_personal_pct:58,agentes:1335,agentes_x1000_hab:29,agentes_prom_urbano:27,resultado_corriente_2025:-115.0,resultado_financiero_2025:-1974.0,activos_financieros_m:1293.4,nomina_mensual_m:1359.8,relacion_activos_nomina:0.95,deuda_flotante_pct:6.2,deuda_flotante_2025_m:1529.4,transferencias_2025_m:24360.0,transferencias_2026_m:31507.0,var_transferencias_2026_pct:29},
+  'BRANDSEN':{cud_2025:0.17749,cud_2026:0.18008,recursos_2025_m:20347.0,autonomia_2025:45.0,gastos_2025_m:22821.0,gasto_personal_pct:50,agentes:959,agentes_x1000_hab:30,agentes_prom_urbano:17,resultado_corriente_2025:-2133.0,resultado_financiero_2025:-2474.0,activos_financieros_m:976.2,nomina_mensual_m:750.3,relacion_activos_nomina:1.3,deuda_flotante_pct:9.0,deuda_flotante_2025_m:1313.7,transferencias_2025_m:9048.0,transferencias_2026_m:11976.0,var_transferencias_2026_pct:32},
+  'CAMPANA':{cud_2025:0.69743,cud_2026:0.78458,recursos_2025_m:112176.0,autonomia_2025:64.0,gastos_2025_m:116932.0,gasto_personal_pct:40,agentes:2131,agentes_x1000_hab:19,agentes_prom_urbano:17,resultado_corriente_2025:9233.0,resultado_financiero_2025:-4756.0,activos_financieros_m:11402.9,nomina_mensual_m:2739.0,relacion_activos_nomina:4.16,deuda_flotante_pct:4.8,deuda_flotante_2025_m:3722.8,transferencias_2025_m:32132.0,transferencias_2026_m:46041.0,var_transferencias_2026_pct:43},
+  'CAPITAN SARMIENTO':{cud_2025:0.13607,cud_2026:0.15052,recursos_2025_m:13127.0,autonomia_2025:45.0,gastos_2025_m:13318.0,gasto_personal_pct:53,agentes:368,agentes_x1000_hab:23,agentes_prom_urbano:27,resultado_corriente_2025:185.0,resultado_financiero_2025:-190.0,activos_financieros_m:948.4,nomina_mensual_m:424.7,relacion_activos_nomina:2.23,deuda_flotante_pct:6.2,deuda_flotante_2025_m:554.3,transferencias_2025_m:6384.0,transferencias_2026_m:9068.0,var_transferencias_2026_pct:42},
+  'CARLOS CASARES':{cud_2025:0.52154,cud_2026:0.52467,recursos_2025_m:33614.0,autonomia_2025:25.0,gastos_2025_m:34591.0,gasto_personal_pct:58,agentes:1053,agentes_x1000_hab:46,agentes_prom_urbano:36,resultado_corriente_2025:3.0,resultado_financiero_2025:-977.0,activos_financieros_m:2098.3,nomina_mensual_m:1304.4,relacion_activos_nomina:1.61,deuda_flotante_pct:3.8,deuda_flotante_2025_m:865.0,transferencias_2025_m:22494.0,transferencias_2026_m:29605.0,var_transferencias_2026_pct:32},
+  'CARLOS TEJEDOR':{cud_2025:0.29801,cud_2026:0.29304,recursos_2025_m:17719.0,autonomia_2025:17.0,gastos_2025_m:17603.0,gasto_personal_pct:46,agentes:699,agentes_x1000_hab:50,agentes_prom_urbano:46,resultado_corriente_2025:806.0,resultado_financiero_2025:116.0,activos_financieros_m:1989.3,nomina_mensual_m:504.1,relacion_activos_nomina:3.95,deuda_flotante_pct:4.8,deuda_flotante_2025_m:814.8,transferencias_2025_m:13676.0,transferencias_2026_m:17707.0,var_transferencias_2026_pct:29},
+  'CARMEN DE ARECO':{cud_2025:0.10452,cud_2026:0.10709,recursos_2025_m:11387.0,autonomia_2025:36.0,gastos_2025_m:11301.0,gasto_personal_pct:44,agentes:297,agentes_x1000_hab:17,agentes_prom_urbano:27,resultado_corriente_2025:320.0,resultado_financiero_2025:86.0,activos_financieros_m:509.2,nomina_mensual_m:318.9,relacion_activos_nomina:1.6,deuda_flotante_pct:1.5,deuda_flotante_2025_m:160.0,transferencias_2025_m:5616.0,transferencias_2026_m:7554.0,var_transferencias_2026_pct:35},
+  'CASTELLI':{cud_2025:0.17992,cud_2026:0.17619,recursos_2025_m:14701.0,autonomia_2025:36.0,gastos_2025_m:15218.0,gasto_personal_pct:40,agentes:461,agentes_x1000_hab:48,agentes_prom_urbano:58,resultado_corriente_2025:69.0,resultado_financiero_2025:-517.0,activos_financieros_m:494.7,nomina_mensual_m:405.2,relacion_activos_nomina:1.22,deuda_flotante_pct:14.2,deuda_flotante_2025_m:1335.1,transferencias_2025_m:8027.0,transferencias_2026_m:10345.0,var_transferencias_2026_pct:29},
+  'CAÑUELAS':{cud_2025:0.29848,cud_2026:0.30402,recursos_2025_m:42261.0,autonomia_2025:43.0,gastos_2025_m:43002.0,gasto_personal_pct:38,agentes:1408,agentes_x1000_hab:20,agentes_prom_urbano:17,resultado_corriente_2025:-91.0,resultado_financiero_2025:-741.0,activos_financieros_m:4321.6,nomina_mensual_m:712.4,relacion_activos_nomina:6.07,deuda_flotante_pct:5.8,deuda_flotante_2025_m:2194.9,transferencias_2025_m:15055.0,transferencias_2026_m:19960.0,var_transferencias_2026_pct:33},
+  'CHACABUCO':{cud_2025:0.82329,cud_2026:0.95241,recursos_2025_m:51047.0,autonomia_2025:23.0,gastos_2025_m:56107.0,gasto_personal_pct:62,agentes:1892,agentes_x1000_hab:36,agentes_prom_urbano:27,resultado_corriente_2025:-2701.0,resultado_financiero_2025:-5060.0,activos_financieros_m:3169.2,nomina_mensual_m:2201.8,relacion_activos_nomina:1.44,deuda_flotante_pct:9.8,deuda_flotante_2025_m:3885.6,transferencias_2025_m:35629.0,transferencias_2026_m:52908.0,var_transferencias_2026_pct:48},
+  'CHASCOMUS':{cud_2025:0.51559,cud_2026:0.49547,recursos_2025_m:41419.0,autonomia_2025:33.0,gastos_2025_m:43166.0,gasto_personal_pct:69,agentes:1917,agentes_x1000_hab:45,agentes_prom_urbano:58,resultado_corriente_2025:-1282.0,resultado_financiero_2025:-1747.0,activos_financieros_m:4416.0,nomina_mensual_m:1803.2,relacion_activos_nomina:2.45,deuda_flotante_pct:8.3,deuda_flotante_2025_m:749.6,transferencias_2025_m:23042.0,transferencias_2026_m:29240.0,var_transferencias_2026_pct:27},
+  'CHIVILCOY':{cud_2025:0.70479,cud_2026:0.69307,recursos_2025_m:49678.0,autonomia_2025:31.0,gastos_2025_m:53860.0,gasto_personal_pct:56,agentes:1736,agentes_x1000_hab:25,agentes_prom_urbano:27,resultado_corriente_2025:-2437.0,resultado_financiero_2025:-4182.0,activos_financieros_m:855.6,nomina_mensual_m:1771.9,relacion_activos_nomina:0.48,deuda_flotante_pct:6.6,deuda_flotante_2025_m:1577.0,transferencias_2025_m:31065.0,transferencias_2026_m:39992.0,var_transferencias_2026_pct:29},
+  'COLON':{cud_2025:0.34778,cud_2026:0.35068,recursos_2025_m:24322.0,autonomia_2025:30.0,gastos_2025_m:23708.0,gasto_personal_pct:55,agentes:736,agentes_x1000_hab:27,agentes_prom_urbano:27,resultado_corriente_2025:1738.0,resultado_financiero_2025:614.0,activos_financieros_m:3516.1,nomina_mensual_m:791.4,relacion_activos_nomina:4.44,deuda_flotante_pct:4.7,deuda_flotante_2025_m:453.4,transferencias_2025_m:15236.0,transferencias_2026_m:20137.0,var_transferencias_2026_pct:32},
+  'CORONEL PRINGLES':{cud_2025:0.41548,cud_2026:0.40655,recursos_2025_m:32996.0,autonomia_2025:38.0,gastos_2025_m:31996.0,gasto_personal_pct:54,agentes:945,agentes_x1000_hab:39,agentes_prom_urbano:46,resultado_corriente_2025:2816.0,resultado_financiero_2025:1000.0,activos_financieros_m:6056.3,nomina_mensual_m:1024.7,relacion_activos_nomina:5.91,deuda_flotante_pct:3.1,deuda_flotante_2025_m:553.4,transferencias_2025_m:18618.0,transferencias_2026_m:24026.0,var_transferencias_2026_pct:29},
+  'CORONEL ROSALES':{cud_2025:0.35068,cud_2026:0.344,recursos_2025_m:36636.0,autonomia_2025:46.0,gastos_2025_m:38611.0,gasto_personal_pct:74,agentes:907,agentes_x1000_hab:13,agentes_prom_urbano:35,resultado_corriente_2025:-2265.0,resultado_financiero_2025:-1976.0,activos_financieros_m:1675.6,nomina_mensual_m:1522.2,relacion_activos_nomina:1.1,deuda_flotante_pct:4.5,deuda_flotante_2025_m:368.1,transferencias_2025_m:16417.0,transferencias_2026_m:21158.0,var_transferencias_2026_pct:29},
+  'CORONEL SUAREZ':{cud_2025:0.67408,cud_2026:0.6706,recursos_2025_m:47338.0,autonomia_2025:30.0,gastos_2025_m:47338.0,gasto_personal_pct:64,agentes:1451,agentes_x1000_hab:34,agentes_prom_urbano:35,resultado_corriente_2025:2258.0,resultado_financiero_2025:0.0,activos_financieros_m:4928.7,nomina_mensual_m:1760.3,relacion_activos_nomina:2.8,deuda_flotante_pct:2.5,deuda_flotante_2025_m:703.0,transferencias_2025_m:29709.0,transferencias_2026_m:38680.0,var_transferencias_2026_pct:30},
+  'DAIREAUX':{cud_2025:0.44271,cud_2026:0.4387,recursos_2025_m:26059.0,autonomia_2025:23.0,gastos_2025_m:27162.0,gasto_personal_pct:48,agentes:776,agentes_x1000_hab:42,agentes_prom_urbano:46,resultado_corriente_2025:306.0,resultado_financiero_2025:-1103.0,activos_financieros_m:2950.4,nomina_mensual_m:826.8,relacion_activos_nomina:3.57,deuda_flotante_pct:4.1,deuda_flotante_2025_m:695.1,transferencias_2025_m:19427.0,transferencias_2026_m:25302.0,var_transferencias_2026_pct:30},
+  'DOLORES':{cud_2025:0.46263,cud_2026:0.49045,recursos_2025_m:31485.0,autonomia_2025:20.0,gastos_2025_m:34633.0,gasto_personal_pct:40,agentes:912,agentes_x1000_hab:28,agentes_prom_urbano:58,resultado_corriente_2025:1954.0,resultado_financiero_2025:-3148.0,activos_financieros_m:2508.5,nomina_mensual_m:828.5,relacion_activos_nomina:3.03,deuda_flotante_pct:5.0,deuda_flotante_2025_m:1516.3,transferencias_2025_m:19727.0,transferencias_2026_m:27110.0,var_transferencias_2026_pct:37},
+  'ENSENADA':{cud_2025:0.28063,cud_2026:0.28041,recursos_2025_m:66598.0,autonomia_2025:72.0,gastos_2025_m:68762.0,gasto_personal_pct:36,agentes:971,agentes_x1000_hab:15,agentes_prom_urbano:17,resultado_corriente_2025:10110.0,resultado_financiero_2025:-2164.0,activos_financieros_m:8285.4,nomina_mensual_m:1411.3,relacion_activos_nomina:5.87,deuda_flotante_pct:2.4,deuda_flotante_2025_m:1373.0,transferencias_2025_m:13653.0,transferencias_2026_m:17793.0,var_transferencias_2026_pct:30},
+  'ESCOBAR':{cud_2025:1.69961,cud_2026:1.7861,recursos_2025_m:259197.0,autonomia_2025:61.0,gastos_2025_m:255718.0,gasto_personal_pct:34,agentes:4485,agentes_x1000_hab:18,agentes_prom_urbano:19,resultado_corriente_2025:11170.0,resultado_financiero_2025:3479.0,activos_financieros_m:17884.8,nomina_mensual_m:5592.2,relacion_activos_nomina:3.2,deuda_flotante_pct:5.5,deuda_flotante_2025_m:11590.5,transferencias_2025_m:75925.0,transferencias_2026_m:103203.0,var_transferencias_2026_pct:36},
+  'ESTEBAN ECHEVERRIA':{cud_2025:1.54695,cud_2026:1.56854,recursos_2025_m:135645.0,autonomia_2025:41.0,gastos_2025_m:151260.0,gasto_personal_pct:33,agentes:3045,agentes_x1000_hab:9,agentes_prom_urbano:7,resultado_corriente_2025:1903.0,resultado_financiero_2025:-15615.0,activos_financieros_m:2871.6,nomina_mensual_m:3209.3,relacion_activos_nomina:0.89,deuda_flotante_pct:15.4,deuda_flotante_2025_m:19150.5,transferencias_2025_m:73058.0,transferencias_2026_m:96219.0,var_transferencias_2026_pct:32},
+  'EXALTACION DE LA CRUZ':{cud_2025:0.41344,cud_2026:0.45705,recursos_2025_m:39256.0,autonomia_2025:43.0,gastos_2025_m:44304.0,gasto_personal_pct:29,agentes:860,agentes_x1000_hab:21,agentes_prom_urbano:19,resultado_corriente_2025:-4725.0,resultado_financiero_2025:-5047.0,nomina_mensual_m:913.8,deuda_flotante_pct:5.7,deuda_flotante_2025_m:2064.5,transferencias_2025_m:17871.0,transferencias_2026_m:25457.0,var_transferencias_2026_pct:42},
+  'EZEIZA':{cud_2025:0.65415,cud_2026:0.62144,recursos_2025_m:125761.0,autonomia_2025:60.0,gastos_2025_m:129569.0,gasto_personal_pct:27,agentes:1654,agentes_x1000_hab:8,agentes_prom_urbano:7,resultado_corriente_2025:6373.0,resultado_financiero_2025:-3809.0,activos_financieros_m:2324.8,nomina_mensual_m:2371.1,relacion_activos_nomina:0.98,deuda_flotante_pct:3.8,deuda_flotante_2025_m:3706.2,transferencias_2025_m:33258.0,transferencias_2026_m:41728.0,var_transferencias_2026_pct:25},
+  'FLORENCIO VARELA':{cud_2025:1.98921,cud_2026:1.99,recursos_2025_m:154793.0,autonomia_2025:30.0,gastos_2025_m:154240.0,gasto_personal_pct:49,agentes:4555,agentes_x1000_hab:9,agentes_prom_urbano:7,resultado_corriente_2025:14706.0,resultado_financiero_2025:553.0,activos_financieros_m:17876.9,nomina_mensual_m:4704.3,relacion_activos_nomina:3.8,deuda_flotante_pct:2.5,deuda_flotante_2025_m:2332.8,transferencias_2025_m:98287.0,transferencias_2026_m:127896.0,var_transferencias_2026_pct:30},
+  'FLORENTINO AMEGHINO':{cud_2025:0.19246,cud_2026:0.18284,recursos_2025_m:12302.0,autonomia_2025:27.0,gastos_2025_m:13775.0,gasto_personal_pct:54,agentes:419,agentes_x1000_hab:39,agentes_prom_urbano:46,resultado_corriente_2025:-992.0,resultado_financiero_2025:-1473.0,activos_financieros_m:348.1,nomina_mensual_m:484.2,relacion_activos_nomina:0.72,deuda_flotante_pct:2.4,deuda_flotante_2025_m:299.8,transferencias_2025_m:8572.0,transferencias_2026_m:10778.0,var_transferencias_2026_pct:26},
+  'GENERAL ALVARADO':{cud_2025:0.36342,cud_2026:0.37807,recursos_2025_m:28555.0,autonomia_2025:35.0,gastos_2025_m:31130.0,gasto_personal_pct:72,agentes:1552,agentes_x1000_hab:34,agentes_prom_urbano:39,resultado_corriente_2025:-2563.0,resultado_financiero_2025:-2575.0,activos_financieros_m:724.5,nomina_mensual_m:1323.3,relacion_activos_nomina:0.55,deuda_flotante_pct:16.8,deuda_flotante_2025_m:2280.1,transferencias_2025_m:16688.0,transferencias_2026_m:22635.0,var_transferencias_2026_pct:36},
+  'GENERAL ALVEAR':{cud_2025:0.23595,cud_2026:0.22943,recursos_2025_m:15523.0,autonomia_2025:25.0,gastos_2025_m:15797.0,gasto_personal_pct:69,agentes:534,agentes_x1000_hab:42,agentes_prom_urbano:36,resultado_corriente_2025:248.0,resultado_financiero_2025:-274.0,activos_financieros_m:823.3,nomina_mensual_m:566.1,relacion_activos_nomina:1.45,deuda_flotante_pct:7.1,deuda_flotante_2025_m:761.2,transferencias_2025_m:10797.0,transferencias_2026_m:13896.0,var_transferencias_2026_pct:29},
+  'GENERAL BELGRANO':{cud_2025:0.27204,cud_2026:0.26931,recursos_2025_m:20080.0,autonomia_2025:33.0,gastos_2025_m:21088.0,gasto_personal_pct:55,agentes:675,agentes_x1000_hab:32,agentes_prom_urbano:36,resultado_corriente_2025:-262.0,resultado_financiero_2025:-1007.0,activos_financieros_m:1041.7,nomina_mensual_m:737.5,relacion_activos_nomina:1.41,deuda_flotante_pct:11.0,deuda_flotante_2025_m:849.0,transferencias_2025_m:12182.0,transferencias_2026_m:15789.0,var_transferencias_2026_pct:30},
+  'GENERAL GUIDO':{cud_2025:0.09352,cud_2026:0.09319,recursos_2025_m:6683.0,autonomia_2025:22.0,gastos_2025_m:7206.0,gasto_personal_pct:54,agentes:244,agentes_x1000_hab:77,agentes_prom_urbano:58,resultado_corriente_2025:-518.0,resultado_financiero_2025:-523.0,activos_financieros_m:599.5,nomina_mensual_m:208.7,relacion_activos_nomina:2.87,deuda_flotante_pct:2.3,deuda_flotante_2025_m:136.1,transferencias_2025_m:4562.0,transferencias_2026_m:6029.0,var_transferencias_2026_pct:32},
+  'GENERAL LA MADRID':{cud_2025:0.36309,cud_2026:0.35992,recursos_2025_m:23221.0,autonomia_2025:26.0,gastos_2025_m:23855.0,gasto_personal_pct:61,agentes:750,agentes_x1000_hab:65,agentes_prom_urbano:44,resultado_corriente_2025:35.0,resultado_financiero_2025:-634.0,activos_financieros_m:371.6,nomina_mensual_m:845.4,relacion_activos_nomina:0.44,deuda_flotante_pct:4.4,deuda_flotante_2025_m:401.2,transferencias_2025_m:15910.0,transferencias_2026_m:20766.0,var_transferencias_2026_pct:31},
+  'GENERAL LAS HERAS':{cud_2025:0.16493,cud_2026:0.16448,recursos_2025_m:15003.0,autonomia_2025:39.0,gastos_2025_m:16597.0,gasto_personal_pct:49,agentes:592,agentes_x1000_hab:33,agentes_prom_urbano:19,resultado_corriente_2025:-781.0,resultado_financiero_2025:-1594.0,activos_financieros_m:1283.9,nomina_mensual_m:507.2,relacion_activos_nomina:2.53,deuda_flotante_pct:2.7,deuda_flotante_2025_m:252.8,transferencias_2025_m:7580.0,transferencias_2026_m:9920.0,var_transferencias_2026_pct:31},
+  'GENERAL LAVALLE':{cud_2025:0.12579,cud_2026:0.12741,recursos_2025_m:9975.0,autonomia_2025:38.0,gastos_2025_m:10492.0,gasto_personal_pct:54,agentes:379,agentes_x1000_hab:78,agentes_prom_urbano:58,resultado_corriente_2025:-198.0,resultado_financiero_2025:-517.0,activos_financieros_m:1315.8,nomina_mensual_m:375.9,relacion_activos_nomina:3.5,deuda_flotante_pct:3.8,deuda_flotante_2025_m:256.6,transferencias_2025_m:5792.0,transferencias_2026_m:7686.0,var_transferencias_2026_pct:33},
+  'GENERAL MADARIAGA':{cud_2025:0.3131,cud_2026:0.29744,recursos_2025_m:25029.0,autonomia_2025:38.0,gastos_2025_m:27928.0,gasto_personal_pct:66,agentes:964,agentes_x1000_hab:43,agentes_prom_urbano:58,resultado_corriente_2025:-924.0,resultado_financiero_2025:-2899.0,activos_financieros_m:1480.9,nomina_mensual_m:1035.7,relacion_activos_nomina:1.43,deuda_flotante_pct:3.6,deuda_flotante_2025_m:861.1,transferencias_2025_m:14261.0,transferencias_2026_m:17927.0,var_transferencias_2026_pct:26},
+  'GENERAL PAZ':{cud_2025:0.2939,cud_2026:0.30088,recursos_2025_m:19018.0,autonomia_2025:21.0,gastos_2025_m:18957.0,gasto_personal_pct:49,agentes:523,agentes_x1000_hab:37,agentes_prom_urbano:36,resultado_corriente_2025:-248.0,resultado_financiero_2025:62.0,activos_financieros_m:510.0,nomina_mensual_m:538.5,relacion_activos_nomina:0.95,deuda_flotante_pct:2.4,deuda_flotante_2025_m:397.4,transferencias_2025_m:12569.0,transferencias_2026_m:16796.0,var_transferencias_2026_pct:34},
+  'GENERAL PINTO':{cud_2025:0.29895,cud_2026:0.29531,recursos_2025_m:20903.0,autonomia_2025:31.0,gastos_2025_m:19491.0,gasto_personal_pct:39,agentes:437,agentes_x1000_hab:34,agentes_prom_urbano:46,resultado_corriente_2025:2247.0,resultado_financiero_2025:1411.0,activos_financieros_m:5346.3,nomina_mensual_m:472.8,relacion_activos_nomina:11.31,deuda_flotante_pct:1.6,deuda_flotante_2025_m:133.7,transferencias_2025_m:13371.0,transferencias_2026_m:17317.0,var_transferencias_2026_pct:30},
+  'GENERAL PUEYRREDON':{cud_2025:2.1361,cud_2026:2.13342,recursos_2025_m:422436.0,autonomia_2025:67.0,gastos_2025_m:429149.0,gasto_personal_pct:62,agentes:11092,agentes_x1000_hab:17,agentes_prom_urbano:39,resultado_corriente_2025:715.0,resultado_financiero_2025:-6713.0,activos_financieros_m:2608.8,nomina_mensual_m:12501.1,relacion_activos_nomina:0.21,deuda_flotante_pct:8.6,deuda_flotante_2025_m:9722.9,transferencias_2025_m:109284.0,transferencias_2026_m:140901.0,var_transferencias_2026_pct:29},
+  'GENERAL RODRIGUEZ':{cud_2025:0.50162,cud_2026:0.53529,recursos_2025_m:77669.0,autonomia_2025:52.0,gastos_2025_m:80431.0,gasto_personal_pct:64,agentes:1663,agentes_x1000_hab:12,agentes_prom_urbano:19,resultado_corriente_2025:-2216.0,resultado_financiero_2025:-2763.0,activos_financieros_m:6190.5,nomina_mensual_m:2696.8,relacion_activos_nomina:2.3,deuda_flotante_pct:11.5,deuda_flotante_2025_m:3262.0,transferencias_2025_m:24741.0,transferencias_2026_m:33964.0,var_transferencias_2026_pct:37},
+  'GENERAL SAN MARTIN':{cud_2025:2.33309,cud_2026:2.24351,recursos_2025_m:275724.0,autonomia_2025:57.0,gastos_2025_m:268554.0,gasto_personal_pct:56,agentes:6799,agentes_x1000_hab:15,agentes_prom_urbano:19,resultado_corriente_2025:8188.0,resultado_financiero_2025:7170.0,activos_financieros_m:21846.2,nomina_mensual_m:8648.3,relacion_activos_nomina:2.53,deuda_flotante_pct:3.2,deuda_flotante_2025_m:4697.3,transferencias_2025_m:104263.0,transferencias_2026_m:130912.0,var_transferencias_2026_pct:26},
+  'GENERAL VIAMONTE':{cud_2025:0.41087,cud_2026:0.39628,recursos_2025_m:22306.0,autonomia_2025:17.0,gastos_2025_m:24285.0,gasto_personal_pct:56,agentes:790,agentes_x1000_hab:35,agentes_prom_urbano:27,resultado_corriente_2025:568.0,resultado_financiero_2025:-1979.0,activos_financieros_m:513.4,nomina_mensual_m:831.6,relacion_activos_nomina:0.62,deuda_flotante_pct:1.8,deuda_flotante_2025_m:401.1,transferencias_2025_m:17783.0,transferencias_2026_m:22605.0,var_transferencias_2026_pct:27},
+  'GENERAL VILLEGAS':{cud_2025:0.64029,cud_2026:0.66304,recursos_2025_m:41644.0,autonomia_2025:24.0,gastos_2025_m:42372.0,gasto_personal_pct:55,agentes:1497,agentes_x1000_hab:42,agentes_prom_urbano:46,resultado_corriente_2025:1378.0,resultado_financiero_2025:-727.0,activos_financieros_m:3781.5,nomina_mensual_m:1294.7,relacion_activos_nomina:2.92,deuda_flotante_pct:1.9,deuda_flotante_2025_m:387.2,transferencias_2025_m:29600.0,transferencias_2026_m:40088.0,var_transferencias_2026_pct:35},
+  'GUAMINI':{cud_2025:0.33571,cud_2026:0.34023,recursos_2025_m:22304.0,autonomia_2025:25.0,gastos_2025_m:24172.0,gasto_personal_pct:74,agentes:922,agentes_x1000_hab:78,agentes_prom_urbano:46,resultado_corriente_2025:-2065.0,resultado_financiero_2025:-1868.0,activos_financieros_m:147.6,nomina_mensual_m:1038.2,relacion_activos_nomina:0.14,deuda_flotante_pct:16.5,deuda_flotante_2025_m:1773.8,transferencias_2025_m:14884.0,transferencias_2026_m:19781.0,var_transferencias_2026_pct:33},
+  'HIPOLITO YRIGOYEN':{cud_2025:0.18744,cud_2026:0.18059,recursos_2025_m:13155.0,autonomia_2025:30.0,gastos_2025_m:14884.0,gasto_personal_pct:64,agentes:566,agentes_x1000_hab:53,agentes_prom_urbano:46,resultado_corriente_2025:-1199.0,resultado_financiero_2025:-1729.0,activos_financieros_m:424.7,nomina_mensual_m:604.1,relacion_activos_nomina:0.7,deuda_flotante_pct:17.1,deuda_flotante_2025_m:1054.8,transferencias_2025_m:8341.0,transferencias_2026_m:10590.0,var_transferencias_2026_pct:27},
+  'ITUZAINGO':{cud_2025:0.52601,cud_2026:0.52523,recursos_2025_m:76887.0,autonomia_2025:58.0,gastos_2025_m:78985.0,gasto_personal_pct:41,agentes:2323,agentes_x1000_hab:13,agentes_prom_urbano:14,resultado_corriente_2025:-3933.0,resultado_financiero_2025:-2098.0,activos_financieros_m:4373.9,nomina_mensual_m:1855.5,relacion_activos_nomina:2.36,deuda_flotante_pct:7.6,deuda_flotante_2025_m:4958.1,transferencias_2025_m:25776.0,transferencias_2026_m:33466.0,var_transferencias_2026_pct:30},
+  'JOSE C. PAZ':{cud_2025:1.87874,cud_2026:1.8771,recursos_2025_m:146463.0,autonomia_2025:21.0,gastos_2025_m:158409.0,gasto_personal_pct:43,agentes:6217,agentes_x1000_hab:19,agentes_prom_urbano:14,resultado_corriente_2025:2676.0,resultado_financiero_2025:-11947.0,activos_financieros_m:2495.5,nomina_mensual_m:4817.3,relacion_activos_nomina:0.52,deuda_flotante_pct:2.5,deuda_flotante_2025_m:3025.8,transferencias_2025_m:85545.0,transferencias_2026_m:111380.0,var_transferencias_2026_pct:30},
+  'JUNIN':{cud_2025:0.39022,cud_2026:0.3902,recursos_2025_m:63001.0,autonomia_2025:58.0,gastos_2025_m:58415.0,gasto_personal_pct:39,agentes:1219,agentes_x1000_hab:12,agentes_prom_urbano:27,resultado_corriente_2025:10256.0,resultado_financiero_2025:4586.0,activos_financieros_m:8668.2,nomina_mensual_m:1040.8,relacion_activos_nomina:8.33,deuda_flotante_pct:1.7,deuda_flotante_2025_m:1078.5,transferencias_2025_m:20465.0,transferencias_2026_m:26789.0,var_transferencias_2026_pct:31},
+  'LA COSTA':{cud_2025:1.52032,cud_2026:1.52219,recursos_2025_m:124016.0,autonomia_2025:44.0,gastos_2025_m:139776.0,gasto_personal_pct:33,agentes:4001,agentes_x1000_hab:40,agentes_prom_urbano:39,resultado_corriente_2025:-5946.0,resultado_financiero_2025:-15760.0,activos_financieros_m:2491.0,nomina_mensual_m:3296.0,relacion_activos_nomina:0.76,deuda_flotante_pct:24.2,deuda_flotante_2025_m:11936.5,transferencias_2025_m:62159.0,transferencias_2026_m:81254.0,var_transferencias_2026_pct:31},
+  'LA MATANZA':{cud_2025:6.70855,cud_2026:6.58306,recursos_2025_m:666899.0,autonomia_2025:45.0,gastos_2025_m:533342.0,gasto_personal_pct:18,agentes:6517,agentes_x1000_hab:4,agentes_prom_urbano:7,resultado_corriente_2025:183348.0,resultado_financiero_2025:133558.0,activos_financieros_m:333734.0,nomina_mensual_m:8979.0,relacion_activos_nomina:37.17,deuda_flotante_pct:1.9,deuda_flotante_2025_m:11017.3,transferencias_2025_m:320170.0,transferencias_2026_m:410348.0,var_transferencias_2026_pct:28},
+  'LA PLATA':{cud_2025:3.10573,cud_2026:3.16983,recursos_2025_m:420849.0,autonomia_2025:53.0,gastos_2025_m:465141.0,gasto_personal_pct:22,agentes:6861,agentes_x1000_hab:9,agentes_prom_urbano:17,resultado_corriente_2025:67875.0,resultado_financiero_2025:-44292.0,activos_financieros_m:12288.6,nomina_mensual_m:5743.3,relacion_activos_nomina:2.14,deuda_flotante_pct:3.7,deuda_flotante_2025_m:14047.0,transferencias_2025_m:148127.0,transferencias_2026_m:195300.0,var_transferencias_2026_pct:32},
+  'LANUS':{cud_2025:1.61701,cud_2026:1.63819,recursos_2025_m:232494.0,autonomia_2025:55.0,gastos_2025_m:236014.0,gasto_personal_pct:30,agentes:6115,agentes_x1000_hab:13,agentes_prom_urbano:15,resultado_corriente_2025:18953.0,resultado_financiero_2025:-3520.0,activos_financieros_m:34456.5,nomina_mensual_m:4123.0,relacion_activos_nomina:8.36,deuda_flotante_pct:4.9,deuda_flotante_2025_m:7055.8,transferencias_2025_m:79791.0,transferencias_2026_m:104483.0,var_transferencias_2026_pct:31},
+  'LAPRIDA':{cud_2025:0.27395,cud_2026:0.28502,recursos_2025_m:20865.0,autonomia_2025:36.0,gastos_2025_m:20192.0,gasto_personal_pct:57,agentes:552,agentes_x1000_hab:47,agentes_prom_urbano:44,resultado_corriente_2025:1984.0,resultado_financiero_2025:674.0,activos_financieros_m:5302.0,nomina_mensual_m:728.5,relacion_activos_nomina:7.28,deuda_flotante_pct:1.5,deuda_flotante_2025_m:285.4,transferencias_2025_m:12164.0,transferencias_2026_m:16529.0,var_transferencias_2026_pct:36},
+  'LAS FLORES':{cud_2025:0.27669,cud_2026:0.27626,recursos_2025_m:22497.0,autonomia_2025:29.0,gastos_2025_m:23061.0,gasto_personal_pct:45,agentes:907,agentes_x1000_hab:33,agentes_prom_urbano:36,resultado_corriente_2025:213.0,resultado_financiero_2025:-564.0,activos_financieros_m:166.0,nomina_mensual_m:626.7,relacion_activos_nomina:0.26,deuda_flotante_pct:5.8,deuda_flotante_2025_m:811.0,transferencias_2025_m:13096.0,transferencias_2026_m:17232.0,var_transferencias_2026_pct:32},
+  'LEANDRO N. ALEM':{cud_2025:0.31014,cud_2026:0.29463,recursos_2025_m:18662.0,autonomia_2025:21.0,gastos_2025_m:19075.0,gasto_personal_pct:39,agentes:507,agentes_x1000_hab:29,agentes_prom_urbano:46,resultado_corriente_2025:13.0,resultado_financiero_2025:-413.0,activos_financieros_m:324.4,nomina_mensual_m:495.2,relacion_activos_nomina:0.66,deuda_flotante_pct:0.3,deuda_flotante_2025_m:60.8,transferencias_2025_m:13821.0,transferencias_2026_m:17401.0,var_transferencias_2026_pct:26},
+  'LEZAMA':{cud_2025:0.1192,cud_2026:0.11622,recursos_2025_m:8177.0,autonomia_2025:31.0,gastos_2025_m:8454.0,gasto_personal_pct:62,agentes:390,agentes_x1000_hab:63,agentes_prom_urbano:58,resultado_corriente_2025:-296.0,resultado_financiero_2025:-277.0,activos_financieros_m:130.7,nomina_mensual_m:299.1,relacion_activos_nomina:0.44,deuda_flotante_pct:3.3,deuda_flotante_2025_m:270.7,transferencias_2025_m:5350.0,transferencias_2026_m:6875.0,var_transferencias_2026_pct:29},
+  'LINCOLN':{cud_2025:0.61338,cud_2026:0.60342,recursos_2025_m:43259.0,autonomia_2025:32.0,gastos_2025_m:46868.0,gasto_personal_pct:62,agentes:1775,agentes_x1000_hab:39,agentes_prom_urbano:46,resultado_corriente_2025:-1844.0,resultado_financiero_2025:-3609.0,activos_financieros_m:2422.7,nomina_mensual_m:2010.5,relacion_activos_nomina:1.21,deuda_flotante_pct:0.9,deuda_flotante_2025_m:372.1,transferencias_2025_m:28064.0,transferencias_2026_m:36401.0,var_transferencias_2026_pct:30},
+  'LOBERIA':{cud_2025:0.32711,cud_2026:0.3312,recursos_2025_m:26050.0,autonomia_2025:34.0,gastos_2025_m:26983.0,gasto_personal_pct:51,agentes:767,agentes_x1000_hab:42,agentes_prom_urbano:46,resultado_corriente_2025:864.0,resultado_financiero_2025:-933.0,activos_financieros_m:1432.2,nomina_mensual_m:895.7,relacion_activos_nomina:1.6,deuda_flotante_pct:1.3,deuda_flotante_2025_m:164.8,transferencias_2025_m:15906.0,transferencias_2026_m:21275.0,var_transferencias_2026_pct:34},
+  'LOBOS':{cud_2025:0.18366,cud_2026:0.18414,recursos_2025_m:19263.0,autonomia_2025:43.0,gastos_2025_m:18824.0,gasto_personal_pct:52,agentes:609,agentes_x1000_hab:15,agentes_prom_urbano:36,resultado_corriente_2025:1083.0,resultado_financiero_2025:438.0,activos_financieros_m:1518.1,nomina_mensual_m:677.3,relacion_activos_nomina:2.24,deuda_flotante_pct:4.1,deuda_flotante_2025_m:567.9,transferencias_2025_m:9731.0,transferencias_2026_m:12806.0,var_transferencias_2026_pct:32},
+  'MAGDALENA':{cud_2025:0.32421,cud_2026:0.32864,recursos_2025_m:19827.0,autonomia_2025:21.0,gastos_2025_m:19507.0,gasto_personal_pct:51,agentes:572,agentes_x1000_hab:21,agentes_prom_urbano:58,resultado_corriente_2025:1774.0,resultado_financiero_2025:320.0,activos_financieros_m:747.7,nomina_mensual_m:630.2,relacion_activos_nomina:1.19,deuda_flotante_pct:1.6,deuda_flotante_2025_m:312.3,transferencias_2025_m:14459.0,transferencias_2026_m:19146.0,var_transferencias_2026_pct:32},
+  'MAIPU':{cud_2025:0.25946,cud_2026:0.24649,recursos_2025_m:15697.0,autonomia_2025:23.0,gastos_2025_m:13745.0,gasto_personal_pct:41,agentes:323,agentes_x1000_hab:29,agentes_prom_urbano:58,resultado_corriente_2025:2615.0,resultado_financiero_2025:1952.0,activos_financieros_m:4926.9,nomina_mensual_m:375.7,relacion_activos_nomina:13.11,deuda_flotante_pct:3.1,deuda_flotante_2025_m:474.3,transferencias_2025_m:11283.0,transferencias_2026_m:14184.0,var_transferencias_2026_pct:26},
+  'MALVINAS ARGENTINAS':{cud_2025:3.24198,cud_2026:3.17276,recursos_2025_m:329956.0,autonomia_2025:51.0,gastos_2025_m:329409.0,gasto_personal_pct:24,agentes:2372,agentes_x1000_hab:7,agentes_prom_urbano:14,resultado_corriente_2025:61188.0,resultado_financiero_2025:548.0,activos_financieros_m:45843.5,nomina_mensual_m:6593.2,relacion_activos_nomina:6.95,deuda_flotante_pct:4.5,deuda_flotante_2025_m:11212.4,transferencias_2025_m:138819.0,transferencias_2026_m:176934.0,var_transferencias_2026_pct:27},
+  'MAR CHIQUITA':{cud_2025:0.50515,cud_2026:0.51108,recursos_2025_m:36867.0,autonomia_2025:35.0,gastos_2025_m:40250.0,gasto_personal_pct:49,agentes:1415,agentes_x1000_hab:43,agentes_prom_urbano:39,resultado_corriente_2025:-1201.0,resultado_financiero_2025:-3383.0,activos_financieros_m:1016.3,nomina_mensual_m:1253.6,relacion_activos_nomina:0.81,deuda_flotante_pct:11.3,deuda_flotante_2025_m:2108.8,transferencias_2025_m:21608.0,transferencias_2026_m:28589.0,var_transferencias_2026_pct:32},
+  'MARCOS PAZ':{cud_2025:0.464,cud_2026:0.49056,recursos_2025_m:47516.0,autonomia_2025:36.0,gastos_2025_m:48571.0,gasto_personal_pct:29,agentes:1197,agentes_x1000_hab:18,agentes_prom_urbano:19,resultado_corriente_2025:801.0,resultado_financiero_2025:-1055.0,activos_financieros_m:6099.6,nomina_mensual_m:842.0,relacion_activos_nomina:7.24,deuda_flotante_pct:1.9,deuda_flotante_2025_m:740.0,transferencias_2025_m:21215.0,transferencias_2026_m:29010.0,var_transferencias_2026_pct:37},
+  'MERCEDES':{cud_2025:0.65651,cud_2026:0.65572,recursos_2025_m:50817.0,autonomia_2025:37.0,gastos_2025_m:51599.0,gasto_personal_pct:49,agentes:1226,agentes_x1000_hab:17,agentes_prom_urbano:27,resultado_corriente_2025:3937.0,resultado_financiero_2025:-782.0,activos_financieros_m:11051.5,nomina_mensual_m:1816.8,relacion_activos_nomina:6.08,deuda_flotante_pct:0.8,deuda_flotante_2025_m:108.6,transferencias_2025_m:28910.0,transferencias_2026_m:37690.0,var_transferencias_2026_pct:30},
+  'MERLO':{cud_2025:2.98171,cud_2026:2.96058,recursos_2025_m:195552.0,autonomia_2025:24.0,gastos_2025_m:215967.0,gasto_personal_pct:18,agentes:4212,agentes_x1000_hab:7,agentes_prom_urbano:7,resultado_corriente_2025:-10026.0,resultado_financiero_2025:-20415.0,activos_financieros_m:18965.6,nomina_mensual_m:2767.2,relacion_activos_nomina:6.85,deuda_flotante_pct:10.3,deuda_flotante_2025_m:18926.8,transferencias_2025_m:139459.0,transferencias_2026_m:180304.0,var_transferencias_2026_pct:29},
+  'MONTE':{cud_2025:0.13774,cud_2026:0.1393,recursos_2025_m:13248.0,autonomia_2025:30.0,gastos_2025_m:13875.0,gasto_personal_pct:48,agentes:598,agentes_x1000_hab:24,agentes_prom_urbano:36,resultado_corriente_2025:125.0,resultado_financiero_2025:-627.0,activos_financieros_m:930.3,nomina_mensual_m:423.8,relacion_activos_nomina:2.19,deuda_flotante_pct:7.0,deuda_flotante_2025_m:798.9,transferencias_2025_m:7202.0,transferencias_2026_m:9569.0,var_transferencias_2026_pct:33},
+  'MONTE HERMOSO':{cud_2025:0.19097,cud_2026:0.18718,recursos_2025_m:29945.0,autonomia_2025:69.0,gastos_2025_m:29547.0,gasto_personal_pct:49,agentes:874,agentes_x1000_hab:103,agentes_prom_urbano:46,resultado_corriente_2025:939.0,resultado_financiero_2025:399.0,activos_financieros_m:545.2,nomina_mensual_m:868.0,relacion_activos_nomina:0.63,deuda_flotante_pct:2.3,deuda_flotante_2025_m:424.2,transferencias_2025_m:7835.0,transferencias_2026_m:10031.0,var_transferencias_2026_pct:28},
+  'MORENO':{cud_2025:2.16041,cud_2026:2.19588,recursos_2025_m:271289.0,autonomia_2025:43.0,gastos_2025_m:290550.0,gasto_personal_pct:49,agentes:7518,agentes_x1000_hab:13,agentes_prom_urbano:7,resultado_corriente_2025:13634.0,resultado_financiero_2025:-19261.0,activos_financieros_m:6638.3,nomina_mensual_m:6883.2,relacion_activos_nomina:0.96,deuda_flotante_pct:6.6,deuda_flotante_2025_m:14540.4,transferencias_2025_m:105962.0,transferencias_2026_m:139611.0,var_transferencias_2026_pct:32},
+  'MORON':{cud_2025:1.11099,cud_2026:1.08322,recursos_2025_m:180525.0,autonomia_2025:59.0,gastos_2025_m:194160.0,gasto_personal_pct:57,agentes:7651,agentes_x1000_hab:23,agentes_prom_urbano:19,resultado_corriente_2025:-10909.0,resultado_financiero_2025:-13635.0,activos_financieros_m:19378.4,nomina_mensual_m:6305.7,relacion_activos_nomina:3.07,deuda_flotante_pct:9.1,deuda_flotante_2025_m:14833.1,transferencias_2025_m:54196.0,transferencias_2026_m:68928.0,var_transferencias_2026_pct:27},
+  'NAVARRO':{cud_2025:0.2258,cud_2026:0.21962,recursos_2025_m:16759.0,autonomia_2025:29.0,gastos_2025_m:19393.0,gasto_personal_pct:44,agentes:595,agentes_x1000_hab:30,agentes_prom_urbano:36,resultado_corriente_2025:-1635.0,resultado_financiero_2025:-2634.0,activos_financieros_m:678.7,nomina_mensual_m:532.5,relacion_activos_nomina:1.27,deuda_flotante_pct:10.4,deuda_flotante_2025_m:1612.0,transferencias_2025_m:10343.0,transferencias_2026_m:13288.0,var_transferencias_2026_pct:28},
+  'NECOCHEA':{cud_2025:0.69513,cud_2026:0.71164,recursos_2025_m:75404.0,autonomia_2025:53.0,gastos_2025_m:77320.0,gasto_personal_pct:62,agentes:2337,agentes_x1000_hab:23,agentes_prom_urbano:46,resultado_corriente_2025:-905.0,resultado_financiero_2025:-1916.0,activos_financieros_m:5720.6,nomina_mensual_m:2972.9,relacion_activos_nomina:1.92,deuda_flotante_pct:5.7,deuda_flotante_2025_m:2366.0,transferencias_2025_m:32491.0,transferencias_2026_m:43397.0,var_transferencias_2026_pct:34},
+  'NUEVE DE JULIO':{cud_2025:0.35288,cud_2026:0.3534,recursos_2025_m:27827.0,autonomia_2025:28.0,gastos_2025_m:30221.0,gasto_personal_pct:76,agentes:1202,agentes_x1000_hab:23,agentes_prom_urbano:36,resultado_corriente_2025:-1874.0,resultado_financiero_2025:-2394.0,activos_financieros_m:201.8,nomina_mensual_m:1287.8,relacion_activos_nomina:0.16,deuda_flotante_pct:11.4,deuda_flotante_2025_m:1116.8,transferencias_2025_m:17887.0,transferencias_2026_m:23584.0,var_transferencias_2026_pct:32},
+  'OLAVARRIA':{cud_2025:1.01533,cud_2026:1.01347,recursos_2025_m:111310.0,autonomia_2025:55.0,gastos_2025_m:117064.0,gasto_personal_pct:54,agentes:2577,agentes_x1000_hab:20,agentes_prom_urbano:44,resultado_corriente_2025:2190.0,resultado_financiero_2025:-5754.0,activos_financieros_m:2635.2,nomina_mensual_m:3515.6,relacion_activos_nomina:0.75,deuda_flotante_pct:4.8,deuda_flotante_2025_m:3281.7,transferencias_2025_m:46571.0,transferencias_2026_m:60810.0,var_transferencias_2026_pct:31},
+  'PATAGONES':{cud_2025:0.72015,cud_2026:0.72998,recursos_2025_m:39883.0,autonomia_2025:15.0,gastos_2025_m:39817.0,gasto_personal_pct:53,agentes:1209,agentes_x1000_hab:32,agentes_prom_urbano:35,resultado_corriente_2025:3747.0,resultado_financiero_2025:66.0,activos_financieros_m:6777.3,nomina_mensual_m:1413.2,relacion_activos_nomina:4.8,deuda_flotante_pct:7.0,deuda_flotante_2025_m:851.0,transferencias_2025_m:32018.0,transferencias_2026_m:42468.0,var_transferencias_2026_pct:33},
+  'PEHUAJO':{cud_2025:0.76088,cud_2026:0.74124,recursos_2025_m:52219.0,autonomia_2025:31.0,gastos_2025_m:48875.0,gasto_personal_pct:62,agentes:1761,agentes_x1000_hab:39,agentes_prom_urbano:46,resultado_corriente_2025:5993.0,resultado_financiero_2025:3343.0,activos_financieros_m:14856.9,nomina_mensual_m:1864.6,relacion_activos_nomina:7.97,deuda_flotante_pct:1.6,deuda_flotante_2025_m:661.8,transferencias_2025_m:33484.0,transferencias_2026_m:42867.0,var_transferencias_2026_pct:28},
+  'PERGAMINO':{cud_2025:0.43208,cud_2026:0.43329,recursos_2025_m:68738.0,autonomia_2025:61.0,gastos_2025_m:71393.0,gasto_personal_pct:43,agentes:1210,agentes_x1000_hab:10,agentes_prom_urbano:27,resultado_corriente_2025:12334.0,resultado_financiero_2025:-2655.0,activos_financieros_m:3446.6,nomina_mensual_m:1696.1,relacion_activos_nomina:2.03,deuda_flotante_pct:6.4,deuda_flotante_2025_m:3351.1,transferencias_2025_m:23177.0,transferencias_2026_m:30549.0,var_transferencias_2026_pct:32},
+  'PILA':{cud_2025:0.16038,cud_2026:0.15236,recursos_2025_m:13147.0,autonomia_2025:36.0,gastos_2025_m:14166.0,gasto_personal_pct:40,agentes:352,agentes_x1000_hab:76,agentes_prom_urbano:58,resultado_corriente_2025:-143.0,resultado_financiero_2025:-1019.0,activos_financieros_m:522.7,nomina_mensual_m:361.0,relacion_activos_nomina:1.45,deuda_flotante_pct:4.0,deuda_flotante_2025_m:484.2,transferencias_2025_m:7462.0,transferencias_2026_m:9437.0,var_transferencias_2026_pct:26},
+  'PILAR':{cud_2025:2.40457,cud_2026:2.41838,recursos_2025_m:435724.0,autonomia_2025:67.0,gastos_2025_m:534720.0,gasto_personal_pct:23,agentes:6621,agentes_x1000_hab:17,agentes_prom_urbano:19,resultado_corriente_2025:-34458.0,resultado_financiero_2025:-98996.0,activos_financieros_m:11535.7,nomina_mensual_m:8478.6,relacion_activos_nomina:1.36,deuda_flotante_pct:15.5,deuda_flotante_2025_m:62395.5,transferencias_2025_m:107449.0,transferencias_2026_m:140351.0,var_transferencias_2026_pct:31},
+  'PINAMAR':{cud_2025:0.41214,cud_2026:0.39153,recursos_2025_m:61634.0,autonomia_2025:66.0,gastos_2025_m:67968.0,gasto_personal_pct:67,agentes:1480,agentes_x1000_hab:38,agentes_prom_urbano:39,resultado_corriente_2025:-6401.0,resultado_financiero_2025:-6334.0,activos_financieros_m:1198.4,nomina_mensual_m:2175.7,relacion_activos_nomina:0.55,deuda_flotante_pct:14.8,deuda_flotante_2025_m:3211.2,transferencias_2025_m:17456.0,transferencias_2026_m:21689.0,var_transferencias_2026_pct:24},
+  'PRESIDENTE PERON':{cud_2025:0.43953,cud_2026:0.44498,recursos_2025_m:28918.0,autonomia_2025:21.0,gastos_2025_m:27313.0,gasto_personal_pct:35,agentes:664,agentes_x1000_hab:6,agentes_prom_urbano:17,resultado_corriente_2025:2453.0,resultado_financiero_2025:1605.0,activos_financieros_m:11614.3,nomina_mensual_m:593.3,relacion_activos_nomina:19.58,deuda_flotante_pct:2.5,deuda_flotante_2025_m:365.0,transferencias_2025_m:21613.0,transferencias_2026_m:28456.0,var_transferencias_2026_pct:32},
+  'PUAN':{cud_2025:0.58997,cud_2026:0.58771,recursos_2025_m:32155.0,autonomia_2025:21.0,gastos_2025_m:35169.0,gasto_personal_pct:59,agentes:982,agentes_x1000_hab:59,agentes_prom_urbano:35,resultado_corriente_2025:760.0,resultado_financiero_2025:-3014.0,activos_financieros_m:928.0,nomina_mensual_m:1325.1,relacion_activos_nomina:0.7,deuda_flotante_pct:1.8,deuda_flotante_2025_m:176.5,transferencias_2025_m:24756.0,transferencias_2026_m:32319.0,var_transferencias_2026_pct:31},
+  'PUNTA INDIO':{cud_2025:0.21562,cud_2026:0.21996,recursos_2025_m:12723.0,autonomia_2025:14.0,gastos_2025_m:13692.0,gasto_personal_pct:62,agentes:490,agentes_x1000_hab:40,agentes_prom_urbano:58,resultado_corriente_2025:-737.0,resultado_financiero_2025:-970.0,nomina_mensual_m:527.7,deuda_flotante_pct:14.6,deuda_flotante_2025_m:1523.5,transferencias_2025_m:9377.0,transferencias_2026_m:12474.0,var_transferencias_2026_pct:33},
+  'QUILMES':{cud_2025:1.97558,cud_2026:1.99122,recursos_2025_m:306363.0,autonomia_2025:51.0,gastos_2025_m:317167.0,gasto_personal_pct:39,agentes:7601,agentes_x1000_hab:12,agentes_prom_urbano:15,resultado_corriente_2025:33026.0,resultado_financiero_2025:-10804.0,activos_financieros_m:27273.4,nomina_mensual_m:9095.1,relacion_activos_nomina:3.0,deuda_flotante_pct:1.8,deuda_flotante_2025_m:1491.4,transferencias_2025_m:100600.0,transferencias_2026_m:131330.0,var_transferencias_2026_pct:31},
+  'RAMALLO':{cud_2025:0.22856,cud_2026:0.22533,recursos_2025_m:31764.0,autonomia_2025:52.0,gastos_2025_m:39634.0,gasto_personal_pct:51,agentes:978,agentes_x1000_hab:25,agentes_prom_urbano:17,resultado_corriente_2025:-4552.0,resultado_financiero_2025:-7870.0,activos_financieros_m:262.0,nomina_mensual_m:760.6,relacion_activos_nomina:0.34,deuda_flotante_pct:25.0,deuda_flotante_2025_m:5958.7,transferencias_2025_m:11311.0,transferencias_2026_m:14717.0,var_transferencias_2026_pct:30},
+  'RAUCH':{cud_2025:0.27287,cud_2026:0.27562,recursos_2025_m:21071.0,autonomia_2025:37.0,gastos_2025_m:23101.0,gasto_personal_pct:66,agentes:894,agentes_x1000_hab:54,agentes_prom_urbano:44,resultado_corriente_2025:-1166.0,resultado_financiero_2025:-2029.0,activos_financieros_m:645.1,nomina_mensual_m:830.7,relacion_activos_nomina:0.78,deuda_flotante_pct:4.4,deuda_flotante_2025_m:721.7,transferencias_2025_m:12421.0,transferencias_2026_m:16452.0,var_transferencias_2026_pct:32},
+  'RIVADAVIA':{cud_2025:0.39275,cud_2026:0.39294,recursos_2025_m:27264.0,autonomia_2025:27.0,gastos_2025_m:28281.0,gasto_personal_pct:43,agentes:776,agentes_x1000_hab:39,agentes_prom_urbano:46,resultado_corriente_2025:-469.0,resultado_financiero_2025:-1016.0,activos_financieros_m:2004.3,nomina_mensual_m:723.2,relacion_activos_nomina:2.77,deuda_flotante_pct:0.1,deuda_flotante_2025_m:31.3,transferencias_2025_m:17615.0,transferencias_2026_m:23161.0,var_transferencias_2026_pct:31},
+  'ROJAS':{cud_2025:0.31088,cud_2026:0.31636,recursos_2025_m:28860.0,autonomia_2025:44.0,gastos_2025_m:31605.0,gasto_personal_pct:48,agentes:800,agentes_x1000_hab:31,agentes_prom_urbano:27,resultado_corriente_2025:-1620.0,resultado_financiero_2025:-2745.0,activos_financieros_m:698.0,nomina_mensual_m:940.4,relacion_activos_nomina:0.74,deuda_flotante_pct:14.1,deuda_flotante_2025_m:3417.6,transferencias_2025_m:14886.0,transferencias_2026_m:19816.0,var_transferencias_2026_pct:33},
+  'ROQUE PEREZ':{cud_2025:0.19026,cud_2026:0.19553,recursos_2025_m:14644.0,autonomia_2025:32.0,gastos_2025_m:14916.0,gasto_personal_pct:54,agentes:633,agentes_x1000_hab:45,agentes_prom_urbano:36,resultado_corriente_2025:568.0,resultado_financiero_2025:-271.0,activos_financieros_m:1601.0,nomina_mensual_m:511.6,relacion_activos_nomina:3.13,deuda_flotante_pct:1.8,deuda_flotante_2025_m:89.7,transferencias_2025_m:8803.0,transferencias_2026_m:11860.0,var_transferencias_2026_pct:35},
+  'SAAVEDRA':{cud_2025:0.47214,cud_2026:0.46034,recursos_2025_m:30651.0,autonomia_2025:30.0,gastos_2025_m:28843.0,gasto_personal_pct:72,agentes:634,agentes_x1000_hab:28,agentes_prom_urbano:35,resultado_corriente_2025:2835.0,resultado_financiero_2025:1807.0,activos_financieros_m:2480.3,nomina_mensual_m:1101.1,relacion_activos_nomina:2.25,deuda_flotante_pct:1.6,deuda_flotante_2025_m:485.5,transferencias_2025_m:19972.0,transferencias_2026_m:25550.0,var_transferencias_2026_pct:28},
+  'SALADILLO':{cud_2025:0.2974,cud_2026:0.29818,recursos_2025_m:24551.0,autonomia_2025:36.0,gastos_2025_m:25055.0,gasto_personal_pct:54,agentes:958,agentes_x1000_hab:27,agentes_prom_urbano:36,resultado_corriente_2025:758.0,resultado_financiero_2025:-504.0,activos_financieros_m:3861.6,nomina_mensual_m:842.4,relacion_activos_nomina:4.58,deuda_flotante_pct:5.5,deuda_flotante_2025_m:962.4,transferencias_2025_m:14178.0,transferencias_2026_m:18642.0,var_transferencias_2026_pct:31},
+  'SALLIQUELO':{cud_2025:0.16099,cud_2026:0.16346,recursos_2025_m:12155.0,autonomia_2025:27.0,gastos_2025_m:11897.0,gasto_personal_pct:57,agentes:425,agentes_x1000_hab:45,agentes_prom_urbano:46,resultado_corriente_2025:275.0,resultado_financiero_2025:258.0,activos_financieros_m:854.4,nomina_mensual_m:385.1,relacion_activos_nomina:2.22,deuda_flotante_pct:0.6,deuda_flotante_2025_m:0.0,transferencias_2025_m:6921.0,transferencias_2026_m:9161.0,var_transferencias_2026_pct:32},
+  'SALTO':{cud_2025:0.27611,cud_2026:0.27067,recursos_2025_m:26045.0,autonomia_2025:41.0,gastos_2025_m:26483.0,gasto_personal_pct:55,agentes:812,agentes_x1000_hab:21,agentes_prom_urbano:27,resultado_corriente_2025:590.0,resultado_financiero_2025:-438.0,activos_financieros_m:1456.6,nomina_mensual_m:1008.0,relacion_activos_nomina:1.44,deuda_flotante_pct:3.0,deuda_flotante_2025_m:763.9,transferencias_2025_m:13478.0,transferencias_2026_m:17613.0,var_transferencias_2026_pct:31},
+  'SAN ANDRES DE GILES':{cud_2025:0.36189,cud_2026:0.35301,recursos_2025_m:24565.0,autonomia_2025:19.0,gastos_2025_m:26022.0,gasto_personal_pct:66,agentes:870,agentes_x1000_hab:33,agentes_prom_urbano:27,resultado_corriente_2025:-1257.0,resultado_financiero_2025:-1457.0,activos_financieros_m:1010.8,nomina_mensual_m:1013.8,relacion_activos_nomina:1.0,deuda_flotante_pct:4.3,deuda_flotante_2025_m:858.5,transferencias_2025_m:16017.0,transferencias_2026_m:20563.0,var_transferencias_2026_pct:28},
+  'SAN ANTONIO DE ARECO':{cud_2025:0.22378,cud_2026:0.21658,recursos_2025_m:25014.0,autonomia_2025:49.0,gastos_2025_m:25486.0,gasto_personal_pct:60,agentes:1083,agentes_x1000_hab:40,agentes_prom_urbano:27,resultado_corriente_2025:-347.0,resultado_financiero_2025:-472.0,activos_financieros_m:1982.0,nomina_mensual_m:1082.4,relacion_activos_nomina:1.83,deuda_flotante_pct:11.8,deuda_flotante_2025_m:1197.4,transferencias_2025_m:10707.0,transferencias_2026_m:13658.0,var_transferencias_2026_pct:28},
+  'SAN CAYETANO':{cud_2025:0.28712,cud_2026:0.27905,recursos_2025_m:16446.0,autonomia_2025:21.0,gastos_2025_m:16255.0,gasto_personal_pct:67,agentes:452,agentes_x1000_hab:50,agentes_prom_urbano:46,resultado_corriente_2025:739.0,resultado_financiero_2025:191.0,activos_financieros_m:1195.4,nomina_mensual_m:694.0,relacion_activos_nomina:1.72,deuda_flotante_pct:1.7,deuda_flotante_2025_m:108.4,transferencias_2025_m:12456.0,transferencias_2026_m:16010.0,var_transferencias_2026_pct:29},
+  'SAN FERNANDO':{cud_2025:0.89154,cud_2026:0.89792,recursos_2025_m:176554.0,autonomia_2025:74.0,gastos_2025_m:141558.0,gasto_personal_pct:36,agentes:2908,agentes_x1000_hab:17,agentes_prom_urbano:14,resultado_corriente_2025:49651.0,resultado_financiero_2025:34995.0,activos_financieros_m:69847.7,nomina_mensual_m:3552.7,relacion_activos_nomina:19.66,deuda_flotante_pct:3.9,deuda_flotante_2025_m:5243.5,transferencias_2025_m:41659.0,transferencias_2026_m:54296.0,var_transferencias_2026_pct:30},
+  'SAN ISIDRO':{cud_2025:1.88093,cud_2026:1.78688,recursos_2025_m:303185.0,autonomia_2025:69.0,gastos_2025_m:309236.0,gasto_personal_pct:36,agentes:6241,agentes_x1000_hab:21,agentes_prom_urbano:19,resultado_corriente_2025:46485.0,resultado_financiero_2025:-6051.0,activos_financieros_m:3581.7,nomina_mensual_m:8375.6,relacion_activos_nomina:0.43,deuda_flotante_pct:1.4,deuda_flotante_2025_m:4137.9,transferencias_2025_m:82268.0,transferencias_2026_m:102088.0,var_transferencias_2026_pct:24},
+  'SAN MIGUEL':{cud_2025:1.81109,cud_2026:1.86998,recursos_2025_m:201782.0,autonomia_2025:41.0,gastos_2025_m:183012.0,gasto_personal_pct:39,agentes:4798,agentes_x1000_hab:15,agentes_prom_urbano:14,resultado_corriente_2025:55934.0,resultado_financiero_2025:18770.0,activos_financieros_m:60631.9,nomina_mensual_m:5280.6,relacion_activos_nomina:11.48,deuda_flotante_pct:6.8,deuda_flotante_2025_m:11925.7,transferencias_2025_m:80928.0,transferencias_2026_m:108028.0,var_transferencias_2026_pct:33},
+  'SAN NICOLAS':{cud_2025:0.57787,cud_2026:0.58987,recursos_2025_m:88804.0,autonomia_2025:64.0,gastos_2025_m:80842.0,gasto_personal_pct:16,agentes:572,agentes_x1000_hab:3,agentes_prom_urbano:17,resultado_corriente_2025:17367.0,resultado_financiero_2025:7962.0,activos_financieros_m:7973.8,nomina_mensual_m:965.5,relacion_activos_nomina:8.26,deuda_flotante_pct:2.7,deuda_flotante_2025_m:2036.1,transferencias_2025_m:28578.0,transferencias_2026_m:37852.0,var_transferencias_2026_pct:32},
+  'SAN PEDRO':{cud_2025:0.62797,cud_2026:0.60954,recursos_2025_m:39689.0,autonomia_2025:22.0,gastos_2025_m:46963.0,gasto_personal_pct:62,agentes:1216,agentes_x1000_hab:18,agentes_prom_urbano:17,resultado_corriente_2025:-6971.0,resultado_financiero_2025:-7274.0,nomina_mensual_m:1589.3,deuda_flotante_pct:20.7,deuda_flotante_2025_m:5836.6,transferencias_2025_m:28445.0,transferencias_2026_m:36346.0,var_transferencias_2026_pct:28},
+  'SAN VICENTE':{cud_2025:0.36854,cud_2026:0.37209,recursos_2025_m:60528.0,autonomia_2025:43.0,gastos_2025_m:59000.0,gasto_personal_pct:42,agentes:1593,agentes_x1000_hab:16,agentes_prom_urbano:17,resultado_corriente_2025:2666.0,resultado_financiero_2025:1528.0,activos_financieros_m:4876.4,nomina_mensual_m:1646.5,relacion_activos_nomina:2.96,deuda_flotante_pct:2.5,deuda_flotante_2025_m:627.4,transferencias_2025_m:18433.0,transferencias_2026_m:24264.0,var_transferencias_2026_pct:32},
+  'SUIPACHA':{cud_2025:0.15965,cud_2026:0.16673,recursos_2025_m:10042.0,autonomia_2025:16.0,gastos_2025_m:10444.0,gasto_personal_pct:54,agentes:287,agentes_x1000_hab:24,agentes_prom_urbano:27,resultado_corriente_2025:-343.0,resultado_financiero_2025:-402.0,activos_financieros_m:302.3,nomina_mensual_m:365.6,relacion_activos_nomina:0.83,deuda_flotante_pct:8.9,deuda_flotante_2025_m:722.5,transferencias_2025_m:7144.0,transferencias_2026_m:9705.0,var_transferencias_2026_pct:36},
+  'TANDIL':{cud_2025:1.05363,cud_2026:1.01156,recursos_2025_m:122053.0,autonomia_2025:53.0,gastos_2025_m:127433.0,gasto_personal_pct:63,agentes:3009,agentes_x1000_hab:21,agentes_prom_urbano:44,resultado_corriente_2025:-3431.0,resultado_financiero_2025:-5380.0,activos_financieros_m:4892.2,nomina_mensual_m:4689.5,relacion_activos_nomina:1.04,deuda_flotante_pct:6.0,deuda_flotante_2025_m:2548.7,transferencias_2025_m:48194.0,transferencias_2026_m:61065.0,var_transferencias_2026_pct:27},
+  'TAPALQUE':{cud_2025:0.27541,cud_2026:0.28079,recursos_2025_m:19579.0,autonomia_2025:31.0,gastos_2025_m:21809.0,gasto_personal_pct:56,agentes:613,agentes_x1000_hab:57,agentes_prom_urbano:36,resultado_corriente_2025:-1915.0,resultado_financiero_2025:-2229.0,activos_financieros_m:569.6,nomina_mensual_m:691.2,relacion_activos_nomina:0.82,deuda_flotante_pct:5.1,deuda_flotante_2025_m:384.9,transferencias_2025_m:12501.0,transferencias_2026_m:16725.0,var_transferencias_2026_pct:34},
+  'TIGRE':{cud_2025:1.78651,cud_2026:1.7895,recursos_2025_m:385841.0,autonomia_2025:73.0,gastos_2025_m:387552.0,gasto_personal_pct:31,agentes:5223,agentes_x1000_hab:12,agentes_prom_urbano:14,resultado_corriente_2025:40344.0,resultado_financiero_2025:-1711.0,activos_financieros_m:71456.8,nomina_mensual_m:7327.4,relacion_activos_nomina:9.75,deuda_flotante_pct:8.8,deuda_flotante_2025_m:30749.9,transferencias_2025_m:85025.0,transferencias_2026_m:110027.0,var_transferencias_2026_pct:29},
+  'TORDILLO':{cud_2025:0.0666,cud_2026:0.06327,recursos_2025_m:4811.0,autonomia_2025:27.0,gastos_2025_m:4953.0,gasto_personal_pct:56,agentes:208,agentes_x1000_hab:82,agentes_prom_urbano:58,resultado_corriente_2025:-3.0,resultado_financiero_2025:-142.0,activos_financieros_m:696.8,nomina_mensual_m:169.2,relacion_activos_nomina:4.12,deuda_flotante_pct:0.0,deuda_flotante_2025_m:0.0,transferencias_2025_m:2964.0,transferencias_2026_m:3729.0,var_transferencias_2026_pct:26},
+  'TORNQUIST':{cud_2025:0.44814,cud_2026:0.45831,recursos_2025_m:30915.0,autonomia_2025:27.0,gastos_2025_m:31950.0,gasto_personal_pct:52,agentes:860,agentes_x1000_hab:58,agentes_prom_urbano:35,resultado_corriente_2025:-749.0,resultado_financiero_2025:-1035.0,activos_financieros_m:416.2,nomina_mensual_m:940.1,relacion_activos_nomina:0.44,deuda_flotante_pct:12.0,deuda_flotante_2025_m:1465.3,transferencias_2025_m:18837.0,transferencias_2026_m:25277.0,var_transferencias_2026_pct:34},
+  'TRENQUE LAUQUEN':{cud_2025:0.77254,cud_2026:0.75942,recursos_2025_m:64100.0,autonomia_2025:41.0,gastos_2025_m:61405.0,gasto_personal_pct:61,agentes:1964,agentes_x1000_hab:40,agentes_prom_urbano:46,resultado_corriente_2025:7689.0,resultado_financiero_2025:2695.0,activos_financieros_m:10194.6,nomina_mensual_m:2454.1,relacion_activos_nomina:4.15,deuda_flotante_pct:0.6,deuda_flotante_2025_m:366.6,transferencias_2025_m:34198.0,transferencias_2026_m:44183.0,var_transferencias_2026_pct:29},
+  'TRES ARROYOS':{cud_2025:0.64423,cud_2026:0.64268,recursos_2025_m:57956.0,autonomia_2025:41.0,gastos_2025_m:64147.0,gasto_personal_pct:56,agentes:1686,agentes_x1000_hab:27,agentes_prom_urbano:46,resultado_corriente_2025:-4694.0,resultado_financiero_2025:-6191.0,activos_financieros_m:1693.5,nomina_mensual_m:2017.5,relacion_activos_nomina:0.84,deuda_flotante_pct:11.7,deuda_flotante_2025_m:3143.1,transferencias_2025_m:29904.0,transferencias_2026_m:39155.0,var_transferencias_2026_pct:31},
+  'TRES DE FEBRERO':{cud_2025:1.00236,cud_2026:0.99991,recursos_2025_m:154229.0,autonomia_2025:56.0,gastos_2025_m:144612.0,gasto_personal_pct:29,agentes:2671,agentes_x1000_hab:7,agentes_prom_urbano:19,resultado_corriente_2025:22275.0,resultado_financiero_2025:9617.0,activos_financieros_m:31967.7,nomina_mensual_m:2869.2,relacion_activos_nomina:11.14,deuda_flotante_pct:4.9,deuda_flotante_2025_m:7464.7,transferencias_2025_m:49444.0,transferencias_2026_m:64052.0,var_transferencias_2026_pct:30},
+  'TRES LOMAS':{cud_2025:0.1569,cud_2026:0.15733,recursos_2025_m:10426.0,autonomia_2025:30.0,gastos_2025_m:11257.0,gasto_personal_pct:56,agentes:366,agentes_x1000_hab:40,agentes_prom_urbano:46,resultado_corriente_2025:-669.0,resultado_financiero_2025:-831.0,activos_financieros_m:1012.7,nomina_mensual_m:388.2,relacion_activos_nomina:2.61,deuda_flotante_pct:6.8,deuda_flotante_2025_m:482.5,transferencias_2025_m:6894.0,transferencias_2026_m:9069.0,var_transferencias_2026_pct:32},
+  'VEINTICINCO DE MAYO':{cud_2025:0.467,cud_2026:0.46231,recursos_2025_m:34121.0,autonomia_2025:33.0,gastos_2025_m:35647.0,gasto_personal_pct:48,agentes:1205,agentes_x1000_hab:34,agentes_prom_urbano:36,resultado_corriente_2025:3836.0,resultado_financiero_2025:-1526.0,activos_financieros_m:465.3,nomina_mensual_m:1093.3,relacion_activos_nomina:0.43,deuda_flotante_pct:5.1,deuda_flotante_2025_m:1726.7,transferencias_2025_m:21740.0,transferencias_2026_m:28363.0,var_transferencias_2026_pct:30},
+  'VICENTE LOPEZ':{cud_2025:1.58915,cud_2026:1.52525,recursos_2025_m:293649.0,autonomia_2025:73.0,gastos_2025_m:305190.0,gasto_personal_pct:51,agentes:7102,agentes_x1000_hab:25,agentes_prom_urbano:19,resultado_corriente_2025:8068.0,resultado_financiero_2025:-11541.0,activos_financieros_m:21842.7,nomina_mensual_m:8945.5,relacion_activos_nomina:2.44,deuda_flotante_pct:3.0,deuda_flotante_2025_m:5654.2,transferencias_2025_m:68279.0,transferencias_2026_m:85645.0,var_transferencias_2026_pct:25},
+  'VILLA GESELL':{cud_2025:0.47637,cud_2026:0.4682,recursos_2025_m:42520.0,autonomia_2025:50.0,gastos_2025_m:43456.0,gasto_personal_pct:71,agentes:1739,agentes_x1000_hab:46,agentes_prom_urbano:39,resultado_corriente_2025:870.0,resultado_financiero_2025:-936.0,activos_financieros_m:860.8,nomina_mensual_m:1729.9,relacion_activos_nomina:0.5,deuda_flotante_pct:12.4,deuda_flotante_2025_m:2751.5,transferencias_2025_m:19840.0,transferencias_2026_m:25413.0,var_transferencias_2026_pct:28},
+  'VILLARINO':{cud_2025:0.53815,cud_2026:0.53047,recursos_2025_m:30455.0,autonomia_2025:17.0,gastos_2025_m:31127.0,gasto_personal_pct:58,agentes:932,agentes_x1000_hab:28,agentes_prom_urbano:35,resultado_corriente_2025:912.0,resultado_financiero_2025:-672.0,activos_financieros_m:1689.5,nomina_mensual_m:1194.9,relacion_activos_nomina:1.41,deuda_flotante_pct:1.3,deuda_flotante_2025_m:384.1,transferencias_2025_m:24456.0,transferencias_2026_m:31689.0,var_transferencias_2026_pct:30},
+  'ZARATE':{cud_2025:0.54697,cud_2026:0.54929,recursos_2025_m:102399.0,autonomia_2025:68.0,gastos_2025_m:90416.0,gasto_personal_pct:35,agentes:997,agentes_x1000_hab:8,agentes_prom_urbano:17,resultado_corriente_2025:20338.0,resultado_financiero_2025:11983.0,activos_financieros_m:11450.6,nomina_mensual_m:1849.0,relacion_activos_nomina:6.19,deuda_flotante_pct:3.9,deuda_flotante_2025_m:3187.4,transferencias_2025_m:27580.0,transferencias_2026_m:36022.0,var_transferencias_2026_pct:31},
+};
+
+function lookupFin(name){
+  if(!name)return null;
+  const n=name.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^A-Z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
+  const aliases={'LANUS':'LANUS','JOSE C PAZ':'JOSE C. PAZ','9 DE JULIO':'NUEVE DE JULIO','25 DE MAYO':'VEINTICINCO DE MAYO','ADOLFO G CHAVES':'ADOLFO GONZALES CHAVES','GENERAL JUAN MADARIAGA':'GENERAL MADARIAGA','MORON':'MORON','CANUELAS':'CAÑUELAS','BENITO JUAREZ':'BENITO JUAREZ'};
+  const key=aliases[n]||n;
+  return Object.keys(FINANZAS).find(k=>k===key)||Object.keys(FINANZAS).find(k=>k.replace(/[^A-Z0-9]/g,'')===key.replace(/[^A-Z0-9]/g,''))||null;
+}
+function getFin(name){const k=lookupFin(name);return k?FINANZAS[k]:null;}
+const HITOS={
+  '25 DE MAYO':{intendente:'Ramiro Egüen'},
+  '9 DE JULIO':{intendente:'María José Gentile'},
+  'ADOLFO ALSINA':{intendente:'Javier Andrés'},
+  'ADOLFO G CHAVES':{intendente:'Lucía Gómez'},
+  'ALBERTI':{intendente:'Germán Lago'},
+  'ALMIRANTE BROWN':{intendente:'Mariano Cascallares'},
+  'ARRECIFES':{intendente:'Juan Fernando Bouvier'},
+  'AVELLANEDA':{intendente:'Jorge Ferraresi'},
+  'AYACUCHO':{intendente:'Emilio Cordonnier'},
+  'AZUL':{intendente:'Nelson Sombra'},
+  'BAHIA BLANCA':{intendente:'Federico Susbielles'},
+  'BALCARCE':{intendente:'Esteban Reino'},
+  'BARADERO':{intendente:'Esteban Sanzio'},
+  'BENITO JUAREZ':{intendente:'Julio Marini'},
+  'BERAZATEGUI':{intendente:'Carlos Balor'},
+  'BERISSO':{intendente:'Fabián Cagliardi'},
+  'BOLIVAR':{intendente:'Eduardo "Bali" Bucca'},
+  'BRAGADO':{intendente:'Sergio Juan Barenghi'},
+  'BRANDSEN':{intendente:'Fernando Raitelli'},
+  'CAMPANA':{intendente:'Sebastián Abella'},
+  'CANUELAS':{intendente:'Marisa Fassi'},
+  'CAPITAN SARMIENO':{intendente:''},
+  'CAPITAN SARMIENTO':{intendente:'Fernanda Astorino'},
+  'CARLOS CASARES':{intendente:'Daniel Stadnik'},
+  'CARLOS TEJEDOR':{intendente:'María Celia Gianini'},
+  'CARMEN DE ARECO':{intendente:'Iván Villagrán'},
+  'CASTELLI':{intendente:'Francisco Echarren'},
+  'CHACABUCO':{intendente:'Darío Golía'},
+  'CHASCOMUS':{intendente:'Javier Gastón'},
+  'CHIVILCOY':{intendente:'Guillermo Britos'},
+  'COLON':{intendente:'Waldemar Giordano'},
+  'CORONEL DORREGO':{intendente:'Juan Carlos Chalde'},
+  'CORONEL PRINGLES':{intendente:'Lisandro Matzkin'},
+  'CORONEL ROSALES':{intendente:'Rodrigo Aristimuño'},
+  'CORONEL SUAREZ':{intendente:'Ricardo Moccero'},
+  'DAIREAUX':{intendente:'Alejandro Acerbo'},
+  'DOLORES':{intendente:'Juan Pablo García'},
+  'ENSENADA':{intendente:'Mario Secco'},
+  'ESCOBAR':{intendente:'Ariel Sujarchuk'},
+  'ESTEBAN ECHEVERRIA':{intendente:'Fernando Gray'},
+  'EXALTACION DE LA CRUZ':{intendente:'Diego Nanni'},
+  'EZEIZA':{intendente:'Gastón A. Granados'},
+  'FLORENCIO VARELA':{intendente:'Andrés Watson'},
+  'FLORENTINO AMEGHINO':{intendente:'Nahuel Mittelbach'},
+  'GENERAL ALVARADO':{intendente:'Sebastián Ianantuony'},
+  'GENERAL ALVEAR':{intendente:'Ramón Capra'},
+  'GENERAL ARENALES':{intendente:'Érica Revilla'},
+  'GENERAL BELGRANO':{intendente:'Osvaldo Dinápoli'},
+  'GENERAL GUIDO':{intendente:'Carlos Rocha'},
+  'GENERAL JUAN MADARIAGA':{intendente:'Carlos Santoro'},
+  'GENERAL LA MADRID':{intendente:'Martín Randazzo'},
+  'GENERAL LAS HERAS':{intendente:'Javier Osuna'},
+  'GENERAL LAVALLE':{intendente:'Nahuel Guardia'},
+  'GENERAL MADARIAGA':{intendente:''},
+  'GENERAL MADARIGA':{intendente:''},
+  'GENERAL PAZ':{intendente:'Juan Manuel Álvarez'},
+  'GENERAL PINTO':{intendente:'Alfredo Zavatarelli'},
+  'GENERAL PUEYRREDON':{intendente:'Guillermo Montenegro'},
+  'GENERAL RODRIGUEZ':{intendente:'Mauro García'},
+  'GENERAL SAN MARTIN':{intendente:'Fernando Moreira'},
+  'GENERAL VIAMONTE':{intendente:'Franco Flexas'},
+  'GENERAL VILLEGAS':{intendente:'Gilberto Oscar Alegre'},
+  'GUAMINI':{intendente:'José Nobre Ferreira'},
+  'HIPOLITO YRIGOYEN':{intendente:'Luis Pugnanoli'},
+  'HURLINGHAM':{intendente:'Damián Gabriel Selci'},
+  'ITUZAINGO':{intendente:'Pablo Descalzo'},
+  'JOSE C PAZ':{intendente:'Mario Ishii'},
+  'JUNIN':{intendente:'Pablo Petrecca'},
+  'LA COSTA':{intendente:'Juan de Jesús'},
+  'LA MATANZA':{intendente:'Fernando Espinoza'},
+  'LA PLATA':{intendente:'Julio Alak'},
+  'LANUS':{intendente:'Julián Álvarez'},
+  'LAPRIDA':{intendente:'Alfredo Fisher'},
+  'LAS FLORES':{intendente:'Fabian Blanstein (interino) / Alberto Gelené (hoy en "Comite de Cuencas" del Min. Infraestructura PBA)'},
+  'LEANDRO N ALEM':{intendente:'Carlos Ferraris'},
+  'LEZAMA':{intendente:'Arnaldo Harispe'},
+  'LINCOLN':{intendente:'Salvador Serenal'},
+  'LOBERIA':{intendente:'Pablo Javier Barrena'},
+  'LOBOS':{intendente:'Jorge Etcheverry'},
+  'LOMAS DE ZAMORA':{intendente:'Federico Otermín'},
+  'LUJAN':{intendente:'Leonardo Boto'},
+  'MAGDALENA':{intendente:'Lisandro Hourcade'},
+  'MAIPU':{intendente:'Lorena Otermin (Interina) / Matías Rappallini (licencia)'},
+  'MALVINAS ARGENTINAS':{intendente:'Leonardo Nardini'},
+  'MAR CHIQUITA':{intendente:'Walter Wischnivetzky'},
+  'MARCOS PAZ':{intendente:'Ricardo Curutchet'},
+  'MERCEDES':{intendente:'Juan Ustarroz'},
+  'MERLO':{intendente:'Gustavo Menéndez'},
+  'MONTE':{intendente:'José Castro'},
+  'MONTE HERMOSO':{intendente:'Hernán Arranz'},
+  'MORENO':{intendente:'Mariel Fernández'},
+  'MORON':{intendente:'Lucas Ghi'},
+  'NAVARRO':{intendente:'Facundo Diz'},
+  'NECOCHEA':{intendente:'Arturo Rojas'},
+  'NUEVE DE JULIO':{intendente:''},
+  'OLAVARRIA':{intendente:'Maximiliano Wesner'},
+  'PATAGONES':{intendente:'Ricardo Marino'},
+  'PEHUAJO':{intendente:'Pablo Zurro'},
+  'PELLEGRINI':{intendente:'Sofía Magdalena Gambier'},
+  'PERGAMINO':{intendente:'Javier Martínez'},
+  'PILA':{intendente:'Sebastián Walker'},
+  'PILAR':{intendente:''},
+  'PINAMAR':{intendente:'Juan Manuel Ibarguren'},
+  'PRESIDENTE PERON':{intendente:'Blanca Cantero'},
+  'PUAN':{intendente:'Diego Alejandro Reyes'},
+  'PUNTA INDIO':{intendente:'David Angueira'},
+  'QUILMES':{intendente:'Eva Mieri (interina) / Mayra Mendoza'},
+  'RAMALLO':{intendente:'Mauro Poletti'},
+  'RAUCH':{intendente:'Maximiliano Suescun'},
+  'RIVADAVIA':{intendente:'Juan Alberto Martínez'},
+  'ROJAS':{intendente:'Román Bouvier'},
+  'ROQUE PEREZ':{intendente:'Maximiliano Sciaini'},
+  'SAAVEDRA':{intendente:'Matías Nebot'},
+  'SALADILLO':{intendente:'José Luis Salomón'},
+  'SALLIQUELO':{intendente:'Ariel Horacio Succurro'},
+  'SALTO':{intendente:'Ricardo Alessandro'},
+  'SAN ANDRES DE GILES':{intendente:'Miguel Gesualdi'},
+  'SAN ANTONIO DE ARECO':{intendente:'Francisco Ratto'},
+  'SAN CAYETANO':{intendente:'Miguel Ángel Gargaglione'},
+  'SAN FERNANDO':{intendente:'Juan Francisco Andreotti'},
+  'SAN ISIDRO':{intendente:'Ramón Lanús'},
+  'SAN MIGUEL':{intendente:'Jaime Méndez'},
+  'SAN NICOLAS':{intendente:'Ismael Santiago Passaglia'},
+  'SAN PEDRO':{intendente:'Cecilio Salazar'},
+  'SAN VICENTE':{intendente:'Nicolás Mantegazza'},
+  'SUIPACHA':{intendente:'Juan Luis Mancini'},
+  'TANDIL':{intendente:'Miguel Ángel Lunghi'},
+  'TAPALQUE':{intendente:'Gustavo Cocconi'},
+  'TIGRE':{intendente:'Julio Zamora'},
+  'TORDILLO':{intendente:'Héctor Olivera'},
+  'TORNQUIST':{intendente:'Estefania Bordoni (interina) / Sergio Bordoni (Directorio Bco Provincia)'},
+  'TRENQUE LAUQUEN':{intendente:'Francisco Recoulat'},
+  'TRES ARROYOS':{intendente:'Pablo Humberto Garate'},
+  'TRES DE FEBRERO':{intendente:'Diego Valenzuela'},
+  'TRES LOMAS':{intendente:'Luciano O. Spinolo Sayago'},
+  'VICENTE LOPEZ':{intendente:'Soledad Martínez'},
+  'VILLA GESELL':{intendente:'Gustavo Barrera'},
+  'VILLARINO':{intendente:'Carlos Bevilacqua'},
+  'ZARATE':{intendente:'Marcelo Matzkin'}
+};
+const PC={UxP:'badge-pj',JxC:'badge-jxc',LLA:'badge-lla',Vec:'badge-vec',Hechos:'badge-fi'};
+const WC={PJ:'badge-pj',JxC:'badge-jxc',LLA:'badge-lla',Vec:'badge-vec',FI:'badge-fi'};
+function fmt(n){return n>=1e6?(n/1e6).toFixed(1)+'M':n>=1000?(n/1000).toFixed(0)+'K':n;}
+function normalize(s){return s.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Z0-9 ]/g,' ').trim();}
+function lookupE(name){
+  const k=normalize(name);
+  if(ELEC[k])return ELEC[k];
+  for(const ek of Object.keys(ELEC)){
+    const n=normalize(ek);
+    if(n===k||n.includes(k)||k.includes(n))return ELEC[ek];
+  }
+  return null;
+}
+function lookupHitos(name){
+  if(!name)return null;
+  const k=normalize(name);
+  if(HITOS[k])return HITOS[k];
+  for(const hk of Object.keys(HITOS)){
+    const n=normalize(hk);
+    if(n===k||n.includes(k)||k.includes(n))return HITOS[hk];
+  }
+  return null;
+}
+
+
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tnav').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  const map={'dashboard':'Provincia','mapa':'Mapa','electoral':'Electoral','finanzas':'Finanzas','municipios':'Municipios'};
+  document.querySelectorAll('.tnav').forEach(b=>{if(b.textContent===map[id])b.classList.add('active');});
+}
+
+// ── UTILS ──
+function pc(p){return p==='UxP'?'uxp':p==='JxC'?'jxc':p==='LLA'?'lla':p==='Vec'?'vec':'hechos';}
+function popStr(n){return n>=1e6?(n/1e6).toFixed(1)+'M':n>=1000?Math.round(n/1000)+'k':n;}
+
+// ── DASHBOARD ──
+const SECS=['1ª','2ª','3ª','4ª','5ª','6ª','7ª','8ª'];
+const SEC_LABELS={'1ª':'GBA Noroeste','2ª':'Norte PBA','3ª':'GBA Sur','4ª':'Centro','5ª':'Litoral Atlántico','6ª':'Sudoeste','7ª':'Centro-Sur','8ª':'La Plata'};
+
+// ─ UTILS ─
+function popStr(n){return n>=1e6?(n/1e6).toFixed(1)+'M':n>=1000?Math.round(n/1000)+'k':String(n);}
+function pc(p){return p==='UxP'?'uxp':p==='JxC'?'jxc':p==='LLA'?'lla':p==='Vec'?'vec':'hechos';}
+function bc(p){return p==='UxP'?'b-pj':p==='JxC'?'b-jxc':p==='LLA'?'b-lla':p==='Vec'?'b-vec':'b-fi';}
+function pct(v){return v!=null?v.toFixed(1)+'%':'—';}
+
+// ─ GLOBAL LOOKUP MAPS (usados en filtros) ─
+const CL_NM=CL_N; // alias global de CL_N definido en el bloque de datos
+const WBC={PJ:'b-pj',JxC:'b-jxc',LLA:'b-lla',Vec:'b-vec'};
+
+// ─ NAV ─
+function showTab(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tnav').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  const labels={pba:'PBA',clusters:'Clusters Productivos',electoral:'Circuitos Electorales',finanzas:'Finanzas'};
+  document.querySelectorAll('.tnav').forEach(b=>{if(b.textContent.trim()===labels[id])b.classList.add('active');});
+}
+
+// ─ OPEN/CLOSE tarjeta ─
+function toggleCard(tile, expBoxId, title, meta, cards, openKey){
+  const box = document.getElementById(expBoxId);
+  if(tile._openKey === openKey){
+    tile._openKey = null;
+    tile.classList.remove('open');
+    box.classList.remove('show');
+    box.innerHTML='';
+    return;
+  }
+  document.querySelectorAll('.card-t').forEach(t=>{t.classList.remove('open');t._openKey=null;});
+  tile._openKey = openKey;
+  tile.classList.add('open');
+  box.innerHTML=`<div class="exp-hdr">
+    <div class="exp-hdr-text"><div class="exp-title">${title}</div><div class="exp-meta">${meta}</div></div>
+    <button class="exp-close" onclick="closeCard(this,'${expBoxId}')">Cerrar ✕</button>
+  </div><div class="mun-grid">${cards}</div>`;
+  box.classList.add('show');
+  // Insertar expand box justo después del tile dentro del mismo grid
+  const grid = tile.parentNode;
+  grid.parentNode.insertBefore(box, grid.nextSibling);
+  box.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function closeCard(btn, expBoxId){
+  const box=document.getElementById(expBoxId);
+  box.classList.remove('show');box.innerHTML='';
+  document.querySelectorAll('.card-t').forEach(t=>{t.classList.remove('open');t._openKey=null;});
+}
+
+// Mapa de fichas disponibles por municipio
+const FICHAS={
+  'AYACUCHO':       {f:'Ficha_Campana_AYACUCHO.html',     n:'Ayacucho_Narrativa.html'},
+  'BAHIA BLANCA':   {f:'Ficha_Campana_BAHIA_BLANCA.html', n:'BahiaBlanca_Narrativa.html'},
+  'BRANDSEN':       {f:'Ficha_Campana_BRANDSEN.html',     n:'Brandsen_Narrativa.html'},
+  'CAÑUELAS':       {f:'Ficha_Campana_CAÑUELAS.html',     n:'Cañuelas_Narrativa.html'},
+  'CORONEL SUAREZ': {f:'Ficha_Campana_CORONEL_SUAREZ.html',n:'CoronelSuarez_Narrativa.html'},
+  'DAIREAUX':       {f:'Ficha_Campana_DAIREAUX.html',     n:'Daireaux_Narrativa.html'},
+  'EZEIZA':         {f:'Ficha_Campana_EZEIZA.html',       n:'Ezeiza_Narrativa.html'},
+  'GENERAL BELGRANO':{f:'Ficha_Campana_GENERAL_BELGRANO.html',n:'GeneralBelgrano_Narrativa.html'},
+  'GENERAL PAZ':    {f:'Ficha_Campana_GENERAL_PAZ.html',  n:'GeneralPaz_Narrativa.html'},
+  'GENERAL VILLEGAS':{f:'Ficha_Campana_GENERALVILLEGAS.html',n:'GeneralVillegas_Narrativa.html'},
+  'GUAMINI':        {f:'Ficha_Campana_GUAMINI.html',      n:'Guamini_Narrativa.html'},
+  'LA MATANZA':     {f:'Ficha_Campana_LA_MATANZA.html',   n:'LaMatanza_Narrativa.html'},
+  'LOBOS':          {f:'Ficha_Campana_LOBOS.html',        n:'Lobos_Narrativa.html'},
+  'MONTE':          {f:'Ficha_Campana_MONTE.html',        n:'Monte_Narrativa.html'},
+  'PERGAMINO':      {f:'Ficha_Campana_PERGAMINO.html',    n:'Pergamino_Narrativa.html'},
+  'RAUCH':          {f:'Ficha_Campana_RAUCH.html',        n:'Rauch_Narrativa.html'},
+  'SALADILLO':      {f:'Ficha_Campana_SALADILLO.html',    n:'Saladillo_Narrativa.html'},
+  'SAN NICOLAS':    {f:'Ficha_Campana_SAN_NICOLAS.html',  n:'SAN_NICOLAS_narrativa.html'},
+  'TAPALQUE':       {f:'Ficha_Campana_TAPALQUE.html',     n:'Tapalque_Narrativa.html'},
+  'VILLARINO':      {f:'Ficha_Campana_VILLARINO.html',    n:'Villarino_Narrativa.html'},
+};
+
+function munCard(m, extra){
+  const fin=getFin(m.m);
+  const ag=fin?fin.agentes_x1000_hab:null;
+  const cls=pc(m.p);
+  const fdata=FICHAS[m.m.toUpperCase()];
+  const fichaLinks=fdata?`<div class="mc-fichas">
+    <a class="mc-ficha-btn f-main" href="${fdata.f}" target="_blank">📋 Ficha</a>
+    ${fdata.n?`<a class="mc-ficha-btn f-narr" href="${fdata.n}" target="_blank">📝 Narrativa</a>`:''}
+  </div>`:'';
+  return `<div class="mc ${cls}">
+    <div class="mc-name">${m.m}</div>
+    <div class="mc-pop">${popStr(m.pop)} hab</div>
+    ${m.clave?`<div class="mc-cat">${m.clave}</div>`:''}
+    ${extra||''}
+    ${fichaLinks}
+    <div class="mc-foot"><span class="mc-badge ${cls}">${m.p}</span>${ag!=null?`<span class="mc-ag">${ag}/1000h</span>`:''}</div>
+  </div>`;
+}
+
+// ══════════════════════════════════
+// TAB 1: PBA
+// ══════════════════════════════════
+
+const SEC_NM={'1ª':'GBA Noroeste','2ª':'Norte PBA','3ª':'GBA Sur','4ª':'Centro','5ª':'Litoral Atlántico','6ª':'Sudoeste','7ª':'Centro-Sur','8ª':'La Plata'};
+
+function buildPba(){
+  const pC={UxP:0,JxC:0,LLA:0,Vec:0,Otro:0};
+  let totPop=0;
+  MUN.forEach(m=>{totPop+=m.pop;(pC[m.p]!==undefined?pC[m.p]++:pC.Otro++);});
+  document.getElementById('pba-kpis').innerHTML=`
+    <div class="kpi"><div class="val">135</div><div class="lbl">Municipios</div></div>
+    <div class="kpi"><div class="val">${popStr(totPop)}</div><div class="lbl">Habitantes</div></div>
+    <div class="kpi blue"><div class="val">${pC.UxP}</div><div class="lbl">UxP / PJ</div></div>
+    <div class="kpi yellow"><div class="val">${pC.JxC}</div><div class="lbl">JxC</div></div>
+    <div class="kpi red"><div class="val">${pC.LLA}</div><div class="lbl">LLA</div></div>`;
+
+  const grid=document.getElementById('pba-grid');
+  grid.innerHTML='';
+  SECS.forEach(sec=>{
+    const muns=MUN.filter(m=>m.sec===sec).sort((a,b)=>b.pop-a.pop);
+    if(!muns.length)return;
+    const tp=muns.reduce((a,m)=>a+m.pop,0);
+    const pCnt={};muns.forEach(m=>{pCnt[m.p]=(pCnt[m.p]||0)+1;});
+    const tot=muns.length;
+    const dom=Object.entries(pCnt).sort((a,b)=>b[1]-a[1])[0][0];
+    const uxpPct=Math.round((pCnt.UxP||0)/tot*100);
+    const jxcPct=Math.round((pCnt.JxC||0)/tot*100);
+    const llaPct=Math.round((pCnt.LLA||0)/tot*100);
+    const vecPct=Math.max(0,100-uxpPct-jxcPct-llaPct);
+    const tile=document.createElement('div');
+    tile.className='card-t';
+    tile.innerHTML=`
+      <div class="ct-eyebrow">Sección ${sec}</div>
+      <div class="ct-title">${SEC_NM[sec]||sec}</div>
+      <div class="pbar">
+        ${uxpPct?`<div class="pb" style="background:var(--pj);width:${uxpPct}%"></div>`:''}
+        ${jxcPct?`<div class="pb" style="background:var(--jxc);width:${jxcPct}%"></div>`:''}
+        ${llaPct?`<div class="pb" style="background:var(--lla);width:${llaPct}%"></div>`:''}
+        ${vecPct?`<div class="pb" style="background:var(--vec);width:${vecPct}%"></div>`:''}
+      </div>
+      <div class="ct-val">${popStr(tp)}</div>
+      <div class="ct-sub">${tot} municipios · ${dom} dominante</div>
+      <div class="ct-chevron">▼</div>`;
+    const cards=muns.map(m=>munCard(m,'')).join('');
+    tile.onclick=()=>toggleCard(tile,'pba-exp',`Sección ${sec} · ${SEC_NM[sec]||''}`,`${tot} municipios · ${popStr(tp)} hab`,cards,sec);
+    grid.appendChild(tile);
+  });
+  filterPbaTable();
+}
+
+function filterPbaTable(){
+  const q=(document.getElementById('pba-search').value||'').toLowerCase();
+  const sec=document.getElementById('pba-sec').value;
+  const par=document.getElementById('pba-partido').value;
+  const rows=MUN.filter(m=>{
+    if(q&&!m.m.toLowerCase().includes(q))return false;
+    if(sec&&m.sec!==sec)return false;
+    if(par&&m.p!==par)return false;
+    return true;
+  });
+  document.getElementById('pba-count').textContent=rows.length+' municipios';
+  const CL_NM={conurbano:'Conurbano',ciudades:'Ciudades Interm.',corredor:'Corredor Ind.',interior:'Interior Agrop.',costero:'Litoral Atlántico',salado:'Cuenca del Salado',sur:'Sur Bonaerense'};
+  document.getElementById('pba-tbody').innerHTML=rows.map(m=>{
+    const h=lookupHitos(m.m);
+    const fin=getFin(m.m);
+    const ag=fin?fin.agentes_x1000_hab:null;
+    const fd=FICHAS[m.m.toUpperCase()];
+    const flinks=fd?`<a class="mc-ficha-btn f-main" href="${fd.f}" target="_blank">📋</a>${fd.n?`<a class="mc-ficha-btn f-narr" href="${fd.n}" target="_blank">📝</a>`:''}`:' — ';
+    return `<tr>
+      <td><strong>${m.m}</strong></td>
+      <td><span class="badge b-sec">${m.sec}</span></td>
+      <td>${CL_NM[m.cl]||m.cl}</td>
+      <td><span class="badge ${bc(m.p)}">${m.p}</span></td>
+      <td style="font-size:12px;">${h?.intendente||'—'}</td>
+      <td>${popStr(m.pop)}</td>
+      <td style="font-size:11px;color:var(--text2);">${m.clave||'—'}</td>
+      <td>${ag!=null?ag+'/1000h':'—'}</td>
+      <td style="white-space:nowrap;">${flinks}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ══════════════════════════════════
+// TAB 2: CLUSTERS PRODUCTIVOS
+// ══════════════════════════════════
+const CLUSTERS=[
+  {id:'conurbano',name:'Conurbano Bonaerense',color:'var(--pj)',
+   desc:'Gran Buenos Aires · Alta densidad · Manufactura, servicios y economía popular · 30 municipios',
+   tags:['Industria','Economía popular','Logística','Salud pública']},
+  {id:'ciudades',name:'Ciudades Intermedias',color:'#7C3AED',
+   desc:'Centros regionales con universidades, servicios e industria · Nodos de articulación territorial',
+   tags:['Universidad','Puerto','Petroquímica','Turismo']},
+  {id:'corredor',name:'Corredor Industrial Norte',color:'#D97706',
+   desc:'Eje Ruta 9 y Río Paraná · Industria pesada, siderurgia, automotriz y agroexportación',
+   tags:['Acero','Automotriz','Semillas','Puerto fluvial']},
+  {id:'interior',name:'Interior Agropecuario',color:'#059669',
+   desc:'Pampa húmeda profunda · Producción agrícola-ganadera e identidad productiva local fuerte',
+   tags:['Soja','Maíz','Ganadería','Lechería','Semillas']},
+  {id:'costero',name:'Litoral Atlántico',color:'#0EA5E9',
+   desc:'Costa marítima · Turismo de temporada, pesca, desarrollo inmobiliario y servicios estacionales',
+   tags:['Turismo','Pesca','Veraneo','Servicios']},
+  {id:'salado',name:'Cuenca del Salado',color:'#64748B',
+   desc:'Ganadería extensiva de cría · Defensa hídrica · Bajo densidad · Estado provincial como actor central',
+   tags:['Cría vacuna','Hídrica','Baja densidad']},
+  {id:'sur',name:'Sur Bonaerense',color:'#B45309',
+   desc:'Zona mixta agropecuaria con influencia patagónica · Energía eólica, minería y producción cerealera',
+   tags:['Energía eólica','Minería','Cereales','Pesca artesanal']},
+];
+
+function buildClusters(){
+  const grid=document.getElementById('cl-grid');
+  grid.innerHTML='';
+  CLUSTERS.forEach(cl=>{
+    const muns=MUN.filter(m=>m.cl===cl.id).sort((a,b)=>b.pop-a.pop);
+    const tp=muns.reduce((a,m)=>a+m.pop,0);
+    const pCnt={};muns.forEach(m=>{pCnt[m.p]=(pCnt[m.p]||0)+1;});
+    const tot=muns.length;
+    const uxpPct=Math.round((pCnt.UxP||0)/tot*100);
+    const jxcPct=Math.round((pCnt.JxC||0)/tot*100);
+    const llaPct=Math.round((pCnt.LLA||0)/tot*100);
+    const vecPct=Math.max(0,100-uxpPct-jxcPct-llaPct);
+    const tile=document.createElement('div');
+    tile.className='card-t';
+    tile.innerHTML=`
+      <div class="ct-eyebrow" style="color:${cl.color}">${tot} municipios</div>
+      <div class="ct-title">${cl.name}</div>
+      <div class="pbar">
+        ${uxpPct?`<div class="pb" style="background:var(--pj);width:${uxpPct}%"></div>`:''}
+        ${jxcPct?`<div class="pb" style="background:var(--jxc);width:${jxcPct}%"></div>`:''}
+        ${llaPct?`<div class="pb" style="background:var(--lla);width:${llaPct}%"></div>`:''}
+        ${vecPct?`<div class="pb" style="background:var(--vec);width:${vecPct}%"></div>`:''}
+      </div>
+      <div class="ct-val">${popStr(tp)}</div>
+      <div class="ct-sub" style="margin-bottom:6px;">${cl.desc}</div>
+      <div class="ct-tags">${cl.tags.map(t=>`<span class="ct-tag">${t}</span>`).join('')}</div>
+      <div class="ct-chevron">▼</div>`;
+    const cards=muns.map(m=>munCard(m,'')).join('');
+    tile.onclick=()=>toggleCard(tile,'cl-exp',cl.name,`${tot} municipios · ${popStr(tp)} hab`,cards,cl.id);
+    grid.appendChild(tile);
+  });
+  filterClTable();
+}
+
+function filterClTable(){
+  const q=(document.getElementById('cl-search').value||'').toLowerCase();
+  const cl=document.getElementById('cl-cluster').value;
+  const par=document.getElementById('cl-partido').value;
+
+  const rows=MUN.filter(m=>{
+    if(q&&!m.m.toLowerCase().includes(q))return false;
+    if(cl&&m.cl!==cl)return false;
+    if(par&&m.p!==par)return false;
+    return true;
+  });
+  document.getElementById('cl-count').textContent=rows.length+' municipios';
+  document.getElementById('cl-tbody').innerHTML=rows.map(m=>`<tr>
+    <td><strong>${m.m}</strong></td>
+    <td>${CL_NM[m.cl]||m.cl}</td>
+    <td><span class="badge b-sec">${m.sec}</span></td>
+    <td><span class="badge ${bc(m.p)}">${m.p}</span></td>
+    <td>${popStr(m.pop)}</td>
+    <td style="font-size:11px;color:var(--text2);">${m.clave||'—'}</td>
+  </tr>`).join('');
+}
+
+// ══════════════════════════════════
+// TAB 3: CIRCUITOS ELECTORALES
+// ══════════════════════════════════
+function buildElectoral(){
+  const grid=document.getElementById('el-grid');
+  grid.innerHTML='';
+  SECS.forEach(sec=>{
+    const muns=MUN.filter(m=>m.sec===sec).sort((a,b)=>b.pop-a.pop);
+    if(!muns.length)return;
+    // Calcular promedios electorales de la sección
+    let pjSum=0,jxcSum=0,llaSum=0,cnt=0;
+    let wins={PJ:0,JxC:0,LLA:0,Vec:0};
+    muns.forEach(m=>{
+      const e=lookupE(m.m);
+      if(e?.a){pjSum+=e.a.j||0;jxcSum+=e.a.x||0;llaSum+=e.a.l||0;cnt++;wins[e.a.w]=(wins[e.a.w]||0)+1;}
+    });
+    const pjAvg=cnt?pjSum/cnt:0, jxcAvg=cnt?jxcSum/cnt:0, llaAvg=cnt?llaSum/cnt:0;
+    // 2025 tendencia
+    let pj25sum=0,lla25sum=0,cnt25=0;
+    muns.forEach(m=>{const e=lookupE(m.m);if(e?.c){pj25sum+=e.c.j||0;lla25sum+=e.c.l||0;cnt25++;}});
+    const pj25=cnt25?pj25sum/cnt25:0, lla25=cnt25?lla25sum/cnt25:0;
+    const domW=Object.entries(wins).sort((a,b)=>b[1]-a[1])[0][0];
+    const tile=document.createElement('div');
+    tile.className='card-t';
+    const pbarW=pjAvg+jxcAvg+llaAvg;
+    const uxp_w=pbarW?Math.round(pjAvg/pbarW*100):0;
+    const jxc_w=pbarW?Math.round(jxcAvg/pbarW*100):0;
+    const lla_w=Math.max(0,100-uxp_w-jxc_w);
+    tile.innerHTML=`
+      <div class="ct-eyebrow">Sección ${sec}</div>
+      <div class="ct-title">${SEC_NM[sec]||sec}</div>
+      <div class="pbar">
+        ${uxp_w?`<div class="pb" style="background:var(--pj);width:${uxp_w}%"></div>`:''}
+        ${jxc_w?`<div class="pb" style="background:var(--jxc);width:${jxc_w}%"></div>`:''}
+        ${lla_w?`<div class="pb" style="background:var(--lla);width:${lla_w}%"></div>`:''}
+      </div>
+      <div class="ct-sub" style="margin-bottom:6px;">
+        <span style="color:var(--pj);font-weight:600;">${pjAvg.toFixed(0)}%</span> PJ ·
+        <span style="color:var(--jxc);font-weight:600;">${jxcAvg.toFixed(0)}%</span> JxC ·
+        <span style="color:var(--lla);font-weight:600;">${llaAvg.toFixed(0)}%</span> LLA
+        <span style="color:var(--text3);margin-left:4px;">prom. 2023</span>
+      </div>
+      <div class="ct-sub">
+        2025: PJ <span style="font-weight:600;">${pj25.toFixed(0)}%</span> · LLA <span style="font-weight:600;">${lla25.toFixed(0)}%</span>
+      </div>
+      <div class="ct-sub" style="margin-top:4px;">${muns.length} municipios · ${domW} dominó en ${wins[domW]||0}</div>
+      <div class="ct-chevron">▼</div>`;
+    const WBC={PJ:'b-pj',JxC:'b-jxc',LLA:'b-lla',Vec:'b-vec'};
+    const cards=muns.map(m=>{
+      const e=lookupE(m.m);
+      const a=e?.a, b=e?.c;
+      const extra=a?`<div style="font-size:10px;color:var(--text2);margin-top:3px;">
+        2023: <b>${a.j}%</b> PJ · <b>${a.x||'—'}%</b> JxC · <b>${a.l}%</b> LLA &nbsp;→ <span class="badge ${WBC[a.w]||'b-fi'}" style="font-size:9px;padding:1px 5px;">${a.w}</span>
+        ${b?`<br>2025: <b>${b.j}%</b> PJ · <b>${b.l}%</b> LLA`:''}
+      </div>`:'';
+      return munCard(m,extra);
+    }).join('');
+    tile.onclick=()=>toggleCard(tile,'el-exp',`Sección ${sec} · ${SEC_NM[sec]||''}`,`${muns.length} municipios · resultados 2023–2025`,cards,sec);
+    grid.appendChild(tile);
+  });
+  filterElTable();
+}
+
+function filterElTable(){
+  const q=(document.getElementById('el-search').value||'').toLowerCase();
+  const sec=document.getElementById('el-sec').value;
+  const gan=document.getElementById('el-ganador').value;
+
+  const rows=MUN.filter(m=>{
+    if(q&&!m.m.toLowerCase().includes(q))return false;
+    if(sec&&m.sec!==sec)return false;
+    const e=lookupE(m.m);
+    if(gan&&(!e?.a||e.a.w!==gan))return false;
+    return true;
+  });
+  document.getElementById('el-count').textContent=rows.length+' municipios';
+  document.getElementById('el-tbody').innerHTML=rows.map(m=>{
+    const e=lookupE(m.m);
+    const a=e?.a,b=e?.b,c=e?.c;
+    return `<tr>
+      <td><strong>${m.m}</strong></td>
+      <td><span class="badge b-sec">${m.sec}</span></td>
+      <td><span class="badge ${bc(m.p)}">${m.p}</span></td>
+      <td>${a?.j!=null?a.j+'%':'—'}</td><td>${a?.x!=null?a.x+'%':'—'}</td><td>${a?.l!=null?a.l+'%':'—'}</td>
+      <td>${a?.w?`<span class="badge ${WBC[a.w]||'b-fi'}">${a.w}</span>`:'—'}</td>
+      <td>${b?.j!=null?b.j+'%':'—'}</td><td>${b?.l!=null?b.l+'%':'—'}</td>
+      <td>${c?.j!=null?c.j+'%':'—'}</td><td>${c?.l!=null?c.l+'%':'—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ══════════════════════════════════
+// TAB 4: FINANZAS
+// ══════════════════════════════════
+function buildFinanzas(){
+  const fins=MUN.map(m=>getFin(m.m)).filter(Boolean);
+  const totRes=fins.reduce((a,f)=>a+(f.recursos_2025_m||0),0);
+  const avgAut=fins.reduce((a,f)=>a+(f.autonomia_2025||0),0)/fins.length;
+  const deficit=fins.filter(f=>(f.resultado_financiero_2025||0)<0).length;
+  const avgVarT=fins.filter(f=>f.var_transferencias_2026_pct!=null).reduce((a,f)=>a+(f.var_transferencias_2026_pct||0),0)/fins.filter(f=>f.var_transferencias_2026_pct!=null).length;
+  const fmt3=n=>n>=1e6?(n/1e6).toFixed(1)+'B':n>=1e3?(n/1e3).toFixed(0)+'M':n.toFixed(0);
+  document.getElementById('fin-kpis').innerHTML=`
+    <div class="fin-card"><div class="fval">$${fmt3(totRes)}</div><div class="flbl">Recursos totales 2025</div><div class="fsub">Suma de recursos de los 129 municipios con datos</div></div>
+    <div class="fin-card"><div class="fval">${avgAut.toFixed(0)}%</div><div class="flbl">Autonomía fiscal promedio</div><div class="fsub">% de recursos propios vs. transferencias nacionales</div></div>
+    <div class="fin-card" style="border-color:var(--lla-b)"><div class="fval" style="color:var(--lla)">${deficit}</div><div class="flbl">Con déficit financiero</div><div class="fsub">Municipios con resultado financiero negativo en 2025</div></div>
+    <div class="fin-card" style="border-color:var(--vec-b)"><div class="fval" style="color:var(--vec)">+${avgVarT.toFixed(0)}%</div><div class="flbl">Aumento transf. 2026</div><div class="fsub">Incremento promedio de transferencias provinciales/nacionales</div></div>`;
+  filterFinTable();
+}
+
+function filterFinTable(){
+  const q=(document.getElementById('fin-search').value||'').toLowerCase();
+  const sec=document.getElementById('fin-sec').value;
+  const sortBy=document.getElementById('fin-sort').value;
+  let rows=MUN.filter(m=>{
+    if(q&&!m.m.toLowerCase().includes(q))return false;
+    if(sec&&m.sec!==sec)return false;
+    return true;
+  }).map(m=>({m,f:getFin(m.m)})).filter(r=>r.f);
+  if(sortBy==='auto')rows.sort((a,b)=>(b.f.autonomia_2025||0)-(a.f.autonomia_2025||0));
+  else if(sortBy==='deuda')rows.sort((a,b)=>(b.f.deuda_flotante_pct||0)-(a.f.deuda_flotante_pct||0));
+  else if(sortBy==='nomina')rows.sort((a,b)=>(b.f.agentes_x1000_hab||0)-(a.f.agentes_x1000_hab||0));
+  else if(sortBy==='transf')rows.sort((a,b)=>(b.f.var_transferencias_2026_pct||0)-(a.f.var_transferencias_2026_pct||0));
+  else rows.sort((a,b)=>a.m.m.localeCompare(b.m.m));
+  document.getElementById('fin-count').textContent=rows.length+' municipios';
+  const fmtM=v=>v!=null?'$'+Math.round(v).toLocaleString('es-AR')+'M':'—';
+  document.getElementById('fin-tbody').innerHTML=rows.map(({m,f})=>{
+    const df=f.deuda_flotante_pct||0;
+    const res=f.resultado_financiero_2025;
+    const resCl=res==null?'': res<0?'b-crit':'b-ok';
+    const dfCl=df>=15?'b-crit':df>=10?'b-warn':'b-ok';
+    const varT=f.var_transferencias_2026_pct;
+    const varTCl=varT>=35?'b-ok':varT>=25?'b-sec':'b-warn';
+    return `<tr>
+      <td><strong>${m.m}</strong></td>
+      <td><span class="badge b-sec">${m.sec}</span></td>
+      <td><span class="badge ${bc(m.p)}">${m.p}</span></td>
+      <td>${f.autonomia_2025!=null?f.autonomia_2025+'%':'—'}</td>
+      <td>${f.agentes_x1000_hab!=null?f.agentes_x1000_hab+'/1000h':'—'}</td>
+      <td>${f.gasto_personal_pct!=null?f.gasto_personal_pct+'%':'—'}</td>
+      <td><span class="badge ${dfCl}">${df>0?df+'%':'—'}</span></td>
+      <td style="font-size:12px;color:${res!=null&&res<0?'var(--lla)':'var(--vec)'};">${res!=null?(res<0?'▼ ':'▲ ')+fmtM(Math.abs(res)):'—'}</td>
+      <td style="font-size:12px;">${fmtM(f.transferencias_2026_m)}</td>
+      <td><span class="badge ${varTCl}">${varT!=null?'+'+varT+'%':'—'}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+// ─ INIT ─
+buildPba();
+buildClusters();
+buildElectoral();
+buildFinanzas();
+</script>
+</body>
+</html>

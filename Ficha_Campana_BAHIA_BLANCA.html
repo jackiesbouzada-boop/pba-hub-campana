@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAHÍA BLANCA — Ficha de Campaña · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+@page { size: A4 portrait; margin: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 13px; line-height: 1.5; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.header { color: white; padding: 22px 28px; display: flex; justify-content: space-between; align-items: flex-start; }
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.82; line-height: 1.9; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-rival  { background: rgba(220,38,38,0.65); }
+.badge-aliado { background: rgba(34,197,94,0.65); }
+.banner { background: #0f2944; color: white; padding: 20px 28px; border-left: 7px solid #FACC15; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #FACC15; margin-bottom: 7px; }
+.b-title  { font-size: 16px; font-weight: 800; margin-bottom: 13px; line-height: 1.3; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11.5px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #FACC15; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 20px; font-weight: 900; color: #FACC15; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+.main { padding: 20px 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; max-width: 1440px; margin: 0 auto; background: #eef2f7; }
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+.card { background: white; border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,0.07); overflow: hidden; }
+.ch { padding: 11px 16px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.9px; border-radius: 10px 10px 0 0; flex-shrink: 0; }
+.cbody { padding: 14px; flex: 1; }
+.st { font-size: 9.5px; font-weight: 700; color: #1F4E79; padding-bottom: 5px; border-bottom: 2px solid #1F4E79; margin-bottom: 11px; text-transform: uppercase; letter-spacing: 0.6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #EDE9FE; border: 1px solid #C4B5FD; color: #4C1D95; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+.t { width: 100%; border-collapse: collapse; font-size: 11.5px; table-layout: fixed; }
+.t th { background: #f5f6f8; color: #555; padding: 6px 8px; text-align: left; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 6px 8px; border-bottom: 1px solid #f3f4f6; vertical-align: top; word-break: break-word; overflow-wrap: break-word; }
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child { width: 42%; color: #555; }
+.t td:last-child  { width: 58%; }
+.t th:first-child { width: 25%; }
+thead { display: table-header-group; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 12px 13px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9.5px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 22px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9.5px; color: #999; margin-top: 3px; line-height: 1.35; }
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.sgrid > * { min-width: 0; }
+.sc   { border-radius: 7px; padding: 12px; border-left: 4px solid; }
+.sc.p { border-color: #2563EB; background: #EFF6FF; }
+.sc.s { border-color: #059669; background: #ECFDF5; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #7C3AED; background: #F5F3FF; }
+.sl { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.6; margin-bottom: 3px; }
+.sn { font-size: 13px; font-weight: 800; margin-bottom: 2px; }
+.sp { font-size: 20px; font-weight: 900; margin: 3px 0 6px; }
+.sd { font-size: 10.5px; line-height: 1.65; color: #444; }
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
+.pbl { width: 130px; font-size: 10px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; min-width: 0; height: 17px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 6px; }
+.pbt { font-size: 9.5px; font-weight: 700; color: white; white-space: nowrap; }
+.pbp { width: 34px; font-size: 10px; font-weight: 700; text-align: right; flex-shrink: 0; }
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pgrid > * { min-width: 0; }
+.pi   { border-radius: 7px; padding: 12px 14px; border-left: 4px solid; }
+.pi.o { background: #F0FDF4; border-color: #22C55E; }
+.pi.r { background: #FFF7ED; border-color: #F97316; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pt   { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.6; margin-bottom: 4px; }
+.pti  { font-size: 11.5px; font-weight: 700; margin-bottom: 5px; }
+.pd   { font-size: 10.5px; line-height: 1.65; color: #444; word-break: break-word; }
+.ar   { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.ar:last-child { border-bottom: none; }
+.ai   { font-size: 20px; min-width: 26px; flex-shrink: 0; }
+.ain  { flex: 1; min-width: 0; }
+.an   { font-size: 11.5px; font-weight: 700; color: #1F4E79; margin-bottom: 3px; }
+.ad   { font-size: 10.5px; color: #555; line-height: 1.6; word-break: break-word; }
+.ats  { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 5px; }
+.at   { font-size: 9.5px; font-weight: 700; padding: 2px 7px; border-radius: 7px; }
+.ag   { display: flex; gap: 10px; padding: 11px 0; border-bottom: 1px dashed #e8e8e8; }
+.ag:last-child { border-bottom: none; }
+.agi  { font-size: 18px; min-width: 22px; flex-shrink: 0; }
+.agt  { min-width: 0; }
+.agt strong { font-size: 11.5px; display: block; margin-bottom: 3px; color: #1F4E79; font-weight: 700; }
+.agt p { font-size: 10.5px; color: #666; line-height: 1.6; word-break: break-word; }
+.al   { border-radius: 7px; padding: 11px 13px; margin-top: 10px; font-size: 10.5px; line-height: 1.6; word-break: break-word; }
+.al-v { background: #F0FDF4; border: 1px solid #86EFAC; color: #14532D; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al-k { background: #1e3a5f; color: white; }
+.al strong { display: block; margin-bottom: 3px; font-size: 11.5px; }
+.al-k strong { color: #FACC15; }
+.nt   { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 7px; padding: 10px 13px; font-size: 10.5px; color: #1E3A5F; margin-top: 10px; line-height: 1.6; word-break: break-word; }
+.nt strong { display: block; font-size: 11.5px; margin-bottom: 3px; color: #1E40AF; }
+.hist { background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 7px; padding: 11px 13px; margin-top: 10px; }
+.hist strong { font-size: 11.5px; font-weight: 700; color: #78350F; display: block; margin-bottom: 4px; }
+.hist p { font-size: 10.5px; color: #78350F; line-height: 1.65; word-break: break-word; }
+.corr { background: linear-gradient(135deg, #1e3a5f 0%, #2563EB 100%); color: white; border-radius: 8px; padding: 14px 16px; margin-top: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.corr h3 { font-size: 11.5px; font-weight: 800; margin-bottom: 6px; color: #FACC15; }
+.corr p  { font-size: 10.5px; line-height: 1.65; opacity: 0.9; }
+.cms { display: flex; gap: 7px; margin-top: 10px; flex-wrap: wrap; }
+.cm  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; padding: 7px 9px; flex: 1; text-align: center; font-size: 10.5px; font-weight: 700; min-width: 80px; word-break: break-word; }
+.cm span { display: block; font-size: 9px; font-weight: 400; opacity: 0.65; margin-top: 2px; }
+/* Semáforo PRIVADO */
+.priv-tabla { width:100%; border-collapse:collapse; font-size:10.5px; }
+.priv-tabla th { background:#f5f6f8; color:#555; padding:5px 8px; text-align:left; font-size:9px; text-transform:uppercase; letter-spacing:.4px; border-bottom:2px solid #e5e7eb; }
+.priv-tabla td { padding:7px 8px; border-bottom:1px solid #f3f4f6; vertical-align:top; }
+.priv-tabla tr:last-child td { border-bottom:none; }
+.semaf { display:inline-block; padding:2px 8px; border-radius:4px; font-size:9.5px; font-weight:700; white-space:nowrap; }
+.sv { background:#d8f3dc; color:#1b4332; border:1px solid #1b433244; }
+.sa { background:#fef3c7; color:#78350f; border:1px solid #78350f44; }
+.sr { background:#fee2e2; color:#7f1d1d; border:1px solid #7f1d1d44; }
+.footer { text-align: center; padding: 12px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+@media print {
+  @page { size: A4 portrait; margin: 6mm 8mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; padding: 0 !important; font-size: 7pt !important; background: #eef2f7 !important; }
+  .main { padding: 8px 10px !important; gap: 7px !important; grid-template-columns: 1fr 1fr 1fr !important; max-width: 100% !important; }
+  .card { box-shadow: none !important; page-break-inside: avoid; break-inside: avoid; }
+  .ch { font-size: 6.5pt !important; padding: 5px 8px !important; }
+  .cbody { padding: 7px 8px !important; }
+  .header h1 { font-size: 16pt !important; }
+  .banner { page-break-inside: avoid; break-inside: avoid; }
+  .t { font-size: 6.5pt !important; }
+  .t th { font-size: 6pt !important; padding: 3px 4px !important; }
+  .t td { padding: 3px 4px !important; }
+  .kv { font-size: 13pt !important; }
+  .footer { font-size: 6.5pt !important; }
+  .priv-tabla { font-size: 6pt !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header" style="background: linear-gradient(135deg, #0c2340 0%, #1d4ed8 100%);">
+  <div class="header-left">
+    <h1>📍 BAHÍA BLANCA</h1>
+    <div class="sub">Ficha de Campaña · Capital del Sur · Polo Petroquímico · 2026</div>
+    <div class="tag">5ª / 6ª Sección Electoral · Sur Bonaerense · ~2.300 km² · 650 km de CABA</div>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente:</strong> Federico Susbielles <span class="badge badge-aliado">UxP · Aliado</span></div>
+    <div><strong>PJ ganó intendencia 2023:</strong> 36,8% (LLA ya al 32,4%)</div>
+    <div><strong>LLA nac. 2025:</strong> 54,1% — Alarma máxima</div>
+    <div><strong>Población:</strong> ~368.000 hab. (Censo 2022)</div>
+    <div><strong>Vocación:</strong> Petroquímica · Puerto · Universidad · Básquet</div>
+    <div style="margin-top:5px;font-size:10px;opacity:0.55;">Datos 2026 · PBA Analytics · MatrizPBA + fuentes verificadas</div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="b-label">🚨 CIUDAD DISPUTADA · PJ GANÓ CON 36,8% — LLA YA ESTABA AL 32,4% EN 2023 · HOY 54,1%</div>
+  <div class="b-title">La capital del sur bonaerense: polo petroquímico, cooperativa centenaria y una ciudad que históricamente mira al peronismo con desconfianza</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>¿Por qué visitar Bahía Blanca?</strong> Porque Susbielles ganó la intendencia 2023 con apenas 36,8% — con LLA ya al 32,4% y JxC al 24,8%. La suma opositora era 57%: si hubieran ido juntos, PJ perdía. En 2025, LLA llegó al 54,1% en diputados nacionales y al 46,5% en concejales provinciales. Bahía Blanca es la ciudad más grande del sur bonaerense y una de las más complejas para el peronismo. Sin presencia fuerte del nivel provincial, el terreno se consolida para LLA.</p>
+      <p><strong>¿Cuál es el activo estratégico?</strong> El polo petroquímico y el puerto. Bahía Blanca tiene el cluster petroquímico más importante de Argentina y el segundo puerto de exportación de granos del país. Esos activos son nacionales en su escala pero locales en su impacto: generan empleo, divisas y arrastran economías satélite. La narrativa de soberanía industrial y energética tiene aquí su mejor escenario.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>¿Qué puede ofrecer la perspectiva provincial?</strong> Articulación con las grandes empresas del polo (Profertil tiene conexión directa con YPF), apoyo institucional al puerto para infraestructura logística, y una agenda para la Universidad Nacional del Sur que integre investigación con producción local. Además, la Cooperativa Obrera es el activo de mayor receptividad política: 270.000 socios en una ciudad de 368.000 habitantes — casi toda familia bahiense tiene un lazo con la Cooperativa.</p>
+      <p><strong>¿Cuál es el riesgo de no ir?</strong> Que Bahía Blanca siga siendo percibida como territorio hostil al peronismo cuando en realidad tiene activos productivos enormes que la política nacional-popular puede reivindicar. Susbielles necesita que el nivel provincial lo acompañe con anuncios concretos que demuestren que "tener un intendente del espacio" se traduce en resultados para la ciudad más importante del sur.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">368.000</div><div class="l">Habitantes (Censo 2022)<br>Capital del sur bonaerense</div></div>
+    <div class="b-num"><div class="n">36,8%</div><div class="l">PJ ganó intendencia 2023<br>Susbielles · UxP · Aliado</div></div>
+    <div class="b-num"><div class="n">54,1%</div><div class="l">LLA Diputado Nac. 2025<br>Alarma máxima</div></div>
+    <div class="b-num"><div class="n">2°</div><div class="l">Puerto de granos de Argentina<br>+ 1er polo petroquímico</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- KPIs -->
+<div class="card full">
+  <div class="ch" style="background:#0c2340;color:white;">📊 Datos Clave · Bahía Blanca</div>
+  <div class="cbody" style="padding:16px 18px;">
+    <div class="kpis">
+      <div class="kpi" style="background:#FEF3C7;border-color:#FCD34D;">
+        <div class="kl">PJ Intendencia 2023</div>
+        <div class="kv" style="color:#92400E;">36,8%</div>
+        <div class="ks">Susbielles (UxP) · LLA 32,4% · JxC 24,8% · Victoria ajustada</div>
+      </div>
+      <div class="kpi" style="background:#FEF2F2;border-color:#FCA5A5;">
+        <div class="kl">LLA Nac. 2025</div>
+        <div class="kv" style="color:#DC2626;">54,1%</div>
+        <div class="ks">PJ 26,3% · Concejales Prov: LLA 46,5% · PJ 31,2%</div>
+      </div>
+      <div class="kpi" style="background:#EFF6FF;border-color:#93C5FD;">
+        <div class="kl">Padrón Electoral 2025</div>
+        <div class="kv" style="color:#1D4ED8;font-size:17px;">266.033</div>
+        <div class="ks">Electores 2025 · 5ª-6ª Sección Electoral · Ciudad mayor</div>
+      </div>
+      <div class="kpi" style="background:#F0FDF4;border-color:#86EFAC;">
+        <div class="kl">Polo Petroquímico</div>
+        <div class="kv" style="color:#15803D;font-size:16px;">N°1 Arg.</div>
+        <div class="ks">Profertil · PBBPolisur · Dow · TGS · Soberanía industrial</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDAD TERRITORIAL -->
+<div class="card one">
+  <div class="ch" style="background:#ECFDF5;color:#065F46;">🗺️ Identidad Territorial</div>
+  <div class="cbody">
+    <div class="chips">
+      <span class="chip cb">⚗️ Polo Petroquímico</span>
+      <span class="chip cg">🚢 Puerto Exportador</span>
+      <span class="chip cp">🎓 Univ. Nacional del Sur</span>
+      <span class="chip co">🏀 Capital del Básquet</span>
+      <span class="chip cz">🛒 Cooperativa Obrera</span>
+      <span class="chip cr">📈 LLA máxima histórica</span>
+    </div>
+    <table class="t">
+      <tr><th>Indicador</th><th>Bahía Blanca</th><th>Ref. Pcia.</th></tr>
+      <tr><td>Superficie</td><td class="bld">~2.300 km²</td><td>—</td></tr>
+      <tr><td>Distancia a CABA</td><td class="inf">~650 km · RN 3 / AU</td><td>—</td></tr>
+      <tr><td>Puerto</td><td class="ok">2° granos Argentina</td><td>Estratégico</td></tr>
+      <tr><td>Industria emblema</td><td class="ok">Petroquímica N°1 Arg.</td><td>Único en PBA</td></tr>
+      <tr><td>Cooperativa Obrera</td><td class="ok">270.000 socios</td><td>Top 20 mundo</td></tr>
+      <tr><td>Universidad</td><td class="ok">UNS + CONICET</td><td>Ciencia aplicada</td></tr>
+      <tr><td>Básquet</td><td class="ok">Capital nacional</td><td>Único</td></tr>
+      <tr><td>Historial electoral</td><td class="warn">Históricamente anti-PJ</td><td>Disputado</td></tr>
+    </table>
+    <div class="nt">
+      <strong>📌 Posición en el mapa provincial</strong>
+      Bahía Blanca es la ciudad más grande del sur bonaerense y la cuarta del interior de PBA. Su polo petroquímico y su puerto la hacen estratégica a escala nacional. Históricamente con inclinación UCR/PRO, en 2023 PJ ganó la intendencia por primera vez en años gracias a la fragmentación opositora. Con LLA en 54%, ese margen no existe más.
+    </div>
+    <div class="hist">
+      <strong>📜 Historia que sostiene el relato</strong>
+      <p>Bahía Blanca se fundó en 1828 como fortaleza militar en el límite sur de la frontera con el indio. Su destino cambió con el ferrocarril y el puerto: se convirtió en la puerta de salida de la producción agropecuaria del sur. El polo petroquímico — inaugurado en los años 70 con capitales mixtos — hizo de Bahía Blanca una excepción industrial en la pampa. Hoy, el <strong style="color:#78350F;">Polo Petroquímico de Bahía Blanca</strong> es el más importante de Argentina y uno de los más relevantes de América del Sur: produce polietileno, PVC, urea, cloro y derivados que abastecen a toda la industria nacional.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MATRIZ PRODUCTIVA -->
+<div class="card two">
+  <div class="ch" style="background:#0c2340;color:white;">⚙️ Matriz Productiva · En qué se destaca Bahía Blanca</div>
+  <div class="cbody">
+    <div class="st">Sectores Productivos</div>
+    <div class="sgrid">
+      <div class="sc t">
+        <div class="sl">🥇 Identidad productiva nacional</div>
+        <div class="sn">Polo Petroquímico</div>
+        <div class="sp" style="color:#D97706;">N°1 Argentina</div>
+        <div class="sd">Profertil (urea/fertilizantes, JV YPF+Yara), PBBPolisur/INEOS (polietileno+PVC, único en el país), Dow/Covestro (MDI). El polo emplea directamente a más de 5.000 personas y arrastra servicios industriales por otro tanto. La conexión YPF de Profertil abre la puerta a un framing de soberanía energética que ningún opositor puede reclamar tan fácilmente.</div>
+      </div>
+      <div class="sc s">
+        <div class="sl">🔹 Infraestructura logística exportadora</div>
+        <div class="sn">Puerto Bahía Blanca</div>
+        <div class="sp" style="color:#059669;">2° exportador granos Arg.</div>
+        <div class="sd">El Puerto Bahía Blanca es el segundo exportador de granos de Argentina (detrás de Rosario) y el único puerto de aguas profundas del sur. Conecta la producción agropecuaria de La Pampa, Río Negro y el sur de PBA con los mercados asiáticos. La infraestructura portuaria tiene demandas concretas: dragado, logística vial de acceso, capacidad de almacenaje.</div>
+      </div>
+      <div class="sc p">
+        <div class="sl">🔸 Cooperativa icónica</div>
+        <div class="sn">Cooperativa Obrera</div>
+        <div class="sp" style="color:#1D4ED8;">270.000 socios</div>
+        <div class="sd">Top 20 cooperativas de consumo del mundo. Fundada en 1926, tiene 65 sucursales y presencia en toda la región. En una ciudad de 368.000 habitantes, 270.000 socios significa que casi cada familia bahiense es miembro. Es el activo de mayor receptividad política: su DNA es cooperativista y su historia es peronismo federal.</div>
+      </div>
+      <div class="sc e">
+        <div class="sl">🔸 Ciencia y capital humano</div>
+        <div class="sn">UNS + CONICET + Hospital Penna</div>
+        <div class="sp" style="color:#6D28D9;">Ecosistema</div>
+        <div class="sd">La Universidad Nacional del Sur tiene 25.000 estudiantes, institutos de investigación CONICET y vinculación directa con el polo petroquímico. El Hospital Municipal Dr. Penna es el referente sanitario del sur bonaerense. La agenda de ciencia aplicada, bioeconomía y formación técnica tiene en BB su mejor punto de apoyo.</div>
+      </div>
+    </div>
+
+    <div class="st">Estructura de Actividad Estimada</div>
+    <div class="pbr"><div class="pbl">Petroquímica · Industria</div><div class="pbo"><div class="pbi" style="width:70%;background:#D97706"><div class="pbt">~35%</div></div></div><div class="pbp" style="color:#D97706;">35%</div></div>
+    <div class="pbr"><div class="pbl">Comercio y Servicios</div><div class="pbo"><div class="pbi" style="width:50%;background:#2563EB"><div class="pbt">~25%</div></div></div><div class="pbp" style="color:#2563EB;">25%</div></div>
+    <div class="pbr"><div class="pbl">Logística · Puerto · Agro</div><div class="pbo"><div class="pbi" style="width:40%;background:#059669"><div class="pbt">~20%</div></div></div><div class="pbp" style="color:#059669;">20%</div></div>
+    <div class="pbr"><div class="pbl">Educación · Salud · Estado</div><div class="pbo"><div class="pbi" style="width:36%;background:#7C3AED"><div class="pbt">~18%</div></div></div><div class="pbp" style="color:#7C3AED;">18%</div></div>
+
+    <div class="st" style="margin-top:18px;">Actores Clave del Territorio</div>
+    <div class="ar">
+      <div class="ai">🛒</div>
+      <div class="ain">
+        <div class="an">Cooperativa Obrera · Bahía Blanca</div>
+        <div class="ad">270.000 socios — casi una familia por cada dos en la ciudad. Top 20 cooperativas de consumo del mundo. Fundada en 1926, opera 65 sucursales con logística propia. Su consejo directivo es el actor privado con mayor penetración social de Bahía Blanca. Receptividad alta para cualquier agenda de economía social y cooperativismo. <strong style="color:#1b4332;">🟢 RECEPTIVA</strong></div>
+        <div class="ats">
+          <span class="at" style="background:#D1FAE5;color:#065F46;">🟢 Visita prioritaria</span>
+          <span class="at" style="background:#DBEAFE;color:#1E40AF;">Economía social</span>
+        </div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">⚗️</div>
+      <div class="ain">
+        <div class="an">Profertil S.A. · JV YPF + Yara</div>
+        <div class="ad">Mayor productor de fertilizantes nitrogenados (urea) de América Latina. JV YPF + Yara (noruega): la conexión YPF lo hace estratégicamente receptivo a referentes de orientación nacional. Emplea 1.200 personas directas. Sin Profertil, Argentina depende de importaciones para fertilizar su propia cosecha. <strong style="color:#78350f;">🟡 EVALUAR</strong></div>
+        <div class="ats">
+          <span class="at" style="background:#FEF3C7;color:#92400E;">🟡 Con cuidado</span>
+          <span class="at" style="background:#DBEAFE;color:#1E40AF;">Soberanía industrial</span>
+        </div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🏭</div>
+      <div class="ain">
+        <div class="an">PBBPolisur S.A. (INEOS) · Puerto Bahía Blanca</div>
+        <div class="ad">Única planta de Argentina que produce simultáneamente polietileno y PVC. Insumo clave para la industria plástica nacional. Multinacional británica (INEOS), sin posición política pública. Sindicato UPSIQP presente. La agenda de "sustitución de importaciones" y "insumo estratégico nacional" es el framing correcto. <strong style="color:#78350f;">🟡 EVALUAR</strong></div>
+        <div class="ats">
+          <span class="at" style="background:#FEF3C7;color:#92400E;">🟡 Con cuidado</span>
+          <span class="at" style="background:#F3F4F6;color:#374151;">Insumo estratégico</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSPECTIVA PROVINCIAL -->
+<div class="card full">
+  <div class="ch" style="background:#0f2944;color:#FACC15;">👁️ Perspectiva Provincial · Palancas que solo el nivel provincial puede activar</div>
+  <div class="cbody">
+    <p style="font-size:12px;color:#666;margin-bottom:16px;line-height:1.7;">Susbielles gestiona la ciudad — servicios, obras, SAME. Lo que no puede hacer solo es articular con el polo petroquímico para una agenda de soberanía industrial, negociar infraestructura portuaria con Nación, o vincular la UNS con el sector productivo provincial. Esas son palancas de otro nivel.</p>
+    <div class="pgrid">
+      <div class="pi o">
+        <div class="pt">✅ Palanca política de mayor impacto</div>
+        <div class="pti">Cooperativa Obrera: visita y agenda de economía social</div>
+        <div class="pd">270.000 socios en 368.000 habitantes. La Cooperativa Obrera es la institución privada con mayor penetración social de toda la región sur. Una visita con agenda de economía social provincial — cooperativismo, acceso a crédito cooperativo, exportaciones conjuntas — tiene impacto emocional y político inmediato. Es la puerta de entrada al tejido social bahiense.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 Soberanía industrial · el framing que funciona</div>
+        <div class="pti">Profertil + YPF: fertilizantes nacionales para la cosecha argentina</div>
+        <div class="pd">Profertil es JV YPF + Yara. La presencia de YPF abre la narrativa de soberanía: "Argentina produce sus propios fertilizantes desde Bahía Blanca." Un recorrido con agenda técnica (no política) sobre la planta y sus exportaciones posiciona al candidato en la agenda de soberanía agroindustrial sin los riesgos de otras visitas industriales.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">✅ Infraestructura estratégica</div>
+        <div class="pti">Puerto Bahía Blanca: dragado, vialidad de acceso y logística de exportación</div>
+        <div class="pd">El Puerto Bahía Blanca necesita inversión en dragado del canal de acceso, mejora vial de los caminos de carga y capacidad de almacenamiento. Esas son decisiones de Nación y Provincia. Un anuncio de gestión conjunta para la inversión portuaria tiene eco en toda la región: productores, transportistas, industria petroquímica y municipio se benefician simultáneamente.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 Agenda ciencia + producción</div>
+        <div class="pti">UNS + CONICET: investigación aplicada al polo y a la bioeconomía del sur</div>
+        <div class="pd">La Universidad Nacional del Sur tiene institutos CONICET y 25.000 estudiantes. La vinculación con el polo petroquímico es subutilizada. Un programa provincial de vinculación tecnológica UNS-empresa, con financiamiento provincial para transferencia de tecnología, posiciona a BB como hub de innovación del sur y conecta al candidato con el electorado universitario y de clase media calificada.</div>
+      </div>
+      <div class="pi r">
+        <div class="pt">⚠️ Riesgo electoral · Máxima urgencia</div>
+        <div class="pti">54,1% para LLA en 2025: la ciudad más importante del sur bonaerense ya volcada</div>
+        <div class="pd">Bahía Blanca tiene 266.000 electores — es el mayor municipio del sur. Con LLA al 54,1%, PJ necesita una propuesta concreta y visible antes de 2027. La ciudad tiene un sesgo histórico anti-kirchnerista; el candidato tiene que llegar con lenguaje de gestión, producción y resultados concretos — no con retórica político-partidaria que reactiva el rechazo.</div>
+      </div>
+      <div class="pi x">
+        <div class="pt">🔴 Tensión · Gestionar con cuidado</div>
+        <div class="pti">Ciudad históricamente anti-PJ: hablar de producción, no de política</div>
+        <div class="pd">Bahía Blanca tiene una tradición cívica de clase media que desconfía del peronismo. El discurso tiene que ser de soberanía industrial, cooperativismo y gestión de resultados — no de construcción política. El electorado bahiense valora la propuesta concreta y rechaza la retórica. Cualquier visita con tono de "acto partidario" refuerza el rechazo. El tono tiene que ser el de un técnico con visión provincial.</div>
+      </div>
+    </div>
+    <div class="corr">
+      <h3>🚢 Corredor Sur Bonaerense · La dimensión regional desde Bahía Blanca</h3>
+      <p>Bahía Blanca es el nodo de todos los corredores del sur. Cualquier política provincial para el sur bonaerense pasa por esta ciudad: su puerto exporta la producción de la pampa sur, su polo petroquímico abastece la industria de la región, su universidad forma los técnicos del sector energético.</p>
+      <div class="cms">
+        <div class="cm">📍 BAHÍA BLANCA<span>Polo petroquímico · Puerto · UNS</span></div>
+        <div class="cm">↔ PUNTA ALTA<span>Base Naval · Puerto Belgrano</span></div>
+        <div class="cm">↔ CORONEL SUÁREZ<span>Calzado · Colonias alemanas</span></div>
+        <div class="cm">↔ TRES ARROYOS<span>CATA · Agro · Sur</span></div>
+        <div class="cm">↔ MONTE HERMOSO<span>Turismo · Costa sur</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISIS POLÍTICO -->
+<div class="card two">
+  <div class="ch" style="background:#FFFBEB;color:#78350F;">📈 Análisis del Momento · PJ ganó en 2023 — LLA tenía 32% y ya subió al 54%</div>
+  <div class="cbody">
+    <div class="st">Diagnóstico electoral · Evolución del voto</div>
+    <table class="t" style="margin-bottom:16px;">
+      <thead><tr><th>Elección</th><th>PJ / UxP</th><th>JxC</th><th>LLA</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><td class="bld">Intendencia 2023</td><td class="warn">36,8%</td><td class="warn">24,8%</td><td class="warn">32,4%</td><td style="color:#92400E;font-weight:700;">PJ · Susbielles · ajustado</td></tr>
+        <tr><td class="bld">Concejales Prov. 2025</td><td class="warn">31,2%</td><td>—</td><td class="bad">46,5%</td><td style="color:#DC2626;font-weight:700;">LLA</td></tr>
+        <tr><td class="bld">Diputado Nac. 2025</td><td class="bad">26,3%</td><td>—</td><td class="bad">54,1%</td><td style="color:#DC2626;font-weight:700;">LLA</td></tr>
+      </tbody>
+    </table>
+    <div class="ag">
+      <div class="agi">🟡</div>
+      <div class="agt">
+        <strong>2023: victoria en el filo del hacha</strong>
+        <p>PJ ganó con 36,8% porque JxC (24,8%) y LLA (32,4%) se presentaron separados. La suma opositora era 57,2%. LLA ya era la segunda fuerza en 2023 — no llegó de golpe en 2025. Lo que hizo 2025 fue consolidar lo que ya venía: la migración del voto JxC hacia LLA se completó.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🔴</div>
+      <div class="agt">
+        <strong>2025: LLA al 54% — Ciudad volcada, no en proceso de volcarse</strong>
+        <p>Bahía Blanca no está en proceso de irse a LLA: ya se fue. El 54,1% en diputados nacionales y el 46,5% en concejales provinciales indican una mayoría clara y consolidada. El voto JxC histórico se fusionó con LLA sin resistencia. El suelo propio de PJ cayó a 26,3% — un piso bajo pero consistente con la base sindical y cooperativa de la ciudad.</p>
+      </div>
+    </div>
+    <div class="ag" style="border-bottom:none;">
+      <div class="agi">🟢</div>
+      <div class="agt">
+        <strong>El único activo intacto: Susbielles con la gestión municipal</strong>
+        <p>Susbielles tiene la intendencia y una gestión activa. El municipio puede mostrar obras, servicios y presencia territorial. Si la Provincia lo respalda con anuncios en áreas donde el municipio tiene demandas reales (polo, puerto, UNS), la narrativa "tener un intendente del espacio hace la diferencia" se vuelve creíble antes de 2027.</p>
+      </div>
+    </div>
+    <div class="al al-a">
+      <strong>⚠️ El riesgo que no puede ignorarse</strong>
+      Con LLA al 54% y PJ al 26%, la ciudad solo se puede recuperar si el candidato provincial tiene una propuesta concreta y diferenciada. El peronismo no puede ganar Bahía Blanca con campaña — solo con gestión visible. La ventana es 2026 y el primer semestre de 2027.
+    </div>
+  </div>
+</div>
+
+<!-- AGENDA DE DISCURSO -->
+<div class="card one">
+  <div class="ch" style="background:#0c2340;color:white;">🎤 Agenda de Discurso · Perspectiva Provincial</div>
+  <div class="cbody">
+    <div class="st">Ejes · Por prioridad de impacto</div>
+    <div class="ag">
+      <div class="agi">🛒</div>
+      <div class="agt">
+        <strong>1. La Cooperativa Obrera: el peronismo que funciona sin decirlo</strong>
+        <p>"En Bahía Blanca, 270.000 familias pusieron un supermercado que les pertenece. La Provincia va a acompañar ese modelo — crédito cooperativo, exportaciones conjuntas, reconocimiento institucional."</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">⚗️</div>
+      <div class="agt">
+        <strong>2. El polo petroquímico: soberanía industrial que Argentina produce</strong>
+        <p>"Bahía Blanca produce los fertilizantes que el campo argentino necesita para sembrar, el plástico que usa toda la industria nacional. Eso es soberanía industrial — y la Provincia va a cuidarla."</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🚢</div>
+      <div class="agt">
+        <strong>3. El puerto: la puerta de salida del sur al mundo</strong>
+        <p>Inversión en dragado e infraestructura logística. "Por este puerto sale la cosecha del sur. La Provincia va a trabajar con Nación para que ese puerto esté a la altura de lo que exporta."</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🎓</div>
+      <div class="agt">
+        <strong>4. La UNS como motor de innovación del sur</strong>
+        <p>"La Universidad Nacional del Sur tiene los científicos que el polo petroquímico y el campo del sur necesitan. Vamos a crear el puente entre la investigación y la producción."</p>
+      </div>
+    </div>
+    <div class="ag" style="border-bottom:none;">
+      <div class="agi">🚫</div>
+      <div class="agt">
+        <strong>Qué evitar</strong>
+        <p>Discurso político-ideológico o de construcción partidaria. Bahía Blanca tiene una clase media fuerte que reacciona negativamente al "acto peronista". Todo tiene que ser lenguaje de gestión, producción e inversión concreta. No mencionar kirchnerismo ni retórica de épocas anteriores.</p>
+      </div>
+    </div>
+    <div class="al al-k">
+      <strong>⚡ La frase que sintetiza la visita</strong>
+      "Bahía Blanca produce lo que Argentina necesita: fertilizantes, plásticos, granos. La Provincia está acá para que esa producción tenga la infraestructura y el apoyo que se merece."
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS PRIVADO -->
+<div class="card full">
+  <div class="ch" style="background:#1b4332;color:#d8f3dc;">🏭 Visitas PRIVADO · Semáforo Político + Eje de Contacto</div>
+  <div class="cbody">
+    <p style="font-size:11px;color:#666;margin-bottom:12px;line-height:1.6;">Lugares PRIVADO de alta puntuación en Bahía Blanca. El contacto siempre se presenta como interés sectorial del candidato — nunca como visita de campaña. Ver Kit de Contacto completo para el texto exacto de primer acercamiento.</p>
+    <table class="priv-tabla">
+      <thead>
+        <tr>
+          <th style="width:30%;">Lugar</th>
+          <th style="width:11%;">Score</th>
+          <th style="width:14%;">Receptividad</th>
+          <th style="width:45%;">Eje de visita</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Cooperativa Obrera</strong><br><span style="font-size:9.5px;color:#6b7280;">Bahía Blanca · Fundada 1926</span></td>
+          <td style="font-weight:700;color:#1b4332;">8.70</td>
+          <td><span class="semaf sv">🟢 Receptivo</span></td>
+          <td style="font-size:10.5px;line-height:1.55;">Economía social y cooperativismo. <em>"Están interesados en conocer el modelo de la Cooperativa Obrera en el marco de su agenda sobre fortalecimiento de las cooperativas de consumo en la provincia."</em></td>
+        </tr>
+        <tr>
+          <td><strong>Puerto BB + Polo Petroquímico</strong><br><span style="font-size:9.5px;color:#6b7280;">Zona portuaria e industrial</span></td>
+          <td style="font-weight:700;color:#78350f;">8.40</td>
+          <td><span class="semaf sa">🟡 Evaluar</span></td>
+          <td style="font-size:10.5px;line-height:1.55;">Soberanía industrial y logística de exportación. <em>"Están trabajando en la agenda de infraestructura portuaria y quisieran conocer los cuellos de botella operativos del puerto y su relación con el polo industrial."</em></td>
+        </tr>
+        <tr>
+          <td><strong>Profertil S.A.</strong><br><span style="font-size:9.5px;color:#6b7280;">JV YPF + Yara · Fertilizantes</span></td>
+          <td style="font-weight:700;color:#78350f;">8.25</td>
+          <td><span class="semaf sa">🟡 Evaluar</span></td>
+          <td style="font-size:10.5px;line-height:1.55;">Soberanía de insumos agrícolas. <em>"Están estudiando la cadena de fertilizantes nacionales y el rol de Profertil en la soberanía agroindustrial del país. Quisieran conocer la planta y entender la relación con los productores de la región."</em></td>
+        </tr>
+        <tr>
+          <td><strong>PBBPolisur S.A. (INEOS)</strong><br><span style="font-size:9.5px;color:#6b7280;">Polietileno + PVC · único en Arg.</span></td>
+          <td style="font-weight:700;color:#78350f;">8.05</td>
+          <td><span class="semaf sa">🟡 Evaluar</span></td>
+          <td style="font-size:10.5px;line-height:1.55;">Industria petroquímica y sustitución de importaciones. <em>"Están interesados en la industria petroquímica como columna vertebral de la industria manufacturera argentina y quisieran conocer PBBPolisur, única planta de polietileno y PVC del país."</em></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  🔒 USO RESERVADO · Campaña PBA · Ficha Bahía Blanca · PBA Analytics 2026
+</div>
+
+<!-- ANEXO I -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;">
+  <div style="background:linear-gradient(135deg,#0c2340,#1d4ed8);color:white;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-size:11px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Bahía Blanca · Campaña PBA 2026</div>
+      <div style="font-size:22px;font-weight:900;letter-spacing:1px;">ANEXO I — PRINCIPALES INDICADORES</div>
+    </div>
+    <div style="font-size:11px;opacity:0.7;text-align:right;">6ª Sección Electoral · Capital del Sur<br>PBA Analytics 2026</div>
+  </div>
+  <div style="padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:13px;background:#eef2f7;">
+
+    <div class="card">
+      <div class="ch" style="background:#FFFBEB;color:#92400E;">⚗️ Polo Petroquímico</div>
+      <div class="cbody">
+        <div class="st">Cluster industrial de escala nacional</div>
+        <table class="t">
+          <tr><td>Ranking nacional</td><td class="ok">N°1 en Argentina</td></tr>
+          <tr><td>Empresas principales</td><td class="inf">Profertil · PBBPolisur · Dow · TGS</td></tr>
+          <tr><td>Profertil</td><td class="ok">JV YPF+Yara · urea · N°1 Latam</td></tr>
+          <tr><td>PBBPolisur (INEOS)</td><td class="ok">Único polietileno+PVC del país</td></tr>
+          <tr><td>Empleo directo</td><td class="ok">+5.000 directos · más indirectos</td></tr>
+          <tr><td>Receptividad política</td><td class="warn">Mixta · framing técnico obligatorio</td></tr>
+          <tr><td>Conexión YPF (Profertil)</td><td class="ok">JV cuasi-estatal · apertura alta</td></tr>
+        </table>
+        <div class="al al-v" style="margin-top:10px;">
+          <strong>💡 Palanca concreta: Profertil + YPF</strong>
+          Profertil tiene una JV con YPF. Una visita a Profertil puede enmarcarse en la agenda de soberanía energética y agroindustrial. El framing: "Argentina produce sus propios fertilizantes — la Provincia quiere entender cómo fortalecer esta cadena." Máxima receptividad del grupo de empresas del polo.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#ECFDF5;color:#065F46;">🛒 Cooperativa Obrera</div>
+      <div class="cbody">
+        <div class="st">Top 20 cooperativas de consumo del mundo</div>
+        <table class="t">
+          <tr><td>Fundación</td><td class="inf">1926 · Centenaria</td></tr>
+          <tr><td>Socios</td><td class="ok">270.000 en región de 400.000</td></tr>
+          <tr><td>Sucursales</td><td class="ok">65 locales + logística propia</td></tr>
+          <tr><td>Posición mundial</td><td class="ok">Top 20 cooperativas consumo</td></tr>
+          <tr><td>Receptividad política</td><td class="ok">🟢 Alta · DNA cooperativista</td></tr>
+          <tr><td>Relevancia social BB</td><td class="ok">Casi toda familia es socia</td></tr>
+        </table>
+        <div class="al al-v" style="margin-top:10px;">
+          <strong>✅ Visita prioritaria · Impacto máximo</strong>
+          La Cooperativa Obrera es el activo de mayor receptividad política en Bahía Blanca. Una visita bien preparada puede convocar medios locales, generar imagen de "economía social que funciona" y conectar emocionalmente con 270.000 familias. Primera parada obligatoria en cualquier agenda bahiense.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#EFF6FF;color:#1E40AF;">📊 Datos Municipales Generales</div>
+      <div class="cbody">
+        <div class="st">Indicadores de base</div>
+        <table class="t">
+          <tr><td>Población (Censo 2022)</td><td class="inf">~368.000 hab.</td></tr>
+          <tr><td>Superficie</td><td>~2.300 km²</td></tr>
+          <tr><td>Sección Electoral</td><td>5ª / 6ª · Sur Bonaerense</td></tr>
+          <tr><td>Intendente</td><td class="ok">Federico Susbielles · UxP · Aliado</td></tr>
+          <tr><td>Padrón 2025</td><td class="inf">266.033 electores</td></tr>
+          <tr><td>Categoría electoral</td><td class="bad">Ciudad volcada · LLA 54,1%</td></tr>
+          <tr><td>Distancia a CABA</td><td>~650 km · RN 3 / AU</td></tr>
+          <tr><td>Identidad territorial</td><td class="ok">Polo petroquímico · Puerto · UNS · Básquet · Coop. Obrera</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#FFFBEB;color:#78350F;">🏛️ Gestión Municipal · Susbielles UxP</div>
+      <div class="cbody">
+        <div class="st">Susbielles · UxP · Principales ejes de gestión</div>
+        <table class="t">
+          <tr><td>Polo petroquímico</td><td class="ok">Agenda activa con empresas</td></tr>
+          <tr><td>Puerto BB</td><td class="ok">Promoción inversor logístico</td></tr>
+          <tr><td>Infraestructura urbana</td><td class="ok">Obras en barrios · pavimento</td></tr>
+          <tr><td>Inundaciones</td><td class="warn">Demanda histórica · obras pendientes</td></tr>
+          <tr><td>Salud</td><td class="ok">Hospital Penna · red CAPS</td></tr>
+          <tr><td>UNS / Educación</td><td class="ok">Coordinación activa</td></tr>
+          <tr><td>Relación con Provincia</td><td class="ok">Aliado · coordinación posible</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#FEE2E2;color:#7F1D1D;">🗳️ Historial Electoral</div>
+      <div class="cbody">
+        <div class="st">Evolución del voto · Bahía Blanca</div>
+        <table class="t">
+          <thead><tr><th>Elección</th><th>PJ/UxP</th><th>JxC</th><th>LLA</th><th>Resultado</th></tr></thead>
+          <tbody>
+            <tr><td>Intendencia 2023</td><td class="warn">36,8%</td><td class="warn">24,8%</td><td class="warn">32,4%</td><td class="bld" style="color:#92400E;">PJ · ajustado</td></tr>
+            <tr><td>Concejales Prov. 2025</td><td class="warn">31,2%</td><td>—</td><td class="bad">46,5%</td><td class="bld" style="color:#DC2626;">LLA</td></tr>
+            <tr><td>Diputado Nac. 2025</td><td class="bad">26,3%</td><td>—</td><td class="bad">54,1%</td><td class="bld" style="color:#DC2626;">LLA</td></tr>
+          </tbody>
+        </table>
+        <div class="hist" style="margin-top:10px;">
+          <strong>📌 Lectura electoral clave</strong>
+          <p>A diferencia de Coronel Suárez donde LLA llegó tarde (2025), en Bahía Blanca ya era segunda fuerza en 2023 con 32,4%. La consolidación en 2025 fue rápida porque la base ya existía. El suelo PJ de 26-31% es real pero insuficiente sin un candidato provincial fuerte que amplíe el voto más allá de la base propia.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#F5F3FF;color:#4C1D95;">🎯 Prioridad Estratégica</div>
+      <div class="cbody">
+        <div class="st">Posición en el mapa de campaña</div>
+        <table class="t">
+          <tr><td>Clasificación PBA</td><td class="bad">Ciudad volcada</td></tr>
+          <tr><td>Urgencia política</td><td class="bad">Máxima · LLA 54%</td></tr>
+          <tr><td>Potencial de retención</td><td class="warn">Bajo-Medio · requiere gestión</td></tr>
+          <tr><td>Palanca 1</td><td class="ok">Cooperativa Obrera</td></tr>
+          <tr><td>Palanca 2</td><td class="inf">Profertil + Puerto</td></tr>
+          <tr><td>Palanca 3</td><td class="inf">UNS + innovación</td></tr>
+          <tr><td>Aliado</td><td class="ok">Susbielles · UxP</td></tr>
+          <tr><td>Riesgo 2027</td><td class="bad">Alto si no hay gestión visible</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;padding:12px;font-size:11px;color:#aaa;background:white;border-top:1px solid #e5e7eb;">
+    🔒 USO RESERVADO · ANEXO I · Bahía Blanca · PBA Analytics 2026
+  </div>
+</div>
+
+<!-- ANEXO II -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;">
+  <div style="background:linear-gradient(135deg,#78350F,#D97706);color:white;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-size:11px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Bahía Blanca · 2026</div>
+      <div style="font-size:22px;font-weight:900;letter-spacing:1px;">ANEXO II — GESTIÓN LOCAL Y DATOS DE CONTEXTO</div>
+    </div>
+    <div style="font-size:11px;opacity:0.7;text-align:right;">Gestión Susbielles · UxP<br>Aliado · Capital del Sur</div>
+  </div>
+  <div style="padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:13px;background:#eef2f7;">
+
+    <div class="card">
+      <div class="ch" style="background:#D1FAE5;color:#065F46;">🤝 Gestión Susbielles · UxP · Diagnóstico</div>
+      <div class="cbody">
+        <div class="st">Fortalezas y oportunidades desde la mirada provincial</div>
+        <table class="t" style="margin-bottom:14px;">
+          <tr><td>Perfil político</td><td>Intendente aliado · primera gestión</td></tr>
+          <tr><td>Legitimidad local</td><td class="warn">Ganó ajustado (36,8%) en 2023</td></tr>
+          <tr><td>Estructura PJ local</td><td class="warn">Moderada · ciudad no-PJ histórica</td></tr>
+          <tr><td>Relación con la Provincia</td><td class="ok">Aliado natural · articulación posible</td></tr>
+          <tr><td>Agenda industrial</td><td class="ok">Polo petroquímico · activa</td></tr>
+          <tr><td>Agenda portuaria</td><td class="ok">Coordinación con Administración Puerto</td></tr>
+          <tr><td>Inundaciones</td><td class="warn">Deuda histórica · demanda urgente</td></tr>
+        </table>
+        <div class="al al-v">
+          <strong>✅ Estrategia de refuerzo mutuo</strong>
+          Susbielles necesita respaldo provincial en tres áreas concretas: inversión en infraestructura de contención de inundaciones (deuda histórica bahiense), apoyo al puerto (competitividad logística) y agenda UNS-producción. Cada anuncio provincial en estas áreas fortalece la narrativa de que "tener un intendente del espacio marca la diferencia".
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#EFF6FF;color:#1E40AF;">🏀 Identidad Cultural · Capital del Básquet</div>
+      <div class="cbody">
+        <div class="st">El básquet como vínculo emocional ciudadano</div>
+        <table class="t" style="margin-bottom:14px;">
+          <tr><td>Clubes históricos</td><td class="inf">Estudiantes · Villa Mitre · Olimpo · Bahiense</td></tr>
+          <tr><td>Reconocimiento nacional</td><td class="ok">Capital del Básquet de Argentina</td></tr>
+          <tr><td>Figuras mundiales</td><td class="ok">Pepu Hernández · Manu-era players</td></tr>
+          <tr><td>Infraestructura</td><td class="warn">Estadios: inversión provincial posible</td></tr>
+          <tr><td>Peso emocional</td><td class="ok">Alto · identidad transversal</td></tr>
+          <tr><td>Oportunidad</td><td class="ok">Política deportiva provincial</td></tr>
+        </table>
+        <div class="al al-b">
+          <strong>💡 Oportunidad identitaria</strong>
+          El básquet bahiense es la identidad transversal que cruza clases y sectores políticos. Un compromiso concreto de infraestructura deportiva provincial (cancha cubierta, reacondicionamiento de instalaciones) tiene impacto en la comunidad sin costo político. "La Provincia reconoce que Bahía Blanca es la capital del básquet argentino."
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;padding:12px;font-size:11px;color:#aaa;background:white;border-top:1px solid #e5e7eb;">
+    🔒 USO RESERVADO · ANEXO II · Bahía Blanca · PBA Analytics 2026
+  </div>
+</div>
+</body>
+</html>

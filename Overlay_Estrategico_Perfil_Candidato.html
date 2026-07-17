@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overlay Estratégico — Perfil del Candidato 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:#f4f6f9;color:#1e293b;font-size:14px;line-height:1.6}
+.hero{background:linear-gradient(135deg,#0f2944 0%,#1F4E79 70%,#2563EB 100%);color:#fff;padding:2.5rem 2rem;text-align:center}
+.hero h1{font-size:1.9rem;font-weight:800;margin-bottom:.4rem}
+.hero-sub{color:#93c5fd;font-size:.95rem;margin-bottom:1.5rem}
+.hero-pillars{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.pillar-chip{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:.4rem 1rem;font-size:.82rem;font-weight:600;color:#fff}
+.pillar-chip.active{background:#FACC15;color:#0f2944;border-color:#FACC15}
+.container{max-width:1100px;margin:0 auto;padding:1.5rem}
+.alert{background:#fff3cd;border-left:4px solid #FACC15;padding:1rem 1.2rem;border-radius:4px;margin-bottom:1.5rem;font-size:13px}
+.alert strong{color:#0f2944}
+.section{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:1.5rem;overflow:hidden}
+.sec-header{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.5rem;border-bottom:1px solid #f1f5f9}
+.sec-emoji{font-size:2rem}
+.sec-title{font-size:1.3rem;font-weight:800;color:#0f2944}
+.sec-sub{font-size:12px;color:#64748b;margin-top:.2rem}
+.sec-body{padding:1.2rem 1.5rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1rem;margin:.8rem 0}
+.card{border-radius:8px;padding:1rem;border:1px solid #e2e8f0;position:relative}
+.card-eje{position:absolute;top:.6rem;right:.6rem;font-size:10px;font-weight:700;padding:.2rem .5rem;border-radius:3px;color:#fff}
+.card-rank{font-size:1.5rem;font-weight:900;color:#FACC15;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.card-name{font-size:.95rem;font-weight:700;color:#0f2944;margin:.2rem 0}
+.card-muni{font-size:11px;color:#64748b;margin-bottom:.5rem}
+.card-why{font-size:12px;color:#374151;line-height:1.5}
+.card-score-old{font-size:11px;color:#94a3b8}
+.card-score-new{font-size:13px;font-weight:700}
+.arrow-up{color:#16a34a}
+.arrow-down{color:#dc2626}
+.arrow-same{color:#d97706}
+.flag-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.flag-item{display:flex;gap:.8rem;align-items:flex-start;padding:.7rem 1rem;border-radius:6px;border:1px solid #e2e8f0}
+.flag-icon{font-size:1.2rem;min-width:1.5rem}
+.flag-text strong{display:block;font-size:.9rem;color:#0f2944}
+.flag-text span{font-size:12px;color:#475569}
+.flag-item.warn{background:#fff8f0;border-color:#fed7aa}
+.flag-item.new{background:#f0fdf4;border-color:#bbf7d0}
+.flag-item.down{background:#fff1f2;border-color:#fecdd3}
+.flag-item.up{background:#eff6ff;border-color:#bfdbfe}
+.pilar-block{margin-bottom:1.5rem;padding:1rem;border-radius:8px;border-left:4px solid}
+.pilar-block h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.pilar-block p{font-size:12.5px;color:#374151;line-height:1.6}
+.pilar-block ul{margin:.5rem 0 0 1rem;font-size:12px;color:#374151}
+.pilar-block li{margin-bottom:.3rem}
+.p1{border-color:#1d4ed8;background:#eff6ff}
+.p2{border-color:#7c3aed;background:#f5f3ff}
+.p3{border-color:#b45309;background:#fef3c7}
+.p4{border-color:#dc2626;background:#fff1f2}
+.p5{border-color:#059669;background:#f0fdf4}
+.top-table{width:100%;border-collapse:collapse;font-size:13px}
+.top-table th{background:#0f2944;color:#fff;padding:.5rem .8rem;text-align:left;font-size:11px}
+.top-table td{padding:.5rem .8rem;border-bottom:1px solid #f1f5f9;vertical-align:top}
+.top-table tr:hover td{background:#f8fafc}
+.rank-num{font-weight:800;color:#FACC15;background:#0f2944;border-radius:4px;padding:.1rem .5rem;font-size:.85rem}
+.score-badge{font-weight:700;border-radius:4px;padding:.1rem .4rem}
+.score-hi{background:#dcfce7;color:#15803d}
+.score-md{background:#dbeafe;color:#1d4ed8}
+.cluster-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px}
+.new-badge{background:#FACC15;color:#0f2944;font-size:10px;font-weight:700;padding:.1rem .4rem;border-radius:3px;vertical-align:middle}
+.footer{background:#0f2944;color:#94a3b8;text-align:center;padding:1.2rem;font-size:11px;margin-top:1.5rem}
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>🎯 Overlay Estratégico de Recorridas — Perfil del Candidato</h1>
+  <p class="hero-sub">Ajuste de prioridades de los 350 lugares según los 5 ejes del candidato · Agenda 2026</p>
+  <div class="hero-pillars">
+    <span class="pillar-chip active">🏭 Producción & Empleo</span>
+    <span class="pillar-chip active">🎓 Educación & Ciencia</span>
+    <span class="pillar-chip active">🇦🇷 Malvinas & Soberanía</span>
+    <span class="pillar-chip active">🕊️ Pluralidad de Credos</span>
+    <span class="pillar-chip active">🤝 Gestión Municipal Cercana</span>
+  </div>
+  <div style="margin-top:1rem;font-size:12px;color:#93c5fd">Peronismo propio · Sin K · Sin MDF · Con identidad territorial propia</div>
+</div>
+
+<div class="container">
+
+<div class="alert">
+<strong>Nota de uso:</strong> Este documento superpone el perfil político del candidato sobre el análisis de los 350 lugares. 
+No reemplaza el informe base — lo calibra. Los scores ajustados reflejan qué lugares se vuelven más o menos estratégicos dado el perfil específico.
+</div>
+
+<div class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">🧭</span>
+    <div>
+      <div class="sec-title">Los 5 Ejes — Cómo leer el territorio</div>
+      <div class="sec-sub">Marco estratégico para calibrar qué visitar y cómo encuadrarlo</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="pilar-block p1">
+          <h4>🏭 EJE 1: PRODUCCIÓN, EMPLEO Y DESARROLLO ECONÓMICO</h4>
+          <p>El eje más fuerte del candidato. Industria, cooperativas, puertos, parques industriales, campo tecnificado. Debe recorrer al menos 2 lugares productivos por cluster.</p>
+          <ul><li>Toyota Zárate, Ternium San Nicolás, Astilleros Río Santiago, YPF Ensenada</li><li>AFA Pergamino, Puerto Quequén, Parque Industrial Pilar</li><li>Tambos robotizados (Lobos), Polo Semillero (Arrecifes), Fruticultura (San Pedro)</li><li>CNEA Ezeiza, Polo Farmacéutico privado conurbano, INTI San Martín</li></ul>
+        </div><div class="pilar-block p2">
+          <h4>🎓 EJE 2: EDUCACIÓN Y CIENCIA APLICADA</h4>
+          <p>Escuelas técnicas, universidades con orientación productiva, INTA, CONICET. Mensaje: "la educación que da trabajo real".</p>
+          <ul><li>INTA Balcarce, INTA Pergamino, INTA Castelar (CONICET)</li><li>UNLP Ciudad del Conocimiento (encuadre tecnológico)</li><li>UTN regionales: Bahía Blanca, San Nicolás, La Plata</li><li>Escuelas técnicas (ENET): una por cluster, foco en metalurgia/agro</li></ul>
+        </div><div class="pilar-block p3">
+          <h4>🇦🇷 EJE 3: PATRIOTISMO Y SOBERANÍA NACIONAL (MALVINAS)</h4>
+          <p>El eje diferencial más potente. Pocas visitas, máximo impacto: Malvinas, Marina, frontera histórica, industria nacional soberana.</p>
+          <ul><li>Base Naval Puerto Belgrano (Coronel Rosales) — LA visita Malvinas de la PBA</li><li>Zanja de Alsina en Guaminí — frontera histórica visitable</li><li>Regimiento con veteranos de Malvinas — 2 de abril o cualquier fecha</li><li>YPF La Plata + SOMISA/Ternium — soberanía industrial</li></ul>
+        </div><div class="pilar-block p4">
+          <h4>🕊️ EJE 4: PLURALIDAD DE CREDOS — COMUNIDAD EVANGÉLICA</h4>
+          <p>No es religioso pero debe mostrar respeto por todas las expresiones de fe. El movimiento evangélico del conurbano es un actor político determinante.</p>
+          <ul><li>Una visita a iglesia evangélica del conurbano: escucha, no acto — Lomas/Quilmes/La Matanza</li><li>Diálogo con pastores como líderes comunitarios: vivienda, adicciones, trabajo</li><li>Mensaje claro: respeto a todos los credos, ninguno privilegiado</li><li>Evitar: no simular fe que no tiene. La autenticidad es lo que valoran los evangélicos</li></ul>
+        </div><div class="pilar-block p5">
+          <h4>🤝 EJE 5: GESTIÓN MUNICIPAL CERCANA — EMPATÍA TERRITORIAL</h4>
+          <p>El candidato es conocido por su gestión municipal. Debe mostrar que conoce el "estado del campo" en cada municipio: problemas reales, no discurso.</p>
+          <ul><li>Reuniones con intendentes propios o aliados en cada cluster</li><li>Visita a obras concretas: pavimento, cloacas, hospital — lo cotidiano</li><li>Villa Epecuén: narrativa de resiliencia y reconstrucción — empatía máxima</li><li>Ferias de artesanos, mercados municipales, escuelas rurales — cercanía</li></ul>
+        </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">📈</span>
+    <div>
+      <div class="sec-title">Top 15 — Lugares que SUBEN con este perfil</div>
+      <div class="sec-sub">Score ajustado según los 5 ejes del candidato. Ordenados por impacto estratégico.</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div style="background:linear-gradient(90deg,#7c3aed22,transparent);border-left:4px solid #7c3aed;padding:1rem 1.2rem;border-radius:4px;margin:.8rem 0">
+<strong style="color:#7c3aed;font-size:1rem">⭐ El lugar que SUBE MÁS con este perfil: Casa Museo Eva Perón — Los Toldos</strong>
+<p style="font-size:13px;color:#374151;margin-top:.5rem">
+Para un candidato que es peronista pero no kirchnerista, Los Toldos es el activo más diferencial de la Provincia. 
+El kirchnerismo se apropió de la imagen de Eva, pero el lugar donde nació pertenece a todos. Visitar el Complejo Casa Museo 
+y decir "este es el Peronismo real, el de Eva que trabajó para el pueblo, no el que usa su imagen para hacer política" 
+es la declaración de identidad más potente posible. Score ajustado: <strong style="color:#7c3aed">9.40</strong> — el nuevo #1 con este perfil.
+</p>
+</div>
+    <div style="background:linear-gradient(90deg,#dc262622,transparent);border-left:4px solid #dc2626;padding:1rem 1.2rem;border-radius:4px;margin:.8rem 0">
+<strong style="color:#dc2626;font-size:1rem">⭐ El lugar que SUBE MÁS para el eje patriótico: Base Naval Puerto Belgrano</strong>
+<p style="font-size:13px;color:#374151;margin-top:.5rem">
+De todos los lugares de la Provincia, Puerto Belgrano es el único desde donde zarparon los buques de la Armada Argentina hacia Malvinas en 1982. 
+Para el eje soberanía y Malvinas, no existe lugar más potente. Score original: 6.80. Score ajustado con perfil patriótico: <strong style="color:#dc2626">8.80</strong>. 
+La visita ideal: 2 de abril, con veteranos de Malvinas, en la base. Imagen de campaña de impacto nacional.
+</p>
+</div>
+    <table class="top-table">
+      <thead><tr><th>#</th><th>Lugar</th><th>Cluster</th><th>Eje</th><th>Score ajustado</th></tr></thead>
+      <tbody><tr>
+          <td><span class="rank-num">1</span></td>
+          <td><strong>Casa Museo Eva Perón — Los Toldos</strong><br><small style="color:#64748b">General Viamonte</small></td>
+          <td><span class="cluster-dot" style="background:#7c3aed"></span>INTERIOR</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Peronismo / Historia</td>
+          <td><span class="score-badge score-hi">9.40</span> <span class="arrow-up">▲ +0.65</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">El lugar más potente para un peronismo que se desliga del kirchnerismo: Eva pura, sin intermediaciones K. Nacimiento de la figura fundacional del movimiento. IE sube a 10: convoca al peronismo de base que se siente huérfano.</td></tr><tr>
+          <td><span class="rank-num">2</span></td>
+          <td><strong>Toyota Argentina — Planta Zárate</strong><br><small style="color:#64748b">Zárate</small></td>
+          <td><span class="cluster-dot" style="background:#2563EB"></span>CIUDADES</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Producción / Empleo</td>
+          <td><span class="score-badge score-hi">9.35</span> <span class="arrow-same">= igual</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">El ejemplo más contundente del eje producción-empleo. Única planta Toyota de Argentina, 4.500 empleos directos. El candidato que conoce la Provincia conoce Zárate. No tiene carga K.</td></tr><tr>
+          <td><span class="rank-num">3</span></td>
+          <td><strong>Base Naval Puerto Belgrano — Armada Argentina</strong><br><small style="color:#64748b">Coronel Rosales</small></td>
+          <td><span class="cluster-dot" style="background:#dc2626"></span>SUR</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Malvinas / Soberanía</td>
+          <td><span class="score-badge score-hi">8.80</span> <span class="arrow-up">▲ +2.00</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">La principal base de la Armada Argentina, donde zarparon los buques de la Campaña de Malvinas. Para el eje patriótico-soberanista, no hay lugar más potente en toda la Provincia. PC sube a 10 con este perfil.</td></tr><tr>
+          <td><span class="rank-num">4</span></td>
+          <td><strong>Ternium Siderar (ex-SOMISA) — Planta Siderúrgica</strong><br><small style="color:#64748b">San Nicolás</small></td>
+          <td><span class="cluster-dot" style="background:#2563EB"></span>CIUDADES</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Producción / Empleo / Nación</td>
+          <td><span class="score-badge score-hi">9.15</span> <span class="arrow-up">▲ +0.20</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">SOMISA fue creada por el primer peronismo en 1947: acero nacional, soberanía industrial. Para un peronismo que no es K pero sí es nacional y productivo, esta fábrica es la narrativa perfecta. San Nicolás la ciudad del acero argentino.</td></tr><tr>
+          <td><span class="rank-num">5</span></td>
+          <td><strong>Guaminí — Faro Nacional de Agroecología + Zanja de Alsina</strong><br><small style="color:#64748b">Guaminí</small></td>
+          <td><span class="cluster-dot" style="background:#dc2626"></span>SUR</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Producción / Historia / Soberanía</td>
+          <td><span class="score-badge score-hi">8.90</span> <span class="arrow-up">▲ +0.70</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">Doble potencia: el primer municipio agroecológico de Argentina (producción sustentable) + la Zanja de Alsina 1877 (frontera histórica visitable). Un lugar que une tradición, soberanía territorial y futuro productivo. Sin bagaje K.</td></tr><tr>
+          <td><span class="rank-num">6</span></td>
+          <td><strong>Villa Epecuén — La ciudad que vivió bajo el agua</strong><br><small style="color:#64748b">Adolfo Alsina</small></td>
+          <td><span class="cluster-dot" style="background:#dc2626"></span>SUR</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Resiliencia / Empatía</td>
+          <td><span class="score-badge score-hi">8.80</span> <span class="arrow-up">▲ +0.90</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">La narrativa de reconstrucción más poderosa de la Provincia. Para un candidato empático y cercano, visitar Epecuén y hablar con Pablo Novak (el último vecino que nunca se fue) es una imagen de campaña irreplicable. Empatía pura.</td></tr><tr>
+          <td><span class="rank-num">7</span></td>
+          <td><strong>Astilleros Río Santiago — El mayor de América Latina</strong><br><small style="color:#64748b">Ensenada</small></td>
+          <td><span class="cluster-dot" style="background:#7c3aed"></span>INTERIOR</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Producción / Nación / Empleo</td>
+          <td><span class="score-badge score-hi">8.75</span> <span class="arrow-same">= igual</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">Los astilleros más grandes de América Latina, creados por el primer peronismo. Símbolo del trabajo nacional. ATENCIÓN: el gremio ATE tiene presencia kirchnerista fuerte — visitar la planta, no el sindicato. Encuadre: "industria nacional".</td></tr><tr>
+          <td><span class="rank-num">8</span></td>
+          <td><strong>Parque Industrial Pilar — El mayor de Argentina</strong><br><small style="color:#64748b">Pilar</small></td>
+          <td><span class="cluster-dot" style="background:#1F4E79"></span>CONURBANO</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Producción / Empleo / Desarrollo</td>
+          <td><span class="score-badge score-hi">8.65</span> <span class="arrow-up">▲ +0.30</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">El mayor parque industrial de Argentina (600+ empresas, 30.000 trabajadores). Eje producción-empleo en su expresión más contundente en el conurbano. Ninguna asociación K, es territorio donde el candidato puede mostrar gestión y visión.</td></tr><tr>
+          <td><span class="rank-num">9</span></td>
+          <td><strong>Puerto Mar del Plata + Flota Pesquera</strong><br><small style="color:#64748b">General Pueyrredón</small></td>
+          <td><span class="cluster-dot" style="background:#2563EB"></span>CIUDADES</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Producción / Soberanía Marítima</td>
+          <td><span class="score-badge score-hi">8.85</span> <span class="arrow-same">= igual</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">La flota pesquera más grande de Argentina: soberanía marítima + empleo + exportaciones. Conexión directa con el eje patriótico (el mar argentino, Malvinas) y el eje productivo. MdP electoral es clave.</td></tr><tr>
+          <td><span class="rank-num">10</span></td>
+          <td><strong>INTA Balcarce + Museo Fangio</strong><br><small style="color:#64748b">Balcarce</small></td>
+          <td><span class="cluster-dot" style="background:#b45309"></span>SALADO</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Producción / Historia / Educación</td>
+          <td><span class="score-badge score-hi">8.60</span> <span class="arrow-up">▲ +0.35</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">Fangio — 5 veces campeón mundial, el más grande de la historia — nació en la PBA. Dato de orgullo nacional sin carga política. INTA Balcarce = ciencia al servicio del campo. Doble visita de alto impacto comunicacional.</td></tr><tr>
+          <td><span class="rank-num">11</span></td>
+          <td><strong>Destilería YPF La Plata — Refinería histórica</strong><br><small style="color:#64748b">Ensenada</small></td>
+          <td><span class="cluster-dot" style="background:#7c3aed"></span>INTERIOR</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Soberanía / Energía / Nación</td>
+          <td><span class="score-badge score-hi">8.65</span> <span class="arrow-up">▲ +0.55</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">YPF fue símbolo de la reestatización K, pero la REFINERÍA en sí es símbolo del peronismo original (YPF fue creada en 1922). El encuadre: soberanía energética, trabajo argentino, la energía que mueve a la Provincia. Narrativa propia.</td></tr><tr>
+          <td><span class="rank-num">12</span></td>
+          <td><strong>AFA — Agricultores Federados Argentinos</strong><br><small style="color:#64748b">Pergamino</small></td>
+          <td><span class="cluster-dot" style="background:#065f46"></span>CORREDOR</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Producción / Cooperativismo</td>
+          <td><span class="score-badge score-hi">8.50</span> <span class="arrow-up">▲ +0.85</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">La cooperativa más grande de Argentina (33.000 socios). El cooperativismo agropecuario como motor del interior bonaerense. Para el eje producción-empleo, AFA es el ejemplo más masivo y representativo. Sin carga K.</td></tr><tr>
+          <td><span class="rank-num">13</span></td>
+          <td><strong>Puerto Quequén — Segundo exportador agropecuario del sur</strong><br><small style="color:#64748b">Necochea</small></td>
+          <td><span class="cluster-dot" style="background:#0891b2"></span>COSTERO</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Producción / Exportaciones / Soberanía</td>
+          <td><span class="score-badge score-md">8.40</span> <span class="arrow-up">▲ +0.75</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">Infraestructura portuaria del sur: los granos del interior salen por Quequén. Soberanía económica + producción bonaerense. Empleo portuario y agropecuario. Perfecto para el eje productivo.</td></tr><tr>
+          <td><span class="rank-num">14</span></td>
+          <td><strong>UNLP + Ciudad del Conocimiento La Plata</strong><br><small style="color:#64748b">La Plata</small></td>
+          <td><span class="cluster-dot" style="background:#1F4E79"></span>CONURBANO</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Educación / Conocimiento</td>
+          <td><span class="score-badge score-md">8.10</span> <span class="arrow-up">▲ +0.30</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">La mejor universidad pública de Argentina (UNLP). Para el eje educación, es ineludible. CUIDADO con el campus político: la visita debe ser a los laboratorios, incubadoras y centros de investigación, no a los centros de estudiantes.</td></tr><tr>
+          <td><span class="rank-num">15</span></td>
+          <td><strong>CNEA — Centro Atómico Ezeiza</strong><br><small style="color:#64748b">Ezeiza</small></td>
+          <td><span class="cluster-dot" style="background:#1F4E79"></span>CONURBANO</td>
+          <td style="font-size:11px;color:#7c3aed;font-weight:600">Ciencia / Soberanía</td>
+          <td><span class="score-badge score-md">8.05</span> <span class="arrow-up">▲</span></td>
+        </tr>
+        <tr><td colspan="5" style="padding:.2rem .8rem .8rem 2rem;font-size:11.5px;color:#475569;background:#fafafa;border-bottom:2px solid #e2e8f0">Argentina enriquece uranio soberanamente y exporta radiofármacos a más de 40 países. La CNEA Ezeiza es la prueba de que la ciencia pública argentina puede competir globalmente. Eje soberanía energética + Estado + ciencia.</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">🆕</span>
+    <div>
+      <div class="sec-title">6 Lugares Nuevos a Incorporar</div>
+      <div class="sec-sub">No estaban en los 350 — son críticos para este perfil específico</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <ul class="flag-list"><div class="flag-item new">
+          <span class="flag-icon">✅</span>
+          <div class="flag-text">
+            <strong>Federación de Iglesias Evangélicas del Conurbano <span class="new-badge">NUEVO</span></strong>
+            <span><em>La Matanza / Quilmes · CONURBANO · Fe y Comunidad</em><br>La comunidad evangélica representa el 15-20% del electorado bonaerense, concentrada en el conurbano sur. El candidato que no es religioso puede visitar una iglesia evangélica como gesto de respeto y pluralidad de credos — sin simularlo, simplemente escuchar. Pastores como actores políticos locales clave.</span>
+          </div>
+        </div><div class="flag-item new">
+          <span class="flag-icon">✅</span>
+          <div class="flag-text">
+            <strong>Megaiglesía evangélica del Gran Buenos Aires <span class="new-badge">NUEVO</span></strong>
+            <span><em>Lomas de Zamora / Florencio Varela · CONURBANO · Fe y Comunidad</em><br>Las congregaciones pentecostales del conurbano sur mueven miles de votos. Los pastores son líderes comunitarios con más llegada que los punteros tradicionales. Una visita — no un acto político sino una escucha — genera capital relacional enorme con un sector que históricamente vota en bloque.</span>
+          </div>
+        </div><div class="flag-item new">
+          <span class="flag-icon">✅</span>
+          <div class="flag-text">
+            <strong>Monumento y Centro de Veteranos de Malvinas <span class="new-badge">NUEVO</span></strong>
+            <span><em>Todos los municipios · TODOS · Patriotismo / Malvinas</em><br>Cada municipio bonaerense tiene su monumento a los caídos en Malvinas y una asociación de veteranos. Para el eje Malvinas, una recorrida que incluya UN centro de veteranos por cluster (y uno especial en el conurbano) convierte el patriotismo en gesto concreto, no en discurso.</span>
+          </div>
+        </div><div class="flag-item new">
+          <span class="flag-icon">✅</span>
+          <div class="flag-text">
+            <strong>UTN — Universidad Tecnológica Nacional (regionales PBA) <span class="new-badge">NUEVO</span></strong>
+            <span><em>Bahía Blanca / San Nicolás / La Plata · CIUDADES/INTERIOR · Educación Técnica</em><br>La UTN forma a los técnicos e ingenieros de la industria bonaerense. Para el eje educación + producción, una visita a la UTN Bahía Blanca, San Nicolás o la Facultad Regional La Plata ancla el discurso en la formación para el trabajo real. Bajísima carga política.</span>
+          </div>
+        </div><div class="flag-item new">
+          <span class="flag-icon">✅</span>
+          <div class="flag-text">
+            <strong>Escuelas Técnicas (ENET/ET) de referencia por cluster <span class="new-badge">NUEVO</span></strong>
+            <span><em>Múltiples municipios · TODOS · Educación / Trabajo</em><br>Las escuelas técnicas secundarias (ENET) forman a los trabajadores industriales. Visitar una ENET por cluster — especialmente en CIUDADES, CONURBANO e INTERIOR — conecta el eje educativo con el productivo de forma tangible. Los padres de esos estudiantes son votantes directos.</span>
+          </div>
+        </div><div class="flag-item new">
+          <span class="flag-icon">✅</span>
+          <div class="flag-text">
+            <strong>Regimiento militar con historia en Malvinas <span class="new-badge">NUEVO</span></strong>
+            <span><em>Junín / La Plata / Bahía Blanca · CIUDADES · Patriotismo / Fuerzas Armadas</em><br>Varios regimientos del Ejército basados en la Provincia enviaron tropas a Malvinas en 1982. Una visita a un cuartel el 2 de abril — o en cualquier fecha — con veteranos presentes es la imagen patriótica más potente posible para el eje soberanía. Sin costo político.</span>
+          </div>
+        </div></ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">⚠️</span>
+    <div>
+      <div class="sec-title">5 Lugares que Necesitan Reencuadre Narrativo</div>
+      <div class="sec-sub">Se visitan, pero el HOW importa más que el WHERE. Errores aquí pueden costar más que ganar.</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <ul class="flag-list"><div class="flag-item warn">
+          <span class="flag-icon">⚠️</span>
+          <div class="flag-text">
+            <strong>Basílica Nuestra Señora de Luján — CIUDADES</strong>
+            <span>Visitar SÍ — pero encuadrar como patrimonio cultural argentino, no acto de devoción. La Basílica es el símbolo más reconocido de la PBA a nivel nacional. Para un candidato no religioso: "el lugar que une a todos los argentinos, de todos los credos, desde 1630". No tomar rosario, no arrodillarse, no gestos religiosos explícitos. Compensar con visita a comunidad evangélica en el mismo corredor.</span>
+          </div>
+        </div><div class="flag-item warn">
+          <span class="flag-icon">⚠️</span>
+          <div class="flag-text">
+            <strong>UNLP + Campus Universitario La Plata — CONURBANO</strong>
+            <span>Ir a los laboratorios, incubadoras y centros de investigación — no al campus político. La UNLP tiene una militancia estudiantil muy identificada con el kirchnerismo. El rector y los institutos de ciencia son ideológicamente más neutros. Reunión con investigadores del CONICET-UNLP, no con el centro de estudiantes.</span>
+          </div>
+        </div><div class="flag-item warn">
+          <span class="flag-icon">⚠️</span>
+          <div class="flag-text">
+            <strong>Astilleros Río Santiago — INTERIOR</strong>
+            <span>El astillero en sí es un símbolo del peronismo original (creado por Perón en 1953). El encuadre es correcto. PERO el gremio ATE-Astillero tiene una conducción kirchnerista muy activa. Visitar la planta productiva con trabajadores, no hacer acto con la conducción sindical. Si los sindicatos organizan, puede perderse el control del mensaje.</span>
+          </div>
+        </div><div class="flag-item warn">
+          <span class="flag-icon">⚠️</span>
+          <div class="flag-text">
+            <strong>Mercado Central de Buenos Aires — CONURBANO</strong>
+            <span>Espacio con fuerte presencia de la conducción kirchnerista en los puestos de poder del Consorcio. Puede generar fotos comprometedoras con referentes K. Si se visita, mantener foco absoluto en los trabajadores y productores hortícolas, nunca en la gestión institucional del Mercado.</span>
+          </div>
+        </div></ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-header">
+    <span class="sec-emoji">🗺️</span>
+    <div>
+      <div class="sec-title">Regla de Oro por Cluster</div>
+      <div class="sec-sub">Una síntesis de qué debe salir de cada cluster dado el perfil</div>
+    </div>
+  </div>
+  <div class="sec-body">
+    <div class="pilar-block p1">
+      <h4>🏙️ CIUDADES — La Provincia que produce para el mundo</h4>
+      <p>Toyota Zárate + Ternium San Nicolás + Puerto MdP. Tres imágenes: el auto argentino, el acero argentino, el mar argentino. Peronismo industrial sin K. Agrégate UTN San Nicolás o Bahía Blanca para el eje educativo.</p>
+    </div>
+    <div class="pilar-block p2">
+      <h4>🔵 CONURBANO — El corazón electoral: producción + fe + comunidad</h4>
+      <p>INTI San Martín + Frigorífico exportador La Matanza + CNEA Ezeiza. Y en paralelo: UNA visita a iglesia evangélica del sur del conurbano (Lomas, Quilmes, La Matanza). El conurbano se gana con empleo y con comunidad, no con actos.</p>
+    </div>
+    <div class="pilar-block" style="border-color:#065f46;background:#f0fdf4">
+      <h4>🌾 CORREDOR — El campo que exporta: cooperativismo y tradición</h4>
+      <p>AFA Pergamino + San Antonio de Areco. El cooperativismo como forma de producción y la tradición gaucha como identidad cultural. Nada de esto tiene carga K — es peronismo de base y patrimonio nacional.</p>
+    </div>
+    <div class="pilar-block" style="border-color:#0891b2;background:#f0f9ff">
+      <h4>🌊 COSTERO — El litoral atlántico: trabajo y naturaleza</h4>
+      <p>Puerto Quequén (exportaciones) + Mundo Marino (turismo popular masivo). Dos mensajes: "la Provincia exporta" y "la Provincia cuida a las familias que van al mar". Bajo costo político, alta visibilidad turística.</p>
+    </div>
+    <div class="pilar-block p2" style="border-color:#7c3aed">
+      <h4>🌿 INTERIOR — El alma del peronismo: Eva + industria + cooperativas</h4>
+      <p>Casa Museo Eva Perón (Los Toldos) es EL lugar del cluster. Astilleros Río Santiago (con cuidado) + YPF Ensenada. INTA Balcarce. El interior debe verse como "el peronismo que trabaja", no el que hace política.</p>
+    </div>
+    <div class="pilar-block p3" style="border-color:#b45309">
+      <h4>🐄 SALADO — El campo ganadero: Fangio + pejerrey + tradición</h4>
+      <p>Museo Fangio Balcarce + Laguna de Chascomús. Dos imágenes: el orgullo argentino de clase mundial (Fangio) y la laguna familiar del interior bonaerense (pejerrey, gaucho, comunidad). Cero carga política.</p>
+    </div>
+    <div class="pilar-block p4" style="border-color:#dc2626">
+      <h4>⛰️ SUR — Patriotismo, resiliencia y el fin del mundo bonaerense</h4>
+      <p>Base Naval Puerto Belgrano (Malvinas) + Villa Epecuén (resiliencia) + Cerro Tres Picos (naturaleza) + Guaminí (historia + agroecología). El sur tiene las imágenes más potentes para el perfil patriótico-empático. Ninguna tiene carga K.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="footer">Overlay Estratégico · Uso interno confidencial · Provincia de Buenos Aires · 2026</div>
+</body>
+</html>

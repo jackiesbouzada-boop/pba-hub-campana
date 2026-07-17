@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 Lugares Prioritarios — Recorrida Estratégica PBA 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f1f5f9;color:#1e293b;font-size:14px;line-height:1.5}
+a{color:inherit;text-decoration:none}
+
+/* COVER */
+.cover{background:linear-gradient(135deg,#0f2944 0%,#1F4E79 50%,#2563EB 100%);color:white;padding:48px 40px 40px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:rgba(250,204,21,0.08);border-radius:50%}
+.cover-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#FACC15;margin-bottom:12px;font-weight:600}
+.cover h1{font-size:32px;font-weight:800;line-height:1.2;margin-bottom:8px}
+.cover-sub{font-size:16px;color:#93c5fd;margin-bottom:32px}
+.cover-meta{display:flex;gap:32px;flex-wrap:wrap}
+.cover-stat{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:12px 20px;text-align:center}
+.cover-stat .cv{font-size:28px;font-weight:800;color:#FACC15}
+.cover-stat .cl{font-size:11px;color:#93c5fd;text-transform:uppercase;letter-spacing:1px}
+
+/* NAVIGATION */
+.nav-bar{background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 40px;display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.nav-item{padding:6px 14px;border-radius:20px;border:2px solid;font-size:12px;font-weight:600;white-space:nowrap;transition:all 0.2s}
+.nav-item:hover{opacity:0.8;transform:translateY(-1px)}
+
+/* MAIN */
+.main-container{max-width:1200px;margin:0 auto;padding:0 24px 48px}
+
+/* METODOLOGIA */
+.metodologia{background:#fff;margin:24px 0;border-radius:12px;padding:28px 32px;border:1px solid #e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.metodologia h2{font-size:20px;font-weight:700;color:#0f2944;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.criterios{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:20px}
+.criterio{background:#f8fafc;border-radius:8px;padding:14px;border-left:3px solid #2563EB}
+.criterio .ci{font-size:20px;margin-bottom:4px}
+.criterio .cn{font-size:13px;font-weight:700;color:#0f2944}
+.criterio .cw{font-size:11px;color:#FACC15;background:#0f2944;padding:2px 8px;border-radius:10px;display:inline-block;margin-top:4px;font-weight:600}
+.criterio .cd{font-size:12px;color:#64748b;margin-top:6px}
+.nota-met{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 16px;font-size:13px;color:#78350f}
+
+/* TOP 10 TABLE */
+.top10-section{background:#fff;margin:16px 0;border-radius:12px;padding:24px 32px;border:1px solid #e2e8f0}
+.top10-section h2{font-size:18px;font-weight:700;color:#0f2944;margin-bottom:16px}
+.data-table{width:100%;border-collapse:collapse;font-size:13px}
+.data-table th{background:#0f2944;color:white;padding:10px 12px;text-align:left;font-size:11px;letter-spacing:0.5px}
+.data-table td{padding:10px 12px;border-bottom:1px solid #f1f5f9}
+.data-table tr:hover td{background:#f8fafc}
+.top-rank{font-weight:800;font-size:16px;color:#0f2944;text-align:center}
+.top-score{font-weight:800;font-size:16px;text-align:center}
+.cluster-pill{padding:3px 8px;border-radius:10px;font-size:10px;font-weight:700;color:white;white-space:nowrap}
+
+/* CLUSTER SECTION */
+.cluster-section{margin:24px 0}
+.cluster-header{color:white;padding:20px 28px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:16px}
+.cluster-icon{font-size:28px}
+.cluster-name{font-size:20px;font-weight:700;flex:1}
+.cluster-stats{display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-size:12px;opacity:0.85}
+.lugares-grid{background:#fff;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 12px 12px;overflow:hidden}
+
+/* LUGAR CARD */
+.lugar-card{border-bottom:1px solid #f1f5f9;padding:20px 24px}
+.lugar-card:last-child{border-bottom:none}
+.lugar-header{display:flex;align-items:center;gap:14px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #f1f5f9}
+.lugar-rank{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;flex-shrink:0}
+.lugar-title-block{flex:1}
+.lugar-name{font-size:16px;font-weight:700;color:#0f2944;line-height:1.3}
+.lugar-muni{font-size:12px;color:#64748b;margin-top:2px;display:block}
+.score-badge{padding:8px 16px;border-radius:8px;font-size:18px;font-weight:800;flex-shrink:0}
+
+/* SCORE BARS */
+.lugar-scores{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:14px}
+.sc-row{display:flex;align-items:center;gap:8px}
+.sc-label{font-size:11px;color:#64748b;width:195px;flex-shrink:0}
+.sc-bar{flex:1;height:8px;background:#f1f5f9;border-radius:4px;overflow:hidden}
+.sc-fill{height:100%;border-radius:4px;transition:width 0.3s}
+.sc-val{font-size:11px;font-weight:700;color:#374151;width:30px;text-align:right;flex-shrink:0}
+
+/* LUGAR BODY */
+.justificacion{font-size:13px;color:#374151;line-height:1.6;margin-bottom:12px;padding:12px;background:#f8fafc;border-radius:6px}
+.lugar-footer{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mensaje-box{background:#eff6ff;border-left:3px solid #2563EB;padding:10px 12px;border-radius:0 6px 6px 0;font-size:12px;line-height:1.5}
+.actores-box{background:#f0fdf4;border-left:3px solid #16a34a;padding:10px 12px;border-radius:0 6px 6px 0;font-size:12px;line-height:1.5}
+
+/* ANNEX */
+.annex{background:#fff;margin:24px 0;border-radius:12px;border:1px solid #e2e8f0;overflow:hidden}
+.annex-header{background:#0f2944;color:white;padding:20px 28px}
+.annex-header h2{font-size:20px;font-weight:700}
+.annex-header p{font-size:13px;color:#93c5fd;margin-top:4px}
+.annex-table{width:100%;border-collapse:collapse;font-size:12px}
+.annex-table th{background:#1F4E79;color:white;padding:10px 12px;text-align:left;font-size:11px;letter-spacing:0.5px;position:sticky;top:60px}
+.annex-table td{padding:10px 12px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+.annex-table tr:hover td{background:#f8fafc}
+
+/* FOOTER */
+.doc-footer{text-align:center;padding:32px;color:#94a3b8;font-size:12px}
+
+/* PRINT */
+@media print{
+  .nav-bar{display:none}
+  .cover{page-break-after:always}
+  .cluster-section{page-break-before:auto}
+  .lugar-card{page-break-inside:avoid}
+  body{font-size:11px}
+  .sc-label{width:160px}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Provincia de Buenos Aires · Análisis Estratégico Territorial</div>
+  <h1>50 Lugares Prioritarios para la Recorrida<br>Estratégica por la Provincia</h1>
+  <div class="cover-sub">Selección, justificación y ponderación por cluster · 7 regiones · 135 municipios</div>
+  <div class="cover-meta">
+    <div class="cover-stat"><div class="cv">50</div><div class="cl">Lugares seleccionados</div></div>
+    <div class="cover-stat"><div class="cv">7</div><div class="cl">Clusters territoriales</div></div>
+    <div class="cover-stat"><div class="cv">5</div><div class="cl">Criterios de ponderación</div></div>
+    <div class="cover-stat"><div class="cv">2026</div><div class="cl">Ventana de tiempo</div></div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav-bar">
+  <a href="#metodologia" class="nav-item" style="border-color:#0f2944;color:#0f2944">📋 Metodología</a>
+  <a href="#top10" class="nav-item" style="border-color:#FACC15;color:#92400e">⭐ Top 10 Global</a>
+  <a href="#ciudades" class="nav-item" style="border-color:#7C3AED;color:#7C3AED">🏙️ CIUDADES</a>
+<a href="#conurbano" class="nav-item" style="border-color:#DC2626;color:#DC2626">🏭 CONURBANO</a>
+<a href="#corredor" class="nav-item" style="border-color:#059669;color:#059669">🌾 CORREDOR</a>
+<a href="#costero" class="nav-item" style="border-color:#0891B2;color:#0891B2">🌊 COSTERO</a>
+<a href="#interior" class="nav-item" style="border-color:#D97706;color:#D97706">🌻 INTERIOR</a>
+<a href="#salado" class="nav-item" style="border-color:#6366F1;color:#6366F1">🐟 SALADO</a>
+<a href="#sur" class="nav-item" style="border-color:#64748B;color:#64748B">🏔️ SUR</a>
+  <a href="#anexo" class="nav-item" style="border-color:#64748b;color:#64748b">📎 Anexo Actores</a>
+</div>
+
+<div class="main-container">
+
+<!-- METODOLOGIA -->
+<div class="metodologia" id="metodologia">
+  <h2>📋 Metodología de Ponderación</h2>
+  <p style="color:#64748b;margin-bottom:20px;font-size:13px">Cada lugar fue evaluado según cinco criterios ponderados. El score final (0–10) determina la prioridad de visita. Los criterios buscan optimizar simultáneamente el impacto político, comunicacional y territorial de cada parada.</p>
+  <div class="criterios">
+    <div class="criterio"><div class="ci">⚡</div><div class="cn">Impacto Electoral</div><div class="cw">25%</div><div class="cd">¿El municipio es competitivo? ¿La visita impacta directamente en votos recuperables o consolidados?</div></div>
+    <div class="criterio"><div class="ci">📸</div><div class="cn">Potencial Comunicacional</div><div class="cw">25%</div><div class="cd">¿Genera imágenes poderosas, historia de cobertura nacional, relato que viaja más allá del lugar visitado?</div></div>
+    <div class="criterio"><div class="ci">🎯</div><div class="cn">Unicidad Territorial</div><div class="cw">20%</div><div class="cd">¿Es único en la Provincia o en el país? ¿El mismo efecto se puede obtener visitando otro lugar?</div></div>
+    <div class="criterio"><div class="ci">🏭</div><div class="cn">Representatividad Sectorial</div><div class="cw">15%</div><div class="cd">¿Habla por un sector relevante? ¿La visita tiene efecto multiplicador sobre otros municipios o actores?</div></div>
+    <div class="criterio"><div class="ci">🗺️</div><div class="cn">Logística de Visita</div><div class="cw">15%</div><div class="cd">¿Es fácil de organizar, acceder y articular con otras paradas? ¿El lugar está preparado para recibir visitas?</div></div>
+  </div>
+  <div class="nota-met">⚠️ <strong>Criterio de corte:</strong> Lugares con score ≥ 8.0 son <strong>prioridad máxima</strong> (visita en los agenda 2026). Entre 7.0 y 7.9: prioridad media. Por debajo de 7.0: visita complementaria o articulable con paradas adyacentes. El score NO es inamovible: puede revisarse en función de coyuntura política, agenda legislativa o eventos locales.</div>
+</div>
+
+<!-- TOP 10 -->
+<div class="top10-section" id="top10">
+  <h2>⭐ Ranking Global — Los 10 lugares de mayor score en toda la Provincia</h2>
+  <table class="data-table">
+    <thead><tr><th>#</th><th>Cluster</th><th>Lugar</th><th>Municipio</th><th style="text-align:center">Score</th></tr></thead>
+    <tbody><tr><td class="top-rank">1</td><td><span class="cluster-pill" style="background:#7C3AED">CIUDADES</span></td><td><strong>Basílica de Luján</strong></td><td>Luján</td><td class="top-score" style="color:#16a34a">9.05</td></tr>
+<tr><td class="top-rank">2</td><td><span class="cluster-pill" style="background:#7C3AED">CIUDADES</span></td><td><strong>Ternium (ex-SOMISA) — Planta Siderúrgica</strong></td><td>San Nicolás</td><td class="top-score" style="color:#16a34a">8.95</td></tr>
+<tr><td class="top-rank">3</td><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>Laboratorios Richmond — Vacuna Sputnik V</strong></td><td>Malvinas Argentinas</td><td class="top-score" style="color:#16a34a">8.95</td></tr>
+<tr><td class="top-rank">4</td><td><span class="cluster-pill" style="background:#7C3AED">CIUDADES</span></td><td><strong>Puerto de Mar del Plata — Flota Pesquera</strong></td><td>General Pueyrredón</td><td class="top-score" style="color:#16a34a">8.85</td></tr>
+<tr><td class="top-rank">5</td><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>Delta del Paraná — Islas y humedales</strong></td><td>Tigre</td><td class="top-score" style="color:#16a34a">8.85</td></tr>
+<tr><td class="top-rank">6</td><td><span class="cluster-pill" style="background:#D97706">INTERIOR</span></td><td><strong>Casa Museo Eva Perón — Cuna de Evita</strong></td><td>General Viamonte (Los Toldos)</td><td class="top-score" style="color:#16a34a">8.75</td></tr>
+<tr><td class="top-rank">7</td><td><span class="cluster-pill" style="background:#D97706">INTERIOR</span></td><td><strong>Astilleros Río Santiago — El mayor astillero de América Latina</strong></td><td>Ensenada</td><td class="top-score" style="color:#16a34a">8.75</td></tr>
+<tr><td class="top-rank">8</td><td><span class="cluster-pill" style="background:#7C3AED">CIUDADES</span></td><td><strong>Puerto de Bahía Blanca + Polo Petroquímico</strong></td><td>Bahía Blanca</td><td class="top-score" style="color:#16a34a">8.65</td></tr>
+<tr><td class="top-rank">9</td><td><span class="cluster-pill" style="background:#D97706">INTERIOR</span></td><td><strong>Tambo robotizado — Producción lechera de vanguardia</strong></td><td>Lobos</td><td class="top-score" style="color:#16a34a">8.60</td></tr>
+<tr><td class="top-rank">10</td><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>Mercado Central — El corazón alimentario del AMBA</strong></td><td>La Matanza / Tres de Febrero</td><td class="top-score" style="color:#16a34a">8.55</td></tr></tbody>
+  </table>
+</div>
+
+<!-- CLUSTER SECTIONS -->
+
+<section class="cluster-section" id="ciudades">
+  <div class="cluster-header" style="background:#7C3AED">
+    <span class="cluster-icon">🏙️</span>
+    <h2 class="cluster-name">CIUDADES — Ciudades Intermedias</h2>
+    <div class="cluster-stats">
+      <span>7 lugares seleccionados</span>
+      <span>Score promedio: 8.54</span>
+    </div>
+  </div>
+  <div class="lugares-grid">
+    
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #7C3AED">
+    <div class="lugar-rank" style="background:#7C3AED">#01</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Basílica de Luján</h3>
+      <span class="lugar-muni">📍 Luján</span>
+    </div>
+    <div class="score-badge" style="background:#16a34a;color:white">9.05</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>La imagen religiosa más venerada de Argentina. Más de 2 millones de peregrinos anuales confluyen al Santuario, incluida la Peregrinación Juvenil —la más multitudinaria de América Latina. Ninguna otra visita en la Provincia concentra tanta carga simbólica, capacidad de convocatoria popular y potencial comunicacional. Recientemente incorporada a la Red Mundial de Turismo Religioso. La visita combina fe, cultura y presencia territorial en un solo acto.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La Provincia acompaña a quienes cuidan este patrimonio espiritual y a las comunidades que lo sostienen.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Santuario y Basílica Nuestra Señora de Luján, Municipio de Luján, comunidades de peregrinos, Asociación de Turismo Religioso</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #7C3AED">
+    <div class="lugar-rank" style="background:#7C3AED">#02</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Ternium (ex-SOMISA) — Planta Siderúrgica</h3>
+      <span class="lugar-muni">📍 San Nicolás</span>
+    </div>
+    <div class="score-badge" style="background:#16a34a;color:white">8.95</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>La planta integrada de acero más grande de la Argentina, con 5.400 empleados directos y decenas de miles de trabajadores indirectos. Ex-SOMISA fundada por Perón en 1947, privatizada en los '90 y continuada por Techint. Produce chapas para autopartes, construcción, línea blanca y maquinaria agrícola. Imagen de soberanía industrial que resuena en toda la cadena metalmecánica nacional. La Provincia tiene aquí una ventana directa al corazón de la industria pesada bonaerense.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>El acero que construye Argentina sigue teniendo nombre y dirección en San Nicolás. La Provincia tiene una deuda de presencia con quienes sostienen esta industria.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>UOM San Nicolás (gremio siderúrgico), Gerencia de Relaciones Institucionales Ternium, Municipio San Nicolás</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #7C3AED">
+    <div class="lugar-rank" style="background:#7C3AED">#03</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Puerto de Mar del Plata — Flota Pesquera</h3>
+      <span class="lugar-muni">📍 General Pueyrredón</span>
+    </div>
+    <div class="score-badge" style="background:#16a34a;color:white">8.85</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>El mayor puerto pesquero del Atlántico Sur argentino. Miles de pescadores, obreros de la industria naval y procesadora de pescado tienen acá su centro de vida. Mar del Plata es la tercera ciudad de la Provincia y un territorio muy competitivo electoralmente. La visita al puerto —lejos del centro turístico— comunica presencia real con el sector productivo, no con los veraneos. Potencial de cobertura nacional garantizada.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Detrás de cada filete en la mesa argentina hay un trabajador portuario marplatense. La Provincia los reconoce.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>SOIP (Sindicato de Obreros de la Industria Pesquera), CAABPA (Cámara de Armadores), Municipio General Pueyrredón, INIDEP</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #7C3AED">
+    <div class="lugar-rank" style="background:#7C3AED">#04</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Puerto de Bahía Blanca + Polo Petroquímico</h3>
+      <span class="lugar-muni">📍 Bahía Blanca</span>
+    </div>
+    <div class="score-badge" style="background:#16a34a;color:white">8.65</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>El complejo portuario más importante del sur del hemisferio occidental en términos de exportaciones agropecuarias, y el único polo petroquímico integrado de Argentina (YPF, Dow, Profertil, Compañía de Materias Plásticas). Por aquí sale gran parte del trigo, maíz y girasol que exporta el país. Una visita al puerto habla simultáneamente a productores agropecuarios del sur, trabajadores petroquímicos y al imaginario de la Patagonia productiva.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Bahía Blanca no es solo el sur de la Provincia: es la puerta de salida de la producción de todo el país. La Provincia tiene que estar presente donde se genera divisas.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Consorcio de Gestión del Puerto de Bahía Blanca, YPF Bahía Blanca, Dow Argentina, Profertil, SOIP sur, Municipio Bahía Blanca</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #7C3AED">
+    <div class="lugar-rank" style="background:#7C3AED">#05</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">TenarisSiderca — Tubos sin costura</h3>
+      <span class="lugar-muni">📍 Campana</span>
+    </div>
+    <div class="score-badge" style="background:#16a34a;color:white">8.50</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Única planta productora de tubos sin costura de Argentina y líder mundial. Más de 1,3 millones de toneladas anuales exportadas a 29 países. Sin estos tubos, la industria petrolera argentina —incluyendo Vaca Muerta— no puede operar. La planta de Campana es la más grande del grupo Tenaris en el mundo. La visita habla de exportaciones, soberanía energética y empleo industrial de alta calificación, a 75km de la Ciudad de Buenos Aires.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Los tubos que permiten explotar Vaca Muerta se fabrican en Campana. La Provincia conecta la industria del norte con la energía del sur.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>UOM Campana, Gerencia TenarisSiderca, Municipio Campana</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #7C3AED">
+    <div class="lugar-rank" style="background:#7C3AED">#06</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Loma Negra — El cemento que construyó Argentina</h3>
+      <span class="lugar-muni">📍 Olavarría</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">7.95</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>La mayor productora de cemento de Argentina con 100 años de historia en Olavarría. La marca "Loma Negra" es sinónimo de construcción para millones de argentinos. La Provincia puede construir aquí un relato de industria nacional, trabajo formal y desarrollo territorial que resonará en toda la cadena de la construcción. Adicionalmente, Olavarría tiene una fuerte industria cerámicas y minerales no metálicos.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Cada obra pública en la Provincia lleva dentro cimento de Olavarría. Un modelo de industria nacional con arraigo territorial.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>UOM Olavarría, Cámara de la Construcción, Loma Negra (Fabrica), Municipio Olavarría</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #7C3AED">
+    <div class="lugar-rank" style="background:#7C3AED">#07</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Tandil — Sierra, chacinados y metalurgia de precisión</h3>
+      <span class="lugar-muni">📍 Tandil</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">7.85</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Tandil es única en la Provincia: las únicas sierras naturales en territorio de llanura, con industria metalúrgica de alta precisión (GADA, INVAP auxiliar), chacinados artesanales con IGP reconocida y turismo serrano de escala nacional. La visita combina tres públicos en un solo lugar: productores artesanos, trabajadores metalúrgicos y la clase media turística bonaerense. La piedra movediza y el salame de Tandil son datos de color irremplazables.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Tandil demuestra que la Provincia tiene sierra, industria de precisión y producción artesanal en el mismo territorio.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>FINI (Fundación Investigación Metalúrgica), productores de chacinados IGP, Club Andino Tandil, Municipio Tandil</div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="cluster-section" id="conurbano">
+  <div class="cluster-header" style="background:#DC2626">
+    <span class="cluster-icon">🏭</span>
+    <h2 class="cluster-name">CONURBANO — Conurbano Bonaerense</h2>
+    <div class="cluster-stats">
+      <span>10 lugares seleccionados</span>
+      <span>Score promedio: 8.16</span>
+    </div>
+  </div>
+  <div class="lugares-grid">
+    
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #DC2626">
+    <div class="lugar-rank" style="background:#DC2626">#01</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Laboratorios Richmond — Vacuna Sputnik V</h3>
+      <span class="lugar-muni">📍 Malvinas Argentinas</span>
+    </div>
+    <div class="score-badge" style="background:#16a34a;color:white">8.95</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>El único laboratorio en Argentina que produjo una vacuna propia (Sputnik V contra COVID-19) bajo acuerdo con el Fondo Ruso de Inversión Directa. Hito de soberanía sanitaria nacional. Richmond emplea miles de trabajadores y es modelo de industria farmacéutica de capital nacional. La visita construye el relato de "Estado + ciencia + trabajo" con imágenes que recorrieron el mundo en 2021. A 30km de CABA, muy accesible.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Argentina demostró que puede producir vacunas propias. La Provincia tiene que seguir apostando por la industria farmacéutica nacional.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Dr. Marcelo Figueiras (CEO Richmond), Cámara Industrial de Laboratorios Farmacéuticos Argentinos (CILFA), Municipio Malvinas Argentinas</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #DC2626">
+    <div class="lugar-rank" style="background:#DC2626">#02</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Delta del Paraná — Islas y humedales</h3>
+      <span class="lugar-muni">📍 Tigre</span>
+    </div>
+    <div class="score-badge" style="background:#16a34a;color:white">8.85</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>El Delta del Paraná es uno de los ecosistemas únicos del mundo, con 320.000 hectáreas de islas, canales, fauna y comunidades isleñas bonaerenses. Tigre es el punto de acceso a 45 minutos de la Ciudad de Buenos Aires. La visita en lancha genera imágenes imposibles de replicar en otro lugar. Combina humedales, pequeños productores frutales isleños, pesca artesanal y turismo de naturaleza. Alta carga simbólica: la Provincia cuida lo que nadie más cuida.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La Provincia tiene un ecosistema único en el mundo a 45 minutos de la Ciudad. No es recurso turístico: es patrimonio que hay que proteger y valorizar.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Comunidad isleña del Delta, Prefectura Naval Argentina (coordinación), Club de Regatas La Marina, Municipio Tigre</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #DC2626">
+    <div class="lugar-rank" style="background:#DC2626">#03</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Mercado Central — El corazón alimentario del AMBA</h3>
+      <span class="lugar-muni">📍 La Matanza / Tres de Febrero</span>
+    </div>
+    <div class="score-badge" style="background:#16a34a;color:white">8.55</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>El mercado mayorista de alimentos más grande del país: 540 hectáreas, más de 700 empresas, conexión directa con productores de todo el país. Todo lo que se come en el AMBA pasa por acá. La visita permite construir el relato de soberanía alimentaria con datos concretos: precios, cadena de valor, productores pequeños y medianos. La Matanza es el municipio más poblado de Argentina — su impacto electoral es máximo.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Los precios de lo que come la Provincia se deciden en parte acá. La Provincia tiene que estar presente donde se forma el valor de la canasta básica.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Directorio del Mercado Central de Buenos Aires, Gremio de Transportistas (CAMIONEROS), asociaciones de productores, Municipio La Matanza</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #DC2626">
+    <div class="lugar-rank" style="background:#DC2626">#04</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">CNEA — Centro Atómico Ezeiza</h3>
+      <span class="lugar-muni">📍 Ezeiza</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">8.35</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Uno de los complejos nucleares de investigación y producción civil más importantes de América Latina. Argentina es uno de los pocos países del mundo que enriquece uranio de forma soberana para usos pacíficos. El Centro produce radiofármacos exportados a decenas de países. La visita comunica ciencia argentina, exportaciones de alta tecnología y soberanía energética. A 35km de CABA, muy accesible, con protocolo institucional establecido.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Argentina produce tecnología nuclear para la medicina y la energía. La Provincia tiene científicos de nivel mundial trabajando en Ezeiza.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>CNEA (Comisión Nacional de Energía Atómica), INVAP, CONICET, Municipio Ezeiza</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #DC2626">
+    <div class="lugar-rank" style="background:#DC2626">#05</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Cervecería y Maltería Quilmes</h3>
+      <span class="lugar-muni">📍 Quilmes</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">8.35</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>La marca de cerveza más reconocida de Argentina, con 140 años de historia en la misma localidad del sur del Conurbano. La Cervecería Quilmes es símbolo de industria nacional, trabajo formal e historia popular argentina. La visita tiene valor museológico, comunicacional y de identidad colectiva. Miles de trabajadores directos e indirectos. A 30 minutos de CABA.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>140 años fabricando en el mismo lugar, con los mismos trabajadores bonaerenses. Eso es arraigo territorial.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Gerencia de Relaciones Institucionales AB InBev Argentina, UO cervecera, Municipio Quilmes</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #DC2626">
+    <div class="lugar-rank" style="background:#DC2626">#06</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Hospital El Cruce — Alta complejidad pública</h3>
+      <span class="lugar-muni">📍 Florencio Varela</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">8.00</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Modelo de hospital público de alta complejidad en uno de los municipios más postergados del Conurbano. El Hospital El Cruce realiza trasplantes, cirugías cardíacas de complejidad máxima y atención de primer nivel a población sin obra social. Es referencia nacional de lo que puede hacer el sistema público de salud cuando hay inversión y gestión. La visita comunica con claridad el rol del Estado provincial en salud.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>El Estado puede hacer cirugías de corazón de alta complejidad y atenderlas de forma gratuita. El Hospital El Cruce lo demuestra todos los días.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Dirección médica y de enfermería del Hospital El Cruce, CICOP (médicos bonaerenses), Municipio Florencio Varela</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #DC2626">
+    <div class="lugar-rank" style="background:#DC2626">#07</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Polo Farmacéutico — Cluster de laboratorios nacionales</h3>
+      <span class="lugar-muni">📍 General San Martín</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">7.70</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>El corredor Panamericana-General San Martín concentra el mayor cluster de laboratorios farmacéuticos nacionales de Argentina: Roemmers, Elea, Bago, Phoenix, Maprimed. Miles de trabajadores de alta calificación, exportaciones en crecimiento y modelo de sustitución de importaciones farmacéuticas. La visita puede articularse con acceso a medicamentos, genéricos y soberanía sanitaria.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Detrás de los medicamentos genéricos accesibles hay laboratorios nacionales en el norte del Conurbano. La Provincia los apoya.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>CILFA (Cámara Industrial de Laboratorios Farmacéuticos Argentinos), Roemmers, Laboratorio Elea, Municipio General San Martín</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #DC2626">
+    <div class="lugar-rank" style="background:#DC2626">#08</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">UNLP — Universidad Nacional de La Plata</h3>
+      <span class="lugar-muni">📍 La Plata</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">7.70</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Segunda universidad más grande del país, con más de 100.000 estudiantes y un sistema de investigación vinculado con CONICET y desarrollo tecnológico. La Plata es capital provincial y sede del poder político bonaerense. La UNLP es también el principal empleador de la ciudad. La visita a un instituto de innovación (CIC, IFLP, CITEDEF) combina ciencia, juventud y desarrollo productivo en el centro simbólico del poder bonaerense.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La Provincia tiene 100.000 estudiantes universitarios en su propia capital. Invertir en su ciencia es invertir en el futuro de todo el territorio.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Presidencia UNLP, CIC (Comisión de Investigaciones Científicas PBA), CONICET La Plata, Municipio La Plata</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #DC2626">
+    <div class="lugar-rank" style="background:#DC2626">#09</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Centro Textil e Industrial de Avellaneda</h3>
+      <span class="lugar-muni">📍 Avellaneda</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">7.65</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Avellaneda concentra el polo textil más grande del Gran Buenos Aires, con miles de talleres, fábricas e indumentaria de todo tipo. El sector emplea trabajadores formales e informales. El corredor comercial e industrial de Avellaneda linda con CABA y es uno de los distritos más dinámicos y competitivos electoralmente del Conurbano. La visita puede combinar PyMEs textiles, economía popular y comercio de proximidad.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Los textiles que viste la Argentina se hacen en gran parte en Avellaneda. La Provincia apoya a la PyME bonaerense.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Cámara Argentina de la Indumentaria, SOIVA (textiles), Unión del Comercio Avellaneda, Municipio Avellaneda</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #DC2626">
+    <div class="lugar-rank" style="background:#DC2626">#10</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Berisso — Barrio histórico del 17 de Octubre</h3>
+      <span class="lugar-muni">📍 Berisso</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">7.45</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Berisso es la cuna simbólica del 17 de Octubre de 1945 y la ciudad más multicultural de la Provincia: 56 colectividades de inmigrantes europeos y latinoamericanos. El barrio del ex-frigorífico Swift conserva la memoria obrera más potente de la historia bonaerense. La Capital Nacional del Inmigrante (designada oficialmente) y su Fiesta anual convoca miles de personas. Una visita aquí habla de identidad, trabajo, historia y diversidad cultural.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Berisso no solo recuerda el 17 de Octubre: es el lugar donde se forjó la identidad obrera de la Argentina moderna. La Provincia tiene una deuda de reconocimiento con esa historia.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Municipio Berisso, Asociaciones de colectividades de inmigrantes, Fundación Histórica de Berisso, UOM Berisso</div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="cluster-section" id="corredor">
+  <div class="cluster-header" style="background:#059669">
+    <span class="cluster-icon">🌾</span>
+    <h2 class="cluster-name">CORREDOR — Corredor Productivo Norte</h2>
+    <div class="cluster-stats">
+      <span>6 lugares seleccionados</span>
+      <span>Score promedio: 7.46</span>
+    </div>
+  </div>
+  <div class="lugares-grid">
+    
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #059669">
+    <div class="lugar-rank" style="background:#059669">#01</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">San Antonio de Areco — Capital de la Tradición Gaucha</h3>
+      <span class="lugar-muni">📍 San Antonio de Areco</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">8.20</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>El lugar más representativo de la identidad cultural bonaerense y argentina en el mundo. Sede de la Fiesta Nacional de la Tradición, con artesanos de plata, talabarteros, estancias turísticas y el Museo Gauchesco Ricardo Güiraldes (autor de Don Segundo Sombra). La imagen del candidato con artesanos y gauchos en este escenario recorre medios nacionales e internacionales. A 110km de CABA, ideal para visita de media jornada.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La identidad bonaerense tiene raíces gauchas y las cuida. San Antonio de Areco es el lugar donde eso se toca con la mano.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Asociación de Artesanos de Areco, Museo Gauchesco Ricardo Güiraldes, Red de Estancias Turísticas, Municipio San Antonio de Areco</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #059669">
+    <div class="lugar-rank" style="background:#059669">#02</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">San Pedro — Fruticultura y producción costera del Paraná</h3>
+      <span class="lugar-muni">📍 San Pedro</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">7.90</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>San Pedro es el principal distrito productor de frutas de clima templado de la Provincia: arándanos, kiwi, ciruelas, duraznos, quintas y citricultura de exportación. El río Paraná define el paisaje productivo. La industria frutihortícola emplea miles de trabajadores estacionales y genera divisas. La visita puede articularse con exportadores de arándanos a Europa y con el debate sobre mano de obra, precios y cadena de valor.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>El arándano que exporta Argentina al mundo en gran parte viene de San Pedro. La Provincia apoya al productor frutícola bonaerense.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Cámara Frutihortícola de San Pedro, productores de arándanos para exportación, Municipio San Pedro</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #059669">
+    <div class="lugar-rank" style="background:#059669">#03</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">AFA — Agricultores Federados Argentinos, Pergamino</h3>
+      <span class="lugar-muni">📍 Pergamino</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">7.80</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>La cooperativa agropecuaria de primer grado más grande de Argentina y una de las 25 mayores del mundo, con 33.000 socios, 104 plantas en 9 provincias y exportaciones a 29 países. Fundada en 1932. El INTA Pergamino (en el mismo municipio) es el principal centro de investigación agropecuaria del país. La visita habla directamente a todos los productores agrícolas de la Provincia: cereales, oleaginosas, semillas, innovación.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Los chacareros bonaerenses no producen solos: tienen cooperativas centenarias y ciencia pública de calidad mundial al lado de sus campos.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Gerencia AFA (Agricultores Federados Argentinos), INTA Pergamino, Cámara de Semilleros de la Provincia</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #059669">
+    <div class="lugar-rank" style="background:#059669">#04</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Polo Semillero — Arrecifes y Salto</h3>
+      <span class="lugar-muni">📍 Arrecifes / Salto</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">7.20</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>El corredor Arrecifes-Salto concentra la mayor densidad de plantas de semillas del país: Syngenta, Bayer, NIDERA (actual BASF), Don Mario y decenas de semilleros locales. Argentina es potencia mundial en semillas mejoradas. La visita a una planta de semillas es una imagen de alta tecnología agropecuaria, biotecnología y exportaciones que no se espera en una ciudad de 30.000 habitantes.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La semilla que produce la mitad del agro latinoamericano se desarrolla en municipios bonaerenses que casi nadie conoce. La Provincia lo sabe y lo valora.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Cámara Argentina de Semillas (CAS), semilleras regionales, INTA local, Municipio Arrecifes</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #059669">
+    <div class="lugar-rank" style="background:#059669">#05</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Zona Franca Metropolitana — Colón</h3>
+      <span class="lugar-muni">📍 Colón (Buenos Aires)</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">6.90</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>La Zona Franca Metropolitana de Colón es la principal zona franca de la Provincia de Buenos Aires, con industrias que exportan bajo régimen aduanero especial. Es un modelo de política industrial con impacto directo en empleo y exportaciones. La visita permite hablar de comercio exterior, inversión y desarrollo económico del interior productivo.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La Provincia tiene una herramienta de política industrial funcionando en el Corredor Norte. Hay que usarla más y mejor.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Administración Zona Franca Metropolitana, empresas radicadas, Municipio Colón</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #059669">
+    <div class="lugar-rank" style="background:#059669">#06</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Capilla del Señor — Turismo rural histórico</h3>
+      <span class="lugar-muni">📍 Exaltación de la Cruz</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">6.75</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:50%;background:#D97706"></div></div><span class="sc-val">5/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:50%;background:#D97706"></div></div><span class="sc-val">5/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Uno de los pueblos históricos mejor conservados de la Provincia, a 75km de CABA. Capilla del Señor fue Monumento Histórico Nacional por su arquitectura colonial. Las estancias circundantes ofrecen turismo rural de alta gama. La visita combina patrimonio histórico, turismo productivo y una imagen pastoral a menos de una hora de la Capital Federal. Ideal como primera parada de un circuito del Corredor.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La Provincia tiene historia colonial a 75 kilómetros de la capital. Eso no lo tiene ninguna otra provincia argentina.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Municipio Exaltación de la Cruz, Red de Estancias Turísticas del Corredor Norte, Comisión de Patrimonio Histórico</div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="cluster-section" id="costero">
+  <div class="cluster-header" style="background:#0891B2">
+    <span class="cluster-icon">🌊</span>
+    <h2 class="cluster-name">COSTERO — Corredor Costero</h2>
+    <div class="cluster-stats">
+      <span>5 lugares seleccionados</span>
+      <span>Score promedio: 7.05</span>
+    </div>
+  </div>
+  <div class="lugares-grid">
+    
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #0891B2">
+    <div class="lugar-rank" style="background:#0891B2">#01</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Puerto Quequén — Segundo exportador agropecuario del sur</h3>
+      <span class="lugar-muni">📍 Necochea</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">7.60</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>El Puerto Quequén es el segundo puerto en volumen de exportaciones agropecuarias de la Provincia, con más de 7 millones de toneladas anuales de granos y subproductos. Sin la infraestructura portuaria del sur bonaerense, la producción cerealera no llega al mundo. La visita habla a toda la cadena de valor del campo del sur: productores, acopiadores, cooperativas y trabajadores portuarios.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>El campo del sur bonaerense necesita un puerto que funcione para exportar. Quequén es ese puerto, y la Provincia lo tiene que fortalecer.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Consorcio Puerto Quequén, exportadores cerealeros del sur, UOM portuaria, Municipio Necochea</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #0891B2">
+    <div class="lugar-rank" style="background:#0891B2">#02</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Villa Gesell — Turismo popular accesible</h3>
+      <span class="lugar-muni">📍 Villa Gesell</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">7.25</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Villa Gesell es el destino de la costa atlántica más elegido por la clase media bonaerense de ingresos medios y bajos. Fue fundado sobre médanos como experimento forestal en los años '30 y se convirtió en destino emblema del turismo popular provincial. La visita al balneario municipal y a la gastronomía local habla al votante de ingresos medios que más vacaciones toma en la provincia. Alto potencial de cobertura en medios de entretenimiento.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La costa atlántica es de los bonaerenses que trabajan todo el año. La Provincia cuida que sea accesible para todos.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Cámara de Turismo de Villa Gesell, Asociación de Hoteleros, Municipio Villa Gesell</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #0891B2">
+    <div class="lugar-rank" style="background:#0891B2">#03</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Mar Chiquita — Albufera y Reserva Biósfera UNESCO</h3>
+      <span class="lugar-muni">📍 Mar Chiquita</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">6.85</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:50%;background:#D97706"></div></div><span class="sc-val">5/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>La laguna Mar Chiquita es la única albufera de la Provincia y una de las pocas reservas de biósfera UNESCO de la Argentina. Una combinación única de mar, laguna salada y campo productivo en un espacio reducido. El sitio tiene altísimo valor ambiental y turístico con potencial enorme no desarrollado. Una visita aquí posiciona a la Provincia como referente de turismo sustentable y cuidado ambiental.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La Provincia tiene una reserva de la biosfera UNESCO que casi nadie conoce. Eso hay que mostrarlo.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Municipio Mar Chiquita, Reserva de Biósfera Mar Chiquita (administración), productores del cordón costero, OPDS PBA</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #0891B2">
+    <div class="lugar-rank" style="background:#0891B2">#04</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">La Costa — Turismo masivo del corredor atlántico</h3>
+      <span class="lugar-muni">📍 La Costa</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">6.80</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>El Partido de La Costa (San Bernardo, Santa Teresita, Mar del Tuyú, San Clemente) es el destino de veraneo más accesible y masivo de la Provincia, con millones de turistas anuales de menores ingresos. El turismo de La Costa es el turismo popular bonaerense por excelencia. La industria hotelera y gastronómica local emplea a miles de trabajadores. La visita habla directamente al votante de la costa popular.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La costa de La Costa es de los que no pueden ir más lejos. La Provincia tiene que asegurarse de que sigan pudiendo ir.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Cámara de Turismo de La Costa, Asociación de Empleados de Comercio turístico, Municipio La Costa</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #0891B2">
+    <div class="lugar-rank" style="background:#0891B2">#05</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Monte Hermoso — El sol que nace y muere en el mar</h3>
+      <span class="lugar-muni">📍 Monte Hermoso</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">6.75</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:50%;background:#D97706"></div></div><span class="sc-val">5/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Monte Hermoso tiene una característica geográfica única en Argentina y rara en el mundo: por su orientación costera, el sol sale Y se pone sobre el mar desde el mismo punto de la playa. Es el único lugar de la costa argentina donde eso ocurre. Dato de color inigualable. Las playas naturales sin construcción masiva y el entorno ambiental prístino la diferencian del resto de la costa. Es el destino turístico del sur bonaerense con mayor potencial de crecimiento.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>En toda la costa argentina, solo en Monte Hermoso el sol sale y se pone sobre el mar. La Provincia tiene que proteger esa rareza y potenciarla.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Municipio Monte Hermoso, operadores turísticos, comunidad local de pescadores artesanales</div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="cluster-section" id="interior">
+  <div class="cluster-header" style="background:#D97706">
+    <span class="cluster-icon">🌻</span>
+    <h2 class="cluster-name">INTERIOR — Interior Agropecuario</h2>
+    <div class="cluster-stats">
+      <span>8 lugares seleccionados</span>
+      <span>Score promedio: 7.68</span>
+    </div>
+  </div>
+  <div class="lugares-grid">
+    
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #D97706">
+    <div class="lugar-rank" style="background:#D97706">#01</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Casa Museo Eva Perón — Cuna de Evita</h3>
+      <span class="lugar-muni">📍 General Viamonte (Los Toldos)</span>
+    </div>
+    <div class="score-badge" style="background:#16a34a;color:white">8.75</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>En Los Toldos nació María Eva Duarte de Perón el 7 de mayo de 1919. La casa ha sido declarada Monumento Histórico Nacional (Ley 25.631). El Complejo Casa Museo tiene auditorio, biblioteca, museo permanente y espacio para eventos. Cada 7 de mayo convoca a miles de peregrinos políticos de todo el país. La visita en este lugar tiene carga simbólica incomparable: ningún otro municipio de la Provincia puede ofrecer este nivel de historia nacional.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>El 7 de mayo nació en un pueblo bonaerense la mujer que cambió la historia de Argentina. La Provincia no puede ignorar ese legado.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Municipio General Viamonte, Fundación Complejo Casa Museo Eva Perón, Partido Justicialista bonaerense</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #D97706">
+    <div class="lugar-rank" style="background:#D97706">#02</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Astilleros Río Santiago — El mayor astillero de América Latina</h3>
+      <span class="lugar-muni">📍 Ensenada</span>
+    </div>
+    <div class="score-badge" style="background:#16a34a;color:white">8.75</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Fundados por Perón en 1953, los Astilleros Río Santiago son los más grandes de América Latina y el principal empleador industrial de Ensenada con más de 3.000 trabajadores directos. Han construido buques de guerra, mercantes y para YPF. Es un símbolo de la industria naval pública argentina. La visita genera imágenes de galpones enormes, buques en construcción y obreros navales que no existen en ningún otro lugar de la Provincia.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>El astillero más grande de América Latina está en la Provincia de Buenos Aires y es público. Eso hay que decirlo fuerte.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>ATE Astillero Río Santiago (sindicato), Dirección del Astillero, Municipio Ensenada, Destilería YPF La Plata (visita complementaria)</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #D97706">
+    <div class="lugar-rank" style="background:#D97706">#03</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Tambo robotizado — Producción lechera de vanguardia</h3>
+      <span class="lugar-muni">📍 Lobos</span>
+    </div>
+    <div class="score-badge" style="background:#16a34a;color:white">8.60</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>La cuenca lechera bonaerense tiene hoy tambos con tecnología robótica de ordeñe que permiten producción 24hs sin operarios en el turno nocturno. Lobos concentra establecimientos de este tipo que son referencia nacional. La visita a un tambo robotizado es la imagen más poderosa del agro tecnificado bonaerense: vacas con sensores digitales, software de gestión y producción trazable. Contraintuitivo e impactante para cualquier audiencia.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La lechería bonaerense no es la del pasado: tiene robots, sensores y software. La Provincia apoya la innovación que mantiene al productor en el campo.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Propietarios de tambos tecnificados (perfil innovador), INTA Chascomús, Asociación de Tamberos de la Cuenca Oeste, Municipio Lobos</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #D97706">
+    <div class="lugar-rank" style="background:#D97706">#04</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Cooperativa láctea — Hub lechero de la pampa húmeda</h3>
+      <span class="lugar-muni">📍 9 de Julio</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">7.70</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>9 de Julio es uno de los centros de la cuenca lechera más importante del país. Las cooperativas de primer grado que operan aquí conectan directamente a pequeños y medianos productores con la industrialización y comercialización de leche. La visita permite mostrar el modelo cooperativo bonaerense funcionando y hablar del precio de la leche, los costos del tambero y el modelo de integración vertical con nombre y apellido.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>El tambero bonaerense necesita cooperativas que le den poder de negociación. Aquí se puede ver ese modelo funcionando.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Cooperativa lechera local (SanCor o cooperativa zonal), INTA 9 de Julio, Municipio 9 de Julio</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #D97706">
+    <div class="lugar-rank" style="background:#D97706">#05</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Feedlot de escala — Ganadería intensiva de exportación</h3>
+      <span class="lugar-muni">📍 Lincoln</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">7.30</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Lincoln concentra uno de los mayores clusters de feedlots del país. La ganadería intensiva que convierte granos en carne para exportación es modelo empresarial y fuente de empleos calificados. La visita es la imagen más actual de la carne argentina: no es el campo de los años '50 sino una industria intensiva y tecnificada. Permite hablar de exportaciones cárnicas, bienestar animal y acceso al mercado internacional.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La carne argentina de exportación ya no viene solo del campo abierto: viene de sistemas intensivos tecnificados que la Provincia tiene que regular y potenciar.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Cámara Argentina de Feedlot, INTA Lincoln, Municipio Lincoln</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #D97706">
+    <div class="lugar-rank" style="background:#D97706">#06</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Hub agropecuario del noroeste — Cooperativas productoras</h3>
+      <span class="lugar-muni">📍 Chacabuco</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">7.00</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Chacabuco es el nodo de articulación del noroeste agropecuario bonaerense: cooperativas cerealeras, acopiadoras y servicios de logística rural que conectan a cientos de productores con los puertos. La visita a una cooperativa local de primer grado —con elevadores, balanzas y servicios al productor— muestra en miniatura cómo funciona la cadena agroexportadora argentina en su eslabón más cercano al productor.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Las cooperativas bonaerenses del interior son las que evitan que el productor quede solo frente al mercado. La Provincia las tiene que sostener.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Cooperativas locales de Chacabuco, Asociación Cooperativa Argentina, Municipio Chacabuco</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #D97706">
+    <div class="lugar-rank" style="background:#D97706">#07</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Cabaña ganadera de élite — Ganadería de punta</h3>
+      <span class="lugar-muni">📍 Azul</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">6.90</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Azul aloja cabañas ganaderas de primera línea que producen reproductores bovinos de alta genética con certificación internacional. Los remates de hacienda en Azul atraen compradores de toda la Provincia y de países limítrofes. La visita a una cabaña permite mostrar la ganadería como industria de alto valor, no commodity. La Sociedad Rural de Azul tiene 120+ años de historia.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La genética bovina que mejora el campo latinoamericano viene de establecimientos bonaerenses como los de Azul.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Sociedad Rural de Azul, cabañas premiadas locales, SENASA (registro reproductores), Municipio Azul</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #D97706">
+    <div class="lugar-rank" style="background:#D97706">#08</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Bolívar — Campo productivo integrado pampeano</h3>
+      <span class="lugar-muni">📍 Bolívar</span>
+    </div>
+    <div class="score-badge" style="background:#DC2626;color:white">6.45</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Bolívar representa el modelo más extendido del Interior Agropecuario: agricultura y ganadería mixta, cooperativas de servicios, red de pequeñas empresas agroindustriales y escuelas agropecuarias. No tiene el dato de color de otros municipios, pero sí la densidad típica del interior bonaerense que ninguna visita puede ignorar si se quiere hablar al productor pampeano estándar. La visita aquí es la visita al "productor promedio" de la Provincia.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>El 80% de los productores de la Provincia se parece más a Bolívar que a los casos excepcionales. Ellos también necesitan que la Provincia los vea.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Cooperativa local de Bolívar, Escuela de Educación Agropecuaria, Municipio Bolívar</div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="cluster-section" id="salado">
+  <div class="cluster-header" style="background:#6366F1">
+    <span class="cluster-icon">🐟</span>
+    <h2 class="cluster-name">SALADO — Cuenca del Salado</h2>
+    <div class="cluster-stats">
+      <span>6 lugares seleccionados</span>
+      <span>Score promedio: 7.16</span>
+    </div>
+  </div>
+  <div class="lugares-grid">
+    
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #6366F1">
+    <div class="lugar-rank" style="background:#6366F1">#01</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Museo Fangio + Papa de Balcarce</h3>
+      <span class="lugar-muni">📍 Balcarce</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">8.25</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Juan Manuel Fangio —cinco veces campeón mundial de Fórmula 1, el más grande de la historia— nació en Balcarce. El museo que lleva su nombre es considerado el mejor museo de automovilismo de América del Sur y recibe más de 60.000 visitantes anuales (2+ millones acumulados desde 1986). Balcarce es además sinónimo de papa: el postre "Balcarce" es una marca gastronómica nacional; la empresa McCain tiene planta procesadora local. Dos datos de color únicos en un solo municipio.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>En este municipio nació el hombre que ganó 5 mundiales de Fórmula 1 con cuatro marcas distintas. Y también la papa más famosa de Argentina.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Fundación Museo Juan Manuel Fangio, McCain Argentina (planta local), Municipio Balcarce, Asociación de Productores de Papa</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #6366F1">
+    <div class="lugar-rank" style="background:#6366F1">#02</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Chascomús — Laguna, tradición gaucha y pejerrey</h3>
+      <span class="lugar-muni">📍 Chascomús</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">8.00</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>La laguna de Chascomús —a 115km de CABA— es el destino de fin de semana más clásico del bonaerense metropolitano. Pesca deportiva del pejerrey, cabalgatas gauchas, casco histórico del siglo XIX y la primera mujer presidenta de un municipio en Argentina (1952). La Laguna del Chascomús tiene valor histórico, turístico y simbólico. La visita combina turismo popular accesible, historia y producción ganadera.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Chascomús es el lugar donde la ciudad va al campo los fines de semana. La Provincia tiene que cuidar esa laguna y esa tradición.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Club de Pesca Deportiva de Chascomús, Asociación Gaucha, Municipio Chascomús, operadores turísticos</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #6366F1">
+    <div class="lugar-rank" style="background:#6366F1">#03</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Dolores — Primera ciudad del interior bonaerense</h3>
+      <span class="lugar-muni">📍 Dolores</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">6.75</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Fundada en 1817, Dolores fue la primera ciudad del interior de la Provincia de Buenos Aires. Su historia es inseparable de la del territorio bonaerense: fortines, inmigrantes y ganadería. La Sociedad Rural de Dolores es una de las más antiguas del país. La visita tiene valor histórico y permite hablar al productor ganadero del interior profundo de la cuenca.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La primera ciudad del interior bonaerense fue fundada hace 200 años. La Provincia tiene una historia que hay que conocer y contar.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Municipio Dolores, Sociedad Rural de Dolores, patrimonio histórico local</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #6366F1">
+    <div class="lugar-rank" style="background:#6366F1">#04</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Las Flores — Ganadería premium de punta</h3>
+      <span class="lugar-muni">📍 Las Flores</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">6.70</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Las Flores es el centro de la ganadería de cría premium en la Cuenca del Salado. Las cabañas locales producen bovinos de alta genética y el campo de Las Flores tiene rendimientos consistentemente altos en carne de calidad. La Sociedad Rural local organiza remates de animales que convocan a compradores regionales. Ideal para visitar en conjunto con un establecimiento productor y mostrar el campo ganadero en su máxima expresión.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La ganadería bonaerense de calidad no es accidente: es inversión, genética y décadas de trabajo. Las Flores lo muestra.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Sociedad Rural de Las Flores, cabañas ganaderas locales, Municipio Las Flores</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #6366F1">
+    <div class="lugar-rank" style="background:#6366F1">#05</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Rauch — Agropecuario del interior profundo</h3>
+      <span class="lugar-muni">📍 Rauch</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">6.70</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Rauch es representativo del interior profundo de la Cuenca del Salado: ganadería bovina mixta, escuelas agropecuarias activas y comunidades rurales que mantienen la producción sin el andamiaje de los municipios grandes. La Escuela Agropecuaria Municipal es modelo de formación práctica que conecta a jóvenes rurales con el mercado de trabajo del campo. La visita habla directamente al interior que no aparece en los medios pero produce sin parar.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Los municipios pequeños del interior producen callados. La Provincia tiene que escucharlos y acompañarlos.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Escuela Agropecuaria de Rauch, Municipio Rauch, productores ganaderos locales</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #6366F1">
+    <div class="lugar-rank" style="background:#6366F1">#06</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Ayacucho — Ganadería de la pampa húmeda</h3>
+      <span class="lugar-muni">📍 Ayacucho</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">6.55</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Ayacucho es uno de los partidos más representativos del campo ganadero bonaerense tradicional: grandes establecimientos de cría y recría, feedlots articulados con el ciclo completo y cooperativas que integran verticalmente. La Sociedad Rural de Ayacucho concentra a los productores más influyentes del sur del Salado. Una visita aquí construye credibilidad con el campo ganadero que no accede a los relatos de innovación pero sí vota.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>El campo ganadero del Salado es el pilar silencioso de la economía provincial. La Provincia los reconoce.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Sociedad Rural de Ayacucho, productores ganaderos del partido, Municipio Ayacucho</div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="cluster-section" id="sur">
+  <div class="cluster-header" style="background:#64748B">
+    <span class="cluster-icon">🏔️</span>
+    <h2 class="cluster-name">SUR — Sur Bonaerense</h2>
+    <div class="cluster-stats">
+      <span>8 lugares seleccionados</span>
+      <span>Score promedio: 7.48</span>
+    </div>
+  </div>
+  <div class="lugares-grid">
+    
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #64748B">
+    <div class="lugar-rank" style="background:#64748B">#01</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Villa Epecuén — La ciudad que vivió bajo el agua</h3>
+      <span class="lugar-muni">📍 Adolfo Alsina</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">8.35</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Villa Epecuén es única en el mundo: una ciudad balnearia que en 1985 fue inundada por el Lago Epecuén y quedó SIETE METROS bajo el agua durante 25 años. Para 2010 comenzó a emerger: calles, edificios y esqueletos de árboles resurgieron como ruinas arqueológicas vivas. Hoy es uno de los destinos turísticos más impactantes de Argentina. El Lago Epecuén tiene aguas hipersalinas comparables al Mar Muerto, con propiedades terapéuticas. Pablo Novak, el único vecino que nunca se fue, es un personaje único en la historia.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>Argentina tiene su Pompeya: un pueblo que desapareció bajo el agua y resurge como patrimonio histórico irrepetible. La Provincia lo tiene que proteger y poner en valor.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Municipio Adolfo Alsina (Carhué), Pablo Novak (último vecino), guías turísticos de Villa Epecuén, Cámara de Turismo regional</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #64748B">
+    <div class="lugar-rank" style="background:#64748B">#02</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Parque Provincial Tornquist — Sierra de la Ventana</h3>
+      <span class="lugar-muni">📍 Tornquist</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">7.95</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:100%;background:#16a34a"></div></div><span class="sc-val">10/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Las únicas sierras de la Provincia de Buenos Aires se encuentran aquí: el Cerro Ventana (1.135 m), el Cerro Tres Picos (el más alto de la Provincia, 1.239 m) y el Parque Provincial Ernesto Tornquist. Una imagen de trekking, naturaleza y horizonte serrano en la Provincia de la llanura es absolutamente única e inesperada. Genera cobertura nacional garantizada. El Parque tiene infraestructura establecida para visitas.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La Provincia de Buenos Aires tiene una sierra. Casi nadie lo sabe. La visita lo muestra mejor que cualquier comunicado.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Administración Parque Provincial Tornquist, guías de montaña certificados, Municipio Tornquist, operadores ecoturísticos</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #64748B">
+    <div class="lugar-rank" style="background:#64748B">#03</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Coronel Suárez — Industria del calzado del interior</h3>
+      <span class="lugar-muni">📍 Coronel Suárez</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">7.85</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Coronel Suárez es la capital del calzado del interior bonaerense: Piccadilly, Price Shoes y decenas de fábricas de cuero y calzado dan trabajo directo a miles de personas. Es el único cluster industrial de calzado de escala en el interior de la Provincia. La comunidad de inmigrantes europeos (alemanes del Volga, españoles, italianos) da una identidad cultural única. La visita habla a los trabajadores del interior que raramente ven una presencia provincial.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>En Coronel Suárez se fabrican los zapatos del interior bonaerense. Eso no está en ningún folleto pero mueve miles de puestos de trabajo.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Piccadilly (calzado), Cámara de la Industria del Calzado, Municipio Coronel Suárez, gremio de la industria del cuero</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #64748B">
+    <div class="lugar-rank" style="background:#64748B">#04</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Guaminí — Faro Nacional de Agroecología y Pejerrey</h3>
+      <span class="lugar-muni">📍 Guaminí</span>
+    </div>
+    <div class="score-badge" style="background:#2563EB;color:white">7.75</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:50%;background:#D97706"></div></div><span class="sc-val">5/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Dos datos de color únicos en un solo municipio. (1) En 2014, Guaminí fue el PRIMER municipio de Argentina en adoptar la agroecología como política municipal, dando origen a la Red Nacional de Municipios Agroecológicos (RENAMA) con 200.000 ha en 9 provincias y reconocimiento de la FAO. (2) Las Lagunas de Guaminí tienen el mejor pejerrey deportivo de la región, con registros de pesca que convocan a turistas de todo el país. La Zanja de Alsina —construida en 1877 como frontera de las pampas— es visitable y única en el mundo. Sesquicentenario 2026.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>El primer municipio agroecológico de Argentina está en el sur de la Provincia. Fue antes que todos. Y encima tiene el mejor pejerrey del país.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>La Fraagua (cooperativa agroecológica), CEA N°30, Intendente José Nobre Ferreira, Club de Pesca Deportiva de Guaminí</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #64748B">
+    <div class="lugar-rank" style="background:#64748B">#05</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Villarino — Horticultura bajo riego en el sur árido</h3>
+      <span class="lugar-muni">📍 Villarino</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">7.30</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:50%;background:#D97706"></div></div><span class="sc-val">5/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Villarino es el único polo hortícola significativo del sur bonaerense: producción bajo riego en zona árida, gracias al Canal Laprida y el aprovechamiento del Río Colorado. Produce tomate, pimiento, ajo, y frutas de verano que abastecen al sur del país. Las colonias agrícolas de la región (incluida la colonia alemana de Buratovich) son un dato cultural único. La visita al campo bajo riego en zona de secano es impactante para cualquier observador.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>En el sur árido de la Provincia, hay productores que convirtieron el desierto en quinta. Eso se llama voluntad y política hídrica.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Productores bajo riego del Valle Bonaerense del Colorado, IDEVI (organismo de riego), Municipio Villarino</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #64748B">
+    <div class="lugar-rank" style="background:#64748B">#06</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Tres Arroyos — Cooperativas cerealeras del sur</h3>
+      <span class="lugar-muni">📍 Tres Arroyos</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">7.15</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>Tres Arroyos es la capital cerealera del sur bonaerense: trigo, girasol y soja de alta productividad, con cooperativas locales consolidadas que manejan millones de toneladas. El municipio tiene uno de los estándares de vida más altos del interior y una tradición de integración entre campo y ciudad. La visita a una cooperativa cerealera del sur muestra la cadena productiva que alimenta las exportaciones del Puerto Quequén.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>El trigo que exporta la Argentina por el sur viene en gran parte de Tres Arroyos. La Provincia acompaña al productor que produce.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>ACA local (Asociación de Cooperativas Argentinas), Sociedad Rural de Tres Arroyos, cooperativas cerealeras, Municipio Tres Arroyos</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #64748B">
+    <div class="lugar-rank" style="background:#64748B">#07</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Carmen de Patagones — Puerta a la Patagonia y Batalla de 1827</h3>
+      <span class="lugar-muni">📍 Patagones</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">6.80</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:90%;background:#16a34a"></div></div><span class="sc-val">9/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:40%;background:#DC2626"></div></div><span class="sc-val">4/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>La ciudad más austral de la Provincia: el límite geográfico donde termina la Provincia de Buenos Aires y comienza la Patagonia. En 1827, Carmen de Patagones protagonizó la única batalla que Argentina ganó a Brasil, con una victoria que salvó la soberanía del Río de la Plata. El Fuerte Histórico, el Museo Regional y la arquitectura colonial son patrimonio único. La visita tiene carga simbólica de soberanía territorial extrema.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>El último rincón de la Provincia es donde Argentina le ganó a Brasil en 1827. Ese límite también hay que cuidarlo y visitarlo.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Municipio Patagones, Museo Histórico Regional, patrimonio histórico local, comunidad productiva del Valle Inferior del Río Negro</div>
+    </div>
+  </div>
+</div>
+
+<div class="lugar-card">
+  <div class="lugar-header" style="border-left:4px solid #64748B">
+    <div class="lugar-rank" style="background:#64748B">#08</div>
+    <div class="lugar-title-block">
+      <h3 class="lugar-name">Coronel Rosales — Base Naval Punta Alta y litoral sur</h3>
+      <span class="lugar-muni">📍 Coronel Rosales</span>
+    </div>
+    <div class="score-badge" style="background:#D97706;color:white">6.70</div>
+  </div>
+  <div class="lugar-scores">
+    <div class="sc-row"><span class="sc-label">⚡ Impacto Electoral (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">📸 Potencial Comunicacional (25%)</span><div class="sc-bar"><div class="sc-fill" style="width:80%;background:#2563EB"></div></div><span class="sc-val">8/10</span></div>
+    <div class="sc-row"><span class="sc-label">🎯 Unicidad Territorial (20%)</span><div class="sc-bar"><div class="sc-fill" style="width:70%;background:#2563EB"></div></div><span class="sc-val">7/10</span></div>
+    <div class="sc-row"><span class="sc-label">🏭 Representatividad Sectorial (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+    <div class="sc-row"><span class="sc-label">🗺️ Logística de Visita (15%)</span><div class="sc-bar"><div class="sc-fill" style="width:60%;background:#D97706"></div></div><span class="sc-val">6/10</span></div>
+  </div>
+  <div class="lugar-body">
+    <div class="justificacion"><strong>¿Por qué visitar?</strong><br>La Base Naval de Puerto Belgrano en Coronel Rosales es la principal base de la Armada Argentina, con astilleros navales militares y el mayor fondeadero natural del Atlántico Sur. La visita —con coordinación protocolar— combina soberanía marítima, litoral atlántico sur y el imaginario de la Patagonia bonaerense. Comunica con el sector de defensa y con el sur profundo que raramente recibe presencia política.</div>
+    <div class="lugar-footer">
+      <div class="mensaje-box"><strong>💬 Mensaje de visita:</strong><br><em>La Armada Argentina cuida el Atlántico Sur desde la Provincia de Buenos Aires. Eso merece reconocimiento y presencia.</em></div>
+      <div class="actores-box"><strong>👥 Actores clave:</strong><br>Armada Argentina (coordinación institucional), Municipio Coronel Rosales, comunidad de Punta Alta</div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<!-- ANNEX -->
+<div class="annex" id="anexo">
+  <div class="annex-header">
+    <h2>📎 Anexo — Actores Clave por Lugar, Municipio y Cluster</h2>
+    <p>Listado completo de instituciones, personas e interlocutores a contactar para organizar cada visita. Ordenado por score descendente.</p>
+  </div>
+  <table class="annex-table">
+    <thead><tr><th>Cluster</th><th>Lugar</th><th>Municipio</th><th style="text-align:center">Score</th><th>Actores Clave</th></tr></thead>
+    <tbody><tr><td><span class="cluster-pill" style="background:#7C3AED">CIUDADES</span></td><td><strong>Basílica de Luján</strong></td><td>Luján</td><td>9.05</td><td>Santuario y Basílica Nuestra Señora de Luján, Municipio de Luján, comunidades de peregrinos, Asociación de Turismo Religioso</td></tr>
+<tr><td><span class="cluster-pill" style="background:#7C3AED">CIUDADES</span></td><td><strong>Ternium (ex-SOMISA) — Planta Siderúrgica</strong></td><td>San Nicolás</td><td>8.95</td><td>UOM San Nicolás (gremio siderúrgico), Gerencia de Relaciones Institucionales Ternium, Municipio San Nicolás</td></tr>
+<tr><td><span class="cluster-pill" style="background:#7C3AED">CIUDADES</span></td><td><strong>Puerto de Mar del Plata — Flota Pesquera</strong></td><td>General Pueyrredón</td><td>8.85</td><td>SOIP (Sindicato de Obreros de la Industria Pesquera), CAABPA (Cámara de Armadores), Municipio General Pueyrredón, INIDEP</td></tr>
+<tr><td><span class="cluster-pill" style="background:#7C3AED">CIUDADES</span></td><td><strong>Puerto de Bahía Blanca + Polo Petroquímico</strong></td><td>Bahía Blanca</td><td>8.65</td><td>Consorcio de Gestión del Puerto de Bahía Blanca, YPF Bahía Blanca, Dow Argentina, Profertil, SOIP sur, Municipio Bahía Blanca</td></tr>
+<tr><td><span class="cluster-pill" style="background:#7C3AED">CIUDADES</span></td><td><strong>TenarisSiderca — Tubos sin costura</strong></td><td>Campana</td><td>8.50</td><td>UOM Campana, Gerencia TenarisSiderca, Municipio Campana</td></tr>
+<tr><td><span class="cluster-pill" style="background:#7C3AED">CIUDADES</span></td><td><strong>Loma Negra — El cemento que construyó Argentina</strong></td><td>Olavarría</td><td>7.95</td><td>UOM Olavarría, Cámara de la Construcción, Loma Negra (Fabrica), Municipio Olavarría</td></tr>
+<tr><td><span class="cluster-pill" style="background:#7C3AED">CIUDADES</span></td><td><strong>Tandil — Sierra, chacinados y metalurgia de precisión</strong></td><td>Tandil</td><td>7.85</td><td>FINI (Fundación Investigación Metalúrgica), productores de chacinados IGP, Club Andino Tandil, Municipio Tandil</td></tr>
+<tr><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>Laboratorios Richmond — Vacuna Sputnik V</strong></td><td>Malvinas Argentinas</td><td>8.95</td><td>Dr. Marcelo Figueiras (CEO Richmond), Cámara Industrial de Laboratorios Farmacéuticos Argentinos (CILFA), Municipio Malvinas Argentinas</td></tr>
+<tr><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>Delta del Paraná — Islas y humedales</strong></td><td>Tigre</td><td>8.85</td><td>Comunidad isleña del Delta, Prefectura Naval Argentina (coordinación), Club de Regatas La Marina, Municipio Tigre</td></tr>
+<tr><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>Mercado Central — El corazón alimentario del AMBA</strong></td><td>La Matanza / Tres de Febrero</td><td>8.55</td><td>Directorio del Mercado Central de Buenos Aires, Gremio de Transportistas (CAMIONEROS), asociaciones de productores, Municipio La Matanza</td></tr>
+<tr><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>CNEA — Centro Atómico Ezeiza</strong></td><td>Ezeiza</td><td>8.35</td><td>CNEA (Comisión Nacional de Energía Atómica), INVAP, CONICET, Municipio Ezeiza</td></tr>
+<tr><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>Cervecería y Maltería Quilmes</strong></td><td>Quilmes</td><td>8.35</td><td>Gerencia de Relaciones Institucionales AB InBev Argentina, UO cervecera, Municipio Quilmes</td></tr>
+<tr><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>Hospital El Cruce — Alta complejidad pública</strong></td><td>Florencio Varela</td><td>8.00</td><td>Dirección médica y de enfermería del Hospital El Cruce, CICOP (médicos bonaerenses), Municipio Florencio Varela</td></tr>
+<tr><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>Polo Farmacéutico — Cluster de laboratorios nacionales</strong></td><td>General San Martín</td><td>7.70</td><td>CILFA (Cámara Industrial de Laboratorios Farmacéuticos Argentinos), Roemmers, Laboratorio Elea, Municipio General San Martín</td></tr>
+<tr><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>UNLP — Universidad Nacional de La Plata</strong></td><td>La Plata</td><td>7.70</td><td>Presidencia UNLP, CIC (Comisión de Investigaciones Científicas PBA), CONICET La Plata, Municipio La Plata</td></tr>
+<tr><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>Centro Textil e Industrial de Avellaneda</strong></td><td>Avellaneda</td><td>7.65</td><td>Cámara Argentina de la Indumentaria, SOIVA (textiles), Unión del Comercio Avellaneda, Municipio Avellaneda</td></tr>
+<tr><td><span class="cluster-pill" style="background:#DC2626">CONURBANO</span></td><td><strong>Berisso — Barrio histórico del 17 de Octubre</strong></td><td>Berisso</td><td>7.45</td><td>Municipio Berisso, Asociaciones de colectividades de inmigrantes, Fundación Histórica de Berisso, UOM Berisso</td></tr>
+<tr><td><span class="cluster-pill" style="background:#059669">CORREDOR</span></td><td><strong>San Antonio de Areco — Capital de la Tradición Gaucha</strong></td><td>San Antonio de Areco</td><td>8.20</td><td>Asociación de Artesanos de Areco, Museo Gauchesco Ricardo Güiraldes, Red de Estancias Turísticas, Municipio San Antonio de Areco</td></tr>
+<tr><td><span class="cluster-pill" style="background:#059669">CORREDOR</span></td><td><strong>San Pedro — Fruticultura y producción costera del Paraná</strong></td><td>San Pedro</td><td>7.90</td><td>Cámara Frutihortícola de San Pedro, productores de arándanos para exportación, Municipio San Pedro</td></tr>
+<tr><td><span class="cluster-pill" style="background:#059669">CORREDOR</span></td><td><strong>AFA — Agricultores Federados Argentinos, Pergamino</strong></td><td>Pergamino</td><td>7.80</td><td>Gerencia AFA (Agricultores Federados Argentinos), INTA Pergamino, Cámara de Semilleros de la Provincia</td></tr>
+<tr><td><span class="cluster-pill" style="background:#059669">CORREDOR</span></td><td><strong>Polo Semillero — Arrecifes y Salto</strong></td><td>Arrecifes / Salto</td><td>7.20</td><td>Cámara Argentina de Semillas (CAS), semilleras regionales, INTA local, Municipio Arrecifes</td></tr>
+<tr><td><span class="cluster-pill" style="background:#059669">CORREDOR</span></td><td><strong>Zona Franca Metropolitana — Colón</strong></td><td>Colón (Buenos Aires)</td><td>6.90</td><td>Administración Zona Franca Metropolitana, empresas radicadas, Municipio Colón</td></tr>
+<tr><td><span class="cluster-pill" style="background:#059669">CORREDOR</span></td><td><strong>Capilla del Señor — Turismo rural histórico</strong></td><td>Exaltación de la Cruz</td><td>6.75</td><td>Municipio Exaltación de la Cruz, Red de Estancias Turísticas del Corredor Norte, Comisión de Patrimonio Histórico</td></tr>
+<tr><td><span class="cluster-pill" style="background:#0891B2">COSTERO</span></td><td><strong>Puerto Quequén — Segundo exportador agropecuario del sur</strong></td><td>Necochea</td><td>7.60</td><td>Consorcio Puerto Quequén, exportadores cerealeros del sur, UOM portuaria, Municipio Necochea</td></tr>
+<tr><td><span class="cluster-pill" style="background:#0891B2">COSTERO</span></td><td><strong>Villa Gesell — Turismo popular accesible</strong></td><td>Villa Gesell</td><td>7.25</td><td>Cámara de Turismo de Villa Gesell, Asociación de Hoteleros, Municipio Villa Gesell</td></tr>
+<tr><td><span class="cluster-pill" style="background:#0891B2">COSTERO</span></td><td><strong>Mar Chiquita — Albufera y Reserva Biósfera UNESCO</strong></td><td>Mar Chiquita</td><td>6.85</td><td>Municipio Mar Chiquita, Reserva de Biósfera Mar Chiquita (administración), productores del cordón costero, OPDS PBA</td></tr>
+<tr><td><span class="cluster-pill" style="background:#0891B2">COSTERO</span></td><td><strong>La Costa — Turismo masivo del corredor atlántico</strong></td><td>La Costa</td><td>6.80</td><td>Cámara de Turismo de La Costa, Asociación de Empleados de Comercio turístico, Municipio La Costa</td></tr>
+<tr><td><span class="cluster-pill" style="background:#0891B2">COSTERO</span></td><td><strong>Monte Hermoso — El sol que nace y muere en el mar</strong></td><td>Monte Hermoso</td><td>6.75</td><td>Municipio Monte Hermoso, operadores turísticos, comunidad local de pescadores artesanales</td></tr>
+<tr><td><span class="cluster-pill" style="background:#D97706">INTERIOR</span></td><td><strong>Casa Museo Eva Perón — Cuna de Evita</strong></td><td>General Viamonte (Los Toldos)</td><td>8.75</td><td>Municipio General Viamonte, Fundación Complejo Casa Museo Eva Perón, Partido Justicialista bonaerense</td></tr>
+<tr><td><span class="cluster-pill" style="background:#D97706">INTERIOR</span></td><td><strong>Astilleros Río Santiago — El mayor astillero de América Latina</strong></td><td>Ensenada</td><td>8.75</td><td>ATE Astillero Río Santiago (sindicato), Dirección del Astillero, Municipio Ensenada, Destilería YPF La Plata (visita complementaria)</td></tr>
+<tr><td><span class="cluster-pill" style="background:#D97706">INTERIOR</span></td><td><strong>Tambo robotizado — Producción lechera de vanguardia</strong></td><td>Lobos</td><td>8.60</td><td>Propietarios de tambos tecnificados (perfil innovador), INTA Chascomús, Asociación de Tamberos de la Cuenca Oeste, Municipio Lobos</td></tr>
+<tr><td><span class="cluster-pill" style="background:#D97706">INTERIOR</span></td><td><strong>Cooperativa láctea — Hub lechero de la pampa húmeda</strong></td><td>9 de Julio</td><td>7.70</td><td>Cooperativa lechera local (SanCor o cooperativa zonal), INTA 9 de Julio, Municipio 9 de Julio</td></tr>
+<tr><td><span class="cluster-pill" style="background:#D97706">INTERIOR</span></td><td><strong>Feedlot de escala — Ganadería intensiva de exportación</strong></td><td>Lincoln</td><td>7.30</td><td>Cámara Argentina de Feedlot, INTA Lincoln, Municipio Lincoln</td></tr>
+<tr><td><span class="cluster-pill" style="background:#D97706">INTERIOR</span></td><td><strong>Hub agropecuario del noroeste — Cooperativas productoras</strong></td><td>Chacabuco</td><td>7.00</td><td>Cooperativas locales de Chacabuco, Asociación Cooperativa Argentina, Municipio Chacabuco</td></tr>
+<tr><td><span class="cluster-pill" style="background:#D97706">INTERIOR</span></td><td><strong>Cabaña ganadera de élite — Ganadería de punta</strong></td><td>Azul</td><td>6.90</td><td>Sociedad Rural de Azul, cabañas premiadas locales, SENASA (registro reproductores), Municipio Azul</td></tr>
+<tr><td><span class="cluster-pill" style="background:#D97706">INTERIOR</span></td><td><strong>Bolívar — Campo productivo integrado pampeano</strong></td><td>Bolívar</td><td>6.45</td><td>Cooperativa local de Bolívar, Escuela de Educación Agropecuaria, Municipio Bolívar</td></tr>
+<tr><td><span class="cluster-pill" style="background:#6366F1">SALADO</span></td><td><strong>Museo Fangio + Papa de Balcarce</strong></td><td>Balcarce</td><td>8.25</td><td>Fundación Museo Juan Manuel Fangio, McCain Argentina (planta local), Municipio Balcarce, Asociación de Productores de Papa</td></tr>
+<tr><td><span class="cluster-pill" style="background:#6366F1">SALADO</span></td><td><strong>Chascomús — Laguna, tradición gaucha y pejerrey</strong></td><td>Chascomús</td><td>8.00</td><td>Club de Pesca Deportiva de Chascomús, Asociación Gaucha, Municipio Chascomús, operadores turísticos</td></tr>
+<tr><td><span class="cluster-pill" style="background:#6366F1">SALADO</span></td><td><strong>Dolores — Primera ciudad del interior bonaerense</strong></td><td>Dolores</td><td>6.75</td><td>Municipio Dolores, Sociedad Rural de Dolores, patrimonio histórico local</td></tr>
+<tr><td><span class="cluster-pill" style="background:#6366F1">SALADO</span></td><td><strong>Las Flores — Ganadería premium de punta</strong></td><td>Las Flores</td><td>6.70</td><td>Sociedad Rural de Las Flores, cabañas ganaderas locales, Municipio Las Flores</td></tr>
+<tr><td><span class="cluster-pill" style="background:#6366F1">SALADO</span></td><td><strong>Rauch — Agropecuario del interior profundo</strong></td><td>Rauch</td><td>6.70</td><td>Escuela Agropecuaria de Rauch, Municipio Rauch, productores ganaderos locales</td></tr>
+<tr><td><span class="cluster-pill" style="background:#6366F1">SALADO</span></td><td><strong>Ayacucho — Ganadería de la pampa húmeda</strong></td><td>Ayacucho</td><td>6.55</td><td>Sociedad Rural de Ayacucho, productores ganaderos del partido, Municipio Ayacucho</td></tr>
+<tr><td><span class="cluster-pill" style="background:#64748B">SUR</span></td><td><strong>Villa Epecuén — La ciudad que vivió bajo el agua</strong></td><td>Adolfo Alsina</td><td>8.35</td><td>Municipio Adolfo Alsina (Carhué), Pablo Novak (último vecino), guías turísticos de Villa Epecuén, Cámara de Turismo regional</td></tr>
+<tr><td><span class="cluster-pill" style="background:#64748B">SUR</span></td><td><strong>Parque Provincial Tornquist — Sierra de la Ventana</strong></td><td>Tornquist</td><td>7.95</td><td>Administración Parque Provincial Tornquist, guías de montaña certificados, Municipio Tornquist, operadores ecoturísticos</td></tr>
+<tr><td><span class="cluster-pill" style="background:#64748B">SUR</span></td><td><strong>Coronel Suárez — Industria del calzado del interior</strong></td><td>Coronel Suárez</td><td>7.85</td><td>Piccadilly (calzado), Cámara de la Industria del Calzado, Municipio Coronel Suárez, gremio de la industria del cuero</td></tr>
+<tr><td><span class="cluster-pill" style="background:#64748B">SUR</span></td><td><strong>Guaminí — Faro Nacional de Agroecología y Pejerrey</strong></td><td>Guaminí</td><td>7.75</td><td>La Fraagua (cooperativa agroecológica), CEA N°30, Intendente José Nobre Ferreira, Club de Pesca Deportiva de Guaminí</td></tr>
+<tr><td><span class="cluster-pill" style="background:#64748B">SUR</span></td><td><strong>Villarino — Horticultura bajo riego en el sur árido</strong></td><td>Villarino</td><td>7.30</td><td>Productores bajo riego del Valle Bonaerense del Colorado, IDEVI (organismo de riego), Municipio Villarino</td></tr>
+<tr><td><span class="cluster-pill" style="background:#64748B">SUR</span></td><td><strong>Tres Arroyos — Cooperativas cerealeras del sur</strong></td><td>Tres Arroyos</td><td>7.15</td><td>ACA local (Asociación de Cooperativas Argentinas), Sociedad Rural de Tres Arroyos, cooperativas cerealeras, Municipio Tres Arroyos</td></tr>
+<tr><td><span class="cluster-pill" style="background:#64748B">SUR</span></td><td><strong>Carmen de Patagones — Puerta a la Patagonia y Batalla de 1827</strong></td><td>Patagones</td><td>6.80</td><td>Municipio Patagones, Museo Histórico Regional, patrimonio histórico local, comunidad productiva del Valle Inferior del Río Negro</td></tr>
+<tr><td><span class="cluster-pill" style="background:#64748B">SUR</span></td><td><strong>Coronel Rosales — Base Naval Punta Alta y litoral sur</strong></td><td>Coronel Rosales</td><td>6.70</td><td>Armada Argentina (coordinación institucional), Municipio Coronel Rosales, comunidad de Punta Alta</td></tr></tbody>
+  </table>
+</div>
+
+</div><!-- /main-container -->
+
+<div class="doc-footer">
+  Documento de uso estratégico interno · Provincia de Buenos Aires · Junio 2026 · 
+  Elaborado con datos públicos verificados y metodología de ponderación territorial
+</div>
+
+</body>
+</html>

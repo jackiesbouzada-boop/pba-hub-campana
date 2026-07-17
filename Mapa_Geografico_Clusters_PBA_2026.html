@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBA 2026 — Mapa Geográfico de Clusters Municipales</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f1923; color: #e2e8f0; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+.header { background: linear-gradient(135deg, #1F4E79, #1a3a5c); padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2d4a6a; flex-shrink: 0; }
+.header h1 { font-size: 18px; font-weight: 800; color: #e2e8f0; letter-spacing: 0.5px; }
+.header p { font-size: 11px; color: #94a3b8; margin-top: 1px; }
+.header-right { display: flex; gap: 8px; align-items: center; }
+
+.layout { display: flex; flex: 1; overflow: hidden; }
+
+/* SIDEBAR */
+.sidebar { width: 260px; background: #131f2e; border-right: 1px solid #1e3048; display: flex; flex-direction: column; overflow: hidden; flex-shrink: 0; }
+.sidebar-section { padding: 10px 14px 6px; font-size: 9px; text-transform: uppercase; letter-spacing: 1.2px; color: #4a7aa8; border-bottom: 1px solid #1e3048; }
+
+.legend-item { display: flex; align-items: center; gap: 9px; padding: 7px 14px; cursor: pointer; transition: background 0.15s; border-bottom: 1px solid #111e2d; }
+.legend-item:hover { background: #1a2d40; }
+.legend-item.active { background: #1a3a5c; border-left: 3px solid; }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.legend-info { flex: 1; min-width: 0; }
+.legend-name { font-size: 11px; color: #cbd5e1; font-weight: 600; line-height: 1.2; }
+.legend-sub { font-size: 9px; color: #64748b; margin-top: 1px; }
+.legend-count { font-size: 11px; font-weight: 700; color: #64748b; }
+
+.party-section { padding: 8px 14px; }
+.party-title { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #4a7aa8; margin-bottom: 6px; }
+.party-bars { display: flex; flex-direction: column; gap: 5px; }
+.party-row { display: flex; align-items: center; gap: 6px; }
+.party-label { font-size: 10px; color: #94a3b8; width: 45px; flex-shrink: 0; }
+.party-bar-bg { flex: 1; height: 14px; background: #1e3048; border-radius: 3px; overflow: hidden; }
+.party-bar { height: 100%; border-radius: 3px; display: flex; align-items: center; padding-left: 6px; }
+.party-bar-text { font-size: 9px; font-weight: 700; color: white; }
+.party-count { font-size: 10px; color: #64748b; width: 30px; text-align: right; flex-shrink: 0; }
+
+.search-box { padding: 8px 14px; }
+.search-input { width: 100%; background: #1a2d40; border: 1px solid #2d4a6a; border-radius: 16px; padding: 6px 12px; color: #e2e8f0; font-size: 11px; outline: none; }
+.search-input::placeholder { color: #4a6080; }
+.search-input:focus { border-color: #3b82f6; }
+
+.stats-box { padding: 8px 14px; }
+.stat-row { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid #1e3048; }
+.stat-label { font-size: 10px; color: #64748b; }
+.stat-val { font-size: 10px; font-weight: 700; color: #93c5fd; }
+
+/* MAP AREA */
+.map-container { flex: 1; position: relative; overflow: hidden; background: #0d1520; }
+#map-svg { width: 100%; height: 100%; cursor: grab; }
+#map-svg:active { cursor: grabbing; }
+
+.mun-circle { transition: r 0.15s, opacity 0.15s; cursor: pointer; }
+.mun-circle:hover { opacity: 1 !important; }
+
+/* TOOLTIP */
+.tooltip { position: fixed; background: rgba(10,20,35,0.97); border: 1px solid #2d4a6a; color: #e2e8f0; padding: 10px 14px; border-radius: 8px; font-size: 12px; pointer-events: none; z-index: 999; max-width: 240px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); display: none; }
+.tooltip h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.tooltip .t-row { display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid #1e3048; }
+.tooltip .t-row:last-child { border: none; }
+.tooltip .t-key { color: #64748b; font-size: 11px; }
+.tooltip .t-val { color: #93c5fd; font-size: 11px; font-weight: 600; }
+
+/* CONTROLS */
+.controls { position: absolute; top: 12px; right: 14px; display: flex; flex-direction: column; gap: 6px; }
+.ctrl-btn { width: 32px; height: 32px; background: rgba(20,35,55,0.9); border: 1px solid #2d4a6a; border-radius: 6px; color: #94a3b8; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+.ctrl-btn:hover { background: #1a3a5c; color: white; border-color: #3b82f6; }
+
+.view-toggle { position: absolute; top: 12px; left: 14px; display: flex; gap: 6px; }
+.view-btn { padding: 5px 12px; background: rgba(20,35,55,0.9); border: 1px solid #2d4a6a; border-radius: 16px; color: #94a3b8; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.15s; }
+.view-btn.active { background: #1F4E79; color: white; border-color: #3b82f6; }
+
+.scale-legend { position: absolute; bottom: 16px; left: 14px; background: rgba(10,20,35,0.85); border: 1px solid #2d4a6a; border-radius: 8px; padding: 8px 12px; }
+.scale-title { font-size: 9px; text-transform: uppercase; color: #64748b; letter-spacing: 1px; margin-bottom: 6px; }
+.scale-items { display: flex; gap: 10px; align-items: center; }
+.scale-item { display: flex; align-items: center; gap: 4px; }
+.scale-circle { border-radius: 50%; background: #64748b; flex-shrink: 0; }
+.scale-label { font-size: 9px; color: #64748b; }
+
+/* INFO PANEL */
+.info-panel { position: absolute; bottom: 16px; right: 14px; background: rgba(10,20,35,0.9); border: 1px solid #2d4a6a; border-radius: 8px; padding: 8px 12px; font-size: 10px; color: #64748b; text-align: right; }
+
+/* FOOTER */
+.footer { padding: 5px 16px; background: #0a1018; border-top: 1px solid #1e3048; font-size: 10px; color: #334155; display: flex; justify-content: space-between; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>🗺️ PROVINCIA DE BUENOS AIRES — MAPA GEOGRÁFICO DE CLUSTERS MUNICIPALES 2026</h1>
+    <p>134 municipios · 8 secciones electorales · 7 clusters territoriales · Posicionamiento geográfico real</p>
+  </div>
+  <div class="header-right">
+    <span style="font-size:10px;color:#475569;">USO RESERVADO · Gobernación PBA · Mayo 2026</span>
+  </div>
+</div>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-section">Clusters — clic para filtrar</div>
+    <div id="legend-container"></div>
+
+    <div class="sidebar-section" style="margin-top:2px;">Distribución política</div>
+    <div class="party-section">
+      <div class="party-bars">
+        <div class="party-row">
+          <div class="party-label">UxP</div>
+          <div class="party-bar-bg"><div class="party-bar" style="width:67.9%;background:#1F4E79;"><span class="party-bar-text">67,9%</span></div></div>
+          <div class="party-count">91</div>
+        </div>
+        <div class="party-row">
+          <div class="party-label">JxC</div>
+          <div class="party-bar-bg"><div class="party-bar" style="width:28.4%;background:#C8A200;"><span class="party-bar-text">28,4%</span></div></div>
+          <div class="party-count">38</div>
+        </div>
+        <div class="party-row">
+          <div class="party-label">Vecinal.</div>
+          <div class="party-bar-bg"><div class="party-bar" style="width:2.2%;background:#16A34A;"></div></div>
+          <div class="party-count">3</div>
+        </div>
+        <div class="party-row">
+          <div class="party-label">LLA</div>
+          <div class="party-bar-bg"><div class="party-bar" style="width:0.7%;background:#9B2335;"></div></div>
+          <div class="party-count">1</div>
+        </div>
+        <div class="party-row">
+          <div class="party-label">Hechos</div>
+          <div class="party-bar-bg"><div class="party-bar" style="width:0.7%;background:#7c3aed;"></div></div>
+          <div class="party-count">1</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">Buscar municipio</div>
+    <div class="search-box">
+      <input type="text" class="search-input" id="search-input" placeholder="Escribí el nombre..." oninput="searchMun(this.value)">
+    </div>
+
+    <div class="sidebar-section">Resumen visible</div>
+    <div class="stats-box" id="stats-box"></div>
+  </div>
+
+  <!-- MAP -->
+  <div class="map-container">
+    <svg id="map-svg"></svg>
+
+    <div class="view-toggle">
+      <button class="view-btn active" onclick="setColorMode('cluster')" id="btn-cluster">Por Cluster</button>
+      <button class="view-btn" onclick="setColorMode('partido')" id="btn-partido">Por Partido</button>
+      <button class="view-btn" onclick="setColorMode('poblacion')" id="btn-poblacion">Por Población</button>
+    </div>
+
+    <div class="controls">
+      <button class="ctrl-btn" onclick="zoomIn()" title="Acercar">+</button>
+      <button class="ctrl-btn" onclick="zoomOut()" title="Alejar">−</button>
+      <button class="ctrl-btn" onclick="resetZoom()" title="Restablecer" style="font-size:12px;">⌂</button>
+    </div>
+
+    <div class="scale-legend">
+      <div class="scale-title">Tamaño = Población</div>
+      <div class="scale-items">
+        <div class="scale-item"><div class="scale-circle" style="width:6px;height:6px;"></div><div class="scale-label">&lt;20k</div></div>
+        <div class="scale-item"><div class="scale-circle" style="width:10px;height:10px;"></div><div class="scale-label">50k</div></div>
+        <div class="scale-item"><div class="scale-circle" style="width:16px;height:16px;"></div><div class="scale-label">200k</div></div>
+        <div class="scale-item"><div class="scale-circle" style="width:24px;height:24px;"></div><div class="scale-label">800k+</div></div>
+      </div>
+    </div>
+
+    <div class="info-panel">
+      <div id="hover-info">Hover sobre un municipio</div>
+    </div>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<div class="footer">
+  <span>🖱️ Arrastrar para mover · Scroll para zoom · Clic en cluster para filtrar</span>
+  <span>Subsecretaría de Coordinación Económica y Estadística · PBA Analytics 2026</span>
+</div>
+
+<script>
+// ============================================================
+// DATA: 134 MUNICIPALITIES WITH APPROXIMATE GEOGRAPHIC COORDS
+// ============================================================
+const CLUSTERS = {
+  conurbano: { nombre: 'CONURBANO BONAERENSE', color: '#3B82F6', emoji: '🏙️' },
+  ciudades:  { nombre: 'CIUDADES INTERMEDIAS', color: '#06B6D4', emoji: '🏛️' },
+  corredor:  { nombre: 'CORREDOR INDUSTRIAL NORTE', color: '#22C55E', emoji: '🌾' },
+  interior:  { nombre: 'INTERIOR AGROPECUARIO', color: '#EAB308', emoji: '🌽' },
+  costero:   { nombre: 'LITORAL ATLÁNTICO', color: '#38BDF8', emoji: '🌊' },
+  sur:       { nombre: 'SUR BONAERENSE', color: '#F97316', emoji: '⚡' },
+  salado:    { nombre: 'CUENCA DEL SALADO', color: '#A78BFA', emoji: '🐄' },
+};
+
+const PARTY_COLORS = { UxP: '#3B82F6', JxC: '#EAB308', LLA: '#EF4444', Vec: '#22C55E', Hechos: '#A78BFA' };
+
+const MUN = [
+  // CONURBANO BONAERENSE
+  {m:'La Matanza',       lat:-34.770,lng:-58.630,cluster:'conurbano',p:'UxP',pop:1841247,sec:'3ª',clave:'Gigante'},
+  {m:'Lomas de Zamora',  lat:-34.763,lng:-58.397,cluster:'conurbano',p:'UxP',pop:690480, sec:'3ª',clave:'La Salada'},
+  {m:'La Plata',         lat:-34.921,lng:-57.954,cluster:'conurbano',p:'UxP',pop:768547, sec:'8ª',clave:'Capital / Horticultura'},
+  {m:'Quilmes',          lat:-34.722,lng:-58.254,cluster:'conurbano',p:'UxP',pop:633391, sec:'3ª',clave:'EcoParque / Cerveza'},
+  {m:'Almirante Brown',  lat:-34.828,lng:-58.390,cluster:'conurbano',p:'UxP',pop:584827, sec:'3ª',clave:'Parque Industrial Burzaco'},
+  {m:'Merlo',            lat:-34.658,lng:-58.729,cluster:'conurbano',p:'UxP',pop:582486, sec:'1ª',clave:'Economía Popular'},
+  {m:'Moreno',           lat:-34.635,lng:-58.793,cluster:'conurbano',p:'UxP',pop:576632, sec:'1ª',clave:'Economía Popular'},
+  {m:'Florencio Varela', lat:-34.818,lng:-58.408,cluster:'conurbano',p:'UxP',pop:496433, sec:'3ª',clave:'Frutihorticola'},
+  {m:'Lanús',            lat:-34.709,lng:-58.393,cluster:'conurbano',p:'UxP',pop:461267, sec:'3ª',clave:'Curtiembres'},
+  {m:'General San Martín',lat:-34.575,lng:-58.540,cluster:'conurbano',p:'UxP',pop:450518,sec:'1ª',clave:'PyMEs'},
+  {m:'Tigre',            lat:-34.426,lng:-58.580,cluster:'conurbano',p:'UxP',pop:446949, sec:'1ª',clave:'Delta / Inmobiliario'},
+  {m:'Tres de Febrero',  lat:-34.601,lng:-58.561,cluster:'conurbano',p:'LLA',pop:364176, sec:'1ª',clave:'Sábato'},
+  {m:'Avellaneda',       lat:-34.665,lng:-58.368,cluster:'conurbano',p:'UxP',pop:367554, sec:'3ª',clave:'Puerto Dock Sud'},
+  {m:'Esteban Echeverría',lat:-34.838,lng:-58.461,cluster:'conurbano',p:'UxP',pop:338480,sec:'3ª',clave:'Nodo Logístico'},
+  {m:'Morón',            lat:-34.653,lng:-58.620,cluster:'conurbano',p:'UxP',pop:331183, sec:'1ª',clave:'H. Posadas'},
+  {m:'Berazategui',      lat:-34.765,lng:-58.212,cluster:'conurbano',p:'UxP',pop:358712, sec:'3ª',clave:'Capital del Vidrio'},
+  {m:'Malvinas Argentinas',lat:-34.516,lng:-58.692,cluster:'conurbano',p:'UxP',pop:350674,sec:'1ª',clave:'Salud'},
+  {m:'José C. Paz',      lat:-34.513,lng:-58.751,cluster:'conurbano',p:'UxP',pop:326992, sec:'1ª',clave:'Salud'},
+  {m:'San Miguel',       lat:-34.541,lng:-58.713,cluster:'conurbano',p:'JxC',pop:328835, sec:'1ª',clave:'Ojos en Alerta'},
+  {m:'San Isidro',       lat:-34.471,lng:-58.507,cluster:'conurbano',p:'JxC',pop:297282, sec:'1ª',clave:'Recuperación Costera'},
+  {m:'Vicente López',    lat:-34.523,lng:-58.472,cluster:'conurbano',p:'JxC',pop:282280, sec:'1ª',clave:'Polo Corporativo'},
+  {m:'Escobar',          lat:-34.350,lng:-58.793,cluster:'conurbano',p:'UxP',pop:256268, sec:'1ª',clave:'Innovación'},
+  {m:'Ezeiza',           lat:-34.857,lng:-58.521,cluster:'conurbano',p:'UxP',pop:201511, sec:'3ª',clave:'Tolerancia Cero'},
+  {m:'Hurlingham',       lat:-34.591,lng:-58.640,cluster:'conurbano',p:'UxP',pop:185641, sec:'1ª',clave:'Cuna del Rock'},
+  {m:'Ituzaingó',        lat:-34.660,lng:-58.675,cluster:'conurbano',p:'UxP',pop:180232, sec:'1ª',clave:'El Jardín del Oeste'},
+  {m:'General Rodríguez',lat:-34.607,lng:-58.946,cluster:'conurbano',p:'UxP',pop:142709, sec:'1ª',clave:'Alimentos'},
+  {m:'Presidente Perón', lat:-34.912,lng:-58.440,cluster:'conurbano',p:'UxP',pop:102106, sec:'3ª',clave:'Nuevas localidades'},
+  {m:'Berisso',          lat:-34.872,lng:-57.888,cluster:'conurbano',p:'UxP',pop:100930, sec:'3ª',clave:'YPF / Inmigrante'},
+
+  // CIUDADES INTERMEDIAS REGIONALES
+  {m:'General Pueyrredón (MDQ)',lat:-38.000,lng:-57.556,cluster:'ciudades',p:'JxC',pop:667082,sec:'5ª',clave:'Cluster ATICMA / IA'},
+  {m:'Bahía Blanca',     lat:-38.716,lng:-62.269,cluster:'ciudades',p:'UxP',pop:336557, sec:'6ª',clave:'Puerto / Petroquímica'},
+  {m:'Olavarría',        lat:-36.893,lng:-60.323,cluster:'ciudades',p:'UxP',pop:125751, sec:'7ª',clave:'Loma Negra / Cemento'},
+  {m:'Tandil',           lat:-37.329,lng:-59.144,cluster:'ciudades',p:'JxC',pop:145575, sec:'5ª',clave:'Silicon Valley Bonaerense'},
+  {m:'San Fernando',     lat:-34.449,lng:-58.557,cluster:'ciudades',p:'UxP',pop:171616, sec:'1ª',clave:'Náutica'},
+  {m:'San Nicolás',      lat:-33.335,lng:-60.221,cluster:'ciudades',p:'Hechos',pop:168041,sec:'2ª',clave:'Siderurgia / Religión'},
+  {m:'Zárate',           lat:-34.099,lng:-59.029,cluster:'ciudades',p:'JxC',pop:132221, sec:'2ª',clave:'Atucha / Automotriz'},
+  {m:'Junín',            lat:-34.592,lng:-60.952,cluster:'ciudades',p:'JxC',pop:103787, sec:'4ª',clave:'Epicentro 4ª Sección'},
+  {m:'Campana',          lat:-34.166,lng:-58.963,cluster:'ciudades',p:'JxC',pop:110566, sec:'1ª',clave:'Tenaris / Puerto'},
+  {m:'Luján',            lat:-34.569,lng:-59.113,cluster:'ciudades',p:'UxP',pop:111251, sec:'1ª',clave:'Turismo Religioso'},
+
+  // CORREDOR INDUSTRIAL NORTE (Sección 2ª)
+  {m:'San Pedro',        lat:-33.677,lng:-59.666,cluster:'corredor',p:'UxP',pop:68613,sec:'2ª',clave:'Durazno / Vivero'},
+  {m:'Baradero',         lat:-33.808,lng:-59.511,cluster:'corredor',p:'UxP',pop:40002,sec:'2ª',clave:'Polo Logístico'},
+  {m:'Exaltación de la Cruz',lat:-34.297,lng:-59.082,cluster:'corredor',p:'UxP',pop:40159,sec:'2ª',clave:'Industria Equina'},
+  {m:'Ramallo',          lat:-33.490,lng:-60.010,cluster:'corredor',p:'UxP',pop:39730,sec:'2ª',clave:'Ternium'},
+  {m:'Salto',            lat:-34.291,lng:-60.252,cluster:'corredor',p:'UxP',pop:39425,sec:'2ª',clave:'Capital de la Semilla'},
+  {m:'Arrecifes',        lat:-34.062,lng:-60.112,cluster:'corredor',p:'JxC',pop:32215,sec:'2ª',clave:'Automovilismo'},
+  {m:'Colón',            lat:-33.892,lng:-61.103,cluster:'corredor',p:'JxC',pop:27504,sec:'2ª',clave:'Polo Semillero'},
+  {m:'San Antonio de Areco',lat:-34.250,lng:-59.474,cluster:'corredor',p:'JxC',pop:26897,sec:'2ª',clave:'Tradición / Talabartería'},
+  {m:'San Andrés de Giles',lat:-34.449,lng:-59.453,cluster:'corredor',p:'UxP',pop:26510,sec:'2ª',clave:'Avícola / Porcina'},
+  {m:'Rojas',            lat:-34.196,lng:-60.731,cluster:'corredor',p:'JxC',pop:25627,sec:'2ª',clave:'Polo Semillero'},
+  {m:'Carmen de Areco',  lat:-34.382,lng:-59.817,cluster:'corredor',p:'UxP',pop:17499,sec:'2ª',clave:'Semillero / Porcina'},
+  {m:'Capitán Sarmiento',lat:-34.180,lng:-59.786,cluster:'corredor',p:'UxP',pop:15965,sec:'2ª',clave:'Polo Avícola'},
+
+  // INTERIOR AGROPECUARIO PAMPEANO
+  {m:'San Vicente',      lat:-35.018,lng:-58.424,cluster:'interior',p:'UxP',pop:98215,sec:'3ª',clave:'Universidad 2024'},
+  {m:'Azul',             lat:-36.777,lng:-59.858,cluster:'interior',p:'UxP',pop:75905,sec:'7ª',clave:'Ciudad Cervantina'},
+  {m:'Mercedes',         lat:-34.651,lng:-59.430,cluster:'interior',p:'UxP',pop:72980,sec:'1ª',clave:'Salame Quintero'},
+  {m:'Cañuelas',         lat:-35.053,lng:-58.759,cluster:'interior',p:'UxP',pop:70684,sec:'3ª',clave:'Dulce de Leche'},
+  {m:'Chivilcoy',        lat:-34.899,lng:-60.022,cluster:'interior',p:'Vec',pop:70839,sec:'4ª',clave:'AgroGanadero / Calzado'},
+  {m:'Marcos Paz',       lat:-34.779,lng:-58.833,cluster:'interior',p:'UxP',pop:67011,sec:'1ª',clave:'Billetera propia'},
+  {m:'Ensenada',         lat:-34.860,lng:-57.921,cluster:'interior',p:'UxP',pop:63997,sec:'3ª',clave:'YPF / Astillero'},
+  {m:'Chacabuco',        lat:-34.638,lng:-60.473,cluster:'interior',p:'UxP',pop:52729,sec:'4ª',clave:'Capital del Maíz'},
+  {m:'9 de Julio',       lat:-35.449,lng:-60.884,cluster:'interior',p:'JxC',pop:52607,sec:'4ª',clave:'Metalmecánica / TC'},
+  {m:'Trenque Lauquen',  lat:-36.003,lng:-62.729,cluster:'interior',p:'JxC',pop:49499,sec:'4ª',clave:'Capital Lechera'},
+  {m:'Bragado',          lat:-35.116,lng:-60.490,cluster:'interior',p:'UxP',pop:46504,sec:'4ª',clave:'Ferroviaria / Caballo'},
+  {m:'Lincoln',          lat:-34.867,lng:-61.524,cluster:'interior',p:'JxC',pop:45506,sec:'4ª',clave:'Carnaval / Lechero'},
+  {m:'Pehuajó',          lat:-35.849,lng:-61.902,cluster:'interior',p:'UxP',pop:44783,sec:'4ª',clave:'AgroGanadero + Lechero'},
+  {m:'Lobos',            lat:-35.185,lng:-59.094,cluster:'interior',p:'JxC',pop:41760,sec:'3ª',clave:'Lechero / Turismo'},
+  {m:'General Villegas', lat:-35.032,lng:-63.017,cluster:'interior',p:'UxP',pop:35251,sec:'4ª',clave:'Gigante del Agro'},
+  {m:'Bolívar',          lat:-36.232,lng:-60.954,cluster:'interior',p:'UxP',pop:37594,sec:'7ª',clave:'Agro / Voleibol'},
+  {m:'25 de Mayo',       lat:-35.433,lng:-60.169,cluster:'interior',p:'JxC',pop:35563,sec:'7ª',clave:'Carnaval / Ganadería'},
+  {m:'Saladillo',        lat:-35.636,lng:-59.782,cluster:'interior',p:'JxC',pop:35656,sec:'7ª',clave:'Helicópteros Cícaro'},
+  {m:'Brandsen',         lat:-35.172,lng:-58.228,cluster:'interior',p:'UxP',pop:32448,sec:'3ª',clave:'Cuenca Lechera'},
+  {m:'Magdalena',        lat:-35.077,lng:-57.521,cluster:'interior',p:'JxC',pop:26613,sec:'3ª',clave:'Nuevo Parque'},
+  {m:'Carlos Casares',   lat:-35.621,lng:-61.369,cluster:'interior',p:'UxP',pop:23100,sec:'4ª',clave:'Cuna del Girasol'},
+  {m:'General Viamonte', lat:-34.313,lng:-61.288,cluster:'interior',p:'JxC',pop:22649,sec:'4ª',clave:'Casa Evita'},
+  {m:'Navarro',          lat:-35.003,lng:-59.278,cluster:'interior',p:'UxP',pop:19899,sec:'1ª',clave:'Tambero'},
+  {m:'Rivadavia',        lat:-35.019,lng:-62.990,cluster:'interior',p:'UxP',pop:19849,sec:'4ª',clave:'Soja Monocultivo'},
+  {m:'Leandro N. Alem',  lat:-34.411,lng:-61.463,cluster:'interior',p:'UxP',pop:17266,sec:'4ª',clave:'Agro / Fiambres'},
+  {m:'General Las Heras',lat:-34.931,lng:-58.949,cluster:'interior',p:'UxP',pop:18022,sec:'1ª',clave:'Capital del Pato'},
+  {m:'General Arenales', lat:-34.309,lng:-61.289,cluster:'interior',p:'JxC',pop:16350,sec:'4ª',clave:'Polo Textil'},
+  {m:'Carlos Tejedor',   lat:-35.391,lng:-62.408,cluster:'interior',p:'UxP',pop:14079,sec:'4ª',clave:'AgroGanadero'},
+  {m:'Roque Pérez',      lat:-35.419,lng:-59.337,cluster:'interior',p:'UxP',pop:13977,sec:'7ª',clave:'Noche Almacenes'},
+  {m:'Punta Indio',      lat:-35.270,lng:-57.300,cluster:'interior',p:'UxP',pop:12297,sec:'3ª',clave:'Tronador II'},
+  {m:'Alberti',          lat:-35.039,lng:-60.240,cluster:'interior',p:'UxP',pop:12982,sec:'4ª',clave:'Arq. Salamone'},
+  {m:'General Pinto',    lat:-34.779,lng:-62.075,cluster:'interior',p:'UxP',pop:12941,sec:'4ª',clave:'Cuenca Lechera'},
+  {m:'General Alvear',   lat:-36.040,lng:-60.003,cluster:'interior',p:'JxC',pop:12631,sec:'7ª',clave:'Ganadería'},
+  {m:'Tapalqué',         lat:-36.356,lng:-60.021,cluster:'interior',p:'UxP',pop:10783,sec:'7ª',clave:'Ganado / Termas'},
+  {m:'Florentino Ameghino',lat:-34.975,lng:-62.734,cluster:'interior',p:'UxP',pop:10790,sec:'4ª',clave:'Ganado / Lácteos'},
+  {m:'Hipólito Yrigoyen',lat:-36.168,lng:-63.003,cluster:'interior',p:'UxP',pop:10661,sec:'4ª',clave:'Agrícola'},
+  {m:'Suipacha',         lat:-34.773,lng:-59.701,cluster:'interior',p:'UxP',pop:11786,sec:'1ª',clave:'Ruta del Queso'},
+
+  // LITORAL ATLÁNTICO
+  {m:'La Costa',         lat:-36.680,lng:-56.710,cluster:'costero',p:'UxP',pop:100689,sec:'5ª',clave:'Turismo Popular'},
+  {m:'Pinamar',          lat:-37.107,lng:-56.869,cluster:'costero',p:'JxC',pop:39449, sec:'5ª',clave:'Costa Premium'},
+  {m:'Villa Gesell',     lat:-37.257,lng:-56.973,cluster:'costero',p:'UxP',pop:37463, sec:'5ª',clave:'Colonia Alemana'},
+  {m:'Mar Chiquita',     lat:-37.726,lng:-57.438,cluster:'costero',p:'UxP',pop:33110, sec:'5ª',clave:'Albufera única'},
+  {m:'Necochea',         lat:-38.552,lng:-58.737,cluster:'costero',p:'Vec',pop:102110,sec:'5ª',clave:'Puerto Quequén 2026'},
+  {m:'General Alvarado (Miramar)',lat:-38.272,lng:-57.839,cluster:'costero',p:'UxP',pop:45526,sec:'5ª',clave:'Kiwi / BioTec'},
+  {m:'Monte Hermoso',    lat:-38.987,lng:-61.278,cluster:'costero',p:'UxP',pop:8465,  sec:'6ª',clave:'Balneario'},
+
+  // CUENCA DEL SALADO E INTERIOR SUR
+  {m:'Balcarce',         lat:-37.831,lng:-58.256,cluster:'salado',p:'JxC',pop:48982,sec:'5ª',clave:'Papa / Fangio'},
+  {m:'Chascomús',        lat:-35.571,lng:-58.011,cluster:'salado',p:'UxP',pop:42452,sec:'5ª',clave:'Alfonsín'},
+  {m:'Dolores',          lat:-36.314,lng:-57.678,cluster:'salado',p:'UxP',pop:32032,sec:'5ª',clave:'Termas'},
+  {m:'Las Flores',       lat:-36.015,lng:-59.097,cluster:'salado',p:'UxP',pop:27239,sec:'5ª',clave:'Bioy Casares / Textil'},
+  {m:'San Miguel del Monte',lat:-35.435,lng:-58.802,cluster:'salado',p:'UxP',pop:24868,sec:'5ª',clave:'Enclave Rosista'},
+  {m:'General Juan Madariaga',lat:-36.989,lng:-57.135,cluster:'salado',p:'JxC',pop:22624,sec:'5ª',clave:'Textil Bangladesh'},
+  {m:'Ayacucho',         lat:-37.150,lng:-58.489,cluster:'salado',p:'JxC',pop:21977,sec:'5ª',clave:'Capital del Ternero'},
+  {m:'General Belgrano', lat:-35.776,lng:-58.494,cluster:'salado',p:'UxP',pop:20791,sec:'5ª',clave:'Termas del Salado'},
+  {m:'Lobería',          lat:-38.160,lng:-58.772,cluster:'salado',p:'JxC',pop:18243,sec:'5ª',clave:'Ed. Tecnológica'},
+  {m:'Rauch',            lat:-36.771,lng:-59.086,cluster:'salado',p:'JxC',pop:16635,sec:'5ª',clave:'Capital del Ave Raza'},
+  {m:'General Paz (Ranchos)',lat:-35.687,lng:-58.520,cluster:'salado',p:'UxP',pop:14207,sec:'5ª',clave:'Laguna'},
+  {m:'Maipú',            lat:-36.863,lng:-57.880,cluster:'salado',p:'JxC',pop:11323,sec:'5ª',clave:'Crisis Política HCD'},
+  {m:'Castelli',         lat:-36.094,lng:-57.808,cluster:'salado',p:'UxP',pop:9594, sec:'5ª',clave:'Cuenca del Salado'},
+  {m:'San Cayetano',     lat:-38.349,lng:-59.609,cluster:'salado',p:'JxC',pop:8994, sec:'5ª',clave:'19 años gestión'},
+  {m:'General Guido',    lat:-36.658,lng:-57.789,cluster:'salado',p:'UxP',pop:3174, sec:'5ª',clave:'Emergencia Económica'},
+  {m:'General Lavalle',  lat:-36.411,lng:-56.941,cluster:'salado',p:'UxP',pop:4870, sec:'5ª',clave:'Torta Negra / Pesca'},
+  {m:'Lezama',           lat:-35.728,lng:-58.081,cluster:'salado',p:'UxP',pop:6221, sec:'5ª',clave:'Municipio más joven'},
+  {m:'Pila',             lat:-36.003,lng:-58.141,cluster:'salado',p:'UxP',pop:4642, sec:'5ª',clave:'100% Ganadería'},
+  {m:'Tordillo (Gral Conesa)',lat:-36.424,lng:-57.304,cluster:'salado',p:'UxP',pop:2542,sec:'5ª',clave:'Menos poblado PBA'},
+
+  // SUR BONAERENSE
+  {m:'Coronel Rosales',  lat:-38.867,lng:-62.082,cluster:'sur',p:'UxP',pop:67503,sec:'6ª',clave:'Puerto Vaca Muerta'},
+  {m:'Tres Arroyos',     lat:-38.375,lng:-60.275,cluster:'sur',p:'UxP',pop:62426,sec:'6ª',clave:'Fiesta del Trigo'},
+  {m:'Coronel Suárez',   lat:-37.461,lng:-61.934,cluster:'sur',p:'UxP',pop:42110,sec:'6ª',clave:'Colonia Alemana / Calzado'},
+  {m:'Patagones',        lat:-40.799,lng:-62.981,cluster:'sur',p:'UxP',pop:37646,sec:'6ª',clave:'ADN Patagónico'},
+  {m:'Villarino',        lat:-39.501,lng:-62.498,cluster:'sur',p:'Vec',pop:32717,sec:'6ª',clave:'Puerta Patagonia / Ajo'},
+  {m:'Benito Juárez',    lat:-37.671,lng:-59.810,cluster:'sur',p:'UxP',pop:22292,sec:'6ª',clave:'Frambuesa / Cemento'},
+  {m:'Coronel Pringles', lat:-37.977,lng:-61.365,cluster:'sur',p:'JxC',pop:24420,sec:'6ª',clave:'Arq. Salamone'},
+  {m:'Saavedra (Pigüé)', lat:-37.626,lng:-62.381,cluster:'sur',p:'UxP',pop:22347,sec:'6ª',clave:'Colonia Francesa'},
+  {m:'Daireaux',         lat:-36.590,lng:-61.743,cluster:'sur',p:'UxP',pop:18422,sec:'6ª',clave:'Sorgo / Tasa Vial'},
+  {m:'Adolfo Alsina (Carhué)',lat:-36.803,lng:-62.831,cluster:'sur',p:'JxC',pop:17552,sec:'6ª',clave:'Termas / Colonia Judía'},
+  {m:'Coronel Dorrego',  lat:-38.723,lng:-61.284,cluster:'sur',p:'JxC',pop:15968,sec:'6ª',clave:'Aceite de Oliva'},
+  {m:'Adolfo G. Chaves', lat:-38.021,lng:-60.090,cluster:'sur',p:'UxP',pop:12914,sec:'6ª',clave:'Vuelo a Vela'},
+  {m:'Puán',             lat:-37.537,lng:-62.762,cluster:'sur',p:'JxC',pop:16613,sec:'6ª',clave:'Cebada'},
+  {m:'Tornquist',        lat:-38.097,lng:-62.218,cluster:'sur',p:'JxC',pop:14810,sec:'6ª',clave:'Turismo de Montaña'},
+  {m:'General La Madrid',lat:-37.238,lng:-61.256,cluster:'sur',p:'JxC',pop:11618,sec:'6ª',clave:'Cannabis / Estadísticas'},
+  {m:'Guaminí',          lat:-36.997,lng:-62.414,cluster:'sur',p:'UxP',pop:11801,sec:'6ª',clave:'Lagunas Encadenadas'},
+  {m:'Laprida',          lat:-37.558,lng:-60.805,cluster:'sur',p:'UxP',pop:11646,sec:'6ª',clave:'Capital del Reciclaje'},
+  {m:'Salliqueló',       lat:-36.752,lng:-62.958,cluster:'sur',p:'UxP',pop:9427, sec:'6ª',clave:'Capital Novillo Tipo'},
+  {m:'Tres Lomas',       lat:-36.454,lng:-62.851,cluster:'sur',p:'UxP',pop:9164, sec:'6ª',clave:'Autonomía 1986'},
+  {m:'Pellegrini',       lat:-36.269,lng:-63.157,cluster:'sur',p:'JxC',pop:7143, sec:'6ª',clave:'Arraigo Joven'},
+
+  // Pilar (omitted above in conurbano, add here)
+  {m:'Pilar',            lat:-34.460,lng:-58.910,cluster:'conurbano',p:'UxP',pop:394754,sec:'1ª',clave:'Polo Industrial / Periurbano'},
+];
+
+// ============================================================
+// MAP SETUP
+// ============================================================
+let colorMode = 'cluster';
+let activeCluster = null;
+let currentTransform = d3.zoomIdentity;
+
+const svg = d3.select('#map-svg');
+const container = svg.append('g').attr('class', 'map-g');
+
+// Buenos Aires Province outline - simplified polygon
+// Approximate boundary coordinates [lng, lat]
+const PROVINCE_OUTLINE = [
+  [-60.5, -33.0], [-60.3, -33.2], [-59.0, -33.3], [-58.5, -33.5],
+  [-58.2, -33.8], [-57.8, -34.0], [-57.5, -34.2], [-57.2, -34.5],
+  [-57.1, -34.7], [-57.0, -34.9], [-56.8, -35.0], [-56.7, -35.2],
+  [-56.7, -35.8], [-56.8, -36.2], [-56.9, -36.6], [-57.0, -37.0],
+  [-57.1, -37.3], [-57.5, -37.6], [-57.8, -37.9], [-58.0, -38.0],
+  [-58.3, -38.2], [-58.6, -38.3], [-58.8, -38.5], [-59.3, -38.7],
+  [-59.7, -38.9], [-60.2, -39.1], [-60.5, -39.3], [-61.0, -39.5],
+  [-61.3, -39.8], [-61.7, -40.2], [-62.0, -40.5], [-62.4, -40.8],
+  [-62.8, -41.1], [-63.0, -41.3], [-63.5, -41.5], [-63.5, -40.5],
+  [-63.3, -39.8], [-63.2, -39.0], [-63.1, -38.3], [-63.0, -37.5],
+  [-62.9, -36.8], [-62.8, -36.2], [-62.5, -35.5], [-62.3, -34.8],
+  [-62.0, -34.2], [-61.8, -33.8], [-61.5, -33.5], [-61.2, -33.2],
+  [-60.9, -33.1], [-60.5, -33.0]
+];
+
+let width, height, projection, path, zoom;
+
+function initMap() {
+  const el = document.querySelector('.map-container');
+  width = el.clientWidth;
+  height = el.clientHeight;
+
+  svg.attr('width', width).attr('height', height);
+
+  projection = d3.geoMercator()
+    .center([-59.5, -37.5])
+    .scale(Math.min(width, height) * 2.6)
+    .translate([width / 2, height / 2]);
+
+  path = d3.geoPath().projection(projection);
+
+  zoom = d3.zoom()
+    .scaleExtent([0.5, 20])
+    .on('zoom', (event) => {
+      currentTransform = event.transform;
+      container.attr('transform', event.transform);
+      updateCircleSizes();
+    });
+
+  svg.call(zoom);
+
+  drawProvince();
+  drawMunicipalities();
+  buildLegend();
+  updateStats();
+}
+
+function drawProvince() {
+  const geoOutline = {
+    type: 'Feature',
+    geometry: { type: 'Polygon', coordinates: [PROVINCE_OUTLINE.map(([lng, lat]) => [lng, lat])] }
+  };
+
+  container.append('path')
+    .datum(geoOutline)
+    .attr('d', path)
+    .attr('fill', '#0f2035')
+    .attr('stroke', '#2d4a6a')
+    .attr('stroke-width', 1.5);
+
+  // Water areas (Atlantic)
+  container.append('rect')
+    .attr('x', 0).attr('y', 0).attr('width', width * 3).attr('height', height * 3)
+    .attr('fill', '#0a1520')
+    .lower();
+}
+
+function getColor(d) {
+  if (colorMode === 'cluster') return CLUSTERS[d.cluster].color;
+  if (colorMode === 'partido') return PARTY_COLORS[d.p] || '#888';
+  if (colorMode === 'poblacion') {
+    const scale = d3.scaleSequential(d3.interpolateYlOrRd).domain([2000, 1900000]);
+    return scale(d.pop);
+  }
+}
+
+function getRadius(pop) {
+  return Math.max(3, Math.min(22, Math.sqrt(pop / 3.14) * 0.01));
+}
+
+function drawMunicipalities() {
+  container.selectAll('.mun-circle').remove();
+  container.selectAll('.mun-label').remove();
+
+  const tooltip = document.getElementById('tooltip');
+
+  const circles = container.selectAll('.mun-circle')
+    .data(MUN)
+    .enter()
+    .append('circle')
+    .attr('class', 'mun-circle')
+    .attr('cx', d => projection([d.lng, d.lat])[0])
+    .attr('cy', d => projection([d.lng, d.lat])[1])
+    .attr('r', d => getRadius(d.pop))
+    .attr('fill', d => getColor(d))
+    .attr('fill-opacity', d => activeCluster ? (d.cluster === activeCluster ? 0.9 : 0.15) : 0.8)
+    .attr('stroke', d => activeCluster ? (d.cluster === activeCluster ? 'white' : 'transparent') : 'rgba(255,255,255,0.3)')
+    .attr('stroke-width', 0.8)
+    .on('mousemove', function(event, d) {
+      tooltip.style.display = 'block';
+      tooltip.style.left = (event.clientX + 14) + 'px';
+      tooltip.style.top = (event.clientY - 80) + 'px';
+      const cluster = CLUSTERS[d.cluster];
+      tooltip.innerHTML = `
+        <h4 style="color:${cluster.color}">${d.m}</h4>
+        <div class="t-row"><span class="t-key">Intendente</span><span class="t-val">${d.p}</span></div>
+        <div class="t-row"><span class="t-key">Población</span><span class="t-val">${d.pop.toLocaleString('es-AR')}</span></div>
+        <div class="t-row"><span class="t-key">Sección</span><span class="t-val">${d.sec}</span></div>
+        <div class="t-row"><span class="t-key">Cluster</span><span class="t-val">${cluster.emoji} ${cluster.nombre}</span></div>
+        <div class="t-row"><span class="t-key">Identidad</span><span class="t-val" style="font-size:10px">${d.clave}</span></div>`;
+      document.getElementById('hover-info').textContent = `${d.m} · ${d.p} · ${d.pop.toLocaleString('es-AR')} hab`;
+    })
+    .on('mouseleave', function() {
+      tooltip.style.display = 'none';
+      document.getElementById('hover-info').textContent = 'Hover sobre un municipio';
+    });
+}
+
+function updateCircleSizes() {
+  const k = currentTransform.k;
+  container.selectAll('.mun-circle')
+    .attr('r', d => getRadius(d.pop) / Math.max(1, k * 0.5));
+}
+
+function buildLegend() {
+  const container = document.getElementById('legend-container');
+  container.innerHTML = '';
+
+  // All
+  const allItem = document.createElement('div');
+  allItem.className = 'legend-item' + (!activeCluster ? ' active' : '');
+  if (!activeCluster) allItem.style.borderLeft = '3px solid #64748b';
+  allItem.innerHTML = `<div class="legend-dot" style="background:#64748b;"></div><div class="legend-info"><div class="legend-name">Todos los clusters</div><div class="legend-sub">134 municipios</div></div><div class="legend-count">134</div>`;
+  allItem.onclick = () => { activeCluster = null; refreshMap(); };
+  container.appendChild(allItem);
+
+  Object.entries(CLUSTERS).forEach(([id, c]) => {
+    const count = MUN.filter(m => m.cluster === id).length;
+    const pop = MUN.filter(m => m.cluster === id).reduce((a, m) => a + m.pop, 0);
+    const item = document.createElement('div');
+    item.className = 'legend-item' + (activeCluster === id ? ' active' : '');
+    if (activeCluster === id) item.style.borderLeft = `3px solid ${c.color}`;
+    item.innerHTML = `
+      <div class="legend-dot" style="background:${c.color};"></div>
+      <div class="legend-info">
+        <div class="legend-name">${c.emoji} ${c.nombre}</div>
+        <div class="legend-sub">${count} mun · ${(pop/1000000).toFixed(1)}M hab</div>
+      </div>
+      <div class="legend-count" style="color:${c.color}">${count}</div>`;
+    item.onclick = () => { activeCluster = activeCluster === id ? null : id; refreshMap(); };
+    container.appendChild(item);
+  });
+}
+
+function refreshMap() {
+  buildLegend();
+  d3.selectAll('.mun-circle')
+    .attr('fill', d => getColor(d))
+    .attr('fill-opacity', d => activeCluster ? (d.cluster === activeCluster ? 0.92 : 0.12) : 0.82)
+    .attr('stroke', d => activeCluster ? (d.cluster === activeCluster ? 'white' : 'transparent') : 'rgba(255,255,255,0.25)')
+    .attr('stroke-width', d => activeCluster && d.cluster === activeCluster ? 1.2 : 0.6);
+  updateStats();
+}
+
+function updateStats() {
+  const visible = activeCluster ? MUN.filter(m => m.cluster === activeCluster) : MUN;
+  const pop = visible.reduce((a, m) => a + m.pop, 0);
+  const uxp = visible.filter(m => m.p === 'UxP').length;
+  const jxc = visible.filter(m => m.p === 'JxC').length;
+  document.getElementById('stats-box').innerHTML = `
+    <div class="stat-row"><span class="stat-label">Municipios</span><span class="stat-val">${visible.length}</span></div>
+    <div class="stat-row"><span class="stat-label">Población</span><span class="stat-val">${pop.toLocaleString('es-AR')}</span></div>
+    <div class="stat-row"><span class="stat-label">% Provincial</span><span class="stat-val">${((pop/17129242)*100).toFixed(1)}%</span></div>
+    <div class="stat-row"><span class="stat-label">UxP</span><span class="stat-val">${uxp}</span></div>
+    <div class="stat-row"><span class="stat-label">JxC</span><span class="stat-val">${jxc}</span></div>
+    <div class="stat-row"><span class="stat-label">Otros</span><span class="stat-val">${visible.length - uxp - jxc}</span></div>`;
+}
+
+function setColorMode(mode) {
+  colorMode = mode;
+  document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('btn-' + mode).classList.add('active');
+  d3.selectAll('.mun-circle').attr('fill', d => getColor(d));
+}
+
+function searchMun(term) {
+  if (!term) {
+    d3.selectAll('.mun-circle').attr('fill-opacity', 0.82).attr('stroke', 'rgba(255,255,255,0.25)');
+    return;
+  }
+  const t = term.toLowerCase();
+  d3.selectAll('.mun-circle')
+    .attr('fill-opacity', d => d.m.toLowerCase().includes(t) || d.clave.toLowerCase().includes(t) ? 1 : 0.08)
+    .attr('stroke', d => d.m.toLowerCase().includes(t) ? 'white' : 'transparent')
+    .attr('r', function(d) {
+      const r = getRadius(d.pop) / Math.max(1, currentTransform.k * 0.5);
+      return d.m.toLowerCase().includes(t) ? r * 1.8 : r;
+    });
+}
+
+function zoomIn()    { svg.transition().call(zoom.scaleBy, 1.6); }
+function zoomOut()   { svg.transition().call(zoom.scaleBy, 0.625); }
+function resetZoom() { svg.transition().call(zoom.transform, d3.zoomIdentity); }
+
+window.addEventListener('resize', () => {
+  const el = document.querySelector('.map-container');
+  width = el.clientWidth; height = el.clientHeight;
+  svg.attr('width', width).attr('height', height);
+  projection.translate([width/2, height/2]);
+  container.select('path').attr('d', path);
+  container.selectAll('.mun-circle')
+    .attr('cx', d => projection([d.lng, d.lat])[0])
+    .attr('cy', d => projection([d.lng, d.lat])[1]);
+});
+
+initMap();
+</script>
+</body>
+</html>

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SALADILLO — Ficha de Campaña · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.header { color: white; padding: 22px 28px; display: flex; justify-content: space-between; align-items: flex-start; }
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.85; line-height: 1.95; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-aliado { background: rgba(52,211,153,0.3); color: #A7F3D0; }
+.badge-rival  { background: rgba(239,68,68,0.3);  color: #FCA5A5; }
+.banner { background: #0C2340; color: white; padding: 20px 28px; border-left: 7px solid #38BDF8; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #BAE6FD; margin-bottom: 7px; }
+.b-title  { font-size: 15.5px; font-weight: 800; margin-bottom: 13px; line-height: 1.35; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #7DD3FC; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 19px; font-weight: 900; color: #7DD3FC; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+.main { padding: 18px 22px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; background: #eef2f7; }
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+.card { background: white; border-radius: 10px; box-shadow: 0 1px 5px rgba(0,0,0,0.07); overflow: hidden; }
+.ch { padding: 10px 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.9px; }
+.cbody { padding: 13px; }
+.st  { font-size: 9.5px; font-weight: 700; color: #1E3A5F; padding-bottom: 5px; border-bottom: 2px solid #38BDF8; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.st2 { font-size: 9.5px; font-weight: 700; color: #1E3A5F; padding-bottom: 5px; border-bottom: 2px solid #38BDF8; margin-top: 14px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #EDE9FE; border: 1px solid #C4B5FD; color: #4C1D95; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+.ct { background: #F0F9FF; border: 1px solid #38BDF8; color: #0F172A; }
+.t { width: 100%; border-collapse: collapse; font-size: 11px; }
+.t th { background: #f5f6f8; color: #555; padding: 5px 7px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 5px 7px; border-bottom: 1px solid #f3f4f6; vertical-align: top; word-break: break-word; }
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child { color: #555; }
+.t.two-col td:first-child { width: 44%; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 11px 12px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 21px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9px; color: #999; margin-top: 3px; line-height: 1.35; }
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.sc   { border-radius: 7px; padding: 11px 12px; border-left: 4px solid; }
+.sc.p { border-color: #1E3A5F; background: #F0F9FF; }
+.sc.s { border-color: #059669; background: #F0FDF4; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #7C3AED; background: #F5F3FF; }
+.sc.r { border-color: #DC2626; background: #FEF2F2; }
+.sc.g { border-color: #0369A1; background: #E0F2FE; }
+.sl { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.sn { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.sp { font-size: 18px; font-weight: 900; margin: 3px 0 6px; }
+.sd { font-size: 10px; line-height: 1.65; color: #444; }
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.pbl { width: 120px; font-size: 9.5px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; height: 16px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 5px; }
+.pbt { font-size: 9px; font-weight: 700; color: white; white-space: nowrap; }
+.pbp { width: 32px; font-size: 9.5px; font-weight: 700; text-align: right; flex-shrink: 0; }
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pi   { border-radius: 7px; padding: 11px 13px; border-left: 4px solid; }
+.pi.o { background: #F0F9FF; border-color: #1E3A5F; }
+.pi.r { background: #FFF7ED; border-color: #F97316; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pi.p { background: #F5F3FF; border-color: #7C3AED; }
+.pi.a { background: #FFFBEB; border-color: #D97706; }
+.pt   { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.pti  { font-size: 11px; font-weight: 700; margin-bottom: 5px; }
+.pd   { font-size: 10px; line-height: 1.65; color: #444; }
+.ar   { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f0f0f0; }
+.ar:last-child { border-bottom: none; }
+.ai   { font-size: 18px; min-width: 24px; flex-shrink: 0; }
+.ain  { flex: 1; min-width: 0; }
+.an   { font-size: 11px; font-weight: 700; color: #1E3A5F; margin-bottom: 3px; }
+.ad   { font-size: 10px; color: #555; line-height: 1.6; }
+.ats  { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+.at   { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 7px; }
+.ag   { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px dashed #e8e8e8; }
+.ag:last-child { border-bottom: none; }
+.agi  { font-size: 17px; min-width: 22px; flex-shrink: 0; }
+.agt  { min-width: 0; }
+.agt strong { font-size: 11px; display: block; margin-bottom: 3px; color: #1E3A5F; font-weight: 700; }
+.agt p { font-size: 10px; color: #666; line-height: 1.6; }
+.al   { border-radius: 7px; padding: 10px 12px; margin-top: 10px; font-size: 10px; line-height: 1.6; }
+.al-v { background: #F0F9FF; border: 1px solid #38BDF8; color: #0C4A6E; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al-r { background: #FEF2F2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.al-k { background: #0C2340; color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.al strong { display: block; margin-bottom: 3px; font-size: 11px; }
+.al-k strong { color: #7DD3FC; }
+.nt   { background: #F0F9FF; border: 1px solid #38BDF8; border-radius: 7px; padding: 9px 12px; font-size: 10px; color: #0C4A6E; margin-top: 10px; line-height: 1.6; }
+.nt strong { display: block; font-size: 11px; margin-bottom: 3px; color: #1E3A5F; }
+.hist { background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 7px; padding: 10px 12px; margin-top: 10px; }
+.hist strong { font-size: 11px; font-weight: 700; color: #78350F; display: block; margin-bottom: 4px; }
+.hist p { font-size: 10px; color: #78350F; line-height: 1.65; }
+.corr { background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%); color: white; border-radius: 8px; padding: 13px 15px; margin-top: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.corr h3 { font-size: 11px; font-weight: 800; margin-bottom: 5px; color: #7DD3FC; }
+.corr p  { font-size: 10px; line-height: 1.65; opacity: 0.9; }
+.cms { display: flex; gap: 7px; margin-top: 9px; flex-wrap: wrap; }
+.cm  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; padding: 6px 9px; flex: 1; text-align: center; font-size: 10px; font-weight: 700; min-width: 70px; }
+.cm span { display: block; font-size: 8.5px; font-weight: 400; opacity: 0.65; margin-top: 2px; }
+.acc-nac  { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#dde3f5; color:#1d3461; border:1px solid #1d346144; white-space:nowrap; }
+.acc-prot { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#fef3c7; color:#5c3317; border:1px solid #5c331744; white-space:nowrap; }
+.acc-priv { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#EDE9FE; color:#4C1D95; border:1px solid #C4B5FD; white-space:nowrap; }
+.locs { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+.loc  { border-radius: 6px; padding: 8px 10px; border-left: 3px solid; font-size: 10px; line-height: 1.55; }
+.loc strong { font-size: 10.5px; display: block; margin-bottom: 2px; }
+.footer { text-align: center; padding: 12px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+@media print {
+  @page { size: A4 portrait; margin: 6mm 7mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; padding: 0 !important; font-size: 7pt !important; background: #eef2f7 !important; }
+  .main { padding: 7px 9px !important; gap: 7px !important; }
+  .card { box-shadow: none !important; page-break-inside: avoid; break-inside: avoid; }
+  .ch { font-size: 6pt !important; padding: 5px 7px !important; }
+  .cbody { padding: 7px !important; }
+  .header h1 { font-size: 15pt !important; }
+  .banner { page-break-inside: avoid; }
+  .t { font-size: 6pt !important; }
+  .t td, .t th { padding: 3px 4px !important; }
+  .kv { font-size: 13pt !important; }
+  .kpis { grid-template-columns: 1fr 1fr 1fr 1fr !important; }
+  .anx-break { break-before: page; }
+  .anx-keep  { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header" style="background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%);">
+  <div class="header-left">
+    <h1>🚁 SALADILLO</h1>
+    <div class="sub">Ficha de Campaña · Cicaré · Metalmecánica · Agroindustria · CURS · 2026</div>
+    <div class="tag">7ª Sección Electoral · Cluster 4 · Interior Agropecuario Pampeano · Superficie: 2.706,4 km² · Padrón 2025: 30.120</div>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente:</strong> José Luis Salomón <span class="badge badge-rival">JxC · Opositor</span></div>
+    <div><strong>JxC Intendencia 2023:</strong> 46,3% — ganó · PJ fue tercero con 33,9%</div>
+    <div><strong>PJ Conc. Prov. 2025:</strong> 28,9% — bloque anti-PJ histórico en 7ª Secc.</div>
+    <div><strong>LLA Dip. Nac. 2025:</strong> 53,9% — ⚠️ dominio absoluto en nacionales</div>
+    <div><strong>Padrón 2025:</strong> 30.120 · crecimiento estable desde 2023</div>
+    <div style="margin-top:5px;font-size:9.5px;opacity:0.5;">PBA Analytics 2026 · Uso reservado</div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="b-label">⚠️ MUNICIPIO OPOSITOR JxC · SALOMÓN · CICARÉ · CURS · ANTI-PJ 66% EN 2023 → LLA 53,9% EN NACIONALES 2025 · AGROINDUSTRIA · FEEDLOT · SOCIEDAD RURAL · RUTA 205</div>
+  <div class="b-title">Saladillo es un municipio opositor con un perfil productivo único en el interior bonaerense: es la cuna de los Helicópteros Cicaré, tecnología de exportación mundial, y tiene un ecosistema metalmecánico y agroindustrial que ningún municipio de su escala puede replicar. El PJ fue tercero en 2023 con el 33,9% — el bloque anti-PJ llegó al 66%. Hoy LLA domina las elecciones nacionales con el 53,9%. La presencia provincial en Saladillo debe ser institucional y propositiva: mostrar que la Provincia acompaña la gestión local con independencia del color político, y construir puentes con el sector productivo y universitario que son los activos más valiosos del distrito.</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>La identidad que define a Saladillo:</strong> Helicópteros Cicaré es una empresa única en América Latina — diseña y fabrica helicópteros ultralivianos de exportación en una ciudad de 35.000 habitantes del interior bonaerense. Esa capacidad industrial, combinada con decenas de pymes metalmecánicas, la industria histórica del calzado y una cadena agroindustrial fuerte (feedlot, chacinados, frigoríficos), define un perfil productivo sofisticado. El CURS (Centro Universitario Regional con carreras de UNLP y UBA) eleva adicionalmente el nivel de la ciudad.</p>
+      <p><strong>La gestión de Salomón:</strong> Planta de tratamiento cloacal expandida a barrios periféricos, defensa hídrica con entubamientos y canales que resolvieron inundaciones crónicas, eficiencia energética con 100% de luminaria LED y paneles solares en edificios públicos, y el programa "Municipio en los Barrios" con operativos semanales en el territorio. La salud rural en Del Carril y Polvaredas (1.200 consultas/mes in situ) es el hito más relevante de la gestión fuera de la cabecera.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>El riesgo: LLA ya domina en nacionales con el 53,9%:</strong> La Libertad Avanza pasó del 19,8% en la intendencia 2023 al 53,9% en el Diputado Nacional 2025, absorbiendo el espacio JxC. El PJ, que era tercero con el 33,9% en 2023, cayó al 28,9% en los concejales provinciales 2025 y al 29,1% en el Diputado Nacional. El anti-PJ estructural (66% en 2023) hoy está más concentrado en LLA que nunca. Saladillo no es un municipio donde el PJ pueda competir fácilmente — pero sí puede construir presencia institucional.</p>
+      <p><strong>La estrategia provincial:</strong> Saladillo es un caso de presencia institucional, no de campaña de endoso. Los puentes son: el CURS (universidades provinciales presentes en la ciudad), la agenda industrial con Cicaré y las pymes metalmecánicas, la infraestructura hídrica y el apoyo a la Sociedad Rural / sector ganadero. La visita a Cicaré tiene altísimo valor simbólico: tecnología argentina de exportación en el interior bonaerense es una narrativa potente para cualquier espacio político.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">33,9%</div><div class="l">PJ Intendencia 2023<br>7.007 votos · tercero</div></div>
+    <div class="b-num"><div class="n">28,9%</div><div class="l">PJ Conc. Prov. 2025<br>−5,0 pts · caída sostenida</div></div>
+    <div class="b-num"><div class="n">53,9%</div><div class="l">LLA Dip. Nac. 2025<br>⚠️ 10.039 votos · dominio</div></div>
+    <div class="b-num"><div class="n">66,1%</div><div class="l">Anti-PJ 2023<br>JxC+LLA · bloque estable</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- KPIs -->
+<div class="card full">
+  <div class="ch" style="background:#1E3A5F;color:white;">📊 Datos Electorales y Demográficos Clave · Saladillo</div>
+  <div class="cbody" style="padding:14px 16px;">
+    <div class="kpis">
+      <div class="kpi bad">
+        <div class="kl">PJ Ejecutivo 2023</div>
+        <div class="kv" style="color:#7F1D1D;">33,9%</div>
+        <div class="ks">7.007 votos · tercero · JxC ganó con 46,3% · anti-PJ 66,1%</div>
+      </div>
+      <div class="kpi bad">
+        <div class="kl">PJ Concejales PBA 2025</div>
+        <div class="kv" style="color:#DC2626;">28,9%</div>
+        <div class="ks">5.034 votos · −5,0 pts vs intend 2023 · caída sostenida en todas las categorías</div>
+      </div>
+      <div class="kpi bad">
+        <div class="kl">LLA Nacional 2025</div>
+        <div class="kv" style="color:#7F1D1D;">53,9%</div>
+        <div class="ks">10.039 votos · dominio absoluto · absorbe voto JxC + propio · +34 pts vs 2023</div>
+      </div>
+      <div class="kpi inf">
+        <div class="kl">Padrón 2025</div>
+        <div class="kv" style="color:#1E40AF;">30.120</div>
+        <div class="ks">Electores habilitados · 7ª Sección Electoral · crecimiento estable</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDAD + MATRIZ PRODUCTIVA -->
+<div class="card one">
+  <div class="ch" style="background:#1E3A5F;color:white;">📍 Identidad Territorial</div>
+  <div class="cbody">
+    <div class="chips">
+      <span class="chip ct">🚁 Cicaré · Helicópteros</span>
+      <span class="chip cz">7ª Sección Electoral</span>
+      <span class="chip cb">Metalmecánica Industrial</span>
+      <span class="chip cg">Feedlot · Agroganadería</span>
+      <span class="chip co">Chacinados · Frigoríficos</span>
+      <span class="chip cp">CURS · UNLP + UBA</span>
+      <span class="chip cz">~250 km de CABA</span>
+    </div>
+    <div class="st">Datos Básicos</div>
+    <table class="t two-col">
+      <tbody>
+        <tr><td>Intendente</td><td class="bld">José Luis Salomón <span style="border-radius:10px;padding:1px 7px;font-size:9px;font-weight:700;background:#7F1D1D;color:#FCA5A5;">Opositor</span></td></tr>
+        <tr><td>Partido</td><td class="bld">Juntos por el Cambio</td></tr>
+        <tr><td>Sección</td><td>7ª Sección Electoral</td></tr>
+        <tr><td>Superficie</td><td>2.706,4 km²</td></tr>
+        <tr><td>Población</td><td>~35.000 hab. (estimado)</td></tr>
+        <tr><td>Padrón 2025</td><td class="inf">30.120 electores</td></tr>
+        <tr><td>Clave identitaria</td><td>Cicaré · Metalmecánica · CURS</td></tr>
+        <tr><td>Distancia CABA</td><td>~250 km · Ruta 205</td></tr>
+      </tbody>
+    </table>
+    <div class="st2">Localidades</div>
+    <div class="locs">
+      <div class="loc" style="border-color:#1E3A5F;background:#F0F9FF;">
+        <strong>🏙️ Saladillo (cab.)</strong>
+        Cabecera · Cicaré · Metalmecánica · CURS · Comercio · Servicios
+      </div>
+      <div class="loc" style="border-color:#1E3A5F;background:#F0F9FF;">
+        <strong>🌾 Del Carril</strong>
+        Localidad rural · Unidad Sanitaria · 1.200 cons./mes · campo ganadero
+      </div>
+      <div class="loc" style="border-color:#38BDF8;background:#E0F2FE;">
+        <strong>🌾 Polvaredas</strong>
+        Paraje rural · Salud primaria garantizada · zona feedlot · caminos clave
+      </div>
+      <div class="loc" style="border-color:#38BDF8;background:#E0F2FE;">
+        <strong>🏡 Zona rural dispersa</strong>
+        Establecimientos ganaderos · feedlot · chacinados · campo extensivo
+      </div>
+    </div>
+    <div class="nt">
+      <strong>📍 Posición regional</strong>
+      Saladillo está en la 7ª Sección Electoral — corredor Ruta 205 hacia el centro-oeste bonaerense. Su posición a 250 km de CABA lo aleja del conurbano pero lo convierte en un nodo regional importante para los municipios del interior pampeano. El CURS lo transforma en polo educativo para toda la región.
+    </div>
+  </div>
+</div>
+
+<div class="card two">
+  <div class="ch" style="background:#1E3A5F;color:white;">🏭 Matriz Productiva · Saladillo · Industrial y Agroindustrial</div>
+  <div class="cbody">
+    <div class="sgrid">
+      <div class="sc p">
+        <div class="sl">Sector Industrial Estrella</div>
+        <div class="sn">Helicópteros Cicaré</div>
+        <div class="sp" style="color:#1E3A5F;">Único</div>
+        <div class="sd">Diseño y fabricación de helicópteros ultralivianos de exportación mundial. Empresa fundada por Augusto Cicaré — inventor autodidacta que desarrolló tecnología aeronáutica propia. Sus helicópteros son usados por instituciones en más de 30 países. El activo industrial más distintivo de cualquier municipio del interior bonaerense.</div>
+      </div>
+      <div class="sc g">
+        <div class="sl">Ecosistema Industrial</div>
+        <div class="sn">Metalmecánica · Matricería · Calzado</div>
+        <div class="sp" style="color:#0369A1;">~35%</div>
+        <div class="sd">Decenas de pymes metalúrgicas y de matricería que conforman un ecosistema productivo industrial denso para un municipio de su tamaño. La industria del calzado fue históricamente un pilar, aunque ha reducido su escala. El CURS genera recursos humanos técnicos para este sector.</div>
+      </div>
+      <div class="sc t">
+        <div class="sl">Sector Agropecuario</div>
+        <div class="sn">Feedlot · Ganadería · Agroganadería</div>
+        <div class="sp" style="color:#D97706;">~40%</div>
+        <div class="sd">Saladillo fue pionero en el concepto de feedlot en la Argentina. La ganadería de engorde a corral y la producción agropecuaria extensiva son la columna económica del campo del municipio. Los chacinados y frigoríficos agregan valor a la cadena cárnica local.</div>
+      </div>
+      <div class="sc e">
+        <div class="sl">Educación y Servicios</div>
+        <div class="sn">CURS · Polo Educativo Regional</div>
+        <div class="sp" style="color:#7C3AED;">~15%</div>
+        <div class="sd">El Centro Universitario Regional Saladillo dicta carreras de UNLP y UBA en la ciudad — transformando a Saladillo en un polo educativo para el centro de la Provincia. El programa "Saladillo Joven/Arraigo" busca retener a los estudiantes con becas y residencias.</div>
+      </div>
+    </div>
+    <div class="st">Desagregado por actividad</div>
+    <div class="pbr"><div class="pbl">Feedlot / Ganadería</div><div class="pbo"><div class="pbi" style="width:42%;background:#D97706;"><span class="pbt">Principal</span></div></div><div class="pbp">42%</div></div>
+    <div class="pbr"><div class="pbl">Metalmecánica</div><div class="pbo"><div class="pbi" style="width:25%;background:#1E3A5F;"><span class="pbt">Industrial</span></div></div><div class="pbp">25%</div></div>
+    <div class="pbr"><div class="pbl">Chacinados/Frigoríficos</div><div class="pbo"><div class="pbi" style="width:12%;background:#DC2626;"></div></div><div class="pbp">12%</div></div>
+    <div class="pbr"><div class="pbl">Calzado histórico</div><div class="pbo"><div class="pbi" style="width:8%;background:#9CA3AF;"></div></div><div class="pbp">8%</div></div>
+    <div class="pbr"><div class="pbl">Servicios / CURS</div><div class="pbo"><div class="pbi" style="width:13%;background:#7C3AED;"></div></div><div class="pbp">13%</div></div>
+    <div class="st2">Actores Económicos Clave</div>
+    <div class="ar">
+      <div class="ai">🚁</div>
+      <div class="ain">
+        <div class="an">Helicópteros Cicaré S.A.</div>
+        <div class="ad">Empresa única en América Latina. Diseña y fabrica helicópteros ultralivianos de exportación. Alta visibilidad simbólica: tecnología argentina de clase mundial en el interior bonaerense. Visita de altísimo impacto narrativo para cualquier agenda provincial.</div>
+        <div class="ats"><span class="at acc-priv">PRIVADO</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🐄</div>
+      <div class="ain">
+        <div class="an">Sociedad Rural de Saladillo · Feedlot</div>
+        <div class="ad">Ganaderos, feedloteros y productores agropecuarios. Históricamente JxC, parte migró a LLA en 2025. Demanda: infraestructura rural, financiamiento, precios de insumos. La agenda MinAgrario puede construir puentes con este sector.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🎓</div>
+      <div class="ain">
+        <div class="an">CURS · Centro Universitario Regional Saladillo</div>
+        <div class="ad">UNLP + UBA presentes en la ciudad. Polo educativo regional. El "Saladillo Joven / Arraigo" busca retener estudiantes con becas. La Provincia es la interlocutora natural de las universidades en el territorio.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🔩</div>
+      <div class="ain">
+        <div class="an">Cámara Industrial · Pymes Metalmecánicas</div>
+        <div class="ad">Ecosistema de pymes de matricería y metalurgia. Demanda: financiamiento, capacitación, exportación. La articulación con programas provinciales de pymes e industria es el canal natural de acercamiento.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSPECTIVA PROVINCIAL -->
+<div class="card full">
+  <div class="ch" style="background:#1E3A5F;color:white;">🏛️ Perspectiva Provincial · Saladillo en la Agenda PBA</div>
+  <div class="cbody">
+    <div class="pgrid">
+      <div class="pi o">
+        <div class="pt">Oportunidad · Identidad industrial</div>
+        <div class="pti">Cicaré: tecnología argentina de exportación mundial en el interior</div>
+        <div class="pd">Helicópteros Cicaré es el mejor argumento para hablar de industria provincial, innovación y exportación en el interior bonaerense. Una visita a Cicaré tiene valor narrativo enorme: tecnología propia, trabajo calificado, exportaciones desde una ciudad del interior pampeano. La Provincia puede articular programas de apoyo a la innovación industrial, financiamiento para la exportación y vinculación con universidades a través de este caso emblemático.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Oportunidad · Educación universitaria</div>
+        <div class="pti">CURS: UNLP y UBA en la 7ª Sección Electoral</div>
+        <div class="pd">El Centro Universitario Regional Saladillo es una conquista educativa que la Provincia puede potenciar. Las universidades nacionales presentes en el interior son un puente de acercamiento institucional que trasciende la política local. Los programas de becas, residencias y "Saladillo Joven / Arraigo" son líneas de acción directa donde la Provincia puede aparecer como socio sin invadir la agenda del intendente opositor.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Oportunidad · Agroindustria y feedlot</div>
+        <div class="pti">Pioneros del feedlot: agenda MinAgrario concreta</div>
+        <div class="pd">Saladillo fue pionero del feedlot en la Argentina. La cadena cárnica (ganadería, frigoríficos, chacinados) es la base económica del campo del municipio. El Ministerio de Agroindustria provincial puede llegar con agenda específica: financiamiento, sanidad animal, infraestructura rural y articulación con el SENASA. Es un espacio de interlocución con el sector que migró a LLA y puede ser receptivo a la presencia provincial con resultados concretos.</div>
+      </div>
+      <div class="pi x">
+        <div class="pt">Riesgo · Electoral</div>
+        <div class="pti">LLA 53,9% en nacionales: dominio absoluto — PJ tercero estructural</div>
+        <div class="pd">El PJ fue tercero en 2023 con el 33,9% y cayó al 28,9% en 2025. LLA llegó al 53,9% en el Diputado Nacional. El anti-PJ estructural del 66% en Saladillo no tiene señales de revertirse en el corto plazo. Saladillo no es un municipio donde el PJ pueda aspirar a la ejecutiva en 2027 — la estrategia debe ser de presencia institucional y construcción de imagen, no de disputa directa de la intendencia.</div>
+      </div>
+      <div class="pi p">
+        <div class="pt">Programas Activos de Salomón</div>
+        <div class="pti">Obras, CURS, salud rural · gestión reconocida</div>
+        <div class="pd">Salomón tiene gestión visible: cloacas a barrios periféricos, defensa hídrica (fin a inundaciones crónicas), LED 100% + paneles solares, CURS consolidado, salud rural en Del Carril y Polvaredas (1.200 consultas/mes), y "Municipio en los Barrios" con operativos semanales. La Provincia puede aparecer como socio de una buena gestión sin contradecir al intendente — el marco es institucional, no opositor.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">Desafío · Relación política</div>
+        <div class="pti">Interlocución con intendente opositor JxC</div>
+        <div class="pd">Salomón es JxC — no es aliado del espacio provincial. La presencia provincial en Saladillo debe ser de carácter institucional: apoyo a la gestión municipal sin endoso político, articulación con los actores productivos y universitarios, y agenda concreta para el territorio. El objetivo no es embarrar al intendente sino mostrar que la Provincia llega a todos los municipios, independientemente del color político de la intendencia.</div>
+      </div>
+    </div>
+    <div class="corr">
+      <h3>🛤️ Corredor Ruta 205 · Interior Pampeano · Saladillo – Las Flores – Olavarría</h3>
+      <p>Saladillo es el nodo clave del corredor interior que corre por la Ruta 205 y sus variantes hacia el centro-oeste de la Provincia. Al norte y este, el conurbano sur; al sur y oeste, las ciudades intermedias del interior pampeano (Las Flores, Olavarría, Azul). La 7ª Sección Electoral concentra municipios de perfil agropecuario y agroindustrial con anti-PJ estructural. Saladillo, por su densidad industrial y el CURS, es el municipio de mayor diferenciación del grupo y el de más alto valor simbólico para una visita del liderazgo provincial.</p>
+      <div class="cms">
+        <div class="cm">Conurbano Sur<span>Puerta de entrada</span></div>
+        <div class="cm">→ Ruta 205<span>Corredor interior</span></div>
+        <div class="cm">Saladillo ★<span>Nodo industrial</span></div>
+        <div class="cm">→ Ruta 30<span>Interior oeste</span></div>
+        <div class="cm">Las Flores<span>7ª Sección</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISIS POLÍTICO + ACTORES -->
+<div class="card two">
+  <div class="ch" style="background:#0F172A;color:white;">🗳️ Análisis Político · Saladillo · Tendencia Electoral 2023–2025</div>
+  <div class="cbody">
+    <div class="st">Resultados electorales comparados</div>
+    <table class="t" style="table-layout:fixed;">
+      <colgroup><col style="width:20%"><col style="width:17%"><col style="width:17%"><col style="width:17%"><col style="width:14%"><col></colgroup>
+      <thead><tr><th>Elección</th><th>PJ</th><th>JxC</th><th>LLA</th><th>Otros</th><th>Padrón</th></tr></thead>
+      <tbody>
+        <tr><td>Intend. 2023</td><td class="bad">33,9%<br>7.007 · 3°</td><td class="ok">46,3%<br>9.579 ✓</td><td>19,8%<br>4.088</td><td>0%</td><td>29.697</td></tr>
+        <tr><td>Conc. PBA 2025</td><td class="bad">28,9%<br>5.034</td><td class="inf">— sin cand.</td><td class="warn">22,2%<br>3.865</td><td>—</td><td>30.120</td></tr>
+        <tr><td>Dip. Nac. 2025</td><td class="bad">29,1%<br>5.418</td><td class="inf">— sin cand.</td><td class="bad">53,9%<br>10.039</td><td>2,5% FIT</td><td>29.509</td></tr>
+      </tbody>
+    </table>
+    <div class="st2">Análisis por eje</div>
+    <div class="ag">
+      <div class="agi">🔴</div>
+      <div class="agt">
+        <strong>El PJ fue tercero en 2023 y sigue cayendo en 2025</strong>
+        <p>Saladillo no es un municipio donde el PJ perdió recientemente — es un municipio donde el PJ nunca fue primero en este ciclo. El 33,9% de 2023 lo colocó tercero, detrás de JxC (46,3%) y antes de LLA (19,8%). En 2025, el PJ bajó al 28,9% en concejales y al 29,1% en nacionales. La caída es sostenida y no hay señales de recuperación en el corto plazo.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">📈</div>
+      <div class="agt">
+        <strong>LLA absorbió el voto JxC y en 2025 domina con el 53,9%</strong>
+        <p>Sin candidatos JxC en 2025, La Libertad Avanza capturó el voto que era de Juntos y propio: de 19,8% a 53,9% en el Diputado Nacional — un salto de 34 puntos. El bloque anti-PJ del 66% en 2023 hoy está mayoritariamente concentrado en LLA. No hay fragmentación opositora que pueda aprovechar el PJ en Saladillo.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏛️</div>
+      <div class="agt">
+        <strong>Saladillo requiere estrategia institucional, no electoral en el corto plazo</strong>
+        <p>Con el anti-PJ en el 66% y LLA dominando la categoría nacional, la estrategia correcta para Saladillo no es disputar la intendencia en 2027 — es construir presencia institucional y acumular capital simbólico en el territorio para una construcción de más largo plazo. El CURS, Cicaré y la Sociedad Rural son las puertas de entrada de esa estrategia.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🤝</div>
+      <div class="agt">
+        <strong>Salomón: intendente opositor con gestión visible y reconocida</strong>
+        <p>José Luis Salomón tiene gestión concreta y reconocida (obras de infraestructura, CURS, salud rural). El marco para la relación provincial es de respeto institucional: la Provincia acompaña buenas gestiones independientemente del color político. Ese encuadre es más favorable que el de disputa, y puede generar dividendos políticos con los sectores productivos y universitarios del municipio.</p>
+      </div>
+    </div>
+    <div class="al al-r">
+      <strong>⛔ DIAGNÓSTICO ELECTORAL: SALADILLO NO ES MUNICIPIO DISPUTADO — ES DE CONSTRUCCIÓN INSTITUCIONAL</strong>
+      PJ fue tercero en 2023 (33,9%) y cayó al 28,9% en 2025. LLA domina con 53,9% en nacionales. Anti-PJ estructural del 66%. La estrategia correcta es presencia institucional con Cicaré, CURS, Sociedad Rural y MinAgrario — no disputa de la ejecutiva en 2027.
+    </div>
+  </div>
+</div>
+
+<div class="card one">
+  <div class="ch" style="background:#0F172A;color:white;">👥 Actores Clave</div>
+  <div class="cbody">
+    <div class="ar">
+      <div class="ai">🔵</div>
+      <div class="ain">
+        <div class="an">José Luis Salomón · Intendente</div>
+        <div class="ad">JxC. Gestión visible (cloacas, defensa hídrica, CURS, salud rural). No aliado pero interlocutor institucional. Marco de relacionamiento: respeto a la gestión + agenda concreta de co-inversión provincial sin endoso político.</div>
+        <div class="ats"><span style="border-radius:10px;padding:2px 8px;font-size:9px;font-weight:700;background:#7F1D1D;color:#FCA5A5;">JxC · OPOSITOR</span><span class="at acc-prot">INSTITUCIONAL</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🚁</div>
+      <div class="ain">
+        <div class="an">Augusto Cicaré / Helicópteros Cicaré</div>
+        <div class="ad">Inventor y empresario. La empresa es un símbolo nacional de innovación industrial. Visita de alto impacto simbólico: tecnología de exportación en el interior bonaerense. No tiene color político — recibe a cualquier funcionario con agenda productiva.</div>
+        <div class="ats"><span class="at acc-priv">PRIVADO ESTRELLA</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🎓</div>
+      <div class="ain">
+        <div class="an">CURS · Autoridades académicas</div>
+        <div class="ad">UNLP y UBA presentes en la ciudad. La Provincia es interlocutora natural de las universidades nacionales. Agenda de becas, infraestructura y programa "Arraigo" para retener jóvenes en el interior.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🐄</div>
+      <div class="ain">
+        <div class="an">Sociedad Rural de Saladillo</div>
+        <div class="ad">Ganaderos, feedloteros, productores. Históricamente JxC → LLA 2025. La agenda MinAgrario (financiamiento, sanidad, infraestructura) puede construir puentes con este segmento.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🔩</div>
+      <div class="ain">
+        <div class="an">Cámara Industrial · Pymes Metalmecánicas</div>
+        <div class="ad">Ecosistema productivo industrial de alta densidad para el tamaño del municipio. Receptivos a programas provinciales de crédito, exportación y capacitación técnica vinculados al CURS.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AGENDA DISCURSIVA + ALERTAS -->
+<div class="card two">
+  <div class="ch" style="background:#0F172A;color:white;">💬 Agenda Discursiva · Saladillo</div>
+  <div class="cbody">
+    <div class="ag">
+      <div class="agi">🚁</div>
+      <div class="agt">
+        <strong>Cicaré: innovación argentina desde el interior bonaerense</strong>
+        <p>Helicópteros Cicaré es la historia de un inventor del interior que resolvió con inteligencia y trabajo lo que las grandes industrias hacen con millones de dólares. Sus helicópteros vuelan en más de 30 países. Saladillo tiene en Cicaré el símbolo más potente del valor de la industria argentina de base territorial — y la Provincia puede potenciar esa historia con programas de apoyo a la innovación, exportación y vinculación tecnológica.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🎓</div>
+      <div class="agt">
+        <strong>Universidad en el interior: el CURS como derecho y oportunidad</strong>
+        <p>Que una ciudad de 35.000 habitantes en el interior bonaerense tenga carreras de la UNLP y la UBA no es un accidente — es el resultado de una política de extensión universitaria que la Provincia puede acompañar y potenciar. El programa "Saladillo Joven / Arraigo" — que busca retener a los estudiantes del CURS con becas y residencias para que estudien y trabajen en la ciudad — es una política de arraigo territorial que merece apoyo provincial.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🐄</div>
+      <div class="agt">
+        <strong>Feedlot y agroindustria: Saladillo produce lo que la Argentina exporta</strong>
+        <p>La ganadería y el feedlot de Saladillo son parte de la cadena cárnica que genera divisas para el país. Los chacinados y frigoríficos locales agregan valor a esa cadena. El MinAgrario provincial puede llegar con agenda concreta: sanidad animal, financiamiento, infraestructura rural. Ese es el lenguaje que le habla al productor ganadero que hoy mira a LLA — sin ideología, con resultados.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🔩</div>
+      <div class="agt">
+        <strong>La provincia que está en todos los municipios, sin importar el color político</strong>
+        <p>Saladillo tiene un intendente JxC con una buena gestión. La Provincia puede y debe estar presente en Saladillo — no para hacer campaña contra Salomón sino porque los vecinos de Saladillo son bonaerenses que merecen el mismo acceso a los programas provinciales que cualquier otro municipio. Esa es la narrativa correcta para un territorio donde el PJ no es la primera fuerza.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">💧</div>
+      <div class="agt">
+        <strong>Infraestructura que cambia vidas: cloacas, desagües, energía</strong>
+        <p>La gestión de Salomón completó la expansión de la planta cloacal a barrios periféricos y resolvió las inundaciones crónicas con defensa hídrica. La Provincia puede ampliar esos logros con co-inversión en infraestructura: más barrios con cloacas, más kilómetros de desagüe, energías renovables. El resultado beneficia a vecinos — no al intendente ni a la Provincia, sino a quienes viven en Saladillo.</p>
+      </div>
+    </div>
+    <div class="al al-k">
+      <strong>🎯 Síntesis de Saladillo</strong>
+      Saladillo es un municipio opositor con perfil industrial y universitario único en el interior pampeano. El PJ no puede disputar la ejecutiva en 2027 — pero puede construir presencia institucional con Cicaré (privado estrella), el CURS (universidades provinciales) y la Sociedad Rural / Cámara Industrial (agenda MinAgrario). La visita a Cicaré es el activo narrativo más poderoso disponible en toda la 7ª Sección Electoral.
+    </div>
+  </div>
+</div>
+
+<div class="card one">
+  <div class="ch" style="background:#0F172A;color:white;">⚠️ Alertas y Notas</div>
+  <div class="cbody">
+    <div class="al al-r">
+      <strong>🔴 PJ fue tercero en 2023 y sigue cayendo</strong>
+      33,9% en 2023 (tercero) → 28,9% en concejales 2025 → 29,1% en nacionales 2025. La tendencia es de caída sostenida. No hay señales de recuperación en el corto plazo.
+    </div>
+    <div class="al al-r">
+      <strong>🔴 LLA 53,9% en nacionales: dominio sin competencia</strong>
+      La Libertad Avanza obtuvo 10.039 votos (53,9%) en el Diputado Nacional 2025 — una mayoría absoluta que absorbe el voto JxC y propio. El anti-PJ del 66% en 2023 hoy está concentrado en LLA.
+    </div>
+    <div class="al al-a">
+      <strong>🟡 Municipio opositor: protocolo institucional obligatorio</strong>
+      Salomón es JxC. Toda visita debe encuadrarse como presencia institucional provincial, no como campaña opositora al intendente. El mensaje: la Provincia llega a todos los municipios.
+    </div>
+    <div class="al al-v">
+      <strong>🔵 Cicaré: activo narrativo de primer orden</strong>
+      La visita a Helicópteros Cicaré tiene el mayor retorno simbólico de cualquier parada en la 7ª Sección Electoral. Tecnología de exportación, industria nacional, interior bonaerense. Narrativa potente para cualquier agenda política.
+    </div>
+    <div class="al al-b">
+      <strong>🔵 CURS: puente natural con la Provincia</strong>
+      UNLP y UBA en la ciudad crean un puente de interlocución institucional que trasciende la política local. La Provincia puede llegar al CURS sin pisar la agenda del intendente.
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS -->
+<div class="card full">
+  <div class="ch" style="background:#0F172A;color:white;">🗺️ Visitas Estratégicas · Saladillo · Priorización y Modalidad</div>
+  <div class="cbody">
+    <table class="t" style="table-layout:fixed;">
+      <colgroup><col style="width:4%"><col style="width:22%"><col style="width:12%"><col style="width:8%"><col></colgroup>
+      <thead>
+        <tr><th>#</th><th>Lugar / Evento</th><th>Tipo</th><th>Score</th><th>Descripción estratégica</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bld">1</td>
+          <td class="bld">🚁 Helicópteros Cicaré · Planta de fabricación</td>
+          <td><span class="acc-priv">PRIVADO</span></td>
+          <td class="ok bld">9.5</td>
+          <td>Visita a la planta de fabricación de helicópteros con Augusto Cicaré o su equipo directivo. Recorrida de la línea de producción + presentación de la tecnología exportada. No requiere coordinación con el intendente. Alta visibilidad mediática. El activo narrativo más potente de la 7ª Sección: innovación industrial argentina desde el interior bonaerense.</td>
+        </tr>
+        <tr>
+          <td class="bld">2</td>
+          <td class="bld">🎓 CURS · Centro Universitario Regional Saladillo</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="ok bld">9.0</td>
+          <td>Visita al CURS con autoridades académicas de UNLP/UBA presentes en la ciudad + anuncio de programa provincial de apoyo al arraigo universitario en el interior. La Provincia es la interlocutora natural de las universidades nacionales. El encuadre es educación como política de Estado — no tiene color político y beneficia a toda la ciudad.</td>
+        </tr>
+        <tr>
+          <td class="bld">3</td>
+          <td class="bld">🏛️ Municipalidad · Salomón</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="warn bld">8.0</td>
+          <td>Visita institucional al intendente Salomón (JxC). Marco: "la Provincia está presente en todos los municipios". Posible co-anuncio de programa provincial de infraestructura, cloacas o defensa hídrica que complemente la gestión local. El encuadre es de respeto institucional — no de endoso ni de disputa. Requiere coordinación previa cuidadosa.</td>
+        </tr>
+        <tr>
+          <td class="bld">4</td>
+          <td class="bld">🐄 Sociedad Rural · Establecimiento ganadero</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="warn bld">7.5</td>
+          <td>Visita a la Sociedad Rural o a un feedlot representativo con productores + agenda MinAgrario provincial (financiamiento, sanidad animal, infraestructura). El sector ganadero/feedlot migró de JxC a LLA — la presencia del MinAgrario con agenda concreta puede construir puentes sin expectativa de recuperar el voto en el corto plazo, pero construyendo imagen de gestión.</td>
+        </tr>
+        <tr>
+          <td class="bld">5</td>
+          <td class="bld">🔩 Pymes Metalmecánicas · Cámara Industrial</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="inf bld">7.0</td>
+          <td>Recorrida de una pyme metalmecánica representativa del ecosistema industrial de Saladillo + reunión con la Cámara Industrial. Agenda de crédito, exportación y vinculación con el CURS. El perfil industrial de Saladillo (Cicaré + pymes) es único en la 7ª Sección y merece una agenda específica del ministerio de industria/producción provincial.</td>
+        </tr>
+        <tr>
+          <td class="bld">6</td>
+          <td class="bld">🏥 Unidad Sanitaria Del Carril · Salud rural</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="inf bld">6.5</td>
+          <td>Visita a la Unidad Sanitaria rural de Del Carril (1.200 consultas/mes in situ). Co-anuncio con Ministerio de Salud provincial de apoyo a la red de atención primaria rural. El programa de Salomón de salud rural en localidades chicas es un logro concreto que la Provincia puede potenciar con financiamiento de equipamiento e incentivos médicos.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="nt">
+      <strong>📌 Nota de coordinación — Municipio Opositor</strong>
+      Toda visita a Saladillo debe encuadrarse como presencia institucional provincial, no como acto político. Si hay coordinación con Salomón (intendente JxC), el marco debe ser de co-gestión sin fotografía partidaria. Las visitas a Cicaré y el CURS son independientes del intendente y pueden realizarse sin coordinación previa con la municipalidad.
+    </div>
+  </div>
+</div>
+
+<!-- NOTAS -->
+<div class="card full">
+  <div class="ch" style="background:#1E3A5F;color:white;">📋 Hitos de Gestión Salomón · Saladillo</div>
+  <div class="cbody">
+    <div class="st">Principales ejes de gestión del período</div>
+    <div class="sgrid">
+      <div class="sc p">
+        <div class="sl">Infraestructura · Saneamiento</div>
+        <div class="sn">Planta Cloacal · Barrios Periféricos</div>
+        <div class="sd">Finalización de la expansión de la planta de tratamiento de líquidos cloacales, llegando con cloacas a barrios periféricos que esperaban el servicio hace décadas. Obra estructural de alto impacto en calidad de vida urbana y saneamiento ambiental.</div>
+      </div>
+      <div class="sc g">
+        <div class="sl">Educación Regional</div>
+        <div class="sn">CURS · UNLP + UBA</div>
+        <div class="sd">Consolidación del Centro Universitario Regional Saladillo con carreras de la UNLP y la UBA. Programa "Saladillo Joven / Arraigo": becas y residencias estudiantiles para retener jóvenes en la ciudad. Saladillo como polo educativo del interior pampeano.</div>
+      </div>
+      <div class="sc r">
+        <div class="sl">Defensa Hídrica</div>
+        <div class="sn">Desagües Pluviales · Fin a Inundaciones</div>
+        <div class="sd">Ejecución de obras de entubamiento y canales aliviadores que resolvieron problemas crónicos de inundaciones en barrios densamente poblados del casco urbano. Resultado concreto y visible para miles de vecinos que vivían con el problema recurrente.</div>
+      </div>
+      <div class="sc t">
+        <div class="sl">Energía Eficiente</div>
+        <div class="sn">LED 100% + Paneles Solares</div>
+        <div class="sd">Recambio del 100% de las luminarias urbanas a tecnología LED y paneles solares en edificios públicos municipales. Reducción de costos energéticos y señal de modernización de la infraestructura municipal. Única ciudad del interior con cobertura LED total.</div>
+      </div>
+      <div class="sc s">
+        <div class="sl">Salud Rural</div>
+        <div class="sn">Atención Primaria Del Carril y Polvaredas</div>
+        <div class="sd">Médico clínico y pediatra garantizados en las localidades rurales. Fondos municipales para incentivar médicos en el interior. 1.200 consultas mensuales in situ en Del Carril y Polvaredas — evitando traslados por Ruta 205.</div>
+      </div>
+      <div class="sc e">
+        <div class="sl">Atención Ciudadana</div>
+        <div class="sn">Municipio en los Barrios</div>
+        <div class="sd">Operativos semanales donde el gabinete municipal se instala en barrios y localidades. Trámites, licencias, turnos médicos, exenciones de tasas resueltos en el territorio. Cientos de trámites directos por mes sin que el vecino pierda el día en el centro.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Ficha Estructurada — Saladillo · PBA Analytics 2026</div>
+
+<!-- ANEXO I -->
+<div class="anx-break" style="height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div style="background:linear-gradient(135deg,#0F172A,#1E3A5F);color:white;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Saladillo · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO I — DATOS ELECTORALES Y DEMOGRÁFICOS</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:11px;opacity:0.7;text-align:right;">7ª Sección Electoral · Cluster 4 · Interior Agropecuario Pampeano<br>José Luis Salomón · JxC · Opositor</div>
+  </div>
+  <div style="padding:18px 22px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+    <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+      <div class="ch" style="background:#1E3A5F;color:white;">📊 Resultado Intendencia 2023</div>
+      <div class="cbody">
+        <table class="t two-col">
+          <tbody>
+            <tr><td>JxC (Salomón)</td><td class="ok">46,3% · 9.579 ✓</td></tr>
+            <tr><td>PJ</td><td class="bad">33,9% · 7.007 · 3°</td></tr>
+            <tr><td>La Libertad Avanza</td><td>19,8% · 4.088</td></tr>
+            <tr><td>Total votos pos.</td><td>20.674</td></tr>
+            <tr><td>Total electores</td><td>29.697</td></tr>
+            <tr><td>Participación</td><td>78,0%</td></tr>
+            <tr><td>Anti-PJ estructural</td><td class="bad">66,1%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+      <div class="ch" style="background:#1E3A5F;color:white;">📊 Concejales PBA 2025</div>
+      <div class="cbody">
+        <table class="t two-col">
+          <tbody>
+            <tr><td>PJ</td><td class="bad">28,9% · 5.034</td></tr>
+            <tr><td>La Libertad Avanza</td><td class="warn">22,2% · 3.865</td></tr>
+            <tr><td>JxC</td><td class="inf">— sin candidatos</td></tr>
+            <tr><td>Total votos pos.</td><td>17.425</td></tr>
+            <tr><td>Total electores</td><td>30.120</td></tr>
+            <tr><td>Variación PJ</td><td class="bad">−5,0 pts vs 2023</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+      <div class="ch" style="background:#1E3A5F;color:white;">📊 Diputado Nacional 2025</div>
+      <div class="cbody">
+        <table class="t two-col">
+          <tbody>
+            <tr><td>La Libertad Avanza</td><td class="bad">53,9% · 10.039</td></tr>
+            <tr><td>PJ</td><td class="bad">29,1% · 5.418</td></tr>
+            <tr><td>FIT</td><td>2,5% · 458</td></tr>
+            <tr><td>Total votos pos.</td><td>18.642</td></tr>
+            <tr><td>Total electores</td><td>29.509</td></tr>
+            <tr><td>LLA vs PJ</td><td class="bad">+24,8 pts LLA</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:0 22px 18px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+  <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+    <div class="ch" style="background:#0F172A;color:white;">📈 Evolución Electoral PJ vs LLA</div>
+    <div class="cbody">
+      <table class="t" style="table-layout:fixed;">
+        <colgroup><col style="width:30%"><col style="width:23%"><col style="width:23%"><col></colgroup>
+        <thead><tr><th>Elección</th><th>PJ %</th><th>LLA %</th><th>JxC %</th></tr></thead>
+        <tbody>
+          <tr><td>Intend. 2023</td><td class="bad">33,9%</td><td>19,8%</td><td class="ok">46,3% ✓</td></tr>
+          <tr><td>Conc. PBA 2025</td><td class="bad">28,9%</td><td class="warn">22,2%</td><td class="inf">—</td></tr>
+          <tr><td>Dip. Nac. 2025</td><td class="bad">29,1%</td><td class="bad">53,9%</td><td class="inf">—</td></tr>
+        </tbody>
+      </table>
+      <div class="hist" style="margin-top:10px;">
+        <strong>⚠️ Tendencia: LLA domina, PJ cae sostenidamente</strong>
+        <p>PJ: 33,9% → 28,9% → 29,1% (caída sostenida). LLA: 19,8% → 22,2% → 53,9% (absorción total del voto JxC + crecimiento propio). El anti-PJ del 66% está ahora concentrado casi exclusivamente en LLA.</p>
+      </div>
+    </div>
+  </div>
+  <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+    <div class="ch" style="background:#0F172A;color:white;">🏙️ Datos Demográficos · Saladillo</div>
+    <div class="cbody">
+      <table class="t two-col">
+        <tbody>
+          <tr><td>Sección Electoral</td><td>7ª · Interior Pampeano</td></tr>
+          <tr><td>Cluster</td><td>4 · Interior Agropecuario Pampeano</td></tr>
+          <tr><td>Superficie</td><td>2.706,4 km²</td></tr>
+          <tr><td>Padrón 2023</td><td>29.697</td></tr>
+          <tr><td>Padrón 2025</td><td class="inf">30.120</td></tr>
+          <tr><td>Partido</td><td>JxC · José Luis Salomón</td></tr>
+          <tr><td>Score Inmersión</td><td>30 · Emergente LLA</td></tr>
+          <tr><td>Ruta principal</td><td>Ruta 205</td></tr>
+          <tr><td>Privado clave</td><td>🚁 Cicaré Helicópteros</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ANEXO II -->
+<div class="anx-break" style="height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div style="background:linear-gradient(135deg,#0F172A,#1E3A5F);color:white;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Saladillo · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO II — IDENTIDAD PRODUCTIVA Y ESTRATEGIA TERRITORIAL</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">Cicaré · CURS · Feedlot · Metalmecánica · Ruta 205</div>
+  </div>
+  <div style="padding:18px 22px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+    <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+      <div class="ch" style="background:#1E3A5F;color:white;">🚁 Ecosistema Industrial · Saladillo</div>
+      <div class="cbody">
+        <table class="t two-col">
+          <tbody>
+            <tr><td>Empresa emblema</td><td class="bld">Helicópteros Cicaré S.A.</td></tr>
+            <tr><td>Producto</td><td>Helicópteros ultralivianos de exportación</td></tr>
+            <tr><td>Mercados</td><td>+30 países · América, Europa, Asia</td></tr>
+            <tr><td>Industria metalmec.</td><td>Decenas de pymes · matricería</td></tr>
+            <tr><td>Calzado</td><td>Histórico · reducida actualmente</td></tr>
+            <tr><td>Chacinados/frigorif.</td><td>Cadena cárnica activa</td></tr>
+            <tr><td>Feedlot</td><td>Pionero en PBA · engorde a corral</td></tr>
+            <tr><td>Agroganadería</td><td>Sector productivo principal</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+      <div class="ch" style="background:#1E3A5F;color:white;">🎓 CURS · Universidad en el Interior</div>
+      <div class="cbody">
+        <table class="t two-col">
+          <tbody>
+            <tr><td>Institución</td><td class="bld">CURS · Centro Univ. Regional</td></tr>
+            <tr><td>Universidades</td><td>UNLP + UBA presentes</td></tr>
+            <tr><td>Carreras</td><td>Múltiples · demanda local y regional</td></tr>
+            <tr><td>Programa Arraigo</td><td>Becas + residencias estudiantiles</td></tr>
+            <tr><td>Impacto</td><td>Polo educativo 7ª Sección</td></tr>
+            <tr><td>Vinculación</td><td>Con pymes metalmecánicas</td></tr>
+          </tbody>
+        </table>
+        <div class="al al-v" style="margin-top:10px;">
+          <strong>🔵 Puente institucional natural</strong>
+          La Provincia es interlocutora de las universidades nacionales en el territorio. El CURS no requiere coordinación con el intendente JxC para una visita provincial.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="padding:0 22px 18px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+    <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+      <div class="ch" style="background:#0F172A;color:white;">🏛️ Gestión Salomón · Resumen</div>
+      <div class="cbody">
+        <table class="t">
+          <thead><tr><th>Eje</th><th style="width:55%">Hito principal</th></tr></thead>
+          <tbody>
+            <tr><td>Cloacas</td><td>Planta expandida a barrios periféricos</td></tr>
+            <tr><td>Defensa hídrica</td><td>Entubamientos · fin a inundaciones</td></tr>
+            <tr><td>Energía</td><td>100% LED + paneles solares</td></tr>
+            <tr><td>Educación</td><td>CURS consolidado</td></tr>
+            <tr><td>Salud rural</td><td>Del Carril + Polvaredas 1.200 cons./mes</td></tr>
+            <tr><td>Participación</td><td>"Municipio en los Barrios"</td></tr>
+            <tr><td>Arraigo joven</td><td>Becas CURS · "Saladillo Joven"</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+      <div class="ch" style="background:#0F172A;color:white;">🎯 Agenda Provincial Sugerida</div>
+      <div class="cbody">
+        <table class="t">
+          <thead><tr><th>Ministerio</th><th style="width:55%">Acción posible</th></tr></thead>
+          <tbody>
+            <tr><td>Agroindustria</td><td>Feedlot · sanidad animal · financiamiento</td></tr>
+            <tr><td>Industria</td><td>Apoyo pymes metalmecánicas · exportación</td></tr>
+            <tr><td>Educación</td><td>Fortalecimiento CURS · becas arraigo</td></tr>
+            <tr><td>Salud</td><td>Co-financiamiento Unidades Sanitarias rurales</td></tr>
+            <tr><td>Infraestructura</td><td>Caminos rurales · cloacas</td></tr>
+            <tr><td>Ciencia/Tecno</td><td>Vinculación Cicaré · universidades · I+D</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,0.07);">
+      <div class="ch" style="background:#0F172A;color:white;">⚡ Score · Prioritización</div>
+      <div class="cbody">
+        <table class="t two-col">
+          <tbody>
+            <tr><td>Score Inmersión</td><td class="warn bld">30</td></tr>
+            <tr><td>Clasificación</td><td>Emergente LLA</td></tr>
+            <tr><td>Tipo de presencia</td><td class="inf">Institucional</td></tr>
+            <tr><td>Potencial electoral</td><td class="bad">Bajo — PJ 3°</td></tr>
+            <tr><td>Potencial narrativo</td><td class="ok">Alto — Cicaré/CURS</td></tr>
+            <tr><td>Riesgo de visita</td><td class="warn">Medio — intend. JxC</td></tr>
+            <tr><td>Visita prioritaria</td><td class="ok">Cicaré ★ 9.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

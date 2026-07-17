@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAIREAUX — Ficha de Campaña · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.header { color: white; padding: 22px 28px; display: flex; justify-content: space-between; align-items: flex-start; }
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.85; line-height: 1.95; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-aliado { background: rgba(52,211,153,0.35); color: #A7F3D0; }
+.badge-rival  { background: rgba(239,68,68,0.3);  color: #FCA5A5; }
+.banner { background: #0C3B1E; color: white; padding: 20px 28px; border-left: 7px solid #22C55E; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #BBF7D0; margin-bottom: 7px; }
+.b-title  { font-size: 15.5px; font-weight: 800; margin-bottom: 13px; line-height: 1.35; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #BBF7D0; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 19px; font-weight: 900; color: #4ADE80; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+.main { padding: 18px 22px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; background: #eef2f7; }
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+.card { background: white; border-radius: 10px; box-shadow: 0 1px 5px rgba(0,0,0,0.07); overflow: hidden; }
+.ch { padding: 10px 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.9px; }
+.cbody { padding: 13px; }
+.st  { font-size: 9.5px; font-weight: 700; color: #165F35; padding-bottom: 5px; border-bottom: 2px solid #22C55E; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.st2 { font-size: 9.5px; font-weight: 700; color: #165F35; padding-bottom: 5px; border-bottom: 2px solid #22C55E; margin-top: 14px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+.ct { background: #F0FDF4; border: 1px solid #22C55E; color: #0C3B1E; }
+.t { width: 100%; border-collapse: collapse; font-size: 11px; }
+.t th { background: #f5f6f8; color: #555; padding: 5px 7px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 5px 7px; border-bottom: 1px solid #f3f4f6; vertical-align: top; word-break: break-word; }
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child { color: #555; }
+.t.two-col td:first-child { width: 44%; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 11px 12px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 21px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9px; color: #999; margin-top: 3px; line-height: 1.35; }
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.sc   { border-radius: 7px; padding: 11px 12px; border-left: 4px solid; }
+.sc.p { border-color: #165F35; background: #F0FDF4; }
+.sc.s { border-color: #059669; background: #F0FDF4; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #0369A1; background: #F0F9FF; }
+.sc.r { border-color: #DC2626; background: #FEF2F2; }
+.sc.g { border-color: #0C3B1E; background: #F0FDF4; }
+.sl { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.sn { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.sp { font-size: 18px; font-weight: 900; margin: 3px 0 6px; }
+.sd { font-size: 10px; line-height: 1.65; color: #444; }
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.pbl { width: 120px; font-size: 9.5px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; height: 16px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 5px; }
+.pbt { font-size: 9px; font-weight: 700; color: white; white-space: nowrap; }
+.pbp { width: 32px; font-size: 9.5px; font-weight: 700; text-align: right; flex-shrink: 0; }
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pi   { border-radius: 7px; padding: 11px 13px; border-left: 4px solid; }
+.pi.o { background: #F0FDF4; border-color: #165F35; }
+.pi.r { background: #FEF2F2; border-color: #EF4444; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pi.p { background: #F0F9FF; border-color: #0369A1; }
+.pi.a { background: #FFFBEB; border-color: #D97706; }
+.pt   { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.pti  { font-size: 11px; font-weight: 700; margin-bottom: 5px; }
+.pd   { font-size: 10px; line-height: 1.65; color: #444; }
+.ar   { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f0f0f0; }
+.ar:last-child { border-bottom: none; }
+.ai   { font-size: 18px; min-width: 24px; flex-shrink: 0; }
+.ain  { flex: 1; min-width: 0; }
+.an   { font-size: 11px; font-weight: 700; color: #165F35; margin-bottom: 3px; }
+.ad   { font-size: 10px; color: #555; line-height: 1.6; }
+.ats  { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+.at   { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 7px; }
+.ag   { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px dashed #e8e8e8; }
+.ag:last-child { border-bottom: none; }
+.agi  { font-size: 17px; min-width: 22px; flex-shrink: 0; }
+.agt  { min-width: 0; }
+.agt strong { font-size: 11px; display: block; margin-bottom: 3px; color: #165F35; font-weight: 700; }
+.agt p { font-size: 10px; color: #666; line-height: 1.6; }
+.al   { border-radius: 7px; padding: 10px 12px; margin-top: 10px; font-size: 10px; line-height: 1.6; }
+.al-v { background: #F0FDF4; border: 1px solid #22C55E; color: #0C3B1E; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al-r { background: #FEF2F2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.al-k { background: #0C3B1E; color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.al strong { display: block; margin-bottom: 3px; font-size: 11px; }
+.al-k strong { color: #4ADE80; }
+.nt   { background: #F0FDF4; border: 1px solid #22C55E; border-radius: 7px; padding: 9px 12px; font-size: 10px; color: #0C3B1E; margin-top: 10px; line-height: 1.6; }
+.nt strong { display: block; font-size: 11px; margin-bottom: 3px; color: #165F35; }
+.hist { background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 7px; padding: 10px 12px; margin-top: 10px; }
+.hist strong { font-size: 11px; font-weight: 700; color: #78350F; display: block; margin-bottom: 4px; }
+.hist p { font-size: 10px; color: #78350F; line-height: 1.65; }
+.corr { background: linear-gradient(135deg, #0C3B1E 0%, #165F35 100%); color: white; border-radius: 8px; padding: 13px 15px; margin-top: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.corr h3 { font-size: 11px; font-weight: 800; margin-bottom: 5px; color: #BBF7D0; }
+.corr p  { font-size: 10px; line-height: 1.65; opacity: 0.9; }
+.cms { display: flex; gap: 7px; margin-top: 9px; flex-wrap: wrap; }
+.cm  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; padding: 6px 9px; flex: 1; text-align: center; font-size: 10px; font-weight: 700; min-width: 70px; }
+.cm span { display: block; font-size: 8.5px; font-weight: 400; opacity: 0.65; margin-top: 2px; }
+.acc-nac  { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#dde3f5; color:#1d3461; border:1px solid #1d346144; white-space:nowrap; }
+.acc-prot { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#fef3c7; color:#5c3317; border:1px solid #5c331744; white-space:nowrap; }
+.acc-priv { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#D1FAE5; color:#065F46; border:1px solid #6EE7B7; white-space:nowrap; }
+.locs { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+.loc  { border-radius: 6px; padding: 8px 10px; border-left: 3px solid; font-size: 10px; line-height: 1.55; }
+.loc strong { font-size: 10.5px; display: block; margin-bottom: 2px; }
+.footer { text-align: center; padding: 12px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+@media print {
+  @page { size: A4 portrait; margin: 6mm 7mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; padding: 0 !important; font-size: 7pt !important; background: #eef2f7 !important; }
+  .main { padding: 7px 9px !important; gap: 7px !important; }
+  .card { box-shadow: none !important; page-break-inside: avoid; break-inside: avoid; }
+  .ch { font-size: 6pt !important; padding: 5px 7px !important; }
+  .cbody { padding: 7px !important; }
+  .header h1 { font-size: 15pt !important; }
+  .banner { page-break-inside: avoid; }
+  .t { font-size: 6pt !important; }
+  .t td, .t th { padding: 3px 4px !important; }
+  .kv { font-size: 13pt !important; }
+  .kpis { grid-template-columns: 1fr 1fr 1fr 1fr !important; }
+  .anx-break { break-before: page; }
+  .anx-keep  { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header" style="background: linear-gradient(135deg, #0C3B1E 0%, #165F35 100%);">
+  <div class="header-left">
+    <h1>🌾 DAIREAUX</h1>
+    <div class="sub">Ficha de Campaña · Capital Nacional del Sorgo · Sur Bonaerense · PBA 2026</div>
+    <div class="tag">6ª Sección Electoral · Cluster 6 · Sur Bonaerense · 3.822,8 km² · Padrón 2025: 15.528</div>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente:</strong> Alejandro Acerbo <span class="badge badge-aliado">UxP · Aliado</span></div>
+    <div><strong>PJ Intendencia 2023:</strong> 56,8% — PRIMERO · JxC 43,2% · sin LLA</div>
+    <div><strong>PJ Conc. Prov. 2025:</strong> 46,8% — ✅ PRIMERO · LLA 26,1%</div>
+    <div><strong>LLA Dip. Nac. 2025:</strong> 50,8% PRIMERO · PJ 37,4% — ⚠️ alerta</div>
+    <div><strong>Población:</strong> 18.422 (CENSO 2022) · Sorgo · Agroganadería · CRUD</div>
+    <div style="margin-top:5px;font-size:9.5px;opacity:0.5;">PBA Analytics 2026 · Uso reservado</div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="b-label">🌾 ALIADO PJ · PJ PRIMERO EN PROVINCIALES 2025 (46,8%) · LLA 50,8% EN NACIONALES — SEÑAL DE ALERTA · TASA VIAL: FALLO ADVERSO ENE 2026 · EXPO DAIREAUX · FESTIVAL FORTINERA · CRUD · SIP GAS Y ELECTRICIDAD · 18.422 HAB · 6ª SECCIÓN</div>
+  <div class="b-title">Daireaux es el municipio aliado del Sur Bonaerense con la señal de alerta más urgente del ciclo: el PJ ganó los concejales PBA 2025 (46,8%) pero cayó al 37,4% en el Diputado Nacional — donde LLA llegó al 50,8%. El intendente Acerbo (UxP) enfrenta además el impacto del fallo de enero 2026 sobre la Tasa Vial Rural, que erosiona su relación con el sector productor. El capital político del municipio — el Festival Fortinera Deroense (15.000 personas), el CRUD, el SIP y la Expo Daireaux — es la plataforma para sostener el piso PJ ante el avance de LLA hacia 2027.</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>El arco electoral de Daireaux — del triunfo amplio al riesgo real:</strong> En 2023, con bipartidismo puro (PJ vs JxC, sin LLA), Acerbo ganó la intendencia con el 56,8% — una diferencia de 13,6 puntos. Fue una victoria cómoda que reflejó el arraigo local del peronismo en un municipio agroganadero de la 6ª Sección. En 2025 todo cambió: con LLA como tercer partido, el PJ bajó 10 puntos en provinciales (46,8%) y 19,4 puntos en nacionales (37,4%). LLA absorbió casi todo el voto de JxC (que colapsó) más una sangría del PJ en el nivel nacional. En concejales PBA, el PJ todavía ganó por 20 puntos sobre LLA (46,8% vs 26,1%) — lo que indica que el nivel provincial sigue siendo favorable al PJ en Daireaux. Pero el 50,8% de LLA en nacionales es la señal de alerta que define la campaña: si ese resultado se traslada a 2027 en la categoría de concejales provinciales, Daireaux deja de ser un bastión aliado para convertirse en un campo de batalla.</p>
+      <p><strong>El conflicto de la Tasa Vial — la herida abierta con el sector productor:</strong> En 2026, Daireaux lideró la defensa de la tasa de mantenimiento de la red vial rural — un recurso que el municipio sostenía era vital para la transitabilidad de los caminos ante el recorte de transferencias nacionales. El 31 de enero de 2026, un fallo judicial adverso obligó al municipio a devolver parte de lo cobrado a productores rurales que demostraron que los caminos no habían sido mantenidos durante 2022 y 2023. El conflicto es doble: político (el municipio cobró por algo que no entregó, y eso alimenta el voto de desconfianza hacia el PJ local) y jurídico (el fallo sienta un precedente que puede replicarse en otros municipios). Este es el talón de Aquiles de la gestión Acerbo que la Provincia necesita conocer para diseñar su apoyo.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>El Festival Fortinera y el CRUD — los dos activos más potentes del municipio:</strong> En el haber de Acerbo hay dos programas que destacan por su impacto real: el Festival Fortinera Deroense (enero, más de 15.000 personas en tres noches) con un modelo social único — el municipio aporta infraestructura y producción, y cede el 100% de los ingresos de cantinas y puestos a los clubes e instituciones locales, que recaudan ahí el equivalente a su presupuesto anual. Y el CRUD (Centro Regional Universitario de Daireaux), que con su nueva aula magna permite que jóvenes del distrito cursen carreras universitarias sin salir de Daireaux — una política de arraigo con impacto estructural en la demografía y el capital humano local. Estos dos programas son la plataforma de base para la agenda de visita provincial.</p>
+      <p><strong>La Expo Daireaux y el sorgo — identidad productiva de alcance nacional:</strong> Daireaux es reconocida como uno de los distritos líderes en la producción de sorgo en Argentina. La Expo Daireaux es la muestra agrícola y comercial que organiza toda esa identidad productiva: expone la cadena de valor del sorgo y la agroganadería bonaerense, atrae a empresas de insumos, maquinaria y servicios, y funciona como punto de encuentro de la comunidad productiva de la 6ª Sección. Alrededor del campo gira una red de acopiadores de granos, talleres metalmecánicos, empresas de servicios agropecuarios y pequeños frigoríficos que son la columna vertebral del empleo urbano. El Sector Industrial Planificado (SIP) con infraestructura de gas y electricidad busca industrializar esa matriz productiva.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">56,8%</div><div class="l">PJ Intendencia 2023<br>5.875 votos · JxC 43,2% · sin LLA</div></div>
+    <div class="b-num"><div class="n">46,8%</div><div class="l">PJ Conc. Prov. 2025<br>✅ PRIMERO · 4.112 votos · LLA 26,1%</div></div>
+    <div class="b-num"><div class="n">50,8%</div><div class="l">LLA Dip. Nac. 2025<br>⚠️ LLA 1° · PJ cayó al 37,4% · señal de alerta</div></div>
+    <div class="b-num"><div class="n">15.000</div><div class="l">Visitantes Festival Fortinera<br>3 noches · 100% cantinas para clubes locales</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- KPIs -->
+<div class="card full">
+  <div class="ch" style="background:#F0FDF4; color:#165F35;">📊 INDICADORES CLAVE</div>
+  <div class="cbody">
+    <div class="kpis">
+      <div class="kpi" style="background:#F0FDF4; border-color:#86EFAC;">
+        <div class="kl">PJ Conc. Prov. 2025</div>
+        <div class="kv" style="color:#14532D;">46,8%</div>
+        <div class="ks">✅ PRIMERO · 4.112 votos · LLA 26,1% · JxC/otros ~27%</div>
+      </div>
+      <div class="kpi" style="background:#FEF3C7; border-color:#FCD34D;">
+        <div class="kl">LLA Dip. Nac. 2025</div>
+        <div class="kv" style="color:#92400E;">50,8%</div>
+        <div class="ks">⚠️ LLA PRIMERO · PJ 37,4% · alerta para 2027</div>
+      </div>
+      <div class="kpi" style="background:#F0FDF4; border-color:#86EFAC;">
+        <div class="kl">Intendente · Aliado</div>
+        <div class="kv" style="color:#14532D; font-size:14px;">Acerbo UxP</div>
+        <div class="ks">Ganó 2023 con 56,8% · bipartidismo · Aliado</div>
+      </div>
+      <div class="kpi" style="background:#EFF6FF; border-color:#93C5FD;">
+        <div class="kl">Padrón Electoral 2025</div>
+        <div class="kv" style="color:#1E40AF;">15.528</div>
+        <div class="ks">6ª Sección · Sur Bonaerense · 18.422 hab. CENSO 2022</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDAD TERRITORIAL -->
+<div class="card two">
+  <div class="ch" style="background:#F0FDF4; color:#165F35;">🌾 IDENTIDAD TERRITORIAL · DAIREAUX</div>
+  <div class="cbody">
+    <div class="st">Sorgo · Agroganadería · Agroindustria</div>
+    <div class="chips">
+      <span class="chip cp">6ª Sección Electoral</span>
+      <span class="chip cp">Cluster 6 · Sur Bonaerense</span>
+      <span class="chip cp">UxP · Aliado</span>
+      <span class="chip cg">PJ Primero 2025 Prov.</span>
+      <span class="chip co">LLA 50,8% en Nac. 2025 · alerta</span>
+    </div>
+    <div class="sgrid">
+      <div class="sc p">
+        <div class="sl">Identidad 1</div>
+        <div class="sn">🌾 Corazón del Sorgo y la Agroganadería</div>
+        <div class="sd">Daireaux es uno de los distritos líderes en producción de sorgo en Argentina y un pilar agroganadero del oeste bonaerense. La <strong>Expo Daireaux</strong> es la muestra agrícola que resume y moviliza toda la identidad productiva del partido: expositores de maquinaria, insumos, hacienda y servicios agroganaderos de toda la 6ª Sección y el sur bonaerense. El campo es la economía real del partido — y lo que afecta al campo (precio, caminos, acceso a mercados, confianza institucional) afecta directamente al humor político de Daireaux.</div>
+      </div>
+      <div class="sc s">
+        <div class="sl">Identidad 2</div>
+        <div class="sn">🏭 Red de Pymes y Agroindustria Urbana</div>
+        <div class="sd">Alrededor del campo gira una red densa de acopiadores de granos, empresas de servicios agropecuarios, talleres metalmecánicos y pequeños frigoríficos que generan el empleo urbano cotidiano del partido. El <strong>Sector Industrial Planificado (SIP)</strong> con nueva infraestructura de gas y electricidad busca dar el salto industrializador: que los derivados del sorgo y los productos ganaderos se procesen localmente, generando empleo y valor agregado antes de salir del partido.</div>
+      </div>
+    </div>
+    <div class="st2">Datos Básicos</div>
+    <table class="t two-col" style="margin-bottom:10px;">
+      <tbody>
+        <tr><td>Superficie</td><td class="bld">3.822,8 km²</td></tr>
+        <tr><td>Población (CENSO 2022)</td><td class="bld">18.422 habitantes</td></tr>
+        <tr><td>Padrón Electoral 2025</td><td class="bld">15.528 electores</td></tr>
+        <tr><td>Sección Electoral</td><td class="bld">6ª Sección</td></tr>
+        <tr><td>Cluster</td><td class="bld">6 · Sur Bonaerense</td></tr>
+        <tr><td>Intendente</td><td class="bld">Alejandro Acerbo (UxP · Aliado)</td></tr>
+        <tr><td>Clave de Distrito</td><td class="bld">Sorgo / Expo Daireaux / Tasa Vial</td></tr>
+        <tr><td>Categoría Electoral</td><td class="bld">PJ con ventaja prov. · LLA alerta nac.</td></tr>
+      </tbody>
+    </table>
+    <div class="st2">📊 Perfil Demográfico · Segmentación Social y Electoral</div>
+    <table class="t" style="margin-bottom:10px;">
+      <thead><tr><th>Segmento</th><th>% aprox.</th><th>Localización</th><th>Perfil de Voto</th></tr></thead>
+      <tbody>
+        <tr><td class="bld">Productores rurales medianos y grandes</td><td>~15%</td><td>Campo · periurbano cabecera</td><td class="warn">Mixto · JxC→LLA · desconfianza PJ</td></tr>
+        <tr><td class="bld">Empleados agropecuarios y jornaleros</td><td>~18%</td><td>Parajes · cinturón rural</td><td class="ok">PJ sólido · base estructural</td></tr>
+        <tr><td class="bld">Clase media urbana (comercio, servicios)</td><td>~22%</td><td>Cabecera · SIP</td><td class="warn">PJ moderado · LLA creciente</td></tr>
+        <tr><td class="bld">Obreros industriales y del SIP</td><td>~10%</td><td>SIP · zona metalmecánica</td><td class="ok">PJ estructural · sindicatos</td></tr>
+        <tr><td class="bld">Docentes y empleados estatales</td><td>~15%</td><td>Cabecera · CRUD</td><td class="ok">PJ leal · CRUD como ancla</td></tr>
+        <tr><td class="bld">Comunidad parajes y rural disperso</td><td>~12%</td><td>Arboledas · colonias · parajes</td><td class="warn">Mixto · tradición europea · disputable</td></tr>
+        <tr><td class="bld">Beneficiarios prog. sociales</td><td>~8%</td><td>Barrios periféricos cabecera</td><td class="ok">PJ captivo · sensible a gestión</td></tr>
+      </tbody>
+    </table>
+    <div class="st2">🏗️ Indicadores de Infraestructura y Servicios</div>
+    <table class="t two-col">
+      <tbody>
+        <tr><td>Cobertura cloacal</td><td class="warn">~60-70% en cabecera · déficit crítico en parajes</td></tr>
+        <tr><td>Agua potable</td><td class="warn">Buena en cabecera · salas en parajes (programa Salud)</td></tr>
+        <tr><td>Gas natural</td><td class="warn">En expansión · SIP priorizado · parajes sin red</td></tr>
+        <tr><td>Red vial rural</td><td class="bad">CONFLICTO — Tasa Vial · fallo adverso ene. 2026</td></tr>
+        <tr><td>Electricidad</td><td class="warn">Mejora SIP · capacidad en ampliación</td></tr>
+        <tr><td>Salud en parajes</td><td class="ok">800 atenciones/mes · enfermería 24h · traslados</td></tr>
+        <tr><td>Educación universitaria</td><td class="ok">CRUD · aula magna nueva · arraigo jóvenes</td></tr>
+        <tr><td>NBI estimado</td><td class="warn">~9-13% · interior PBA · bolsones en parajes y colonias</td></tr>
+        <tr><td>Industria / empleo formal</td><td class="warn">SIP en desarrollo · talleres metalmec. · frigoríficos</td></tr>
+        <tr><td>Vivienda social</td><td class="ok">Autoconstrucción asistida · Banco de Tierras activo</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ESCENARIO ELECTORAL -->
+<div class="card one">
+  <div class="ch" style="background:#F0FDF4; color:#165F35;">🗳️ ESCENARIO ELECTORAL</div>
+  <div class="cbody">
+    <div class="st">2023 Intendencia · Bipartidismo</div>
+    <div class="pbr">
+      <div class="pbl">PJ · Acerbo ✓</div>
+      <div class="pbo"><div class="pbi" style="width:56.8%; background:#16A34A;"><span class="pbt">56,8%</span></div></div>
+      <div class="pbp" style="color:#16A34A;">5.875</div>
+    </div>
+    <div class="pbr">
+      <div class="pbl">JxC</div>
+      <div class="pbo"><div class="pbi" style="width:43.2%; background:#1C4872;"><span class="pbt">43,2%</span></div></div>
+      <div class="pbp" style="color:#1C4872;">4.463</div>
+    </div>
+    <div class="pbr">
+      <div class="pbl">LLA</div>
+      <div class="pbo"><div class="pbi" style="width:0%; background:#9333EA;"></div></div>
+      <div class="pbp" style="color:#9333EA;">Sin lista</div>
+    </div>
+    <div class="st2">2025 Concejales PBA ✅</div>
+    <div class="pbr">
+      <div class="pbl">PJ ✅ PRIMERO</div>
+      <div class="pbo"><div class="pbi" style="width:46.8%; background:#16A34A;"><span class="pbt">46,8%</span></div></div>
+      <div class="pbp" style="color:#16A34A;">4.112</div>
+    </div>
+    <div class="pbr">
+      <div class="pbl">LLA</div>
+      <div class="pbo"><div class="pbi" style="width:26.1%; background:#9333EA;"><span class="pbt">26,1%</span></div></div>
+      <div class="pbp" style="color:#9333EA;">2.294</div>
+    </div>
+    <div class="pbr">
+      <div class="pbl">JxC/Otros</div>
+      <div class="pbo"><div class="pbi" style="width:27%; background:#6B7280;"><span class="pbt">~27%</span></div></div>
+      <div class="pbp" style="color:#6B7280;">~2.378</div>
+    </div>
+    <div class="st2">2025 Dip. Nacional ⚠️</div>
+    <div class="pbr">
+      <div class="pbl">LLA ⚠️ PRIMERO</div>
+      <div class="pbo"><div class="pbi" style="width:50.8%; background:#9333EA;"><span class="pbt">50,8%</span></div></div>
+      <div class="pbp" style="color:#9333EA;">4.746</div>
+    </div>
+    <div class="pbr">
+      <div class="pbl">PJ</div>
+      <div class="pbo"><div class="pbi" style="width:37.4%; background:#16A34A;"><span class="pbt">37,4%</span></div></div>
+      <div class="pbp" style="color:#16A34A;">3.494</div>
+    </div>
+    <div class="pbr">
+      <div class="pbl">FIT</div>
+      <div class="pbo"><div class="pbi" style="width:2.1%; background:#DC2626;"></div></div>
+      <div class="pbp" style="color:#DC2626;">195</div>
+    </div>
+    <div class="al al-r" style="margin-top:11px;">
+      <strong>⚠️ La brecha prov/nac es la clave</strong>
+      PJ ganó provinciales (46,8%) pero perdió nacionales (37,4%) por 13,4 pts. El split indica que el votante que distingue niveles todavía elige PJ para la Provincia — pero la distancia se achicó y LLA tiene impulso. Brecha a cerrar antes de 2027.
+    </div>
+  </div>
+</div>
+
+<!-- GESTIÓN ACERBO -->
+<div class="card two">
+  <div class="ch" style="background:#D1FAE5; color:#065F46;">🏛️ GESTIÓN ACERBO (UxP) · PROGRAMAS Y CONFLICTOS</div>
+  <div class="cbody">
+    <div class="pgrid">
+      <div class="pi o">
+        <div class="pt">Eje 1 · Producción</div>
+        <div class="pti">⚡ SIP — Gas y Electricidad para la Industria</div>
+        <div class="pd">La gestión llevó gas natural de alta presión y mejoró la capacidad eléctrica del Sector Industrial Planificado (SIP) — infraestructura crítica para permitir la radicación de fábricas procesadoras de carne y subproductos del sorgo. El SIP es la apuesta de largo plazo para generar empleo industrial genuino en Daireaux. MinProducción puede ser socio con crédito y apoyo técnico para la radicación de nuevas unidades.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Eje 2 · Urbanismo</div>
+        <div class="pti">🏙️ Plan de Ordenamiento Territorial 2026</div>
+        <div class="pd">El municipio lanzó un proceso participativo para redactar el nuevo Código de Ordenamiento Urbano, que define el crecimiento de la ciudad para los próximos 20 años: uso del suelo en el parque industrial, nuevos loteos y cementerio municipal. Es la planificación estratégica que le da marco legal al SIP y a la expansión urbana. MinInfraestructura puede articular con este plan.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Programa Social</div>
+        <div class="pti">🎸 Festival Fortinera Deroense · Economía Social</div>
+        <div class="pd">El festival de folklore más importante del municipio (enero, +15.000 personas en 3 noches) tiene un modelo de economía social único: el municipio aporta toda la infraestructura y producción del evento, y cede el 100% de los ingresos de cantinas y puestos a los clubes e instituciones locales. Los clubes recaudan en las tres noches el equivalente a su presupuesto anual de gastos. Un modelo replicable y una plataforma de visita con amplísimo alcance comunitario.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Programa Educación</div>
+        <div class="pti">🎓 CRUD · Arraigo de Jóvenes con Universidad Local</div>
+        <div class="pd">El Centro Regional Universitario de Daireaux (CRUD) con su nueva aula magna permite que jóvenes del distrito cursen carreras de grado y posgrado sin desarraigarse. Es la inversión estructural más importante de la gestión en capital humano: retener a los jóvenes calificados en el municipio, que de otro modo se irían a Olavarría, La Plata o Buenos Aires. La Provincia puede fortalecer el CRUD con equipamiento y articulación con universidades provinciales.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Programa Salud</div>
+        <div class="pti">🏥 Salud en Parajes · 800 Atenciones Mensuales</div>
+        <div class="pd">Radicación médica y enfermería 24h en las salas periféricas de los parajes, con base local de traslados rápidos para accidentes agropecuarios. El sistema absorbe 800 atenciones mensuales y garantiza acceso a salud en zonas rurales que quedarían sin cobertura. Es el programa que más directamente llega a la población dispersa en los parajes — y que define la calidad de vida del trabajador rural y su familia.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Programa Vivienda</div>
+        <div class="pti">🏡 Autoconstrucción + Banco de Tierras</div>
+        <div class="pd">El municipio aporta lotes con servicios del Banco de Tierras municipal + materiales de construcción pesados (chapas, ladrillos). Las familias beneficiadas ponen la mano de obra. Resultado: ~20 casas nuevas por etapa de ejecución. Combina acceso a tierra (que es el cuello de botella en el interior) con participación activa de las familias en la construcción de su propia vivienda.</div>
+      </div>
+    </div>
+    <div class="hist">
+      <strong>⚠️ EL CONFLICTO DE LA TASA VIAL — La herida abierta con el sector productor</strong>
+      <p>En 2026, Daireaux lideró la defensa jurídica de la tasa de mantenimiento de la red vial rural, sosteniendo que era el recurso esencial para garantizar la conectividad de los productores ante el recorte de transferencias nacionales. El 31 de enero de 2026, un fallo adverso obligó al municipio a devolver parte de lo cobrado a productores que probaron que los caminos de 2022-2023 no habían sido mantenidos. El conflicto tiene dos capas: una política (el municipio cobró por un servicio que no entregó, erosionando la confianza del productor en la gestión PJ) y una institucional (el fallo sienta precedente para otros municipios del interior bonaerense). Este es el principal vulnerabilidad de la gestión Acerbo y el principal combustible para el voto LLA en el sector productor rural.</p>
+    </div>
+    <div class="corr">
+      <h3>🌐 Daireaux en el Corredor del Sur Bonaerense (Cluster 6)</h3>
+      <p>Daireaux pertenece al Cluster 6 Sur Bonaerense — el corredor que incluye municipios como Adolfo Alsina, Guaminí, Salliqueló, Trenque Lauquen y otros del oeste y sur de la Provincia. Es el municipio aliado de referencia de la 6ª Sección con intendente UxP. Lo que pasa en Daireaux electoralmente — la señal del 50,8% de LLA en nacionales — es representativa del sur bonaerense. Sostener a Acerbo y blindar el 46,8% provincial es clave para no perder terreno en toda la Sección.</p>
+      <div class="cms">
+        <div class="cm">3.822,8 km²<span>Superficie</span></div>
+        <div class="cm">18.422 hab.<span>CENSO 2022</span></div>
+        <div class="cm">15.528<span>Padrón 2025</span></div>
+        <div class="cm">Cluster 6<span>Sur Bonaerense</span></div>
+        <div class="cm">6ª Sección<span>Electoral</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACTORES CLAVE -->
+<div class="card one">
+  <div class="ch" style="background:#F0FDF4; color:#165F35;">🤝 ACTORES CLAVE</div>
+  <div class="cbody">
+    <div class="ar">
+      <div class="ai">🌾</div>
+      <div class="ain">
+        <div class="an">Sociedad Rural de Daireaux · Expo Daireaux</div>
+        <div class="ad">La Sociedad Rural organiza la Expo Daireaux y es el actor institucional más influyente del mundo agropecuario local. La relación con el municipio está tensionada por el conflicto de la Tasa Vial. La Provincia puede oficiar de puente institucional — llegando con agenda MinAgrario concreta en el marco de la Expo.</div>
+        <div class="ats"><span class="at" style="background:#D1FAE5;color:#065F46;">Agropecuario</span><span class="at" style="background:#FEF3C7;color:#92400E;">Tensión Tasa Vial</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🎓</div>
+      <div class="ain">
+        <div class="an">CRUD · Centro Regional Universitario</div>
+        <div class="ad">El CRUD y su nueva aula magna son el activo educativo más moderno del municipio. La Provincia puede articular el CRUD con universidades provinciales y programas de becas — reforzando el programa de arraigo de Acerbo con respaldo provincial. Alta visibilidad entre familias con hijos universitarios.</div>
+        <div class="ats"><span class="at" style="background:#DBEAFE;color:#1E40AF;">Educación</span><span class="at" style="background:#D1FAE5;color:#065F46;">Arraigo</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🏭</div>
+      <div class="ain">
+        <div class="an">Empresas del SIP · Metalmecánicas · Frigoríficos</div>
+        <div class="ad">Los talleres metalmecánicos, empresas de servicios agropecuarios y frigoríficos locales son la columna del empleo urbano. El SIP con gas y electricidad es su oportunidad de escala. MinProducción puede llegar con crédito y apoyo técnico — acto con empresarios del SIP es el más próximo al empleo formal.</div>
+        <div class="ats"><span class="at" style="background:#FEF3C7;color:#92400E;">Industrial</span><span class="at" style="background:#D1FAE5;color:#065F46;">SIP</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🎸</div>
+      <div class="ain">
+        <div class="an">Clubes e Instituciones · Festival Fortinera</div>
+        <div class="ad">Los clubes y sociedades de fomento de Daireaux son los beneficiarios directos del Festival Fortinera — recaudan su presupuesto anual en tres noches. Son actores comunitarios con raíces en todos los barrios y parajes. Son el mejor canal de llegada territorial para cualquier agenda de economía social o deporte.</div>
+        <div class="ats"><span class="at" style="background:#D1FAE5;color:#065F46;">Comunitario</span><span class="at" style="background:#F3F4F6;color:#374151;">Festival</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🏘️</div>
+      <div class="ain">
+        <div class="an">Comunidades de Parajes · Colonia Alemana (Arboledas)</div>
+        <div class="ad">Los parajes y localidades como Arboledas tienen identidades propias — la Fiesta del Sabor Alemán y la Fiesta Regional del Cordero reflejan una comunidad de colonos europeos con tradición productiva propia. Son electores dispersos pero movilizables con presencia directa. La agenda de Salud en Parajes y caminos rurales es lo que los moviliza.</div>
+        <div class="ats"><span class="at" style="background:#F3F4F6;color:#374151;">Rural</span><span class="at" style="background:#FEF3C7;color:#92400E;">Disperso</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISIS ELECTORAL DETALLADO -->
+<div class="card full">
+  <div class="ch" style="background:#F0FDF4; color:#165F35;">📈 ANÁLISIS ELECTORAL DETALLADO · DAIREAUX 2023–2025</div>
+  <div class="cbody">
+    <table class="t" style="margin-bottom:12px;">
+      <thead>
+        <tr>
+          <th>Elección</th><th>PJ</th><th>JxC</th><th>LLA</th><th>FIT</th><th>Total Pos.</th><th>Electores</th><th>Observación clave</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bld">Int. & Conc. 2023</td>
+          <td class="ok">56,8% · 5.875 ✓</td>
+          <td class="warn">43,2% · 4.463 · 2°</td>
+          <td class="inf">Sin lista</td>
+          <td class="inf">—</td>
+          <td>10.338</td>
+          <td>15.339</td>
+          <td>Bipartidismo puro · PJ gana por 13,6 pts · LLA ausente</td>
+        </tr>
+        <tr>
+          <td class="bld">Conc. PBA 2025</td>
+          <td class="ok">46,8% ✅ · 4.112 · 1°</td>
+          <td class="inf">~27% · ~2.378</td>
+          <td class="warn">26,1% · 2.294 · 2°</td>
+          <td class="inf">—</td>
+          <td>8.784</td>
+          <td>15.528</td>
+          <td>PJ 1° pero bajó 10 pts · LLA entrada fuerte · JxC colapso</td>
+        </tr>
+        <tr>
+          <td class="bld">Dip. Nacional 2025</td>
+          <td class="warn">37,4% · 3.494 · 2°</td>
+          <td class="inf">—</td>
+          <td class="bad">50,8% · 4.746 ✓ · 1°</td>
+          <td>2,1% · 195</td>
+          <td>9.349</td>
+          <td>15.367</td>
+          <td>⚠️ LLA PRIMERO · PJ cayó 19,4 pts vs 2023 · alerta máxima</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pgrid">
+      <div class="pi a">
+        <div class="pt">Lectura del arco electoral PJ 2023–2025</div>
+        <div class="pti">¿A dónde fue el voto PJ? — Análisis de flujos</div>
+        <div class="pd">En 2023, el PJ tenía 56,8% y JxC 43,2% (sin LLA). En 2025 provinciales, el PJ bajó a 46,8% (−10 pts) y LLA entró con 26,1%. Si LLA tomó votos del JxC colapsado (~43% → ~27%, diferencia de ~16 pts) más los 10 pts que perdió el PJ, el caudal de LLA en provinciales (26,1%) tiene origen mixto: ~16 pts de ex-JxC más ~10 pts del PJ. En el Diputado Nacional 2025, LLA obtuvo 50,8% — 7,6 pts más que lo que JxC tenía en 2023 — lo que implica que LLA tomó TODO el ex-voto JxC más una hemorragia adicional del PJ de ~7,6 pts. En síntesis: el PJ perdió entre 10 y 19 puntos en diferentes niveles. La pregunta para 2027 es si ese 9-10 pts de diferencia entre el piso provincial (46,8%) y nacional (37,4%) se puede sostener o si LLA avanza también en el nivel provincial.</div>
+      </div>
+      <div class="pi r">
+        <div class="pt">Riesgo 2027 · Lectura crítica</div>
+        <div class="pti">Si el split se cierra, Daireaux puede perderse</div>
+        <div class="pd">En 2025, el PJ tuvo 46,8% en provinciales y 37,4% en nacionales — un split favorable de 9,4 puntos al PJ en el nivel provincial. Pero si en 2027 la elección de concejales provinciales se "nacionaliza" (el votante vota igual que lo haría para Diputado Nacional), el PJ caería a ~37% y LLA subiría a ~51% en Daireaux. Eso transforma un municipio aliado en terreno adversario. La clave estratégica es mantener la diferenciación entre niveles: que el votante de Daireaux siga percibiendo que la Provincia merita un voto diferente al nacional. La agenda provincial concreta y visible (Expo Daireaux, CRUD, SIP, salud en parajes) es el dique contra esa nacionalización.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PALANCAS PROVINCIALES -->
+<div class="card two">
+  <div class="ch" style="background: linear-gradient(90deg,#0C3B1E,#165F35); color:white;">🎯 PALANCAS PROVINCIALES · DAIREAUX</div>
+  <div class="cbody">
+    <div class="pgrid">
+      <div class="pi o">
+        <div class="pt">Palanca 1 · Máxima prioridad</div>
+        <div class="pti">🌾 Expo Daireaux — Presencia MinAgrario en el corazón productivo</div>
+        <div class="pd">La Expo Daireaux es el evento que organiza la identidad productiva del partido: sorgo, agroganadería, maquinaria, insumos. La Provincia puede participar con agenda MinAgrario — programa sorgo, tecnología de cultivo, financiamiento agropecuario, articulación con INTA — y con MinProducción para el SIP. Presencia en la Expo es presencia en el evento que más convocan los productores — los mismos que están molestos por la Tasa Vial. Encuadre: "La Provincia trabaja con el campo de Daireaux, al margen de las disputas municipales". Alta oportunidad de recuperar el voto productor.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Palanca 2 · Alta prioridad</div>
+        <div class="pti">🎓 CRUD — Refuerzo Provincial al Arraigo Universitario</div>
+        <div class="pd">Articulación de la Provincia con el CRUD: programa de becas provinciales para estudiantes del CRUD, articulación con universidades provinciales (UNICEN, UNS, UNLP), equipamiento y conectividad. El anuncio en el CRUD es el acto que llega a las familias con hijos universitarios — un segmento amplio en Daireaux que es sensible a la política educativa y de arraigo. El encuadre: "La Provincia invierte para que los jóvenes de Daireaux estudien y se queden en su ciudad". Impacto transversal: familias de clase media, docentes, jóvenes.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Palanca 3 · Alta prioridad</div>
+        <div class="pti">🏭 SIP + MinProducción — Crédito para la Industrialización Local</div>
+        <div class="pd">El SIP con gas y electricidad tiene la infraestructura lista — falta el impulso productivo para radicación de industrias. MinProducción puede llegar con una línea de crédito para PYMES del interior bonaerense + asistencia técnica para las unidades del SIP (procesamiento de sorgo, carne, subproductos). Acto en el SIP con empresarios locales + anuncio de crédito. Encuadre: "que el sorgo y la carne de Daireaux se procesen en Daireaux — la Provincia da el crédito para que eso pase".</div>
+      </div>
+      <div class="pi p">
+        <div class="pt">Palanca 4 · Oportunidad táctica</div>
+        <div class="pti">🎸 Festival Fortinera Deroense + Salud en Parajes + Vial Rural</div>
+        <div class="pd"><strong>Festival Fortinera:</strong> Presencia en el evento más masivo del municipio (ene, +15.000 personas) con reconocimiento del modelo de economía social que Acerbo implementó. Encuadre: "la Provincia apoya el modelo del Festival Fortinera — economía social para los clubes de Daireaux". <strong>Salud en Parajes:</strong> Acompañamiento MinSalud al programa de atención periférica (800 atenciones/mes) — acto en una sala de paraje es el acto que llega más lejos del centro. <strong>Vial Rural:</strong> Anuncio de programa provincial de caminos rurales que subsana el conflicto de la Tasa Vial — la Provincia toma el problema, lo reconoce y lo soluciona con fondos propios.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LUGARES DE VISITA -->
+<div class="card one">
+  <div class="ch" style="background:#F0FDF4; color:#165F35;">📍 LUGARES DE VISITA · RANKING</div>
+  <div class="cbody">
+    <div class="ag">
+      <div class="agi">🌾</div>
+      <div class="agt">
+        <strong>Expo Daireaux · Sociedad Rural · Palanca 1</strong>
+        <p>El evento productivo más importante del partido. Presencia MinAgrario + MinProducción con agenda concreta: sorgo, ganadería, SIP. Alta oportunidad de recuperar productor enojado por Tasa Vial. Alcance: todo el sector agropecuario de la 6ª Sección.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🎓</div>
+      <div class="agt">
+        <strong>CRUD · Centro Regional Universitario · Palanca 2</strong>
+        <p>Acto con anuncio de becas + articulación universidades provinciales. Llega a familias con hijos universitarios + docentes + jóvenes. Alta visibilidad con clase media urbana. Encuadre: arraigo + inversión en capital humano local.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏭</div>
+      <div class="agt">
+        <strong>Sector Industrial Planificado (SIP) · Palanca 3</strong>
+        <p>Visita a unidades del SIP + anuncio de crédito MinProducción. Acto con empresarios locales. Encuadre: industrialización del sorgo y la carne en Daireaux. Llega al empleador y al trabajador industrial.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🎸</div>
+      <div class="agt">
+        <strong>Festival Fortinera Deroense (Enero)</strong>
+        <p>15.000 personas en 3 noches. El acto más masivo del municipio. Reconocimiento provincial del modelo social (economía comunitaria). Presencia en escenario con Acerbo. Máxima visibilidad.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏥</div>
+      <div class="agt">
+        <strong>Sala de Salud en Paraje · MinSalud</strong>
+        <p>Visita a una sala periférica + anuncio de equipamiento MinSalud. Llega a la población más dispersa del partido. Encuadre: "la Provincia no olvida a los parajes de Daireaux". Impacto simbólico altísimo para un segmento invisible para el nivel nacional.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏛️</div>
+      <div class="agt">
+        <strong>Municipalidad · Alejandro Acerbo (UxP · Aliado)</strong>
+        <p>Visita institucional + convenio u obra concreta. Refuerzo al aliado. Fotografía de co-gestión provincial-municipal. Contexto: la Provincia está con el municipio PJ de la 6ª Sección. Abre agenda del CRUD, SIP y Festival.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS OPERATIVA -->
+<div class="card full anx-keep">
+  <div class="ch" style="background:linear-gradient(90deg,#0C3B1E,#165F35); color:white;">🎯 SÍNTESIS OPERATIVA · DAIREAUX</div>
+  <div class="cbody">
+    <div class="pgrid" style="margin-bottom:12px;">
+      <div class="pi o">
+        <div class="pt">Posición estratégica</div>
+        <div class="pti">Aliado con señal de alerta — sostener y blindar</div>
+        <div class="pd">Daireaux es el municipio aliado de la 6ª Sección con la señal de alerta más clara del ciclo: el PJ ganó los concejales PBA 2025 (46,8%) pero perdió el Diputado Nacional (37,4% vs LLA 50,8%). Es el patrón clásico de un municipio aliado que está siendo erosionado desde el nivel nacional hacia el provincial. La estrategia correcta no es desentenderse sino blindar — con visitas, agenda concreta y presencia de la Provincia en el territorio de Acerbo.</div>
+      </div>
+      <div class="pi r">
+        <div class="pt">Vulnerabilidad crítica</div>
+        <div class="pti">Tasa Vial + LLA = productores enojados</div>
+        <div class="pd">El fallo adverso sobre la Tasa Vial (ene. 2026) dañó la relación de Acerbo con el sector productor — exactamente el segmento más tentado por LLA. Si el PJ no atiende activamente al productor rural con agenda concreta (caminos, MinAgrario, Expo), ese segmento puede consolidar el voto LLA en 2027 a nivel provincial. La Provincia puede subsanar el daño de la Tasa Vial llegando con programa de caminos rurales propios — sustituyendo el recurso municipal con financiamiento provincial.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Vectores de blindaje</div>
+        <div class="pti">Expo + CRUD + SIP = tres anclas concretas</div>
+        <div class="pd">Las tres palancas concretas para Daireaux son: (1) Expo Daireaux con MinAgrario (recuperar al productor), (2) CRUD con becas provinciales (anclar la clase media educada), (3) SIP con MinProducción (dar crédito al industrial que ya tiene la infraestructura lista). Las tres juntas cubren los tres segmentos que el PJ puede perder: productor agropecuario, clase media urbana, y obrero industrial.</div>
+      </div>
+      <div class="pi p">
+        <div class="pt">Encuadre para 2026-2027</div>
+        <div class="pti">La Provincia acompaña a Daireaux — sin importar el conflicto de la Tasa</div>
+        <div class="pd">El encuadre correcto para Daireaux no es hablar de la Tasa Vial ni de la crisis municipal. Es llegar con obra y agenda y mostrar que la Provincia trabaja con el municipio de Daireaux independientemente del conflicto puntual. "La Provincia invierte en Daireaux: en el CRUD, en el SIP, en la Expo, en los parajes." Ese encuadre posiciona a la Provincia por encima del ruido político local y le permite llegar a los productores enojados sin tener que defender a Acerbo explícitamente.</div>
+      </div>
+    </div>
+    <table class="t">
+      <thead><tr><th>Dimensión</th><th>Lectura</th><th>Prioridad</th></tr></thead>
+      <tbody>
+        <tr><td>PJ en Prov. 2025 (Conc. PBA)</td><td class="ok">46,8% — PRIMERO · sostener</td><td class="ok">Máxima · blindar antes de 2027</td></tr>
+        <tr><td>LLA en Nacional 2025 (Dip. Nac.)</td><td class="bad">50,8% — PRIMERO · alerta</td><td class="bad">Máxima · dique = agenda prov. visible</td></tr>
+        <tr><td>Brecha prov/nac PJ</td><td class="warn">9,4 pts a favor prov. · achicándose</td><td class="warn">Alta · mantener diferenciación niveles</td></tr>
+        <tr><td>Conflicto Tasa Vial</td><td class="bad">Fallo adverso ene. 2026 · productores enojados</td><td class="bad">Máxima · programa caminos rurales provincial</td></tr>
+        <tr><td>Acerbo · Aliado</td><td class="ok">Intendente UxP · acceso total</td><td class="ok">Alta · agenda conjunta municipal-provincial</td></tr>
+        <tr><td>Expo Daireaux</td><td class="ok">Plataforma productiva · recuperar productor</td><td class="ok">Alta · MinAgrario + MinProducción presentes</td></tr>
+        <tr><td>CRUD</td><td class="ok">Ancla educativa y arraigo jóvenes</td><td class="ok">Alta · becas + articulación universidades prov.</td></tr>
+        <tr><td>SIP</td><td class="ok">Infraestructura lista · falta crédito</td><td class="ok">Alta · MinProducción crédito radicación</td></tr>
+        <tr><td>Festival Fortinera</td><td class="ok">15.000 personas · modelo economía social</td><td class="warn">Media · reconocimiento + presencia ene.</td></tr>
+        <tr><td>Salud en Parajes</td><td class="ok">800 atenciones/mes · cobertura rural</td><td class="warn">Media · MinSalud equipamiento · acto simbólico</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div><!-- /main -->
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Ficha de Campaña — Daireaux · PBA Analytics 2026</div>
+
+</body>
+</html>

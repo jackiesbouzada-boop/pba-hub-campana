@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PILAR — Ficha Municipal Integrada · PBA 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; font-size: 13px; }
+
+/* HEADER */
+.header { background: linear-gradient(135deg, #1F4E79 0%, #2563EB 100%); color: white; padding: 18px 28px; display: flex; justify-content: space-between; align-items: center; }
+.header-left h1 { font-size: 26px; font-weight: 800; letter-spacing: 1px; }
+.header-left p { font-size: 12px; opacity: 0.8; margin-top: 2px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.75; line-height: 1.6; }
+.header-badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-top: 4px; }
+
+/* ALERT BANNER */
+.alert-banner { background: #FEF2F2; border-left: 5px solid #DC2626; padding: 10px 28px; display: flex; align-items: center; gap: 12px; }
+.alert-banner .alert-icon { font-size: 18px; }
+.alert-banner p { font-size: 12px; color: #7F1D1D; font-weight: 600; }
+.alert-banner span { font-weight: 400; }
+
+/* LAYOUT */
+.main { padding: 16px 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; max-width: 1400px; margin: 0 auto; }
+.full-width { grid-column: 1 / -1; }
+.two-thirds { grid-column: span 2; }
+.one-third { grid-column: span 1; }
+
+/* CARDS */
+.card { background: white; border-radius: 10px; box-shadow: 0 1px 5px rgba(0,0,0,0.08); overflow: hidden; }
+.card-header { padding: 10px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center; }
+.card-body { padding: 14px; }
+
+/* KPI GRID */
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.kpi-box { border-radius: 8px; padding: 12px 14px; }
+.kpi-label { font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.kpi-value { font-size: 22px; font-weight: 800; line-height: 1; }
+.kpi-sub { font-size: 10px; color: #888; margin-top: 3px; }
+.kpi-arrow { font-size: 14px; }
+
+/* RISK METER */
+.risk-meter { display: flex; gap: 8px; flex-wrap: wrap; }
+.risk-item { flex: 1; min-width: 120px; background: #f9fafb; border-radius: 8px; padding: 10px 12px; border: 1px solid #e5e7eb; }
+.risk-label { font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.risk-bar-bg { height: 6px; background: #e5e7eb; border-radius: 3px; overflow: hidden; }
+.risk-bar { height: 100%; border-radius: 3px; }
+.risk-value { font-size: 13px; font-weight: 700; margin-top: 4px; }
+.risk-desc { font-size: 10px; color: #888; }
+
+/* TABLE */
+.data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.data-table th { background: #f3f4f6; color: #374151; padding: 7px 10px; text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #e5e7eb; }
+.data-table td { padding: 7px 10px; border-bottom: 1px solid #f3f4f6; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table .highlight { background: #FEF3C7; }
+.data-table .danger { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.data-table .good { background: #F0FDF4; color: #14532D; font-weight: 700; }
+
+/* CHARTS (CSS-based) */
+.bar-chart { display: flex; flex-direction: column; gap: 8px; }
+.bar-row { display: flex; align-items: center; gap: 8px; }
+.bar-label { width: 80px; font-size: 11px; color: #555; text-align: right; flex-shrink: 0; }
+.bar-outer { flex: 1; height: 20px; background: #f3f4f6; border-radius: 4px; overflow: hidden; }
+.bar-inner { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 6px; }
+.bar-text { font-size: 10px; font-weight: 700; color: white; }
+.bar-pct { width: 45px; font-size: 11px; font-weight: 700; text-align: right; }
+
+/* ELEC CHART */
+.elec-row { display: flex; gap: 4px; height: 28px; border-radius: 6px; overflow: hidden; margin: 8px 0; }
+.elec-seg { display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: white; transition: flex 0.3s; }
+
+/* STATUS BADGES */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 700; }
+.badge-ok { background: #D1FAE5; color: #065F46; }
+.badge-warn { background: #FEF3C7; color: #92400E; }
+.badge-danger { background: #FEE2E2; color: #7F1D1D; }
+.badge-info { background: #DBEAFE; color: #1E40AF; }
+
+/* SECTION DIVIDER */
+.section-title { font-size: 14px; font-weight: 700; color: #1F4E79; padding: 8px 0 4px; border-bottom: 2px solid #1F4E79; margin-bottom: 10px; }
+
+/* TIMELINE */
+.timeline-chart { display: flex; align-items: flex-end; gap: 6px; height: 80px; padding-top: 10px; }
+.tc-bar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.tc-bar-inner { width: 100%; border-radius: 3px 3px 0 0; min-height: 4px; }
+.tc-year { font-size: 9px; color: #999; }
+.tc-val { font-size: 8px; font-weight: 700; }
+
+/* IDENTITY CHIP */
+.identity-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.identity-chip { background: #EFF6FF; border: 1px solid #BFDBFE; color: #1E40AF; padding: 4px 10px; border-radius: 16px; font-size: 11px; }
+
+/* NOTICE BOX */
+.notice { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 10px 14px; font-size: 12px; color: #1E40AF; }
+.notice strong { display: block; margin-bottom: 4px; font-size: 13px; }
+
+/* EXTRACTION SCHEMA */
+.schema-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.schema-item { background: #f9fafb; border-radius: 6px; padding: 8px 12px; border-left: 3px solid #2E75B6; }
+.schema-item .s-title { font-size: 10px; font-weight: 700; color: #1F4E79; text-transform: uppercase; }
+.schema-item .s-metrics { font-size: 11px; color: #555; margin-top: 3px; line-height: 1.5; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 12px; font-size: 11px; color: #999; border-top: 1px solid #e5e7eb; margin-top: 8px; background: white; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>📍 PILAR</h1>
+    <p>Ficha Municipal Integrada · Territorio · Electoral · Finanzas · Demo Fase 2+3</p>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente:</strong> Federico De Achaval · <span style="background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:10px;font-weight:700;">UxP</span></div>
+    <div><strong>Sección:</strong> 1ª · Área: Periurbano Oeste</div>
+    <div><strong>Concejales propios:</strong> 6 de 24</div>
+    <div style="margin-top:4px;font-size:10px;opacity:0.7;">Datos al 12/05/2026 · PBA Analytics</div>
+  </div>
+</div>
+
+<!-- ALERT -->
+<div class="alert-banner">
+  <span class="alert-icon">⚠️</span>
+  <p>ALERTA FISCAL: Resultado Financiero 2025 = <span>-$98.996M (déficit del 23% sobre recursos totales).</span> Activos en Banco Provincia cayeron 74% en 16 meses. Relación Activos/Nómina: 1,37 vs promedio área 2,93.</p>
+</div>
+
+<div class="main">
+
+  <!-- ===== FILA 1: KPIs CLAVE ===== -->
+  <div class="card full-width">
+    <div class="card-header" style="background:#1F4E79;color:white;">📊 INDICADORES CLAVE AL 12/05/2026</div>
+    <div class="card-body">
+      <div class="kpi-grid">
+        <div class="kpi-box" style="background:#FEF2F2;border:1px solid #FCA5A5;">
+          <div class="kpi-label">Resultado Financiero 2025</div>
+          <div class="kpi-value" style="color:#DC2626;">-$99.0B</div>
+          <div class="kpi-sub">⬇ Déficit del 23% s/recursos totales</div>
+        </div>
+        <div class="kpi-box" style="background:#FEF2F2;border:1px solid #FCA5A5;">
+          <div class="kpi-label">Activos / Nómina Salarial</div>
+          <div class="kpi-value" style="color:#DC2626;">1,37x</div>
+          <div class="kpi-sub">⬇ Área promedio: 2,93x · Dic-24 era 8,21x</div>
+        </div>
+        <div class="kpi-box" style="background:#D1FAE5;border:1px solid #6EE7B7;">
+          <div class="kpi-label">Autonomía Fiscal 2025</div>
+          <div class="kpi-value" style="color:#065F46;">67%</div>
+          <div class="kpi-sub">↑ Buena · Prom. área 48%</div>
+        </div>
+        <div class="kpi-box" style="background:#FEF3C7;border:1px solid #FCD34D;">
+          <div class="kpi-label">Deuda Flotante 2025</div>
+          <div class="kpi-value" style="color:#92400E;">$62.4B</div>
+          <div class="kpi-sub">≈ 15,5% s/recursos corrientes</div>
+        </div>
+        <div class="kpi-box" style="background:#F0F9FF;border:1px solid #BAE6FD;">
+          <div class="kpi-label">Población (Censo 2022)</div>
+          <div class="kpi-value" style="color:#0369A1;">394.754</div>
+          <div class="kpi-sub">+32% vs 2010 · Receptora</div>
+        </div>
+        <div class="kpi-box" style="background:#F0F9FF;border:1px solid #BAE6FD;">
+          <div class="kpi-label">% Voto PJ — Intend. 2023</div>
+          <div class="kpi-value" style="color:#0369A1;">57,5%</div>
+          <div class="kpi-sub">➡ LLA 22,8% · JxC 17,4%</div>
+        </div>
+        <div class="kpi-box" style="background:#F0F9FF;border:1px solid #BAE6FD;">
+          <div class="kpi-label">% Voto PJ — Conces. 2025</div>
+          <div class="kpi-value" style="color:#0369A1;">60,7%</div>
+          <div class="kpi-sub">⬆ LLA 28,9% · JxC sin lista</div>
+        </div>
+        <div class="kpi-box" style="background:#FEF3C7;border:1px solid #FCD34D;">
+          <div class="kpi-label">Gasto en Personal / Total</div>
+          <div class="kpi-value" style="color:#92400E;">23%</div>
+          <div class="kpi-sub">✓ Bajo · Prom. área 42% · 6.621 agentes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== COL 1: PERFIL TERRITORIAL ===== -->
+  <div class="card">
+    <div class="card-header" style="background:#EFF6FF;color:#1E40AF;">🗺️ PERFIL TERRITORIAL</div>
+    <div class="card-body">
+      <div class="section-title">Identidad Municipal</div>
+      <div class="identity-chips">
+        <span class="identity-chip">🏭 Polo Industrial</span>
+        <span class="identity-chip">🌱 Frutihorticola</span>
+        <span class="identity-chip">🏗️ Periurbano Oeste</span>
+        <span class="identity-chip">📈 Alta Migración</span>
+      </div>
+      <br>
+      <table class="data-table">
+        <tr><th>Indicador</th><th>Pilar</th><th>Área</th></tr>
+        <tr><td>Superficie</td><td>383 km²</td><td>3.633 km²</td></tr>
+        <tr><td>Población 2022</td><td>394.754</td><td>1.030.174</td></tr>
+        <tr><td>Densidad</td><td>1.031 hab/km²</td><td>284</td></tr>
+        <tr><td>Crecim. Intercensal</td><td class="highlight">+31,99%</td><td>+27,97%</td></tr>
+        <tr><td>Saldo Migratorio</td><td>74,2%</td><td>38,80%</td></tr>
+        <tr><td>Pobl. con NBI</td><td>16,3%</td><td>14,7%</td></tr>
+        <tr><td>Mortalidad Infantil</td><td>12,3‰</td><td>11,8‰</td></tr>
+        <tr><td>Hogar c/Gas Red</td><td>33,6%</td><td>41,76%</td></tr>
+        <tr><td>Hogar c/Agua Red</td><td>27,2%</td><td>35,43%</td></tr>
+      </table>
+      <br>
+      <div class="notice">
+        <strong>📌 Cluster: Conurbano Bonaerense</strong>
+        Municipio de alta densidad y acelerado crecimiento. Industria = 60,9% del PBG local (vs 32,2% provincial). Fuertes necesidades de infraestructura de saneamiento (solo 27% con agua de red).
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== COL 2: ANÁLISIS ELECTORAL ===== -->
+  <div class="card">
+    <div class="card-header" style="background:#F0FDF4;color:#14532D;">🗳️ PERFORMANCE ELECTORAL</div>
+    <div class="card-body">
+      <div class="section-title">Resultados por Elección</div>
+
+      <div style="margin-bottom:10px;">
+        <div style="font-size:11px;font-weight:700;color:#555;margin-bottom:4px;">Intendente 2023 — 303.901 electores</div>
+        <div class="elec-row">
+          <div class="elec-seg" style="background:#1F4E79;flex:57.5">PJ 57,5%</div>
+          <div class="elec-seg" style="background:#C8A200;flex:17.4">JxC 17,4%</div>
+          <div class="elec-seg" style="background:#9B2335;flex:22.8">LLA 22,8%</div>
+          <div class="elec-seg" style="background:#888;flex:2.3">2,3</div>
+        </div>
+        <div style="font-size:10px;color:#888">Padrón: 303.901 · Participación ~70%</div>
+      </div>
+
+      <div style="margin-bottom:10px;">
+        <div style="font-size:11px;font-weight:700;color:#555;margin-bottom:4px;">Concejales PBA 2025 — 320.932 electores</div>
+        <div class="elec-row">
+          <div class="elec-seg" style="background:#1F4E79;flex:60.7">PJ 60,7%</div>
+          <div class="elec-seg" style="background:#9B2335;flex:28.9">LLA 28,9%</div>
+          <div class="elec-seg" style="background:#888;flex:10.4">Otros</div>
+        </div>
+        <div style="font-size:10px;color:#2E7D32;font-weight:600">▲ PJ +3,2pp vs 2023 · Crecimiento padrón +17.031</div>
+      </div>
+
+      <div style="margin-bottom:10px;">
+        <div style="font-size:11px;font-weight:700;color:#555;margin-bottom:4px;">Diputado Nacional Oct 2025 — 287.874 electores</div>
+        <div class="elec-row">
+          <div class="elec-seg" style="background:#1F4E79;flex:44.2">PJ 44,2%</div>
+          <div class="elec-seg" style="background:#9B2335;flex:42.3">LLA 42,3%</div>
+          <div class="elec-seg" style="background:#888;flex:13.5">Otros</div>
+        </div>
+        <div style="font-size:10px;color:#DC2626;font-weight:600">⚠ LLA a 1,9pp del PJ en elección nacional</div>
+      </div>
+
+      <table class="data-table" style="margin-top:8px;">
+        <tr><th>Indicador Electoral</th><th>Valor</th><th>Alerta</th></tr>
+        <tr><td>% PJ Intend. 2023</td><td><strong>57,5%</strong></td><td><span class="badge badge-ok">SÓLIDO</span></td></tr>
+        <tr><td>% LLA Concej. 2025</td><td><strong>28,9%</strong></td><td><span class="badge badge-warn">MONITOREAR</span></td></tr>
+        <tr><td>Brecha PJ-LLA Nac. 2025</td><td><strong>1,9pp</strong></td><td><span class="badge badge-danger">RIESGO</span></td></tr>
+        <tr><td>Concejales propios</td><td><strong>6 de 24</strong></td><td><span class="badge badge-danger">MINORÍA</span></td></tr>
+        <tr><td>Tendencia PJ local</td><td><strong>+3,2pp</strong></td><td><span class="badge badge-ok">POSITIVA</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== COL 3: SITUACIÓN FISCAL ===== -->
+  <div class="card">
+    <div class="card-header" style="background:#FEF2F2;color:#7F1D1D;">💰 SITUACIÓN FINANCIERA</div>
+    <div class="card-body">
+      <div class="section-title">Indicadores Fiscales 2025</div>
+      <div class="risk-meter">
+        <div class="risk-item">
+          <div class="risk-label">Autonomía</div>
+          <div class="risk-bar-bg"><div class="risk-bar" style="width:67%;background:#16A34A;"></div></div>
+          <div class="risk-value" style="color:#16A34A">67%</div>
+          <div class="risk-desc">Prom. área: 48%</div>
+        </div>
+        <div class="risk-item">
+          <div class="risk-label">Liquidez (A/N)</div>
+          <div class="risk-bar-bg"><div class="risk-bar" style="width:28%;background:#DC2626;"></div></div>
+          <div class="risk-value" style="color:#DC2626">1,37x</div>
+          <div class="risk-desc">Área: 2,93x</div>
+        </div>
+        <div class="risk-item">
+          <div class="risk-label">Flexibilidad</div>
+          <div class="risk-bar-bg"><div class="risk-bar" style="width:74%;background:#16A34A;"></div></div>
+          <div class="risk-value" style="color:#16A34A">74%</div>
+          <div class="risk-desc">Área: 65,6%</div>
+        </div>
+        <div class="risk-item">
+          <div class="risk-label">Inversión</div>
+          <div class="risk-bar-bg"><div class="risk-bar" style="width:9%;background:#EAB308;"></div></div>
+          <div class="risk-value" style="color:#EAB308">9%</div>
+          <div class="risk-desc">Área: 19%</div>
+        </div>
+      </div>
+
+      <br>
+      <div class="section-title">Resultado Financiero (2021–2025)</div>
+      <table class="data-table">
+        <tr><th>Año</th><th>Rec. Totales</th><th>Gas. Totales</th><th>Resultado</th></tr>
+        <tr><td>2021</td><td>$21.136M</td><td>$24.613M</td><td class="danger">-$3.477M</td></tr>
+        <tr><td>2022</td><td>$39.868M</td><td>$41.089M</td><td class="danger">-$1.221M</td></tr>
+        <tr><td>2023</td><td>$91.227M</td><td>$105.826M</td><td class="danger">-$14.599M</td></tr>
+        <tr><td>2024</td><td>$290.457M</td><td>$262.386M</td><td class="good">+$28.072M</td></tr>
+        <tr><td>2025</td><td>$435.724M</td><td>$534.720M</td><td class="danger">-$98.996M ⚠</td></tr>
+      </table>
+
+      <br>
+      <div class="section-title">Deuda Municipal</div>
+      <table class="data-table">
+        <tr><th>Componente</th><th>2024</th><th>2025</th></tr>
+        <tr><td>Deuda Flotante Total</td><td>$31.437M</td><td class="danger">$65.649M ⬆</td></tr>
+        <tr><td>Deuda Flotante Neta Sal.</td><td>$30.191M</td><td class="danger">$62.395M</td></tr>
+        <tr><td>Deuda con Prov. (Leasing)</td><td>$1.191M</td><td class="highlight">$3.393M</td></tr>
+        <tr><td>Deuda Consolidada</td><td>$234M</td><td class="good">$0,8M</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== FILA 2: EVOLUCIÓN PRESUPUESTARIA ===== -->
+  <div class="card two-thirds">
+    <div class="card-header" style="background:#F8FAFC;color:#1F4E79;">📈 EVOLUCIÓN PRESUPUESTARIA 2016–2025 (en millones $)</div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <!-- Recursos vs Gastos (bar chart CSS) -->
+        <div>
+          <div class="section-title">Recursos vs. Gastos Totales</div>
+          <div class="bar-chart">
+            <div class="bar-row"><div class="bar-label">2016</div><div class="bar-outer"><div class="bar-inner" style="width:0.6%;background:#1F4E79"><div class="bar-text"></div></div></div><div class="bar-pct" style="color:#1F4E79">$2.668</div></div>
+            <div class="bar-row"><div class="bar-label">2019</div><div class="bar-outer"><div class="bar-inner" style="width:1.8%;background:#1F4E79"><div class="bar-text"></div></div></div><div class="bar-pct" style="color:#1F4E79">$7.901</div></div>
+            <div class="bar-row"><div class="bar-label">2022</div><div class="bar-outer"><div class="bar-inner" style="width:9.1%;background:#1F4E79"><div class="bar-text"></div></div></div><div class="bar-pct" style="color:#1F4E79">$39.868</div></div>
+            <div class="bar-row"><div class="bar-label">2023</div><div class="bar-outer"><div class="bar-inner" style="width:20.9%;background:#1F4E79"><div class="bar-text"></div></div></div><div class="bar-pct" style="color:#1F4E79">$91.227</div></div>
+            <div class="bar-row"><div class="bar-label">2024 ✓</div><div class="bar-outer"><div class="bar-inner" style="width:66.6%;background:#16A34A"><div class="bar-text">$290.457</div></div></div><div class="bar-pct" style="color:#16A34A"></div></div>
+            <div class="bar-row"><div class="bar-label">2024 Gto</div><div class="bar-outer"><div class="bar-inner" style="width:60.1%;background:#EAB308"><div class="bar-text">$262.386</div></div></div><div class="bar-pct"></div></div>
+            <div class="bar-row"><div class="bar-label">2025 ⚠</div><div class="bar-outer"><div class="bar-inner" style="width:99.8%;background:#2563EB"><div class="bar-text">$435.724</div></div></div><div class="bar-pct" style="color:#2563EB"></div></div>
+            <div class="bar-row"><div class="bar-label">2025 Gto</div><div class="bar-outer"><div class="bar-inner" style="width:100%;background:#DC2626"><div class="bar-text" style="font-size:9px">$534.720 ⬆</div></div></div><div class="bar-pct"></div></div>
+          </div>
+        </div>
+        <!-- Activos vs Nómina -->
+        <div>
+          <div class="section-title">Activos Financieros en Banco Provincia</div>
+          <table class="data-table">
+            <tr><th>Período</th><th>Activos</th><th>A/Nómina</th><th>Señal</th></tr>
+            <tr><td>Dic-24</td><td>$44.410M</td><td class="good" style="font-size:11px">8,21x</td><td><span class="badge badge-ok">OK</span></td></tr>
+            <tr><td>Dic-25</td><td>$20.154M</td><td class="highlight" style="font-size:11px">2,38x</td><td><span class="badge badge-warn">BAJA</span></td></tr>
+            <tr><td>Abr-26</td><td>$11.536M</td><td class="danger" style="font-size:11px">1,37x</td><td><span class="badge badge-danger">CRÍTICO</span></td></tr>
+          </table>
+          <br>
+          <div class="section-title">Transferencias 2026 (Proyección)</div>
+          <table class="data-table">
+            <tr><th>Concepto</th><th>2025 Ejec.</th><th>Proy. 2026</th><th>Var.</th></tr>
+            <tr><td>Coparticipación</td><td>$86.686M</td><td>$111.073M</td><td class="good">+28%</td></tr>
+            <tr><td>Fdo. Educativo</td><td>$8.318M</td><td>$11.208M</td><td class="good">+35%</td></tr>
+            <tr><td>Fdo. Fort. Mun.</td><td>$4.901M</td><td>$6.457M</td><td class="good">+32%</td></tr>
+            <tr><td>FEFIM 2026</td><td>—</td><td>$3.847M</td><td class="good">NUEVO</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>$107.449M</strong></td><td><strong>$140.349M</strong></td><td class="good"><strong>+31%</strong></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== COL 3: SEMÁFORO INTEGRADO ===== -->
+  <div class="card">
+    <div class="card-header" style="background:#1F4E79;color:white;">🚦 SEMÁFORO INTEGRADO · PILAR</div>
+    <div class="card-body">
+      <div class="section-title">Dimensión Territorial</div>
+      <table class="data-table">
+        <tr><td>Cluster</td><td><span class="badge badge-info">Conurbano</span></td></tr>
+        <tr><td>Crecimiento Poblacional</td><td><span class="badge badge-ok">ALTO +32%</span></td></tr>
+        <tr><td>Infraestructura básica</td><td><span class="badge badge-danger">DÉFICIT AGUA/CLOACA</span></td></tr>
+        <tr><td>NBI</td><td><span class="badge badge-warn">16,3% s/prom</span></td></tr>
+      </table>
+      <br>
+      <div class="section-title">Dimensión Electoral</div>
+      <table class="data-table">
+        <tr><td>Resultado Intend. 2023</td><td><span class="badge badge-ok">SÓLIDO 57,5%</span></td></tr>
+        <tr><td>Concejales propios</td><td><span class="badge badge-danger">MINORÍA 6/24</span></td></tr>
+        <tr><td>Avance LLA nacional</td><td><span class="badge badge-danger">RIESGO 42,3%</span></td></tr>
+        <tr><td>Tendencia local 2025</td><td><span class="badge badge-ok">SUBE PJ +3pp</span></td></tr>
+      </table>
+      <br>
+      <div class="section-title">Dimensión Financiera</div>
+      <table class="data-table">
+        <tr><td>Resultado 2025</td><td><span class="badge badge-danger">DÉFICIT -$99B</span></td></tr>
+        <tr><td>Liquidez (Activos/Nóm.)</td><td><span class="badge badge-danger">CRÍTICO 1,37x</span></td></tr>
+        <tr><td>Autonomía fiscal</td><td><span class="badge badge-ok">BUENA 67%</span></td></tr>
+        <tr><td>Deuda flotante</td><td><span class="badge badge-warn">CRECE 15,5%</span></td></tr>
+        <tr><td>Transferencias 2026</td><td><span class="badge badge-ok">SUBE +31%</span></td></tr>
+      </table>
+      <br>
+      <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:8px;padding:10px;font-size:11px;color:#7F1D1D;">
+        <strong>⚡ ACCIÓN RECOMENDADA:</strong><br>
+        Municipio con buen perfil político local pero bajo estrés financiero. La caída de activos de $44B→$11B en 16 meses requiere monitoreo. El FEFIM 2026 y la suba de transferencias (+31%) pueden dar alivio. Necesita fortalecimiento en HCD (minoría 6/24).
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FILA 3: ESQUEMA DE EXTRACCIÓN ===== -->
+  <div class="card full-width">
+    <div class="card-header" style="background:#EFF6FF;color:#1E40AF;">📋 METODOLOGÍA DE EXTRACCIÓN — ¿QUÉ SE EXTRAE DE CADA PDF PARA LOS 134 MUNICIPIOS?</div>
+    <div class="card-body">
+      <p style="margin-bottom:12px;color:#555;font-size:12px;">Los dos PDFs por municipio (Ministro + Subsecretario) permiten extraer automáticamente las siguientes métricas para construir el tablero provincial:</p>
+      <div class="schema-grid">
+        <div class="schema-item">
+          <div class="s-title">📄 Informe Ministro (4 págs) → 8 métricas clave</div>
+          <div class="s-metrics">
+            ✓ Activos financieros en Bco. Provincia (último saldo)<br>
+            ✓ Relación Activos/Nómina Salarial (indicador de liquidez)<br>
+            ✓ Ingresos Corrientes, Propios y Transferencias (2025)<br>
+            ✓ Gastos Corrientes y de Capital (2025)<br>
+            ✓ Resultado Corriente y Financiero (2025)<br>
+            ✓ % Autonomía y % Gasto en Personal<br>
+            ✓ Deuda Flotante Neta de Salarios<br>
+            ✓ Planta de Personal y gasto medio por agente
+          </div>
+        </div>
+        <div class="schema-item">
+          <div class="s-title">📄 Informe Subsecretario (7 págs) → 12 métricas</div>
+          <div class="s-metrics">
+            ✓ Serie histórica recursos/gastos 2016–2025<br>
+            ✓ Evolución deuda flotante 2016–2025<br>
+            ✓ CUD (Coeficiente Único de Distribución)<br>
+            ✓ Transferencias proyectadas 2026 por concepto<br>
+            ✓ Deuda con Provincia (Leasing) histórica<br>
+            ✓ Capacidad de ahorro, flexibilidad, inversión (ratios 2025)<br>
+            ✓ Apertura del gasto por función (Salud, Educación, Obras, etc.)<br>
+            ✓ Indicadores demográficos, productivos y sociales<br>
+            ✓ PBG y estructura económica local<br>
+            ✓ Precalificación endeudamientos<br>
+            ✓ Ayudas financieras recibidas (ATN, ATP, FEFIM)<br>
+            ✓ Paritaria municipal
+          </div>
+        </div>
+        <div class="schema-item">
+          <div class="s-title">🚥 Alertas automáticas que se generan por municipio</div>
+          <div class="s-metrics">
+            🔴 Resultado Financiero negativo (déficit)<br>
+            🔴 Activos/Nómina &lt; 1,5x → riesgo de incumplimiento salarial<br>
+            🟡 Deuda Flotante &gt; 15% de recursos corrientes<br>
+            🟡 Gasto Personal &gt; 55% del gasto total<br>
+            🟢 Autonomía fiscal &gt; 60%<br>
+            🟢 Transferencias 2026 proyectadas en alza
+          </div>
+        </div>
+        <div class="schema-item">
+          <div class="s-title">🗺️ Dashboard Provincial Integrado (con los 134)</div>
+          <div class="s-metrics">
+            → Ranking de municipios por riesgo fiscal (semáforo)<br>
+            → Mapa de calor: déficit / deuda por sección electoral<br>
+            → Correlación riesgo financiero vs. fragilidad electoral<br>
+            → Municipios con Activos/Nómina &lt; 1,5x (alerta salarial)<br>
+            → Municipios que recibieron ayudas financieras (ATN/ATP)<br>
+            → Proyección de transferencias 2026 por cluster<br>
+            → Ficha individual estándar para cada municipio (como este demo)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  🔒 USO RESERVADO · Gobernación de la Provincia de Buenos Aires · Demo Fase 2+3 · Pilar al 12/05/2026 · PBA Analytics
+</div>
+
+</body>
+</html>

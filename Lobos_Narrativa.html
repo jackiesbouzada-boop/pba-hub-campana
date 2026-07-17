@@ -1,0 +1,677 @@
+<style>
+
+@page {
+  size: A4 portrait;
+  margin: 14mm 18mm 18mm;
+}
+@page :first {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 10.5pt;
+  line-height: 1.82;
+  color: #1a1a1a;
+  background: white;
+}
+
+/* ── HEADER ─────────────────────────────────────── */
+.header {
+  background: linear-gradient(135deg, #1F4E79 0%, #2563EB 100%);
+  color: white;
+  padding: 26px 22mm 22px;
+}
+.header-meta {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 8pt;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+.header h1 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 24pt;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  margin-bottom: 5px;
+  line-height: 1.1;
+}
+.header-sub {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9.5pt;
+  opacity: 0.75;
+  margin-bottom: 18px;
+}
+.header-datos {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 14px;
+}
+.hd {
+  flex: 1;
+  padding-right: 20px;
+  border-right: 1px solid rgba(255,255,255,0.15);
+  margin-right: 20px;
+}
+.hd:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.hd-n {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 20pt;
+  font-weight: 900;
+  color: #FACC15;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hd-l {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt;
+  opacity: 0.65;
+  line-height: 1.5;
+}
+
+/* ── DOCUMENTO ───────────────────────────────────── */
+.doc {
+  padding: 12mm 6mm 14mm;
+}
+
+.intendente-line {
+  background: #FEE2E2;
+  border-left: 4px solid #DC2626;
+  padding: 9px 14px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt;
+  color: #7F1D1D;
+  margin-bottom: 32px;
+}
+.intendente-line strong { font-weight: 700; }
+
+h2 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 10pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #2563EB;
+  border-bottom: 2px solid #2563EB;
+  padding-bottom: 5px;
+  margin-bottom: 16px;
+  margin-top: 32px;
+  page-break-after: avoid;
+}
+
+p {
+  margin-bottom: 14px;
+  color: #1a1a1a;
+  orphans: 3;
+  widows: 3;
+}
+p:last-child { margin-bottom: 0; }
+
+.lead {
+  font-size: 11.5pt;
+  color: #1F4E79;
+  border-left: 3px solid #2563EB;
+  padding-left: 16px;
+  margin-bottom: 20px;
+  line-height: 1.7;
+  page-break-after: avoid;
+}
+
+.pullquote {
+  border-top: 2px solid #1F4E79;
+  border-bottom: 2px solid #1F4E79;
+  margin: 26px 0;
+  padding: 16px 0;
+  font-size: 13pt;
+  font-style: italic;
+  color: #1F4E79;
+  text-align: center;
+  line-height: 1.55;
+  page-break-inside: avoid;
+}
+
+.nota {
+  background: #FFFBEB;
+  border-left: 4px solid #F59E0B;
+  padding: 13px 16px;
+  margin: 22px 0;
+  font-size: 9.5pt;
+  color: #78350F;
+  line-height: 1.75;
+  page-break-inside: avoid;
+}
+.nota strong {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #D97706;
+  font-style: normal;
+}
+
+.nota-k {
+  background: #1e3a5f;
+  border-left: 4px solid #FACC15;
+  padding: 13px 16px;
+  margin: 22px 0;
+  font-size: 9.5pt;
+  color: white;
+  line-height: 1.75;
+  page-break-inside: avoid;
+}
+.nota-k strong {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #FACC15;
+  font-style: normal;
+}
+
+.nota-r {
+  background: #FEF2F2;
+  border-left: 4px solid #EF4444;
+  padding: 13px 16px;
+  margin: 22px 0;
+  font-size: 9.5pt;
+  color: #7F1D1D;
+  line-height: 1.75;
+  page-break-inside: avoid;
+}
+.nota-r strong {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #DC2626;
+  font-style: normal;
+}
+
+/* ── FOOTER ──────────────────────────────────────── */
+.footer {
+  text-align: center;
+  padding: 10px 22mm;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt;
+  color: #aaa;
+  border-top: 1px solid #e5e7eb;
+  background: white;
+}
+
+/* ── ANEXOS ──────────────────────────────────────── */
+.anexo-wrap {
+  page-break-before: always;
+  break-before: page;
+}
+
+.ah-azul {
+  background: linear-gradient(135deg, #1F4E79, #2563EB);
+  color: white;
+  padding: 18px 22mm;
+  margin: -14mm -18mm 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.ah-ambar {
+  background: linear-gradient(135deg, #78350F, #D97706);
+  color: white;
+  padding: 18px 22mm;
+  margin: -14mm -18mm 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.ah-meta { font-size: 9pt; opacity: 0.6; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
+.ah-title { font-size: 14pt; font-weight: 900; letter-spacing: 0.5px; }
+.ah-right { font-size: 8pt; opacity: 0.7; text-align: right; }
+
+/* Grid de anexos */
+.ag-body { padding: 12mm 0; background: #eef2f7; margin: 0 -18mm; padding-left: 18mm; padding-right: 18mm; }
+.ag3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.ag2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  page-break-inside: avoid;
+}
+.ch {
+  padding: 8px 13px;
+  font-size: 9pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.cb { padding: 12px 13px; }
+.st {
+  font-size: 9pt;
+  font-weight: 700;
+  color: #1F4E79;
+  padding: 4px 0 5px;
+  border-bottom: 2px solid #1F4E79;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+/* Tablas */
+.t { width: 100%; border-collapse: collapse; font-size: 8pt; }
+.t th {
+  background: #f5f6f8;
+  color: #555;
+  padding: 5px 8px;
+  text-align: left;
+  font-size: 8.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e5e7eb;
+}
+.t td { padding: 5px 8px; border-bottom: 1px solid #f3f4f6; vertical-align: top; }
+.t tr:last-child td { border-bottom: none; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+
+/* Alertas en anexos */
+.al { border-radius: 6px; padding: 10px 12px; margin-top: 10px; font-size: 8pt; line-height: 1.6; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al strong { display: block; margin-bottom: 3px; font-size: 9pt; }
+
+/* Filas de hitos */
+.ag-row { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px dashed #e8e8e8; font-size: 8pt; line-height: 1.6; }
+.ag-row:last-child { border-bottom: none; }
+.ag-ico { font-size: 14pt; min-width: 20px; margin-top: 1px; }
+.ag-txt strong { font-size: 8pt; display: block; margin-bottom: 2px; color: #1F4E79; font-weight: 700; }
+.ag-txt p { font-size: 9pt; color: #555; }
+
+/* Perfil intendente */
+.perf td { padding: 5px 8px; border-bottom: 1px solid #f3f4f6; font-size: 8pt; }
+.perf tr:last-child td { border-bottom: none; }
+
+/* Footer de anexo */
+.anx-foot {
+  text-align: center;
+  padding: 8px 22mm;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 8.5pt;
+  color: #aaa;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ── PRINT IMPROVEMENTS (narrativa) ───────────── */
+/* Orphans/widows for running text */
+body    { orphans: 4; widows: 4; }
+p       { orphans: 4; widows: 4; }
+
+/* Grids in annexes: let grid break between rows (cards individually protected) */
+.ag3 { break-inside: auto; page-break-inside: auto; }
+.ag2 { break-inside: auto; page-break-inside: auto; }
+
+/* Tables */
+thead { display: table-header-group; }
+tr    { page-break-inside: avoid; break-inside: avoid; }
+
+/* Keep section headings with next content */
+h2 { page-break-after: avoid; break-after: avoid; }
+h3 { page-break-after: avoid; break-after: avoid; }
+h2 + p, h3 + p, h2 + div, h3 + div { page-break-before: avoid; break-before: avoid; }
+
+/* Cards */
+.card  { page-break-inside: avoid; break-inside: avoid; }
+
+/* Don't break alerts/callout boxes */
+.al    { page-break-inside: avoid; break-inside: avoid; }
+
+/* Callout boxes — add modern break-inside (Chrome ignores page-break-inside) */
+.nota         { break-inside: avoid; }
+.nota-r       { break-inside: avoid; }
+.nota-k       { break-inside: avoid; }
+.pullquote    { break-inside: avoid; }
+.intendente-line { page-break-inside: avoid; break-inside: avoid; }
+
+/* Lead paragraph: keep with following content */
+.lead { break-after: avoid; page-break-after: avoid; }
+
+/* Footer stays on last page */
+.footer { page-break-before: avoid; break-before: avoid; }
+
+/* First page: header full-bleed (margin already 0 globally) */
+@page :first { margin: 0; }
+
+/* Annex headers: margin-top:-14mm works on screen but bleeds into prev page
+   across forced page breaks in Chrome print. Reset to 0 in print only. */
+@media print {
+  .ah-azul, .ah-ambar { margin-top: 0 !important; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<div class="header">
+  <div class="header-meta">Campaña PBA 2026 · Briefing Municipal · Uso Reservado</div>
+  <h1>📍 LOBOS</h1>
+  <div class="header-sub">Interior Agropecuario · 3ª Sección Electoral · 110 km de CABA · 1.600 km²</div>
+  <div class="header-datos">
+    <div class="hd">
+      <div class="hd-n">52,8%</div>
+      <div class="hd-l">LLA en General 2023. Desde 16,3% en el PASO. El voto anti-PJ más agudo del corredor sur.</div>
+    </div>
+    <div class="hd">
+      <div class="hd-n">15.000+</div>
+      <div class="hd-l">Turistas por fin de semana largo en la Laguna de Lobos. 3.000 ha de espejo de agua a 110 km de CABA.</div>
+    </div>
+    <div class="hd">
+      <div class="hd-n">Tambo Don Juan</div>
+      <div class="hd-l">Primer tambo robotizado de la región · noviembre 2023 · Arévalo · 4 robots Lely · 6.600 litros/día.</div>
+    </div>
+    <div class="hd">
+      <div class="hd-n">41.760</div>
+      <div class="hd-l">Habitantes · Censo 2022 · 3ª Sección Electoral · Intendente JxC · 3er mandato.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ CUERPO ═══════ -->
+<div class="doc">
+
+  <div class="intendente-line">
+    <strong>Gobierno municipal:</strong> Jorge Etcheverry · Juntos por el Cambio · 3er mandato consecutivo · RIVAL · No confrontar en discurso — aparecer por encima con agenda concreta
+  </div>
+
+  <!-- SECCIÓN 1 -->
+  <h2>Por qué visitar Lobos</h2>
+
+  <p class="lead">En 2023, La Libertad Avanza se llevó el 52,8% de los votos en un municipio que el peronismo había ganado apenas dos años antes. Ese movimiento de 20 puntos en 24 meses no fue ideológico: fue emocional.</p>
+
+  <p>El electorado de Lobos — turístico, tambero, de clase media rural — sintió que el Estado los ignoraba y se fue con quien prometía sacudirlo. Esa narrativa tiene que romperse con hechos concretos, no con discurso. La visita no puede ser un acto de propaganda. Tiene que ser una acción de entrega: algo que el municipio no tenía y que la Provincia hizo posible.</p>
+
+  <p>El activo central del municipio es la Laguna de Lobos: un espejo de agua de 3.000 hectáreas a 110 km de Buenos Aires que moviliza más de 15.000 turistas por fin de semana largo. Pesca deportiva, náutica, paracaidismo, cabañas, gastronomía. El motor del municipio funciona — pero depende de decisiones que el intendente Etcheverry no puede tomar solo: el manejo hídrico, la Ruta 205, el plan turístico provincial. Esas son palancas exclusivas de la Provincia.</p>
+
+  <p>El riesgo político es preciso: el voto LLA del 52,8% puede consolidarse como identidad y no quedarse en protesta. La diferencia entre los dos escenarios es enorme — el voto de protesta es recuperable, la identidad no lo es. En septiembre 2025, con la oposición dividida, el Frente obtuvo el 40,2%. En octubre, con la oposición unida, LLA volvió al 52,8%. El suelo anti-PJ en Lobos es mayoritario cuando se concentra. La recuperación requiere que FP recupere votos centrales y que la oposición permanezca fragmentada — ambas cosas dependen de trabajo concreto, no de oratoria.</p>
+
+  <div class="nota">
+    <strong>📊 El terreno político en números</strong>
+    Leg. 2021: FP 40,2% · LLA 31,2% → PJ | PASO 2023: FP 37,7% · JxC 43,5% · LLA 16,3% → JxC | General 2023: FP 31,3% · LLA 52,8% → LLA | Leg. Prov. Sept. 25: FP 40,2% · JxC ~28,6%* · LLA 31,2% → FP | Leg. Nac. Oct. 25: FP 31,3% · LLA 52,8% → LLA.<br><em>*Sept. 25: Etcheverry/UVC + SBA corrieron separados de LLA. Oposición sumada ~60%.</em>
+  </div>
+
+  <!-- SECCIÓN 2 -->
+  <h2>Lo que produce Lobos</h2>
+
+  <p class="lead">La economía de Lobos tiene tres pilares: el comercio que vive del turismo estacional, la cuenca lechera-tambera que es la principal empleadora rural, y la Laguna como recurso turístico singular de la región metropolitana.</p>
+
+  <p>El <strong>turismo de la Laguna (~30%)</strong> es el motor más visible: más de 15.000 visitantes por fin de semana largo en temporada alta, con una cadena de valor que incluye hotelería, cabañas, gastronomía, alquiler de náutica, pesca deportiva y comercios de insumos. El recurso es único en la 3ª sección, pero depende de la Provincia para mantenerse: manejo hídrico de la laguna, control de efluentes, dragado, y el estado de la Ruta 205. Sin la Provincia, el recurso se deteriora solo.</p>
+
+  <p>El <strong>sector agropecuario (~25%)</strong> — tambos y producción agrícola (soja, maíz, girasol) — es la principal empleadora rural del partido y el grupo que más migró hacia LLA en 2023. Los tamberos votan campo: crédito, costo de flete, estado de rutas rurales, precio de leche. En noviembre de 2023, el Establecimiento Don Juan en Arévalo operó los primeros cuatro robots Lely Astronaut de la región, ordeñando 260-270 vacas las 24 horas. <strong>Es el símbolo más potente de modernización agropecuaria en el interior bonaerense, con nombre y apellido.</strong></p>
+
+  <p>El <strong>comercio y servicios (~35%)</strong> vive del turismo estacional y del salario rural. Alta sensibilidad al ciclo estacional. El pequeño comerciante gastronómico fue golpeado por la recesión 2024-25 pero tiene demanda real — lo que falta es conectividad y calidad del recurso que lo sostiene.</p>
+
+  <!-- SECCIÓN 3 -->
+  <h2>La perspectiva provincial — Lo que solo la Provincia puede hacer</h2>
+
+  <p class="lead">El intendente Etcheverry es JxC y el distrito vota LLA. La Provincia no puede confrontar a ninguno de los dos, pero sí puede aparecer por encima de la política local con algo que todos valoran: inversión en el recurso que más les importa.</p>
+
+  <p>Nadie va a rechazar mejoras en la Laguna, en la Ruta 205 o en los caminos rurales. La Provincia tiene palancas que el municipio no puede activar solo: el <strong>Plan Integral de la Laguna de Lobos</strong> — manejo hídrico, control de efluentes, dragado, puesta en valor de la costa — es el anuncio de mayor impacto. Con partidas, cronograma y responsables. "La Provincia cuida el agua de Lobos" es una frase que el tambero, el turista y el comerciante entienden por igual.</p>
+
+  <p>La <strong>mejora de la Ruta 205</strong> — la arteria turística del municipio — es la inversión que convierte el potencial en realidad. Turistas que no llegan son temporada que no sucede. El anuncio tiene que ser específico: tramos, montos, cronograma. No "vamos a mejorar la conectividad" — "la obra empieza en tal fecha en los tramos X e Y".</p>
+
+  <p>El <strong>crédito Banco Provincia para productores tamberos</strong> es la señal para el sector más desafectado. Un programa de modernización de tambos — capital de trabajo, equipamiento, energía — con tasa diferencial y acceso ágil, tiene retorno político inmediato en el grupo que más necesita recuperación. Mencionar el Tambo Don Juan como ejemplo del tipo de proyecto que la Provincia quiere replicar convierte una línea de crédito en una narrativa de innovación territorial.</p>
+
+  <div class="pullquote">
+    "Lobos no está perdido — está esperando que alguien llegue con algo tangible."
+  </div>
+
+  <!-- SECCIÓN 4 -->
+  <h2>El Tambo Don Juan y lo que representa</h2>
+
+  <p>El 21 de noviembre de 2023, el Establecimiento Don Juan — en Arévalo, localidad rural del partido de Lobos — se convirtió en el primer tambo robotizado de la región. Cuatro robots Lely Astronaut ordeñan las 24 horas: 260-270 vacas, más de 6.600 litros diarios sin parar la producción. Pablo García, veterinario de 33 años, lleva adelante el proyecto que la familia Tomatis inició en 2016, construyó en 2018 y arrancó en 2023 — sobre el tambo que el abuelo Don Juan fundó hace más de 80 años con ordeñe a mano.</p>
+
+  <p>No es solo un dato tecnológico. Es una historia: del ordeñe a mano del abuelo al robot Lely en 80 años, tres generaciones de una familia rural que apostó al interior profundo en lugar de migrar. La foto de los robots en el tambo del abuelo es el símbolo perfecto para un discurso de modernización territorial — tecnología de precisión agropecuaria en el interior bonaerense, con nombre propio, con historia familiar, sin esperar al Estado.</p>
+
+  <p>Ir a Arévalo y hablar con Pablo García durante la visita es la acción de mayor impacto mediático que puede incluir la agenda. No es un acto político — es una imagen que ninguna cámara nacional va a ignorar. Y el mensaje se escribe solo: "Esto es lo que pasa cuando el campo tiene herramientas. La Provincia quiere que haya veinte tambos Don Juan en toda la 3ª sección."</p>
+
+  <div class="nota-r">
+    <strong>⚠ Señal que no puede ignorarse</strong>
+    Cuando la oposición va unida (octubre 2025), LLA obtiene el mismo 52,8% que en 2023. El suelo anti-peronista es estructural y mayoritario en Lobos cuando se concentra. La única forma de ganar el distrito es que FP recupere votos del centro y que la oposición permanezca dividida. Ambas cosas requieren trabajo concreto, presencia y resultado visible — no discurso.
+  </div>
+
+  <!-- SECCIÓN 5 -->
+  <h2>Agenda de discurso — Cómo entrar y cómo salir</h2>
+
+  <p>El eje central en Lobos no es político — es concreto. No confrontar con el intendente JxC, no mencionar la derrota de 2023, no poner el foco en números electorales. El foco es la Laguna, el tambo, la ruta. <strong>"La Provincia llegó con herramientas para Lobos"</strong> es el mensaje. El electorado de Lobos no tiene identidad fija — es un votante de resultado.</p>
+
+  <p>La apertura es emocional y directa: "Vine a Lobos porque la Laguna es un patrimonio de toda la Provincia, no solo del municipio. Y los recursos de la Provincia tienen que llegar a donde están los recursos naturales más importantes." No es condescendiente — es reconocimiento.</p>
+
+  <p>El anuncio central es el Plan Integral de la Laguna: con partida asignada, cronograma y responsables. Detalle específico. Evitar las generalidades que el electorado de Lobos ya aprendió a descreer. Si la Provincia llega con un número, una fecha y un nombre de obra, eso rompe la narrativa del "ya vinieron antes y no pasó nada".</p>
+
+  <p>La visita al Tambo Don Juan en Arévalo es la imagen más potente de la visita. Hay que coordinarla con antelación. Confirmar disponibilidad de Pablo García. Llevar cámara. El mensaje: "Esto es el interior bonaerense que la Provincia quiere acompañar."</p>
+
+  <p>Lo que se debe evitar es igualmente claro: cualquier referencia que suene a promesa sin respaldo, cualquier crítica a Etcheverry, y cualquier mensaje que suene a "ahora sí vamos a hacer lo que no hicimos antes". En Lobos, una promesa sin fecha es peor que no ir.</p>
+
+  <div class="nota-k">
+    <strong>⚡ Los interlocutores clave antes de la visita</strong>
+    <strong style="display:inline;color:inherit;font-size:inherit;text-transform:none;letter-spacing:0;">Laguna de Lobos:</strong> operadores turísticos, dueños de cabañas y náutica — son los que más se benefician del plan hídrico y los que más amplifican el mensaje en la ciudad. <strong style="display:inline;color:inherit;font-size:inherit;text-transform:none;letter-spacing:0;">Tambo Don Juan (Arévalo):</strong> Pablo García · confirmar visita con antelación. <strong style="display:inline;color:inherit;font-size:inherit;text-transform:none;letter-spacing:0;">Sociedad Rural / productores tamberos:</strong> el anuncio de crédito tiene que tener un referente del sector que lo valide públicamente. <strong style="display:inline;color:inherit;font-size:inherit;text-transform:none;letter-spacing:0;">Jorge Etcheverry:</strong> notificación protocolar. No coordinación de contenido. Invitar al acto — si acepta, suma; si no, la ausencia no daña.
+  </div>
+
+</div>
+
+<div class="footer">
+  🔒 USO RESERVADO · Campaña PBA · Briefing Lobos · Datos: MatrizPBA · ResultadosPBA_2023_2025.xlsx · INDEC 2022 · PBA Analytics 2026
+</div>
+
+<!-- ═══════ ANEXO I ═══════ -->
+<div class="anexo-wrap">
+  <div class="ah-azul">
+    <div>
+      <div class="ah-meta">Lobos · 2026</div>
+      <div class="ah-title">ANEXO I — PRINCIPALES INDICADORES</div>
+    </div>
+    <div class="ah-right">Fuente: MatrizPBA · INDEC Censo 2022<br>ResultadosPBA_2023_2025.xlsx · CUD 2026</div>
+  </div>
+  <div class="ag-body">
+    <div class="ag3">
+
+      <div class="card">
+        <div class="ch" style="background:#EFF6FF;color:#1E40AF;">👥 Población y Territorio</div>
+        <div class="cb">
+          <table class="t">
+            <tr><th>Indicador</th><th>Valor</th><th>Ref.</th></tr>
+            <tr><td>Población 2022</td><td class="bld">41.760</td><td>—</td></tr>
+            <tr><td>Superficie</td><td>1.600 km²</td><td>—</td></tr>
+            <tr><td>Densidad</td><td>26 hab/km²</td><td>—</td></tr>
+            <tr><td>Distancia CABA</td><td class="inf">~110 km</td><td>Ruta 205</td></tr>
+            <tr><td>Sección Electoral</td><td class="inf">3ª Sección</td><td>—</td></tr>
+            <tr><td>Intendente</td><td class="bad">Etcheverry · JxC</td><td>3er mandato</td></tr>
+            <tr><td>Vínculo</td><td class="bad">RIVAL</td><td>No confrontar</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch" style="background:#FEE2E2;color:#7F1D1D;">🗳️ Performance Electoral</div>
+        <div class="cb">
+          <table class="t">
+            <tr><th>Elección</th><th>FP/UxP</th><th>LLA</th><th>Result.</th></tr>
+            <tr><td>Leg. 2021</td><td class="ok">40,2%</td><td class="warn">31,2%</td><td class="ok bld">PJ</td></tr>
+            <tr><td>PASO 2023</td><td>37,7%</td><td>16,3%</td><td class="warn bld">JxC 43,5%</td></tr>
+            <tr><td>Gral. 2023</td><td class="warn">31,3%</td><td class="bad">52,8%</td><td class="bad bld">LLA ⚠</td></tr>
+            <tr><td>Leg.Prov. Sept·25</td><td class="ok">40,2%</td><td>31,2%</td><td class="ok bld">FP ✓</td></tr>
+            <tr><td>Leg.Nac. Oct·25</td><td class="warn">31,3%</td><td class="bad">52,8%</td><td class="bad bld">LLA ⚠</td></tr>
+          </table>
+          <div class="al al-a">
+            <strong>⚠ Lectura estratégica</strong>
+            Suelo LLA cuando va unida: 52,8%. Recuperable solo con oposición dividida + propuesta concreta.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch" style="background:#FEF3C7;color:#78350F;">⚙️ Estructura Productiva</div>
+        <div class="cb">
+          <table class="t">
+            <tr><th>Sector</th><th>Peso</th><th>Nota</th></tr>
+            <tr><td>Comercio y Servicios</td><td class="inf">~35%</td><td>Dep. turismo</td></tr>
+            <tr><td>Turismo · Laguna</td><td class="inf">~30%</td><td>Motor visible</td></tr>
+            <tr><td>Agropecuario · Tambos</td><td>~25%</td><td>Rec. tambero LLA</td></tr>
+            <tr><td>Construcción / Otros</td><td>~10%</td><td>—</td></tr>
+          </table>
+          <div class="al al-b">
+            <strong>🎯 Palancas provinciales</strong>
+            1) Plan Integral Laguna · 2) Mejora Ruta 205 · 3) Crédito tambero Banco Provincia · 4) Caminos rurales
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch" style="background:#F0FDF4;color:#14532D;">🤖 Tambo Don Juan · Dato de color</div>
+        <div class="cb">
+          <div class="ag-row">
+            <div class="ag-ico">🤖</div>
+            <div class="ag-txt"><strong>Primer tambo robotizado de la región · nov. 2023</strong><p>Establecimiento Don Juan · Arévalo · familia Tomatis · 4 robots Lely Astronaut · 260-270 vacas · 6.600 litros/día · 24hs · Pablo García (veterinario, 33 años)</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">👴</div>
+            <div class="ag-txt"><strong>80 años de historia familiar</strong><p>El abuelo Don Juan fundó el tambo con ordeñe a mano. La familia apostó al interior profundo en lugar de migrar. Tres generaciones en el mismo campo, con tecnología de primera línea.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">📸</div>
+            <div class="ag-txt"><strong>Imagen de alto impacto mediático</strong><p>La foto de los robots en el tambo del abuelo es el símbolo perfecto para un discurso de modernización del interior. Coordinar visita con Pablo García antes de la agenda.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch" style="background:#EFF6FF;color:#1E40AF;">🌊 Laguna de Lobos</div>
+        <div class="cb">
+          <table class="t">
+            <tr><th>Dato</th><th>Valor</th></tr>
+            <tr><td>Superficie</td><td class="bld">3.000 ha</td></tr>
+            <tr><td>Distancia CABA</td><td>~110 km · Ruta 205</td></tr>
+            <tr><td>Turistas/fin semana</td><td class="ok">&gt;15.000 en temporada</td></tr>
+            <tr><td>Actividades</td><td>Pesca · Náutica · Paracaidismo · Gastronomía</td></tr>
+            <tr><td>Dependencia prov.</td><td class="warn">Manejo hídrico · Dragado · Ruta 205</td></tr>
+            <tr><td>Anuncio clave</td><td class="ok">Plan Integral de la Laguna</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch" style="background:#1F4E79;color:white;">🗺️ Agenda Recomendada</div>
+        <div class="cb">
+          <div class="ag-row">
+            <div class="ag-ico">🌊</div>
+            <div class="ag-txt"><strong>Laguna de Lobos · Anuncio Plan Integral</strong><p>Sede del acto central. El anuncio del Plan ocurre aquí, con operadores turísticos presentes.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">🤖</div>
+            <div class="ag-txt"><strong>Tambo Don Juan · Arévalo</strong><p>Visita al primer tambo robotizado de la región. Pablo García como anfitrión. Alta cobertura mediática.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">🚜</div>
+            <div class="ag-txt"><strong>Reunión con productores tamberos</strong><p>Anuncio del programa de crédito Banco Provincia. Referente de la Sociedad Rural como validador.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">🏛️</div>
+            <div class="ag-txt"><strong>Etcheverry · Notificación protocolar</strong><p>Sin coordinación de contenido. Invitación al acto. No confrontación.</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="anx-foot">🔒 USO RESERVADO · ANEXO I · Lobos · PBA Analytics 2026</div>
+</div>
+
+<!-- ═══════ ANEXO II ═══════ -->
+<div class="anexo-wrap">
+  <div class="ah-ambar">
+    <div>
+      <div class="ah-meta">Lobos · 2026</div>
+      <div class="ah-title">ANEXO II — INTENDENTE Y DATOS DE COLOR</div>
+    </div>
+    <div class="ah-right">Gestión Etcheverry · 3er mandato<br>Historia y activos narrativos</div>
+  </div>
+  <div class="ag-body">
+    <div class="ag2">
+
+      <div class="card">
+        <div class="ch" style="background:#FEE2E2;color:#7F1D1D;">🏛️ Etcheverry · Intendente JxC · 3er Mandato · RIVAL</div>
+        <div class="cb">
+          <div class="st">Perfil político</div>
+          <table class="t perf" style="margin-bottom:14px;">
+            <tr><td class="bld">Nombre</td><td>Jorge Etcheverry</td></tr>
+            <tr><td class="bld">Fuerza</td><td>Juntos por el Cambio</td></tr>
+            <tr><td class="bld">Mandatos</td><td>3er mandato consecutivo</td></tr>
+            <tr><td class="bld">Perfil</td><td>Bajo perfil ideológico · pragmático · municipalista</td></tr>
+            <tr><td class="bld">Sept. 2025</td><td class="warn">Corrió con lista UVC (~15%) separada de LLA. Oposición sumada ~60%.</td></tr>
+            <tr><td class="bld">Estrategia</td><td>Notificación protocolar. No confrontación. Invitar al acto.</td></tr>
+          </table>
+          <div class="st">Lectura del terreno</div>
+          <div class="ag-row">
+            <div class="ag-ico">⚠️</div>
+            <div class="ag-txt"><strong>No confrontar — aparecer por encima</strong><p>Etcheverry lleva tres mandatos con gestión consolidada. La estrategia correcta es aparecer en el municipio con una agenda provincial que nadie puede rechazar, sin que sea un acto contra el intendente.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">🎯</div>
+            <div class="ag-txt"><strong>El electorado no es de él — tampoco nuestro</strong><p>El 52,8% que ganó LLA en 2023 no es el electorado de Etcheverry. Es un electorado volátil que vota resultado. Eso es lo que lo hace recuperable.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch" style="background:#FEF3C7;color:#78350F;">📜 Datos de Color · Para la reunión y el discurso</div>
+        <div class="cb">
+          <div class="ag-row">
+            <div class="ag-ico">🤖</div>
+            <div class="ag-txt"><strong>Tambo Don Juan — Del abuelo al robot en 80 años</strong><p>Pablo García (33 años) · familia Tomatis · Arévalo · 4 robots Lely Astronaut · 260-270 vacas · 6.600 litros diarios · primer tambo robotizado de la región · noviembre 2023. La historia de tres generaciones en el mismo campo con tecnología de punta es el dato de color más potente de cualquier municipio del corredor sur.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">🌊</div>
+            <div class="ag-txt"><strong>La Laguna de Lobos — 3.000 hectáreas de patrimonio provincial</strong><p>El espejo de agua más grande del corredor sur bonaerense. 15.000+ turistas por fin de semana largo. Pesca deportiva, náutica, paracaidismo, cabañas, gastronomía. El activo que depende de la Provincia para mantener su calidad: manejo hídrico, dragado, control de efluentes. Sede natural del acto central.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">🚗</div>
+            <div class="ag-txt"><strong>Ruta 205 — La arteria turística que decide la temporada</strong><p>En mal estado, cada fin de semana se pierden turistas que eligieron otro destino. En buen estado, la Laguna de Lobos puede recibir el doble de visitantes y generar el doble de empleo gastronómico. La ruta es la diferencia entre un recurso que crece y uno que se estanca.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">🎯</div>
+            <div class="ag-txt"><strong>El electorado de Lobos — Votante de resultado, no de lealtad</strong><p>2021: votaron PJ. PASO 2023: probaron JxC. General 2023: se fueron con LLA. No hay identidad fija — hay insatisfacción que busca respuesta. Eso hace el distrito difícil pero también recuperable: con propuesta concreta y presencia, el voto puede moverse.</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="anx-foot">🔒 USO RESERVADO · ANEXO II · Lobos · PBA Analytics 2026</div>
+</div>
+
+</body>
+</html>

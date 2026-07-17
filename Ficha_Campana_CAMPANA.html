@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Campana — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#1a3a5c;--accent:#2563eb;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#0c2340 0%,#1a3a5c 55%,#1d4ed8 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2.2rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-op{display:inline-block;background:rgba(220,38,38,.25);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.4);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#93c5fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a3a5c,#1e4575);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a3a5c;border-color:#1a3a5c}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#93c5fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:var(--accent);display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a3a5c,#2563eb);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-op-pol{background:#fee2e2;color:#b91c1c}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#1e40af;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:var(--accent)}
+.tbl-ok{color:#15803d;font-weight:700}
+.tbl-warn{color:#b45309;font-weight:700}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-fit{color:#dc2626}.v-grey{color:#374151}
+.split-box{background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.split-title{font-size:.72rem;font-weight:800;color:#1e40af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.split-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid #dbeafe}
+.split-row:last-child{border-bottom:none}
+.split-lbl{font-size:.77rem;color:#374151}
+.split-val{font-size:.82rem;font-weight:800;color:#1d4ed8}
+.split-neg{color:#b91c1c}
+.lla-alert{background:#fef2f2;border:1.5px solid #fecaca;border-radius:8px;padding:12px 14px}
+.lla-ttl{font-size:.72rem;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.lla-body{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a3a5c,#1d4ed8);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#0c2340,#1a3a5c);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#93c5fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🛤️ CLUSTER 3 · Corredor Industrial Norte &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">CAMPANA</div>
+  <div class="h-sub">Partido de Campana · Buenos Aires · Cabecera: Campana / Lima</div>
+  <div><span class="badge-op">⚠️ INTENDENTE OPOSITOR — Juntos por el Cambio</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">88,712</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">~110,000</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">986.3 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">41.6%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">45.8%</span><span class="h-stat-l">LLA 2025 Nac</span></div>
+    <div class="h-stat"><span class="h-stat-v">−5.3 pts</span><span class="h-stat-l">Split Prov&gt;Nac PJ</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏭 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Tenaris · Honda · Axion · La Hidrovia</h4>
+        <p>Campana es uno de los nodos industriales más densos de Argentina. <strong>TenarisSiderca</strong> fabrica aquí los tubos sin costura que abastecen la industria petrolera de toda Latinoamérica — es la mayor planta de su tipo en el continente. <strong>Axion Energy</strong> opera una de las refinerías petroquímicas más importantes del país sobre el Paraná. <strong>Honda Argentina</strong> produce aquí sus vehículos para el mercado local y de exportación. A todo esto se suman decenas de puertos privados de aguas profundas sobre la Hidrovia que convierten a Campana en una de las plazas exportadoras más activas de PBA.</p>
+      </div>
+      <div class="blk">
+        <h4>El Primer Automóvil Argentino · Corredor del Paraná</h4>
+        <p>A principios del siglo XX, en Campana se fabricó el primer automóvil argentino — un hito histórico que la ciudad reivindica como parte de su identidad industrial. Hoy ese espíritu "pionero" convive con una geografía privilegiada: el río Paraná de las Palmas como frontera natural, la Ruta 9 como eje de conectividad hacia el norte, y una costanera recuperada que es el pulmón recreativo y cultural del partido.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">Nº1</span>
+        <span class="l">TenarisSiderca — mayor planta de tubos sin costura de Latinoamérica</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">3</span>
+        <span class="l">Grandes corporaciones industriales (Tenaris · Honda · Axion)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Sebastián Abella</h3>
+        <div class="meta">Juntos por el Cambio &nbsp;·&nbsp; <span class="badge-pol badge-op-pol">OPOSITOR</span></div>
+        <div class="desc">Intendente. En 2023 JxC arrasó en Campana con <strong>57.1%</strong> — uno de los resultados más altos de JxC en el Corredor Norte. El PJ obtuvo apenas 26.6%, su piso más bajo en años. Con la descomposición de JxC en 2025, ese electorado migró principalmente a LLA. La relación con el gobierno provincial es protocolar. Los activos más poderosos del partido (Tenaris, Honda, Axion) son de acceso PRIVADO y no dependen del municipio.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Frente Costero · Aliviadores Pluviales</div>
+        <div class="gest-txt">Recuperación del frente costero sobre el Paraná de las Palmas. Plan de aliviadores pluviales subterráneos para canalizar agua hacia el río y eliminar inundaciones en el casco urbano.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">COM · Anillo Digital</div>
+        <div class="gest-txt">Modernización del Centro de Operaciones Municipal con reconocimiento facial en cámaras. Despliegue de fibra óptica municipal ("Campana Conectada") en escuelas y centros de salud.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Centro Municipal de Oficios</div>
+        <div class="gest-txt">Capacitación técnica orientada específicamente a la demanda de Tenaris y otras industrias locales. Intermediación laboral directa con las plantas industriales.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Salud en tu Barrio · Hospital San José</div>
+        <div class="gest-txt">Red de atención espontánea en sociedades de fomento con tráiler móvil. Fuerte inversión en el Hospital San José para absorber la demanda de la Ruta 9.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>% aprox.</th><th>Localización</th><th>Perfil de Voto</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Trabajadores industriales</strong> (Tenaris, Honda, Axion, portuarios)</td><td class="tbl-num">35%</td><td>Zona industrial norte, acceso Ruta 9</td><td>PJ histórico; LLA con fuerte avance en sub-35 desde 2025</td></tr>
+        <tr><td><strong>Clase media urbana</strong> (comercio, servicios, administración)</td><td class="tbl-num">25%</td><td>Centro Campana</td><td>JxC histórico; migró casi por completo a LLA en 2025</td></tr>
+        <tr><td><strong>Técnicos y profesionales</strong> (ingeniería industrial, petroquímica)</td><td class="tbl-num">15%</td><td>Campana norte, barrios residenciales</td><td>Mixto; valoran empleo industrial y estabilidad económica</td></tr>
+        <tr><td><strong>Clase media trabajadora</strong> (PyME, oficios, construcción)</td><td class="tbl-num">15%</td><td>Barrios pericentrales</td><td>PJ / LLA disputada; sensible a empleo y costo de vida</td></tr>
+        <tr><td><strong>Sectores populares</strong> (barrios, asentamientos)</td><td class="tbl-num">10%</td><td>Periferia sur y oeste</td><td>PJ sólido</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Valor</th><th>Ref. PBA</th><th>Observación</th></tr></thead>
+      <tbody>
+        <tr><td><strong>NBI</strong></td><td class="tbl-ok">~8%</td><td>~12%</td><td>Muy bajo; tejido industrial de altos salarios eleva el nivel general</td></tr>
+        <tr><td><strong>Agua corriente</strong></td><td class="tbl-ok">~89%</td><td>~84%</td><td>Cobertura alta; pendiente en asentamientos periféricos</td></tr>
+        <tr><td><strong>Red cloacal</strong></td><td class="tbl-ok">~76%</td><td>~68%</td><td>Por encima de la media; obras pluviales recientes mejoran el índice</td></tr>
+        <tr><td><strong>Gas natural</strong></td><td class="tbl-warn">~72%</td><td>~65%</td><td>Zona industrial cubierta; periferia con garrafa</td></tr>
+        <tr><td><strong>Pavimento</strong></td><td class="tbl-warn">~68%</td><td>~60%</td><td>Centro y corredor industrial bien pavimentados; barrios populares con déficit</td></tr>
+        <tr><td><strong>Conectividad</strong></td><td class="tbl-ok">~74%</td><td>~66%</td><td>Alta: impulsada por "Campana Conectada" (fibra municipal) y perfil técnico</td></tr>
+        <tr><td><strong>Efectores de salud</strong></td><td>Hospital San José + 8 centros</td><td>—</td><td>Hospital San José como cabecera regional del norte bonaerense</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">2023 — General (Intendente)</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val v-pj">26.6% <small style="font-weight:400;color:#64748b">(17,033)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Juntos x el Cambio</span><span class="arc-val v-jxc">57.1% <small style="font-weight:400;color:#64748b">(36,614)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">13.9% <small style="font-weight:400;color:#64748b">(8,942)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val v-fit">2.4% <small style="font-weight:400;color:#64748b">(1,561)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">89,630</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Provincial</div>
+        <div class="arc-row"><span class="arc-lbl">PJ</span><span class="arc-val v-pj">41.6% <small style="font-weight:400;color:#64748b">(22,875)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">42.7% <small style="font-weight:400;color:#64748b">(23,487)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val v-fit">3.2% <small style="font-weight:400;color:#64748b">(1,749)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">92,131</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">PJ</span><span class="arc-val v-pj">36.3% <small style="font-weight:400;color:#64748b">(21,043)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">45.8% <small style="font-weight:400;color:#64748b">(26,566)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val v-fit">4.9% <small style="font-weight:400;color:#64748b">(2,852)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">88,712</span></div>
+      </div>
+    </div>
+    <div class="split-box">
+      <div class="split-title">📐 Análisis Ticket Split 2025</div>
+      <div class="split-row"><span class="split-lbl">PJ Elección Provincial</span><span class="split-val">41.6%</span></div>
+      <div class="split-row"><span class="split-lbl">PJ Elección Nacional</span><span class="split-val">36.3%</span></div>
+      <div class="split-row"><span class="split-lbl">Diferencia (Nac − Prov)</span><span class="split-val split-neg">−5.3 pts</span></div>
+      <div class="split-row"><span class="split-lbl" style="max-width:55%">Lectura estratégica</span><span class="split-lbl" style="max-width:45%;text-align:right;font-size:.74rem">Split significativo negativo: hay electores que votan PJ provincial pero se van a LLA en la boleta nacional. El candidato provincial logra tracción propia que el nacional no replica en Campana.</span></div>
+    </div>
+    <div class="lla-alert">
+      <div class="lla-ttl">⚠️ Trayectoria LLA — De Tercera Fuerza a Primera</div>
+      <div class="lla-body">En 2023, LLA obtuvo <strong>13.9%</strong> como tercera fuerza detrás de un JxC dominante (57.1%). En 2025, LLA alcanzó <strong>42.7%</strong> (prov) y <strong>45.8%</strong> (nac), convirtiéndose en la primera fuerza del distrito. El voto JxC migró masivamente a LLA. El PJ saltó de 26.6% a 41.6% en prov (gracias al colapso JxC) pero no recuperó el terreno en la boleta nacional. Campana es hoy territorio LLA con PJ como segunda fuerza sólida.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <p style="color:#64748b;font-size:.78rem;margin-bottom:14px;">Personas, lugares y tradiciones que dan textura humana a la visita.</p>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🔩</div>
+        <div class="cl-tipo">Bodegón · Identidad Obrera</div>
+        <div class="cl-nm">El boliche de la metalúrgica</div>
+        <div class="cl-desc">En el turno de salida de TenarisSiderca, los operarios llenan los bares del acceso norte. Son lugares sin decoración, con televisor y una fila en la barra. Ahí se habla de la planta, del sindicato, del salario. El "boliche de la metalúrgica" es el lugar donde se forma la opinión política del trabajador industrial de Campana.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚗</div>
+        <div class="cl-tipo">Historia · Orgullo local</div>
+        <div class="cl-nm">El primer auto argentino</div>
+        <div class="cl-desc">Campana reivindica haber fabricado el primer automóvil construido en Argentina a principios del siglo XX. El orgullo por ese hito es parte de la identidad colectiva: la ciudad que "empezó la industria" antes que nadie. Los vecinos lo mencionan como si fuera algo que les pertenece personalmente.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌊</div>
+        <div class="cl-tipo">Costanera · Paraná de las Palmas</div>
+        <div class="cl-nm">La costanera recuperada</div>
+        <div class="cl-desc">El frente costero recuperado sobre el Paraná de las Palmas es el orgullo municipal más reciente. Los fines de semana, familias, pescadores y remeros conviven en el mismo espacio. El río que antes era exclusivamente industrial ahora tiene playitas, parrillas y feria de artesanos. El "Campana de hoy" se muestra ahí.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">⚽</div>
+        <div class="cl-tipo">Club histórico</div>
+        <div class="cl-nm">Villa Dálmine FC</div>
+        <div class="cl-desc">Villa Dálmine es el club de fútbol local con más historia. Compitió en Primera División y representa la identidad popular y trabajadora de Campana. La hinchada es el núcleo más pasional de la sociabilidad barrial. Una visita al estadio o un cruce con el presidente del club tiene más llegada en el barrio que cualquier acto formal.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">👨‍🔬</div>
+        <div class="cl-tipo">Personaje colectivo</div>
+        <div class="cl-nm">El técnico de Tenaris</div>
+        <div class="cl-desc">El técnico metalúrgico de Tenaris es la versión campanense del operario fordista: sindicalizado en UOM, segundo o tercer generación en la planta, con salario muy por encima del promedio provincial. Es el "voto duro industrial" que históricamente fue PJ y en 2025 se movió hacia LLA. Recuperarlo es la clave del distrito.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎪</div>
+        <div class="cl-tipo">Evento · Identidad</div>
+        <div class="cl-nm">Expo Industrial Campana</div>
+        <div class="cl-desc">La feria industrial anual de Campana reúne a proveedores, técnicos y directivos de las plantas. Es el evento donde la ciudad se muestra como lo que es: un polo industrial serio, tecnológico y exportador. Un escenario de visita con alto impacto entre el segmento más calificado del padrón.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 1</div>
+          <div class="pal-ttl">TenarisSiderca · Tubos para el Mundo</div>
+        </div>
+        <div class="pal-body">
+          <p>La mayor planta de tubos sin costura de Latinoamérica. Abastece a la industria petrolera desde Vaca Muerta hasta el Golfo de México. Visita con directivos y operarios. Eje: <strong>industria argentina que exporta, empleo calificado, soberanía industrial</strong>. El argumento que recupera al técnico metalúrgico que migró a LLA.</p>
+          <span class="pal-tag acc-priv">🏭 PRIVADO — Tenaris S.A.</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 2</div>
+          <div class="pal-ttl">Honda Argentina · Producción Nacional</div>
+        </div>
+        <div class="pal-body">
+          <p>La planta Honda de Campana fabrica autos para el mercado local y de exportación. Símbolo de la inversión extranjera que se radica porque las condiciones industriales argentinas la sostienen. Eje: <strong>producción nacional + empleo en planta + industria automotriz</strong>. Ingreso por gestión con Honda AR directamente.</p>
+          <span class="pal-tag acc-priv">🏭 PRIVADO — Honda Argentina</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 3</div>
+          <div class="pal-ttl">Puerto Campana · La Hidrovia Exportadora</div>
+        </div>
+        <div class="pal-body">
+          <p>Los puertos privados sobre el Paraná de las Palmas mueven miles de toneladas de granos, productos petroquímicos y tubos de acero hacia el mundo. Recorrida portuaria con operadores y estibadores. Eje: <strong>soberanía comercial, exportaciones, economía real del territorio</strong>. Coordinar con administración del puerto.</p>
+          <span class="pal-tag acc-priv">🏭 PRIVADO — Operadores portuarios</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">TenarisSiderca <span style="background:#fef3c7;color:#92400e;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PRIVADO</span></div>
+          <div class="vis-desc">La planta más emblemática del Corredor Norte. Recorrida industrial con directivos y técnicos. Audiencia: operarios UOM, prensa industrial. Mayor potencia comunicacional del partido.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Honda Argentina <span style="background:#fef3c7;color:#92400e;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PRIVADO</span></div>
+          <div class="vis-desc">Planta automotriz con producción para mercado local y regional. Discurso: inversión productiva, empleo industrial, exportación. Audiencia: técnicos, ingenieros, operarios de línea.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Puerto Campana · Hidrovia <span style="background:#fef3c7;color:#92400e;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PRIVADO — Operadores</span></div>
+          <div class="vis-desc">Recorrida portuaria con exportadores, estibadores y operadores de la Hidrovia. Eje soberanía comercial y exportaciones. Escenario visual potente sobre el río.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Costanera del Paraná de las Palmas <span style="background:#f3e8ff;color:#6b21a8;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PROTOCOLAR</span></div>
+          <div class="vis-desc">Frente costero recuperado. Familias, pescadores, feria de artesanos. El espacio público más querido del partido. Notificar al municipio. Alta visibilidad popular.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Villa Dálmine FC — Estadio <span style="background:#fef3c7;color:#92400e;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PRIVADO — Club</span></div>
+          <div class="vis-desc">El club histórico de Campana. Coordinación con dirigencia. Audiencia: hinchada popular, trabajadores del barrio. Escenario de cercanía y identidad barrial.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">6</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Centro Municipal de Oficios (CGC local) <span style="background:#dbeafe;color:#1e40af;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PROTOCOLAR</span></div>
+          <div class="vis-desc">El centro de capacitación técnica municipal que forma operarios para Tenaris y otras plantas. Audiencia: jóvenes en formación, docentes técnicos. Eje: educación + empleo industrial.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🎯 Síntesis Ejecutiva</h3>
+  <p>Campana es el municipio industrialmente más denso del Corredor Norte: TenarisSiderca (la mayor planta de tubos sin costura de Latinoamérica), Honda Argentina, Axion Energy y la Hidrovia conviven en 986 km². Es el único partido de PBA donde tres corporaciones multinacionales de primer nivel coexisten con un puerto de aguas profundas activo.</p>
+  <p>El arco electoral cuenta una historia peculiar: en 2023, JxC dominó con 57.1% — el PJ llegó apenas al 26.6%. En 2025 ese JxC colapsó y LLA tomó 42-46%; el PJ rebotó a 41.6% provincial aprovechando el colapso JxC, pero no pudo sostener ese nivel en la elección nacional (36.3%). El split ticket de −5.3 pts indica que el candidato provincial tiene tracción propia en Campana que el nacional no replica.</p>
+  <p>El segmento clave son los <strong>trabajadores industriales</strong> (UOM/TenarisSiderca, Honda): históricamente PJ, migraron a LLA en 2025. El argumento de recuperación pasa por empleo industrial como política de Estado, exportaciones que se sostienen porque el Estado crea las condiciones, y producción nacional como respuesta concreta al ajuste. Las plantas son los escenarios ideales para ese diálogo — y no dependen del intendente JxC para visitarse.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AYACUCHO — Narrativa Política · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; line-height: 1.6; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.hdr { background: linear-gradient(135deg, #0C2040 0%, #1A4A7A 100%); color: white; padding: 22px 28px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.hdr h1 { font-size: 26px; font-weight: 900; letter-spacing: 1.5px; margin-bottom: 5px; }
+.hdr .meta { font-size: 11px; opacity: 0.75; line-height: 1.7; }
+.hdr .kpis-top { display: flex; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
+.hdr-kpi { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 7px; padding: 8px 12px; }
+.hdr-kpi .n { font-size: 18px; font-weight: 900; color: #60A5FA; line-height: 1; }
+.hdr-kpi .l { font-size: 9px; opacity: 0.68; margin-top: 2px; }
+.body { padding: 24px 28px; }
+.sec { margin-bottom: 30px; }
+.sec h2 { font-size: 13.5px; font-weight: 800; color: #1A4A7A; border-left: 4px solid #60A5FA; padding-left: 10px; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.8px; }
+.sec p { font-size: 11.5px; line-height: 1.8; color: #2d2d3a; margin-bottom: 11px; }
+.sec p strong { color: #1A4A7A; }
+.blk { border-radius: 7px; padding: 13px 15px; margin-bottom: 13px; }
+.blk-k { background: #0C2340; border-left: 4px solid #60A5FA; color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-k h4 { color: #60A5FA; font-size: 11px; margin-bottom: 6px; font-weight: 800; }
+.blk-k p { font-size: 11px; line-height: 1.75; color: rgba(255,255,255,0.92) !important; }
+.blk-v { background: #EFF6FF; border-left: 4px solid #60A5FA; color: #0C2040; }
+.blk-v h4 { color: #1A4A7A; font-size: 11px; margin-bottom: 6px; font-weight: 800; }
+.blk-v p { font-size: 11px; line-height: 1.75; color: #2d2d3a; }
+.blk-w { background: #FEF3C7; border-left: 4px solid #D97706; color: #78350F; }
+.blk-w h4 { color: #78350F; font-size: 11px; margin-bottom: 6px; font-weight: 800; }
+.blk-w p { font-size: 11px; line-height: 1.75; color: #78350F; }
+.blk-g { background: #F0FDF4; border-left: 4px solid #16A34A; color: #14532D; }
+.blk-g h4 { color: #14532D; font-size: 11px; margin-bottom: 6px; font-weight: 800; }
+.blk-g p { font-size: 11px; line-height: 1.75; color: #14532D; }
+.blk-r { background: #FEF2F2; border-left: 4px solid #EF4444; color: #7F1D1D; }
+.blk-r h4 { color: #7F1D1D; font-size: 11px; margin-bottom: 6px; font-weight: 800; }
+.blk-r p { font-size: 11px; line-height: 1.75; color: #7F1D1D; }
+.t { width: 100%; border-collapse: collapse; font-size: 11px; margin-bottom: 13px; }
+.t th { background: #f5f6f8; color: #555; padding: 5px 7px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 5px 7px; border-bottom: 1px solid #f3f4f6; vertical-align: top; }
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child { color: #555; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+.div-h { height: 1px; background: #e5e7eb; margin: 22px 0; }
+.vrow { display: flex; gap: 12px; margin-bottom: 10px; align-items: flex-start; }
+.vscore { font-size: 15px; font-weight: 900; color: #1A4A7A; min-width: 34px; padding-top: 2px; }
+.vbody { flex: 1; }
+.vbody strong { font-size: 11px; font-weight: 700; color: #0C2040; display: block; margin-bottom: 3px; }
+.vbody p { font-size: 10.5px; color: #555; line-height: 1.65; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-rival { background: rgba(239,68,68,0.2); color: #DC2626; border: 1px solid rgba(239,68,68,0.3); }
+.footer { text-align: center; padding: 14px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; }
+@media print {
+  @page { size: A4 portrait; margin: 7mm 8mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; font-size: 7.5pt !important; }
+  .body { padding: 14px 18px !important; }
+  .sec p, .blk-v p, .blk-w p, .blk-g p, .blk-r p { font-size: 7pt !important; }
+  .blk-k p { font-size: 7pt !important; color: rgba(255,255,255,0.92) !important; }
+  .sec h2 { font-size: 8.5pt !important; }
+  .hdr h1 { font-size: 15pt !important; }
+  .sec { margin-bottom: 16px !important; break-inside: avoid; page-break-inside: avoid; }
+  .blk { break-inside: avoid; page-break-inside: avoid; }
+  .div-h { margin: 12px 0 !important; }
+  .t { font-size: 7pt !important; }
+  .t td, .t th { padding: 3px 5px !important; }
+  .hdr { break-inside: avoid; page-break-inside: avoid; }
+  .vrow { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>🐄 AYACUCHO — NARRATIVA POLÍTICA 2026</h1>
+  <div class="meta">
+    5ª Sección Electoral · Cluster 4 · Interior Agropecuario Pampeano · 6.756,1 km² · 21.977 hab. (CENSO 2022) · Padrón: 18.768<br>
+    Intendente: Emilio Cordonnier <span class="badge badge-rival">JxC · Opositor</span> · Capital Nacional del Ternero · Sede del FRICDe (50+ municipios)
+  </div>
+  <div class="kpis-top">
+    <div class="hdr-kpi"><div class="n">32,2%</div><div class="l">PJ Intend. 2023 · 2° · sin LLA</div></div>
+    <div class="hdr-kpi"><div class="n">39,9% ✅</div><div class="l">PJ Conc. PBA 2025 · PRIMERO</div></div>
+    <div class="hdr-kpi"><div class="n">25,1%</div><div class="l">LLA Prov. 2025 · 2°</div></div>
+    <div class="hdr-kpi"><div class="n">308 vts</div><div class="l">LLA vs PJ Nac. 2025 · casi empate</div></div>
+    <div class="hdr-kpi"><div class="n">50.000</div><div class="l">Visitantes Fiesta del Ternero</div></div>
+  </div>
+</div>
+
+<div class="body">
+
+<!-- I. EL MUNICIPIO -->
+<div class="sec">
+  <h2>I. El Municipio · La Capital del Ternero y el Foro del Interior</h2>
+  <p>Ayacucho es un municipio ganadero de la 5ª Sección con una doble identidad que lo hace único en el Cluster 4: es la <strong>Capital Nacional del Ternero</strong> — el epicentro de la ganadería bovina extensiva de cría del sur bonaerense — y desde 2026 es sede del <strong>FRICDe</strong>, el Foro Regional de Municipios para el Desarrollo y el Crecimiento que reúne a más de 50 intendentes del interior bonaerense de todos los partidos políticos. La economía gira alrededor de la ganadería de cría, los remates de terneros y la Sociedad Rural. La identidad gira alrededor de la Fiesta Nacional del Ternero y Día de la Yerra.</p>
+  <p>Con 21.977 habitantes y un padrón de 18.768 electores, Ayacucho es un municipio mediano del interior ganadero. Pero su peso simbólico es desproporcionado a su tamaño: la Fiesta del Ternero convoca en marzo más de <strong>50.000 visitantes</strong> — una cifra que multiplica por 2,5 la población del municipio y que genera un movimiento económico que transforma la ciudad durante semanas enteras. Es el evento folclórico más importante de la región y la oportunidad de presencia pública con mayor alcance posible en cualquier municipio del interior pampeano.</p>
+  <div class="blk blk-v">
+    <h4>📍 Ayacucho en el corredor ganadero de la 5ª Sección</h4>
+    <p>La 5ª Sección Electoral tiene un perfil ganadero extensivo que atraviesa la depresión del Salado — zona de inundaciones periódicas, campos de cría bovina, remates de hacienda y economía estacional. Ayacucho está en el corazón de ese corredor, entre Dolores (este), General Madariaga (sur) y Maipú (sur-oeste). Lo que pasa en Ayacucho — política y económicamente — resuena en todos los municipios del corredor ganadero de la 5ª Sección.</p>
+  </div>
+</div>
+
+<div class="div-h"></div>
+
+<!-- II. CORDONNIER Y EL FRICDe -->
+<div class="sec">
+  <h2>II. Emilio Cordonnier · JxC, el FRICDe y la Gestión Local</h2>
+  <p>Emilio Cordonnier ganó la intendencia de Ayacucho en 2023 con el <strong>67,8%</strong> de los votos — en un bipartidismo puro donde solo competían JxC y PJ, sin lista propia de LLA. La diferencia de 35 puntos sobre el PJ (32,2%, 3.554 votos) fue contundente. Cordonnier es un intendente con arraigo local y gestión visible: caminos rurales (convenios CFI para mejorar la transitabilidad de las rutas productivas), puesta en valor de espacios públicos (el Centro Recreativo Comunal CIA y plazas), el programa "Fomento al Arraigo" (créditos blandos para viviendas de familias jóvenes) y el apoyo a los emprendedores de la Fiesta del Ternero (eximición de tasas y puestos subsidiados para artesanos y gastronómicos).</p>
+  <p>Pero la apuesta más audaz de Cordonnier en 2026 fue liderar el <strong>FRICDe</strong> — el Foro Regional de Municipios para el Desarrollo y el Crecimiento — lanzado en febrero de 2026 y con su primera reunión en Ayacucho en marzo. El foro reúne a más de 50 intendentes del interior bonaerense de todos los partidos (UCR, PJ, PRO, LLA) para trabajar sin banderías los problemas comunes del interior: caminos, producción agropecuaria, arraigo, servicios rurales. Es un movimiento interpartidario que posiciona a Cordonnier como un actor regional de peso — y que la Provincia puede capitalizar para llegar a los intendentes PJ participantes.</p>
+  <div class="blk blk-w">
+    <h4>⚠️ La gestión Cordonnier: obra concreta, intendente sólido</h4>
+    <p>Con 67,8% en bipartidismo 2023 y obra concreta visible (caminos rurales, espacios públicos, Fiesta del Ternero), Cordonnier tiene una base de apoyo sólida en la comunidad. En ejecutiva 2027 la pelea será difícil para el PJ — el trabajo del ciclo 2025-2026 es consolidar el 39,9% de concejales PBA como piso y construir el camino. La estrategia de co-gestión provincial (caminos rurales, FRICDe, Fiesta del Ternero) es la correcta: la Provincia trabaja con el municipio en la obra concreta sin darle rédito político exclusivo a Cordonnier.</p>
+  </div>
+</div>
+
+<div class="div-h"></div>
+
+<!-- III. EL DATO CENTRAL: BIPARTIDISMO → PJ PRIMERO -->
+<div class="sec">
+  <h2>III. El PJ · Del Bipartidismo 2023 al Primer Lugar en 2025</h2>
+  <p>La historia electoral del PJ en Ayacucho en este ciclo es singularmente interesante. En 2023, con bipartidismo puro (solo JxC y PJ), el PJ obtuvo el <strong>32,2%</strong> de los votos — 3.554 votos, una distancia de 35 puntos frente a los 7.488 de Cordonnier. Un resultado que en cualquier otro municipio sería señal de debilidad estructural.</p>
+  <p>Pero en las concejales provinciales 2025, con LLA entrando como tercer partido, el PJ no retrocedió — avanzó. Obtuvo el <strong>39,9%</strong> (4.042 votos) y quedó <strong>primero</strong>. LLA ingresó con el 25,1% (2.549 votos). Eso significa que LLA en Ayacucho tomó votos fundamentalmente de JxC — el votante peronista de Ayacucho no migró al espacio de Milei en 2025. Y en el Diputado Nacional 2025, LLA (42,1%, 4.593 votos) y PJ (39,2%, 4.285 votos) quedaron separados por apenas <strong>308 votos</strong> sobre 10.919 emitidos. El municipio más disputado del Cluster 4 en legislativas nacionales.</p>
+  <div class="blk blk-g">
+    <h4>✅ La lectura correcta del +7,7 pts del PJ entre 2023 y 2025</h4>
+    <p>El PJ pasó del 32,2% en bipartidismo 2023 al 39,9% en tripartidismo 2025 — un crecimiento de 7,7 puntos en un contexto donde además entró un nuevo partido que tomó parte del electorado. Eso implica que el crecimiento real del PJ fue aún mayor en términos absolutos: el PJ no solo creció como porcentaje sino que captó votos que antes iban a JxC o a la abstención. Es la señal de mayor solidez del PJ en el Cluster 4 en el ciclo 2025.</p>
+  </div>
+  <table class="t">
+    <thead><tr><th>Elección</th><th>PJ</th><th>JxC</th><th>LLA</th><th>FIT</th><th>Observación</th></tr></thead>
+    <tbody>
+      <tr><td>Intendencia 2023</td><td class="bad">32,2% · 3.554 · 2°</td><td class="ok">67,8% · 7.488 ✓</td><td class="inf">Sin lista</td><td class="inf">—</td><td>Bipartidismo puro · 35 pts JxC sobre PJ</td></tr>
+      <tr><td>Conc. PBA 2025</td><td class="ok">39,9% ✅ 1°</td><td class="inf">—</td><td class="warn">25,1%</td><td class="inf">—</td><td>PJ primero · LLA 2° · +7,7 pts PJ</td></tr>
+      <tr><td>Dip. Nac. 2025</td><td class="warn">39,2% · 4.285</td><td class="inf">—</td><td class="warn">42,1% · 4.593</td><td>2,7%</td><td>⚡ 308 votos de diferencia · casi empate</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="div-h"></div>
+
+<!-- IV. LLA EN AYACUCHO -->
+<div class="sec">
+  <h2>IV. LLA · Entra en 2025 y Come Votos de JxC, No del PJ</h2>
+  <p>En 2023, LLA no presentó lista propia en Ayacucho para la intendencia — el municipio fue bipartidista. En 2025, LLA entró como tercer partido con el <strong>25,1%</strong> en concejales provinciales y el <strong>42,1%</strong> en el Diputado Nacional — una diferencia de casi 17 puntos entre los dos niveles electorales del mismo ciclo. La paradoja de LLA en Ayacucho es que en provinciales es el segundo partido (25,1%) pero en nacionales casi ganó (42,1%) — y en ambos casos creció sobre la base de votos que en 2023 habían ido a JxC.</p>
+  <p>El votante de LLA en Ayacucho no es el mismo que el votante de LLA en el conurbano. En Ayacucho, LLA captura al productor rural chico y mediano, al empleado del campo y al sector agropecuario que en 2023 votó Cordonnier (JxC) por propuesta local pero que en el nivel nacional se identifica con el proyecto de Milei. Ese votante — que distingue entre intendente local y diputado nacional — ya está diferenciando también entre nivel provincial y nivel nacional, como muestra el 25,1% provincial vs 42,1% nacional.</p>
+  <div class="blk blk-r">
+    <h4>⚠️ Los 308 votos de diferencia — qué significan para 2027</h4>
+    <p>Que LLA y PJ se separaran por 308 votos en el Diputado Nacional 2025 en Ayacucho (42,1% vs 39,2%) indica que el municipio está genuinamente disputado en el nivel legislativo nacional. Para las legislativas provinciales de 2027, si el PJ puede consolidar su 39,9% de concejales PBA y ampliar algunos puntos, el escenario de ganar la sección legislativa en Ayacucho es real. La agenda rural concreta (ganadería, caminos, Fiesta del Ternero) es el puente para mover ese 2,9% de diferencia hacia el PJ.</p>
+  </div>
+</div>
+
+<div class="div-h"></div>
+
+<!-- V. LAS TRES PALANCAS -->
+<div class="sec">
+  <h2>V. Agenda Provincial · Las Tres Palancas de Ayacucho</h2>
+
+  <div class="blk blk-k">
+    <h4>🎪 PALANCA 1 · Fiesta Nacional del Ternero — La plataforma de 50.000 personas</h4>
+    <p>La Fiesta Nacional del Ternero y Día de la Yerra es el evento folclórico y turístico más importante de la región y la plataforma de mayor alcance posible en cualquier municipio del Cluster 4. Ningún acto de campaña en el interior bonaerense concentra 50.000 personas. La Provincia puede ser co-organizadora y patrocinadora oficial de la Fiesta con el MinTurismo — presencia en el escenario, logo en la cartelería, acto de apertura, difusión nacional del evento. El retorno político de esa presencia es incomparable: toda la comunidad de Ayacucho más los visitantes de la región ven a la Provincia acompañando el evento más querido del partido. Si la agenda del ciclo permite una visita en marzo, la Fiesta del Ternero es el destino obligatorio del año en la 5ª Sección.</p>
+  </div>
+
+  <div class="blk blk-k">
+    <h4>🐄 PALANCA 2 · Cadena Bovina de Cría — Acompañar al ternero desde la yerra hasta el mercado</h4>
+    <p>La economía de Ayacucho gira alrededor del ciclo ganadero de cría extensiva — el ternero que nace en los campos del partido en primavera y se remate en otoño para que los invernadores lo engordan. La Sociedad Rural de Ayacucho y los consignatarios de hacienda son los actores que articulan ese ciclo. MinAgrario puede llegar con un programa concreto de apoyo a la ganadería bovina de cría: mejoramiento genético (inseminación artificial subsidiada), sanidad animal (articulación con SENASA), financiamiento para infraestructura (aguadas, alambrados, reproductores) y acceso a los mercados regionales. El acto en la Sociedad Rural con anuncio de un programa bovino es el acto más cercano al corazón económico de Ayacucho — y llega al productor ganadero, no al militante.</p>
+  </div>
+
+  <div class="blk blk-k">
+    <h4>🤝 PALANCA 3 · FRICDe — Una visita en Ayacucho que llega a 50 municipios</h4>
+    <p>El FRICDe es el activo más singular que tiene Ayacucho en el mapa político bonaerense de 2026: un foro interpartidario que reúne a más de 50 intendentes del interior de la Provincia sin distinción de banderías. Cordonnier (JxC) lo lidera, pero los intendentes PJ que participan son interlocutores naturales de la Provincia. Participar en una sesión del FRICDe con una propuesta concreta de agenda provincial para el interior — caminos, financiamiento productivo, arraigo, servicios rurales — multiplica el impacto de una sola visita a Ayacucho en cincuenta municipios del interior bonaerense. Es la mejor relación impacto/esfuerzo del ciclo en el interior pampeano.</p>
+  </div>
+</div>
+
+<div class="div-h"></div>
+
+<!-- VI. VISITAS -->
+<div class="sec">
+  <h2>VI. Visitas · Ayacucho · Ranking Estratégico</h2>
+
+  <div class="vrow">
+    <div class="vscore">10.0</div>
+    <div class="vbody">
+      <strong>🎪 Fiesta Nacional del Ternero y Día de la Yerra (Marzo) · Palanca 1</strong>
+      <p>Presencia oficial en la Fiesta con rol de co-organizadora y patrocinadora (MinTurismo). 50.000 visitantes — el acto de mayor alcance posible en el Cluster 4. Encuadre: "la Fiesta del Ternero es patrimonio de toda la Provincia". Si la agenda de marzo lo permite, es la visita obligatoria del ciclo en la 5ª Sección. Impacto: toda la comunidad de Ayacucho + visitantes de la región + cobertura nacional del evento.</p>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vscore">9.0</div>
+    <div class="vbody">
+      <strong>🐄 Sociedad Rural de Ayacucho · Agenda Bovina de Cría · Palanca 2</strong>
+      <p>Visita a la Sociedad Rural con la comisión directiva y consignatarios + anuncio de programa MinAgrario de apoyo a la ganadería bovina de cría (mejoramiento genético, sanidad, financiamiento de infraestructura). La Sociedad Rural es el actor más importante del partido — llegar con política concreta de la cadena bovina muestra que la Provincia conoce la economía real de Ayacucho. Es el acto que llega al productor, no al militante.</p>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vscore">9.0</div>
+    <div class="vbody">
+      <strong>🤝 FRICDe · Sesión del Foro Regional de Municipios · Palanca 3</strong>
+      <p>Participación en una sesión del FRICDe con presentación de la agenda provincial para el interior bonaerense. Los intendentes PJ del foro son interlocutores naturales. Una intervención con propuesta concreta (caminos, financiamiento productivo, arraigo) multiplica el impacto de Ayacucho en 50 municipios del interior. Encuadre: "la Provincia trabaja con todos los municipios del interior, sin distinción de banderías — el FRICDe lo demuestra".</p>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vscore">8.0</div>
+    <div class="vbody">
+      <strong>🛣️ Obra de Caminos Rurales · Convenio CFI · Palanca complementaria</strong>
+      <p>Recorrida por una obra de camino rural (apertura, mejorado, repavimentación) + anuncio de extensión del programa con financiamiento MinInfraestructura. Acto con Cordonnier en campo abierto — la política más próxima al productor agropecuario del partido. Encuadre: "los caminos rurales hacen posible el campo — la Provincia invierte en las rutas de Ayacucho". Alta resonancia en productores que dependen de transitabilidad para mover hacienda.</p>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vscore">7.5</div>
+    <div class="vbody">
+      <strong>🏛️ Municipalidad · Emilio Cordonnier (JxC)</strong>
+      <p>Visita breve y focada en obra o convenio concreto. La Provincia trabaja con todos los municipios bonaerenses. El encuadre institucional habilita la foto sin darle rédito excesivo al opositor. Útil para abrir la agenda del FRICDe y de caminos rurales. El acto debe ser corto y orientado a la obra concreta — co-gestión, no foto política.</p>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vscore">7.0</div>
+    <div class="vbody">
+      <strong>🎪 Emprendedores de la Fiesta del Ternero · Economía Social Local</strong>
+      <p>Visita al espacio de emprendedores de la Fiesta (artesanos, gastronómicos, productores) + anuncio de programa provincial de apoyo a economía social y emprendedorismo rural. Conecta con la economía de la Fiesta desde el lado de los trabajadores y pequeños comerciantes — un segmento que resonará electoralmente con agenda de trabajo e inclusión productiva. Complementa la visita a la Fiesta o puede hacerse en cualquier momento del año.</p>
+    </div>
+  </div>
+</div>
+
+<div class="div-h"></div>
+
+<!-- VII. SÍNTESIS EJECUTIVA -->
+<div class="sec">
+  <h2>VII. Síntesis Ejecutiva · Ayacucho</h2>
+  <div class="blk blk-k">
+    <h4>🎯 DIAGNÓSTICO CENTRAL</h4>
+    <p>Ayacucho es el municipio del Cluster 4 con la señal electoral más prometedora del ciclo: el PJ pasó del 32,2% en bipartidismo 2023 (sin LLA) al 39,9% en tripartidismo 2025 y quedó primero en concejales PBA, mientras en el Diputado Nacional 2025 LLA y PJ se separaron por apenas 308 votos (42,1% vs 39,2%). El electorado peronista de Ayacucho no migró a LLA — creció en provinciales y casi alcanzó a LLA en nacionales. Las tres palancas provinciales son la Fiesta del Ternero (50.000 personas en marzo), la cadena bovina de cría (la Sociedad Rural como interlocutor) y el FRICDe (50 municipios del interior en un solo acto). Ayacucho es una victoria posible en legislativos 2027 con la agenda provincial correcta.</p>
+  </div>
+  <div class="blk blk-v">
+    <h4>📌 Tres prioridades para el ciclo 2026-2027</h4>
+    <p><strong>1. Consolidar el 39,9% PJ en legislativos:</strong> El piso del 39,9% debe convertirse en 42-44% para 2027. La agenda rural concreta (ganadería, caminos) y la Fiesta del Ternero son los vectores para mover ese 2,9% de diferencia con LLA en nacionales hacia el PJ en provinciales.</p>
+    <p><strong>2. Presencia en la Fiesta del Ternero (marzo):</strong> Es el acto de mayor alcance posible en el interior bonaerense. 50.000 visitantes en un municipio de 22.000 habitantes — la Provincia debe estar ahí, con nombre propio, como co-organizadora y patrocinadora.</p>
+    <p><strong>3. Capitalizar el FRICDe:</strong> El Foro de 50+ municipios del interior es una plataforma única para que la Provincia llegue con su agenda al interior bonaerense de manera interpartidaria. Una sesión del FRICDe vale por 50 reuniones individuales. La Provincia debe participar con propuesta concreta.</p>
+  </div>
+  <table class="t">
+    <thead><tr><th>Dimensión</th><th>Lectura</th><th>Prioridad</th></tr></thead>
+    <tbody>
+      <tr><td>PJ en legislativos 2025</td><td class="ok">39,9% — primero · señal sólida</td><td class="ok">Alta · consolidar</td></tr>
+      <tr><td>PJ vs LLA en Nac. 2025</td><td class="warn">308 votos de diferencia · 2,9 pts</td><td class="ok">Alta · cerrar la brecha</td></tr>
+      <tr><td>PJ vs JxC en ejecutivo</td><td class="bad">32,2% vs 67,8% (2023) · bipartidismo</td><td class="warn">Media · construir candidato</td></tr>
+      <tr><td>Fiesta del Ternero</td><td class="ok">50.000 visitas · palanca #1</td><td class="ok">Alta · presencia MinTurismo</td></tr>
+      <tr><td>Cadena bovina cría</td><td class="ok">Corazón económico · Soc. Rural</td><td class="ok">Alta · programa MinAgrario</td></tr>
+      <tr><td>FRICDe · 50 municipios</td><td class="ok">Plataforma interpartidaria</td><td class="ok">Alta · sesión agenda prov.</td></tr>
+      <tr><td>LLA en provinciales</td><td class="warn">25,1% · comió JxC, no PJ</td><td class="warn">Monitorear · no alarmar</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div><!-- /body -->
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Narrativa Política — Ayacucho · PBA Analytics 2026</div>
+
+</body>
+</html>

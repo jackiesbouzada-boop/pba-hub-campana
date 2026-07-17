@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBA 2026 — Mapa de Clusters Municipales</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
+
+  /* HEADER */
+  .header { background: linear-gradient(135deg, #1F4E79 0%, #2E75B6 100%); color: white; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .header h1 { font-size: 22px; font-weight: 700; letter-spacing: 0.5px; }
+  .header p { font-size: 13px; opacity: 0.85; margin-top: 2px; }
+  .header-right { text-align: right; font-size: 12px; opacity: 0.75; }
+
+  /* LAYOUT */
+  .main { display: flex; height: calc(100vh - 70px); }
+  .sidebar { width: 320px; min-width: 260px; background: white; border-right: 1px solid #dde3ed; overflow-y: auto; display: flex; flex-direction: column; }
+  .content { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+  /* STATS BAR */
+  .stats-bar { background: white; border-bottom: 1px solid #dde3ed; padding: 10px 20px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .stat-pill { background: #EBF3FB; border-radius: 20px; padding: 5px 14px; font-size: 12px; color: #1F4E79; font-weight: 600; border: 1px solid #c8ddf0; }
+  .stat-pill span { font-weight: 400; color: #555; }
+
+  /* TABS */
+  .tabs { display: flex; background: #f7f9fc; border-bottom: 1px solid #dde3ed; }
+  .tab { padding: 10px 20px; font-size: 13px; font-weight: 600; cursor: pointer; color: #888; border-bottom: 3px solid transparent; transition: all 0.2s; white-space: nowrap; }
+  .tab.active { color: #1F4E79; border-bottom-color: #1F4E79; background: white; }
+  .tab:hover:not(.active) { color: #2E75B6; background: #f0f4f8; }
+
+  /* VIZ AREA */
+  .viz-area { flex: 1; overflow: auto; padding: 20px; }
+
+  /* CLUSTER CARDS GRID */
+  .clusters-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+  .cluster-card { background: white; border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,0.08); overflow: hidden; transition: box-shadow 0.2s; cursor: pointer; border: 2px solid transparent; }
+  .cluster-card:hover, .cluster-card.selected { box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+  .cluster-header { padding: 14px 16px 10px; display: flex; justify-content: space-between; align-items: flex-start; }
+  .cluster-title { font-size: 13px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.5px; }
+  .cluster-subtitle { font-size: 11px; color: rgba(255,255,255,0.8); margin-top: 2px; }
+  .cluster-badges { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; padding: 0 16px 12px; }
+  .badge { font-size: 11px; padding: 3px 10px; border-radius: 12px; font-weight: 600; }
+  .badge-pop { background: #EBF3FB; color: #1F4E79; }
+  .badge-munic { background: #F0F9F0; color: #375623; }
+  .badge-pol { background: #FFF8E7; color: #7D6608; }
+  .cluster-body { padding: 0 16px 14px; }
+  .cluster-desc { font-size: 12px; color: #555; line-height: 1.5; }
+  .cluster-ejes { font-size: 11px; color: #888; margin-top: 6px; font-style: italic; }
+
+  /* BUBBLES VIEW */
+  #bubbles-view { width: 100%; position: relative; }
+  #bubbles-svg { width: 100%; display: block; }
+
+  /* MAP VIEW (schematic) */
+  #map-view { width: 100%; }
+
+  /* MUNICIPIOS TABLE */
+  .mun-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .mun-table th { background: #1F4E79; color: white; padding: 8px 10px; text-align: left; font-size: 11px; position: sticky; top: 0; z-index: 1; }
+  .mun-table td { padding: 7px 10px; border-bottom: 1px solid #eef1f5; }
+  .mun-table tr:hover td { background: #EBF3FB; }
+  .mun-table tr:nth-child(even) td { background: #f8fafc; }
+  .mun-table tr:nth-child(even):hover td { background: #EBF3FB; }
+  .party-tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 700; }
+  .party-uxp { background: #EBF3FB; color: #1F4E79; }
+  .party-jxc { background: #FEF9E7; color: #7D6608; }
+  .party-lla { background: #FDEDEC; color: #922B21; }
+  .party-other { background: #F2F3F4; color: #555; }
+
+  /* SIDEBAR */
+  .sidebar-header { padding: 14px 16px; background: #f7f9fc; border-bottom: 1px solid #eef1f5; }
+  .sidebar-header h3 { font-size: 13px; font-weight: 700; color: #1F4E79; }
+  .sidebar-header p { font-size: 11px; color: #888; margin-top: 2px; }
+  .legend-item { display: flex; align-items: center; gap: 10px; padding: 8px 16px; cursor: pointer; transition: background 0.15s; }
+  .legend-item:hover { background: #f0f4f8; }
+  .legend-item.active { background: #EBF3FB; }
+  .legend-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+  .legend-label { font-size: 12px; color: #333; font-weight: 600; flex: 1; }
+  .legend-count { font-size: 11px; color: #888; }
+  .legend-pop { font-size: 10px; color: #aaa; display: block; margin-top: 1px; }
+
+  .sidebar-section { padding: 10px 16px 6px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #999; border-top: 1px solid #eef1f5; margin-top: 4px; }
+
+  /* FILTERS */
+  .filter-row { padding: 8px 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-btn { padding: 4px 12px; border-radius: 20px; font-size: 11px; border: 1px solid #dde3ed; background: white; cursor: pointer; font-weight: 600; transition: all 0.15s; }
+  .filter-btn:hover { background: #EBF3FB; border-color: #2E75B6; }
+  .filter-btn.on { background: #1F4E79; color: white; border-color: #1F4E79; }
+
+  /* SEARCH */
+  .search-box { padding: 10px 16px 6px; }
+  .search-input { width: 100%; padding: 7px 12px; border: 1px solid #dde3ed; border-radius: 20px; font-size: 12px; outline: none; transition: border 0.2s; }
+  .search-input:focus { border-color: #2E75B6; }
+
+  /* TOOLTIP */
+  .tooltip { position: fixed; background: rgba(15,30,55,0.95); color: white; padding: 10px 14px; border-radius: 8px; font-size: 12px; pointer-events: none; z-index: 999; max-width: 260px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); display: none; }
+  .tooltip h4 { font-size: 13px; margin-bottom: 4px; }
+  .tooltip p { font-size: 11px; opacity: 0.85; line-height: 1.4; }
+
+  .footer-bar { padding: 6px 20px; background: white; border-top: 1px solid #dde3ed; font-size: 11px; color: #999; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>🗺️ PROVINCIA DE BUENOS AIRES — CLUSTERS MUNICIPALES 2026</h1>
+    <p>Agrupamiento territorial de los 134 municipios por perfil productivo, demográfico y político</p>
+  </div>
+  <div class="header-right">
+    <div>USO RESERVADO</div>
+    <div>Gobernación Bonaerense · Mayo 2026</div>
+  </div>
+</div>
+
+<div class="main">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h3>Clusters Territoriales</h3>
+      <p>Clic para filtrar municipios</p>
+    </div>
+    <div id="legend-container"></div>
+
+    <div class="sidebar-section">Filtrar por Partido</div>
+    <div class="filter-row">
+      <button class="filter-btn on" data-party="all" onclick="filterParty('all')">Todos</button>
+      <button class="filter-btn" data-party="UxP" onclick="filterParty('UxP')" style="color:#1F4E79;">UxP</button>
+      <button class="filter-btn" data-party="JxC" onclick="filterParty('JxC')" style="color:#7D6608;">JxC</button>
+      <button class="filter-btn" data-party="Otro" onclick="filterParty('Otro')" style="color:#922B21;">Otros</button>
+    </div>
+
+    <div class="sidebar-section">Buscar municipio</div>
+    <div class="search-box">
+      <input type="text" class="search-input" placeholder="Escribí el nombre..." id="search-input" oninput="filterSearch(this.value)">
+    </div>
+
+    <div class="sidebar-section">Resumen</div>
+    <div style="padding:8px 16px;">
+      <div id="sidebar-summary" style="font-size:11px; color:#555; line-height:1.7;"></div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="stats-bar">
+      <div class="stat-pill">📍 <span>Municipios:</span> 134</div>
+      <div class="stat-pill">👥 <span>Población:</span> 17.129.242</div>
+      <div class="stat-pill">🏛️ <span>UxP:</span> 91 (67,9%)</div>
+      <div class="stat-pill">🏛️ <span>JxC:</span> 38 (28,4%)</div>
+      <div class="stat-pill">📐 <span>Superficie:</span> ~307.571 km²</div>
+      <div class="stat-pill">🗳️ <span>Secciones:</span> 8</div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('clusters')">Vista Clusters</div>
+      <div class="tab" onclick="showTab('tabla')">Tabla Completa</div>
+      <div class="tab" onclick="showTab('bubbles')">Diagrama de Burbujas</div>
+    </div>
+
+    <div class="viz-area" id="viz-area">
+      <!-- Content injected by JS -->
+    </div>
+
+    <div class="footer-bar">
+      <span id="count-label">134 municipios · 7 clusters</span>
+      <span>Provincia de Buenos Aires · Análisis Territorial 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+const CLUSTERS = [
+  {
+    id:'conurbano', nombre:'CONURBANO BONAERENSE', subtitulo:'El Corazón Metropolitano',
+    color:'#1F4E79', colorLight:'#D6E4F0', emoji:'🏙️',
+    desc:'28 municipios. Núcleo urbano de la provincia. 70% de la población provincial en apenas 3% del territorio. Economía diversificada, servicios, industria y economía popular.',
+    ejes:'Infraestructura urbana · Seguridad · Empleo · Economía Popular',
+    municipios:[
+      {m:'La Matanza',i:'Fernando Espinoza',p:'UxP',pop:1841247,sec:'3ª',clave:'Gigante'},
+      {m:'La Plata',i:'Julio Alak',p:'UxP',pop:768547,sec:'8ª',clave:'Capital / Horticultura'},
+      {m:'Lomas de Zamora',i:'Federico Otermín',p:'UxP',pop:690480,sec:'3ª',clave:'La Salada'},
+      {m:'Quilmes',i:'Mayra Mendoza',p:'UxP',pop:633391,sec:'3ª',clave:'EcoParque / Cerveza'},
+      {m:'Almirante Brown',i:'Mariano Cascallares',p:'UxP',pop:584827,sec:'3ª',clave:'Parque Industrial Burzaco'},
+      {m:'Merlo',i:'Gustavo Menéndez',p:'UxP',pop:582486,sec:'1ª',clave:'Economía Popular'},
+      {m:'Moreno',i:'Mariel Fernández',p:'UxP',pop:576632,sec:'1ª',clave:'Economía Popular'},
+      {m:'Florencio Varela',i:'Andrés Watson',p:'UxP',pop:496433,sec:'3ª',clave:'Frutihorticola'},
+      {m:'Lanús',i:'Julián Álvarez',p:'UxP',pop:461267,sec:'3ª',clave:'Curtiembres'},
+      {m:'General San Martín',i:'Fernando Moreira',p:'UxP',pop:450518,sec:'1ª',clave:'PyMEs'},
+      {m:'Tigre',i:'Julio Zamora',p:'UxP',pop:446949,sec:'1ª',clave:'Desarrollo Inmobiliario'},
+      {m:'Tres de Febrero',i:'Diego Valenzuela',p:'LLA',pop:364176,sec:'1ª',clave:'Sábato'},
+      {m:'Esteban Echeverría',i:'Fernando Gray',p:'UxP',pop:338480,sec:'3ª',clave:'Nodo Logístico'},
+      {m:'Morón',i:'Lucas Ghi',p:'UxP',pop:331183,sec:'1ª',clave:'H. Posadas'},
+      {m:'Berazategui',i:'Carlos Balor',p:'UxP',pop:358712,sec:'3ª',clave:'Capital del Vidrio'},
+      {m:'Malvinas Argentinas',i:'Leonardo Nardini',p:'UxP',pop:350674,sec:'1ª',clave:'Salud'},
+      {m:'José C. Paz',i:'Mario Ishii',p:'UxP',pop:326992,sec:'1ª',clave:'Salud'},
+      {m:'San Miguel',i:'Jaime Méndez',p:'JxC',pop:328835,sec:'1ª',clave:'Ojos en Alerta'},
+      {m:'Avellaneda',i:'Jorge Ferraresi',p:'UxP',pop:367554,sec:'3ª',clave:'Puerto Dock Sud'},
+      {m:'San Isidro',i:'Ramón Lanús',p:'JxC',pop:297282,sec:'1ª',clave:'Recuperación Costera'},
+      {m:'Vicente López',i:'Soledad Martínez',p:'JxC',pop:282280,sec:'1ª',clave:'Polo Corporativo'},
+      {m:'Escobar',i:'Ariel Sujarchuk',p:'UxP',pop:256268,sec:'1ª',clave:'Innovación'},
+      {m:'Ezeiza',i:'Gastón Granados',p:'UxP',pop:201511,sec:'3ª',clave:'Tolerancia Cero al Delito'},
+      {m:'Hurlingham',i:'Damián Selci',p:'UxP',pop:185641,sec:'1ª',clave:'Cuna del Rock'},
+      {m:'Ituzaingó',i:'Pablo Descalzo',p:'UxP',pop:180232,sec:'1ª',clave:'El Jardín del Oeste'},
+      {m:'General Rodríguez',i:'Mauro García',p:'UxP',pop:142709,sec:'1ª',clave:'Alimentos'},
+      {m:'Presidente Perón',i:'Blanca Cantero',p:'UxP',pop:102106,sec:'3ª',clave:'Nuevas localidades'},
+      {m:'Berisso',i:'Fabián Cagliardi',p:'UxP',pop:100930,sec:'3ª',clave:'YPF / Inmigrante'},
+    ]
+  },
+  {
+    id:'ciudades', nombre:'CIUDADES INTERMEDIAS REGIONALES', subtitulo:'Los Nodos Estratégicos del Interior',
+    color:'#2E75B6', colorLight:'#DEEAF1', emoji:'🏛️',
+    desc:'10 ciudades con más de 100.000 hab. fuera del conurbano. Centros de servicios, universidades y economía regional. Incluye Mar del Plata, Bahía Blanca y Tandil.',
+    ejes:'Competitividad regional · Innovación · Conectividad · Universidad',
+    municipios:[
+      {m:'General Pueyrredón (MDQ)',i:'Guillermo Montenegro',p:'JxC',pop:667082,sec:'5ª',clave:'Cluster ATICMA / IA'},
+      {m:'Bahía Blanca',i:'Federico Susbielles',p:'UxP',pop:336557,sec:'6ª',clave:'Puerto / Petroquímica'},
+      {m:'Olavarría',i:'Maximiliano Wesner',p:'UxP',pop:125751,sec:'7ª',clave:'Loma Negra / Cemento'},
+      {m:'Tandil',i:'Miguel Ángel Lunghi',p:'JxC',pop:145575,sec:'5ª',clave:'Silicon Valley Bonaerense'},
+      {m:'San Fernando',i:'Juan Andreotti',p:'UxP',pop:171616,sec:'1ª',clave:'Náutica'},
+      {m:'San Nicolás',i:'Ismael Passaglia',p:'Hechos',pop:168041,sec:'2ª',clave:'Siderurgia / Religión'},
+      {m:'Zárate',i:'Marcelo Matzkin',p:'JxC',pop:132221,sec:'2ª',clave:'Atucha / Automotriz'},
+      {m:'Junín',i:'Pablo Petrecca',p:'JxC',pop:103787,sec:'4ª',clave:'Epicentro 4ª Sección'},
+      {m:'Campana',i:'Sebastián Abella',p:'JxC',pop:110566,sec:'1ª',clave:'Tenaris / Puerto'},
+      {m:'Luján',i:'Leonardo Boto',p:'UxP',pop:111251,sec:'1ª',clave:'Turismo Religioso'},
+    ]
+  },
+  {
+    id:'corredor', nombre:'CORREDOR INDUSTRIAL NORTE', subtitulo:'El Eje Productivo del Paraná',
+    color:'#375623', colorLight:'#E2EFDA', emoji:'🌾',
+    desc:'12 municipios de la 2ª sección. Articulados sobre el Río Paraná y las rutas 8 y 9. Semillero, agroindustria, producción avícola, porcina, equina y logística.',
+    ejes:'Agroindustria · Semillero · Logística · Turismo de Tradición',
+    municipios:[
+      {m:'San Pedro',i:'Cecilio Salazar',p:'UxP',pop:68613,sec:'2ª',clave:'Durazno / Vivero'},
+      {m:'Baradero',i:'Esteban Sanzio',p:'UxP',pop:40002,sec:'2ª',clave:'Polo Logístico'},
+      {m:'Exaltación de la Cruz',i:'Diego Nanni',p:'UxP',pop:40159,sec:'2ª',clave:'Industria Equina'},
+      {m:'Ramallo',i:'Mauro Poletti',p:'UxP',pop:39730,sec:'2ª',clave:'Ternium'},
+      {m:'Salto',i:'Ricardo Alessandro',p:'UxP',pop:39425,sec:'2ª',clave:'Capital de la Semilla'},
+      {m:'Arrecifes',i:'Juan Bouvier',p:'JxC',pop:32215,sec:'2ª',clave:'Automovilismo'},
+      {m:'Colón',i:'Waldemar Giordano',p:'JxC',pop:27504,sec:'2ª',clave:'Polo Semillero'},
+      {m:'San Antonio de Areco',i:'Francisco Ratto',p:'JxC',pop:26897,sec:'2ª',clave:'Tradición / Talabartería'},
+      {m:'San Andrés de Giles',i:'Miguel Gesualdi',p:'UxP',pop:26510,sec:'2ª',clave:'Avícola / Porcina'},
+      {m:'Rojas',i:'Román Bouvier',p:'JxC',pop:25627,sec:'2ª',clave:'Polo Semillero'},
+      {m:'Carmen de Areco',i:'Iván Villagrán',p:'UxP',pop:17499,sec:'2ª',clave:'Semillero / Porcina'},
+      {m:'Capitán Sarmiento',i:'Fernanda Astorino',p:'UxP',pop:15965,sec:'2ª',clave:'Polo Avícola'},
+    ]
+  },
+  {
+    id:'interior', nombre:'INTERIOR AGROPECUARIO PAMPEANO', subtitulo:'La Despensa Productiva',
+    color:'#7F6000', colorLight:'#FFF2CC', emoji:'🌽',
+    desc:'37 municipios. El corazón agroproductivo bonaerense: soja, maíz, trigo, ganadería bovina y producción láctea. También municipios de transición urbano-rural cercanos al conurbano.',
+    ejes:'Vialidad rural · Competitividad agropecuaria · Arraigo joven · Salud y educación',
+    municipios:[
+      {m:'San Vicente',i:'Nicolás Mantegazza',p:'UxP',pop:98215,sec:'3ª',clave:'Universidad 2024'},
+      {m:'Azul',i:'Nelson Sombra',p:'UxP',pop:75905,sec:'7ª',clave:'Ciudad Cervantina'},
+      {m:'Mercedes',i:'Juan Ustarroz',p:'UxP',pop:72980,sec:'1ª',clave:'Salame Quintero'},
+      {m:'Cañuelas',i:'Marisa Fassi',p:'UxP',pop:70684,sec:'3ª',clave:'Dulce de Leche'},
+      {m:'Chivilcoy',i:'Guillermo Britos',p:'Vec',pop:70839,sec:'4ª',clave:'AgroGanadero / Calzado'},
+      {m:'Marcos Paz',i:'Ricardo Curutchet',p:'UxP',pop:67011,sec:'1ª',clave:'Billetera propia'},
+      {m:'Ensenada',i:'Mario Secco',p:'UxP',pop:63997,sec:'3ª',clave:'YPF / Astillero'},
+      {m:'Chacabuco',i:'Darío Golía',p:'UxP',pop:52729,sec:'4ª',clave:'Capital del Maíz'},
+      {m:'9 de Julio',i:'María José Gentile',p:'JxC',pop:52607,sec:'4ª',clave:'Metalmecánica / TC'},
+      {m:'Trenque Lauquen',i:'Francisco Recoulat',p:'JxC',pop:49499,sec:'4ª',clave:'Capital Lechera'},
+      {m:'Bragado',i:'Sergio Barenghi',p:'UxP',pop:46504,sec:'4ª',clave:'Ferroviaria / Caballo'},
+      {m:'Lincoln',i:'Salvador Serenal',p:'JxC',pop:45506,sec:'4ª',clave:'Carnaval / Lechero'},
+      {m:'Pehuajó',i:'Pablo Zurro',p:'UxP',pop:44783,sec:'4ª',clave:'AgroGanadero + Lechero'},
+      {m:'Lobos',i:'Jorge Etcheverry',p:'JxC',pop:41760,sec:'3ª',clave:'Cuenca Lechera / Turismo'},
+      {m:'General Villegas',i:'Gilberto Alegre',p:'UxP',pop:35251,sec:'4ª',clave:'Gigante del Agro'},
+      {m:'Saladillo',i:'José Luis Salomón',p:'JxC',pop:35656,sec:'7ª',clave:'Helicópteros Cícaro'},
+      {m:'Brandsen',i:'Fernando Raitelli',p:'UxP',pop:32448,sec:'3ª',clave:'Cuenca Lechera'},
+      {m:'Magdalena',i:'Lisandro Hourcade',p:'JxC',pop:26613,sec:'3ª',clave:'Nuevo Parque'},
+      {m:'Bolívar',i:'Eduardo Bucca',p:'UxP',pop:37594,sec:'7ª',clave:'Agro / Voleibol'},
+      {m:'25 de Mayo',i:'Ramiro Egüen',p:'JxC',pop:35563,sec:'7ª',clave:'Carnaval / Ganadería'},
+      {m:'Carlos Casares',i:'Daniel Stadnik',p:'UxP',pop:23100,sec:'4ª',clave:'Cuna del Girasol'},
+      {m:'General Viamonte',i:'Franco Flexas',p:'JxC',pop:22649,sec:'4ª',clave:'Casa Evita'},
+      {m:'Navarro',i:'Facundo Diz',p:'UxP',pop:19899,sec:'1ª',clave:'Tambero'},
+      {m:'Rivadavia',i:'Juan Martínez',p:'UxP',pop:19849,sec:'4ª',clave:'Soja Monocultivo'},
+      {m:'Leandro N. Alem',i:'Carlos Ferraris',p:'UxP',pop:17266,sec:'4ª',clave:'Agro / Fiambres'},
+      {m:'General Las Heras',i:'Javier Osuna',p:'UxP',pop:18022,sec:'1ª',clave:'Capital del Pato'},
+      {m:'General Arenales',i:'Érica Revilla',p:'JxC',pop:16350,sec:'4ª',clave:'Polo Textil'},
+      {m:'Carlos Tejedor',i:'María Gianini',p:'UxP',pop:14079,sec:'4ª',clave:'AgroGanadero'},
+      {m:'Roque Pérez',i:'Maximiliano Sciaini',p:'UxP',pop:13977,sec:'7ª',clave:'Noche Almacenes'},
+      {m:'Punta Indio',i:'David Angueira',p:'UxP',pop:12297,sec:'3ª',clave:'Lanzador Tronador II'},
+      {m:'Alberti',i:'Germán Lago',p:'UxP',pop:12982,sec:'4ª',clave:'Arq. Salamone'},
+      {m:'General Pinto',i:'Alfredo Zavatarelli',p:'UxP',pop:12941,sec:'4ª',clave:'Cuenca Lechera'},
+      {m:'General Alvear',i:'Ramón Capra',p:'JxC',pop:12631,sec:'7ª',clave:'Ganadería'},
+      {m:'Tapalqué',i:'Gustavo Cocconi',p:'UxP',pop:10783,sec:'7ª',clave:'Ganado / Termas'},
+      {m:'Florentino Ameghino',i:'Nahuel Mittelbach',p:'UxP',pop:10790,sec:'4ª',clave:'Ganado / Lácteos'},
+      {m:'Hipólito Yrigoyen',i:'Luis Pugnanoli',p:'UxP',pop:10661,sec:'4ª',clave:'Agrícola'},
+      {m:'Suipacha',i:'Juan Mancini',p:'UxP',pop:11786,sec:'1ª',clave:'Ruta del Queso'},
+    ]
+  },
+  {
+    id:'costero', nombre:'LITORAL ATLÁNTICO', subtitulo:'El Motor Turístico Provincial',
+    color:'#0070C0', colorLight:'#DEEAF1', emoji:'🌊',
+    desc:'8 municipios costeros sobre el Atlántico. Desde la exclusividad de Pinamar hasta la masividad de Mar del Plata. Economía estacional de alto impacto, infraestructura portuaria y ecosistemas únicos.',
+    ejes:'Temporada turística · Puerto · Economía Azul · Ecosistemas Costeros',
+    municipios:[
+      {m:'Gral. Pueyrredón (Mar del Plata)',i:'Guillermo Montenegro',p:'JxC',pop:667082,sec:'5ª',clave:'Cluster ATICMA (IA)'},
+      {m:'Necochea',i:'Arturo Rojas',p:'Vec',pop:102110,sec:'5ª',clave:'Puerto Quequén 2026'},
+      {m:'La Costa',i:'Juan de Jesús',p:'UxP',pop:100689,sec:'5ª',clave:'Turismo Popular'},
+      {m:'General Alvarado (Miramar)',i:'Sebastián Ianantuony',p:'UxP',pop:45526,sec:'5ª',clave:'Kiwi / BioTec'},
+      {m:'Pinamar',i:'Juan Ibarguren',p:'JxC',pop:39449,sec:'5ª',clave:'Costa Premium'},
+      {m:'Villa Gesell',i:'Gustavo Barrera',p:'UxP',pop:37463,sec:'5ª',clave:'Colonia Alemana'},
+      {m:'Mar Chiquita',i:'Walter Wischnivetzky',p:'UxP',pop:33110,sec:'5ª',clave:'Albufera única del país'},
+      {m:'Monte Hermoso',i:'Hernán Arranz',p:'UxP',pop:8465,sec:'6ª',clave:'Balneario / Primavera'},
+    ]
+  },
+  {
+    id:'sur', nombre:'SUR BONAERENSE', subtitulo:'Energía, Tradición y Frontera Patagónica',
+    color:'#843C0C', colorLight:'#FCE4D6', emoji:'⚡',
+    desc:'20 municipios de la 6ª sección. Combina perfil agropecuario, energético (Vaca Muerta / Bahía Blanca), turismo de montaña y frontera con La Pampa y Patagonia.',
+    ejes:'Arraigo rural · Energía · Conectividad · Turismo de montaña · Gestión ambiental',
+    municipios:[
+      {m:'Coronel Rosales (Punta Alta)',i:'Rodrigo Aristimuño',p:'UxP',pop:67503,sec:'6ª',clave:'Puerto Vaca Muerta'},
+      {m:'Tres Arroyos',i:'Pablo Garate',p:'UxP',pop:62426,sec:'6ª',clave:'Fiesta del Trigo'},
+      {m:'Coronel Suárez',i:'Ricardo Moccero',p:'UxP',pop:42110,sec:'6ª',clave:'Colonia Alemana / Calzado'},
+      {m:'Patagones',i:'Ricardo Marino',p:'UxP',pop:37646,sec:'6ª',clave:'ADN Patagónico / Cebolla'},
+      {m:'Villarino',i:'Carlos Bevilacqua',p:'Vec',pop:32717,sec:'6ª',clave:'Puerta Patagonia / Ajo'},
+      {m:'Benito Juárez',i:'Julio Marini',p:'UxP',pop:22292,sec:'6ª',clave:'Frambuesa / Cemento'},
+      {m:'Coronel Pringles',i:'Lisandro Matzkin',p:'JxC',pop:24420,sec:'6ª',clave:'Arq. Salamone'},
+      {m:'Saavedra (Pigüé)',i:'Matías Nebot',p:'UxP',pop:22347,sec:'6ª',clave:'Colonia Francesa'},
+      {m:'Daireaux',i:'Alejandro Acerbo',p:'UxP',pop:18422,sec:'6ª',clave:'Sorgo / Tasa Vial'},
+      {m:'Adolfo Alsina (Carhué)',i:'Javier Andrés',p:'JxC',pop:17552,sec:'6ª',clave:'Termas / Colonia Judía'},
+      {m:'Coronel Dorrego',i:'Juan Carlos Chalde',p:'JxC',pop:15968,sec:'6ª',clave:'Aceite de Oliva'},
+      {m:'Adolfo G. Chaves',i:'Lucía Gómez',p:'UxP',pop:12914,sec:'6ª',clave:'Vuelo a Vela'},
+      {m:'Puán',i:'Diego Reyes',p:'JxC',pop:16613,sec:'6ª',clave:'Cebada'},
+      {m:'Tornquist',i:'Stefanía Bordoni',p:'JxC',pop:14810,sec:'6ª',clave:'Turismo de Montaña'},
+      {m:'General La Madrid',i:'Martín Randazzo',p:'JxC',pop:11618,sec:'6ª',clave:'Cannabis / Estadísticas'},
+      {m:'Guaminí',i:'José Nobre',p:'UxP',pop:11801,sec:'6ª',clave:'Lagunas Encadenadas'},
+      {m:'Laprida',i:'Alfredo Fisher',p:'UxP',pop:11646,sec:'6ª',clave:'Capital del Reciclaje'},
+      {m:'Salliqueló',i:'Ariel Succurro',p:'UxP',pop:9427,sec:'6ª',clave:'Capital Novillo Tipo'},
+      {m:'Tres Lomas',i:'Luciano Spinolo',p:'UxP',pop:9164,sec:'6ª',clave:'Autonomía 1986'},
+      {m:'Pellegrini',i:'Sofía Gambier',p:'JxC',pop:7143,sec:'6ª',clave:'Arraigo Joven'},
+    ]
+  },
+  {
+    id:'salado', nombre:'CUENCA DEL SALADO E INTERIOR SUR', subtitulo:'Ganadería, Termas y Escala Humana',
+    color:'#4B5563', colorLight:'#F3F4F6', emoji:'🐄',
+    desc:'19 municipios del centro-sur. Ganadería extensiva, termas emergentes, municipios de pequeña escala y fuerte arraigo identitario. Incluye municipios en emergencia fiscal y el menos poblado de la provincia.',
+    ejes:'Emergencias fiscales · Arraigo · Ganadería · Termas · Microinfraestructura',
+    municipios:[
+      {m:'Balcarce',i:'Esteban Reino',p:'JxC',pop:48982,sec:'5ª',clave:'Capital de la Papa / Fangio'},
+      {m:'Chascomús',i:'Javier Gastón',p:'UxP',pop:42452,sec:'5ª',clave:'Alfonsín'},
+      {m:'Dolores',i:'Juan Pablo García',p:'UxP',pop:32032,sec:'5ª',clave:'Termas'},
+      {m:'Las Flores',i:'Fabian Blanstein',p:'UxP',pop:27239,sec:'5ª',clave:'Bioy Casares / Textil'},
+      {m:'San Miguel del Monte',i:'José Castro',p:'UxP',pop:24868,sec:'5ª',clave:'Enclave Rosista'},
+      {m:'General Juan Madariaga',i:'Carlos Santoro',p:'JxC',pop:22624,sec:'5ª',clave:'Textil Bangladesh'},
+      {m:'Ayacucho',i:'Emilio Cordonnier',p:'JxC',pop:21977,sec:'5ª',clave:'Capital del Ternero'},
+      {m:'General Belgrano',i:'Osvaldo Dinápoli',p:'UxP',pop:20791,sec:'5ª',clave:'Termas del Salado'},
+      {m:'Lobería',i:'Pablo Barrena',p:'JxC',pop:18243,sec:'5ª',clave:'Educación Tecnológica'},
+      {m:'Rauch',i:'Maximiliano Suescun',p:'JxC',pop:16635,sec:'5ª',clave:'Capital del Ave Raza'},
+      {m:'General Paz (Ranchos)',i:'Juan Manuel Álvarez',p:'UxP',pop:14207,sec:'5ª',clave:'Laguna'},
+      {m:'Maipú',i:'Lorena Otermin',p:'JxC',pop:11323,sec:'5ª',clave:'Crisis Política HCD'},
+      {m:'Castelli',i:'Francisco Echarren',p:'UxP',pop:9594,sec:'5ª',clave:'Cuenca del Salado'},
+      {m:'San Cayetano',i:'Miguel Gargaglione',p:'JxC',pop:8994,sec:'5ª',clave:'19 años gestión inint.'},
+      {m:'General Guido',i:'Carlos Rocha',p:'UxP',pop:3174,sec:'5ª',clave:'Emergencia Económica'},
+      {m:'General Lavalle',i:'Nahuel Guardia',p:'UxP',pop:4870,sec:'5ª',clave:'Torta Negra / Pesca'},
+      {m:'Lezama',i:'Arnaldo Harispe',p:'UxP',pop:6221,sec:'5ª',clave:'Municipio más joven 2009'},
+      {m:'Pila',i:'Sebastián Walker',p:'UxP',pop:4642,sec:'5ª',clave:'100% Ganadería'},
+      {m:'Tordillo (Gral Conesa)',i:'Héctor Olivera',p:'UxP',pop:2542,sec:'5ª',clave:'Menos poblado de PBA'},
+    ]
+  }
+];
+
+let activeCluster = null;
+let activeParty = 'all';
+let searchTerm = '';
+let activeTab = 'clusters';
+
+const TOTAL_POP = 17129242;
+
+function partyClass(p) {
+  if(p==='UxP') return 'party-uxp';
+  if(p==='JxC') return 'party-jxc';
+  if(p==='LLA') return 'party-lla';
+  return 'party-other';
+}
+
+function filteredMunicipios() {
+  let all = [];
+  CLUSTERS.forEach(c => {
+    if(activeCluster && c.id !== activeCluster) return;
+    c.municipios.forEach(m => {
+      const partyMatch = activeParty === 'all' ||
+        (activeParty === 'UxP' && m.p === 'UxP') ||
+        (activeParty === 'JxC' && m.p === 'JxC') ||
+        (activeParty === 'Otro' && m.p !== 'UxP' && m.p !== 'JxC');
+      const searchMatch = !searchTerm || m.m.toLowerCase().includes(searchTerm) || m.i.toLowerCase().includes(searchTerm) || m.clave.toLowerCase().includes(searchTerm);
+      if(partyMatch && searchMatch) all.push({...m, cluster:c.id, clusterColor:c.color, clusterNombre:c.nombre});
+    });
+  });
+  return all.sort((a,b) => b.pop - a.pop);
+}
+
+function renderLegend() {
+  const container = document.getElementById('legend-container');
+  container.innerHTML = '';
+
+  // All
+  const allDiv = document.createElement('div');
+  allDiv.className = 'legend-item' + (!activeCluster ? ' active' : '');
+  allDiv.innerHTML = `<div class="legend-dot" style="background:#888;"></div><div class="legend-label">Todos los clusters</div><div class="legend-count">134</div>`;
+  allDiv.onclick = () => { activeCluster = null; refreshAll(); };
+  container.appendChild(allDiv);
+
+  CLUSTERS.forEach(c => {
+    const div = document.createElement('div');
+    div.className = 'legend-item' + (activeCluster === c.id ? ' active' : '');
+    div.style.borderLeft = activeCluster === c.id ? `4px solid ${c.color}` : '4px solid transparent';
+    const totalPop = c.municipios.reduce((a,m) => a+m.pop, 0);
+    div.innerHTML = `
+      <div class="legend-dot" style="background:${c.color};"></div>
+      <div>
+        <div class="legend-label">${c.emoji} ${c.nombre}</div>
+        <span class="legend-pop">${c.municipios.length} mun · ${(totalPop/1000000).toFixed(1)}M hab</span>
+      </div>
+      <div class="legend-count">${c.municipios.length}</div>`;
+    div.onclick = () => { activeCluster = activeCluster === c.id ? null : c.id; refreshAll(); };
+    container.appendChild(div);
+  });
+
+  // Sidebar summary
+  const muns = filteredMunicipios();
+  const pop = muns.reduce((a,m) => a+m.pop, 0);
+  const uxp = muns.filter(m => m.p==='UxP').length;
+  const jxc = muns.filter(m => m.p==='JxC').length;
+  document.getElementById('sidebar-summary').innerHTML = `
+    <b>Mostrando:</b> ${muns.length} municipios<br>
+    <b>Población:</b> ${pop.toLocaleString('es-AR')}<br>
+    <b>% Provincial:</b> ${((pop/TOTAL_POP)*100).toFixed(1)}%<br>
+    <b>UxP:</b> ${uxp} &nbsp;|&nbsp; <b>JxC:</b> ${jxc}<br>
+    <b>Otros:</b> ${muns.length - uxp - jxc}
+  `;
+}
+
+function refreshAll() {
+  renderLegend();
+  renderCurrentTab();
+  document.getElementById('count-label').textContent = `${filteredMunicipios().length} municipios · ${activeCluster ? CLUSTERS.find(c=>c.id===activeCluster).nombre : '7 clusters'}`;
+}
+
+function showTab(tab) {
+  activeTab = tab;
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', ['clusters','tabla','bubbles'][i] === tab));
+  renderCurrentTab();
+}
+
+function renderCurrentTab() {
+  const area = document.getElementById('viz-area');
+  if(activeTab === 'clusters') renderClusters(area);
+  else if(activeTab === 'tabla') renderTabla(area);
+  else renderBubbles(area);
+}
+
+function renderClusters(area) {
+  const clustersToShow = activeCluster ? CLUSTERS.filter(c=>c.id===activeCluster) : CLUSTERS;
+  area.innerHTML = `<div class="clusters-grid">${clustersToShow.map(c => {
+    const totalPop = c.municipios.reduce((a,m)=>a+m.pop,0);
+    const uxp = c.municipios.filter(m=>m.p==='UxP').length;
+    const jxc = c.municipios.filter(m=>m.p==='JxC').length;
+    return `
+    <div class="cluster-card" style="border-color:${c.color}" onclick="activeCluster='${c.id}';showTab('tabla');refreshAll()">
+      <div class="cluster-header" style="background:${c.color}">
+        <div>
+          <div class="cluster-title">${c.emoji} ${c.nombre}</div>
+          <div class="cluster-subtitle">${c.subtitulo}</div>
+        </div>
+      </div>
+      <div class="cluster-badges">
+        <span class="badge badge-munic">${c.municipios.length} municipios</span>
+        <span class="badge badge-pop">👥 ${(totalPop/1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,'.')} mil hab</span>
+        <span class="badge badge-pol">UxP ${uxp} · JxC ${jxc}</span>
+        <span class="badge" style="background:#f0f0f0;color:#666">${((totalPop/TOTAL_POP)*100).toFixed(1)}% provincial</span>
+      </div>
+      <div class="cluster-body">
+        <div class="cluster-desc">${c.desc}</div>
+        <div class="cluster-ejes">🎯 ${c.ejes}</div>
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function renderTabla(area) {
+  const muns = filteredMunicipios();
+  area.innerHTML = `<table class="mun-table">
+    <thead><tr>
+      <th>#</th><th>Municipio</th><th>Intendente/a</th><th>Partido</th><th>Sección</th>
+      <th>Población</th><th>% Prov.</th><th>Cluster</th><th>Clave Identitaria</th>
+    </tr></thead>
+    <tbody>${muns.map((m,i) => `<tr>
+      <td style="color:#999;font-size:11px">${i+1}</td>
+      <td style="font-weight:600">${m.m}</td>
+      <td>${m.i}</td>
+      <td><span class="party-tag ${partyClass(m.p)}">${m.p}</span></td>
+      <td style="text-align:center">${m.sec}</td>
+      <td style="text-align:right">${m.pop.toLocaleString('es-AR')}</td>
+      <td style="text-align:right;color:#888">${((m.pop/TOTAL_POP)*100).toFixed(2)}%</td>
+      <td><span style="color:${m.clusterColor};font-size:11px;font-weight:600">${m.clusterNombre.substring(0,22)}…</span></td>
+      <td style="color:#666;font-size:11px">${m.clave}</td>
+    </tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function renderBubbles(area) {
+  const W = area.clientWidth || 900;
+  const H = Math.max(600, area.clientHeight - 40);
+  const muns = filteredMunicipios();
+
+  // Cluster positions (manual layout)
+  const positions = {
+    conurbano: {x: W*0.5, y: H*0.25},
+    ciudades:  {x: W*0.75, y: H*0.45},
+    corredor:  {x: W*0.55, y: H*0.12},
+    interior:  {x: W*0.35, y: H*0.5},
+    costero:   {x: W*0.82, y: H*0.65},
+    sur:       {x: W*0.25, y: H*0.78},
+    salado:    {x: W*0.6, y: H*0.72},
+  };
+
+  const minPop = 2542, maxPop = 1841247;
+  const minR = 5, maxR = 50;
+  const scaleR = (pop) => minR + (Math.log(pop) - Math.log(minPop)) / (Math.log(maxPop) - Math.log(minPop)) * (maxR - minR);
+
+  // Cluster aggregates for background circles
+  const clusterStats = {};
+  CLUSTERS.forEach(c => {
+    const cMuns = muns.filter(m => m.cluster === c.id);
+    clusterStats[c.id] = {
+      count: cMuns.length,
+      pop: cMuns.reduce((a,m)=>a+m.pop,0),
+      color: c.color,
+      nombre: c.nombre,
+      emoji: c.emoji
+    };
+  });
+
+  let svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" style="background:#f8fafc;border-radius:8px">`;
+
+  // Draw cluster background halos
+  CLUSTERS.forEach(c => {
+    const pos = positions[c.id];
+    const stats = clusterStats[c.id];
+    if(!stats || stats.count === 0) return;
+    const r = 40 + stats.count * 8;
+    svgContent += `<circle cx="${pos.x}" cy="${pos.y}" r="${r}" fill="${c.color}" fill-opacity="0.07" stroke="${c.color}" stroke-opacity="0.2" stroke-width="1.5"/>`;
+    svgContent += `<text x="${pos.x}" y="${pos.y - r - 8}" text-anchor="middle" fill="${c.color}" font-size="11" font-weight="700" font-family="Arial">${c.emoji} ${c.nombre.length > 20 ? c.nombre.substring(0,20)+'…' : c.nombre}</text>`;
+    svgContent += `<text x="${pos.x}" y="${pos.y - r + 4}" text-anchor="middle" fill="${c.color}" font-size="10" font-family="Arial">${stats.count} mun · ${(stats.pop/1000000).toFixed(1)}M hab</text>`;
+  });
+
+  // Draw municipality bubbles (top 80 by population for readability)
+  const topMuns = [...muns].sort((a,b)=>b.pop-a.pop).slice(0,80);
+  // Spread within cluster
+  const clusterIdx = {};
+  topMuns.forEach(m => {
+    if(!clusterIdx[m.cluster]) clusterIdx[m.cluster] = 0;
+    const pos = positions[m.cluster] || {x:W/2, y:H/2};
+    const idx = clusterIdx[m.cluster]++;
+    const total = topMuns.filter(x=>x.cluster===m.cluster).length;
+    const angle = (idx / total) * 2 * Math.PI;
+    const spread = 30 + Math.min(total * 5, 60);
+    const bx = pos.x + Math.cos(angle) * spread * (0.4 + Math.random()*0.6);
+    const by = pos.y + Math.sin(angle) * spread * (0.4 + Math.random()*0.6);
+    const r = scaleR(m.pop);
+    const partyStroke = m.p==='UxP'?'#1F4E79':m.p==='JxC'?'#C8A200':m.p==='LLA'?'#922B21':'#777';
+
+    svgContent += `<circle cx="${bx}" cy="${by}" r="${r}" fill="${m.clusterColor}" fill-opacity="0.75" stroke="${partyStroke}" stroke-width="1.5" class="bubble" data-m="${m.m}" data-i="${m.i}" data-p="${m.p}" data-pop="${m.pop}" data-k="${m.clave}">
+      <title>${m.m}\n${m.i} (${m.p})\nPob: ${m.pop.toLocaleString('es-AR')}\n${m.clave}</title>
+    </circle>`;
+    if(r > 18) {
+      svgContent += `<text x="${bx}" y="${by+r+12}" text-anchor="middle" fill="#333" font-size="9" font-family="Arial" pointer-events="none">${m.m.length > 14 ? m.m.substring(0,14)+'…' : m.m}</text>`;
+    }
+  });
+
+  svgContent += `</svg>`;
+  area.innerHTML = `<div style="margin-bottom:10px;font-size:12px;color:#888;">💡 Tamaño = Población · Color de fondo = Cluster · Borde = Partido político (azul=UxP, dorado=JxC)</div>${svgContent}`;
+
+  // Hover tooltip
+  area.querySelectorAll('circle.bubble').forEach(c => {
+    c.addEventListener('mousemove', (e) => {
+      const tt = document.getElementById('tooltip');
+      tt.style.display = 'block';
+      tt.style.left = (e.clientX + 12) + 'px';
+      tt.style.top = (e.clientY - 60) + 'px';
+      tt.innerHTML = `<h4>${c.dataset.m}</h4><p>${c.dataset.i} · <b>${c.dataset.p}</b><br>Pob: ${Number(c.dataset.pop).toLocaleString('es-AR')}<br>${c.dataset.k}</p>`;
+    });
+    c.addEventListener('mouseleave', () => {
+      document.getElementById('tooltip').style.display = 'none';
+    });
+  });
+}
+
+function filterParty(p) {
+  activeParty = p;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('on', b.dataset.party === p));
+  refreshAll();
+}
+
+function filterSearch(v) {
+  searchTerm = v.toLowerCase();
+  if(searchTerm.length > 0 && activeTab === 'clusters') showTab('tabla');
+  else refreshAll();
+}
+
+// Init
+renderLegend();
+renderClusters(document.getElementById('viz-area'));
+</script>
+</body>
+</html>

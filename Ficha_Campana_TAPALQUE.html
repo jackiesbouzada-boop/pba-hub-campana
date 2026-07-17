@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAPALQUÉ — Ficha de Campaña · PBA 2026</title>
+<style>
+/* ═══════════════════════════════════════════════════
+   CSS LIMPIO - FICHA CAMPAÑA PBA 2026
+   Diseñado para A4 vertical. Sin herencias.
+   ═══════════════════════════════════════════════════ */
+
+/* RESET */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* PÁGINA */
+@page { size: A4 portrait; margin: 0; }
+
+/* COLORES */
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #1a1a2e;
+  background: white;
+  max-width: 1440px;
+  margin: 0 auto;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* HEADER */
+.header {
+  color: white;
+  padding: 22px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.82; line-height: 1.9; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-rival  { background: rgba(220,38,38,0.65); }
+.badge-aliado { background: rgba(34,197,94,0.65); }
+
+/* BANNER */
+.banner {
+  background: #0f2944;
+  color: white;
+  padding: 20px 28px;
+  border-left: 7px solid #FACC15;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #FACC15; margin-bottom: 7px; }
+.b-title  { font-size: 16px; font-weight: 800; margin-bottom: 13px; line-height: 1.3; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11.5px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #FACC15; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 20px; font-weight: 900; color: #FACC15; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+
+/* GRID PRINCIPAL - 2 columnas */
+.main {
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  background: #eef2f7;
+}
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+
+/* CARDS */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.ch {
+  padding: 9px 14px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  border-radius: 10px 10px 0 0;
+  flex-shrink: 0;
+}
+.cbody { padding: 14px; flex: 1; }
+
+/* SECTION TITLE */
+.st {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #1F4E79;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #1F4E79;
+  margin-bottom: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* CHIPS */
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #EDE9FE; border: 1px solid #C4B5FD; color: #4C1D95; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+
+/* TABLA - columnas fijas para evitar overflow */
+.t {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11.5px;
+  table-layout: fixed;
+}
+.t th {
+  background: #f5f6f8;
+  color: #555;
+  padding: 6px 8px;
+  text-align: left;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 2px solid #e5e7eb;
+}
+.t td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: top;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child   { width: 42%; color: #555; }
+.t td:last-child    { width: 58%; }
+.t th:first-child   { width: 25%; }
+thead { display: table-header-group; }
+
+/* Colores de celda */
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+
+/* KPI */
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 12px 13px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9.5px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 22px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9.5px; color: #999; margin-top: 3px; line-height: 1.35; }
+
+/* SECTORES */
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.sgrid > * { min-width: 0; }
+.sc   { border-radius: 7px; padding: 12px; border-left: 4px solid; }
+.sc.p { border-color: #2563EB; background: #EFF6FF; }
+.sc.s { border-color: #059669; background: #ECFDF5; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #7C3AED; background: #F5F3FF; }
+.sl   { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.6; margin-bottom: 3px; }
+.sn   { font-size: 13px; font-weight: 800; margin-bottom: 2px; }
+.sp   { font-size: 20px; font-weight: 900; margin: 3px 0 6px; }
+.sd   { font-size: 10.5px; line-height: 1.65; color: #444; }
+
+/* BARRAS PBG */
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
+.pbl { width: 110px; font-size: 10px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; min-width: 0; height: 17px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 6px; }
+.pbt { font-size: 9.5px; font-weight: 700; color: white; white-space: nowrap; }
+.pbp { width: 34px; font-size: 10px; font-weight: 700; text-align: right; flex-shrink: 0; }
+
+/* PALANCAS */
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pgrid > * { min-width: 0; }
+.pi   { border-radius: 7px; padding: 12px 14px; border-left: 4px solid; }
+.pi.o { background: #F0FDF4; border-color: #22C55E; }
+.pi.r { background: #FFF7ED; border-color: #F97316; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pt   { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.6; margin-bottom: 4px; }
+.pti  { font-size: 11.5px; font-weight: 700; margin-bottom: 5px; }
+.pd   { font-size: 10.5px; line-height: 1.65; color: #444; word-break: break-word; }
+
+/* ACTORES */
+.ar  { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.ar:last-child { border-bottom: none; }
+.ai  { font-size: 20px; min-width: 26px; flex-shrink: 0; }
+.ain { flex: 1; min-width: 0; }
+.an  { font-size: 11.5px; font-weight: 700; color: #1F4E79; margin-bottom: 3px; }
+.ad  { font-size: 10.5px; color: #555; line-height: 1.6; word-break: break-word; }
+.ats { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 5px; }
+.at  { font-size: 9.5px; font-weight: 700; padding: 2px 7px; border-radius: 7px; }
+
+/* AGENDA */
+.ag  { display: flex; gap: 10px; padding: 11px 0; border-bottom: 1px dashed #e8e8e8; }
+.ag:last-child { border-bottom: none; }
+.agi { font-size: 18px; min-width: 22px; flex-shrink: 0; }
+.agt { min-width: 0; }
+.agt strong { font-size: 11.5px; display: block; margin-bottom: 3px; color: #1F4E79; font-weight: 700; }
+.agt p { font-size: 10.5px; color: #666; line-height: 1.6; word-break: break-word; }
+
+/* ALERTAS */
+.al  { border-radius: 7px; padding: 11px 13px; margin-top: 10px; font-size: 10.5px; line-height: 1.6; word-break: break-word; }
+.al-v { background: #F0FDF4; border: 1px solid #86EFAC; color: #14532D; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al-k { background: #1e3a5f; color: white; }
+.al strong { display: block; margin-bottom: 3px; font-size: 11.5px; }
+.al-k strong { color: #FACC15; }
+
+/* NOTA */
+.nt { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 7px; padding: 10px 13px; font-size: 10.5px; color: #1E3A5F; margin-top: 10px; line-height: 1.6; word-break: break-word; }
+.nt strong { display: block; font-size: 11.5px; margin-bottom: 3px; color: #1E40AF; }
+
+/* HISTORIA */
+.hist { background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 7px; padding: 11px 13px; margin-top: 10px; }
+.hist strong { font-size: 11.5px; font-weight: 700; color: #78350F; display: block; margin-bottom: 4px; }
+.hist p { font-size: 10.5px; color: #78350F; line-height: 1.65; word-break: break-word; }
+
+/* CORREDOR */
+.corr { background: linear-gradient(135deg, #1e3a5f 0%, #2563EB 100%); color: white; border-radius: 8px; padding: 14px 16px; margin-top: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.corr h3 { font-size: 11.5px; font-weight: 800; margin-bottom: 6px; color: #FACC15; }
+.corr p  { font-size: 10.5px; line-height: 1.65; opacity: 0.9; }
+.cms { display: flex; gap: 7px; margin-top: 10px; flex-wrap: wrap; }
+.cm  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; padding: 7px 9px; flex: 1; text-align: center; font-size: 10.5px; font-weight: 700; min-width: 80px; word-break: break-word; }
+.cm span { display: block; font-size: 9px; font-weight: 400; opacity: 0.65; margin-top: 2px; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 12px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+
+/* ANEXOS - header y grilla */
+.anx-header {
+  color: white;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.anx-header .anx-left .anx-sup { font-size: 10px; opacity: 0.6; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3px; }
+.anx-header .anx-left .anx-tit { font-size: 20px; font-weight: 900; letter-spacing: 1px; }
+.anx-header .anx-right { font-size: 10px; opacity: 0.7; text-align: right; line-height: 1.8; }
+.anx-grid {
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  background: #eef2f7;
+}
+.anx-grid > * { min-width: 0; }
+.anx-footer { text-align: center; padding: 10px; font-size: 10px; color: #aaa; background: white; border-top: 1px solid #e5e7eb; }
+
+/* ═══════════════════════════════════════════════════
+   PRINT
+   ═══════════════════════════════════════════════════ */
+@media print {
+  @page { size: A4 portrait; margin: 0; }
+
+  html { background: white !important; padding: 0 !important; }
+  body {
+    max-width: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    font-size: 8.5pt;
+    background: #eef2f7 !important;
+  }
+
+  /* Mantener backgrounds en print */
+  .banner, .corr, .anx-header, .header { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  /* Cards */
+  .card { box-shadow: none !important; page-break-inside: avoid; break-inside: avoid; }
+  .ch   { font-size: 7.5pt !important; padding: 7px 11px !important; }
+  .cbody{ padding: 11px !important; }
+  .st   { font-size: 7.5pt !important; }
+
+  /* Grids */
+  .main     { padding: 12px 16px !important; gap: 10px !important; grid-template-columns: 1fr 1fr !important; max-width: 100% !important; }
+  .anx-grid { padding: 12px 16px !important; gap: 10px !important; }
+  .kpis     { grid-template-columns: 1fr 1fr !important; }
+  .sgrid    { gap: 9px !important; }
+  .pgrid    { gap: 9px !important; }
+
+  /* Banner */
+  .banner { page-break-inside: avoid; break-inside: avoid; }
+  .b-col p { font-size: 8pt !important; }
+  .b-num .n { font-size: 15pt !important; }
+  .b-num .l { font-size: 7.5pt !important; }
+  .header h1 { font-size: 18pt !important; }
+  .header-right { font-size: 8.5pt !important; }
+
+  /* Tablas */
+  .t    { font-size: 8pt !important; }
+  .t th { font-size: 7pt !important; padding: 4px 6px !important; }
+  .t td { padding: 4px 6px !important; }
+
+  /* KPIs */
+  .kl { font-size: 7.5pt !important; }
+  .kv { font-size: 15pt !important; }
+  .ks { font-size: 7.5pt !important; }
+
+  /* Sectores */
+  .sl { font-size: 7.5pt !important; }
+  .sn { font-size: 10pt !important; }
+  .sp { font-size: 13pt !important; }
+  .sd { font-size: 8pt !important; }
+
+  /* Palancas */
+  .pt  { font-size: 7.5pt !important; }
+  .pti { font-size: 9pt !important; }
+  .pd  { font-size: 8pt !important; }
+
+  /* Actores */
+  .an { font-size: 9pt !important; }
+  .ad { font-size: 8pt !important; }
+  .at { font-size: 7.5pt !important; }
+
+  /* Agenda */
+  .agt strong { font-size: 9pt !important; }
+  .agt p      { font-size: 8pt !important; }
+
+  /* Alertas/notas */
+  .al        { font-size: 8pt !important; page-break-inside: avoid; }
+  .al strong { font-size: 9pt !important; }
+  .nt        { font-size: 8pt !important; }
+  .hist p    { font-size: 8pt !important; }
+  .hist strong { font-size: 9pt !important; }
+
+  /* Chips */
+  .chip { font-size: 8pt !important; }
+
+  /* Corredor */
+  .corr { page-break-inside: avoid; }
+  .cm   { font-size: 8pt !important; }
+
+  /* Saltos */
+  .header { page-break-after: avoid; }
+  .banner { page-break-after: avoid; }
+  .ch     { page-break-after: avoid; }
+  .footer { page-break-before: avoid; font-size: 7.5pt !important; }
+  p, li   { orphans: 3; widows: 3; }
+}
+
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<div class="header" style="background: linear-gradient(135deg, #1F4E79 0%, #2563EB 100%);">
+  <div class="header-left">
+    <h1>📍 TAPALQUÉ</h1>
+    <div class="sub">Ficha de Campaña · Capital Termal del Interior · 2026</div>
+    <div class="tag">7ª Sección Electoral · Interior Agropecuario · Interior Profundo · 4.168 km²</div>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente:</strong> Gustavo Cocconi <span style="display:inline-block;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(34,197,94,0.6);margin-left:6px;">UxP · ALIADO</span></div>
+    <div><strong>Voto PJ (PASO 2023):</strong> 47,5% — Territorio fiel</div>
+    <div><strong>Población:</strong> 10.783 hab. (Censo 2022)</div>
+    <div><strong>Vocación:</strong> Termas · Ganadería extensiva · Interior Agropecuario</div>
+    <div style="margin-top:5px;font-size:10px;opacity:0.55;">Datos 2026 · PBA Analytics · MatrizPBA + fuentes verificadas</div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner" style="border-left-color:#22C55E;">
+  <div class="b-label">✅ DISTRITO ALIADO · INTENDENTE UxP · PJ SÓLIDO AL 47-48%</div>
+  <div class="b-title">El pueblo que decidió inventar su propia industria</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>¿Por qué visitar Tapalqué?</strong> Porque Tapalqué hizo algo que muy pocos municipios del interior bonaerense lograron: salir de la mono-dependencia ganadera a través de una apuesta propia, sin esperar que el Estado nacional o provincial lo rescatara. En 2019, inauguró el Complejo Termal que transformó su matriz económica. Visitar Tapalqué es mostrar que el desarrollo del interior es posible cuando el gobierno municipal y la Provincia trabajan con visión.</p>
+      <p><strong>¿Cuál es el momento?</strong> El momento de escala. Las termas ya demostraron que funcionan. El frigorífico municipal ya genera empleo formal. El campus universitario ya forma jóvenes. Lo que falta es el salto de escala que solo puede venir desde la Provincia: ampliación del complejo termal, conectividad vial para el turismo, sistematización hídrica del Salado para los ganaderos. Tapalqué está listo para crecer. La Provincia tiene que aparecer.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>¿Qué ve la perspectiva provincial que la gestión local no alcanza?</strong> La posición de Tapalqué en el corredor del interior bonaerense. No es solo un municipio con termas: es el nodo que puede articular turismo termal, ganadería de calidad y agroindustria sustentable en la 7ª sección. Desde la Provincia se puede proponer una agenda regional de desarrollo del interior que Tapalqué puede liderar simbólicamente.</p>
+      <p><strong>¿Cuál es el riesgo de no ir?</strong> El riesgo es la complacencia. Un distrito aliado que se da por garantizado tiende a debilitarse. El intendente Cocconi necesita poder mostrarle a su electorado que tener un aliado en la Provincia sirve para algo concreto. Si la visita no viene con anuncios tangibles, la alianza se mantiene pero la narrativa se debilita. Y JxC con 44% en el PASO 2023 es una competencia real que no puede ignorarse.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">10.783</div><div class="l">Habitantes (Censo 2022)<br>Interior Agropecuario · 7ª Sección</div></div>
+    <div class="b-num"><div class="n">47,5%</div><div class="l">PJ/UxP · PASO 2023<br>Territorio fiel al peronismo</div></div>
+    <div class="b-num"><div class="n">2019</div><div class="l">Inauguración Complejo Termal<br>Punto de inflexión económica</div></div>
+    <div class="b-num"><div class="n">8,1%</div><div class="l">LLA en PASO 2023<br>Muy bajo vs promedio PBA</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- KPIs -->
+<div class="card full">
+  <div class="ch" style="background:#1F4E79;color:white;">📊 Datos Clave · Tapalqué</div>
+  <div class="cbody" style="padding:16px 18px;">
+    <div class="kpis">
+      <div class="kpi" style="background:#EFF6FF;border-color:#93C5FD;">
+        <div class="kl">Población (Censo 2022)</div>
+        <div class="kv" style="color:#1D4ED8;">10.783</div>
+        <div class="ks">Municipio pequeño · Interior profundo bonaerense</div>
+      </div>
+      <div class="kpi" style="background:#F0FDF4;border-color:#86EFAC;">
+        <div class="kl">UxP/PJ · PASO 2023</div>
+        <div class="kv" style="color:#15803D;">47,5%</div>
+        <div class="ks">JxC 44,4% · LLA solo 8,1% · PJ ganó</div>
+      </div>
+      <div class="kpi" style="background:#ECFDF5;border-color:#6EE7B7;">
+        <div class="kl">Vínculo con candidato</div>
+        <div class="kv" style="color:#065F46;font-size:15px;">Aliado</div>
+        <div class="ks">Cocconi (UxP) · Activo · Gestión modelo</div>
+      </div>
+      <div class="kpi" style="background:#FFFBEB;border-color:#FCD34D;">
+        <div class="kl">Superficie · Extensión</div>
+        <div class="kv" style="color:#92400E;font-size:18px;">4.168 km²</div>
+        <div class="ks">Interior Agropecuario · 7ª Sección</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDAD TERRITORIAL -->
+<div class="card one">
+  <div class="ch" style="background:#EFF6FF;color:#1E40AF;">🗺️ Identidad Territorial</div>
+  <div class="cbody">
+    <div class="chips">
+      <span class="chip cb">🌡️ Polo Termal</span>
+      <span class="chip cg">🐄 Ganadería Extensiva</span>
+      <span class="chip co">🥩 Frigorífico Municipal</span>
+      <span class="chip cg">🌿 Agroecología</span>
+      <span class="chip cp">✅ Aliado UxP</span>
+    </div>
+    <table class="t">
+      <tr><th>Indicador</th><th>Tapalqué</th><th>Ref. Pcia.</th></tr>
+      <tr><td>Superficie</td><td class="bld">4.168 km²</td><td>—</td></tr>
+      <tr><td>Densidad</td><td>2,6 hab/km²</td><td>Interior Agropecuario: ~5</td></tr>
+      <tr><td>Motor económico nuevo</td><td class="inf">Termas (2019)</td><td>Innovación</td></tr>
+      <tr><td>Motor histórico</td><td class="ok">Ganadería extensiva</td><td>Cuenca Salado</td></tr>
+      <tr><td>Frigorífico municipal</td><td class="ok">Operativo desde 2013</td><td>Modelo</td></tr>
+      <tr><td>Voto LLA 2023 PASO</td><td class="ok">8,1% — Resistió</td><td>PBA: ~20%</td></tr>
+    </table>
+    <div class="nt">
+      <strong>📌 Posición en el mapa provincial</strong>
+      Interior Agropecuario, 7ª sección, cuenca del Salado (hidrología). A 270 km de Buenos Aires. Municipio rural que innovó con las termas. Forma parte del corredor del interior junto a Olavarría, Azul y Rauch. El Complejo Termal lo posiciona como destino turístico real dentro de la 7ª sección.
+    </div>
+    <div class="hist">
+      <strong>📜 Historia que sostiene el relato</strong>
+      <p>Tapalqué era un municipio de campo puro. La ganadería lo sostuvo durante décadas pero no lo hizo crecer. La apuesta de Cocconi por las termas fue arriesgada — nadie estaba seguro de que funcionara. Funcionó. <strong style="color:#78350F;">El relato es el de un municipio que apostó al futuro sin esperar al Estado nacional. La Provincia puede ser el socio que le dé escala a esa apuesta.</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- MATRIZ PRODUCTIVA -->
+<div class="card two">
+  <div class="ch" style="background:#1F4E79;color:white;">⚙️ Matriz Productiva · La transformación económica de Tapalqué</div>
+  <div class="cbody">
+    <div class="st">Sectores Productivos · Antes y después de las termas</div>
+    <div class="sgrid">
+      <div class="sc s">
+        <div class="sl">🥇 Base histórica</div>
+        <div class="sn">Ganadería Extensiva · Cuenca del Salado</div>
+        <div class="sp" style="color:#059669;">~45% actividad</div>
+        <div class="sd">Cría bovina extensiva en grandes campos de la Cuenca del Salado. Productores medianos y grandes con alta vulnerabilidad a inundaciones. El frigorífico municipal agrega valor local. Mercado de Liniers y exportaciones como destino final. La ganadería no creció — pero tampoco cedió.</div>
+      </div>
+      <div class="sc t">
+        <div class="sl">🚀 Motor nuevo (desde 2019)</div>
+        <div class="sn">Turismo Termal · Complejo Termal Tapalqué</div>
+        <div class="sp" style="color:#D97706;">~30% actividad</div>
+        <div class="sd">El Complejo Termal inaugurado en 2019 generó una revolución silenciosa: creó cientos de empleos en servicios donde antes no había. Hotelería, gastronomía, cabañas, recreación — sectores inexistentes en el municipio. En temporada alta la capacidad se satura: hay demanda no atendida.</div>
+      </div>
+      <div class="sc p">
+        <div class="sl">🔸 Industria local</div>
+        <div class="sn">Frigorífico y Matadero Municipal</div>
+        <div class="sp" style="color:#1D4ED8;">Empleo formal</div>
+        <div class="sd">Operativo desde 2013 con puesta en valor reciente. Faena en origen: el productor vende más cerca, el consumidor compra más barato, el municipio retiene el valor. Es un modelo de agroindustria pública que pocas ciudades del interior tienen. Potencial de escala con apoyo provincial.</div>
+      </div>
+      <div class="sc e">
+        <div class="sl">🌿 Diferencial sustentable</div>
+        <div class="sn">Agroecología y Energía Renovable</div>
+        <div class="sp" style="color:#6D28D9;">Modelo</div>
+        <div class="sd">Planta de biodiesel activa. Separación de residuos con alto cumplimiento vecinal. Participación en la RAMCC (Red Argentina de Municipios frente al Cambio Climático). Tapalqué tiene un perfil de sustentabilidad que excede su tamaño. Un activo de narrativa para el nivel provincial.</div>
+      </div>
+    </div>
+
+    <div class="st">Estructura de Actividad Estimada</div>
+    <div class="pbr"><div class="pbl">Ganadería y Agro</div><div class="pbo"><div class="pbi" style="width:90%;background:#059669"><div class="pbt">~45%</div></div></div><div class="pbp" style="color:#059669;">45%</div></div>
+    <div class="pbr"><div class="pbl">Turismo Termal</div><div class="pbo"><div class="pbi" style="width:60%;background:#D97706"><div class="pbt">~30%</div></div></div><div class="pbp" style="color:#D97706;">30%</div></div>
+    <div class="pbr"><div class="pbl">Comercio y Servicios</div><div class="pbo"><div class="pbi" style="width:30%;background:#2563EB"><div class="pbt">~15%</div></div></div><div class="pbp" style="color:#2563EB;">15%</div></div>
+    <div class="pbr"><div class="pbl">Agroindustria / Frigorífico</div><div class="pbo"><div class="pbi" style="width:20%;background:#7C3AED"><div class="pbt">~10%</div></div></div><div class="pbp" style="color:#7C3AED;">10%</div></div>
+
+    <div class="st" style="margin-top:18px;">Actores Clave del Territorio</div>
+    <div class="ar">
+      <div class="ai">🌡️</div>
+      <div class="ain">
+        <div class="an">Complejo Termal Tapalqué · Municipalidad</div>
+        <div class="ad">El activo más transformador del municipio. Generó cientos de empleos y diversificó la economía ganadera. En temporada alta supera la capacidad. La ampliación (nuevas piletas, área de hotelería, mejora de accesos) depende de financiamiento provincial. Es el epicentro de la visita y el argumento más visible del modelo de desarrollo.</div>
+        <div class="ats">
+          <span class="at" style="background:#D1FAE5;color:#065F46;">Epicentro de la visita</span>
+          <span class="at" style="background:#DBEAFE;color:#1E40AF;">Anuncio provincial aquí</span>
+        </div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🥩</div>
+      <div class="ain">
+        <div class="an">Frigorífico y Matadero Municipal · Tapalqué</div>
+        <div class="ad">En operación desde 2013 con puesta en valor reciente. Faena en origen: genera empleo formal fuera de la municipalidad y abarata la cadena alimentaria local. Con apoyo provincial (habilitaciones, logística, acceso a exportaciones) puede convertirse en un nodo regional de faena para municipios vecinos sin frigorífico propio.</div>
+        <div class="ats">
+          <span class="at" style="background:#FEF3C7;color:#92400E;">Modelo replicable</span>
+          <span class="at" style="background:#EDE9FE;color:#4C1D95;">Escala con Provincia</span>
+        </div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🐄</div>
+      <div class="ain">
+        <div class="an">Sociedad Rural de Tapalqué · Productores de la Cuenca</div>
+        <div class="ad">Los ganaderos de cría extensiva son el sector más tradicional y con mayor superficie. Su demanda central es hídrica: las inundaciones del Salado destruyen pasturas y afectan el stock. La política hídrica del Salado es competencia directa de la Provincia. Un compromiso concreto en esta materia tiene efecto político inmediato en el campo.</div>
+        <div class="ats">
+          <span class="at" style="background:#F0FDF4;color:#15803D;">Diálogo productivo</span>
+          <span class="at" style="background:#FEE2E2;color:#7F1D1D;">Agenda hídrica urgente</span>
+        </div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🏛️</div>
+      <div class="ain">
+        <div class="an">Municipalidad de Tapalqué · Intendente Cocconi (UxP)</div>
+        <div class="ad">Aliado político directo. Gestor de un modelo de desarrollo municipal innovador (termas + frigorífico + agroecología + campus). La visita fortalece su figura localmente y le da los anuncios que necesita para la campaña 2025-2027. Es el interlocutor natural y el amplificador del mensaje provincial en el interior de la 7ª sección.</div>
+        <div class="ats">
+          <span class="at" style="background:#D1FAE5;color:#065F46;">Aliado clave</span>
+          <span class="at" style="background:#DBEAFE;color:#1E40AF;">Coordinación previa total</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSPECTIVA PROVINCIAL -->
+<div class="card full">
+  <div class="ch" style="background:#0f2944;color:#FACC15;">👁️ Perspectiva Provincial · Palancas que solo el nivel provincial puede activar</div>
+  <div class="cbody">
+    <p style="font-size:12px;color:#666;margin-bottom:16px;line-height:1.7;">Cocconi demostró que la escala municipal puede innovar. Pero para que Tapalqué dé el salto siguiente —de municipio con termas a polo de desarrollo del interior de la 7ª sección— se necesitan decisiones que exceden al intendente: financiamiento para ampliar el complejo, rutas para conectarlo, política hídrica para los ganaderos.</p>
+    <div class="pgrid">
+      <div class="pi d">
+        <div class="pt">🔵 Inversión estratégica · Alta visibilidad</div>
+        <div class="pti">Ampliación del Complejo Termal: más capacidad, más temporada, más empleo</div>
+        <div class="pd">El complejo actual supera su capacidad en temporada alta. Una ampliación con financiamiento provincial (nuevas piletas, área de descanso, zona de hotelería básica) permite atender más turistas, extender la temporada y crear nuevos puestos de trabajo. El anuncio tiene altísima visibilidad local y resonancia regional en toda la 7ª sección.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 Infraestructura para el turismo</div>
+        <div class="pti">Conectividad vial hacia Tapalqué: la ruta que hace posible el turismo termal</div>
+        <div class="pd">La ruta que conecta Tapalqué con Olavarría y el corredor del interior es provincial. Cada fin de semana llegan turistas que sufren el estado del camino. Mejorar la conectividad vial no es solo infraestructura: es hacer más sustentable el modelo turístico que el municipio construyó solo. "La Provincia pone la ruta, Tapalqué pone las termas."</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">✅ Política hídrica · Impacto directo en el campo</div>
+        <div class="pti">Cuenca del Salado: sistematización hídrica para los ganaderos</div>
+        <div class="pd">Las inundaciones periódicas del Salado y sus afluentes son la principal amenaza para la ganadería extensiva del partido. La Provincia tiene competencia directa y exclusiva sobre el manejo hídrico de la cuenca. Comprometerse con obras de sistematización (canales, esclusas, monitoreo de niveles) tiene efecto político inmediato entre los productores rurales, el sector más independiente del electorado.</pd>
+      </div>
+      <div class="pi o">
+        <div class="pt">✅ Agroindustria provincial</div>
+        <div class="pti">Frigorífico de Tapalqué como nodo regional de faena en origen</div>
+        <div class="pd">Articular el frigorífico municipal con la red provincial de comercialización y exportación. Que los municipios vecinos sin capacidad propia de faena puedan acceder al frigorífico de Tapalqué bajo convenio provincial. Esto da escala al frigorífico, más empleo al municipio y más valor al productor ganadero que hoy manda la hacienda a Liniers.</div>
+      </div>
+      <div class="pi r">
+        <div class="pt">⚠️ Riesgo a monitorear · Competencia JxC</div>
+        <div class="pti">JxC con 44,4% en PASO 2023 — un punto de diferencia real</div>
+        <div class="pd">La diferencia entre el PJ (47,5%) y JxC (44,4%) en el PASO 2023 es de apenas 3 puntos. Si el voto de LLA (8,1%) migra a JxC en una general, el resultado puede revertirse. La visita y los anuncios concretos son parte del trabajo de consolidación que el aliado local necesita para mantener esa ventaja.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 Educación con perfil productivo</div>
+        <div class="pti">Campus Universitario: ampliar la oferta con carreras técnicas provinciales</div>
+        <div class="pd">El campus universitario de Tapalqué ofrece carreras vinculadas a gestión ambiental y turismo. La Provincia puede ampliar la oferta con tecnicaturas en manejo ganadero, frigoríficos y energías renovables. Que los jóvenes del interior puedan estudiar sin irse a Olavarría o a Buenos Aires. "La formación que necesita el campo bonaerense tiene que llegar al campo bonaerense."</div>
+      </div>
+    </div>
+    <div class="corr">
+      <h3>🌿 Interior Productivo Bonaerense · La 7ª Sección como laboratorio de desarrollo</h3>
+      <p>Tapalqué puede ser el caso de éxito que muestre que el interior bonaerense no tiene por qué perder población ni depender de transferencias. Un modelo: termas + frigorífico + campo sustentable + educación técnica. Desde la Provincia, ese modelo puede escalarse a otros municipios de la sección.</p>
+      <div class="cms">
+        <div class="cm">📍 TAPALQUÉ<span>Termas · Frigorífico · Agro</span></div>
+        <div class="cm">↔ OLAVARRÍA<span>Cemento · Universidad</span></div>
+        <div class="cm">↔ AZUL<span>Turismo cultural · Agro</span></div>
+        <div class="cm">↔ RAUCH<span>Ganadería · Interior</span></div>
+        <div class="cm">↔ GENERAL LAMADRID<span>Agro · Interior profundo</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ANÁLISIS DEL MOMENTO -->
+<div class="card two">
+  <div class="ch" style="background:#FFFBEB;color:#78350F;">📈 Análisis del Momento · La alianza que hay que profundizar</div>
+  <div class="cbody">
+    <div class="st">Diagnóstico político · Tapalqué en el mapa provincial</div>
+    <table class="t" style="margin-bottom:16px;">
+      <thead><tr><th>Elección</th><th>PJ / UxP</th><th>JxC</th><th>LLA</th><th>Ganador</th></tr></thead>
+      <tbody>
+        <tr><td class="bld">Legislativas 2021</td><td class="ok">47,8%</td><td>—</td><td class="warn">24,0%</td><td>PJ</td></tr>
+        <tr><td class="bld">PASO 2023</td><td class="ok">47,5%</td><td class="warn">44,4%</td><td>8,1%</td><td>PJ</td></tr>
+        <tr><td class="bld">Gral 2023</td><td class="ok">47,5%</td><td class="warn">44,3%</td><td>8,1%</td><td>PJ</td></tr>
+      </tbody>
+    </table>
+    <div class="ag">
+      <div class="agi">🟢</div>
+      <div class="agt">
+        <strong>Fortaleza: PJ mantuvo el 47% en todos los ciclos</strong>
+        <p>A diferencia de la mayoría de los municipios del interior donde LLA se coló con fuerza, en Tapalqué el peronismo se sostuvo en el 47-48% de forma consistente. Eso no es casualidad: es el resultado de una gestión visible (las termas, el frigorífico, las rondas sanitarias) que conecta con el electorado en clave cotidiana, no solo electoral.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🟡</div>
+      <div class="agt">
+        <strong>Señal a monitorear: JxC con 44,4% en el PASO — competencia real</strong>
+        <p>La diferencia entre el PJ y JxC en el PASO 2023 es de apenas 3 puntos. JxC tiene estructura en la 7ª sección y puede crecer si el gobierno provincial no consolida la narrativa de gestión en territorio aliado. La visita y los anuncios concretos son parte del trabajo de consolidación que el candidato necesita.</p>
+      </div>
+    </div>
+    <div class="ag" style="border-bottom:none;">
+      <div class="agi">🔵</div>
+      <div class="agt">
+        <strong>Oportunidad: el modelo Tapalqué como relato de la gestión provincial</strong>
+        <p>Tapalqué es el argumento que refuta la narrativa del interior abandonado. Con inversión concreta de la Provincia (rutas, complejo termal ampliado, política hídrica del Salado), el municipio se convierte en caso de éxito que el candidato puede mostrar en toda la 7ª sección como ejemplo de lo que la gestión provincial puede hacer cuando está alineada con el intendente.</p>
+      </div>
+    </div>
+    <div class="al al-v">
+      <strong>✅ Conclusión estratégica</strong>
+      La alianza con Cocconi es uno de los activos más sólidos del interior profundo. Hay que invertir en ella antes de la elección, no después. Cada peso anunciado en Tapalqué tiene efecto multiplicador en la narrativa del interior de la 7ª sección.
+    </div>
+  </div>
+</div>
+
+<!-- AGENDA DE DISCURSO -->
+<div class="card one">
+  <div class="ch" style="background:#1F4E79;color:white;">🎤 Agenda de Discurso · Perspectiva Provincial</div>
+  <div class="cbody">
+    <div class="st">Ejes · Por prioridad de impacto</div>
+    <div class="ag">
+      <div class="agi">🌡️</div>
+      <div class="agt">
+        <strong>1. El modelo que funciona merece escala</strong>
+        <p>"Tapalqué apostó por las termas cuando nadie creía. Funcionó. La Provincia va a apostar ahora para que esto crezca." Anuncio de financiamiento para la ampliación del complejo.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">💧</div>
+      <div class="agt">
+        <strong>2. La deuda histórica del Salado</strong>
+        <p>"El campo de Tapalqué sabe lo que es una inundación. La Provincia va a estar al lado del productor cuando baje el agua — y también cuando sube." Compromiso con la política hídrica de la cuenca.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🥩</div>
+      <div class="agt">
+        <strong>3. Faena en origen, valor en origen</strong>
+        <p>El frigorífico de Tapalqué como modelo provincial. Propuesta de articulación con la red de comercialización de la Provincia. El productor que vende más cerca cobra mejor.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🎓</div>
+      <div class="agt">
+        <strong>4. Educación que no obliga a emigrar</strong>
+        <p>"No podemos seguir aceptando que para estudiar haya que irse. La Provincia va a traer las carreras técnicas al interior." Ampliación del campus con tecnicaturas productivas.</p>
+      </div>
+    </div>
+    <div class="ag" style="border-bottom:none;">
+      <div class="agi">🚫</div>
+      <div class="agt">
+        <strong>Qué evitar</strong>
+        <p>No llegar sin anuncios concretos. No hablar de política nacional en un municipio aislado del debate nacional. No ignorar la agenda ganadera: los productores del campo son tan importante como el complejo termal. Un aliado sin anuncios es un aliado debilitado.</p>
+      </div>
+    </div>
+    <div class="al al-k">
+      <strong>⚡ La frase que sintetiza la visita</strong>
+      "Tapalqué no esperó al Estado para desarrollarse. Ahora el Estado provincial viene a acompañar lo que Tapalqué ya construyó."
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  🔒 USO RESERVADO · Campaña PBA · Ficha Tapalqué · PBA Analytics 2026
+</div>
+
+<!-- ANEXO I -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;">
+  <div style="background:linear-gradient(135deg,#1F4E79,#2563EB);color:white;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-size:11px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Tapalqué · Campaña PBA 2026</div>
+      <div style="font-size:22px;font-weight:900;letter-spacing:1px;">ANEXO I — PRINCIPALES INDICADORES</div>
+    </div>
+    <div style="font-size:11px;opacity:0.7;text-align:right;">7ª Sección Electoral · Interior<br>PBA Analytics 2026</div>
+  </div>
+  <div style="padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:13px;background:#eef2f7;">
+
+    <div class="card">
+      <div class="ch" style="background:#EFF6FF;color:#1E40AF;">🌡️ Complejo Termal</div>
+      <div class="cbody">
+        <div class="st">La nueva industria de Tapalqué</div>
+        <table class="t">
+          <tr><td>Inauguración</td><td class="inf">2019 · transformación económica</td></tr>
+          <tr><td>Impacto empleo</td><td class="ok">Cientos de puestos en servicios</td></tr>
+          <tr><td>Sectores creados</td><td class="ok">Hotelería, gastro, cabañas, recreación</td></tr>
+          <tr><td>Capacidad actual</td><td class="warn">Se satura en temporada alta</td></tr>
+          <tr><td>Demanda no atendida</td><td class="bad">Alta · requiere ampliación</td></tr>
+          <tr><td>Financiamiento ampliación</td><td class="bad">Pendiente · palanca provincial</td></tr>
+          <tr><td>Conectividad vial</td><td class="warn">Rutas provinciales · mejora urgente</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#ECFDF5;color:#065F46;">🐄 Ganadería y Cuenca del Salado</div>
+      <div class="cbody">
+        <div class="st">Base histórica del partido</div>
+        <table class="t">
+          <tr><td>Perfil productivo</td><td class="inf">Cría extensiva bovina</td></tr>
+          <tr><td>Cuenca</td><td>Del Salado · campo grande</td></tr>
+          <tr><td>Principal amenaza</td><td class="bad">Inundaciones periódicas del Salado</td></tr>
+          <tr><td>Política hídrica</td><td class="bad">Competencia Provincia · pendiente</td></tr>
+          <tr><td>Frigorífico municipal</td><td class="ok">Desde 2013 · puesta en valor</td></tr>
+          <tr><td>Faena en origen</td><td class="ok">Abarata cadena · genera empleo</td></tr>
+          <tr><td>Escala frigorífico</td><td class="warn">Limitada · requiere articulación prov.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#F0FDF4;color:#15803D;">📊 Datos Municipales Generales</div>
+      <div class="cbody">
+        <div class="st">Indicadores de base</div>
+        <table class="t">
+          <tr><td>Población (Censo 2022)</td><td class="inf">10.783 hab.</td></tr>
+          <tr><td>Superficie</td><td>4.168 km²</td></tr>
+          <tr><td>Sección Electoral</td><td>7ª · Interior profundo</td></tr>
+          <tr><td>Intendente</td><td class="ok">Gustavo Cocconi · UxP · Aliado</td></tr>
+          <tr><td>Categoría electoral</td><td class="warn">Disputado (favorable PJ)</td></tr>
+          <tr><td>Identidad económica</td><td>Termas + Ganadería + Agroindustria</td></tr>
+          <tr><td>Voto LLA PASO 2023</td><td class="ok">8,1% — Muy bajo vs PBA</td></tr>
+          <tr><td>Distancia a CABA</td><td>~270 km · corredor interior</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#FFFBEB;color:#78350F;">🌿 Programas de Sustentabilidad</div>
+      <div class="cbody">
+        <div class="st">Tapalqué Sostenible</div>
+        <table class="t">
+          <tr><td>Planta de biodiesel</td><td class="ok">Activa · energía local</td></tr>
+          <tr><td>Separación de residuos</td><td class="ok">Alto cumplimiento vecinal</td></tr>
+          <tr><td>RAMCC</td><td class="ok">Red Municipios Cambio Climático</td></tr>
+          <tr><td>Agroecología</td><td class="ok">Fomento activo municipal</td></tr>
+          <tr><td>Campus ambiental</td><td class="ok">Carreras de gestión ambiental</td></tr>
+          <tr><td>Perfil diferencial</td><td class="inf">Municipio verde · referencia PBA</td></tr>
+        </table>
+        <div class="al al-v" style="margin-top:10px;">
+          <strong>✅ Activo narrativo</strong>
+          Tapalqué tiene un perfil de sustentabilidad inusual para su tamaño. Puede posicionarse como referencia provincial en agroecología y energías renovables.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#FEE2E2;color:#7F1D1D;">🗳️ Historial Electoral</div>
+      <div class="cbody">
+        <div class="st">Evolución del voto · Tapalqué</div>
+        <table class="t">
+          <thead><tr><th>Elección</th><th>PJ/UxP</th><th>JxC</th><th>LLA</th><th>Resultado</th></tr></thead>
+          <tbody>
+            <tr><td>Leg. 2021</td><td class="ok">47,8%</td><td>—</td><td class="warn">24,0%</td><td class="bld">PJ</td></tr>
+            <tr><td>PASO 2023</td><td class="ok">47,5%</td><td class="warn">44,4%</td><td>8,1%</td><td class="bld">PJ</td></tr>
+            <tr><td>Gral 2023</td><td class="ok">47,5%</td><td class="warn">44,3%</td><td>8,1%</td><td class="bld">PJ</td></tr>
+            <tr><td>Leg. Prov. Sept·25</td><td class="ok">47,8%</td><td>—</td><td class="warn">24,0%</td><td class="bld ok">FP ✓</td></tr>
+          </tbody>
+        </table>
+        <div class="hist" style="margin-top:10px;">
+          <strong>📌 Tendencia actualizada</strong>
+          <p>PJ sólido y estable en cuatro comicios: nunca bajó de 47,5%. LLA triplicó su caudal (8,1% en 2023 → 24,0% en sept. 2025) pero sin amenazar el dominio peronista. JxC se diluyó. Tapalqué es el bastión más consistente del interior: FP ganó todas las elecciones con mayoría relativa clara.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#F5F3FF;color:#4C1D95;">🎯 Prioridad Estratégica</div>
+      <div class="cbody">
+        <div class="st">Posición en el mapa de campaña</div>
+        <table class="t">
+          <tr><td>Clasificación PBA</td><td class="warn">Disputado (favorable)</td></tr>
+          <tr><td>Urgencia política</td><td class="ok">Media · Aliado consolidado</td></tr>
+          <tr><td>Retorno de la visita</td><td class="ok">Alto · narrativa y votos</td></tr>
+          <tr><td>Palanca 1</td><td class="inf">Ampliación Complejo Termal</td></tr>
+          <tr><td>Palanca 2</td><td class="inf">Política hídrica Salado</td></tr>
+          <tr><td>Palanca 3</td><td class="inf">Frigorífico como nodo regional</td></tr>
+          <tr><td>Vínculo con intendente</td><td class="ok">Aliado directo · UxP</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;padding:12px;font-size:11px;color:#aaa;background:white;border-top:1px solid #e5e7eb;">
+    🔒 USO RESERVADO · ANEXO I · Tapalqué · PBA Analytics 2026
+  </div>
+</div>
+
+<!-- ANEXO II -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;">
+  <div style="background:linear-gradient(135deg,#1F4E79,#2563EB);color:white;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-size:11px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Tapalqué · 2026</div>
+      <div style="font-size:22px;font-weight:900;letter-spacing:1px;">ANEXO II — GESTIÓN LOCAL Y DATOS DE CONTEXTO</div>
+    </div>
+    <div style="font-size:11px;opacity:0.7;text-align:right;">Gestión Cocconi · UxP<br>Aliado · Modelo interior</div>
+  </div>
+  <div style="padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:13px;background:#eef2f7;">
+
+    <div class="card">
+      <div class="ch" style="background:#ECFDF5;color:#065F46;">🏛️ Gestión Cocconi · UxP · Diagnóstico</div>
+      <div class="cbody">
+        <div class="st">El intendente aliado: perfil y fortalezas</div>
+        <table class="t" style="margin-bottom:14px;">
+          <tr><td>Perfil político</td><td class="ok">Innovador · desarrollista · pragmático</td></tr>
+          <tr><td>Legitimidad local</td><td class="ok">Alta · gestión visible y tangible</td></tr>
+          <tr><td>Concejo Deliberante</td><td class="ok">Mayoría PJ</td></tr>
+          <tr><td>Relación con Provincia</td><td class="ok">Colaborativa · natural</td></tr>
+          <tr><td>Agenda termal</td><td class="ok">Activa · su obra insignia</td></tr>
+          <tr><td>Agenda ganadera</td><td class="ok">Frigorífico como política activa</td></tr>
+          <tr><td>Agenda sustentable</td><td class="ok">Biodiesel, residuos, RAMCC</td></tr>
+        </table>
+        <div class="al al-v">
+          <strong>✅ Coordinación total recomendada</strong>
+          Cocconi es el organizador natural de la visita. Debe coordinar el recorrido del complejo termal, el encuentro con productores y la recorrida por el frigorífico. Su imagen y la del candidato deben aparecer juntos en todos los anuncios. El fortalecimiento mutuo es el objetivo.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#EFF6FF;color:#1E40AF;">📋 Programas Municipales · Hitos 2019-2026</div>
+      <div class="cbody">
+        <div class="st">Principales logros de gestión</div>
+        <table class="t" style="margin-bottom:14px;">
+          <tr><td>Complejo Termal</td><td class="ok">Inaugurado 2019 · transformación</td></tr>
+          <tr><td>Frigorífico Municipal</td><td class="ok">Puesta en valor 2023-24</td></tr>
+          <tr><td>Campus Universitario</td><td class="ok">Gestión ambiental y turismo</td></tr>
+          <tr><td>Planta biodiesel</td><td class="ok">En operación</td></tr>
+          <tr><td>Separación residuos</td><td class="ok">Alto cumplimiento</td></tr>
+          <tr><td>Rondas sanitarias rurales</td><td class="ok">400+ atenciones/mes en parajes</td></tr>
+          <tr><td>Programa Producción</td><td class="ok">Apoyo a productores y emprendedores</td></tr>
+        </table>
+        <div class="hist">
+          <strong>📌 Relato para la visita</strong>
+          <p>La gestión Cocconi es el mejor argumento que la visita provincial puede usar: un intendente aliado que sin grandes recursos del Estado nacional logró cambiar la economía de su municipio. La Provincia entra a amplificar ese logro, no a reemplazarlo.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;padding:12px;font-size:11px;color:#aaa;background:white;border-top:1px solid #e5e7eb;">
+    🔒 USO RESERVADO · ANEXO II · Tapalqué · PBA Analytics 2026
+  </div>
+</div>
+</body>
+</html>

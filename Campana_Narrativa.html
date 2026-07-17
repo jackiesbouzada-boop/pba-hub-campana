@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Campana — Narrativa Estratégica 2026</title>
+<style>
+:root{--primary:#1a3a5c;--accent:#2563eb;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:860px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#0c2340 0%,#1a3a5c 55%,#1d4ed8 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px}
+.h-tag{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.85rem;opacity:.8;margin-bottom:14px}
+.h-thesis{font-size:.95rem;line-height:1.65;max-width:680px;color:rgba(255,255,255,.92);border-left:3px solid #60a5fa;padding-left:16px;margin-top:10px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a3a5c,#1e4575);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:18px 20px}
+.sec-body p{color:#374151;font-size:.84rem;line-height:1.7;margin-bottom:12px}
+.sec-body p:last-child{margin-bottom:0}
+.sec-body strong{color:#1a3a5c}
+.cita{background:#eff6ff;border-left:4px solid #2563eb;border-radius:0 8px 8px 0;padding:16px 18px;margin:14px 0}
+.cita p{font-size:.88rem;font-style:italic;color:#1e3a5f;line-height:1.6;margin:0}
+.cita .attr{font-size:.73rem;font-style:normal;color:#4b6b8a;margin-top:8px;font-weight:600}
+.alert{border-radius:8px;padding:14px 16px;margin:12px 0}
+.alert-warn{background:#fff7ed;border:1.5px solid #fed7aa}
+.alert-win{background:#f0fdf4;border:1.5px solid #bbf7d0}
+.alert-neutral{background:#eff6ff;border:1.5px solid #bfdbfe}
+.alert-title{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.alert-warn .alert-title{color:#b45309}
+.alert-win .alert-title{color:#15803d}
+.alert-neutral .alert-title{color:#1e40af}
+.alert p{font-size:.8rem;color:#374151;line-height:1.6;margin:0}
+.seg-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.seg{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.seg-nm{font-size:.8rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.seg-body{font-size:.77rem;color:#475569;line-height:1.55}
+.seg-pct{display:inline-block;background:#dbeafe;color:#1e40af;font-size:.7rem;font-weight:800;padding:2px 8px;border-radius:10px;margin-bottom:6px}
+.tabla{width:100%;border-collapse:collapse;font-size:.78rem;margin:14px 0}
+.tabla th{background:#1a3a5c;color:#fff;padding:8px 10px;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.4px}
+.tabla td{padding:8px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tabla tr:last-child td{border-bottom:none}
+.tabla tr:hover td{background:#f8fafc}
+.num{font-weight:700;color:var(--accent)}
+.tg-pj{color:#1d4ed8;font-weight:700}
+.tg-lla{color:#7c3aed;font-weight:700}
+.tg-jxc{color:#d97706;font-weight:700}
+.eje-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0}
+.eje{background:#f8fafc;border:1.5px solid var(--border);border-radius:8px;padding:12px 14px;border-top:3px solid #1a3a5c}
+.eje-n{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:4px}
+.eje-ttl{font-size:.85rem;font-weight:800;color:var(--primary);margin-bottom:6px}
+.eje-body{font-size:.76rem;color:#475569;line-height:1.5}
+.cl-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.3rem;margin-bottom:4px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.cl-body{font-size:.77rem;color:#475569;line-height:1.55}
+.sint{background:linear-gradient(135deg,#0c2340,#1a3a5c);border-radius:var(--radius);padding:22px 24px;color:#fff;margin-top:14px}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#93c5fd;margin-bottom:14px}
+.sint p{font-size:.84rem;color:rgba(255,255,255,.9);line-height:1.7;margin-bottom:10px}
+.sint p:last-child{margin-bottom:0}
+.sint strong{color:#93c5fd}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-tag">🛤️ Corredor Industrial Norte · 1ª Sección · Narrativa Estratégica 2026</div>
+  <div class="h-name">CAMPANA</div>
+  <div class="h-sub">JxC opositor (Abella) · Padrón 88,712 · El cluster industrial más denso del norte bonaerense</div>
+  <div class="h-thesis">Campana fue el bastión JxC más sólido del Corredor Norte (57.1% en 2023). Ese voto migró íntegramente a LLA. El PJ sale de un piso históricamente bajo (26.6%) con el único activo que LLA no puede ofrecer: la industria argentina que exporta y el Estado que crea condiciones. TenarisSiderca es la entrada, no el municipio.</div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗺️ El Municipio que Necesitás Entender</div>
+  <div class="sec-body">
+    <p>Campana no es un municipio de servicios ni de barrios dormitorio. Es una <strong>ciudad fabril en sentido pleno</strong>: TenarisSiderca (tubos sin costura para petróleo), Axion Energy (refinería petroquímica), Honda Argentina (producción automotriz), y decenas de puertos privados sobre la Hidrovia coexisten en un territorio de 986 km². El empleo industrial formal es el eje de toda la vida social y política del partido.</p>
+    <p>Esto tiene una consecuencia política directa: el electorado que importa en Campana no es el vecino de barrio residencial, es el <strong>trabajador industrial calificado</strong>. Un técnico de TenarisSiderca gana tres veces el salario promedio provincial. Tiene afiliación sindical (UOM), acceso a obra social, casa propia. No vota por miedo a perder el trabajo en sentido básico — vota por orgullo de lo que produce y por expectativa de que ese tejido industrial sea sostenido por el Estado.</p>
+    <p>El PJ histórico apeló a ese trabajador por décadas. En 2023, el PJ obtuvo apenas <strong>26.6%</strong> mientras JxC dominaba con 57.1%. Eso no fue pérdida del voto obrero — fue un voto de clase media técnica que en ese momento veía en JxC la promesa de modernización y estabilidad. Cuando JxC no la entregó, ese voto migró a LLA. Y ahí está hoy.</p>
+
+    <div class="alert alert-warn">
+      <div class="alert-title">⚠️ El error a no cometer</div>
+      <p>Campana no se trabaja por el municipio. Abella (JxC) tiene una gestión activa, no hay conflictos abiertos, y los mejores activos del partido —Tenaris, Honda, Axion— son todos privados. Coordinar la visita con el intendente opositor es innecesario y políticamente inconveniente. Los tres activos estratégicos tienen canales propios de acceso directo.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 El Arco Electoral: Una Historia de Colapso y Oportunidad</div>
+  <div class="sec-body">
+    <table class="tabla">
+      <thead><tr><th>Elección</th><th>PJ</th><th>JxC</th><th>LLA</th><th>Padrón</th></tr></thead>
+      <tbody>
+        <tr><td>2023 Gral (Intendente)</td><td class="tg-pj">26.6% (17,033)</td><td class="tg-jxc">57.1% (36,614)</td><td class="tg-lla">13.9% (8,942)</td><td>89,630</td></tr>
+        <tr><td>2025 Prov</td><td class="tg-pj">41.6% (22,875)</td><td>—</td><td class="tg-lla">42.7% (23,487)</td><td>92,131</td></tr>
+        <tr><td>2025 Nac</td><td class="tg-pj">36.3% (21,043)</td><td>—</td><td class="tg-lla">45.8% (26,566)</td><td>88,712</td></tr>
+      </tbody>
+    </table>
+
+    <p>La lectura superficial es que Campana se convirtió en tierra LLA. La lectura estratégica es más matizada. En 2023, LLA era una tercera fuerza marginal en el municipio (13.9%). El grueso del voto anti-PJ estaba en JxC (57.1%). Cuando JxC colapsó, ese bloque buscó destino y LLA lo absorbió casi completo.</p>
+    <p>El PJ saltó de 26.6% a 41.6% provincial en 2025 — un incremento de 15 puntos que proviene casi íntegramente del voto JxC que no fue a LLA. Pero ese mismo PJ no pudo sostener el número en la boleta nacional: cayó a 36.3%. El <strong>split ticket de −5.3 pts</strong> es inusualmente alto y dice algo específico: hay un segmento de votantes que está dispuesto a votar PJ en lo provincial pero todavía no confía en el candidato nacional. Hay trabajo por hacer en la boleta completa.</p>
+
+    <div class="alert alert-neutral">
+      <div class="alert-title">📐 El Split Ticket como Diagnóstico</div>
+      <p>Split de −5.3 pts (PJ prov 41.6% vs PJ nac 36.3%) indica que el candidato provincial tiene <strong>tracción propia en Campana</strong> que la lista nacional no replicate. Ese 5.3% que vota PJ provincial y LLA nacional no es un voto perdido — es un voto en tránsito que el PJ ya captó a medias. El municipio es trabajable más fácilmente en la boleta bonaerense que en la nacional.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">👥 Segmentación: Quién Decide en Campana</div>
+  <div class="sec-body">
+    <div class="seg-grid">
+      <div class="seg">
+        <div class="seg-pct">~35% — EL SEGMENTO CLAVE</div>
+        <div class="seg-nm">Trabajador Industrial Calificado</div>
+        <div class="seg-body">Técnico metalúrgico, operario de Tenaris/Honda/Axion. Afiliado a UOM. Salario alto, casa propia, obra social robusta. Históricamente PJ pero migró parcialmente a LLA en 2025. <strong>No vota por demagogia — vota por quien entiende la industria como fuente de bienestar real.</strong></div>
+      </div>
+      <div class="seg">
+        <div class="seg-pct">~25% — VOTO MIGRADO A LLA</div>
+        <div class="seg-nm">Clase Media Urbana (ex JxC)</div>
+        <div class="seg-body">Comerciantes, empleados de servicios, profesionales. Votó JxC masivamente en 2023 (parte del 57.1%). Hoy está con LLA. Alta volatilidad. Sensible a estabilidad económica y gestión del tipo de cambio. Difícil de recuperar en el corto plazo.</div>
+      </div>
+      <div class="seg">
+        <div class="seg-pct">~15%</div>
+        <div class="seg-nm">Ingenieros y Profesionales de Planta</div>
+        <div class="seg-body">Ingenieros químicos, metalúrgicos, logísticos. Trabajan en la planta pero en roles técnicos/gerenciales. Más ideológicamente liberales. Voto dividido. El argumento de "industria argentina exportadora" llega mejor que el discurso social.</div>
+      </div>
+      <div class="seg">
+        <div class="seg-pct">~10% — PJ SÓLIDO</div>
+        <div class="seg-nm">Sectores Populares Periféricos</div>
+        <div class="seg-body">Barrios y asentamientos en la periferia sur y oeste. Voto PJ consolidado. Sin gran volatilidad. El piso del partido en Campana viene principalmente de acá, pero no alcanza para ganar solo.</div>
+      </div>
+    </div>
+
+    <p>La ecuación para Campana es simple pero exigente: el PJ tiene su piso asegurado (~26-27%) en sectores populares y la base sindical más dura. Para llegar a 45%+ necesita recuperar una parte significativa del trabajador industrial calificado que en 2025 se fue a LLA. <strong>Ese segmento se mueve por orgullo productivo, no por subsidios</strong>. El argumento es industria que exporta, soberanía productiva, empleo de calidad como política de Estado.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Los Tres Ejes del Argumento</div>
+  <div class="sec-body">
+    <div class="eje-grid">
+      <div class="eje">
+        <div class="eje-n">Eje 1</div>
+        <div class="eje-ttl">Industria Argentina que Exporta</div>
+        <div class="eje-body">TenarisSiderca abastece a la industria petrolera de toda Latinoamérica. Honda exporta autos. Axion procesa crudo que se vende al mundo. Ese tejido exportador existe porque históricamente el Estado argentino creó las condiciones —aranceles, infraestructura, formación técnica, sindicatos. LLA desconoce ese rol del Estado. El PJ lo reconoce explícitamente.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-n">Eje 2</div>
+        <div class="eje-ttl">La Hidrovia como Política de Estado</div>
+        <div class="eje-body">Los puertos de Campana son nodos críticos de la Hidrovia Paraná-Paraguay. El futuro de esos puertos depende de decisiones federales sobre dragado, peajes, soberanía comercial. La provincia de Buenos Aires tiene interés estratégico en que esos puertos operen bien. Eso es un argumento de Estado que LLA no puede ganar.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-n">Eje 3</div>
+        <div class="eje-ttl">Formación Técnica + Empleo</div>
+        <div class="eje-body">El Centro Municipal de Oficios orienta a jóvenes hacia las plantas industriales. La formación técnica en metalurgia y petroquímica es el puente entre la familia popular y el empleo formal calificado. Escalar eso con recursos provinciales — la CGC (Campus de Gestión del Conocimiento) como análogo — tiene llegada directa en el municipio.</div>
+      </div>
+    </div>
+
+    <div class="cita">
+      <p>"El técnico de Tenaris no necesita que el Estado lo salve. Necesita que el Estado entienda que Tenaris existe porque alguien decidió hace décadas que la industria argentina merecía ser sostenida. Eso es lo que está en juego."</p>
+      <div class="attr">Marco de conversación con trabajador industrial del Corredor Norte — Argumento central</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local: Lo que da Textura a la Visita</div>
+  <div class="sec-body">
+    <p style="color:#64748b;font-size:.79rem;margin-bottom:14px">El dato de color que humaniza la presencia. Lo que deja marca en el municipio más allá de la foto institucional.</p>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🔩</div>
+        <div class="cl-tipo">Punto de encuentro obrero</div>
+        <div class="cl-nm">El boliche del turno de salida</div>
+        <div class="cl-body">A las 6 de la tarde, cuando sale el turno de TenarisSiderca, los bares del acceso norte se llenan de operarios con ropa de trabajo. Sin pretensiones. Con televisor, mostrador y conversación. Ahí se forma la opinión política real de Campana. Esos lugares no tienen nombre conocido pero tienen más peso político que cualquier local partidario del partido.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚗</div>
+        <div class="cl-tipo">Orgullo histórico colectivo</div>
+        <div class="cl-nm">El primer auto argentino</div>
+        <div class="cl-body">Campana reivindica que en su territorio se fabricó el primer automóvil argentino a principios del siglo XX. Es un dato de orgullo identitario que los vecinos mencionan como si les perteneciera personalmente. Enlazarlo con Honda produciendo hoy en el mismo municipio es un argumento de continuidad industrial que cierra perfecto en cualquier visita a la planta.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌊</div>
+        <div class="cl-tipo">Espacio público querido</div>
+        <div class="cl-nm">La costanera del Paraná de las Palmas</div>
+        <div class="cl-body">El frente costero recuperado es el orgullo municipal más reciente y más transversal. Los fines de semana conviven familias, pescadores, remeros y feria de artesanos. El río que era exclusivamente industrial ahora tiene playitas. Es el espacio donde Campana se muestra "en paz" consigo misma. Alta visibilidad popular sin protocolo municipal.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⚽</div>
+        <div class="cl-tipo">Identidad barrial</div>
+        <div class="cl-nm">Villa Dálmine FC</div>
+        <div class="cl-body">El club histórico campanense, con pasado en Primera División, representa la identidad popular y trabajadora del partido. La hinchada es el corazón más pasional de la sociabilidad barrial. Una presencia en el estadio o un cruce con el presidente del club vale más en el barrio que cualquier acto de apertura formal.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏭 Los Activos Estratégicos: Cómo Entrar</div>
+  <div class="sec-body">
+    <p>Campana tiene tres activos de primera magnitud, todos privados, ninguno dependiente del municipio. La estrategia de visita se construye en torno a ellos, no a la agenda del intendente JxC.</p>
+
+    <table class="tabla">
+      <thead><tr><th>Activo</th><th>Por qué importa</th><th>Acceso</th><th>Discurso</th></tr></thead>
+      <tbody>
+        <tr><td><strong>TenarisSiderca</strong></td><td>Mayor planta de tubos sin costura de Latinoamérica. Exporta a toda la región. El empleador más importante de Campana.</td><td>Contacto directo con dirección Tenaris AR. UOM como facilitador interno.</td><td>Industria argentina que exporta. Empleo calificado. Estado que crea condiciones.</td></tr>
+        <tr><td><strong>Honda Argentina</strong></td><td>Producción automotriz local y de exportación. Símbolo de inversión extranjera que se radica porque el marco argentino la sostiene.</td><td>Gestión directa con Honda Argentina SA.</td><td>Producción nacional. Empleo en planta. Exportación automotriz.</td></tr>
+        <tr><td><strong>Puerto Campana / Hidrovia</strong></td><td>Nodo exportador crítico. Granos, petroquímicos y tubos salen por acá. La Hidrovia es política federal de largo plazo.</td><td>Operadores portuarios directamente. No requiere municipio.</td><td>Soberanía comercial. Exportaciones. Economía real del territorio.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-win">
+      <div class="alert-title">✅ La frase que funciona en Campana</div>
+      <p>"El Centro de Gestión del Conocimiento provincial no compite con lo que Tenaris ya hace con el Centro Municipal de Oficios — lo complementa. Lo que a escala municipal no puede hacerse a escala provincial sí se puede. Más municipios, más carreras técnicas, más industria formando trabajadores que vuelven a la industria." Esa continuidad —sin contradecir la gestión Abella— es la entrada política más limpia disponible.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">⚠️ Riesgos y Tensiones</div>
+  <div class="sec-body">
+    <div class="alert alert-warn">
+      <div class="alert-title">⚠️ Riesgo 1: El Argumento Industrial Solo No Alcanza</div>
+      <p>El voto LLA en Campana incluye al trabajador industrial que se cansó de la inflación y del desorden. Un discurso puramente productivista sin abordar el costo de vida y la estabilidad económica puede resonar bien en la planta pero dejar afuera al mismo técnico en el supermercado. El argumento provincial tiene que unir industria y gestión cotidiana.</p>
+    </div>
+    <div class="alert alert-warn">
+      <div class="alert-title">⚠️ Riesgo 2: Tensión con el Municipio Opositor</div>
+      <p>Abella tiene presencia fuerte en la ciudad y gestión relativamente prolija. Una visita que sea percibida como "contra Abella" puede generar rechazo en el segmento de clase media que hoy está en LLA y todavía tiene cierta simpatía por el intendente. El posicionamiento correcto es provincial, no municipal — presente en las plantas industriales, no en las oficinas municipales.</p>
+    </div>
+    <div class="alert alert-neutral">
+      <div class="alert-title">📌 Oportunidad Latente: FIT en Crecimiento</div>
+      <p>El FIT pasó de 2.4% en 2023 a 4.9% en nac 2025. En un distrito obrero industrial, ese crecimiento de izquierda indica descontento con ambas opciones principales. No es un voto que el PJ capture fácilmente, pero su crecimiento comprime el techo de LLA en el segmento obrero más ideologizado.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🎯 Síntesis Narrativa</h3>
+  <p>Campana salió del 2025 como el municipio donde LLA consolidó lo que JxC no supo retener. El PJ tiene una oportunidad real pero tiene que ganarla en el sector donde este municipio se juega: la planta industrial, la fábrica, el puerto exportador.</p>
+  <p>El argumento no es social ni asistencial — es productivo. <strong>TenarisSiderca exporta tubos a Vaca Muerta porque alguien decidió que la industria argentina merece Estado. LLA quiere disolver ese Estado. El PJ no.</strong> Eso es lo que se dice en el boliche del turno de salida. Eso es lo que el técnico metalúrgico entiende sin que se lo expliquen.</p>
+  <p>El split ticket de −5.3 pts dice que <strong>Campana ya está parcialmente convencida</strong> a nivel provincial — 41.6% es un número que el PJ nunca tuvo en este municipio. El trabajo ahora es consolidarlo y cerrar la brecha de 5 puntos con la boleta nacional. Eso se hace con presencia en las plantas, con el argumento industrial como norte, y sin pasar por el municipio JxC.</p>
+</div>
+
+</body>
+</html>

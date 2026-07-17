@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Zárate — Narrativa Estratégica 2026</title>
+<style>
+:root{--primary:#1a3a5c;--primary-dark:#0c2340;--accent:#2563eb;--light:#eff6ff;--border:#dbeafe;--text:#1a1a2e;--muted:#64748b;--surface:#fff;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f1f5f9;color:var(--text);font-size:14px;padding:16px;max-width:860px;margin:0 auto}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0c2340 0%,#1a3a5c 55%,#1d4ed8 100%);color:#fff;padding:28px 32px 22px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;left:-80px;bottom:-80px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.03)}
+.h-tag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.7;margin-bottom:5px}
+.h-title{font-size:2rem;font-weight:900;letter-spacing:-.01em;line-height:1}
+.h-sub{font-size:.82rem;opacity:.75;margin-top:4px;margin-bottom:12px}
+.badge-op{display:inline-block;background:rgba(220,38,38,.25);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.4);letter-spacing:.5px}
+.h-kpis{display:flex;flex-wrap:wrap;gap:20px;margin-top:14px}
+.kpi{display:flex;flex-direction:column}
+.kpi-v{font-size:1.1rem;font-weight:800;color:#93c5fd}
+.kpi-l{font-size:.67rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECCIONES */
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden;break-inside:avoid !important}
+.sec-hdr{background:linear-gradient(90deg,#1a3a5c,#1e4575);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:18px 20px}
+.sec-body p{font-size:.83rem;color:#374151;line-height:1.7;margin-bottom:10px}
+.sec-body p:last-child{margin-bottom:0}
+.sec-body strong{color:var(--primary)}
+
+/* BLOQUES */
+.blk-k{background:#1a3a5c;border-radius:8px;padding:16px 18px;margin-bottom:10px}
+.blk-k p{color:rgba(255,255,255,.92) !important;font-size:.83rem;line-height:1.7;margin-bottom:8px}
+.blk-k p:last-child{margin-bottom:0}
+.blk-k strong{color:#93c5fd !important}
+.blk-k h4{color:#93c5fd;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+
+/* TABLA */
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem;margin-bottom:10px}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:var(--accent)}
+
+/* ELECTORAL */
+.arc-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.arc-cell{border:1.5px solid #dbeafe;border-radius:8px;padding:10px 12px;background:#eff6ff}
+.arc-cell-yr{font-size:.67rem;font-weight:800;text-transform:uppercase;color:var(--muted);margin-bottom:6px;letter-spacing:.5px}
+.arc-cell-row{display:flex;justify-content:space-between;padding:2px 0}
+.arc-cell-lbl{font-size:.74rem;color:#374151}
+.arc-cell-val{font-size:.76rem;font-weight:800}
+.v-pj{color:#1d4ed8}
+.v-lla{color:#7c3aed}
+.v-jxc{color:#d97706}
+.v-fit{color:#dc2626}
+
+/* COLOR LOCAL */
+.cl-wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px;background:#fafafa}
+.cl-icon{font-size:1.4rem;margin-bottom:5px}
+.cl-tipo{font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.81rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.75rem;color:#475569;line-height:1.5}
+
+/* PALANCAS */
+.pal-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pal{border:1.5px solid var(--border);border-radius:8px;overflow:hidden}
+.pal-hdr{background:linear-gradient(135deg,#1a3a5c,#1d4ed8);color:#fff;padding:10px 13px}
+.pal-n{font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.86rem;font-weight:800;margin-top:2px}
+.pal-body{padding:11px 13px}
+.pal-body p{font-size:.76rem;color:#374151;line-height:1.5;margin-bottom:7px}
+.pal-tag{display:inline-block;font-size:.66rem;font-weight:800;padding:3px 8px;border-radius:10px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+
+/* VISITAS */
+.vis-list{display:flex;flex-direction:column;gap:7px}
+.vis-item{display:flex;gap:11px;align-items:flex-start;padding:9px 12px;border-radius:8px;border:1px solid #e2e8f0;background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:21px;height:21px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.67rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-txt{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800;color:var(--text)}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+
+/* CITA */
+.cita{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-left:4px solid #2563eb;border-radius:0 8px 8px 0;padding:12px 16px;margin:10px 0;font-size:.84rem;color:#1e40af;font-style:italic;line-height:1.6}
+
+/* SÍNTESIS */
+.sint{background:linear-gradient(135deg,#0c2340,#1a3a5c);border-radius:var(--radius);padding:20px 22px;color:#fff;break-inside:avoid !important}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#93c5fd;margin-bottom:12px}
+.sint p{font-size:.83rem;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:9px}
+.sint p:last-child{margin-bottom:0}
+.sint strong{color:#93c5fd}
+
+/* ALERTA */
+.alert-box{background:#fef2f2;border:1.5px solid #fecaca;border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec,.sint{break-inside:avoid !important}
+  .hero,.sint,.blk-k,.pal-hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:7mm 8mm}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="h-tag">🛤️ Corredor Industrial Norte · 2ª Sección Electoral · Cluster 3</div>
+  <div class="h-title">ZÁRATE</div>
+  <div class="h-sub">Partido de Zárate · Capital del Tango · Polo Nuclear y Automotriz</div>
+  <div><span class="badge-op">⚠️ Intendente Opositor JxC — Acceso Protocolar</span></div>
+  <div class="h-kpis">
+    <div class="kpi"><span class="kpi-v">105,872</span><span class="kpi-l">Padrón 2025</span></div>
+    <div class="kpi"><span class="kpi-v">39.7%</span><span class="kpi-l">PJ estable 23-25</span></div>
+    <div class="kpi"><span class="kpi-v">40.7%</span><span class="kpi-l">LLA 2025 Nac</span></div>
+    <div class="kpi"><span class="kpi-v">Toyota + Atucha</span><span class="kpi-l">Activos únicos en PBA</span></div>
+  </div>
+</div>
+
+<!-- 1. EL MUNICIPIO -->
+<div class="sec">
+  <div class="sec-hdr">🏭 El Municipio — Dos Almas, Una Ciudad</div>
+  <div class="sec-body">
+    <p>Zárate tiene dos identidades que conviven sin contradicción. La primera es industrial: es la ciudad argentina donde se fabrica la Hilux para toda Latinoamérica, donde dos reactores nucleares generan el 8% de la electricidad del país, donde papeleras multinacionales, puertos privados y un corredor químico sobre el Paraná hacen del partido uno de los nodos exportadores más relevantes del país. Una ciudad de obreros calificados, ingenieros nucleares, técnicos japoneses de Toyota y estibadores del río.</p>
+    <p>La segunda identidad es cultural: Zárate es la cuna de los hermanos <strong>Virgilio y Homero Expósito</strong>, los que escribieron <em>Naranjo en Flor</em> y <em>Percal</em>. La provincia la declaró <strong>Capital Provincial del Tango</strong>. Y cada año el festival en su homenaje convoca a milongueros de todo el norte bonaerense al mismo territorio donde los hermanos nacieron.</p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Segmento</th><th>% aprox.</th><th>Perfil de Voto</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Trabajadores industriales</strong> (Toyota, papeleras, operarios nucleares)</td><td class="tbl-num">30%</td><td>PJ histórico; LLA gana sub-35 desde 2025</td></tr>
+        <tr><td><strong>Clase media urbana</strong> (comercio, servicios, administración)</td><td class="tbl-num">25%</td><td>JxC histórico; migró masivamente a LLA 2025</td></tr>
+        <tr><td><strong>Técnicos y profesionales CNEA</strong> (ingenieros nucleares)</td><td class="tbl-num">10%</td><td>Volátil; soberanía energética y competencia técnica del Estado</td></tr>
+        <tr><td><strong>Clase media trabajadora</strong> (PyME, oficios, construcción)</td><td class="tbl-num">20%</td><td>PJ / LLA disputada; sensible a empleo y costo de vida</td></tr>
+        <tr><td><strong>Sectores populares vulnerables</strong></td><td class="tbl-num">10%</td><td>PJ sólido; corredor sur y Canal San Fernando</td></tr>
+        <tr><td><strong>Rural / agropecuario</strong></td><td class="tbl-num">5%</td><td>JxC / mixto</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 2. EL INTENDENTE -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ El Intendente — Matzkin, JxC, Opositor</div>
+  <div class="sec-body">
+    <p>Marcelo Matzkin (Juntos por el Cambio) gobierna Zárate desde 2019 y renovó en 2023 con <strong>42.4%</strong>, superando al PJ por 2.7 puntos. Es un intendente activo: construyó de cero el Centro de Gestión del Conocimiento (CGC) con UBA y UTN, normalizó el transporte público mediante empresa público-privada y montó un sistema de seguridad con cámaras térmicas para el cordón industrial. La gestión tiene visibilidad local real.</p>
+    <p>La relación con el gobierno provincial es <strong>protocolar</strong>. El municipio está en territorio opositor, pero los tres activos más poderosos del partido no dependen de Matzkin para ser visitados: Toyota es una empresa privada, Atucha es CNEA (autoridad nacional), y el CGC responde a UBA y UTN. La estrategia de entrada en Zárate pasa por PRIVADO y NACIONAL, no por la intendencia.</p>
+    <div class="cita">"El CGC no es una promesa. Es un campus funcionando. Eso le da a Matzkin una obra concreta que mostrar. El punto no es competir con eso — es mostrar que a escala provincial hay más."</div>
+  </div>
+</div>
+
+<!-- 3. ARCO ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">📈 Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-mini">
+      <div class="arc-cell">
+        <div class="arc-cell-yr">2023 — General</div>
+        <div class="arc-cell-row"><span class="arc-cell-lbl">PJ</span><span class="arc-cell-val v-pj">39.7%</span></div>
+        <div class="arc-cell-row"><span class="arc-cell-lbl">JxC</span><span class="arc-cell-val v-jxc">42.4%</span></div>
+        <div class="arc-cell-row"><span class="arc-cell-lbl">LLA</span><span class="arc-cell-val v-lla">15.9%</span></div>
+        <div class="arc-cell-row"><span class="arc-cell-lbl">FIT</span><span class="arc-cell-val v-fit">2.0%</span></div>
+      </div>
+      <div class="arc-cell">
+        <div class="arc-cell-yr">2025 — Prov</div>
+        <div class="arc-cell-row"><span class="arc-cell-lbl">PJ</span><span class="arc-cell-val v-pj">39.7%</span></div>
+        <div class="arc-cell-row"><span class="arc-cell-lbl">LLA</span><span class="arc-cell-val v-lla">32.9%</span></div>
+        <div class="arc-cell-row"><span class="arc-cell-lbl">FIT</span><span class="arc-cell-val v-fit">2.8%</span></div>
+      </div>
+      <div class="arc-cell">
+        <div class="arc-cell-yr">2025 — Nac</div>
+        <div class="arc-cell-row"><span class="arc-cell-lbl">PJ</span><span class="arc-cell-val v-pj">41.7%</span></div>
+        <div class="arc-cell-row"><span class="arc-cell-lbl">LLA</span><span class="arc-cell-val v-lla">40.7%</span></div>
+        <div class="arc-cell-row"><span class="arc-cell-lbl">FIT</span><span class="arc-cell-val v-fit">4.2%</span></div>
+      </div>
+    </div>
+    <p>El piso PJ en Zárate es notable: <strong>39.7-41.7% estable</strong> a lo largo de los dos años. El split ticket es mínimo (+2 pts favorable al nacional), señal de que el votante PJ zaratense no fuga entre listas. El distrito no cayó — pero la competencia cambió: JxC, que ganó la intendencia con 42.4% en 2023, colapsó como fuerza en 2025. Ese electorado se fue en bloque a LLA, que pasó de ser la tercera fuerza (15.9%) a casi empatar al PJ en la elección nacional (40.7%).</p>
+    <p>El resultado: Zárate era un distrito PJ-JxC. Desde 2025 es un distrito PJ-LLA. La disputa central del ciclo electoral se dirime entre estas dos fuerzas.</p>
+  </div>
+</div>
+
+<!-- 4. LA AMENAZA LLA -->
+<div class="sec">
+  <div class="sec-hdr">⚠️ La Amenaza LLA — El Operario que Cambió de Voto</div>
+  <div class="sec-body">
+    <div class="blk-k">
+      <h4>El segmento más crítico: trabajadores industriales sub-35</h4>
+      <p>El operario Toyota de 28 años es peronista de familia, vota PJ desde los 18. Pero en 2025 votó a LLA. No porque sea liberal — trabaja en el sindicato más fuerte del sector (SMATA). Lo votó porque siente que el peronismo le prometió movilidad social y no la percibe. Tiene salario industrial, está en blanco, pero el alquiler se come el 60% de su sueldo y el supermercado le recuerda todos los meses lo que perdió.</p>
+      <p>Ese votante es recuperable. No viajó ideológicamente — viajó por frustración concreta. El argumento que le habla: <strong>empleo industrial como política de Estado, producción nacional, Toyota como ejemplo de que el Estado puede crear condiciones para que el trabajo dure</strong>. No es un discurso abstracto — está parado en la planta todos los días.</p>
+    </div>
+    <div class="alert-box">
+      <div class="alert-ttl">Trayectoria LLA en Zárate (2 años)</div>
+      <div class="alert-body">15.9% (2023) → 32.9% (2025 Prov) → 40.7% (2025 Nac). En términos absolutos: de 11.803 votos a 27.489 en dos años. JxC pasó de 31.400 (2023) a prácticamente cero como identidad electoral visible. El voto antiPJ se unificó en LLA.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. COLOR LOCAL -->
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local — El Alma de Zárate</div>
+  <div class="sec-body">
+    <p>Zárate no se entiende sin sus personajes y sus lugares. No los famosos — los que hacen el tejido de la ciudad.</p>
+    <div class="cl-wrap">
+      <div class="cl-card">
+        <div class="cl-icon">☕</div>
+        <div class="cl-tipo">Café · Cultura</div>
+        <div class="cl-nm">El rincón de los Expósito</div>
+        <div class="cl-desc">Cualquier café del centro de Zárate tiene en la pared una foto de Virgilio u Homero Expósito. La identidad tangüera es institucional: festivals, nombres de calles, escuelas de danza. El lugar de reunión de los cultores del tango local —personas mayores que los vieron actuar, jóvenes que aprendieron a bailar en el barrio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🐟</div>
+        <div class="cl-tipo">Bodegón · Paraná</div>
+        <div class="cl-nm">La parrilla del Muelle</div>
+        <div class="cl-desc">Sobre la costanera, frente al muelle histórico: surubí y dorado recién pescado, feria de pescadores artesanales con venta directa al vecino los fines de semana. El punto de encuentro del "Zárate de antes" — estibadores jubilados, familias del río, cuatro generaciones en la misma mesa.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏮</div>
+        <div class="cl-tipo">Comunidad · Toyota</div>
+        <div class="cl-nm">La comunidad japonesa</div>
+        <div class="cl-desc">Centenares de técnicos e ingenieros japoneses de Toyota llevan décadas radicados en Zárate. Tienen escuela, centro cultural y almacén propio. Sus hijos van a las escuelas públicas locales y hablan español con acento zaratense. Son el símbolo concreto de que la integración industrial puede ser también integración comunitaria.</div>
+      </div>
+    </div>
+    <div class="cl-wrap">
+      <div class="cl-card">
+        <div class="cl-icon">🎵</div>
+        <div class="cl-tipo">Evento · Identidad</div>
+        <div class="cl-nm">Festival Homero Expósito</div>
+        <div class="cl-desc">El evento cultural más importante del partido. Convoca a milongueros de todo el norte bonaerense. Una visita en esa fecha tiene resonancia simbólica que no se puede comprar con ningún acto: Zárate como la ciudad que hizo el tango universal.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">👷</div>
+        <div class="cl-tipo">Personaje colectivo</div>
+        <div class="cl-nm">El operario de SMATA</div>
+        <div class="cl-desc">Sindicalizado, salario industrial, segunda generación en la planta. Lo conoce todo el barrio. Cuando el operario de SMATA dice algo sobre la política industrial en la puerta de la planta, todos los que lo rodean escuchan. Ese canal de opinión horizontal es más potente que cualquier aviso.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🔬</div>
+        <div class="cl-tipo">Comunidad · Lima</div>
+        <div class="cl-nm">Los técnicos de Atucha</div>
+        <div class="cl-desc">Lima tiene su propia sociabilidad: kiosco del personal nuclear, club, escuela técnica. Son pocos, pero altamente influyentes. La conversación sobre energía soberana y ciencia del Estado les llega directo. Saben exactamente qué hace el Estado y qué no hace — y lo pueden explicar.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. TRES PALANCAS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Las Tres Palancas</div>
+  <div class="sec-body">
+    <div class="pal-wrap">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 1</div>
+          <div class="pal-ttl">Toyota Argentina</div>
+        </div>
+        <div class="pal-body">
+          <p>80.000 Hilux por año para toda Latinoamérica. La mayor inversión japonesa en Argentina. El símbolo más potente de la industria nacional que exporta y emplea. El argumento que recupera al operario sub-35 que migró a LLA: el Estado puede crear condiciones para que el trabajo industrial sea sostenible.</p>
+          <span class="pal-tag acc-priv">🏭 PRIVADO — Toyota Argentina</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 2</div>
+          <div class="pal-ttl">Atucha I y II · CNEA</div>
+        </div>
+        <div class="pal-body">
+          <p>El 8% de la generación eléctrica del país en dos reactores a 100km de la Ciudad de Buenos Aires. La expresión más concreta de la soberanía energética nacional. El argumento para el técnico CNEA y para cualquier ciudadano que entienda que la energía barata es decisión política. Entrada 100% NACIONAL.</p>
+          <span class="pal-tag acc-nac">🏛️ NACIONAL — CNEA / NASA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 3</div>
+          <div class="pal-ttl">CGC · UBA + UTN</div>
+        </div>
+        <div class="pal-body">
+          <p>Un campus universitario construido en Zárate con carreras técnicas que responden a lo que las fábricas necesitan. El argumento que habla al joven del corredor industrial que quiere estudiar sin irse a Buenos Aires. Entrada por rectorado universitario, sin pasar por la intendencia JxC.</p>
+          <span class="pal-tag acc-nac">🏛️ NACIONAL — UBA / UTN</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. VISITAS -->
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-txt">
+          <div class="vis-ttl">Planta Toyota Argentina <span style="background:#fef3c7;color:#92400e;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PRIVADO</span></div>
+          <div class="vis-desc">Mayor impacto mediático del Corredor Norte. Audiencia: operarios SMATA, técnicos, comunidad japonesa, prensa industrial. Discurso: producción nacional que exporta, trabajo industrial que dura.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-txt">
+          <div class="vis-ttl">Atucha I y II — Lima <span style="background:#dbeafe;color:#1e40af;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">NACIONAL — CNEA</span></div>
+          <div class="vis-desc">Recorrida técnica con personal CNEA. Discurso: energía soberana, ciencia del Estado, independencia energética. Sin intermediación municipal.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-txt">
+          <div class="vis-ttl">Centro de Gestión del Conocimiento (CGC) <span style="background:#dbeafe;color:#1e40af;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">NACIONAL — UBA / UTN</span></div>
+          <div class="vis-desc">Estudiantes de tecnicatura, docentes, directivos universitarios. Discurso: educación pública de calidad anclada al territorio productivo. Sin paso por intendencia.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-txt">
+          <div class="vis-ttl">Costanera · Muelle Histórico <span style="background:#f3e8ff;color:#6b21a8;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PROTOCOLAR</span></div>
+          <div class="vis-desc">Feria de pescadores artesanales, familias de río, folklore auténtico. El "Zárate de siempre" como escenario. Notificar al municipio con antelación.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-txt">
+          <div class="vis-ttl">Festival Homero Expósito <span style="background:#fef3c7;color:#92400e;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PRIVADO — Organizadores</span></div>
+          <div class="vis-desc">El evento cultural más importante del partido. Carga identitaria única: la Capital Provincial del Tango en el año del festival. Audiencia: cultores del tango, adultos mayores, comunidad cultural del norte bonaerense.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">6</div>
+        <div class="vis-txt">
+          <div class="vis-ttl">Barrio popular · Corredor sur <span style="background:#f3e8ff;color:#6b21a8;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PROTOCOLAR</span></div>
+          <div class="vis-desc">Merendero, comedor o centro de salud local. El núcleo del voto PJ más duro del partido. Evaluar alineación del referente barrial antes de confirmar.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. SÍNTESIS EJECUTIVA -->
+<div class="sint">
+  <h3>🎯 Síntesis Ejecutiva</h3>
+  <p>Zárate tiene tres activos únicos en toda la Provincia de Buenos Aires: <strong>Toyota Argentina</strong> (la única planta Hilux de Latinoamérica), <strong>Atucha I y II</strong> (el mayor complejo nuclear del país) y los <strong>Hermanos Expósito</strong> (la única Capital Provincial del Tango). Cualquiera de los tres justifica una visita por sí solo. Los tres juntos hacen de Zárate uno de los dos o tres municipios de mayor potencia comunicacional del Corredor Norte.</p>
+  <p>El piso PJ es estable (39-42%) y el ticket split es mínimo (+2 pts favorable al nacional). La amenaza real es LLA, que absorbió todo el voto JxC y casi empató al PJ en la elección nacional de 2025. El segmento a trabajar: <strong>operarios industriales sub-35</strong> que trabajan en las plantas pero votaron LLA por frustración económica concreta. El argumento que les habla es empleo industrial como política de Estado.</p>
+  <p>Con Matzkin como intendente JxC, la entrada inteligente es PRIVADO (Toyota, Festival Expósito) y NACIONAL (CNEA/Atucha, UBA-UTN/CGC). Los tres activos más valiosos del partido no dependen de la intendencia opositor para ser visitados. <strong>Zárate se visita sin Matzkin.</strong></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBA 2026 — Inmersión Provincial</title>
+<style>
+
+@page { size: A4 portrait; margin: 12mm 12mm 15mm 12mm; }
+@page :first { margin-top: 0; }
+
+* {
+  box-sizing: border-box; margin: 0; padding: 0;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 14pt;
+  line-height: 1.75;
+  color: #1a1a1a;
+  background: white;
+}
+
+/* HEADER */
+.header { background: linear-gradient(135deg, #0B2748 0%, #1A5F9E 100%); color: white; padding: 30px 4mm 26px; }
+.header-meta { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; opacity: 0.65; margin-bottom: 10px; }
+.header h1 { font-family: 'Segoe UI', Arial, sans-serif; font-size: 27pt; font-weight: 900; letter-spacing: 1px; margin-bottom: 8px; line-height: 1.18; }
+.header-sub { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13pt; opacity: 0.8; margin-bottom: 20px; }
+.header-datos { display: flex; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 16px; flex-wrap: wrap; gap: 10px 0; }
+.hd { flex: 1; min-width: 180px; padding-right: 18px; border-right: 1px solid rgba(255,255,255,0.15); margin-right: 18px; }
+.hd:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.hd-n { font-family: 'Segoe UI', Arial, sans-serif; font-size: 24pt; font-weight: 900; color: #74ACDF; line-height: 1; margin-bottom: 6px; }
+.hd-l { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11pt; opacity: 0.7; line-height: 1.55; }
+
+/* DOC */
+.doc { padding: 10mm 4mm 16mm; }
+
+h2 {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 14pt; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 1.2px; color: #2563EB; border-bottom: 3px solid #2563EB; padding-bottom: 7px;
+  margin-bottom: 20px; margin-top: 40px; page-break-after: avoid;
+}
+h3 {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 17pt; font-weight: 800; color: #1F4E79;
+  margin-top: 26px; margin-bottom: 10px; page-break-after: avoid;
+}
+p { margin-bottom: 17px; color: #1a1a1a; orphans: 4; widows: 4; }
+p:last-child { margin-bottom: 0; }
+
+.lead { font-size: 16pt; color: #1F4E79; border-left: 4px solid #2563EB; padding-left: 18px; margin-bottom: 24px; line-height: 1.65; page-break-after: avoid; }
+
+.pullquote { border-top: 2px solid #1F4E79; border-bottom: 2px solid #1F4E79; margin: 30px 0; padding: 20px 0; font-size: 19pt; font-style: italic; color: #1F4E79; text-align: center; line-height: 1.5; page-break-inside: avoid; }
+
+.nota { background: #EBF4FB; border-left: 5px solid #2E7EC0; padding: 16px 19px; margin: 26px 0; font-size: 13pt; color: #0B2748; line-height: 1.7; page-break-inside: avoid; }
+.nota strong { display: block; margin-bottom: 7px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1.2px; color: #1A5F9E; font-style: normal; }
+.nota-k { background: #0B2748; border-left: 5px solid #74ACDF; padding: 16px 19px; margin: 26px 0; font-size: 13pt; color: white; line-height: 1.7; page-break-inside: avoid; }
+.nota-k strong { display: block; margin-bottom: 7px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1.2px; color: #74ACDF; font-style: normal; }
+.nota-r { background: #FEF2F2; border-left: 5px solid #EF4444; padding: 16px 19px; margin: 26px 0; font-size: 13pt; color: #7F1D1D; line-height: 1.7; page-break-inside: avoid; }
+.nota-r strong { display: block; margin-bottom: 7px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1.2px; color: #DC2626; font-style: normal; }
+
+/* CLUSTER BLOCK */
+.cluster { margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; page-break-inside: avoid; }
+.cluster-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; flex-wrap: wrap; gap: 6px; }
+.cluster-name { font-family: 'Segoe UI', Arial, sans-serif; font-size: 17pt; font-weight: 800; color: #1F4E79; }
+.cluster-stats { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12pt; color: #666; text-align: right; }
+.cluster-stats b { color: #2563EB; }
+.cluster-bisagra { background: #EBF4FB; border-left: 4px solid #74ACDF; padding: 11px 15px; margin-top: 12px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 12pt; color: #0B2748; line-height: 1.55; }
+.cluster-bisagra strong { color: #1A5F9E; }
+
+/* MAPA */
+.mapa-section { background: #F8FAFC; padding: 22px 4mm 26px; page-break-inside: avoid; page-break-after: always; break-after: page; }
+.mapa-title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 15pt; font-weight: 800; color: #1F4E79; text-align: center; margin-bottom: 6px; }
+.mapa-caption { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11.5pt; color: #666; text-align: center; margin-bottom: 16px; }
+.mapa-legend { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 16px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 11.5pt; color: #374151; font-weight: 600; }
+.mapa-legend .leg-item { display: flex; align-items: center; gap: 6px; }
+.mapa-legend .leg-dot { width: 13px; height: 13px; border-radius: 50%; display: inline-block; }
+.mapa-note { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10.5pt; color: #888; text-align: center; margin-top: 12px; }
+
+/* PALANCAS (estilo San Nicolás) */
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+.pi { border-radius: 9px; padding: 16px 18px; border-left: 5px solid; page-break-inside: avoid; }
+.pi.o { background: #F0FDF4; border-color: #22C55E; }
+.pi.r { background: #FFF7ED; border-color: #F97316; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pt { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; opacity: 0.7; margin-bottom: 7px; }
+.pti { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14pt; font-weight: 700; margin-bottom: 8px; color: #1a1a1a; }
+.pd { font-size: 12.5pt; line-height: 1.6; color: #333; }
+
+/* PUNTOS RELEVANTES */
+.puntos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.punto { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 13px 16px; font-size: 12.5pt; line-height: 1.55; }
+.punto b { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11pt; color: #1F4E79; display: block; margin-bottom: 5px; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 14px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 10.5pt; color: #999; border-top: 1px solid #e5e7eb; background: white; }
+
+/* ANEXO */
+.anexo-wrap { page-break-before: always; break-before: page; }
+.ah-azul { background: linear-gradient(135deg, #1F4E79, #2563EB); color: white; padding: 22px 22mm; display: flex; justify-content: space-between; align-items: center; font-family: 'Segoe UI', Arial, sans-serif; flex-wrap: wrap; gap: 10px; }
+.ah-meta { font-size: 10.5pt; opacity: 0.65; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 4px; }
+.ah-title { font-size: 18pt; font-weight: 900; letter-spacing: 0.5px; }
+.ah-right { font-size: 11pt; opacity: 0.75; text-align: right; }
+
+.leyenda { display: flex; gap: 16px; padding: 16px 22mm 0; font-family: 'Segoe UI', Arial, sans-serif; font-size: 11pt; flex-wrap: wrap; background: #eef2f7; }
+.leg-item { display: flex; align-items: center; gap: 6px; }
+.leg-dot { width: 11px; height: 11px; border-radius: 2px; display: inline-block; }
+
+.anx-table-wrap { padding: 8px 22mm 18px; background: #eef2f7; overflow-x: auto; }
+table.anx { width: 100%; border-collapse: collapse; font-family: 'Segoe UI', Arial, sans-serif; font-size: 11pt; background: white; }
+table.anx th { background: #1F4E79; color: white; padding: 9px 10px; text-align: left; font-size: 9.5pt; text-transform: uppercase; letter-spacing: 0.4px; position: sticky; top: 0; }
+table.anx td { padding: 7px 10px; border-bottom: 1px solid #eef0f2; }
+table.anx tr:nth-child(even) { background: #fafbfc; }
+.bpj { color: #1D4ED8; font-weight: 700; }
+.bjxc { color: #92400E; font-weight: 700; }
+.disp { color: #B91C1C; font-weight: 700; background: #FEF2F2; }
+.lla { color: #6D28D9; font-weight: 700; }
+.nod { color: #888; }
+
+.anx-foot { text-align: center; padding: 12px 22mm; font-family: 'Segoe UI', Arial, sans-serif; font-size: 9.5pt; color: #999; background: white; border-top: 1px solid #e5e7eb; }
+
+/* ESTRATEGIA */
+.score-table { width: 100%; border-collapse: collapse; font-family: 'Segoe UI', Arial, sans-serif; font-size: 12pt; margin-top: 12px; }
+.score-table th { background: #1F4E79; color: white; padding: 9px 11px; text-align: left; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.4px; }
+.score-table td { padding: 7px 11px; border-bottom: 1px solid #eef0f2; }
+.score-table tr:nth-child(even) { background: #F8FAFC; }
+.foda-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+.foda { border-radius: 9px; padding: 16px 18px; }
+.foda h4 { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12pt; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.foda ul { padding-left: 20px; }
+.foda li { font-size: 12.5pt; line-height: 1.55; margin-bottom: 8px; }
+.foda.f { background: #F0FDF4; } .foda.f h4 { color: #15803D; }
+.foda.d { background: #FEF2F2; } .foda.d h4 { color: #B91C1C; }
+.foda.o { background: #EFF6FF; } .foda.o h4 { color: #1D4ED8; }
+.foda.a { background: #FEF3E8; } .foda.a h4 { color: #B45309; }
+
+/* ── INTENDENTES ─────────────────────────── */
+.int-dist { display:flex; gap:12px; margin:18px 0; flex-wrap:wrap; }
+.int-dist-item { flex:1; min-width:110px; background:#F8FAFC; border-radius:8px; padding:14px 16px; border-top:4px solid #ccc; text-align:center; }
+.int-dist-item.uxp { border-top-color:#1D4ED8; }
+.int-dist-item.jxc { border-top-color:#D97706; }
+.int-dist-item.lla { border-top-color:#5C7A9A; }
+.int-dist-item.vec { border-top-color:#6B7280; }
+.int-dist-item.otro { border-top-color:#0891B2; }
+.int-dist-n { font-size:26pt; font-weight:800; line-height:1; }
+.int-dist-item.uxp .int-dist-n { color:#1D4ED8; }
+.int-dist-item.jxc .int-dist-n { color:#B45309; }
+.int-dist-item.lla .int-dist-n { color:#5C7A9A; }
+.int-dist-item.vec .int-dist-n { color:#6B7280; }
+.int-dist-item.otro .int-dist-n { color:#0891B2; }
+.int-dist-l { font-size:10pt; color:#6B7280; margin-top:4px; }
+.faccion-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:16px 0; }
+.faccion-box { border-radius:8px; padding:14px 16px; border-left:5px solid #ccc; }
+.faccion-box.rival { background:#FEF2F2; border-left-color:#DC2626; }
+.faccion-box.g4    { background:#FFF7ED; border-left-color:#EA580C; }
+.faccion-box.mdf   { background:#FEFCE8; border-left-color:#CA8A04; }
+.faccion-box.campora{ background:#EFF6FF; border-left-color:#2563EB; }
+.faccion-box h4 { margin:0 0 6px; font-size:11pt; font-weight:700; }
+.faccion-box p  { margin:4px 0 0; font-size:11pt; line-height:1.5; color:#374151; }
+.faccion-names  { font-size:10.5pt; color:#1F2937; font-weight:600; margin-bottom:4px; }
+.int-table { width:100%; border-collapse:collapse; font-size:10pt; margin-top:14px; }
+.int-table th { background:#1F4E79; color:white; padding:8px 10px; text-align:left; font-size:9pt; text-transform:uppercase; letter-spacing:0.3px; }
+.int-table td { padding:5px 9px; border-bottom:1px solid #e5e7eb; vertical-align:middle; }
+.int-table tr:nth-child(even) { background:#F8FAFC; }
+.tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:8.5pt; font-weight:600; }
+.tag-uxp  { background:#DBEAFE; color:#1D4ED8; }
+.tag-jxc  { background:#FEF3C7; color:#92400E; }
+.tag-lla  { background:#E2EAF2; color:#3A5068; }
+.tag-vec  { background:#F3F4F6; color:#374151; }
+.tag-otro { background:#E0F2FE; color:#0369A1; }
+.al-aliado  { color:#16A34A; font-weight:700; }
+.al-abierto { color:#0891B2; font-weight:700; }
+.al-grupo4  { color:#EA580C; font-weight:700; }
+.al-mdf     { color:#CA8A04; font-weight:700; }
+.al-rival   { color:#DC2626; font-weight:700; }
+.al-dificil { color:#6B7280; }
+.al-jxc     { color:#92400E; }
+.al-neutro  { color:#6B7280; }
+.al-sindt   { color:#9CA3AF; }
+/* ── CALENDARIO ───────────────────────────── */
+.cal-mes-title { font-size:13pt; color:#1F4E79; font-weight:700; margin:18px 0 8px; border-bottom:2px solid #BFDBFE; padding-bottom:4px; }
+.cal-table { width:100%; border-collapse:collapse; font-size:10pt; margin-bottom:6px; }
+.cal-table th { background:#1E3A5F; color:white; padding:6px 10px; font-size:9pt; }
+.cal-table td { padding:5px 10px; border-bottom:1px solid #e5e7eb; }
+.cal-table tr:nth-child(even) { background:#F8FAFC; }
+.tag-alta  { background:#DCFCE7; color:#166534; display:inline-block; padding:1px 7px; border-radius:8px; font-size:8.5pt; font-weight:700; }
+.tag-media { background:#DBEAFE; color:#1D4ED8; display:inline-block; padding:1px 7px; border-radius:8px; font-size:8.5pt; }
+.conc-alta  { color:#166534; font-weight:600; }
+.conc-media { color:#1D4ED8; }
+
+
+/* ── PRINT OPTIMIZATION ───────────────────── */
+thead { display: table-header-group; }
+tfoot { display: table-footer-group; }
+tr { page-break-inside: avoid; break-inside: avoid; }
+
+.pgrid        { page-break-inside: avoid; break-inside: avoid; }
+.faccion-grid { page-break-inside: avoid; break-inside: avoid; }
+.foda-grid    { page-break-inside: avoid; break-inside: avoid; }
+.puntos-grid  { page-break-inside: avoid; break-inside: avoid; }
+.int-dist     { page-break-inside: avoid; break-inside: avoid; }
+.header-datos { page-break-inside: avoid; break-inside: avoid; }
+.cluster-head { page-break-after: avoid; break-after: avoid; }
+
+/* Force page break before major sections */
+h2.pb {
+  page-break-before: always;
+  break-before: page;
+  margin-top: 0;
+  padding-top: 8mm;
+}
+
+/* Keep h2/h3 with following content */
+h2 { page-break-after: avoid; break-after: avoid; }
+h3 { page-break-after: avoid; break-after: avoid; }
+h2 + p, h2 + div, h3 + p, h3 + div { page-break-before: avoid; break-before: avoid; }
+
+/* Annex table compact for print */
+.int-table th, .int-table td { padding: 4px 7px; }
+
+/* Prevent header-datos from wrapping awkwardly */
+.hd { page-break-inside: avoid; break-inside: avoid; }
+
+
+/* Anexo en portrait A4 - 13 columnas */
+.int-table { table-layout:fixed; width:100%; font-size:5.8pt; }
+.int-table th:nth-child(1)  { width:4mm; }
+.int-table th:nth-child(2)  { width:18mm; }
+.int-table th:nth-child(3)  { width:14mm; }
+.int-table th:nth-child(4)  { width:20mm; }
+.int-table th:nth-child(5)  { width:9mm; }
+.int-table th:nth-child(6)  { width:13mm; text-align:right; }
+.int-table th:nth-child(7)  { width:16mm; }
+.int-table th:nth-child(8)  { width:9mm; text-align:center; }
+.int-table th:nth-child(9)  { width:12mm; }
+.int-table th:nth-child(10) { width:17mm; }
+.int-table th:nth-child(11) { width:16mm; }
+.int-table th:nth-child(12) { width:16mm; }
+.int-table th:nth-child(13) { width:16mm; }
+.int-table td { word-wrap:break-word; overflow:hidden; vertical-align:top; padding:1.5px 2px; }
+
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-meta">Campaña PBA 2026 · Documento de Inmersión · Uso Reservado</div>
+  <h1>🗺️ PROVINCIA DE BUENOS AIRES — INMERSIÓN PROVINCIAL</h1>
+  <div class="header-sub">135 municipios · 8 secciones electorales · 7 agrupamientos territoriales-productivos · Lectura previa a la recorrida</div>
+  <div class="header-datos">
+    <div class="hd"><div class="hd-n">17,5 M</div><div class="hd-l">habitantes en la Provincia. El 71% vive en los 29 municipios del Conurbano.</div></div>
+    <div class="hd"><div class="hd-n">34</div><div class="hd-l">municipios en disputa real, sin bastión consolidado de ningún signo. Ahí se define gran parte de la elección.</div></div>
+    <div class="hd"><div class="hd-n">47% / 34%</div><div class="hd-l">PJ vs. LLA en septiembre 2025 (legislativas provinciales).</div></div>
+    <div class="hd"><div class="hd-n">41,5% / 40,8%</div><div class="hd-l">LLA vs. PJ en octubre 2025 (nacionales), apenas un mes después. El electorado se mueve.</div></div>
+  </div>
+</div>
+
+<!-- MAPA -->
+<div class="mapa-section">
+  <div class="mapa-title">Mapa de los 7 Agrupamientos Territoriales-Productivos</div>
+  <div class="mapa-caption">135 municipios ubicados por coordenadas reales · el tamaño del punto representa la población</div>
+
+<svg viewBox="0 0 760 980" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;display:block;margin:0 auto;">
+  <rect x="0" y="0" width="760" height="980" fill="#F8FAFC"/>
+  <rect x="1" y="1" width="758" height="978" fill="none" stroke="#CBD5E1" stroke-width="1.4" rx="8"/>
+  <circle cx="475.6" cy="213.0" r="20.0" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="498.0" cy="212.2" r="13.4" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="540.6" cy="231.2" r="14.0" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="511.7" cy="207.2" r="12.9" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="498.7" cy="220.0" r="12.6" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="466.0" cy="199.5" r="12.5" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="459.9" cy="196.8" r="12.5" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="496.9" cy="218.8" r="11.8" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="498.4" cy="205.7" r="11.5" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="484.2" cy="189.5" r="11.4" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="480.4" cy="171.6" r="11.4" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="482.2" cy="192.7" r="10.5" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="500.8" cy="200.4" r="10.6" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="491.8" cy="221.2" r="10.3" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="476.5" cy="198.9" r="10.2" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="515.8" cy="212.4" r="10.5" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="469.6" cy="182.4" r="10.4" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="463.9" cy="182.0" r="10.1" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="467.6" cy="185.4" r="10.2" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="487.4" cy="177.0" r="9.8" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="490.8" cy="183.2" r="9.6" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="459.9" cy="162.4" r="9.3" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="486.0" cy="223.5" r="8.6" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="474.6" cy="191.4" r="8.4" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="471.2" cy="199.8" r="8.3" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="445.2" cy="193.4" r="7.7" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="493.8" cy="230.2" r="7.0" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="546.9" cy="225.3" r="7.0" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="578.9" cy="602.5" r="13.2" fill="#06B6D4" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="125.4" cy="688.8" r="10.3" fill="#06B6D4" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="312.7" cy="469.0" r="7.4" fill="#06B6D4" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="426.1" cy="521.6" r="7.8" fill="#06B6D4" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="482.6" cy="174.3" r="8.2" fill="#06B6D4" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="322.5" cy="40.0" r="8.1" fill="#06B6D4" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="437.2" cy="132.1" r="7.5" fill="#06B6D4" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="252.2" cy="191.6" r="7.0" fill="#06B6D4" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="443.5" cy="140.2" r="7.2" fill="#06B6D4" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="429.1" cy="188.8" r="7.2" fill="#06B6D4" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="375.9" cy="81.2" r="6.3" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="390.8" cy="97.0" r="5.5" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="432.1" cy="156.0" r="5.5" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="342.8" cy="58.7" r="5.5" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="319.5" cy="155.3" r="5.5" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="333.0" cy="127.7" r="5.2" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="237.6" cy="107.2" r="5.1" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="394.4" cy="150.3" r="5.1" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="396.4" cy="174.3" r="5.0" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="273.4" cy="143.8" r="5.0" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="361.4" cy="166.2" r="4.7" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="364.3" cy="141.9" r="4.6" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="495.4" cy="242.9" r="6.9" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="357.4" cy="455.0" r="6.4" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="398.6" cy="198.7" r="6.4" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="463.1" cy="247.2" r="6.3" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="341.6" cy="228.6" r="6.3" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="456.0" cy="214.1" r="6.2" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="543.8" cy="223.9" r="6.2" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="298.2" cy="197.1" r="5.9" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="258.7" cy="294.9" r="5.9" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="81.2" cy="361.7" r="5.8" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="296.6" cy="254.8" r="5.7" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="197.1" cy="224.7" r="5.7" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="160.7" cy="343.1" r="5.6" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="430.9" cy="263.1" r="5.6" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="53.5" cy="244.6" r="5.3" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="252.0" cy="389.3" r="5.4" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="327.5" cy="293.0" r="5.4" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="364.7" cy="317.5" r="5.4" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="514.2" cy="261.5" r="5.3" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="582.3" cy="250.0" r="5.0" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="212.0" cy="315.6" r="4.9" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="219.8" cy="157.9" r="4.9" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="413.2" cy="241.1" r="4.8" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="56.1" cy="243.1" r="4.8" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="203.0" cy="169.7" r="4.6" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="444.9" cy="232.4" r="4.7" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="219.7" cy="157.4" r="4.6" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="112.1" cy="287.9" r="4.5" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="407.5" cy="291.3" r="4.5" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="603.5" cy="273.3" r="4.4" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="320.7" cy="245.5" r="4.4" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="144.1" cy="214.1" r="4.4" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="343.5" cy="366.2" r="4.4" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="341.7" cy="404.3" r="4.3" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="80.7" cy="237.7" r="4.3" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="54.8" cy="381.6" r="4.3" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="372.5" cy="213.4" r="4.4" fill="#EAB308" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="660.3" cy="443.3" r="7.0" fill="#38BDF8" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="645.0" cy="494.8" r="5.5" fill="#38BDF8" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="635.0" cy="512.9" r="5.4" fill="#38BDF8" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="590.2" cy="569.5" r="5.3" fill="#38BDF8" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="465.3" cy="669.1" r="7.0" fill="#38BDF8" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="551.7" cy="635.3" r="5.7" fill="#38BDF8" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="220.8" cy="721.5" r="4.2" fill="#38BDF8" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="511.5" cy="582.1" r="5.8" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="535.1" cy="309.6" r="5.6" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="567.2" cy="399.2" r="5.2" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="430.6" cy="363.2" r="5.1" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="459.0" cy="293.2" r="5.0" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="619.4" cy="480.6" r="4.9" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="489.1" cy="500.0" r="4.9" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="488.6" cy="334.3" r="4.8" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="461.9" cy="621.8" r="4.7" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="431.7" cy="454.3" r="4.6" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="486.1" cy="323.6" r="4.5" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="547.7" cy="465.4" r="4.3" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="554.6" cy="372.7" r="4.2" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="381.4" cy="644.6" r="4.2" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="556.5" cy="440.7" r="3.7" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="638.1" cy="410.9" r="3.9" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="528.4" cy="328.5" r="4.0" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="522.6" cy="361.7" r="3.9" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="603.1" cy="412.5" r="3.6" fill="#A78BFA" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="143.4" cy="707.0" r="6.2" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="317.3" cy="647.7" r="6.1" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="157.7" cy="537.5" r="5.6" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="56.9" cy="940.0" r="5.4" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="103.4" cy="783.5" r="5.3" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="362.0" cy="562.8" r="4.9" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="212.4" cy="599.7" r="5.0" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="114.7" cy="557.4" r="4.9" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="176.0" cy="432.5" r="4.7" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="71.4" cy="458.2" r="4.7" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="220.2" cy="689.7" r="4.6" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="335.1" cy="605.0" r="4.4" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="78.0" cy="546.7" r="4.6" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="130.3" cy="614.2" r="4.5" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="222.9" cy="510.6" r="4.3" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="111.5" cy="481.6" r="4.4" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="266.3" cy="549.2" r="4.3" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="59.1" cy="452.0" r="4.2" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="69.4" cy="416.1" r="4.2" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="40.0" cy="393.8" r="4.1" fill="#F97316" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="448.6" cy="175.7" r="10.9" fill="#3B82F6" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="288.5" cy="107.4" r="7.1" fill="#22C55E" fill-opacity="0.85" stroke="white" stroke-width="0.9"/>
+  <circle cx="499.5" cy="193.0" r="5" fill="none" stroke="#1F2937" stroke-width="2.2"/>
+  <text x="511.5" y="197.0" font-size="13.5" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="800">CABA</text>
+  <text x="485.6" y="210.0" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">La Matanza</text>
+  <text x="484.0" y="230.2" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Lomas de Zamora</text>
+  <text x="550.6" y="237.2" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">La Plata</text>
+  <text x="523.7" y="211.2" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Quilmes</text>
+  <text x="111.4" y="710.8" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Bahía Blanca</text>
+  <text x="322.7" y="475.0" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Olavarría</text>
+  <text x="436.1" y="527.6" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Tandil</text>
+  <text x="332.5" y="34.0" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">San Nicolás</text>
+  <text x="450.2" y="129.1" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Zárate</text>
+  <text x="242.2" y="181.6" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Junín</text>
+  <text x="456.5" y="150.2" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Campana</text>
+  <text x="367.4" y="461.0" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Azul</text>
+  <text x="386.6" y="188.7" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Mercedes</text>
+  <text x="672.3" y="447.3" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">La Costa</text>
+  <text x="658.0" y="496.8" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Pinamar</text>
+  <text x="451.3" y="691.1" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Necochea</text>
+  <text x="545.1" y="315.6" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Chascomús</text>
+  <text x="129.4" y="729.0" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Coronel Rosales</text>
+  <text x="303.3" y="669.7" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Tres Arroyos</text>
+  <text x="66.9" y="946.0" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Patagones</text>
+  <text x="298.5" y="99.4" font-size="13" font-family="Segoe UI, Arial" fill="#1F2937" font-weight="700">Pergamino</text>
+</svg>
+  <div class="mapa-legend">
+    <div class="leg-item"><span class="leg-dot" style="background:#3B82F6;"></span>Conurbano Bonaerense</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#06B6D4;"></span>Ciudades Intermedias</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#22C55E;"></span>Corredor Industrial Norte</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#EAB308;"></span>Interior Agropecuario</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#38BDF8;"></span>Litoral Atlántico</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#F97316;"></span>Sur Bonaerense</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#A78BFA;"></span>Cuenca del Salado</div>
+  </div>
+  <div class="mapa-note">El círculo con borde negro marca CABA como referencia de orientación · posiciones aproximadas según coordenadas reales de cada municipio</div>
+</div>
+
+
+<!-- CUERPO -->
+<div class="doc">
+
+  <h2>Cómo leer este documento</h2>
+  <p class="lead">Este no es un informe para memorizar. Es el mapa mental con el que conviene recorrer la Provincia: cómo está organizada, dónde vive la gente, quién gobierna y dónde se da la pelea real. El detalle de los 135 municipios queda en el anexo — para consultar cuando haga falta, no para llevar en la cabeza.</p>
+
+  <p>La Provincia se organiza en <strong>7 agrupamientos territoriales-productivos</strong>, construidos combinando tamaño poblacional, perfil económico, geografía y sección electoral. No son categorías excluyentes —un municipio puede tener rasgos de más de un grupo— pero sirven como mapa de identidad: cada uno tiene una vocación productiva reconocible y una dinámica política propia. Sobre ese mapa territorial se superpone una segunda capa, la de <strong>competitividad electoral</strong>, construida sobre los resultados de intendente 2023 y las dos elecciones legislativas de 2025, verificados contra fuentes oficiales y de prensa especializada.</p>
+
+  <div class="nota">
+    <strong>📌 Una aclaración antes de seguir</strong>
+    Diez municipios pequeños no tienen datos de intendente 2023 cargados en esta base y aparecen como "Sin dato" en el anexo. No se inventó información para completarlos. El resto de la clasificación está verificado contra los resultados oficiales agregados de la Provincia.
+  </div>
+
+  <h2>El mapa político se mueve — y eso es lo primero que hay que entender</h2>
+
+  <p>En septiembre de 2025, en la elección legislativa provincial, Fuerza Patria (PJ) ganó la Provincia con el 47,3% de los votos contra el 33,7% de La Libertad Avanza — se impuso en 102 de los 135 municipios y en 6 de las 8 secciones electorales. Un mes y medio después, en octubre, en la elección legislativa nacional, La Libertad Avanza dio vuelta el resultado en el mismo territorio: 41,5% contra 40,8% de Fuerza Patria, una diferencia de menos de un punto.</p>
+
+  <p><strong>El mismo electorado, en el mismo año, votó distinto según qué elección era.</strong> Esto no es un error de medición: es la prueba más clara de que el votante bonaerense no tiene un bloque fijo de pertenencia. Vota distinto cuando elige autoridades provinciales que cuando elige autoridades nacionales. Esa volatilidad es el dato político más importante de este documento — más que cualquier cluster o cualquier porcentaje municipal aislado.</p>
+
+  <div class="pullquote">
+    El Conurbano concentra el 71% de los votos.<br>Pero la pelea real está en el interior, el sur y la costa.
+  </div>
+
+  <h2>Los 7 agrupamientos — qué es cada uno y qué hay que saber</h2>
+
+  <div class="cluster">
+    <div class="cluster-head">
+      <div class="cluster-name">1 · Conurbano Bonaerense</div>
+      <div class="cluster-stats">29 municipios · <b>71,0%</b> de la población · bastión PJ</div>
+    </div>
+    <p>Es la Provincia en términos de votos: 7 de cada 10 bonaerenses viven en estos 29 municipios. Gobierna ahí Unión por la Patria en 25 de 29, con apenas un distrito en disputa real (La Plata) y tres bastiones consolidados de Juntos por el Cambio en el corredor norte (San Isidro, Vicente López, San Miguel). El dato que más importa no es quién gobierna el municipio sino quién gana el voto-boleta: en la legislativa nacional de octubre 2025, distritos históricamente peronistas como Morón, Tres de Febrero, Hurlingham e Ituzaingó dieron ventaja a LLA. El Conurbano está gobernado por el peronismo pero ya no vota como bloque homogéneo.</p>
+    <div class="cluster-bisagra"><strong>Mirar de cerca:</strong> La Plata (el único distrito realmente disputado en intendencia) y el cordón Morón–Tres de Febrero–Hurlingham–Ituzaingó (gobierno peronista, voto crecientemente libertario).</div>
+  </div>
+
+  <div class="cluster">
+    <div class="cluster-head">
+      <div class="cluster-name">2 · Ciudades Intermedias Regionales</div>
+      <div class="cluster-stats">10 municipios · 11,8% de la población · mixto</div>
+    </div>
+    <p>Son las capitales de región fuera del Conurbano: Mar del Plata (Gral. Pueyrredón), Bahía Blanca, San Nicolás, Tandil, Zárate, Campana, Junín, Luján, San Fernando y Pergamino. Concentran población, prensa local con peso real y una identidad productiva propia y reconocible en cada caso (industria, puerto, universidad, turismo). El gobierno está dividido casi a la mitad entre JxC y UxP, con tres distritos en disputa abierta — Bahía Blanca, Zárate y Junín — y un fenómeno a observar: San Nicolás, Tandil y Olavarría, con intendentes de extracción no libertaria, mostraron fuerza real de LLA en las legislativas de 2025.</p>
+    <div class="cluster-bisagra"><strong>Mirar de cerca:</strong> Bahía Blanca, Zárate y Junín como los tres distritos genuinamente en juego; San Nicolás y Tandil como termómetro del avance libertario en ciudades medianas no conurbanas.</div>
+  </div>
+
+  <div class="cluster">
+    <div class="cluster-head">
+      <div class="cluster-name">3 · Corredor Industrial Norte</div>
+      <div class="cluster-stats">13 municipios · 2,9% de la población · bastión PJ moderado</div>
+    </div>
+    <p>La franja agroindustrial sobre el río Paraná al norte de Buenos Aires: San Pedro, Baradero, Ramallo, Pergamino, San Antonio de Areco y otros. Complementa a las ciudades industriales del grupo anterior (San Nicolás, Zárate, Campana) formando, en conjunto, el verdadero corredor productivo del norte bonaerense. El peronismo gobierna 8 de 13, pero Pergamino —el municipio más poblado del grupo— mostró fuerza libertaria significativa en 2025, y Ramallo y San Pedro están en disputa abierta.</p>
+    <div class="cluster-bisagra"><strong>Mirar de cerca:</strong> Ramallo (sede de Ternium, en disputa) y Pergamino (el municipio ancla del grupo, con avance LLA).</div>
+  </div>
+
+  <div class="cluster">
+    <div class="cluster-head">
+      <div class="cluster-name">4 · Interior Agropecuario Pampeano</div>
+      <div class="cluster-stats">37 municipios · 7,5% de la población · el más fragmentado</div>
+    </div>
+    <p>Es el grupo más numeroso —más de un cuarto de los municipios de la Provincia— pero pesa relativamente poco en población. Es también, proporcionalmente, el más volátil: 17 de sus 37 municipios (46%) están en disputa o muestran avance libertario significativo. El peronismo gobierna la mayoría (26 de 37) pero sobre una base mucho menos consolidada que en el Conurbano. Es territorio de identidad agropecuaria fuerte —"Capital del Maíz", "Cuna del Girasol", "Gigante del Agro"— donde el discurso productivo conecta directamente.</p>
+    <div class="cluster-bisagra"><strong>Mirar de cerca:</strong> Azul, Lobos, Bolívar y Brandsen por población entre los disputados; el grupo en conjunto como termómetro del humor del campo bonaerense.</div>
+  </div>
+
+  <div class="cluster">
+    <div class="cluster-head">
+      <div class="cluster-name">5 · Litoral Atlántico</div>
+      <div class="cluster-stats">7 municipios · 2,1% de la población · el más inestable</div>
+    </div>
+    <p>Los municipios turísticos de la costa: La Costa, Pinamar, Villa Gesell, Necochea, Miramar y Monte Hermoso. Es el grupo proporcionalmente más volátil de toda la Provincia: 4 de 7 distritos están en disputa abierta. La economía estacional y la fuerte presencia de población no residente en temporada alta hacen que estos resultados sean más sensibles a la coyuntura económica inmediata que en cualquier otro grupo.</p>
+    <div class="cluster-bisagra"><strong>Mirar de cerca:</strong> Necochea y La Costa, los dos de mayor población y ambos en disputa.</div>
+  </div>
+
+  <div class="cluster">
+    <div class="cluster-head">
+      <div class="cluster-name">6 · Sur Bonaerense</div>
+      <div class="cluster-stats">20 municipios · 2,7% de la población · el segundo más volátil</div>
+    </div>
+    <p>El sudoeste bonaerense, de perfil agroganadero y energético-portuario (Coronel Rosales, con salida al complejo Vaca Muerta). La mitad de sus 20 municipios —10 de 20— están en disputa abierta, la proporción más alta después de la Costa Atlántica. El peronismo gobierna 12 de 20 pero sobre bases mayoritariamente estrechas.</p>
+    <div class="cluster-bisagra"><strong>Mirar de cerca:</strong> Coronel Rosales, Tres Arroyos y Coronel Suárez, los tres de mayor población entre los disputados.</div>
+  </div>
+
+  <div class="cluster">
+    <div class="cluster-head">
+      <div class="cluster-name">7 · Cuenca del Salado e Interior Sur</div>
+      <div class="cluster-stats">19 municipios · 1,9% de la población · dividido</div>
+    </div>
+    <p>Territorio ganadero de la cuenca del río Salado. Es el único grupo donde Juntos por el Cambio tiene una presencia de gobierno casi tan extendida como el peronismo (7 contra 12, con 6 bastiones JxC consolidados). Cinco municipios están en disputa, entre ellos Chascomús y Dolores, las dos cabeceras de mayor peso del grupo.</p>
+    <div class="cluster-bisagra"><strong>Mirar de cerca:</strong> Chascomús y Dolores como cabeceras en disputa.</div>
+  </div>
+
+  <h2 class="pb">Palancas provinciales — qué puede mover la Provincia que ningún municipio puede mover solo</h2>
+
+  <p>Cada uno de los 135 municipios gestiona su propio pedazo de territorio. Pero hay decisiones que solo tienen sentido —o solo son posibles— desde una mirada que abarque toda la Provincia. Estas son las seis palancas que atraviesan los siete agrupamientos y que conviene tener presentes en cualquier discurso o conversación, más allá de qué municipio se esté visitando ese día.</p>
+
+  <div class="pgrid">
+    <div class="pi o">
+      <div class="pt">✅ Oportunidad provincial</div>
+      <div class="pti">Corredor logístico fluvial — Paraná y Atlántico bajo una sola agenda</div>
+      <div class="pd">San Nicolás, Ramallo, Campana, Zárate y La Plata sobre el Paraná; Bahía Blanca y Necochea–Quequén sobre el Atlántico. Hoy cada puerto negocia su propia agenda de dragado, accesos y conexión ferroviaria por separado. Una política portuaria provincial integrada multiplica el peso de negociación de cada uno frente a Nación y a los operadores privados.</div>
+    </div>
+    <div class="pi d">
+      <div class="pt">🔵 Decisión de gobierno</div>
+      <div class="pti">Plan vial diferenciado por agrupamiento, no un plan único</div>
+      <div class="pd">El Conurbano necesita transporte público y ordenamiento del tránsito, no más rutas. El interior pampeano, el sur y la cuenca del Salado dependen de caminos rurales y rutas secundarias en mal estado para sacar la producción. Tratar estas dos necesidades como si fueran la misma agenda vial diluye el impacto político de ambas.</div>
+    </div>
+    <div class="pi d">
+      <div class="pt">🔵 Política con impacto directo</div>
+      <div class="pti">Educación técnica con currícula regional, no genérica</div>
+      <div class="pd">Escuelas técnicas con orientación siderúrgica y portuaria en el corredor norte, agroindustrial en el interior pampeano, energética en el sur (en sintonía con Vaca Muerta) y de gestión turística en la costa atlántica. Es la misma política —educación técnica provincial— adaptada a la vocación productiva de cada agrupamiento, con retorno económico verificable en cada caso.</div>
+    </div>
+    <div class="pi o">
+      <div class="pt">✅ Oportunidad provincial</div>
+      <div class="pti">El sur bonaerense como puerta de la energía — Vaca Muerta y Coronel Rosales</div>
+      <div class="pd">Coronel Rosales y su puerto son, dentro de la Provincia, el punto de conexión más directo con la expansión energética de Vaca Muerta. Es un agrupamiento que pesa poco en población (2,7%) pero puede pesar mucho en inversión y empleo si la Provincia lo prioriza activamente en infraestructura energética y portuaria.</div>
+    </div>
+    <div class="pi r">
+      <div class="pt">⚠️ Riesgo estructural — monitoreo permanente</div>
+      <div class="pti">La volatilidad electoral no es un fenómeno de un municipio: es de toda la Provincia</div>
+      <div class="pd">El mismo electorado bonaerense le dio la Provincia al PJ en septiembre de 2025 y casi se la dio a LLA en octubre. Esa volatilidad no se resuelve con relato histórico —como sí ocurre en una ciudad con identidad fuerte como San Nicolás— porque a escala provincial no hay una sola narrativa que alcance a todos los agrupamientos por igual. Se resuelve con gestión visible y mensajes diferenciados por territorio.</div>
+    </div>
+    <div class="pi x">
+      <div class="pt">🔴 Tensión política — navegar con cuidado</div>
+      <div class="pti">Gobernar la relación con 135 gobiernos locales de al menos cinco signos políticos distintos</div>
+      <div class="pd">UxP, JxC, LLA, vecinalismo y listas locales propias (como en San Nicolás) conviven en el mapa municipal. Una estrategia provincial necesita relacionarse con todos sin verticalismo —no se puede ignorar a un intendente JxC o vecinalista en un municipio clave— pero tampoco puede diluirse en 135 conversaciones distintas sin una marca provincial coherente de fondo.</div>
+    </div>
+  </div>
+
+  <h2>Puntos relevantes — lo que conviene tener en la cabeza, no en la carpeta</h2>
+
+  <div class="puntos-grid">
+    <div class="punto"><b>📐 Tamaño relativo</b>Con 17,5 millones de habitantes, la Provincia de Buenos Aires sola superaría en población a la mayoría de los países de América del Sur. Es una escala de gobierno distinta a la de cualquier municipio, por grande que sea.</div>
+    <div class="punto"><b>🌊 La hidrovía como activo subutilizado</b>El sistema Paraná–Paraguay conecta directamente a San Nicolás, Ramallo, San Pedro, Zárate y Campana con el comercio exterior. Es un activo logístico de escala continental que hoy se gestiona puerto por puerto, no como red.</div>
+    <div class="punto"><b>🗳️ Concejales no alcanzan</b>Tener pocos concejales propios en un Concejo Deliberante (como ocurre en gran parte de los bastiones JxC y en varios disputados) no es lo mismo que no tener territorio. La presencia provincial puede construir peso político donde el peso legislativo local todavía no llegó.</div>
+    <div class="punto"><b>🏗️ Identidad productiva como puerta de entrada</b>Casi todos los municipios del interior tienen una "clave identitaria" reconocible —Capital del Maíz, Cuna del Girasol, Capital Lechera. Nombrarla correctamente en una visita vale más que cualquier dato económico citado de memoria.</div>
+    <div class="punto"><b>📊 Diez municipios sin dato electoral verificado</b>Antes de construir una ficha individual para Arrecifes, 9 de Julio, 25 de Mayo, Magdalena, Punta Indio, Suipacha, Villa Gesell, Gral. Juan Madariaga, Adolfo G. Chaves o Tornquist, conviene verificar primero el resultado de intendente 2023 contra la fuente oficial — esta base no lo tiene cargado.</div>
+    <div class="punto"><b>🔁 Tres elecciones en dos años, tres resultados distintos</b>Intendentes 2023 (ganó UxP en el agregado), legislativas provinciales sept. 2025 (ganó PJ 47% a 34%) y legislativas nacionales oct. 2025 (ganó LLA 41,5% a 40,8%). Cualquier lectura que use una sola de estas tres fotos para describir "cómo vota la Provincia" está incompleta.</div>
+  </div>
+
+  <h2>La tensión estratégica que este mapa deja planteada</h2>
+
+  <p>El Conurbano tiene el 71% de los votos de la Provincia, pero solo 1 de sus 29 municipios está genuinamente en disputa a nivel de gobierno local: es territorio consolidado, aunque crecientemente volátil en el voto a diputados y senadores. El interior pampeano, el sur bonaerense y la costa atlántica, en cambio, pesan apenas 12% de la población combinada pero concentran la mitad de los municipios realmente en disputa de toda la Provincia. Es la tensión clásica de cualquier estrategia territorial: <strong>el Conurbano es donde están los votos; el interior, el sur y la costa son donde se libra la batalla.</strong> Una recorrida que solo entra al Conurbano gana cobertura mediática pero no necesariamente disputa nada. Una recorrida que ignora el Conurbano renuncia al 71% del padrón. La respuesta no es elegir uno: es entender que cumplen funciones distintas y requieren mensajes distintos.</p>
+
+  <div class="nota-k">
+    <strong>⚡ La lectura que conviene llevarse de este documento</strong>
+    No hay un bonaerense típico. El votante del Conurbano no vota igual en provinciales que en nacionales. El interior pampeano —pequeño en población pero numeroso en municipios— está tan fragmentado como cualquier otra zona, solo que pasa más desapercibido. La pregunta que cada visita debería responder no es "¿qué gobierno tiene este municipio hoy?" sino "¿qué tan firme es ese gobierno realmente?".
+  </div>
+
+  <h2>Material para armar la estrategia</h2>
+
+  <p>Lo que sigue no es lectura de inmersión: es insumo de trabajo para el equipo que diseñe el plan de recorrida y asignación de recursos. Combina población y competitividad electoral en un puntaje único, y separa la mirada "dónde están los votos" de la mirada "dónde está la batalla", que no son el mismo mapa.</p>
+
+
+  <div class="nota" style="background:#EFF6FF;border-left:5px solid #3B82F6;"><strong>Tabla de priorización completa</strong> Los 134 municipios ordenados por ponderación estratégica — con intendente, partido, cluster, categoría electoral y vínculo — se encuentran en el Anexo al final de este documento.</div>
+
+  <h3>FODA provincial — insumo directo para la estrategia</h3>
+  <div class="foda-grid">
+    <div class="foda f">
+      <h4>Fortalezas</h4>
+      <ul>
+        <li>17,5 millones de habitantes y gobierno local en 102 de 135 municipios tras 2023 — base de gestión amplia para mostrar resultados concretos.</li>
+        <li>Identidad productiva reconocible y diversa: industria pesada en el norte, agro en el interior, energía y puerto en el sur, turismo en la costa. Permite un discurso a medida en cada territorio sin contradicciones entre sí.</li>
+        <li>Activos logísticos de escala (hidrovía Paraná, puertos atlánticos, Vaca Muerta vía Coronel Rosales) hoy sub-explotados — margen real de anuncio y gestión.</li>
+      </ul>
+    </div>
+    <div class="foda d">
+      <h4>Debilidades</h4>
+      <ul>
+        <li>Erosión visible en bastiones históricos del Conurbano (Morón, Tres de Febrero, Hurlingham, Ituzaingó) — el "núcleo duro" ya no es tan duro.</li>
+        <li>10 municipios sin dato electoral verificado en esta base — punto ciego que hay que cerrar antes de decidir agenda fina de visitas.</li>
+        <li>El interior pampeano, el más numeroso en municipios, es también el más fragmentado políticamente — exige más esfuerzo de gestión por unidad de voto que el Conurbano.</li>
+      </ul>
+    </div>
+    <div class="foda o">
+      <h4>Oportunidades</h4>
+      <ul>
+        <li>48 municipios fuera del Conurbano en disputa o con avance LLA — terreno fértil para construir presencia provincial donde el relato municipal solo no alcanza.</li>
+        <li>Sidersa+, Vaca Muerta y la hidrovía son anuncios de infraestructura con calendario real — permiten una agenda de gestión visible en 2026-2027, no solo promesas.</li>
+        <li>La identidad productiva de cada cluster da un guion de discurso ya armado: nombrar la vocación correcta de cada lugar construye crédito rápido.</li>
+      </ul>
+    </div>
+    <div class="foda a">
+      <h4>Amenazas</h4>
+      <ul>
+        <li>La volatilidad electoral demostrada entre septiembre y octubre de 2025 (47%/34% a 41,5%/40,8% en un mes) puede repetirse — ninguna ventaja actual está asegurada.</li>
+        <li>LLA ya mostró capacidad de penetrar en ciudades medianas no conurbanas con intendentes no libertarios (San Nicolás, Tandil, Olavarría, Pergamino) — el avance no se limita al Conurbano.</li>
+        <li>Gestionar 135 gobiernos de al menos cinco signos políticos distintos sin verticalismo es una tensión permanente que cualquier estrategia debe asumir, no resolver de una vez.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="nota-k">
+    <strong>⚡ La pregunta que este material no responde — y que el equipo de estrategia sí debe responder</strong>
+    ¿La recorrida prioriza consolidar lo que ya se tiene (Conurbano, motor de turnout) o construir donde se puede crecer (los 48 bisagra fuera del Conurbano)? Este documento da los números para decidirlo. No toma la decisión por nadie.
+  </div>
+
+</div>
+
+
+  <h2 class="pb">La dimensión política — el mapa de intendentes</h2>
+  <p class="lead">El mapa electoral dice quién ganó cada municipio. El mapa de intendentes dice quién gobierna y desde qué vínculo político. Son dos lecturas distintas: un municipio puede ser históricamente PJ pero tener intendente opositor, o viceversa. La clave para la recorrida no es solo la categoría electoral — es quién está sentado en el despacho y cuál es la lógica de esa relación.</p>
+
+  <div class="int-dist">
+    <div class="int-dist-item uxp"><div class="int-dist-n">91</div><div class="int-dist-l">Unión por la Patria</div></div>
+    <div class="int-dist-item jxc"><div class="int-dist-n">38</div><div class="int-dist-l">Juntos por el Cambio</div></div>
+    <div class="int-dist-item lla"><div class="int-dist-n">1</div><div class="int-dist-l">La Libertad Avanza</div></div>
+    <div class="int-dist-item vec"><div class="int-dist-n">3</div><div class="int-dist-l">Vecinalismo</div></div>
+    <div class="int-dist-item otro"><div class="int-dist-n">1</div><div class="int-dist-l">Otro (Hechos)</div></div>
+  </div>
+
+  <div class="nota-r">
+    <strong>Los 91 intendentes UxP no son un bloque monolítico.</strong>
+    Se identifican al menos cuatro sub-corrientes con lógicas propias: el oficialismo provincial (MDF), el Grupo de los 4, el sector Cámpora y el Frente Renovador. Navegar el PJ bonaerense requiere tratar cada corriente con su propia llave de acceso. El bloque JxC (38 intendentes) tampoco es homogéneo — algunos tienen vínculos concretos en temas de gestión.
+  </div>
+
+  <div class="faccion-grid">
+    <div class="faccion-box rival">
+      <h4>Rivales declarados a la gobernación</h4>
+      <div class="faccion-names">Jorge Ferraresi (Avellaneda) · Julio Alak (La Plata) · Mariel Fernández (Moreno)</div>
+      <p>Tres intendentes PJ ya están en carrera pública. No son interlocutores neutrales en ningún escenario de campaña — son competencia interna directa.</p>
+    </div>
+    <div class="faccion-box g4">
+      <h4>Grupo de los 4</h4>
+      <div class="faccion-names">Cañuelas · Dolores · La Costa · Lanús · Merlo · San Vicente</div>
+      <p>Corriente PJ con agenda territorial propia y presencia en Conurbano Sur y Costa Atlántica. No son aliados automáticos. Requieren negociación específica.</p>
+    </div>
+    <div class="faccion-box mdf">
+      <h4>MDF — Movimiento del Frente (Kicillof)</h4>
+      <div class="faccion-names">Almirante Brown · Alberti · Berisso · Carlos Casares · Exaltación de la Cruz · General Las Heras · Salto</div>
+      <p>Alineados al oficialismo provincial actual. El canal institucional en temas de gestión está abierto, aunque el marco político sea diferente.</p>
+    </div>
+    <div class="faccion-box campora">
+      <h4>Sector Cámpora / FR</h4>
+      <div class="faccion-names">Brandsen · Hurlingham · Mercedes · Suipacha · San Fernando (FR)</div>
+      <p>Fuertemente anclados en la estructura K. El acceso requiere canal específico. En temas concretos de gestión el vínculo es posible.</p>
+    </div>
+  </div>
+
+<div class="footer">
+  🔒 USO RESERVADO · Campaña PBA · Inmersión Provincial · Fuentes: Min. Economía PBA, INDEC Censo 2022, resultados oficiales 2023/2025 · PBA Analytics 2026
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     ANEXO — TABLA MAESTRA DE 135 MUNICIPIOS
+     ═══════════════════════════════════════════════ -->
+<div class="anexo-wrap">
+  <div class="ah-azul">
+    <div>
+      <div class="ah-meta">Provincia de Buenos Aires · 2026</div>
+      <div class="ah-title">ANEXO — LOS 135 MUNICIPIOS</div>
+    </div>
+    <div class="ah-right">Ponderación · Intendente · Vínculo · Categoría electoral</div>
+  </div>
+  <div style="padding: 14px 22px;">
+    <p style="font-size:10pt;color:#6B7280;margin:10px 0 6px;">
+      Ordenados por ponderación estratégica (Población × factor de competitividad / 1.000). Vínculo: <span class='al-aliado'>Aliado</span> · <span class='al-abierto'>Abierto</span> · <span class='al-grupo4'>Grupo 4</span> · <span class='al-mdf'>MDF</span> · <span class='al-rival'>Rival Gob.</span> · <span class='al-dificil'>Difícil</span> · <span class='al-jxc'>JxC/Opos.</span>
+    </p>
+    
+<div style="margin-bottom:22px;">
+
+  <!-- VISITAS PRIORITARIAS: 3 grupos -->
+  <h3 style="font-size:11pt; font-weight:800; color:#0B2748; margin-bottom:14px; margin-top:0; border-bottom:2px solid #74ACDF; padding-bottom:6px;">
+    Municipios prioritarios para la recorrida territorial
+  </h3>
+  <p style="font-size:9pt; color:#444; margin-bottom:16px; line-height:1.5;">
+    Los 135 municipios están ordenados por ponderación en la tabla. Dentro de esa lógica, tres grupos merecen atención diferenciada en la agenda territorial.
+  </p>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-bottom:18px;">
+
+    <!-- Grupo 1: Urgentes LLA -->
+    <div style="background:#FEF0E7; border-left:4px solid #D97706; border-radius:5px; padding:12px 14px;">
+      <div style="font-size:8pt; font-weight:800; color:#92400E; text-transform:uppercase; letter-spacing:.05em; margin-bottom:6px;">⚡ Urgente — LLA avanza</div>
+      <div style="font-size:8pt; color:#78350F; margin-bottom:8px; line-height:1.4;">La Libertad Avanza ganó estos distritos en 2025. Sin presencia, la tendencia se consolida.</div>
+      <div style="font-size:8.5pt; color:#0B2748;">
+        <div style="margin-bottom:3px;"><strong>Tres de Febrero · Morón</strong> <span style="color:#888">— Conurbano Oeste</span></div>
+        <div style="margin-bottom:3px;"><strong>Hurlingham · Ituzaingó</strong> <span style="color:#888">— Conurbano Oeste</span></div>
+        <div style="margin-bottom:3px;"><strong>San Nicolás · Tandil</strong> <span style="color:#888">— Interior / Norte</span></div>
+        <div><strong>Olavarría · Pergamino</strong> <span style="color:#888">— Interior / Corredor</span></div>
+      </div>
+    </div>
+
+    <!-- Grupo 2: Decisivos Disputados -->
+    <div style="background:#EBF4FB; border-left:4px solid #1A5F9E; border-radius:5px; padding:12px 14px;">
+      <div style="font-size:8pt; font-weight:800; color:#1A5F9E; text-transform:uppercase; letter-spacing:.05em; margin-bottom:6px;">🎯 Decisivos — Resultado incierto</div>
+      <div style="font-size:8pt; color:#1e4976; margin-bottom:8px; line-height:1.4;">Distritos disputados: en cada uno el margen es menor al 10%. La visita mueve votos.</div>
+      <div style="font-size:8.5pt; color:#0B2748;">
+        <div style="margin-bottom:3px;"><strong>La Plata</strong> <span style="color:#888">— Capital provincial, LLA ganó en 2025</span></div>
+        <div style="margin-bottom:3px;"><strong>Bahía Blanca</strong> <span style="color:#888">— Ciudad con intendente abierto</span></div>
+        <div style="margin-bottom:3px;"><strong>Zárate · Junín</strong> <span style="color:#888">— Ciudades del interior</span></div>
+        <div><strong>Necochea · San Pedro</strong> <span style="color:#888">— Costa / Corredor</span></div>
+      </div>
+    </div>
+
+    <!-- Grupo 3: Activación Bastiones -->
+    <div style="background:#F0F7EE; border-left:4px solid #3D8B37; border-radius:5px; padding:12px 14px;">
+      <div style="font-size:8pt; font-weight:800; color:#276221; text-transform:uppercase; letter-spacing:.05em; margin-bottom:6px;">📌 Activación — Base propia gigante</div>
+      <div style="font-size:8pt; color:#374D35; margin-bottom:8px; line-height:1.4;">Bastiones PJ con padrón enorme. No ganar aquí no es opción: activar participación es la clave.</div>
+      <div style="font-size:8.5pt; color:#0B2748;">
+        <div style="margin-bottom:3px;"><strong>La Matanza</strong> <span style="color:#888">— 1.8M habitantes, padrón masivo</span></div>
+        <div style="margin-bottom:3px;"><strong>Lomas de Zamora · Quilmes</strong> <span style="color:#888">— 2º anillo sur</span></div>
+        <div style="margin-bottom:3px;"><strong>Almirante Brown · Merlo</strong> <span style="color:#888">— 2º anillo sur/oeste</span></div>
+        <div><strong>Berazategui · Florencio Varela</strong> <span style="color:#888">— Sur profundo PJ</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="font-size:8pt; color:#666; font-style:italic; border-top:1px solid #DDE; padding-top:8px;">
+    La tabla completa con los 135 municipios, ordenada por ponderación, incluye en la última columna el argumento específico de visita para cada distrito.
+  </p>
+
+</div>
+<table class="int-table">
+      <thead>
+        <tr>
+          <th style="width:28px">#</th>
+          <th>Municipio</th>
+          <th>Cluster</th>
+          <th>Intendente</th>
+          <th>Partido</th>
+          <th style="text-align:right">Población</th>
+          <th>Cat. Electoral</th>
+          <th style="text-align:center">Ponderación</th>
+          <th>Vínculo</th>
+          <th style="min-width:140px">Argumento</th>
+          <th style="min-width:130px">Actores Clave</th>
+          <th style="min-width:120px">Acción de Visita</th>
+          <th style="min-width:110px">Estrategia Visita</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr><td>1</td><td><strong>La Plata</strong></td><td>Conurbano</td><td style='font-size:8pt'>Julio Alak</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>768.547</td><td>Disputado</td><td style='text-align:center;font-weight:700'>768</td><td class='al-rival'>Rival Gob.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Motor Administrativo y Universitario · El Mayor Cinturón Frutihortícola del País</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UNLP · Gobernación PBA</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + visita UNLP · reunión empleados públicos</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — campaña directa al vecino</td></tr>
+<tr><td>2</td><td><strong>La Matanza</strong></td><td>Conurbano</td><td style='font-size:8pt'>Fernando Espinoza</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>1.841.247</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>644</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Capital Nacional de la Producción PYME y el Trabajo · El Gigante del Consumo Interno</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>CAME (PyMEs) · UOM · Ind. calzado y textil</td><td style='font-size:7pt;color:#2D6A2D'>Visita polo PyME industrial · reunión sindicatos y cámaras</td><td style='font-size:7.5pt;color:#2C3E50'>Base propia — movilizar padrón</td></tr>
+<tr><td>3</td><td><strong>Bahía Blanca</strong></td><td>Ciudades Int.</td><td style='font-size:8pt'>Federico Susbielles</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>336.557</td><td>Disputado</td><td style='text-align:center;font-weight:700'>336</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Puerto / Petroquímica</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Puerto · Cámara exportadores · Astillero</td><td style='font-size:7pt;color:#2D6A2D'>Visita portuaria · reunión exportadores</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — intendente persuadible</td></tr>
+<tr><td>4</td><td><strong>General Pueyrredón</strong></td><td>Ciudades Int.</td><td style='font-size:8pt'>Guillermo Montenegro</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>667.082</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>333</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Cluster ATICMA / IA</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Comercio · UOCRA · Industria regional</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional · reunión cámara comercio y PyMEs</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>5</td><td><strong>Lanús</strong></td><td>Conurbano</td><td style='font-size:8pt'>Julián Álvarez</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>461.267</td><td>PJ con ventaja</td><td style='text-align:center;font-weight:700'>322</td><td class='al-grupo4'>Grupo 4</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Curtiembres</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Ventaja electoral — consolidar</td></tr>
+<tr><td>6</td><td><strong>Tres de Febrero</strong></td><td>Conurbano</td><td style='font-size:8pt'>Diego Valenzuela</td><td><span class='tag tag-lla'>LLA</span></td><td style='text-align:right'>364.176</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>309</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Sábato</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>LLA avanza sin apoyo local — riesgo doble</td></tr>
+<tr><td>7</td><td><strong>Morón</strong></td><td>Conurbano</td><td style='font-size:8pt'>Lucas Ghi</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>331.183</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>281</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>H. Posadas</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>LLA en alza — frenar antes que consolide</td></tr>
+<tr><td>8</td><td><strong>Lomas de Zamora</strong></td><td>Conurbano</td><td style='font-size:8pt'>Federico Otermín</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>690.480</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>241</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>La Salada</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base propia — movilizar padrón</td></tr>
+<tr><td>9</td><td><strong>Quilmes</strong></td><td>Conurbano</td><td style='font-size:8pt'>Eva Mieri (interina) / Mayra Mendoza</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>633.391</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>221</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>EcoParque / Cerveza</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base propia — movilizar padrón</td></tr>
+<tr><td>10</td><td><strong>Almirante Brown</strong></td><td>Conurbano</td><td style='font-size:8pt'>Mariano Cascallares</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>584.827</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>204</td><td class='al-mdf'>MDF</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Parque Industrial Burzaco</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Industrial · UOM · PyMEs locales</td><td style='font-size:7pt;color:#2D6A2D'>Visita polo industrial · reunión sindicatos y cámaras PyME</td><td style='font-size:7.5pt;color:#2C3E50'>Base fiel + aliado — activar y arrastrar</td></tr>
+<tr><td>11</td><td><strong>Merlo</strong></td><td>Conurbano</td><td style='font-size:8pt'>Gustavo Menéndez</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>582.486</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>203</td><td class='al-grupo4'>Grupo 4</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Economía Popular</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base propia — movilizar padrón</td></tr>
+<tr><td>12</td><td><strong>Moreno</strong></td><td>Conurbano</td><td style='font-size:8pt'>Mariel Fernández</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>576.632</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>201</td><td class='al-rival'>Rival Gob.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Economía Popular</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base PJ — activar sin depender del intendente</td></tr>
+<tr><td>13</td><td><strong>Florencio Varela</strong></td><td>Conurbano</td><td style='font-size:8pt'>Andrés Watson</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>496.433</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>173</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Frutihorticola</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base propia — movilizar padrón</td></tr>
+<tr><td>14</td><td><strong>San Miguel</strong></td><td>Conurbano</td><td style='font-size:8pt'>Jaime Méndez</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>328.835</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>164</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Ojos en Alerta</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>15</td><td><strong>General San Martín</strong></td><td>Conurbano</td><td style='font-size:8pt'>Fernando Moreira</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>450.518</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>157</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>PyMEs</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base propia — movilizar padrón</td></tr>
+<tr><td>16</td><td><strong>Hurlingham</strong></td><td>Conurbano</td><td style='font-size:8pt'>Damián Gabriel Selci</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>185.641</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>157</td><td class='al-dificil'>Difícil</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Cuna del Rock</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>LLA avanza sin apoyo local — riesgo doble</td></tr>
+<tr><td>17</td><td><strong>Tigre</strong></td><td>Conurbano</td><td style='font-size:8pt'>Julio Zamora</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>446.949</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>156</td><td class='al-dificil'>Difícil</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Delta / Inmobiliario</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base PJ — activar sin depender del intendente</td></tr>
+<tr><td>18</td><td><strong>Ituzaingó</strong></td><td>Conurbano</td><td style='font-size:8pt'>Pablo Descalzo</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>180.232</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>153</td><td class='al-aliado'>Aliado</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>El Jardín del Oeste</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>LLA avanza — aliado local es el escudo</td></tr>
+<tr><td>19</td><td><strong>San Isidro</strong></td><td>Conurbano</td><td style='font-size:8pt'>Ramón Lanús</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>297.282</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>148</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Recuperación Costera</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión JxC — el intendente abierto es la única entrada</td></tr>
+<tr><td>20</td><td><strong>San Nicolás</strong></td><td>Ciudades Int.</td><td style='font-size:8pt'>Ismael Santiago Passaglia</td><td><span class='tag tag-otro'>Hechos</span></td><td style='text-align:right'>168.041</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>142</td><td class='al-aliado'>Aliado</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>El Polo Siderúrgico y Portuario de Argentina · Capital del Turismo Religioso</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Ternium · Santuario Virgen del Rosario</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida planta siderúrgica · reunión UOM</td><td style='font-size:7.5pt;color:#2C3E50'>LLA avanza — aliado local es el escudo</td></tr>
+<tr><td>21</td><td><strong>Vicente López</strong></td><td>Conurbano</td><td style='font-size:8pt'>Soledad Martínez</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>282.280</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>141</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Polo Corporativo y Tecnológico · Residencial Premium y economía de servicios</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Visita polo tecnológico/IA · reunión empresas del sector</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>23</td><td><strong>Zárate</strong></td><td>Ciudades Int.</td><td style='font-size:8pt'>Marcelo Matzkin</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>132.221</td><td>Disputado</td><td style='text-align:center;font-weight:700'>132</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Polo Automotriz e Industrial Portuario · Capital Nuclear y del Tango</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Toyota Argentina · Central Atucha I/II</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida portuaria · reunión exportadores</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — oposición local, ir por el voto propio</td></tr>
+<tr><td>24</td><td><strong>Avellaneda</strong></td><td>Conurbano</td><td style='font-size:8pt'>Jorge Ferraresi</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>367.554</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>128</td><td class='al-rival'>Rival Gob.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Polo Logístico y Petroquímico (Dock Sud) · Capital Nacional del Fútbol</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Puerto Dock · Sindicato industrial</td><td style='font-size:7pt;color:#2D6A2D'>Visita polo petroquímico · reunión cámara industrial</td><td style='font-size:7.5pt;color:#2C3E50'>Base PJ — activar sin depender del intendente</td></tr>
+<tr><td>25</td><td><strong>Berazategui</strong></td><td>Conurbano</td><td style='font-size:8pt'>Carlos Balor </td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>358.712</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>125</td><td class='al-dificil'>Difícil</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Capital del Vidrio</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base PJ — activar sin depender del intendente</td></tr>
+<tr><td>26</td><td><strong>Tandil</strong></td><td>Ciudades Int.</td><td style='font-size:8pt'>Miguel Ángel Lunghi</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>145.575</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>123</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Silicon Valley Bonaerense</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Comercio · UOCRA · Industria regional</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional · reunión cámara comercio y PyMEs</td><td style='font-size:7.5pt;color:#2C3E50'>LLA avanza sin apoyo local — riesgo doble</td></tr>
+<tr><td>27</td><td><strong>Malvinas Argentinas</strong></td><td>Conurbano</td><td style='font-size:8pt'>Leonardo Nardini</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>350.674</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>122</td><td class='al-dificil'>Difícil</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Salud</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UNLP/UNLa · Hospitales públicos · Empleados salud</td><td style='font-size:7pt;color:#2D6A2D'>Visita hospital/universidad · reunión empleados públicos</td><td style='font-size:7.5pt;color:#2C3E50'>Base PJ — activar sin depender del intendente</td></tr>
+<tr><td>28</td><td><strong>Esteban Echeverría</strong></td><td>Conurbano</td><td style='font-size:8pt'>Fernando Gray</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>338.480</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>118</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Nodo Logístico</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Industrial · UOM · PyMEs locales</td><td style='font-size:7pt;color:#2D6A2D'>Visita polo industrial · reunión sindicatos y cámaras PyME</td><td style='font-size:7.5pt;color:#2C3E50'>Base propia — movilizar padrón</td></tr>
+<tr><td>29</td><td><strong>José C. Paz</strong></td><td>Conurbano</td><td style='font-size:8pt'>Mario Ishii</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>326.992</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>114</td><td class='al-aliado'>Aliado</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Salud</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UNLP/UNLa · Hospitales públicos · Empleados salud</td><td style='font-size:7pt;color:#2D6A2D'>Visita hospital/universidad · reunión empleados públicos</td><td style='font-size:7.5pt;color:#2C3E50'>Base fiel + aliado — activar y arrastrar</td></tr>
+<tr><td>30</td><td><strong>Olavarría</strong></td><td>Ciudades Int.</td><td style='font-size:8pt'>Maximiliano Wesner</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>125.751</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>106</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Loma Negra / Cemento</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Comercio · UOCRA · Industria regional</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional · reunión cámara comercio y PyMEs</td><td style='font-size:7.5pt;color:#2C3E50'>LLA en alza — frenar antes que consolide</td></tr>
+<tr><td>31</td><td><strong>Junín</strong></td><td>Ciudades Int.</td><td style='font-size:8pt'>Pablo Petrecca</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>103.787</td><td>Disputado</td><td style='text-align:center;font-weight:700'>103</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Epicentro 4ª Sección</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Comercio · UOCRA · Industria regional</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional · reunión cámara comercio y PyMEs</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — oposición local, ir por el voto propio</td></tr>
+<tr><td>32</td><td><strong>Necochea</strong></td><td>Litoral Atl.</td><td style='font-size:8pt'>Arturo Rojas</td><td><span class='tag tag-vec'>Vec</span></td><td style='text-align:right'>102.110</td><td>Disputado</td><td style='text-align:center;font-weight:700'>102</td><td class='al-neutro'>Vec.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Puerto Quequén 2026</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Turismo · Hoteleros · Comerciantes balnearios</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida balnearia · reunión cámara turismo y hoteleros</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>33</td><td><strong>La Costa</strong></td><td>Litoral Atl.</td><td style='font-size:8pt'>Juan de Jesús</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>100.689</td><td>Disputado</td><td style='text-align:center;font-weight:700'>100</td><td class='al-grupo4'>Grupo 4</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Turismo Popular</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Turismo · Hoteleros · Comerciantes balnearios</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida balnearia · reunión cámara turismo y hoteleros</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>34</td><td><strong>Pergamino</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Javier Martínez</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>109.000</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>92</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Capital del Agro</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>LLA avanza sin apoyo local — riesgo doble</td></tr>
+<tr><td>35</td><td><strong>Escobar</strong></td><td>Conurbano</td><td style='font-size:8pt'>Ariel Sujarchuk</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>256.268</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>89</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Innovación</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>36</td><td><strong>Azul</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Nelson Sombra</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>75.905</td><td>Disputado</td><td style='text-align:center;font-weight:700'>75</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Ciudad Cervantina</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — intendente persuadible</td></tr>
+<tr><td>37</td><td><strong>Ezeiza</strong></td><td>Conurbano</td><td style='font-size:8pt'>Gastón A. Granados</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>201.511</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>70</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Tolerancia Cero</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>38</td><td><strong>San Pedro</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Cecilio Salazar</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>68.613</td><td>Disputado</td><td style='text-align:center;font-weight:700'>68</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Durazno / Vivero</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>39</td><td><strong>Coronel Rosales</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Rodrigo Aristimuño</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>67.503</td><td>Disputado</td><td style='text-align:center;font-weight:700'>67</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Puerto Vaca Muerta</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>40</td><td><strong>Tres Arroyos</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Pablo Humberto Garate</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>62.426</td><td>Disputado</td><td style='text-align:center;font-weight:700'>62</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Fiesta del Trigo</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>41</td><td><strong>San Fernando</strong></td><td>Ciudades Int.</td><td style='font-size:8pt'>Juan Francisco Andreotti</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>171.616</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>60</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Náutica</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Comercio · UOCRA · Industria regional</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional · reunión cámara comercio y PyMEs</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>42</td><td><strong>Campana</strong></td><td>Ciudades Int.</td><td style='font-size:8pt'>Sebastián Abella</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>110.566</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>55</td><td class='al-aliado'>Aliado</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Tenaris / Puerto</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Puerto · Cámara exportadores · Astillero</td><td style='font-size:7pt;color:#2D6A2D'>Visita portuaria · reunión exportadores</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>43</td><td><strong>General Rodríguez</strong></td><td>Conurbano</td><td style='font-size:8pt'>Mauro García</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>142.709</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>49</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Alimentos</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>44</td><td><strong>General Alvarado</strong></td><td>Litoral Atl.</td><td style='font-size:8pt'>Sebastián Ianantuony</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>45.526</td><td>Disputado</td><td style='text-align:center;font-weight:700'>45</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Kiwi / BioTec</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Turismo · Hoteleros · Comerciantes balnearios</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida balnearia · reunión cámara turismo y hoteleros</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>45</td><td><strong>Chascomús</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Javier Gastón</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>42.452</td><td>Disputado</td><td style='text-align:center;font-weight:700'>42</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Alfonsín</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>46</td><td><strong>Coronel Suárez</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Ricardo Moccero</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>42.110</td><td>Disputado</td><td style='text-align:center;font-weight:700'>42</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Colonia Alemana / Calzado</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>47</td><td><strong>Lobos</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Jorge Etcheverry</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>41.760</td><td>Disputado</td><td style='text-align:center;font-weight:700'>41</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Lechero / Turismo</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Soc. Rural · Cooperativa lechera · CONINAGRO</td><td style='font-size:7pt;color:#2D6A2D'>Visita tambo o planta láctea · reunión cooperativa lechera</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — oposición local, ir por el voto propio</td></tr>
+<tr><td>48</td><td><strong>Ramallo</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Mauro Poletti</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>39.730</td><td>Disputado</td><td style='text-align:center;font-weight:700'>39</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Ternium</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>49</td><td><strong>Bragado</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Sergio Juan Barenghi</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>46.504</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>39</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Ferroviaria / Caballo</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>LLA en alza — frenar antes que consolide</td></tr>
+<tr><td>50</td><td><strong>Pinamar</strong></td><td>Litoral Atl.</td><td style='font-size:8pt'>Juan Manuel Ibarguren</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>39.449</td><td>Disputado</td><td style='text-align:center;font-weight:700'>39</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Costa Premium</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Turismo · Hoteleros · Comerciantes balnearios</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida balnearia · reunión cámara turismo y hoteleros</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — oposición local, ir por el voto propio</td></tr>
+<tr><td>51</td><td><strong>Luján</strong></td><td>Ciudades Int.</td><td style='font-size:8pt'>Leonardo Boto</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>111.251</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>38</td><td class='al-aliado'>Aliado</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Turismo Religioso</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Turismo · Hoteleros · Comerciantes</td><td style='font-size:7pt;color:#2D6A2D'>Visita complejo / balneario · reunión cámara turismo</td><td style='font-size:7.5pt;color:#2C3E50'>Base fiel + aliado — activar y arrastrar</td></tr>
+<tr><td>52</td><td><strong>Lincoln</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Salvador Serenal</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>45.506</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>38</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Carnaval / Lechero</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Soc. Rural · Cooperativa lechera · CONINAGRO</td><td style='font-size:7pt;color:#2D6A2D'>Visita tambo o planta láctea · reunión cooperativa lechera</td><td style='font-size:7.5pt;color:#2C3E50'>LLA avanza sin apoyo local — riesgo doble</td></tr>
+<tr><td>53</td><td><strong>Pehuajó</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Pablo Zurro</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>44.783</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>38</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>AgroGanadero</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>LLA en alza — frenar antes que consolide</td></tr>
+<tr><td>54</td><td><strong>Bolívar</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Eduardo "Bali" Bucca</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>37.594</td><td>Disputado</td><td style='text-align:center;font-weight:700'>37</td><td class='al-aliado'>Aliado</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Agro / Voleibol</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Clave + aliado local — máxima prioridad</td></tr>
+<tr><td>55</td><td><strong>Patagones</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Ricardo Marino</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>37.646</td><td>Disputado</td><td style='text-align:center;font-weight:700'>37</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>ADN Patagónico</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>56</td><td><strong>Presidente Perón</strong></td><td>Conurbano</td><td style='font-size:8pt'>Blanca Cantero</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>102.106</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>35</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Nuevas localidades</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>57</td><td><strong>Berisso</strong></td><td>Conurbano</td><td style='font-size:8pt'>Fabián Cagliardi</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>100.930</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>35</td><td class='al-mdf'>MDF</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>YPF / Inmigrante</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>UOM · Cámara PyME · Referentes barriales</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida barrial · reunión referentes y movimientos sociales</td><td style='font-size:7.5pt;color:#2C3E50'>Base fiel + aliado — activar y arrastrar</td></tr>
+<tr><td>58</td><td><strong>Chivilcoy</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Guillermo Britos</td><td><span class='tag tag-vec'>Vec</span></td><td style='text-align:right'>70.839</td><td>Otro (Vec)</td><td style='text-align:center;font-weight:700'>35</td><td class='al-neutro'>Vec.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>AgroGanadero</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Vecinalismo independiente — construir relación</td></tr>
+<tr><td>59</td><td><strong>San Vicente</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Nicolás Mantegazza</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>98.215</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>34</td><td class='al-grupo4'>Grupo 4</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Universidad 2024</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>60</td><td><strong>Brandsen</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Fernando Raitelli</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>32.448</td><td>Disputado</td><td style='text-align:center;font-weight:700'>32</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Cuenca Lechera</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — intendente persuadible</td></tr>
+<tr><td>61</td><td><strong>Dolores</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Juan Pablo García</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>32.032</td><td>Disputado</td><td style='text-align:center;font-weight:700'>32</td><td class='al-grupo4'>Grupo 4</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Termas</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>62</td><td><strong>Saladillo</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>José Luis Salomón</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>35.656</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>30</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Helicópteros Cícaro</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>LLA avanza sin apoyo local — riesgo doble</td></tr>
+<tr><td>63</td><td><strong>Villarino</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Carlos Bevilacqua</td><td><span class='tag tag-vec'>Vec</span></td><td style='text-align:right'>32.717</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>27</td><td class='al-neutro'>Vec.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Puerta Patagonia / Ajo</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>LLA en alza — frenar antes que consolide</td></tr>
+<tr><td>64</td><td><strong>Mercedes</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Juan Ustarroz</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>72.980</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>25</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Salame Quintero</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>65</td><td><strong>Cañuelas</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Marisa Fassi</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>70.684</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>24</td><td class='al-grupo4'>Grupo 4</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Dulce de Leche</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>66</td><td><strong>Trenque Lauquen</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Francisco Recoulat</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>49.499</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>24</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Capital Lechera</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>67</td><td><strong>Balcarce</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Esteban Reino</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>48.982</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>24</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Papa / Fangio</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>68</td><td><strong>Colón</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Waldemar Giordano</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>27.504</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>23</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Polo Semillero</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>LLA avanza sin apoyo local — riesgo doble</td></tr>
+<tr><td>69</td><td><strong>Marcos Paz</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Ricardo Curutchet</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>67.011</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>23</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Billetera propia</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>70</td><td><strong>San Antonio de Areco</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Francisco Ratto</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>26.897</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>22</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Tradición / Talabartería</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>LLA avanza sin apoyo local — riesgo doble</td></tr>
+<tr><td>71</td><td><strong>Ensenada</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Mario Secco</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>63.997</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>22</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>YPF / Astillero</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>72</td><td><strong>9 de Julio</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>María José Gentile</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>52.607</td><td>Sin dato</td><td style='text-align:center;font-weight:700'>21</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Metalmecánica / TC</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Sin datos — primer contacto y mapeo</td></tr>
+<tr><td>73</td><td><strong>General Viamonte</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Franco Flexas</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>22.649</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>19</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Casa Evita</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>LLA avanza sin apoyo local — riesgo doble</td></tr>
+<tr><td>74</td><td><strong>Navarro</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Facundo Diz</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>19.899</td><td>Disputado</td><td style='text-align:center;font-weight:700'>19</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Tambero</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — intendente persuadible</td></tr>
+<tr><td>75</td><td><strong>Rivadavia</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Juan Alberto Martínez</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>19.849</td><td>Disputado</td><td style='text-align:center;font-weight:700'>19</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Soja Monocultivo</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Bolsa de Cereales · SRA · Cooperativas agrarias</td><td style='font-size:7pt;color:#2D6A2D'>Visita cooperativa agraria · reunión SRA local</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>76</td><td><strong>Chacabuco</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Darío Golía</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>52.729</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>18</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Capital del Maíz</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Bolsa de Cereales · SRA · Cooperativas agrarias</td><td style='font-size:7pt;color:#2D6A2D'>Visita cooperativa agraria · reunión SRA local</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>77</td><td><strong>General Villegas</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Gilberto Oscar Alegre</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>35.251</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>17</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Gigante del Agro</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>78</td><td><strong>Adolfo Alsina</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Javier Andrés</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>17.552</td><td>Disputado</td><td style='text-align:center;font-weight:700'>17</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Termas / Colonia Judía</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — oposición local, ir por el voto propio</td></tr>
+<tr><td>79</td><td><strong>Rauch</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Maximiliano Suescun</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>16.635</td><td>Disputado</td><td style='text-align:center;font-weight:700'>16</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Capital del Ave Raza</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — oposición local, ir por el voto propio</td></tr>
+<tr><td>80</td><td><strong>Baradero</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Esteban Sanzio</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>40.002</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>14</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Polo Logístico</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>81</td><td><strong>Exaltación de la Cruz</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Diego Nanni</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>40.159</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>14</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Industria Equina</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>82</td><td><strong>25 de Mayo</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Ramiro Egüen</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>35.563</td><td>Sin dato</td><td style='text-align:center;font-weight:700'>14</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Carnaval / Ganadería</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural</td><td style='font-size:7.5pt;color:#2C3E50'>Sin datos — primer contacto y mapeo</td></tr>
+<tr><td>83</td><td><strong>Leandro N. Alem</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Carlos Ferraris</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>17.266</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>14</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Agro / Fiambres</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>LLA en alza — frenar antes que consolide</td></tr>
+<tr><td>84</td><td><strong>Villa Gesell</strong></td><td>Litoral Atl.</td><td style='font-size:8pt'>Gustavo Barrera</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>37.463</td><td>Sin dato</td><td style='text-align:center;font-weight:700'>14</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Colonia Alemana</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Turismo · Hoteleros · Comerciantes balnearios</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida balnearia · reunión cámara turismo y hoteleros</td><td style='font-size:7.5pt;color:#2C3E50'>Sin datos — primer contacto y mapeo</td></tr>
+<tr><td>85</td><td><strong>Salto</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Ricardo Alessandro</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>39.425</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>13</td><td class='al-mdf'>MDF</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Capital de la Semilla</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Base fiel + aliado — activar y arrastrar</td></tr>
+<tr><td>86</td><td><strong>Arrecifes</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Juan Fernando Bouvier</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>32.215</td><td>Sin dato</td><td style='text-align:center;font-weight:700'>12</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Automovilismo</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Sin datos — primer contacto y mapeo</td></tr>
+<tr><td>87</td><td><strong>Rojas</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Román Bouvier</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>25.627</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>12</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Polo Semillero</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>88</td><td><strong>General Pinto</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Alfredo Zavatarelli</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>12.941</td><td>Disputado</td><td style='text-align:center;font-weight:700'>12</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Cuenca Lechera</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>89</td><td><strong>General Alvear</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Ramón Capra</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>12.631</td><td>Disputado</td><td style='text-align:center;font-weight:700'>12</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Ganadería</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — oposición local, ir por el voto propio</td></tr>
+<tr><td>90</td><td><strong>San Miguel del Monte</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>José Castro</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>24.868</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>12</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Enclave Rosista</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>91</td><td><strong>General Belgrano</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Osvaldo Dinápoli</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>20.791</td><td>JxC con ventaja</td><td style='text-align:center;font-weight:700'>12</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Termas del Salado</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Terreno adversario — presencia eventual</td></tr>
+<tr><td>92</td><td><strong>Coronel Pringles</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Lisandro Matzkin</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>24.420</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>12</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Arq. Salamone</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>93</td><td><strong>Daireaux</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Alejandro Acerbo</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>18.422</td><td>PJ con ventaja</td><td style='text-align:center;font-weight:700'>12</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Sorgo / Tasa Vial</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Ventaja electoral — consolidar</td></tr>
+<tr><td>94</td><td><strong>Roque Pérez</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Maximiliano Sciaini</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>13.977</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>11</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Noche Almacenes</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>LLA en alza — frenar antes que consolide</td></tr>
+<tr><td>95</td><td><strong>Mar Chiquita</strong></td><td>Litoral Atl.</td><td style='font-size:8pt'>Walter Wischnivetzky</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>33.110</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>11</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Albufera única</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Turismo · Hoteleros · Comerciantes balnearios</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida balnearia · reunión cámara turismo y hoteleros</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>96</td><td><strong>Saavedra</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Matías Nebot</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>22.347</td><td>Otro (Vec)</td><td style='text-align:center;font-weight:700'>11</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Colonia Francesa</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Vecinalismo independiente — construir relación</td></tr>
+<tr><td>97</td><td><strong>Guaminí</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>José Nobre Ferreira</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>11.801</td><td>Disputado</td><td style='text-align:center;font-weight:700'>11</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Lagunas Encadenadas</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>98</td><td><strong>Laprida</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Alfredo Fisher</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>11.646</td><td>Disputado</td><td style='text-align:center;font-weight:700'>11</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Capital del Reciclaje</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>99</td><td><strong>Magdalena</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Lisandro Hourcade</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>26.613</td><td>Sin dato</td><td style='text-align:center;font-weight:700'>10</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Nuevo Parque</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Sin datos — primer contacto y mapeo</td></tr>
+<tr><td>100</td><td><strong>Tapalqué</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Gustavo Cocconi</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>10.783</td><td>Disputado</td><td style='text-align:center;font-weight:700'>10</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Ganado / Termas</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Turismo · Hoteleros · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Visita termas · reunión cámara turismo local</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>101</td><td><strong>Ayacucho</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Emilio Cordonnier</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>21.977</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>10</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Capital del Ternero</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>102</td><td><strong>San Andrés de Giles</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Miguel Gesualdi</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>26.510</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>9</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Avícola / Porcina</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>103</td><td><strong>General Arenales</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Érica Revilla</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>16.350</td><td>JxC con ventaja</td><td style='text-align:center;font-weight:700'>9</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Polo Textil</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Terreno adversario — presencia eventual</td></tr>
+<tr><td>104</td><td><strong>Hipólito Yrigoyen</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Luis Pugnanoli</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>10.661</td><td>Emergente LLA</td><td style='text-align:center;font-weight:700'>9</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Agrícola</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Bolsa de Cereales · SRA · Cooperativas agrarias</td><td style='font-size:7pt;color:#2D6A2D'>Visita cooperativa agraria · reunión SRA local</td><td style='font-size:7.5pt;color:#2C3E50'>LLA en alza — frenar antes que consolide</td></tr>
+<tr><td>105</td><td><strong>Las Flores</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Fabian Blanstein (interino) / Alberto Gelené (hoy en "Comite de Cuencas" del Min. Infraestructura PBA)</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>27.239</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>9</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Bioy Casares / Textil</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>106</td><td><strong>General Juan Madariaga</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Carlos Santoro</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>22.624</td><td>Sin dato</td><td style='text-align:center;font-weight:700'>9</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Textil Bangladesh</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Sin datos — primer contacto y mapeo</td></tr>
+<tr><td>107</td><td><strong>Lobería</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Pablo Javier Barrena</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>18.243</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>9</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Ed. Tecnológica</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>108</td><td><strong>Coronel Dorrego</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Juan Carlos Chalde</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>15.968</td><td>JxC con ventaja</td><td style='text-align:center;font-weight:700'>9</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Aceite de Oliva</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Terreno adversario — presencia eventual</td></tr>
+<tr><td>109</td><td><strong>Salliqueló</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Ariel Horacio Succurro</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>9.427</td><td>Disputado</td><td style='text-align:center;font-weight:700'>9</td><td class='al-aliado'>Aliado</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Capital Novillo Tipo</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Clave + aliado local — máxima prioridad</td></tr>
+<tr><td>110</td><td><strong>Tres Lomas</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Luciano O. Spinolo Sayago</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>9.164</td><td>Disputado</td><td style='text-align:center;font-weight:700'>9</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Autonomía 1986</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>111</td><td><strong>Carlos Casares</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Daniel Stadnik</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>23.100</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>8</td><td class='al-mdf'>MDF</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Cuna del Girasol</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Base fiel + aliado — activar y arrastrar</td></tr>
+<tr><td>112</td><td><strong>Puán</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Diego Alejandro Reyes</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>16.613</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>8</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Cebada</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>113</td><td><strong>Capitán Sarmiento</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Fernanda Astorino</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>15.965</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>7</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Polo Avícola</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>114</td><td><strong>Benito Juárez</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Julio Marini</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>22.292</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>7</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Frambuesa / Cemento</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>115</td><td><strong>Pellegrini</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Sofía Magdalena Gambier</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>7.143</td><td>Disputado</td><td style='text-align:center;font-weight:700'>7</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Arraigo Joven</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Clave — oposición local, ir por el voto propio</td></tr>
+<tr><td>116</td><td><strong>Carmen de Areco</strong></td><td>Corredor N.</td><td style='font-size:8pt'>Iván Villagrán</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>17.499</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>6</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Semillero / Porcina</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>117</td><td><strong>General Las Heras</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Javier Osuna</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>18.022</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>6</td><td class='al-mdf'>MDF</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Capital del Pato</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Base fiel + aliado — activar y arrastrar</td></tr>
+<tr><td>118</td><td><strong>Florentino Ameghino</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Nahuel Mittelbach</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>10.790</td><td>JxC con ventaja</td><td style='text-align:center;font-weight:700'>6</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Ganado / Lácteos</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Soc. Rural · Cooperativa lechera · CONINAGRO</td><td style='font-size:7pt;color:#2D6A2D'>Visita tambo o planta láctea · reunión cooperativa lechera</td><td style='font-size:7.5pt;color:#2C3E50'>Terreno adversario — presencia eventual</td></tr>
+<tr><td>119</td><td><strong>Maipú</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Lorena Otermin (Interina) / Matías Rappallini (licencia)</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>11.323</td><td>JxC con ventaja</td><td style='text-align:center;font-weight:700'>6</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Crisis Política HCD</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Terreno adversario — presencia eventual</td></tr>
+<tr><td>120</td><td><strong>Adolfo G. Chaves</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>—</td><td><span class='tag tag-otro'>—</span></td><td style='text-align:right'>12.914</td><td>Sin dato</td><td style='text-align:center;font-weight:700'>5</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Vuelo a Vela</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Sin datos — primer contacto y mapeo</td></tr>
+<tr><td>121</td><td><strong>Tornquist</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Estefania Bordoni (interina) / Sergio Bordoni (Directorio Bco Provincia)</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>14.810</td><td>Sin dato</td><td style='text-align:center;font-weight:700'>5</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Turismo de Montaña</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Sin datos — primer contacto y mapeo</td></tr>
+<tr><td>122</td><td><strong>General La Madrid</strong></td><td>Sur Bon.</td><td style='font-size:8pt'>Martín Randazzo</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>11.618</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>5</td><td class='al-aliado'>Aliado</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Cannabis</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Referentes sectoriales locales</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida territorial</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>123</td><td><strong>Carlos Tejedor</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>María Celia Gianini</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>14.079</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>4</td><td class='al-abierto'>Abierto</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>AgroGanadero</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>124</td><td><strong>Punta Indio</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>David Angueira</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>12.297</td><td>Sin dato</td><td style='text-align:center;font-weight:700'>4</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Tronador II</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Sin datos — primer contacto y mapeo</td></tr>
+<tr><td>125</td><td><strong>Alberti</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Germán Lago</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>12.982</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>4</td><td class='al-mdf'>MDF</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Arq. Salamone</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Base fiel + aliado — activar y arrastrar</td></tr>
+<tr><td>126</td><td><strong>Suipacha</strong></td><td>Interior Pamp.</td><td style='font-size:8pt'>Juan Luis Mancini</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>11.786</td><td>Sin dato</td><td style='text-align:center;font-weight:700'>4</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Ruta del Queso</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural · Cooperativa · Municipio</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + recorrida productiva local</td><td style='font-size:7.5pt;color:#2C3E50'>Sin datos — primer contacto y mapeo</td></tr>
+<tr><td>127</td><td><strong>General Paz</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Juan Manuel Álvarez</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>14.207</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>4</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Laguna</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>128</td><td><strong>San Cayetano</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Miguel Ángel Gargaglione</td><td><span class='tag tag-jxc'>JxC</span></td><td style='text-align:right'>8.994</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>4</td><td class='al-jxc'>JxC/Opos.</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>19 años gestión</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>129</td><td><strong>General Lavalle</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Nahuel Guardia</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>4.870</td><td>Disputado</td><td style='text-align:center;font-weight:700'>4</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Torta Negra / Pesca</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>130</td><td><strong>Castelli</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Francisco Echarren</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>9.594</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>3</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Cuenca del Salado</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>131</td><td><strong>Lezama</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Arnaldo Harispe</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>6.221</td><td>Bastión JxC</td><td style='text-align:center;font-weight:700'>3</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Municipio más joven</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Bastión opositor — no prioritario</td></tr>
+<tr><td>132</td><td><strong>Monte Hermoso</strong></td><td>Litoral Atl.</td><td style='font-size:8pt'>Hernán Arranz</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>8.465</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>2</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Balneario</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Cámara Turismo · Hoteleros · Comerciantes balnearios</td><td style='font-size:7pt;color:#2D6A2D'>Recorrida balnearia · reunión cámara turismo y hoteleros</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>133</td><td><strong>Tordillo</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Héctor Olivera</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>2.542</td><td>Disputado</td><td style='text-align:center;font-weight:700'>2</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Menos poblado PBA</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Electoralmente decisivo — no delegar</td></tr>
+<tr><td>134</td><td><strong>General Guido</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Carlos Rocha</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>3.174</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>1</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Emergencia Económica</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Visita establecimiento ganadero · reunión Soc. Rural local</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+<tr><td>135</td><td><strong>Pila</strong></td><td>Cuenca Salado</td><td style='font-size:8pt'>Sebastián Walker</td><td><span class='tag tag-uxp'>UxP</span></td><td style='text-align:right'>4.642</td><td>Bastión PJ</td><td style='text-align:center;font-weight:700'>1</td><td class='al-sindt'>—</td><td style='font-size:7.5pt;color:#1A5F9E;font-style:italic'>Ganadería de Cría Extensiva · Empleo Público Municipal</td><td style='font-size:7pt;color:#6B2D6B;font-weight:600'>Sociedad Rural local · Remates feria ganaderos</td><td style='font-size:7pt;color:#2D6A2D'>Agenda institucional + reunión empleados públicos</td><td style='font-size:7.5pt;color:#2C3E50'>Base chica — presencia mínima</td></tr>
+      </tbody>
+    </table>
+    <div class="anx-foot" style="margin-top:14px;">🔒 USO RESERVADO · ANEXO · Fuentes: MatrizPBA 2026, INDEC Censo 2022, resultados electorales oficiales 2023/2025 · PBA Analytics 2026</div>
+  </div>
+</div>
+
+</body>

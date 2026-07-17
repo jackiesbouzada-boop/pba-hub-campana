@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LA MATANZA — Ficha de Campaña · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #b8c4bc; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.header { background: linear-gradient(135deg, #0C3B1E 0%, #165F35 60%, #1A7A40 100%); color: white; padding: 22px 28px; display: flex; justify-content: space-between; align-items: flex-start; }
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.85; line-height: 1.95; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-aliado { background: rgba(52,211,153,0.35); color: #A7F3D0; }
+.banner { background: #0C3B1E; color: white; padding: 20px 28px; border-left: 7px solid #22C55E; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #BBF7D0; margin-bottom: 7px; }
+.b-title  { font-size: 15.5px; font-weight: 800; margin-bottom: 13px; line-height: 1.35; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #BBF7D0; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 19px; font-weight: 900; color: #4ADE80; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+.main { padding: 18px 22px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; background: #eef2f7; }
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+.card { background: white; border-radius: 10px; box-shadow: 0 1px 5px rgba(0,0,0,0.07); overflow: hidden; }
+.ch { padding: 10px 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.9px; }
+.cbody { padding: 13px; }
+.st  { font-size: 9.5px; font-weight: 700; color: #165F35; padding-bottom: 5px; border-bottom: 2px solid #22C55E; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.st2 { font-size: 9.5px; font-weight: 700; color: #165F35; padding-bottom: 5px; border-bottom: 2px solid #22C55E; margin-top: 14px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+.ct { background: #F0FDF4; border: 1px solid #22C55E; color: #0C3B1E; }
+.t { width: 100%; border-collapse: collapse; font-size: 11px; }
+.t th { background: #f5f6f8; color: #555; padding: 5px 7px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 5px 7px; border-bottom: 1px solid #f3f4f6; vertical-align: top; word-break: break-word; }
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child { color: #555; }
+.t.two-col td:first-child { width: 44%; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 11px 12px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 21px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9px; color: #999; margin-top: 3px; line-height: 1.35; }
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.sc   { border-radius: 7px; padding: 11px 12px; border-left: 4px solid; }
+.sc.p { border-color: #165F35; background: #F0FDF4; }
+.sc.s { border-color: #059669; background: #F0FDF4; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #0369A1; background: #F0F9FF; }
+.sc.r { border-color: #DC2626; background: #FEF2F2; }
+.sc.g { border-color: #0C3B1E; background: #F0FDF4; }
+.sl { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.sn { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.sp { font-size: 18px; font-weight: 900; margin: 3px 0 6px; }
+.sd { font-size: 10px; line-height: 1.65; color: #444; }
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.pbl { width: 120px; font-size: 9.5px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; height: 16px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 5px; }
+.pbt { font-size: 9px; font-weight: 700; color: white; white-space: nowrap; }
+.pbp { width: 32px; font-size: 9.5px; font-weight: 700; text-align: right; flex-shrink: 0; }
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pi   { border-radius: 7px; padding: 11px 13px; border-left: 4px solid; }
+.pi.o { background: #F0FDF4; border-color: #165F35; }
+.pi.r { background: #FEF2F2; border-color: #EF4444; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pi.p { background: #F0F9FF; border-color: #0369A1; }
+.pi.a { background: #FFFBEB; border-color: #D97706; }
+.pt   { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.pti  { font-size: 11px; font-weight: 700; margin-bottom: 5px; }
+.pd   { font-size: 10px; line-height: 1.65; color: #444; }
+.ar   { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f0f0f0; }
+.ar:last-child { border-bottom: none; }
+.ai   { font-size: 18px; min-width: 24px; flex-shrink: 0; }
+.ain  { flex: 1; min-width: 0; }
+.an   { font-size: 11px; font-weight: 700; color: #165F35; margin-bottom: 3px; }
+.ad   { font-size: 10px; color: #555; line-height: 1.6; }
+.ats  { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+.at   { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 7px; }
+.ag   { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px dashed #e8e8e8; }
+.ag:last-child { border-bottom: none; }
+.agi  { font-size: 17px; min-width: 22px; flex-shrink: 0; }
+.agt  { min-width: 0; }
+.agt strong { font-size: 11px; display: block; margin-bottom: 3px; color: #165F35; font-weight: 700; }
+.agt p { font-size: 10px; color: #666; line-height: 1.6; }
+.al-k { background: #0C3B1E; border-radius: 8px; padding: 10px 13px; margin-bottom: 8px; }
+.al-k strong { font-size: 11px; display: block; color: #22C55E; margin-bottom: 3px; font-weight: 700; }
+.al-k p { font-size: 10px; color: rgba(255,255,255,0.82); line-height: 1.55; }
+.al-k:last-child { margin-bottom: 0; }
+@media print {
+  html { background: white; padding: 0; }
+  body { max-width: 100%; }
+  .main { padding: 10px 14px; gap: 10px; }
+  .card, .banner, .header, .b-num, .kpi, .sc, .pi, .al-k, .ar, .ag, .pgrid, .sgrid, .kpis, .t { break-inside: avoid !important; }
+  @page { size: A4 portrait; margin: 6mm 7mm; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <h1>LA MATANZA</h1>
+    <div class="sub">3ª Sección Electoral · Cluster 1 — Conurbano Bonaerense
+      <span class="badge badge-aliado">ALIADO UxP</span>
+    </div>
+    <div class="tag">Partido más populoso de la Provincia de Buenos Aires · Capital Nacional de la Producción PYME y el Trabajo</div>
+  </div>
+  <div class="header-right">
+    Intendente: <strong>Fernando Espinoza</strong> (UxP)<br>
+    Sup: <strong>327,4 km²</strong> · Hab: <strong>1.841.247</strong><br>
+    Padrón: <strong>1.200.368</strong> electores<br>
+    <strong>El mayor distrito electoral de PBA</strong>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="b-label">Perfil General</div>
+  <div class="b-title">El bastión del PJ bonaerense: más de 1,2 millones de electores, fortaleza estructural que resiste el avance de LLA mejor que cualquier otro distrito del Conurbano. La Matanza es el ancla electoral de la coalición provincial.</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>Intendente:</strong> Fernando Espinoza (UxP), ejerciendo desde 2019. Con trayectoria anterior 2011–2015 y regreso en 2019. La gestión articuló con Verónica Magario (hoy segunda autoridad ejecutiva provincial) y mantiene continuidad institucional peronista sólida.</p>
+      <p><strong>Identidad territorial:</strong> Capital Nacional de la Producción PYME y el Trabajo. Concentra miles de pymes metalmecánicas, plásticas y autopartistas, más el eje histórico del calzado y la confección textil. Su volumen poblacional supera al de la mayoría de las provincias argentinas.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>Estructura social:</strong> El municipio no es homogéneo. El corredor este (Ciudadela, Ramos Mejía, Villa Luzuriaga) tiene perfil de clase media-baja formal. El oeste profundo (Gregorio de Laferrere, González Catán, Virrey del Pino) concentra la mayor vulnerabilidad social, altos índices de informalidad y la base social más fiel del PJ.</p>
+      <p><strong>Diferencial electoral:</strong> En 2025 el PJ obtuvo 52,9% en provinciales y 48,4% en nacionales — un split de solo 4,5 pts, el más contenido del Conurbano. LLA penetró pero sin lograr el salto que tuvo en distritos del interior o en municipios con menor densidad de tejido social PJ.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">1.200.368</div><div class="l">Padrón electoral 2025. Mayor de PBA.</div></div>
+    <div class="b-num"><div class="n">52,9%</div><div class="l">PJ Provinciales 2025 (concejales)</div></div>
+    <div class="b-num"><div class="n">48,4%</div><div class="l">PJ Nacionales 2025 (diputados)</div></div>
+    <div class="b-num"><div class="n">53,7%</div><div class="l">PJ 2023 intendente + concejales</div></div>
+    <div class="b-num"><div class="n">14</div><div class="l">Localidades del partido</div></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- INDICADORES CLAVE -->
+  <div class="card full">
+    <div class="ch" style="background:#0C3B1E;color:white;">📊 Indicadores Clave del Distrito</div>
+    <div class="cbody">
+      <div class="kpis">
+        <div class="kpi" style="background:#F0FDF4;border-color:#22C55E;">
+          <div class="kl">Padrón</div>
+          <div class="kv" style="color:#0C3B1E;">1,2M</div>
+          <div class="ks">El mayor de PBA · ~15% del padrón provincial total</div>
+        </div>
+        <div class="kpi" style="background:#F0FDF4;border-color:#22C55E;">
+          <div class="kl">PJ Prov. 2025</div>
+          <div class="kv" style="color:#165F35;">52,9%</div>
+          <div class="ks">359.389 votos · Primero con amplia ventaja</div>
+        </div>
+        <div class="kpi" style="background:#FFFBEB;border-color:#D97706;">
+          <div class="kl">LLA Nac. 2025</div>
+          <div class="kv" style="color:#92400E;">32,5%</div>
+          <div class="ks">225.035 votos · Penetración real pero contenida</div>
+        </div>
+        <div class="kpi" style="background:#F0FDF4;border-color:#22C55E;">
+          <div class="kl">Ticket Split</div>
+          <div class="kv" style="color:#0C3B1E;">4,5 pts</div>
+          <div class="ks">Diferencia PJ prov vs PJ nac 2025 · Mínima del Conurbano</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERFIL DEMOGRÁFICO Y SEGMENTACIÓN SOCIAL -->
+  <div class="card full">
+    <div class="ch" style="background:#165F35;color:white;">📊 Perfil Demográfico · Segmentación Social</div>
+    <div class="cbody">
+      <div class="st">Composición social del padrón — perfil electoral por segmento</div>
+      <table class="t">
+        <thead>
+          <tr>
+            <th>Segmento</th>
+            <th>% aprox.</th>
+            <th>Localización</th>
+            <th>Perfil de Voto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="bld">Clase obrera formal industrial</td>
+            <td>~15%</td>
+            <td>Corredor industrial, González Catán, Laferrere</td>
+            <td>PJ estructural. Base sindical. Muy estable</td>
+          </tr>
+          <tr>
+            <td class="bld">Sector popular informal / planes sociales</td>
+            <td>~25%</td>
+            <td>Oeste profundo: Virrey del Pino, Laferrere, González Catán</td>
+            <td>PJ captivo. Erosión LLA en jóvenes de este segmento</td>
+          </tr>
+          <tr>
+            <td class="bld">Empleados estatales y docentes</td>
+            <td>~18%</td>
+            <td>Cabecera San Justo, Ramos Mejía, Villa Luzuriaga</td>
+            <td>PJ leal. Sensibles a salarios y ajuste nacional</td>
+          </tr>
+          <tr>
+            <td class="bld">Clase media comercial / servicios</td>
+            <td>~15%</td>
+            <td>San Justo, Ramos Mejía, Ciudadela</td>
+            <td>JxC histórico → LLA 2023/2025. Eje fiscal y seguridad</td>
+          </tr>
+          <tr>
+            <td class="bld">PYME y comerciantes</td>
+            <td>~10%</td>
+            <td>Polígonos industriales, centros comerciales</td>
+            <td>JxC → LLA creciente. Sensibles a tasas y crédito</td>
+          </tr>
+          <tr>
+            <td class="bld">Jóvenes universitarios (UNLAM/CUDI)</td>
+            <td>~8%</td>
+            <td>San Justo, González Catán (CUDI), áreas universitarias</td>
+            <td>Fluidos. LLA ganó tracción 2023–2025. Clave para 2026</td>
+          </tr>
+          <tr>
+            <td class="bld">Comunidad migrante (Bolivia, Paraguay, Perú)</td>
+            <td>~9%</td>
+            <td>Laferrere, González Catán, Virrey del Pino</td>
+            <td>PJ concentrado. Sensibles a programas sociales y documentación</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- INDICADORES NBI E INFRAESTRUCTURA -->
+  <div class="card two">
+    <div class="ch" style="background:#165F35;color:white;">🏗️ Indicadores de Infraestructura y Servicios</div>
+    <div class="cbody">
+      <table class="t">
+        <thead><tr><th>Indicador</th><th>Situación</th><th>Lectura política</th></tr></thead>
+        <tbody>
+          <tr><td class="bld">NBI estimado</td><td>~18–25% (oeste profundo hasta 35%)</td><td>Muy superior al promedio PBA · Base de planes sociales</td></tr>
+          <tr><td class="bld">Pavimentación</td><td>⚠️ Déficit histórico en el oeste</td><td>Megaplán Espinoza: 5.000+ cuadras en Laferrere/Catán/V. del Pino</td></tr>
+          <tr><td class="bld">Cloacas</td><td>Parcial en cabecera. Déficit en oeste</td><td>Demanda estructural acumulada. Obra pendiente prioritaria</td></tr>
+          <tr><td class="bld">Transporte (Belgrano Sur)</td><td>Obra de túneles en curso</td><td>Conectividad crítica para trabajadores del oeste hacia CABA</td></tr>
+          <tr><td class="bld">Salud</td><td>Red de 80+ centros + Balestrini + Favaloro</td><td>Alta cobertura. Digitalización de turnos en 2026</td></tr>
+          <tr><td class="bld">Educación pública</td><td>Red municipal jardines + kits universales</td><td>300.000 kits escolares/año. Altísimo impacto simbólico</td></tr>
+          <tr><td class="bld">Industria (PYME)</td><td>Activa. Exenciones municipales 2026</td><td>Capital Nacional del Trabajo. Motor del empleo formal</td></tr>
+          <tr><td class="bld">Tecnología (CUDI)</td><td>Centro inaugurado en González Catán</td><td>UBA+UTN+UNLAM. Robótica, biotecnología, programación</td></tr>
+          <tr><td class="bld">Vivienda</td><td>Déficit alto en oeste. Autoconstrucción activa</td><td>Presión de hábitat en barrios vulnerables del extremo oeste</td></tr>
+          <tr><td class="bld">Seguridad</td><td>Alta percepción de inseguridad</td><td>Eje crítico en clase media. LLA capitalizó discursivamente</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- LOCALIDADES -->
+  <div class="card one">
+    <div class="ch" style="background:#165F35;color:white;">📍 Localidades del Partido</div>
+    <div class="cbody">
+      <div class="st">14 localidades — geografía electoral heterogénea</div>
+      <table class="t two-col">
+        <thead><tr><th>Localidad</th><th>Perfil</th></tr></thead>
+        <tbody>
+          <tr><td class="bld">San Justo</td><td>Cabecera. Clase media. Centro cívico y comercial</td></tr>
+          <tr><td class="bld">Ramos Mejía</td><td>Clase media consolidada. JxC→LLA. Comercio activo</td></tr>
+          <tr><td class="bld">Ciudadela</td><td>Acceso urbano. Clase media-baja. Corredor oeste</td></tr>
+          <tr><td class="bld">Villa Luzuriaga</td><td>Clase media-baja. Empleo formal. Tejido PJ</td></tr>
+          <tr><td class="bld">Ciudad Evita</td><td>Identidad peronista histórica. H. Balestrini</td></tr>
+          <tr><td class="bld">Rafael Castillo</td><td>Clase trabajadora. H. René Favaloro</td></tr>
+          <tr><td class="bld">Aldo Bonzi</td><td>Residencial popular. PJ base</td></tr>
+          <tr><td class="bld">Tapiales</td><td>Industrial y residencial. Tejido obrero</td></tr>
+          <tr><td class="bld">Isidro Casanova</td><td>Clase popular. Alta densidad. PJ sólido</td></tr>
+          <tr><td class="bld">Villa Insuperable</td><td>Popular. Barrios vulnerables. Planes sociales</td></tr>
+          <tr><td class="bld">Gre. de Laferrere</td><td>Oeste. Alta vulnerabilidad. Base PJ + erosión LLA</td></tr>
+          <tr><td class="bld">González Catán</td><td>Oeste. CUDI. Vulnerabilidad alta. PJ con presión LLA</td></tr>
+          <tr><td class="bld">Virrey del Pino</td><td>Extremo oeste. Mayor NBI. PJ estructural</td></tr>
+          <tr><td class="bld">Ingeniero Budge</td><td>Límite con Lomas. Popular. PJ fiel</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ELECTORAL 2023 -->
+  <div class="card two">
+    <div class="ch" style="background:#165F35;color:white;">🗳️ Resultados Electorales 2023–2025</div>
+    <div class="cbody">
+      <div class="st">2023 — Intendente + Concejales · Electores: 1.180.085</div>
+      <div class="pbr">
+        <div class="pbl">PJ / UxP</div>
+        <div class="pbo"><div class="pbi" style="width:53.7%;background:#165F35;"><span class="pbt">418.256 votos</span></div></div>
+        <div class="pbp" style="color:#165F35;">53,7%</div>
+      </div>
+      <div class="pbr">
+        <div class="pbl">LLA</div>
+        <div class="pbo"><div class="pbi" style="width:22.4%;background:#D97706;"><span class="pbt">174.430</span></div></div>
+        <div class="pbp" style="color:#D97706;">22,4%</div>
+      </div>
+      <div class="pbr">
+        <div class="pbl">JxC</div>
+        <div class="pbo"><div class="pbi" style="width:18.4%;background:#3B82F6;"><span class="pbt">143.504</span></div></div>
+        <div class="pbp" style="color:#3B82F6;">18,4%</div>
+      </div>
+      <div class="pbr">
+        <div class="pbl">FIT</div>
+        <div class="pbo"><div class="pbi" style="width:5.5%;background:#EF4444;"><span class="pbt">43.231</span></div></div>
+        <div class="pbp" style="color:#EF4444;">5,5%</div>
+      </div>
+
+      <div class="st2">2025 — Provinciales (Concejales) · Electores: 1.200.368</div>
+      <div class="pbr">
+        <div class="pbl">PJ / UxP</div>
+        <div class="pbo"><div class="pbi" style="width:52.9%;background:#165F35;"><span class="pbt">359.389 votos</span></div></div>
+        <div class="pbp" style="color:#165F35;">52,9%</div>
+      </div>
+      <div class="pbr">
+        <div class="pbl">LLA</div>
+        <div class="pbo"><div class="pbi" style="width:28.9%;background:#D97706;"><span class="pbt">196.559</span></div></div>
+        <div class="pbp" style="color:#D97706;">28,9%</div>
+      </div>
+      <div class="pbr">
+        <div class="pbl">FIT</div>
+        <div class="pbo"><div class="pbi" style="width:7.8%;background:#EF4444;"><span class="pbt">52.815</span></div></div>
+        <div class="pbp" style="color:#EF4444;">7,8%</div>
+      </div>
+
+      <div class="st2">2025 — Nacionales (Diputado) · Electores: 1.056.920</div>
+      <div class="pbr">
+        <div class="pbl">PJ / UxP</div>
+        <div class="pbo"><div class="pbi" style="width:48.4%;background:#165F35;"><span class="pbt">335.217 votos</span></div></div>
+        <div class="pbp" style="color:#165F35;">48,4%</div>
+      </div>
+      <div class="pbr">
+        <div class="pbl">LLA</div>
+        <div class="pbo"><div class="pbi" style="width:32.5%;background:#D97706;"><span class="pbt">225.035</span></div></div>
+        <div class="pbp" style="color:#D97706;">32,5%</div>
+      </div>
+      <div class="pbr">
+        <div class="pbl">FIT</div>
+        <div class="pbo"><div class="pbi" style="width:7.1%;background:#EF4444;"><span class="pbt">48.896</span></div></div>
+        <div class="pbp" style="color:#EF4444;">7,1%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANÁLISIS TICKET SPLIT -->
+  <div class="card one">
+    <div class="ch" style="background:#165F35;color:white;">📈 Ticket Split 2025</div>
+    <div class="cbody">
+      <div class="st">PJ: provincial vs nacional</div>
+      <div class="sgrid" style="grid-template-columns:1fr;">
+        <div class="sc p">
+          <div class="sl">PJ Provinciales</div>
+          <div class="sp" style="color:#0C3B1E;">52,9%</div>
+          <div class="sd">359.389 votos · Concejales · Primero con ventaja sostenida</div>
+        </div>
+        <div class="sc s">
+          <div class="sl">PJ Nacionales</div>
+          <div class="sp" style="color:#165F35;">48,4%</div>
+          <div class="sd">335.217 votos · Diputados · Cae 4,5 pts vs provinciales</div>
+        </div>
+        <div class="sc t">
+          <div class="sl">Split (diferencia)</div>
+          <div class="sp" style="color:#92400E;">−4,5 pts</div>
+          <div class="sd">El split más bajo del Conurbano. La Matanza diferencia niveles pero en menor medida que el promedio. Señal: la identidad PJ resiste la presión nacional de LLA.</div>
+        </div>
+        <div class="sc e">
+          <div class="sl">LLA: avance nac vs prov</div>
+          <div class="sp" style="color:#0369A1;">+3,6 pts</div>
+          <div class="sd">LLA sube de 28,9% a 32,5% entre niveles. Penetración real pero contenida vs otros distritos del Conurbano donde superó el 40% en nacionales.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GESTIÓN ESPINOZA -->
+  <div class="card full">
+    <div class="ch" style="background:#0C3B1E;color:white;">🏛️ Gestión Espinoza (UxP) — Hitos 2024–2026</div>
+    <div class="cbody">
+      <div class="pgrid">
+        <div>
+          <div class="st">Educación e Innovación</div>
+          <div class="ag">
+            <div class="agi">🎓</div>
+            <div class="agt">
+              <strong>CUDI — Centro Universitario de la Innovación (González Catán)</strong>
+              <p>Principal motor de formación tecnológica del Conurbano. Carreras UBA, UTN y UNLAM en programación, robótica y biotecnología. Proyecto asociado para radicar empresas tech con incentivos fiscales y empleo para egresados locales. Arraigo joven en el oeste profundo.</p>
+            </div>
+          </div>
+          <div class="ag">
+            <div class="agi">📚</div>
+            <div class="agt">
+              <strong>Programa Universal de Kits Escolares y Robótica</strong>
+              <p>Más de 300.000 kits escolares, libros de texto y kits de robótica entregados a TODOS los alumnos de escuelas primarias públicas del distrito al inicio del ciclo lectivo. Sin focalización — universal. Impacto directo en 300.000 familias.</p>
+            </div>
+          </div>
+          <div class="ag">
+            <div class="agi">🌱</div>
+            <div class="agt">
+              <strong>Programa Podés — Becas Anti-deserción</strong>
+              <p>Becas a alumnos en situaciones económicas complejas para evitar la deserción escolar. Red de jardines municipales propios que complementa la oferta pública provincial.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="st">Infraestructura y Obras</div>
+          <div class="ag">
+            <div class="agi">🛣️</div>
+            <div class="agt">
+              <strong>Megaplán de Pavimentación — 5.000+ cuadras</strong>
+              <p>Focalizado en Virrey del Pino, Gregorio de Laferrere y González Catán. Prioriza recorridos del transporte público. Obra visible y tangible en el oeste profundo donde el déficit histórico es mayor.</p>
+            </div>
+          </div>
+          <div class="ag">
+            <div class="agi">🚇</div>
+            <div class="agt">
+              <strong>Túneles Línea Belgrano Sur</strong>
+              <p>Finalización de túneles clave para agilizar tránsito vehicular y mejorar frecuencia del tren. Conectividad crítica para los trabajadores del oeste que viajan diariamente a CABA. Alta valoración en Laferrere y González Catán.</p>
+            </div>
+          </div>
+          <div class="ag">
+            <div class="agi">🏠</div>
+            <div class="agt">
+              <strong>Plan de Ordenamiento Territorial y Autoconstrucción</strong>
+              <p>Respuesta al déficit habitacional estructural del oeste profundo. Materiales asistidos + acompañamiento técnico. Vincula directamente la gestión con las familias más vulnerables.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="st">Salud</div>
+          <div class="ag">
+            <div class="agi">🏥</div>
+            <div class="agt">
+              <strong>Red de Alta Complejidad: Balestrini y Favaloro</strong>
+              <p>Hospital Balestrini (Ciudad Evita) y Hospital René Favaloro (Rafael Castillo) como cabeceras de red. 80+ centros de salud municipales. Digitalización total de turnos 2026 para reducir esperas en guardias.</p>
+            </div>
+          </div>
+          <div class="ag">
+            <div class="agi">🎨</div>
+            <div class="agt">
+              <strong>Pinta Cuidarse</strong>
+              <p>Postas interactivas en plazas (Villa Luzuriaga y otras) para concientización y prevención a través de actividades lúdicas y artistas urbanos. Presencia del Estado en el espacio público con formato no asistencialista.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="st">Economía y Producción</div>
+          <div class="ag">
+            <div class="agi">🏭</div>
+            <div class="agt">
+              <strong>Plan Municipal de Generación de Trabajo 2026</strong>
+              <p>Exenciones de hasta el 100% en tasas municipales para nuevas empresas que se radiquen en el distrito y generen empleo. Alivio al sector gastronómico: reducción del 50% en la tasa por ocupación de espacios públicos con mesas y sillas.</p>
+            </div>
+          </div>
+          <div class="ag">
+            <div class="agi">🧵</div>
+            <div class="agt">
+              <strong>Apoyo a Pymes Textiles y Metalúrgicas</strong>
+              <p>Programas de asistencia técnica y crediticia para miles de pequeñas y medianas empresas que son la columna vertebral del empleo en el partido. La Matanza concentra el mayor stock de pymes industriales del Conurbano.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTORES CLAVE -->
+  <div class="card two">
+    <div class="ch" style="background:#165F35;color:white;">🤝 Actores Clave del Territorio</div>
+    <div class="cbody">
+      <div class="pgrid">
+        <div>
+          <div class="st">Institucional / Político</div>
+          <div class="ar">
+            <div class="ai">🟢</div>
+            <div class="ain">
+              <div class="an">Fernando Espinoza — Intendente UxP</div>
+              <div class="ad">Referente histórico del PJ matancero. Nexo con estructura orgánica del partido. Interlocutor principal con la Provincia.</div>
+              <div class="ats"><span class="at cg">ALIADO</span><span class="at ct">PJ / UxP</span></div>
+            </div>
+          </div>
+          <div class="ar">
+            <div class="ai">🟢</div>
+            <div class="ain">
+              <div class="an">Verónica Magario — 2ª Autoridad Ejecutiva Provincial</div>
+              <div class="ad">Exintendente de La Matanza. Nexo institucional entre el distrito y el ejecutivo provincial. Figura de peso para articular agenda provincial-municipal.</div>
+              <div class="ats"><span class="at cg">ALIADO</span><span class="at ct">Puente Prov-Muni</span></div>
+            </div>
+          </div>
+          <div class="ar">
+            <div class="ai">🔵</div>
+            <div class="ain">
+              <div class="an">Bloque Concejal JxC / PRO</div>
+              <div class="ad">Oposición local en retroceso. Base en corredor este (Ramos Mejía, Ciudadela). Muchos de sus votantes migraron a LLA en 2023–2025.</div>
+              <div class="ats"><span class="at cb">OPOSICIÓN</span></div>
+            </div>
+          </div>
+          <div class="ar">
+            <div class="ai">🟠</div>
+            <div class="ain">
+              <div class="an">LLA — Bloque emergente</div>
+              <div class="ad">Sin intendente propio. Gana peso en nacionales. Foco en clase media (San Justo, Ramos Mejía) y jóvenes. No tiene estructura territorial consolidada en el oeste.</div>
+              <div class="ats"><span class="at co">PRESIÓN CRECIENTE</span></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="st">Social / Productivo</div>
+          <div class="ar">
+            <div class="ai">🎓</div>
+            <div class="ain">
+              <div class="an">UNLAM — Universidad Nacional de La Matanza</div>
+              <div class="ad">Institución educativa de referencia regional. Decenas de miles de estudiantes. Aliada clave de la gestión para el CUDI y el arraigo universitario en el distrito.</div>
+              <div class="ats"><span class="at cg">ALIADA CLAVE</span></div>
+            </div>
+          </div>
+          <div class="ar">
+            <div class="ai">🏭</div>
+            <div class="ain">
+              <div class="an">Cámara de Comercio e Industria de La Matanza</div>
+              <div class="ad">Representa la PYME industrial. Interlocutor crítico para el Plan de Generación de Trabajo 2026. Influyente en el segmento que votó JxC→LLA.</div>
+              <div class="ats"><span class="at ct">PRODUCTIVO</span><span class="at co">OSCILANTE</span></div>
+            </div>
+          </div>
+          <div class="ar">
+            <div class="ai">⚕️</div>
+            <div class="ain">
+              <div class="an">Red hospitalaria municipal</div>
+              <div class="ad">Balestrini (Ciudad Evita) + Favaloro (Rafael Castillo) + 80 centros. Generan empleo público y son puntos de contacto permanente con la comunidad.</div>
+              <div class="ats"><span class="at cg">INFRAESTRUCTURA POLÍTICA</span></div>
+            </div>
+          </div>
+          <div class="ar">
+            <div class="ai">🤝</div>
+            <div class="ain">
+              <div class="an">Movimientos sociales / organizaciones territoriales</div>
+              <div class="ad">Presentes en el oeste profundo. Administran programas sociales. Base de la movilización PJ en Laferrere, González Catán y Virrey del Pino.</div>
+              <div class="ats"><span class="at cg">BASE TERRITORIAL PJ</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AGENDA / EVENTOS -->
+  <div class="card one">
+    <div class="ch" style="background:#165F35;color:white;">📅 Agenda y Eventos 2026</div>
+    <div class="cbody">
+      <div class="st">Oportunidades de presencia territorial</div>
+      <div class="ag">
+        <div class="agi">🎂</div>
+        <div class="agt">
+          <strong>Aniversario del Partido — Julio 2026 (San Justo)</strong>
+          <p>Acto institucional de alta convocatoria. Escenario para presencia de la conducción provincial con el intendente aliado. Marco para anuncios de gestión provincial con impacto en el distrito.</p>
+        </div>
+      </div>
+      <div class="ag">
+        <div class="agi">⛪</div>
+        <div class="agt">
+          <strong>Fiesta Patronal — Santos Justo y Pastor — Agosto 2026</strong>
+          <p>Evento religioso-comunitario en San Justo. Convoca a sectores de la comunidad, incluyendo los más moderados. Presencia cívica y de comunidad.</p>
+        </div>
+      </div>
+      <div class="ag">
+        <div class="agi">🏙️</div>
+        <div class="agt">
+          <strong>Aniversario de San Justo — Diciembre 2026</strong>
+          <p>Aniversario de la ciudad cabecera. Escenario de cierre de año con balance de gestión y prospectiva 2027.</p>
+        </div>
+      </div>
+      <div class="ag">
+        <div class="agi">🎓</div>
+        <div class="agt">
+          <strong>CUDI — Eventos académicos y graduaciones (variable)</strong>
+          <p>Inauguraciones de nuevas carreras, actos de entrega de kits escolares, graduaciones UNLAM. Alta visibilidad en el segmento joven y familiar.</p>
+        </div>
+      </div>
+      <div class="ag">
+        <div class="agi">🏭</div>
+        <div class="agt">
+          <strong>Expo PYME / eventos productivos (variable)</strong>
+          <p>Feria o exposición de la producción PYME local. Contacto directo con el segmento comercial/industrial que oscila hacia LLA.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FODA -->
+  <div class="card full">
+    <div class="ch" style="background:#0C3B1E;color:white;">⚡ Análisis Estratégico — FODA</div>
+    <div class="cbody">
+      <div class="pgrid">
+        <div>
+          <div class="pi o">
+            <div class="pt">Fortalezas</div>
+            <div class="pti">Bastión PJ con infraestructura política sólida</div>
+            <div class="pd">
+              · PJ mantiene 52,9% en provinciales con 1,2M padrón<br>
+              · Gestión Espinoza con obras visibles y política social extensa<br>
+              · UNLAM + CUDI generan narrativa de inversión en futuro<br>
+              · Red sindical y organizaciones territoriales densas<br>
+              · Kits escolares universales: 300.000 familias alcanzadas<br>
+              · Verónica Magario como puente Prov-Municipio
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pi r">
+            <div class="pt">Debilidades / Vulnerabilidades</div>
+            <div class="pti">NBI alto y LLA creciendo entre jóvenes populares</div>
+            <div class="pd">
+              · NBI hasta 35% en el oeste profundo — informalidad estructural<br>
+              · LLA penetra en jóvenes del sector popular que no ven movilidad<br>
+              · Inseguridad: déficit discursivo del PJ frente al relato LLA<br>
+              · Clase media (Ramos Mejía, Ciudadela) consolidada en LLA<br>
+              · 48,4% en nacionales: primer distrito PJ que baja del 50% nacional<br>
+              · Déficit histórico de cloacas y vivienda en el oeste
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pi d">
+            <div class="pt">Oportunidades</div>
+            <div class="pti">Peso electoral determinante para 2027</div>
+            <div class="pd">
+              · La Matanza representa ~15% del padrón provincial total<br>
+              · CUDI + UNLAM: narrativa de futuro y empleo tecnológico<br>
+              · Megaplán pavimentación: obras visibles en el oeste antes de 2027<br>
+              · Espinoza tiene agenda concreta: Plan Trabajo 2026<br>
+              · Aniversario partido (julio) + eventos escolares: presencia densa<br>
+              · FIT vota ~7-8%: potencial de acuerdo 2do turno si aplica
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pi a">
+            <div class="pt">Amenazas</div>
+            <div class="pti">Nacionalización del voto y penetración LLA en base popular</div>
+            <div class="pd">
+              · Si el voto 2027 se mide por economía nacional, LLA suma en el este<br>
+              · Erosión LLA en jóvenes populares del oeste: el fenómeno más peligroso<br>
+              · JxC desestructurado: sus votantes ya van a LLA, no vuelven al PJ<br>
+              · Presupuesto municipal bajo presión si economía se contrae<br>
+              · Planes sociales sujetos a redefinición nacional (ANSES/MDS)<br>
+              · Discurso de "casta" que puede erosionar liderazgo de Espinoza en base joven
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACCIONES PRIORITARIAS PROVINCIA -->
+  <div class="card full">
+    <div class="ch" style="background:#0C3B1E;color:white;">🎯 Acciones Prioritarias — Agenda Provincial</div>
+    <div class="cbody">
+      <div class="pgrid">
+        <div>
+          <div class="al-k">
+            <strong>🛣️ Infraestructura en el Oeste Profundo</strong>
+            <p>Articular con Espinoza el Megaplán de Pavimentación con recursos y maquinaria provincial. MinInfraestructura en Laferrere, González Catán y Virrey del Pino antes de julio 2026. El oeste es la base y necesita obra visible.</p>
+          </div>
+          <div class="al-k">
+            <strong>🎓 Respaldo institucional al CUDI</strong>
+            <p>Anuncio de ampliación de oferta de carreras CUDI + convenio provincial con UNLAM para nuevas especializaciones. Escena con Espinoza y jóvenes de González Catán. Contranarrativa a LLA en el segmento más fluido.</p>
+          </div>
+          <div class="al-k">
+            <strong>🏭 Articulación con la PYME matancera</strong>
+            <p>Presencia en evento productivo con el sector PYME textil y metalúrgico. Anuncio de créditos o líneas BAPRO para pymes de La Matanza. El segmento oscilante más grande del distrito.</p>
+          </div>
+        </div>
+        <div>
+          <div class="al-k">
+            <strong>📚 Escena de Kits Escolares — Alta Visibilidad</strong>
+            <p>La entrega universal de 300.000 kits escolares es la acción de mayor cobertura familiar del distrito. Presencia en el acto de entrega con Espinoza: 300.000 familias en una sola actividad. Pocas escenas son más densas electoralmente.</p>
+          </div>
+          <div class="al-k">
+            <strong>⚕️ Salud Digital — Digitalización de Turnos</strong>
+            <p>Apoyar con tecnología provincial la digitalización total de turnos en la red de 80+ centros. Anuncio conjunto con Balestrini y Favaloro como escenario. Conecta gestión municipal con recursos provinciales.</p>
+          </div>
+          <div class="al-k">
+            <strong>🎂 Aniversario del Partido (Julio 2026) — Escena Central</strong>
+            <p>El acto del aniversario de La Matanza es el escenario natural para presencia de la conducción provincial junto a Espinoza. Discurso de gestión conjunta provincia-municipio con balance de obras 2025-2026 y prospectiva 2027.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tres de Febrero — Narrativa Estratégica 2026</title>
+<style>
+:root{--primary:#1a3a5c;--accent:#2563eb;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:860px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#0c2340 0%,#1a3a5c 55%,#1d4ed8 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px}
+.h-tag{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.85rem;opacity:.8;margin-bottom:14px}
+.h-thesis{font-size:.95rem;line-height:1.65;max-width:680px;color:rgba(255,255,255,.92);border-left:3px solid #60a5fa;padding-left:16px;margin-top:10px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a3a5c,#1e4575);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:18px 20px}
+.sec-body p{color:#374151;font-size:.84rem;line-height:1.7;margin-bottom:12px}
+.sec-body p:last-child{margin-bottom:0}
+.sec-body strong{color:#1a3a5c}
+.cita{background:#eff6ff;border-left:4px solid #2563eb;border-radius:0 8px 8px 0;padding:16px 18px;margin:14px 0}
+.cita p{font-size:.88rem;font-style:italic;color:#1e3a5f;line-height:1.6;margin:0}
+.cita .attr{font-size:.73rem;font-style:normal;color:#4b6b8a;margin-top:8px;font-weight:600}
+.alert{border-radius:8px;padding:14px 16px;margin:12px 0}
+.alert-warn{background:#fff7ed;border:1.5px solid #fed7aa}
+.alert-win{background:#f0fdf4;border:1.5px solid #bbf7d0}
+.alert-neutral{background:#eff6ff;border:1.5px solid #bfdbfe}
+.alert-title{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.alert-warn .alert-title{color:#b45309}
+.alert-win .alert-title{color:#15803d}
+.alert-neutral .alert-title{color:#1e40af}
+.alert p{font-size:.8rem;color:#374151;line-height:1.6;margin:0}
+.seg-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.seg{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.seg-nm{font-size:.8rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.seg-body{font-size:.77rem;color:#475569;line-height:1.55}
+.seg-pct{display:inline-block;background:#dbeafe;color:#1e40af;font-size:.7rem;font-weight:800;padding:2px 8px;border-radius:10px;margin-bottom:6px}
+.tabla{width:100%;border-collapse:collapse;font-size:.78rem;margin:14px 0}
+.tabla th{background:#1a3a5c;color:#fff;padding:8px 10px;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.4px}
+.tabla td{padding:8px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tabla tr:last-child td{border-bottom:none}
+.tabla tr:hover td{background:#f8fafc}
+.num{font-weight:700;color:var(--accent)}
+.tg-pj{color:#1d4ed8;font-weight:700}
+.tg-lla{color:#7c3aed;font-weight:700}
+.tg-jxc{color:#d97706;font-weight:700}
+.eje-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0}
+.eje{background:#f8fafc;border:1.5px solid var(--border);border-radius:8px;padding:12px 14px;border-top:3px solid #1a3a5c}
+.eje-n{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:4px}
+.eje-ttl{font-size:.85rem;font-weight:800;color:var(--primary);margin-bottom:6px}
+.eje-body{font-size:.76rem;color:#475569;line-height:1.5}
+.cl-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.3rem;margin-bottom:4px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.cl-body{font-size:.77rem;color:#475569;line-height:1.55}
+.sint{background:linear-gradient(135deg,#0c2340,#1a3a5c);border-radius:var(--radius);padding:22px 24px;color:#fff;margin-top:14px}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#93c5fd;margin-bottom:14px}
+.sint p{font-size:.84rem;color:rgba(255,255,255,.9);line-height:1.7;margin-bottom:10px}
+.sint p:last-child{margin-bottom:0}
+.sint strong{color:#93c5fd}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-tag">🌆 Conurbano Bonaerense · 1ª Sección · Narrativa Estratégica 2026</div>
+  <div class="h-name">TRES DE FEBRERO</div>
+  <div class="h-sub">LLA intendente (Valenzuela · ex JxC) · Padrón 284,279 · Capital Nacional del Deporte · Ernesto Sábato · UNTREF</div>
+  <div class="h-thesis">Tres de Febrero es la vidriera del modelo LLA en el Conurbano. Valenzuela eliminó 400+ tasas y el municipio le funciona como caso de éxito. El PJ sin embargo creció en votos absolutos en 2025. La brecha es de ~4.5 puntos y hay activos que no dependen del intendente: la UNTREF, la Casa Sábato, 80 clubes de barrio. El argumento no es confrontar — es mostrar lo que la escala provincial hace y el municipio no puede.</div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗺️ El Municipio que Necesitás Entender</div>
+  <div class="sec-body">
+    <p>Tres de Febrero es un municipio que no se parece a lo que la palabra "Conurbano" evoca por defecto. No es un municipio de villas extensas ni de infraestructura colapsada. Es un territorio <strong>urbano denso y consolidado</strong>: 364,000 personas en 45.4 km², con cobertura de gas y agua muy por encima de la media bonaerense, pavimento sólido, y una red de clubes de barrio que justifica el título de "Capital Nacional del Deporte" que la PBA le otorgó en 2014.</p>
+    <p>Tiene algo que pocos municipios del Conurbano tienen: <strong>identidad propia</strong>. Santos Lugares es el barrio donde Ernesto Sábato vivió y escribió sus obras fundamentales durante décadas. La UNTREF tiene su campus en Caseros. La Maratón de Barrios convoca miles de participantes cada año. Estos tres activos no son decorativos — son puntos de entrada que el PJ puede usar sin necesidad de pasar por el municipio.</p>
+    <p>El contexto político es el más delicado del cluster: Valenzuela fue electo bajo JxC en 2023 y migró a LLA. El municipio es hoy una referencia del modelo LLA aplicado al Conurbano. Eso lo convierte en un territorio con un relato instalado que el PJ tiene que trabajar sin atacarlo frontalmente — porque parte del electorado que el PJ quiere recuperar todavía tiene simpatía con el intendente.</p>
+    <div class="alert alert-neutral">
+      <div class="alert-title">📌 El Dato Que Cambia el Diagnóstico</div>
+      <p>El PJ no está en caída en Tres de Febrero — está en recuperación. Pasó de 69,875 votos en 2023 a 75,998 en 2025 provincial. Subió en absolutos. El problema no es que el PJ pierde terreno; el problema es que LLA también sube y la brecha sigue siendo de ~4.5 puntos. Es un partido <strong>competitivo, en movimiento favorable</strong>, no un territorio perdido.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 El Arco Electoral: Recuperación en Marcha</div>
+  <div class="sec-body">
+    <table class="tabla">
+      <thead><tr><th>Elección</th><th>PJ</th><th>JxC</th><th>LLA</th><th>FIT</th></tr></thead>
+      <tbody>
+        <tr><td>2023 Gral (Intendente)</td><td class="tg-pj">33.1% (69,875)</td><td class="tg-jxc">46.9% (99,172)</td><td class="tg-lla">16.1% (33,963)</td><td>3.9%</td></tr>
+        <tr><td>2025 Prov</td><td class="tg-pj">41.2% (75,998)</td><td>—</td><td class="tg-lla">45.7% (84,425)</td><td>5.0%</td></tr>
+        <tr><td>2025 Nac</td><td class="tg-pj">39.1% (74,787)</td><td>—</td><td class="tg-lla">42.8% (81,930)</td><td>5.7%</td></tr>
+      </tbody>
+    </table>
+
+    <p>La historia electoral de Tres de Febrero en 2025 no es la de un colapso PJ: es la de un PJ que crece en votos absolutos (+6,123 votos prov vs 2023) mientras LLA también crece. La diferencia entre ambos en 2025 es de 8,427 votos provinciales y 7,143 nacionales. Lejos de ser una distancia infranqueable para un municipio de 284,000 electores.</p>
+    <p>El FIT creciente también habla: pasó de 3.9% a 5.7% nac en 2025. En un municipio urbano con universidad, ese crecimiento de izquierda indica que hay un segmento que se fue del PJ por izquierda — no por derecha — y que en una elección favorable podría volver. Ese voto es recuperable con un discurso que no abandone el campo popular.</p>
+
+    <div class="alert alert-neutral">
+      <div class="alert-title">📐 Ticket Split −2.1 pts: Un Distrito Coherente</div>
+      <p>El split de −2.1 pts (PJ prov 41.2% vs PJ nac 39.1%) es el más bajo de todos los municipios analizados del Corredor Norte. Los votantes de Tres de Febrero votan de manera bastante consistente entre la boleta provincial y la nacional. El trabajo en la boleta bonaerense y en la nacional tienen efectos similares acá.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">👥 Segmentación: Quién Mueve el Resultado</div>
+  <div class="sec-body">
+    <div class="seg-grid">
+      <div class="seg">
+        <div class="seg-pct">~35% — EL VOTO EN DISPUTA</div>
+        <div class="seg-nm">Clase Media Trabajadora (ex JxC → LLA)</div>
+        <div class="seg-body">Empleados, comerciantes, dueños de PyME, técnicos. En 2023 votaron JxC (el bloque 46.9%). En 2025 migraron mayoritariamente a LLA. Sensibles a costo de vida, seguridad barrial y percepción de gestión municipal. Con Valenzuela como referencia local, son los más difíciles de recuperar en el corto plazo. <strong>El argumento tiene que pasar por gestión provincial concreta, no por crítica al intendente.</strong></div>
+      </div>
+      <div class="seg">
+        <div class="seg-pct">~25% — BASE SÓLIDA</div>
+        <div class="seg-nm">Sectores Populares Urbanos</div>
+        <div class="seg-body">Trabajadores informales, comunidades migrantes (Bolivia, Paraguay, Perú), vecinos de barrios populares. PJ sólido e histórico. Es el piso que el partido retiene. Sensibles a servicios básicos, salud, primera infancia. La Red EPI de Valenzuela les impacta positivamente — no confrontar ese logro sino pensar qué suma a escala provincial.</div>
+      </div>
+      <div class="seg">
+        <div class="seg-pct">~15%</div>
+        <div class="seg-nm">Estudiantes y Jóvenes Universitarios (UNTREF)</div>
+        <div class="seg-body">Perfil progresista-urbano. Alta volatilidad. Una parte votó FIT o dejó en blanco en 2025. El discurso de universidad pública, cultura y derechos les llega directamente. La UNTREF es el espacio físico y simbólico donde ese segmento es más accesible.</div>
+      </div>
+      <div class="seg">
+        <div class="seg-pct">~15%</div>
+        <div class="seg-nm">Comunidades Migrantes Activas</div>
+        <div class="seg-body">Bolivianos en Ciudadela, coreanos en el corredor San Martín, peruanos y paraguayos en distintos barrios. Tienen redes comunitarias propias: asociaciones, ferias, clubes de colectividad. El PJ tiene historia con estas redes. La feria americana de Santos Lugares es el espacio de máxima sociabilidad intercultural del partido.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Los Tres Ejes del Argumento</div>
+  <div class="sec-body">
+    <div class="eje-grid">
+      <div class="eje">
+        <div class="eje-n">Eje 1</div>
+        <div class="eje-ttl">La Escala Provincial que el Municipio No Puede</div>
+        <div class="eje-body">Valenzuela puede gestionar bien Tres de Febrero. Lo que no puede hacer es articular la red de clubes de barrio a escala bonaerense, financiar infraestructura deportiva regional, o sostener la UNTREF (que es federal). La provincia sí puede. El argumento no es "Valenzuela hace mal" — es "lo que Valenzuela hace bien, nosotros lo multiplicamos por 135 municipios".</div>
+      </div>
+      <div class="eje">
+        <div class="eje-n">Eje 2</div>
+        <div class="eje-ttl">Educación y Cultura como Política de Estado</div>
+        <div class="eje-body">La UNTREF es pública y federal. La Casa Sábato es patrimonio cultural de alcance nacional. Ninguno de los dos depende del municipio. Son activos del Estado argentino que el PJ construyó y sostiene. El argumento de educación pública como ascensor social no tiene que competir con Valenzuela — está en otro plano de gestión.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-n">Eje 3</div>
+        <div class="eje-ttl">Deporte Comunitario: Recursos + Reconocimiento</div>
+        <div class="eje-body">80+ clubes de barrio activos con presupuestos limitados. El título de "Capital del Deporte" es simbólico — la pregunta que los presidentes de club se hacen es quién les trae recursos concretos. Fondos provinciales para infraestructura deportiva, subsidios para clubes de barrio, articulación con el plan deportivo bonaerense. Ahí hay una promesa que el municipio no puede hacer.</div>
+      </div>
+    </div>
+
+    <div class="cita">
+      <p>"El Club no le pide a Valenzuela que gane las elecciones. Le pide la pintura, los arcos, el vestuario. Eso es lo que el club necesita. Y lo que la provincia puede dar es más que lo que el municipio puede dar."</p>
+      <div class="attr">Marco de conversación con presidente de club barrial del Conurbano — Argumento para el segmento deportivo</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local: Lo que da Textura a la Visita</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏃</div>
+        <div class="cl-tipo">Evento masivo de barrio</div>
+        <div class="cl-nm">La Maratón de Barrios</div>
+        <div class="cl-body">Miles de corredores de toda el área metropolitana. No es una carrera de élite — es una fiesta de barrio. Familias con nenes en cochecito, adultos mayores caminando los últimos kilómetros, jóvenes con camisetas de su club. Es el mejor escenario disponible para mostrar que el deporte es una política pública con resultados visibles en la comunidad.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📚</div>
+        <div class="cl-tipo">Patrimonio cultural irrepetible</div>
+        <div class="cl-nm">La Casa de Ernesto Sábato en Santos Lugares</div>
+        <div class="cl-body">No hay otro lugar en Argentina que conserve el espacio donde Sábato escribió "El Túnel", "Sobre héroes y tumbas", "Abaddón el Exterminador". Es un sitio de peregrinación literaria con baja visibilidad política — justamente eso lo hace valioso. Una visita discreta a la fundación, con foco en patrimonio cultural bonaerense, tiene altísima carga simbólica y cero fricción política.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">👕</div>
+        <div class="cl-tipo">Sociabilidad popular intensa</div>
+        <div class="cl-nm">La Feria Americana de Santos Lugares</div>
+        <div class="cl-body">Cada fin de semana, miles de vecinos de distintos orígenes llenan la feria: ropa usada, electrónica, comida de todas las colectividades. Es el lugar donde la diversidad real del municipio se muestra sin filtros. La política del partido se habla ahí, entre puestos, no en actos formales. Presencia sin protocolo, escucha activa, efecto multiplicador en redes comunitarias.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Universidad pública activa</div>
+        <div class="cl-nm">La UNTREF como escenario</div>
+        <div class="cl-body">La UNTREF tiene campus en Caseros y genera actividad cultural permanente: conciertos, exposiciones, debates. Es el espacio donde Tres de Febrero trasciende el imaginario del Conurbano de crisis. Una visita al campus con docentes y estudiantes, con el eje de educación pública como motor de movilidad social, tiene llegada directa al segmento joven y profesional más volátil del padrón.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">⚠️ Riesgos y Tensiones</div>
+  <div class="sec-body">
+    <div class="alert alert-warn">
+      <div class="alert-title">⚠️ Riesgo 1: Valenzuela es un Intendente Funcional</div>
+      <p>A diferencia de otros intendentes LLA del Conurbano que tienen gestiones flojas, Valenzuela tiene imagen de orden y modernización. Su reforma de tasas tiene simpatía real entre comerciantes y PyMEs. Atacar la gestión municipal es un error estratégico: una parte del electorado que el PJ necesita tiene buena imagen del intendente. El posicionamiento debe ser exclusivamente provincial.</p>
+    </div>
+    <div class="alert alert-warn">
+      <div class="alert-title">⚠️ Riesgo 2: La Red EPI Tiene Alta Imagen Popular</div>
+      <p>La Red de Espacios de Primera Infancia de Valenzuela es uno de sus programas con mejor recepción en barrios populares — que es justamente el segmento base del PJ. Intentar confrontar ese programa sería un error. El movimiento correcto es mostrar el equivalente provincial (programas de primera infancia provinciales) como complementario, no sustituto.</p>
+    </div>
+    <div class="alert alert-neutral">
+      <div class="alert-title">📌 Oportunidad: El FIT que Crece</div>
+      <p>FIT pasó de 3.9% a 5.7% nac entre 2023 y 2025. En un municipio universitario y urbano, ese crecimiento indica electores que se fueron del PJ por izquierda. No son recuperables con un discurso de centro — sí con un discurso que defienda salario real, educación pública, y derechos laborales sin correrse del campo popular.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ La Estrategia de Acceso sin Pasar por el Municipio</div>
+  <div class="sec-body">
+    <p>Los tres activos más potentes de Tres de Febrero no dependen de Valenzuela:</p>
+    <table class="tabla">
+      <thead><tr><th>Activo</th><th>Dependencia municipal</th><th>Canal de acceso</th><th>Discurso</th></tr></thead>
+      <tbody>
+        <tr><td><strong>UNTREF</strong></td><td>Ninguna — es institución federal</td><td>Gestión directa con rectorado</td><td>Educación pública, ciencia, movilidad social</td></tr>
+        <tr><td><strong>Casa Ernesto Sábato</strong></td><td>Ninguna — gestiona Fundación privada</td><td>Contacto Fundación Sábato</td><td>Cultura, patrimonio bonaerense, identidad</td></tr>
+        <tr><td><strong>Clubes barriales (80+)</strong></td><td>Mínima — son asociaciones civiles</td><td>Federaciones deportivas locales</td><td>Deporte comunitario + recursos provinciales</td></tr>
+        <tr><td><strong>Maratón de Barrios</strong></td><td>Baja — coordinación con organizadores</td><td>Organización del evento directamente</td><td>Capital del Deporte, comunidad, barrio</td></tr>
+        <tr><td><strong>Feria Americana</strong></td><td>Ninguna — espacio público</td><td>Presencia directa sin protocolo</td><td>Comunidad, diversidad, economía popular</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-win">
+      <div class="alert-title">✅ La Frase que Funciona en Tres de Febrero</div>
+      <p>"Tres de Febrero tiene 80 clubes de barrio activos. Eso no lo tiene ningún municipio bonaerense de este tamaño. La pregunta es cómo esos clubes consiguen el techo, los arcos, la iluminación, el vestuario. La provincia puede ser la respuesta a eso. No para reemplazar lo que hace el municipio — para multiplicar lo que esos clubes ya hacen solos."</p>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🎯 Síntesis Narrativa</h3>
+  <p>Tres de Febrero es el municipio LLA más sólido del Conurbano norte — y también el más trabajable con los activos correctos. Valenzuela es funcional, su gestión tiene imagen, y el PJ no puede ni debe atacarla frontalmente. Lo que sí puede hacer es moverse en el plano donde Valenzuela no llega: la escala provincial.</p>
+  <p>La UNTREF, la Casa Sábato y los 80 clubes de barrio son los tres vectores de entrada. Los tres tienen acceso directo sin intermediación municipal. Los tres permiten un discurso que no compite con Valenzuela — educación pública, cultura y deporte comunitario son ejes que la provincia puede financiar y articular de manera que el municipio, por estructura y presupuesto, no puede.</p>
+  <p><strong>El PJ ya está creciendo en Tres de Febrero</strong>: 6,000 votos más en 2025 que en 2023. La tarea no es recuperar un territorio perdido — es cerrar una brecha de 8,000 votos en un padrón de 284,000. En ese contexto, cada presencia en la UNTREF, en la maratón, en la feria, en un club de barrio es un voto que camina en la dirección correcta sin necesidad de pasar por el intendente.</p>
+</div>
+
+</body>
+</html>

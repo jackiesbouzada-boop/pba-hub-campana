@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alcance Comunicacional — Visitas PBA 2026</title>
+<style>
+:root{
+  --navy:#0f1b2d;--navy2:#1a2d46;--gold:#c9a84c;--gold2:#e8c97a;
+  --green:#2d6a4f;--green2:#52b788;--red:#b5284f;
+  --bg:#f5f7fa;--card:#fff;--border:#dee2e8;
+  --text:#1a1a2e;--muted:#6b7280;
+  --font:'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:14px}
+
+/* HEADER */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);padding:40px 48px 32px;border-bottom:4px solid var(--gold)}
+.hero h1{color:#fff;font-size:1.7rem;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.hero .sub{color:var(--gold2);font-size:.85rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.hero p{color:rgba(255,255,255,.72);font-size:.9rem;margin-top:10px;max-width:780px;line-height:1.6}
+.hero-meta{margin-top:18px;display:flex;gap:24px;flex-wrap:wrap}
+.hm{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:10px 18px}
+.hm strong{color:var(--gold2);display:block;font-size:1.4rem;font-weight:900}
+.hm span{color:rgba(255,255,255,.6);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em}
+
+/* NAV */
+nav{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.1);padding:0 48px;display:flex;gap:4px;overflow-x:auto}
+nav a{color:rgba(255,255,255,.6);text-decoration:none;padding:12px 16px;font-size:.8rem;font-weight:600;letter-spacing:.04em;white-space:nowrap;border-bottom:3px solid transparent;transition:.2s}
+nav a:hover,nav a.active{color:var(--gold2);border-bottom-color:var(--gold)}
+
+/* SECTIONS */
+.wrap{max-width:1280px;margin:0 auto;padding:32px 48px}
+.section{margin-bottom:48px}
+.section-title{font-size:1.1rem;font-weight:800;color:var(--navy);border-left:4px solid var(--gold);padding-left:14px;margin-bottom:20px;letter-spacing:-.01em}
+.section-desc{color:var(--muted);font-size:.88rem;line-height:1.6;margin-bottom:24px;max-width:800px}
+
+/* RINGS */
+.rings-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.ring{border-radius:12px;padding:20px;border:2px solid transparent}
+.ring-1{background:#fff0f3;border-color:#b5284f;--rc:#b5284f}
+.ring-2{background:#fff7e6;border-color:#c9a84c;--rc:#c9a84c}
+.ring-3{background:#e8f5e9;border-color:#2d6a4f;--rc:#2d6a4f}
+.ring-4{background:#e8eaf6;border-color:#3f4db5;--rc:#3f4db5}
+.ring-num{font-size:1.8rem;font-weight:900;color:var(--rc);line-height:1}
+.ring-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--rc);margin:6px 0 8px}
+.ring-desc{font-size:.82rem;color:var(--text);line-height:1.5}
+.ring-example{margin-top:10px;font-size:.75rem;color:var(--muted);font-style:italic}
+
+/* FORMULA */
+.formula-box{background:var(--navy);border-radius:12px;padding:24px 32px;margin-bottom:32px;display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.formula-box .f-title{color:var(--gold2);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.formula{color:#fff;font-size:1.1rem;font-family:monospace;font-weight:700}
+.formula span{color:var(--gold2)}
+.formula-note{color:rgba(255,255,255,.55);font-size:.78rem;line-height:1.6}
+
+/* CATEGORY CARDS */
+.cat-grid{display:grid;gap:24px}
+.cat-card{background:var(--card);border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.cat-header{padding:18px 24px;display:flex;align-items:center;gap:16px}
+.cat-icon{font-size:2rem;width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:12px;flex-shrink:0}
+.cat-titles{flex:1}
+.cat-name{font-size:1rem;font-weight:800;color:var(--navy)}
+.cat-lugares{font-size:.78rem;color:var(--muted);margin-top:2px}
+.cat-erc{margin-left:auto;text-align:right;flex-shrink:0}
+.erc-val{font-size:1.5rem;font-weight:900}
+.erc-lab{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.cat-body{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--border)}
+.cat-section{padding:16px 20px;border-right:1px solid var(--border)}
+.cat-section:last-child{border-right:none}
+.cs-title{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px}
+.ring-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.ring-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.ring-row-text{font-size:.8rem;color:var(--text)}
+.ring-vol{font-size:.75rem;font-weight:700;color:var(--muted);margin-left:auto;white-space:nowrap}
+.meta-tag{display:inline-block;background:#e8f0fe;color:#3f4db5;border-radius:20px;padding:2px 10px;font-size:.7rem;font-weight:700;margin:2px}
+.meta-tag.demo{background:#fff0f3;color:#b5284f}
+.meta-tag.geo{background:#e8f5e9;color:#2d6a4f}
+.hook-box{background:#f8fafb;border-left:3px solid var(--gold);padding:10px 14px;margin:12px 0;border-radius:0 8px 8px 0;font-size:.8rem;color:var(--text);line-height:1.5;font-style:italic}
+.total-row{background:var(--navy);padding:12px 20px;display:flex;align-items:center;gap:12px}
+.total-label{color:rgba(255,255,255,.6);font-size:.75rem;font-weight:700;text-transform:uppercase}
+.total-val{color:#fff;font-size:1.15rem;font-weight:900}
+.total-bar-wrap{flex:1;background:rgba(255,255,255,.1);border-radius:4px;height:8px;overflow:hidden}
+.total-bar{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+
+/* RANKING */
+.rank-table{width:100%;border-collapse:collapse}
+.rank-table th{background:var(--navy);color:rgba(255,255,255,.7);text-transform:uppercase;font-size:.7rem;letter-spacing:.06em;padding:10px 14px;text-align:left;font-weight:700}
+.rank-table td{padding:10px 14px;border-bottom:1px solid var(--border);font-size:.82rem;vertical-align:middle}
+.rank-table tr:hover td{background:#f8fafb}
+.rank-n{font-weight:900;color:var(--gold);width:32px}
+.erc-bar{display:inline-block;width:80px;height:6px;border-radius:3px;background:var(--border);vertical-align:middle;margin-left:8px}
+.erc-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--green2),var(--gold))}
+.pill{display:inline-block;padding:2px 9px;border-radius:12px;font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.pill-high{background:#d1fae5;color:#065f46}
+.pill-med{background:#fef3c7;color:#92400e}
+.pill-low{background:#fee2e2;color:#991b1b}
+
+/* KEY INSIGHT */
+.insight{background:linear-gradient(135deg,#1a2d46,#0f1b2d);border-radius:14px;padding:28px 32px;margin-bottom:32px;border-left:5px solid var(--gold)}
+.insight-title{color:var(--gold2);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.insight-text{color:rgba(255,255,255,.85);font-size:.92rem;line-height:1.7}
+.insight-text strong{color:var(--gold2)}
+
+/* GUIDE */
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.guide-card{background:var(--card);border-radius:12px;border:1px solid var(--border);padding:20px}
+.guide-head{font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--navy);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--gold)}
+.guide-item{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
+.guide-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.guide-text{font-size:.8rem;line-height:1.5;color:var(--text)}
+.guide-text strong{color:var(--navy)}
+
+/* COLORS PER CATEGORY */
+.bg-carnica{background:#b5284f15;color:#b5284f}
+.bg-metal{background:#c9a84c15;color:#c9a84c}
+.bg-pesca{background:#1d3461 15;background:#1d346120;color:#1d3461}
+.bg-agro{background:#2d6a4f15;color:#2d6a4f}
+.bg-ciencia{background:#3f4db515;color:#3f4db5}
+.bg-coop{background:#7e3af215;color:#7e3af2}
+.bg-energia{background:#b5284f15;color:#c55b0b}
+.bg-historia{background:#c9a84c20;color:#8a6800}
+
+footer{background:var(--navy);color:rgba(255,255,255,.4);text-align:center;padding:18px;font-size:.75rem;margin-top:40px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="sub">PBA 2026 · Análisis Comunicacional</div>
+  <h1>Alcance y Segmentación de Audiencias por Visita</h1>
+  <p>Metodología para estimar el universo de pauta pagada en Meta, Instagram y TikTok para cada tipo de visita de campaña. Una visita no habla solo a los presentes: activa audiencias por sector, por producto consumido y por valores. Este documento establece los criterios y volúmenes estimados para PBA.</p>
+  <div class="hero-meta">
+    <div class="hm"><strong>~9M</strong><span>Usuarios Meta en PBA</span></div>
+    <div class="hm"><strong>8</strong><span>Categorías de visita</span></div>
+    <div class="hm"><strong>4 anillos</strong><span>Concéntricos de audiencia</span></div>
+    <div class="hm"><strong>ERC</strong><span>Eficiencia de retorno com.</span></div>
+  </div>
+</div>
+
+<nav>
+  <a href="#metodologia" class="active">Metodología</a>
+  <a href="#categorias">Categorías</a>
+  <a href="#ranking">Ranking ERC</a>
+  <a href="#guia">Guía de pauta</a>
+</nav>
+
+<div class="wrap">
+
+<!-- METODOLOGÍA -->
+<div id="metodologia" class="section">
+  <div class="section-title">Metodología: Los 4 Anillos Concéntricos</div>
+  <div class="section-desc">
+    El error habitual es pensar que una visita a un frigorífico alcanza solo a los trabajadores de ese frigorífico. En pauta digital, el lugar físico es irrelevante: lo que importa es quién se identifica con lo que la visita comunica. Cada visita activa cuatro audiencias concéntricas que se pueden segmentar por separado.
+  </div>
+
+  <div class="rings-grid">
+    <div class="ring ring-1">
+      <div class="ring-num">①</div>
+      <div class="ring-label">Núcleo</div>
+      <div class="ring-desc">Trabajadores directos del sector + empleadores + dirigentes gremiales. El público más pequeño pero más predispuesto. Alta probabilidad de conversión en activismo.</div>
+      <div class="ring-example">Ej. frigorífico → empleados UECARA + dueños de plants de la industria cárnica</div>
+    </div>
+    <div class="ring ring-2">
+      <div class="ring-num">②</div>
+      <div class="ring-label">Cadena</div>
+      <div class="ring-desc">Proveedores, distribuidores, clientes industriales, sindicatos relacionados. Multiplicadores naturales: si el núcleo celebra la visita, la cadena lo amplifica.</div>
+      <div class="ring-example">Ej. frigorífico → ganaderos, camioneros, carniceros, exportadores de cuero</div>
+    </div>
+    <div class="ring ring-3">
+      <div class="ring-num">③</div>
+      <div class="ring-label">Consumidor</div>
+      <div class="ring-desc">Quien compra o usa el producto final. El anillo más grande. Se activa con contenido que conecta la visita con la vida cotidiana de las personas, no con el lugar.</div>
+      <div class="ring-example">Ej. frigorífico → amas de casa, cocineros, madres que planifican el menú semanal</div>
+    </div>
+    <div class="ring ring-4">
+      <div class="ring-num">④</div>
+      <div class="ring-label">Valores</div>
+      <div class="ring-desc">Quienes comparten los valores que la visita activa, independientemente del sector. "Trabajo argentino", "soberanía", "tecnología propia", "comunidad". El anillo más volátil pero con mayor potencial viral.</div>
+      <div class="ring-example">Ej. frigorífico → audiencia de "producción nacional", "trabajo genuino", "No al importado"</div>
+    </div>
+  </div>
+
+  <div class="formula-box">
+    <div>
+      <div class="f-title">Fórmula ERC — Eficiencia de Retorno Comunicacional</div>
+      <div class="formula">ERC = (<span>A</span> × <span>E</span> × <span>V</span>) / C</div>
+    </div>
+    <div class="formula-note">
+      <strong style="color:var(--gold2)">A</strong> = Audiencia Meta alcanzable (en millones, PBA)<br>
+      <strong style="color:var(--gold2)">E</strong> = Intensidad emocional del contenido (1–5)<br>
+      <strong style="color:var(--gold2)">V</strong> = Potencial viral / shareability (1–5)<br>
+      <strong style="color:var(--gold2)">C</strong> = Costo relativo de producción del contenido (1–3)<br><br>
+      <em style="color:rgba(255,255,255,.4)">Nota: audiencias en millones son estimaciones sobre universo Meta PBA ~9M usuarios 18+. CPM referencial Meta Argentina 2026: USD 1.5–3 por 1000 impresiones.</em>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="insight-title">⚡ La regla de oro del contenido de visita</div>
+    <div class="insight-text">
+      <strong>No filmes al candidato: filmá lo que produce el lugar.</strong> Un Reel de 30 segundos mostrando el proceso de un tambo robotizado con texto "así se hace la leche que toma tu familia" alcanza 10× más audiencia orgánica que el mismo candidato dando un discurso frente a la máquina. El lugar es el contexto. El producto es el puente con el consumidor. El candidato es quien conecta los dos mundos.
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORÍAS -->
+<div id="categorias" class="section">
+  <div class="section-title">8 Categorías de Visita — Audiencias y Pauta</div>
+  <div class="section-desc">Para cada categoría: composición de los 4 anillos, audiencia Meta alcanzable (targeting pool), criterios de segmentación y hook comunicacional recomendado.</div>
+
+  <div class="cat-grid">
+
+    <!-- 1. CADENA CÁRNICA -->
+    <div class="cat-card">
+      <div class="cat-header" style="background:#fff5f7">
+        <div class="cat-icon bg-carnica">🥩</div>
+        <div class="cat-titles">
+          <div class="cat-name">Cadena Cárnica</div>
+          <div class="cat-lugares">Frigoríficos · Feedlots · Ganadería · Carnicerías</div>
+        </div>
+        <div class="cat-erc">
+          <div class="erc-val" style="color:#b5284f">68</div>
+          <div class="erc-lab">ERC score</div>
+        </div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-section">
+          <div class="cs-title">Anillos de audiencia</div>
+          <div class="ring-row"><div class="ring-dot" style="background:#b5284f"></div><div class="ring-row-text">① Núcleo: empleados UECARA + industria cárnica</div><div class="ring-vol">~180K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#c9a84c"></div><div class="ring-row-text">② Cadena: ganaderos + transportistas + carniceros</div><div class="ring-vol">~450K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#2d6a4f"></div><div class="ring-row-text">③ Consumidor: compradores de alimentos, amas de casa</div><div class="ring-vol">~9.5M</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#3f4db5"></div><div class="ring-row-text">④ Valores: "mesa argentina", "carne soberana"</div><div class="ring-vol">~2M</div></div>
+          <div class="total-row">
+            <div class="total-label">Meta targeteable</div>
+            <div class="total-val">3.5–5M</div>
+            <div class="total-bar-wrap"><div class="total-bar" style="width:70%"></div></div>
+          </div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Targeting Meta / IG</div>
+          <div style="margin-bottom:10px">
+            <span class="meta-tag">Alimentación</span><span class="meta-tag">Gastronomía</span><span class="meta-tag">Cocina</span><span class="meta-tag">Compras familiares</span><span class="meta-tag">Campo argentino</span><span class="meta-tag">Carnes Argentina</span>
+            <br><span class="meta-tag demo">60% F / 40% M</span><span class="meta-tag demo">Edad 25–55</span>
+            <span class="meta-tag geo">Todo PBA + CABA</span>
+          </div>
+          <div class="cs-title" style="margin-top:12px">Por qué esta segmentación</div>
+          <div style="font-size:.79rem;line-height:1.55;color:var(--text)">El consumidor de carne en Argentina es universal pero el contenido debe hablarle a quien <em>compra</em>, no a quien <em>procesa</em>. La mayor palanca es la mujer de 30–50 que planifica la compra familiar.</div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Hook comunicacional</div>
+          <div class="hook-box">"El asado argentino empieza acá. Estuve en el frigorífico que exporta a 40 países y la carne que llega a tu mesa. [Lugar]. Así se construye trabajo genuino."</div>
+          <div class="cs-title" style="margin-top:8px">Formato recomendado</div>
+          <div style="font-size:.79rem;color:var(--text);line-height:1.5">🎬 Reel 25–35 seg mostrando el proceso productivo + trabajadores. El candidato al final, no al principio. Texto overlay en pantalla. Compartible sin sonido.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. INDUSTRIA METALÚRGICA / AUTOMOTRIZ -->
+    <div class="cat-card">
+      <div class="cat-header" style="background:#fffcf0">
+        <div class="cat-icon bg-metal">⚙️</div>
+        <div class="cat-titles">
+          <div class="cat-name">Industria Metalúrgica y Automotriz</div>
+          <div class="cat-lugares">Toyota · TenarisSiderca · Autopartes · SMATA · UOM</div>
+        </div>
+        <div class="cat-erc">
+          <div class="erc-val" style="color:#c9a84c">74</div>
+          <div class="erc-lab">ERC score</div>
+        </div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-section">
+          <div class="cs-title">Anillos de audiencia</div>
+          <div class="ring-row"><div class="ring-dot" style="background:#b5284f"></div><div class="ring-row-text">① Núcleo: metalúrgicos UOM + empleados automotriz</div><div class="ring-vol">~150K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#c9a84c"></div><div class="ring-row-text">② Cadena: autopartes PyME + logística industrial</div><div class="ring-vol">~350K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#2d6a4f"></div><div class="ring-row-text">③ Consumidor: propietarios + aspirantes a auto</div><div class="ring-vol">~5M</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#3f4db5"></div><div class="ring-row-text">④ Valores: "industria fuerte", "trabajo genuino"</div><div class="ring-vol">~2.5M</div></div>
+          <div class="total-row">
+            <div class="total-label">Meta targeteable</div>
+            <div class="total-val">3–5M</div>
+            <div class="total-bar-wrap"><div class="total-bar" style="width:65%"></div></div>
+          </div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Targeting Meta / IG</div>
+          <div style="margin-bottom:10px">
+            <span class="meta-tag">Automóviles</span><span class="meta-tag">Mecánica</span><span class="meta-tag">Industria Argentina</span><span class="meta-tag">Sindicatos</span><span class="meta-tag">Manufactura</span>
+            <br><span class="meta-tag demo">70% M / 30% F</span><span class="meta-tag demo">Edad 28–60</span>
+            <span class="meta-tag geo">Zárate · San Nicolás · GBA industrial</span>
+          </div>
+          <div class="cs-title" style="margin-top:12px">Especificidad geográfica</div>
+          <div style="font-size:.79rem;line-height:1.55;color:var(--text)">En Toyota Zárate el impacto local es muy alto: el municipio entero depende de la planta. La pauta local puede ser mucho más eficiente que provincial en este caso.</div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Hook comunicacional</div>
+          <div class="hook-box">"El 85% de los autos que se fabrican acá se exportan al mundo. Argentina puede hacer eso. [Lugar]. Eso es lo que quiero proteger."</div>
+          <div class="cs-title" style="margin-top:8px">Variante para gremios</div>
+          <div style="font-size:.79rem;color:var(--text);line-height:1.5">Versión específica para WhatsApp sindical: foto de apretón de manos con el secretario general + 3 líneas de texto. CTR altísimo en grupos de delegados.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. PESCA / PUERTOS -->
+    <div class="cat-card">
+      <div class="cat-header" style="background:#f0f4ff">
+        <div class="cat-icon bg-pesca">🎣</div>
+        <div class="cat-titles">
+          <div class="cat-name">Pesca, Puertos y Mar Argentino</div>
+          <div class="cat-lugares">Conarpesa · Pesquera Bariloche · Puerto Mar del Plata · Quequén</div>
+        </div>
+        <div class="cat-erc">
+          <div class="erc-val" style="color:#1d3461">61</div>
+          <div class="erc-lab">ERC score</div>
+        </div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-section">
+          <div class="cs-title">Anillos de audiencia</div>
+          <div class="ring-row"><div class="ring-dot" style="background:#b5284f"></div><div class="ring-row-text">① Núcleo: pescadores + industria pesquera PBA</div><div class="ring-vol">~45K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#c9a84c"></div><div class="ring-row-text">② Cadena: logística portuaria, conserveras, export.</div><div class="ring-vol">~120K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#2d6a4f"></div><div class="ring-row-text">③ Consumidor: costeros PBA + consumidores de mariscos</div><div class="ring-vol">~5.5M</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#3f4db5"></div><div class="ring-row-text">④ Valores: "Mar Argentino", "soberanía azul"</div><div class="ring-vol">~3M</div></div>
+          <div class="total-row">
+            <div class="total-label">Meta targeteable</div>
+            <div class="total-val">2.5–4M</div>
+            <div class="total-bar-wrap"><div class="total-bar" style="width:55%"></div></div>
+          </div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Targeting Meta / IG</div>
+          <div>
+            <span class="meta-tag">Pesca</span><span class="meta-tag">Gastronomía marítima</span><span class="meta-tag">Turismo costero</span><span class="meta-tag">Soberanía</span><span class="meta-tag">Fútbol + verano</span>
+            <br><span class="meta-tag demo">55% M / 45% F</span><span class="meta-tag demo">Edad 25–60</span>
+            <span class="meta-tag geo">Mar del Plata · Costa atlántica · CABA veranera</span>
+          </div>
+          <div style="font-size:.79rem;line-height:1.55;color:var(--text);margin-top:10px">La audiencia del Mar Argentino incluye a los 4M de turistas que visitan la costa bonaerense en verano. Contenido de enero–marzo es el de mayor alcance.</div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Hook comunicacional</div>
+          <div class="hook-box">"1 de cada 4 cajitas de langostino que Argentina exporta sale de acá. 1.500 trabajadores. El mar argentino no es solo un paisaje: es trabajo."</div>
+          <div class="cs-title" style="margin-top:8px">Soberanía + producción</div>
+          <div style="font-size:.79rem;color:var(--text);line-height:1.5">El framing de soberanía ("nuestro mar") amplía la audiencia al Anillo 4 sin necesitar segmentación pesquera específica. Potencial de viral muy alto en temporada estival.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. AGROINDUSTRIA / CAMPO / TAMBO -->
+    <div class="cat-card">
+      <div class="cat-header" style="background:#f0faf4">
+        <div class="cat-icon bg-agro">🌾</div>
+        <div class="cat-titles">
+          <div class="cat-name">Agroindustria, Campo y Lechería</div>
+          <div class="cat-lugares">INTA · Bioceres · Tambo robot · CATA · Cooperativas agrarias</div>
+        </div>
+        <div class="cat-erc">
+          <div class="erc-val" style="color:#2d6a4f">82</div>
+          <div class="erc-lab">ERC score</div>
+        </div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-section">
+          <div class="cs-title">Anillos de audiencia</div>
+          <div class="ring-row"><div class="ring-dot" style="background:#b5284f"></div><div class="ring-row-text">① Núcleo: productores agropecuarios PBA</div><div class="ring-vol">~85K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#c9a84c"></div><div class="ring-row-text">② Cadena: veterinarios, cooperativas, maquinaria</div><div class="ring-vol">~400K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#2d6a4f"></div><div class="ring-row-text">③ Consumidor: compradores de lácteos, harina, aceite</div><div class="ring-vol">~9M</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#3f4db5"></div><div class="ring-row-text">④ Valores: "campo argentino", "interior productivo"</div><div class="ring-vol">~3.5M</div></div>
+          <div class="total-row">
+            <div class="total-label">Meta targeteable</div>
+            <div class="total-val">3–5M</div>
+            <div class="total-bar-wrap"><div class="total-bar" style="width:68%"></div></div>
+          </div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Targeting Meta / IG</div>
+          <div>
+            <span class="meta-tag">Campo argentino</span><span class="meta-tag">Agricultura</span><span class="meta-tag">Cooperativas</span><span class="meta-tag">Leche</span><span class="meta-tag">Interior PBA</span><span class="meta-tag">AgroTV</span>
+            <br><span class="meta-tag demo">65% M / 35% F</span><span class="meta-tag demo">Edad 30–65</span>
+            <span class="meta-tag geo">Interior PBA (radio fuera de GBA)</span>
+          </div>
+          <div style="font-size:.79rem;line-height:1.55;color:var(--text);margin-top:10px">El tambo robotizado tiene un atractivo visual inusual para esta categoría: las vacas+robots generan interés fuera del sector agro. Alto potencial de curiosidad orgánica.</div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Hook comunicacional</div>
+          <div class="hook-box">"La tecnología de siembra directa que hoy usa el mundo se inventó acá, en el INTA Castelar. Argentina no necesita copiarle tecnología a nadie."</div>
+          <div class="hook-box">"El tambo del futuro existe hoy en la Cuenca del Salado. Sin operario nocturno. Sin sufrimiento animal. Y la leche más barata que podemos tener."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. CIENCIA Y TECNOLOGÍA -->
+    <div class="cat-card">
+      <div class="cat-header" style="background:#f0f0ff">
+        <div class="cat-icon bg-ciencia">🔬</div>
+        <div class="cat-titles">
+          <div class="cat-name">Ciencia, Tecnología e Innovación</div>
+          <div class="cat-lugares">Y-TEC · CONICET · Bioceres NASDAQ · INTI · CNEA · Atucha</div>
+        </div>
+        <div class="cat-erc">
+          <div class="erc-val" style="color:#3f4db5">71</div>
+          <div class="erc-lab">ERC score</div>
+        </div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-section">
+          <div class="cs-title">Anillos de audiencia</div>
+          <div class="ring-row"><div class="ring-dot" style="background:#b5284f"></div><div class="ring-row-text">① Núcleo: científicos, investigadores, técnicos</div><div class="ring-vol">~80K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#c9a84c"></div><div class="ring-row-text">② Cadena: universitarios, docentes, estudiantes STEM</div><div class="ring-vol">~600K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#2d6a4f"></div><div class="ring-row-text">③ Consumidor: quienes "consumen" ciencia (vacunas, tech)</div><div class="ring-vol">~3M</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#3f4db5"></div><div class="ring-row-text">④ Valores: "ciencia argentina", "no fuga de cerebros"</div><div class="ring-vol">~2.5M</div></div>
+          <div class="total-row">
+            <div class="total-label">Meta targeteable</div>
+            <div class="total-val">2–3.5M</div>
+            <div class="total-bar-wrap"><div class="total-bar" style="width:50%"></div></div>
+          </div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Targeting Meta / IG / LinkedIn</div>
+          <div>
+            <span class="meta-tag">Ciencia</span><span class="meta-tag">Tecnología</span><span class="meta-tag">CONICET</span><span class="meta-tag">Educación</span><span class="meta-tag">Innovación</span><span class="meta-tag">Energía nuclear</span>
+            <br><span class="meta-tag demo">55% M / 45% F</span><span class="meta-tag demo">Edad 22–45</span>
+            <span class="meta-tag geo">La Plata · GBA · ciudades universitarias</span>
+          </div>
+          <div style="font-size:.79rem;line-height:1.55;color:var(--text);margin-top:10px"><strong>LinkedIn es clave aquí</strong>: ingenieros, investigadores y tech workers argentinos son hiperreactivos a contenido de ciencia nacional. CPM más alto pero CVR muy superior.</div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Hook comunicacional</div>
+          <div class="hook-box">"En Ensenada fabricamos el futuro energético de Argentina. Litio argentino, celdas de batería argentinas, tecnología argentina. En Y-TEC lo vi con mis ojos."</div>
+          <div class="hook-box">"Bioceres cotiza en NASDAQ desde Buenos Aires. Es la única empresa latinoamericana de biotecnología agrícola en Wall Street. Hecha acá."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. COOPERATIVAS / ECONOMÍA SOCIAL -->
+    <div class="cat-card">
+      <div class="cat-header" style="background:#f5f0ff">
+        <div class="cat-icon bg-coop">🤝</div>
+        <div class="cat-titles">
+          <div class="cat-name">Cooperativas y Economía Social</div>
+          <div class="cat-lugares">La Juanita · MadyGraf · CATA · Coop. Eléctrica Necochea · Huanguelén</div>
+        </div>
+        <div class="cat-erc">
+          <div class="erc-val" style="color:#7e3af2">88</div>
+          <div class="erc-lab">ERC score</div>
+        </div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-section">
+          <div class="cs-title">Anillos de audiencia</div>
+          <div class="ring-row"><div class="ring-dot" style="background:#b5284f"></div><div class="ring-row-text">① Núcleo: cooperativistas PBA + economía popular</div><div class="ring-vol">~200K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#c9a84c"></div><div class="ring-row-text">② Cadena: movimientos sociales, pymes sociales</div><div class="ring-vol">~450K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#2d6a4f"></div><div class="ring-row-text">③ Consumidor: compradores de productos solidarios</div><div class="ring-vol">~1.5M</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#3f4db5"></div><div class="ring-row-text">④ Valores: "trabajo digno", "comunidad que se organizó"</div><div class="ring-vol">~4M</div></div>
+          <div class="total-row">
+            <div class="total-label">Meta targeteable</div>
+            <div class="total-val">3–5M</div>
+            <div class="total-bar-wrap"><div class="total-bar" style="width:72%"></div></div>
+          </div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Targeting Meta / IG</div>
+          <div>
+            <span class="meta-tag">Trabajo</span><span class="meta-tag">Solidaridad</span><span class="meta-tag">Economía popular</span><span class="meta-tag">Peronismo</span><span class="meta-tag">Movimientos sociales</span>
+            <br><span class="meta-tag demo">50% M / 50% F</span><span class="meta-tag demo">Edad 25–55</span>
+            <span class="meta-tag geo">Conurbano + interior bonaerense</span>
+          </div>
+          <div style="font-size:.79rem;line-height:1.55;color:var(--text);margin-top:10px">Esta categoría tiene el <strong>ERC más alto del ranking</strong> por combinación única: alta emoción de la historia (2001, MadyGraf, Evita), alta identidad política, alta sharability en WhatsApp del conurbano.</div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Hooks comunicacionales</div>
+          <div class="hook-box">"En 2014 Donnelley cerró y mandó 400 obreros a la calle sin aviso. Hoy esa fábrica imprime para las Naciones Unidas y los dueños son los trabajadores. Eso se llama dignidad."</div>
+          <div class="hook-box">"Cuando el barrio de La Juanita llegó al 40% de desempleo no esperaron al Estado. Se organizaron. Hoy estudian su modelo en 15 universidades del mundo."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. ENERGÍA / SOBERANÍA INDUSTRIAL -->
+    <div class="cat-card">
+      <div class="cat-header" style="background:#fff8f0">
+        <div class="cat-icon bg-energia">⚡</div>
+        <div class="cat-titles">
+          <div class="cat-name">Energía y Soberanía Industrial</div>
+          <div class="cat-lugares">Atucha · YPF La Plata · CNEA Ezeiza · PBBPolisur · Astilleros</div>
+        </div>
+        <div class="cat-erc">
+          <div class="erc-val" style="color:#c55b0b">91</div>
+          <div class="erc-lab">ERC score</div>
+        </div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-section">
+          <div class="cs-title">Anillos de audiencia</div>
+          <div class="ring-row"><div class="ring-dot" style="background:#b5284f"></div><div class="ring-row-text">① Núcleo: empleados sector energético + petroquím.</div><div class="ring-vol">~35K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#c9a84c"></div><div class="ring-row-text">② Cadena: industrias energía-intensivas, transporte</div><div class="ring-vol">~500K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#2d6a4f"></div><div class="ring-row-text">③ Consumidor: TODOS pagan facturas de luz / gas</div><div class="ring-vol">~16M</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#3f4db5"></div><div class="ring-row-text">④ Valores: "YPF soberana", "energía cara es injusta"</div><div class="ring-vol">~4.5M</div></div>
+          <div class="total-row">
+            <div class="total-label">Meta targeteable</div>
+            <div class="total-val">4–7M 🔥</div>
+            <div class="total-bar-wrap"><div class="total-bar" style="width:92%"></div></div>
+          </div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Targeting Meta / IG</div>
+          <div>
+            <span class="meta-tag">YPF</span><span class="meta-tag">Tarifas</span><span class="meta-tag">Energía argentina</span><span class="meta-tag">Soberanía</span><span class="meta-tag">Factura de luz</span>
+            <br><span class="meta-tag demo">Sin restricción de género</span><span class="meta-tag demo">Edad 25–70</span>
+            <span class="meta-tag geo">Todo PBA — targeting AMPLIO</span>
+          </div>
+          <div style="font-size:.79rem;line-height:1.55;color:var(--text);margin-top:10px">La factura de luz/gas es el único tema que une al conurbano peronista con el interior productivo. Es transversal a clase social y género. <strong>Audiencia más amplia y más receptiva políticamente de todas las categorías.</strong></div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Hook comunicacional</div>
+          <div class="hook-box">"Esta refinería funciona desde 1925. La provincia de Buenos Aires tiene energía propia. Y sin embargo la gente paga facturas impagables. Eso es lo que hay que cambiar."</div>
+          <div class="hook-box">"Argentina tiene uranio, petróleo, litio y dos reactores nucleares. Somos un país energéticamente rico. ¿Por qué pagamos como pobres?"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. PATRIMONIO / HISTORIA / IDENTIDAD -->
+    <div class="cat-card">
+      <div class="cat-header" style="background:#fffaec">
+        <div class="cat-icon bg-historia">🏛️</div>
+        <div class="cat-titles">
+          <div class="cat-name">Patrimonio, Historia e Identidad Bonaerense</div>
+          <div class="cat-lugares">Chapadmalal · Casa de Evita · Epecuén · Fuerte del Carmen · Patagones</div>
+        </div>
+        <div class="cat-erc">
+          <div class="erc-val" style="color:#8a6800">79</div>
+          <div class="erc-lab">ERC score</div>
+        </div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-section">
+          <div class="cs-title">Anillos de audiencia</div>
+          <div class="ring-row"><div class="ring-dot" style="background:#b5284f"></div><div class="ring-row-text">① Núcleo: turismo-gastronomía PBA</div><div class="ring-vol">~250K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#c9a84c"></div><div class="ring-row-text">② Cadena: guías, artesanos, transporte turístico</div><div class="ring-vol">~200K</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#2d6a4f"></div><div class="ring-row-text">③ Consumidor: turistas bonaerenses (4M viajes/año)</div><div class="ring-vol">~6M</div></div>
+          <div class="ring-row"><div class="ring-dot" style="background:#3f4db5"></div><div class="ring-row-text">④ Valores: "identidad argentina", "Evita vive"</div><div class="ring-vol">~5M</div></div>
+          <div class="total-row">
+            <div class="total-label">Meta targeteable</div>
+            <div class="total-val">3.5–6M</div>
+            <div class="total-bar-wrap"><div class="total-bar" style="width:80%"></div></div>
+          </div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Targeting Meta / IG</div>
+          <div>
+            <span class="meta-tag">Turismo argentino</span><span class="meta-tag">Historia Argentina</span><span class="meta-tag">Peronismo</span><span class="meta-tag">Identidad</span><span class="meta-tag">Viajes</span>
+            <br><span class="meta-tag demo">50% M / 50% F</span><span class="meta-tag demo">Edad 25–65</span>
+            <span class="meta-tag geo">Todo PBA + CABA</span>
+          </div>
+          <div style="font-size:.79rem;line-height:1.55;color:var(--text);margin-top:10px">El patrimonio histórico tiene la característica única de que <strong>la gente comparte el contenido porque se identifica</strong>, no porque le importe la política. Es el mayor generador de alcance orgánico sin pauta.</div>
+        </div>
+        <div class="cat-section">
+          <div class="cs-title">Hooks comunicacionales</div>
+          <div class="hook-box">"En 1827, vecinos de Carmen de Patagones capturaron 3 buques de guerra brasileños con sus manos. La primera victoria naval argentina. Este lugar existe. La historia no se enseña."</div>
+          <div class="hook-box">"Evita nació en una pieza de tierra en Los Toldos. Esta es la casa. Nada de esto debería ser olvidado."</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- RANKING ERC -->
+<div id="ranking" class="section">
+  <div class="section-title">Ranking por Eficiencia de Retorno Comunicacional (ERC)</div>
+  <div class="section-desc">Ordenado por impacto potencial total: tamaño de audiencia alcanzable × intensidad emocional × viralidad ÷ costo de producción.</div>
+  <table class="rank-table">
+    <thead>
+      <tr>
+        <th>#</th><th>Categoría de visita</th><th>Audiencia Meta PBA</th><th>Emoción</th><th>Viral</th><th>ERC</th><th>Pauta recomendada</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rank-n">1</td>
+        <td>⚡ Energía y Soberanía Industrial</td>
+        <td><strong>4–7M</strong><div class="erc-bar"><div class="erc-fill" style="width:100%"></div></div></td>
+        <td>5/5</td><td>4/5</td>
+        <td><strong style="color:var(--green)">91</strong></td>
+        <td><span class="pill pill-high">MÁXIMA</span></td>
+      </tr>
+      <tr>
+        <td class="rank-n">2</td>
+        <td>🤝 Cooperativas y Economía Social</td>
+        <td><strong>3–5M</strong><div class="erc-bar"><div class="erc-fill" style="width:85%"></div></div></td>
+        <td>5/5</td><td>5/5</td>
+        <td><strong style="color:var(--green)">88</strong></td>
+        <td><span class="pill pill-high">MÁXIMA</span></td>
+      </tr>
+      <tr>
+        <td class="rank-n">3</td>
+        <td>🌾 Agroindustria y Campo</td>
+        <td><strong>3–5M</strong><div class="erc-bar"><div class="erc-fill" style="width:80%"></div></div></td>
+        <td>4/5</td><td>4/5</td>
+        <td><strong style="color:var(--green)">82</strong></td>
+        <td><span class="pill pill-high">ALTA</span></td>
+      </tr>
+      <tr>
+        <td class="rank-n">4</td>
+        <td>🏛️ Patrimonio e Identidad</td>
+        <td><strong>3.5–6M</strong><div class="erc-bar"><div class="erc-fill" style="width:78%"></div></div></td>
+        <td>5/5</td><td>5/5</td>
+        <td><strong style="color:var(--gold)">79</strong></td>
+        <td><span class="pill pill-high">ALTA</span></td>
+      </tr>
+      <tr>
+        <td class="rank-n">5</td>
+        <td>⚙️ Industria Metalúrgica / Automotriz</td>
+        <td><strong>3–5M</strong><div class="erc-bar"><div class="erc-fill" style="width:73%"></div></div></td>
+        <td>3/5</td><td>3/5</td>
+        <td><strong style="color:var(--gold)">74</strong></td>
+        <td><span class="pill pill-high">ALTA</span></td>
+      </tr>
+      <tr>
+        <td class="rank-n">6</td>
+        <td>🔬 Ciencia y Tecnología</td>
+        <td><strong>2–3.5M</strong><div class="erc-bar"><div class="erc-fill" style="width:65%"></div></div></td>
+        <td>4/5</td><td>4/5</td>
+        <td><strong style="color:var(--gold)">71</strong></td>
+        <td><span class="pill pill-med">MEDIA</span></td>
+      </tr>
+      <tr>
+        <td class="rank-n">7</td>
+        <td>🥩 Cadena Cárnica</td>
+        <td><strong>3.5–5M</strong><div class="erc-bar"><div class="erc-fill" style="width:62%"></div></div></td>
+        <td>3/5</td><td>3/5</td>
+        <td><strong style="color:var(--gold)">68</strong></td>
+        <td><span class="pill pill-med">MEDIA</span></td>
+      </tr>
+      <tr>
+        <td class="rank-n">8</td>
+        <td>🎣 Pesca y Puertos</td>
+        <td><strong>2.5–4M</strong><div class="erc-bar"><div class="erc-fill" style="width:55%"></div></div></td>
+        <td>3/5</td><td>3/5</td>
+        <td><strong style="color:var(--muted)">61</strong></td>
+        <td><span class="pill pill-med">MEDIA</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="margin-top:16px;font-size:.78rem;color:var(--muted);line-height:1.6">
+    * Audiencias expresadas en millones de usuarios en la plataforma Meta (FB+IG) dentro de PBA. Estimaciones basadas en universo de ~9M usuarios 18+ declarados por Meta para la provincia. ERC es un índice comparativo interno, no un valor absoluto. CPM referencial Argentina 2026: USD 1.5–3 por 1000 impresiones para contenido político/social.
+  </div>
+</div>
+
+<!-- GUÍA PRÁCTICA -->
+<div id="guia" class="section">
+  <div class="section-title">Guía Práctica de Pauta por Tipo de Contenido</div>
+  <div class="section-desc">Para cada visita, la decisión de formato y plataforma impacta más en el resultado que el presupuesto total.</div>
+
+  <div class="guide-grid">
+    <div class="guide-card">
+      <div class="guide-head">📱 Formato por objetivo</div>
+      <div class="guide-item">
+        <div class="guide-icon">🎬</div>
+        <div class="guide-text"><strong>Reel 15–30 seg</strong> — Máximo alcance orgánico. Sin audio propio: texto overlay. Ideal para patrimonio, cooperativas, tambo robot. Mostrar el proceso, no al candidato.</div>
+      </div>
+      <div class="guide-item">
+        <div class="guide-icon">📸</div>
+        <div class="guide-text"><strong>Carrusel 3–5 slides</strong> — Mejor CVR. Slide 1: dato impactante. Slides 2–4: contexto. Slide 5: propuesta. Ideal para energía, industria, cadena cárnica.</div>
+      </div>
+      <div class="guide-item">
+        <div class="guide-icon">💬</div>
+        <div class="guide-text"><strong>Historia interactiva</strong> — Alta participación. Encuesta: "¿Sabías que…?" Ideal para ciencia y tecnología donde el dato sorprende.</div>
+      </div>
+      <div class="guide-item">
+        <div class="guide-icon">📝</div>
+        <div class="guide-text"><strong>Post largo (FB only)</strong> — Para anillo ① y ②: trabajadores directos y cadena. Alta CTR en grupos gremiales. Compartido en WhatsApp sindical.</div>
+      </div>
+    </div>
+    <div class="guide-card">
+      <div class="guide-head">🎯 Reglas de segmentación</div>
+      <div class="guide-item">
+        <div class="guide-icon">📍</div>
+        <div class="guide-text"><strong>Pauta local vs. provincial:</strong> Si el lugar tiene fuerte impacto local (Toyota Zárate, astillero Ensenada), hacer primero una corrida local a bajo CPM para generar prueba social, luego escalar provincial.</div>
+      </div>
+      <div class="guide-item">
+        <div class="guide-icon">🔄</div>
+        <div class="guide-text"><strong>Retargeting obligatorio:</strong> Quien mira más del 50% del Reel → carrusel con propuesta concreta → formulario de adherente. Funnel de 3 pasos mínimo.</div>
+      </div>
+      <div class="guide-item">
+        <div class="guide-icon">📊</div>
+        <div class="guide-text"><strong>Lookalike por municipio:</strong> Si el contenido performa en Zárate, generar audience lookalike en San Nicolás, Ramallo y Campana. Mismo perfil industrial.</div>
+      </div>
+      <div class="guide-item">
+        <div class="guide-icon">⏰</div>
+        <div class="guide-text"><strong>Timing:</strong> Publicar el contenido de visita en las 4 horas post-visita mientras hay pico de alcance orgánico. Luego prender pauta sobre el posteo orgánico, no crear uno nuevo.</div>
+      </div>
+    </div>
+    <div class="guide-card">
+      <div class="guide-head">💰 Presupuesto orientativo por visita</div>
+      <div class="guide-item">
+        <div class="guide-icon">🟢</div>
+        <div class="guide-text"><strong>Visita ERC Alto (≥80):</strong> USD 800–1.500 por pieza. Objetivo: 300K–600K impresiones con frecuencia 3. Siempre acompañar con TikTok si hay Reel de buena calidad.</div>
+      </div>
+      <div class="guide-item">
+        <div class="guide-icon">🟡</div>
+        <div class="guide-text"><strong>Visita ERC Medio (65–79):</strong> USD 400–800 por pieza. Objetivo: 150K–300K impresiones. Segmentación más estrecha = mejor CTR con menos presupuesto.</div>
+      </div>
+      <div class="guide-item">
+        <div class="guide-icon">🔵</div>
+        <div class="guide-text"><strong>Visita ERC Base (&lt;65):</strong> USD 200–400 por pieza. Pauta local solamente. Priorizar el contenido de WhatsApp que llega a núcleo y cadena de forma directa.</div>
+      </div>
+      <div class="guide-item">
+        <div class="guide-icon">⚡</div>
+        <div class="guide-text"><strong>Energía / Soberanía:</strong> Si el contenido supera 3% engagement rate orgánico → invertir todo el presupuesto disponible. Es el único tema con capacidad de viralizarse sin pauta.</div>
+      </div>
+    </div>
+    <div class="guide-card">
+      <div class="guide-head">❌ Errores críticos a evitar</div>
+      <div class="guide-item">
+        <div class="guide-icon">🚫</div>
+        <div class="guide-text"><strong>El candidato en primer plano:</strong> Empezar el Reel con el candidato bajando del auto mata el alcance orgánico. Empezar con el proceso, el trabajador, el producto.</div>
+      </div>
+      <div class="guide-item">
+        <div class="guide-icon">🚫</div>
+        <div class="guide-text"><strong>Sin texto overlay:</strong> El 85% del video en redes se consume sin sonido. Si no hay texto en pantalla, el mensaje no llega.</div>
+      </div>
+      <div class="guide-item">
+        <div class="guide-icon">🚫</div>
+        <div class="guide-text"><strong>Audiencia demasiado amplia:</strong> "Todo PBA" no es una segmentación. Dividir en al menos 3 audiencias por categoría y comparar resultados antes de escalar.</div>
+      </div>
+      <div class="guide-item">
+        <div class="guide-icon">🚫</div>
+        <div class="guide-text"><strong>Una sola pieza por visita:</strong> Cada visita debe producir mínimo: 1 Reel (anillo ③④), 1 carrusel (anillo ②), 1 foto+texto largo (anillo ①). Tres piezas, tres audiencias, mismo costo de producción.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<footer>PBA 2026 · Alcance Comunicacional de Visitas · Uso interno de campaña · Confidencial</footer>
+
+</body>
+</html>

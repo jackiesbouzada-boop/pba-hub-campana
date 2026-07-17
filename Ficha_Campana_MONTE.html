@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAN MIGUEL DEL MONTE — Ficha de Campaña · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.header { color: white; padding: 22px 28px; display: flex; justify-content: space-between; align-items: flex-start; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.85; line-height: 1.95; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-opositor { background: rgba(220,50,50,0.55); }
+.banner { background: #0f2944; color: white; padding: 20px 28px; border-left: 7px solid #C8A030; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #C8A030; margin-bottom: 7px; }
+.b-title  { font-size: 15.5px; font-weight: 800; margin-bottom: 13px; line-height: 1.35; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #F5D87A; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 19px; font-weight: 900; color: #F5D87A; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+.main { padding: 18px 22px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; background: #eef2f7; }
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+.card { background: white; border-radius: 10px; box-shadow: 0 1px 5px rgba(0,0,0,0.07); overflow: visible; min-width: 0; }
+.ch { border-radius: 10px 10px 0 0; overflow: hidden; }
+.cbody { overflow-x: auto; }
+.ch { padding: 10px 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.9px; }
+.cbody { padding: 13px; }
+.st { font-size: 9.5px; font-weight: 700; color: #5C0011; padding-bottom: 5px; border-bottom: 2px solid #9B1C1C; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.st2 { font-size: 9.5px; font-weight: 700; color: #1F4E79; padding-bottom: 5px; border-bottom: 2px solid #1F4E79; margin-top: 14px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #EDE9FE; border: 1px solid #C4B5FD; color: #4C1D95; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+.ca { background: #FFFBEB; border: 1px solid #C8A030; color: #6B4C00; }
+.t { width: 100%; border-collapse: collapse; font-size: 11px; }
+.t th { background: #f5f6f8; color: #555; padding: 5px 7px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 5px 7px; border-bottom: 1px solid #f3f4f6; vertical-align: top; word-break: break-word; }
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child { width: 44%; color: #555; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 11px 12px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 21px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9px; color: #999; margin-top: 3px; line-height: 1.35; }
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.sc   { border-radius: 7px; padding: 11px 12px; border-left: 4px solid; }
+.sc.p { border-color: #2563EB; background: #EFF6FF; }
+.sc.s { border-color: #059669; background: #ECFDF5; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #7C3AED; background: #F5F3FF; }
+.sc.r { border-color: #DC2626; background: #FEF2F2; }
+.sc.g { border-color: #9B1C1C; background: #FFF5F5; }
+.sc.a { border-color: #C8A030; background: #FFFBEB; }
+.sl { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.sn { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.sp { font-size: 18px; font-weight: 900; margin: 3px 0 6px; }
+.sd { font-size: 10px; line-height: 1.65; color: #444; }
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.pbl { width: 120px; font-size: 9.5px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; height: 16px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.pbt { font-size: 9.5px; font-weight: 700; color: #444; width: 36px; text-align: right; }
+.pbp { font-size: 9px; color: #999; margin-left: 2px; }
+.pgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.pi { border-radius: 8px; padding: 11px 13px; border-left: 4px solid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.pi.o { border-color: #059669; background: #ECFDF5; }
+.pi.r { border-color: #DC2626; background: #FEF2F2; }
+.pi.d { border-color: #2563EB; background: #EFF6FF; }
+.pi.a { border-color: #D97706; background: #FFFBEB; }
+.pi.x { border-color: #7C3AED; background: #F5F3FF; }
+.pt  { font-size: 9.5px; font-weight: 700; margin-bottom: 4px; line-height: 1.35; }
+.pti { font-size: 9px; font-weight: 600; color: #555; margin-bottom: 5px; font-style: italic; }
+.pd  { font-size: 10px; line-height: 1.6; color: #444; }
+.corr { background: #F8F9FA; border-radius: 8px; padding: 11px 13px; margin-top: 12px; }
+.corr-title { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: #888; margin-bottom: 7px; }
+.cms { display: flex; flex-wrap: wrap; gap: 7px; }
+.cm { background: white; border: 1px solid #e5e7eb; border-radius: 6px; padding: 5px 9px; font-size: 9.5px; font-weight: 600; color: #444; }
+.cm span { display: block; font-size: 8.5px; color: #999; font-weight: 400; margin-top: 2px; }
+.ar { display: flex; gap: 8px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid #f3f4f6; }
+.ar:last-child { border-bottom: none; }
+.ai { font-size: 20px; flex-shrink: 0; }
+.ain { flex: 1; }
+.an { font-size: 11px; font-weight: 700; margin-bottom: 2px; }
+.ad { font-size: 10px; color: #555; line-height: 1.55; }
+.ats { margin-top: 5px; display: flex; gap: 5px; flex-wrap: wrap; }
+.at { font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+.ag { display: flex; gap: 8px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid #f3f4f6; }
+.ag:last-child { border-bottom: none; }
+.agi { font-size: 18px; flex-shrink: 0; }
+.agt { flex: 1; font-size: 10.5px; line-height: 1.6; color: #333; }
+.agt strong { font-weight: 700; display: block; margin-bottom: 2px; color: #1a1a2e; }
+.agt p { margin: 0; }
+.al { border-radius: 7px; padding: 10px 13px; margin-top: 12px; font-size: 10.5px; line-height: 1.65; }
+.al-v { background: #ECFDF5; border-left: 4px solid #059669; color: #065F46; }
+.al-a { background: #FFFBEB; border-left: 4px solid #D97706; color: #6B4C00; }
+.al-b { background: #EFF6FF; border-left: 4px solid #2563EB; color: #1E3A5F; }
+.al-k { background: #1a1a2e; color: white; border-left: 4px solid #C8A030; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.al-k strong { color: #F5D87A; }
+.nt { background: #F3F4F6; border-radius: 7px; padding: 10px 12px; margin-top: 10px; font-size: 10px; color: #555; line-height: 1.6; }
+.hist { background: #FFFBEB; border: 1px solid #FCD34D; border-radius: 7px; padding: 10px 12px; margin-top: 10px; font-size: 10px; color: #6B4C00; line-height: 1.6; }
+.hist strong { font-weight: 700; display: block; margin-bottom: 3px; }
+.locs { display: flex; flex-direction: column; gap: 6px; }
+.loc { border-left: 4px solid; padding: 7px 10px; border-radius: 0 7px 7px 0; }
+.loc .ln { font-size: 10.5px; font-weight: 700; margin-bottom: 2px; }
+.loc .ld { font-size: 9.5px; color: #555; line-height: 1.45; }
+.acc-nac  { background: #1d3461; color: white; padding: 2px 7px; border-radius: 10px; font-size: 9px; font-weight: 700; white-space: nowrap; display: inline-block; }
+.acc-prot { background: #1C3A10; color: white; padding: 2px 7px; border-radius: 10px; font-size: 9px; font-weight: 700; white-space: nowrap; display: inline-block; }
+.footer { text-align: center; padding: 12px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+@media print {
+  @page { size: A4 portrait; margin: 8mm 10mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; margin: 0 !important; font-size: 9pt !important; }
+  .main { padding: 10px 12px !important; gap: 8px !important; }
+  .t { font-size: 8pt !important; table-layout: fixed; word-break: break-word; }
+  .t td, .t th { word-break: break-word; overflow-wrap: break-word; }
+  .card { break-inside: avoid; min-width: 0; }
+  .cbody { overflow-x: visible; }
+  /* Cada anexo arranca en hoja nueva */
+  .anx-break { break-before: page; }
+  /* Header + primera fila: bloque indivisible */
+  .anx-keep  { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header" style="background: linear-gradient(135deg, #5C0011 0%, #9B1C1C 100%);">
+  <div class="header-left">
+    <h1>🏛️ SAN MIGUEL DEL MONTE</h1>
+    <div class="sub">Los Colorados del Monte · Laguna · Cuenca del Salado · 5ª Sección Electoral · PBA 2026</div>
+    <div class="tag">Partido de Monte · Interior Bonaerense · 1.875,6 km² · Rutas 3 y 41 · 4 localidades</div>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente</strong> José Castro<span class="badge badge-opositor">OPOSITOR</span></div>
+    <div>UCR / Juntos por el Cambio · reelecto 2023–2027</div>
+    <div><strong>Sección</strong> 5ª Electoral · Cluster Interior</div>
+    <div><strong>Población</strong> ~24.868 hab · Padrón 21.554 (2025)</div>
+    <div><strong>Superficie</strong> 1.875,6 km²</div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="b-label">⚠️ Alerta estratégica · Municipio opositor + LLA dominante en lo nacional</div>
+  <div class="b-title">Monte: UCR controla el ejecutivo local, LLA aplasta en nacional. El PJ construye sin intendente aliado.</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>El escenario político local es adverso.</strong> José Castro (UCR/JxC) gobierna con 52,7% desde 2019 y fue reelecto en 2023. El PJ obtuvo solo 30,9% en la elección de intendente de ese año. Sin un intendente aliado, la Provincia debe construir presencia territorial directamente: a través de programas, obras visibles y contacto con actores económicos del turismo y el agro.</p>
+      <p><strong>La laguna es el activo territorial más poderoso.</strong> 10.000+ turistas por fin de semana largo, escapada clásica de CABA y el conurbano, 686 ha de espejo de agua. La Provincia tiene capacidad de cofinanciar infraestructura turística que beneficia a toda la comunidad, independientemente del color político del intendente.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>LLA aplasta en la categoría nacional (49,7%).</strong> En las legislativas de 2025, LLA obtuvo 6.409 votos (49,7%) frente a 4.515 del PJ (34,9%). El electorado que antes votaba UCR/JxC en local migra a LLA en lo nacional. Este es el patrón que define Monte: UCR local / LLA nacional, con el PJ en tercer lugar.</p>
+      <p><strong>El PJ tiene una ventana en las categorías intermedias.</strong> En concejales 2025, el PJ subió a 42,3%, mostrando que el electorado puede distinguir entre la propuesta nacional LLA y el voto local. Para 2027, el trabajo es recuperar el espacio en lo local aprovechando que Castro no tendrá más reelección.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">30,9%</div><div class="l">PJ intendente 2023<br>Solo 4.374 votos · Castro ganó con 52,7%</div></div>
+    <div class="b-num"><div class="n">42,3%</div><div class="l">PJ concejales 2025<br>Recupera 11,4 puntos vs. 2023</div></div>
+    <div class="b-num"><div class="n">49,7%</div><div class="l">LLA Dip. Nac. 2025<br>6.409 votos — aplasta en nacional</div></div>
+    <div class="b-num"><div class="n">+11,4</div><div class="l">Puntos PJ ganados<br>2023 → 2025 en categoría local</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- KPIs -->
+<div class="card full">
+  <div class="ch" style="background:#5C0011;color:white;">📊 Datos Electorales y Demográficos Clave · San Miguel del Monte 2026</div>
+  <div class="cbody" style="padding:14px 16px;">
+    <div class="kpis">
+      <div class="kpi" style="background:#FEF2F2;border-color:#FCA5A5;">
+        <div class="kl">PJ Intendencia 2023</div>
+        <div class="kv" style="color:#7F1D1D;">30,9%</div>
+        <div class="ks">4.374 votos · Castro (UCR/JxC) 52,7% ganador<br>LLA 16,3% · Padrón: 20.967 · Pos: 14.134</div>
+      </div>
+      <div class="kpi" style="background:#F0FDF4;border-color:#86EFAC;">
+        <div class="kl">PJ Concejales 2025 · Recupera</div>
+        <div class="kv" style="color:#15803D;">42,3%</div>
+        <div class="ks">4.951 votos · LLA 27,2% (3.186) · Padrón: 21.554<br>+11,4 pts vs. 2023 — voto local diferenciado</div>
+      </div>
+      <div class="kpi" style="background:#FEF2F2;border-color:#FCA5A5;">
+        <div class="kl">LLA Dip. Nac. 2025 — Alarma</div>
+        <div class="kv" style="color:#7F1D1D;">49,7%</div>
+        <div class="ks">6.409 votos · PJ 34,9% (4.515) · FIT 2,9%<br>Total pos.: 12.905 · Padrón: 20.757</div>
+      </div>
+      <div class="kpi" style="background:#EFF6FF;border-color:#93C5FD;">
+        <div class="kl">Crecimiento padrón 2023–2025</div>
+        <div class="kv" style="color:#1D4ED8;font-size:17px;">+587</div>
+        <div class="ks">De 20.967 (2023) a 21.554 (2025)<br>+2,8% · ~290 nuevos electores/año</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDAD Y LOCALIDADES -->
+<div class="card one">
+  <div class="ch" style="background:#FFF5F5;color:#5C0011;">🗺️ Identidad y Localidades</div>
+  <div class="cbody">
+    <div class="chips">
+      <span class="chip cr">🔴 UCR/JxC local</span>
+      <span class="chip cb">🌊 Turismo lacustre</span>
+      <span class="chip ca">🏛️ Rosismo federal</span>
+      <span class="chip co">🐄 Cuenca del Salado</span>
+      <span class="chip cz">5ª Sección</span>
+    </div>
+    <div class="st">4 Localidades · Perfil diferenciado</div>
+    <div class="locs">
+      <div class="loc" style="border-color:#9B1C1C;background:#FFF5F5;">
+        <div class="ln">San Miguel del Monte (cabecera)</div>
+        <div class="ld">~23.000 hab. Ciudad con laguna en el centro urbano. Motor del turismo lacustre y comercial. Sede política del municipio. Voto concentrado y disputado.</div>
+      </div>
+      <div class="loc" style="border-color:#D97706;background:#FFFBEB;">
+        <div class="ln">Zenón Videla Dorna</div>
+        <div class="ld">Pequeño núcleo rural. Actividad agropecuaria de la Cuenca del Salado. Peón rural y productor chico. Voto más volátil.</div>
+      </div>
+      <div class="loc" style="border-color:#6B7280;background:#F9FAFB;">
+        <div class="ln">Cortines</div>
+        <div class="ld">Paraje rural mínimo. Ganadería extensiva. Presencia estacional.</div>
+      </div>
+      <div class="loc" style="border-color:#6B7280;background:#F9FAFB;">
+        <div class="ln">Gorchs</div>
+        <div class="ld">Paraje rural. Sin infraestructura urbana relevante. Economía de subsistencia agropecuaria.</div>
+      </div>
+    </div>
+    <div class="hist" style="margin-top:10px;">
+      <strong>🏛️ Cuna del federalismo rioplatense</strong>
+      San Miguel del Monte es donde Juan Manuel de Rosas organizó en 1820 <em>Los Colorados del Monte</em> — 600 jinetes de camisa roja que se convirtieron en el núcleo del ejército federal bonaerense. El Rancho de Rosas, patrimonio histórico provincial, se conserva en el municipio. Monte lleva en su identidad el peso del federalismo más profundo de la historia argentina.
+    </div>
+    <div class="nt">📍 Monte está sobre la Ruta 3 (km 89 desde CABA) y la Ruta Provincial 41. A 110 km de CABA. La laguna está a 5 cuadras del centro.</div>
+  </div>
+</div>
+
+<!-- MATRIZ PRODUCTIVA -->
+<div class="card two">
+  <div class="ch" style="background:#1d3461;color:white;">⚙️ Matriz Productiva · Turismo y Agro</div>
+  <div class="cbody">
+    <div class="st">Economías que estructuran el municipio</div>
+    <div class="sgrid">
+      <div class="sc t">
+        <div class="sl">🌊 Motor principal</div>
+        <div class="sn">Turismo lacustre · escapada</div>
+        <div class="sp" style="color:#D97706;">10.000+ turistas/finde</div>
+        <div class="sd">La Laguna de Monte (686 ha, la única en centro urbano bonaerense) es el motor económico. Cabañas, campings, gastronomía ribereña, deportes náuticos. La temporada alta concentra ingresos que sostienen la economía urbana. El turismo de fin de semana y feriados es estructural.</div>
+      </div>
+      <div class="sc g">
+        <div class="sl">🐄 Base rural</div>
+        <div class="sn">Ganadería de cría · Cuenca del Salado</div>
+        <div class="sp" style="color:#9B1C1C;">Zona de terneros</div>
+        <div class="sd">Monte está inserto en la Cuenca del Salado, la gran zona de cría bovina de la pampa húmeda. Ganadería extensiva (terneros) y algo de agricultura mixta. El productor ganadero local mira los precios de cría y las políticas de la Cuenca. Sin agroindustria transformadora local.</div>
+      </div>
+      <div class="sc p">
+        <div class="sl">🏪 Servicios urbanos</div>
+        <div class="sn">Comercio y servicios locales</div>
+        <div class="sp" style="color:#2563EB;">Economía de la cabecera</div>
+        <div class="sd">Red comercial de la cabecera orientada al turista y al residente. Gastronomía, hotelería, provisión de servicios básicos. El Mercado de la Estación (en galpones del ferrocarril) es el espacio de economía social y ferias de artesanos.</div>
+      </div>
+      <div class="sc a">
+        <div class="sl">🏛️ Turismo histórico</div>
+        <div class="sn">Patrimonio rosista · Los Colorados</div>
+        <div class="sp" style="color:#C8A030;">Activo cultural</div>
+        <div class="sd">El Rancho de Rosas y la historia de Los Colorados del Monte generan un segmento de turismo histórico-cultural. Aún subutilizado como producto turístico. Potencial para un circuito de turismo federal bonaerense que vincule Monte con otros sitios históricos de la Provincia.</div>
+      </div>
+    </div>
+    <div class="st2">Distribución estimada de actividad económica</div>
+    <div class="pbr"><div class="pbl">Turismo y hostelería</div><div class="pbo"><div class="pbi" style="width:38%;background:#D97706;"></div></div><div class="pbt">38%</div></div>
+    <div class="pbr"><div class="pbl">Comercio y servicios</div><div class="pbo"><div class="pbi" style="width:25%;background:#2563EB;"></div></div><div class="pbt">25%</div></div>
+    <div class="pbr"><div class="pbl">Ganadería · agro</div><div class="pbo"><div class="pbi" style="width:22%;background:#9B1C1C;"></div></div><div class="pbt">22%</div></div>
+    <div class="pbr"><div class="pbl">Estado y salud</div><div class="pbo"><div class="pbi" style="width:15%;background:#6B7280;"></div></div><div class="pbt">15%</div></div>
+    <div class="st2">Actores productivos clave</div>
+    <div class="ar">
+      <div class="ai">🌊</div>
+      <div class="ain">
+        <div class="an">Operadores turísticos de la Laguna</div>
+        <div class="ad">Campings, cabañas, restaurantes ribereños y prestadores de deportes náuticos. Son los actores económicos más importantes y los que más se benefician de infraestructura provincial. Independientes del color político del intendente.</div>
+        <div class="ats"><span class="at" style="background:#FFFBEB;color:#6B4C00;">🟡 PRIVADO · Acceso medio</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🐄</div>
+      <div class="ain">
+        <div class="an">Productores ganaderos · Cuenca del Salado</div>
+        <div class="ad">Criadores de terneros y pequeños productores mixtos. El Ministerio de Desarrollo Agrario PBA tiene programas de asistencia técnica y financiamiento que llegan directamente, sin intermediación del intendente.</div>
+        <div class="ats"><span class="at" style="background:#FFFBEB;color:#6B4C00;">🟡 PRIVADO · Acceso medio</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🏛️</div>
+      <div class="ain">
+        <div class="an">Patrimonio Histórico · Comisión de Preservación</div>
+        <div class="ad">La Comisión para la Preservación del Patrimonio Histórico, Cultural y Natural Montense gestiona el Rancho de Rosas y otros sitios. Actor apolítico con vínculo directo con el Instituto Cultural de la Provincia.</div>
+        <div class="ats"><span class="at" style="background:#EFF6FF;color:#1d3461;">🤝 PROTOCOLAR</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSPECTIVA PROVINCIAL -->
+<div class="card full">
+  <div class="ch" style="background:#0f2944;color:#F5D87A;">🏛️ Perspectiva Provincial · Palancas en Municipio Opositor</div>
+  <div class="cbody">
+    <div class="pgrid">
+      <div class="pi d">
+        <div class="pt">🔵 Infraestructura turística laguna · palanca de alto impacto</div>
+        <div class="pti">La Provincia puede cofinanciar obras en el perilago independientemente del intendente</div>
+        <div class="pd">La Laguna de Monte recibe 10.000+ turistas por fin de semana largo. La infraestructura de acceso (Ruta 41, estacionamientos, señalética), las obras de borde costero y el saneamiento del espejo de agua son competencia o cofinanciamiento provincial. El beneficio es visible, directo y trasciende la política municipal: el operador turístico, el vecino y el turista lo perciben igual sin importar quién sea el intendente.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 Ruta 41 · accesibilidad turística y productiva</div>
+        <div class="pti">La Ruta Provincial 41 es el acceso principal al destino desde la Ruta 3</div>
+        <div class="pd">La calidad del acceso vial desde Ruta 3 por la Ruta 41 hasta la laguna y el centro de Monte define la competitividad del destino turístico. Obras de ensanche, carpeta asfáltica y señalética en la 41 son de ejecución provincial, de alto impacto en la economía local y de bajo costo político con el intendente opositor (son obras de jurisdicción provincial).</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">✅ Patrimonio Rosas · Instituto Cultural Bonaerense</div>
+        <div class="pti">El Rancho de Rosas es patrimonio histórico provincial de primer orden</div>
+        <div class="pd">El Rancho de Juan Manuel de Rosas en Monte es uno de los sitios históricos más relevantes de la Provincia. El Instituto Cultural Bonaerense tiene jurisdicción directa sobre el patrimonio provincial. Un proyecto de valorización del Rancho de Rosas (iluminación, señalética, circuito turístico federal) es de ejecución provincial directa sin necesitar al intendente. Narrativa: "La Provincia cuida la historia de todos los bonaerenses".</div>
+      </div>
+      <div class="pi a">
+        <div class="pt">🟡 Hospital Videla Dorna · modernización con fondos provinciales</div>
+        <div class="pti">El único hospital del distrito requiere sostenimiento y equipamiento provincial</div>
+        <div class="pd">El Hospital Videla Dorna es el único centro de salud del Partido de Monte. La municipalidad inició modernizaciones (oxígeno central, remodelación de habitaciones), pero la aparatología de alta complejidad (ecógrafo, laboratorio, guardia pediátrica) depende de fondos provinciales. Salud es un vector de presencia provincial en el municipio que trasciende el color político del intendente.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 Programas Cuenca del Salado · contacto rural directo</div>
+        <div class="pti">El MinAgrario llega directamente al productor ganadero de la Cuenca</div>
+        <div class="pd">Los productores ganaderos de Monte forman parte de la Cuenca del Salado, que tiene programas provinciales específicos (asistencia técnica, aportes no reembolsables, manejo hídrico). Estos programas llegan directamente al productor sin pasar por el intendente. El contacto con la Sociedad Rural o cooperativas ganaderas locales es la entrada para este segmento.</div>
+      </div>
+      <div class="pi r">
+        <div class="pt">🔴 Riesgo: Intendente opositor sin colaboración activa</div>
+        <div class="pti">Castro (UCR) tiene incentivos para frenar o reencuadrar las obras provinciales</div>
+        <div class="pd">En municipios opositores, los intendentes frecuentemente atribuyen a su gestión obras cofinanciadas por la Provincia o directamente provinciales. El riesgo de "apropiación política" de obras provinciales por parte de Castro es real. La estrategia de comunicación debe anticipar esto: señalética con identidad provincial visible, actos de inauguración con presencia de la conducción provincial, difusión directa a medios locales.</div>
+      </div>
+    </div>
+    <div class="corr" style="margin-top:12px;">
+      <div class="corr-title">Articulación regional</div>
+      <div class="cms">
+        <div class="cm">🏛️ MONTE<span>Los Colorados · Laguna · Cuenca Salado</span></div>
+        <div class="cm">↔ CAÑUELAS<span>Vecino sur · Ruta 3</span></div>
+        <div class="cm">↔ LOBOS<span>Corredor Ruta 41 / interior</span></div>
+        <div class="cm">↔ GENERAL BELGRANO<span>Corredor lacustre sur</span></div>
+        <div class="cm">↔ CHASCOMÚS<span>Turismo lacustre · vecino</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISIS POLÍTICO -->
+<div class="card two">
+  <div class="ch" style="background:#5C0011;color:#F5D87A;">🗳️ Análisis Político · Municipio Opositor con PJ en Recuperación</div>
+  <div class="cbody">
+    <div class="st">Tabla electoral completa · Monte 2023 y 2025</div>
+    <table class="t">
+      <tr><th>Elección</th><th>PJ / UxP</th><th>UCR/JxC</th><th>LLA</th><th>Padrón</th></tr>
+      <tr><td>2023 Intend.</td><td class="bad">30,9%<br>4.374 v.</td><td class="ok">52,7%<br>7.454 ✓</td><td>16,3%<br>2.306 v.</td><td>20.967</td></tr>
+      <tr><td>2025 Concejales</td><td class="warn">42,3%<br>4.951 v.</td><td>—</td><td class="warn">27,2%<br>3.186 v.</td><td>21.554</td></tr>
+      <tr><td>2025 Dip. Nac.</td><td class="warn">34,9%<br>4.515 v.</td><td>—</td><td class="bad">49,7%<br>6.409 v.</td><td>20.757</td></tr>
+    </table>
+    <div class="st2">Lectura del mapa electoral</div>
+    <div class="ag">
+      <div class="agi">🔴</div>
+      <div class="agt">
+        <strong>El ejecutivo local es opositor desde 2019</strong>
+        <p>Castro (UCR) ganó en 2019 y fue reelecto en 2023 con 52,7%. El PJ obtuvo solo 30,9% en la pelea por la intendencia — el peor resultado del universo de fichas analizadas. Monte es el municipio de oposición más consolidada en este grupo. El intendente NO es un intermediario disponible.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">📈</div>
+      <div class="agt">
+        <strong>El PJ recupera en categorías intermedias (2025)</strong>
+        <p>En concejales 2025, el PJ subió a 42,3% (+11,4 pts vs. 2023). Esto muestra que el electorado puede distinguir entre la propuesta ejecutiva local (donde el PJ no convence) y la representación legislativa. El PJ local tiene capacidad de construir un piso territorial por fuera del ejecutivo.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">⚠️</div>
+      <div class="agt">
+        <strong>LLA aplasta en lo nacional y absorbe el voto UCR/JxC</strong>
+        <p>En 2023, LLA obtuvo 16,3%. En 2025 concejales, 27,2%. En 2025 nacional, 49,7%. El crecimiento de LLA es el mayor de todas las fuerzas en el municipio. El ex votante UCR que no votó a Castro en lo nacional migró masivamente a LLA. Para 2027, ese universo (ex JxC/LLA) es el campo de disputa central.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🔮</div>
+      <div class="agt">
+        <strong>Para 2027: Castro no puede reelegirse (límite constitucional)</strong>
+        <p>Castro habrá cumplido dos mandatos consecutivos en 2027 y no podrá presentarse. Esto abre la sucesión del ejecutivo local. Si el PJ construye presencia territorial en los próximos dos años (gestión provincial visible, candidatos locales en crecimiento), el 2027 puede ser competitivo para una lista de intendente PJ.</p>
+      </div>
+    </div>
+    <div class="al al-a">
+      <strong>⚡ Variable crítica 2027:</strong> La gestión provincial visible en Monte (obras en laguna, Ruta 41, Hospital Videla Dorna, patrimonio Rosas) construye el capital político PJ LOCAL que será necesario cuando Castro deje el ejecutivo en 2027. Monte NO es un municipio perdido — es un municipio en construcción de mediano plazo.
+    </div>
+  </div>
+</div>
+
+<!-- AGENDA DISCURSIVA -->
+<div class="card one">
+  <div class="ch" style="background:#FFFBEB;color:#6B4C00;">💬 Agenda Discursiva · Por segmento</div>
+  <div class="cbody">
+    <div class="ag">
+      <div class="agi">🌊</div>
+      <div class="agt">
+        <strong>Turismo y operadores lacustres</strong>
+        <p>La Provincia invierte en la infraestructura que hace posible el turismo: la Ruta 41, el saneamiento de la laguna, los accesos. Monte como destino turístico bonaerense de primer nivel que la Provincia pone en valor.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🐄</div>
+      <div class="agt">
+        <strong>Productores ganaderos · Cuenca del Salado</strong>
+        <p>El Ministerio de Agrario llega directamente al productor de la Cuenca: asistencia técnica, programas de mejora genética, apoyo al manejo hídrico. El campo de Monte no depende del color político del intendente para acceder a programas provinciales.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏛️</div>
+      <div class="agt">
+        <strong>Historia · identidad federal bonaerense</strong>
+        <p>Monte es la cuna de Los Colorados, el primer ejército federal organizado de la Argentina. La Provincia cuida ese patrimonio: el Rancho de Rosas, la historia de la Federación. Narrativa de identidad provincial que conecta con el orgullo local.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏥</div>
+      <div class="agt">
+        <strong>Salud rural · Hospital Videla Dorna</strong>
+        <p>El único hospital del partido atiende a toda la población. La Provincia financia equipamiento y formación del personal. "La salud de Monte no depende de la política municipal" — eje de presencia provincial directa.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🎓</div>
+      <div class="agt">
+        <strong>Jóvenes · educación universitaria local</strong>
+        <p>El Centro Universitario Monte (UBA XXI) existe porque el municipio y la UBA lo sostienen. La Provincia puede ampliar esta oferta con tecnicaturas vinculadas al turismo y al agro. Los jóvenes que estudian en Monte y no se van son el futuro electorado local del PJ.</p>
+      </div>
+    </div>
+    <div class="al al-k">
+      <strong>🎯 Síntesis del mensaje para Monte</strong>
+      Monte no tiene un intendente aliado, pero tiene una laguna, un rancho histórico y un campo ganadero que son bonaerenses. La Provincia construye presencia a través de obras y programas que benefician a los vecinos directamente, independientemente del color político del ejecutivo local.
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS ESTRATÉGICAS -->
+<div class="card full">
+  <div class="ch" style="background:#2C2C2C;color:white;">📍 Visitas Estratégicas · San Miguel del Monte 2026</div>
+  <div class="cbody">
+    <table class="t" style="table-layout:fixed;">
+      <colgroup>
+        <col style="width:24%">
+        <col style="width:14%">
+        <col style="width:7%">
+        <col style="width:55%">
+      </colgroup>
+      <tr>
+        <th>Lugar / Actor</th>
+        <th>Tipo</th>
+        <th>Score</th>
+        <th>Hook discursivo · por qué esta visita</th>
+      </tr>
+      <tr>
+        <td class="bld">🌊 Laguna de Monte · Costanera renovada</td>
+        <td><span class="acc-prot">🤝 PROTOCOLAR</span></td>
+        <td class="ok">9.0</td>
+        <td>El mayor atractivo turístico lacustre del interior bonaerense. 686 ha de espejo de agua, 10 km de perilago renovado en 2026. La Provincia puede anunciar obras en Ruta 41 o saneamiento del espejo de agua desde la costanera. Alta visibilidad mediática: la laguna de Monte sale en medios de CABA regularmente.</td>
+      </tr>
+      <tr>
+        <td class="bld">🏛️ Rancho de Rosas · Patrimonio federal</td>
+        <td><span class="acc-prot">🤝 PROTOCOLAR</span></td>
+        <td class="ok">8.5</td>
+        <td>El rancho de Juan Manuel de Rosas es patrimonio histórico de la Provincia. Una visita al sitio con anuncio de mejoras (iluminación, señalética, circuito turístico federal) es de jurisdicción provincial directa. Narrativa única: "La Provincia cuida la historia del federalismo bonaerense". Sin precedente en gestiones recientes.</td>
+      </tr>
+      <tr>
+        <td class="bld">🏥 Hospital Videla Dorna</td>
+        <td><span class="acc-prot">🤝 PROTOCOLAR</span></td>
+        <td class="warn">7.8</td>
+        <td>El único hospital del partido, en proceso de modernización. Entrega de equipamiento provincial (ecógrafo, aparatología) convierte una visita en anuncio tangible. Narrativa: "La salud de Monte no depende del color político del ejecutivo local — es una responsabilidad de la Provincia".</td>
+      </tr>
+      <tr>
+        <td class="bld">🐄 Productores ganaderos · Cuenca del Salado</td>
+        <td>🟡 PRIVADO</td>
+        <td class="warn">7.5</td>
+        <td>Reunión con criadores de terneros y productores mixtos de la Cuenca del Salado. El MinAgrario tiene programas que llegan directamente. Contacto con la Sociedad Rural local o cooperativas ganaderas. Segmento con alto peso en la economía rural de Monte y en el voto del campo.</td>
+      </tr>
+      <tr>
+        <td class="bld">🌊 Operadores turísticos laguna</td>
+        <td>🟡 PRIVADO</td>
+        <td class="warn">7.0</td>
+        <td>Cabañas, campings y restaurantes ribereños: los actores económicos clave del turismo lacustre. Independientes del intendente. Su preocupación: accesibilidad (Ruta 41), saneamiento del agua, habilitaciones. La Provincia puede responder en los tres frentes sin intermediación de Castro.</td>
+      </tr>
+      <tr>
+        <td class="bld">🤝 José Castro — Intendente</td>
+        <td>🔴 PRIVADO</td>
+        <td>—</td>
+        <td>Opositor (UCR/JxC). Reunión protocolar de cortesía si el intendente acepta. Monte tiene intereses que requieren articulación provincial (financiamiento hospitalario, obras viales, programas agropecuarios). Castro tiene incentivos para articular aunque sea en la gestión, independientemente de la diferencia política.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<div class="footer">PBA Analytics 2026 · Ficha de Campaña — SAN MIGUEL DEL MONTE · Uso reservado · Elaborado en base a datos electorales oficiales y fuentes públicas verificadas</div>
+
+<!-- ============================================================ -->
+<!-- ANEXO I — INDICADORES TERRITORIALES Y DEMOGRÁFICOS -->
+<!-- ============================================================ -->
+
+<div class="anx-break" style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+
+  <!-- FILA 1 (header + cards 1-3): bloque indivisible -->
+  <div class="anx-keep">
+    <div class="anx-hdr" style="background:linear-gradient(135deg,#5C0011 0%,#9B1C1C 100%);color:white;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+      <div>
+        <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">San Miguel del Monte · PBA 2026</div>
+        <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO I — INDICADORES TERRITORIALES Y DEMOGRÁFICOS</div>
+      </div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">5ª Sección Electoral · Interior Bonaerense<br>José Castro · UCR/JxC · Opositor</div>
+    </div>
+    <div style="padding:14px 18px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+      <div class="card">
+        <div class="ch" style="background:#5C0011;color:white;">📊 Indicadores Socioeconómicos</div>
+        <div class="cbody">
+          <table class="t">
+            <tr><th>Indicador</th><th>Valor</th></tr>
+            <tr><td>Población estimada</td><td class="bld">~24.868 hab.</td></tr>
+            <tr><td>Padrón 2025</td><td class="bld">21.554 electores</td></tr>
+            <tr><td>Padrón 2023</td><td>20.967 electores</td></tr>
+            <tr><td>Crecimiento 2023→25</td><td class="ok">+587 (+2,8%)</td></tr>
+            <tr><td>Ritmo anual</td><td>~290 electores/año</td></tr>
+            <tr><td>Proyección 2027</td><td class="warn">~22.100–22.500</td></tr>
+            <tr><td>Superficie</td><td>1.875,6 km²</td></tr>
+            <tr><td>Densidad estimada</td><td>13,3 hab./km²</td></tr>
+            <tr><td>Localidades</td><td>4 (1 cabecera)</td></tr>
+            <tr><td>Laguna de Monte</td><td class="ok">686 ha · 10,6 km circuito</td></tr>
+            <tr><td>Distancia CABA</td><td>110 km · Ruta 3</td></tr>
+            <tr><td>Turistas/finde largo</td><td class="ok">10.000+</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ch" style="background:#5C0011;color:white;">🗳️ Electoral completo</div>
+        <div class="cbody">
+          <table class="t" style="font-size:9.5px;">
+            <tr><th>Elec.</th><th>PJ</th><th>LLA</th></tr>
+            <tr><td>2023 Intend.</td><td class="bad">30,9% · 4.374</td><td>16,3% · 2.306</td></tr>
+            <tr><td>2025 Conc.</td><td class="warn">42,3% · 4.951</td><td class="warn">27,2% · 3.186</td></tr>
+            <tr><td>2025 Dip.Nac.</td><td class="warn">34,9% · 4.515</td><td class="bad">49,7% · 6.409</td></tr>
+          </table>
+          <div style="font-size:9px;color:#7F1D1D;margin-top:6px;font-weight:700;">UCR/JxC 2023: 52,7% · 7.454 v. (Castro, ganador)</div>
+          <div style="margin-top:9px;font-size:10px;color:#555;line-height:1.6;"><strong>Tendencia LLA:</strong> 16,3% (2023) → 27,2% (conc. 2025) → 49,7% (nac. 2025). +33,4 pts en dos años.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ch" style="background:#D97706;color:white;">🌊 Laguna y Turismo</div>
+        <div class="cbody">
+          <table class="t">
+            <tr><th>Indicador</th><th>Dato</th></tr>
+            <tr><td>Superficie laguna</td><td class="ok">686 hectáreas</td></tr>
+            <tr><td>Profundidad máxima</td><td>2,30 metros</td></tr>
+            <tr><td>Circuito perilago</td><td class="ok">10,6 km</td></tr>
+            <tr><td>Sistema</td><td>Lagunas Encadenadas de Monte</td></tr>
+            <tr><td>Actividades</td><td>Pesca, windsurf, kayak, natación</td></tr>
+            <tr><td>Peces principales</td><td>Pejerrey, carpa, tararira</td></tr>
+            <tr><td>Aves presentes</td><td>Cisne, garza, espátula, chajá</td></tr>
+            <tr><td>Turistas/finde largo</td><td class="ok">10.000+</td></tr>
+            <tr><td>Hito 2026</td><td class="ok">Costanera renovada</td></tr>
+            <tr><td>Distancia al centro</td><td class="ok">5 cuadras (única en PBA)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div><!-- /fila-1-cards -->
+  </div><!-- /anx-keep -->
+
+  <!-- FILA 2 (cards 4-6): fluye libremente -->
+  <div style="padding:12px 18px 16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+    <div class="card">
+      <div class="ch" style="background:#1d3461;color:white;">🏛️ Historia · Los Colorados</div>
+      <div class="cbody">
+        <table class="t">
+          <tr><th>Hecho histórico</th><th>Dato</th></tr>
+          <tr><td>Fundación Los Colorados</td><td class="ok">1820 · Organizado por Rosas</td></tr>
+          <tr><td>Fuerza inicial</td><td class="bld">~600 jinetes</td></tr>
+          <tr><td>Uniforme</td><td>Camisa roja, chiripa, sombrero rojo</td></tr>
+          <tr><td>Acción histórica clave</td><td>12/7/1820 — Defensa de Bs. As.</td></tr>
+          <tr><td>Rancho de Rosas</td><td class="ok">Conservado · patrimonio provincial</td></tr>
+          <tr><td>"El Carancho del Monte"</td><td>Cnel. Vicente González</td></tr>
+          <tr><td>Relevancia bonaerense</td><td class="ok">Cuna del ejército federal PBA</td></tr>
+          <tr><td>Programa cultural</td><td class="warn">Comisión de Preservación del Patrimonio</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ch" style="background:#059669;color:white;">🐄 Ganadería · Cuenca del Salado</div>
+      <div class="cbody">
+        <table class="t">
+          <tr><th>Indicador</th><th>Dato</th></tr>
+          <tr><td>Cuenca</td><td class="bld">Cuenca del Salado (cría)</td></tr>
+          <tr><td>Tipo principal</td><td>Ganadería bovina de cría</td></tr>
+          <tr><td>Superficie agropecuaria</td><td>~80% de 1.875 km²</td></tr>
+          <tr><td>Agricultura</td><td>Mixta (menor relevancia)</td></tr>
+          <tr><td>Riesgo hídrico</td><td class="warn">Inundaciones periódicas</td></tr>
+          <tr><td>Programas provincia</td><td class="ok">MinAgrario PBA · asistencia técnica</td></tr>
+          <tr><td>Sociedad Rural</td><td>Presente · actor de acceso</td></tr>
+          <tr><td>Problema rural</td><td class="warn">Anegamientos en años húmedos</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ch" style="background:#7C3AED;color:white;">⚡ Riesgos y Oportunidades 2027</div>
+      <div class="cbody">
+        <div style="font-size:9.5px;font-weight:700;color:#7C3AED;text-transform:uppercase;margin-bottom:6px;">Oportunidades</div>
+        <table class="t" style="margin-bottom:10px;">
+          <tr><th>Oportunidad</th><th>Descripción</th></tr>
+          <tr><td>Laguna como asset provincial</td><td class="ok">Obras visibles sin intermediario</td></tr>
+          <tr><td>Castro no se reelige en 2027</td><td class="ok">Apertura del ejecutivo local</td></tr>
+          <tr><td>PJ +11,4 pts en concejales</td><td class="ok">Señal de recuperación territorial</td></tr>
+          <tr><td>Patrimonio Rosas</td><td class="ok">Acción cultural provincial directa</td></tr>
+        </table>
+        <div style="font-size:9.5px;font-weight:700;color:#DC2626;text-transform:uppercase;margin-bottom:6px;">Riesgos</div>
+        <table class="t">
+          <tr><th>Riesgo</th><th>Descripción</th></tr>
+          <tr><td>LLA en crecimiento</td><td class="bad">49,7% nac. 2025 · riesgo categoría provincial</td></tr>
+          <tr><td>Castro apropia obras</td><td class="warn">Sin comunicación provincial activa</td></tr>
+          <tr><td>Padrón crecimiento lento</td><td class="warn">+2,8% en 2 años · sin bono demográfico</td></tr>
+        </table>
+      </div>
+    </div>
+  </div><!-- /fila-2-cards -->
+
+</div><!-- /anexo-i-wrapper -->
+
+<!-- ============================================================ -->
+<!-- ANEXO II — ANÁLISIS POLÍTICO-TERRITORIAL -->
+<!-- ============================================================ -->
+
+<div class="anx-break" style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+
+  <!-- FILA 1 (header + cards 1-2): bloque indivisible -->
+  <div class="anx-keep">
+    <div class="anx-hdr" style="background:linear-gradient(135deg,#0f2944 0%,#1d3461 100%);color:white;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+      <div>
+        <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">San Miguel del Monte · PBA 2026</div>
+        <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO II — ANÁLISIS POLÍTICO-TERRITORIAL</div>
+      </div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">Segmentos electorales · Agenda provincial<br>Dinámica electoral 2023–2027</div>
+    </div>
+    <div style="padding:14px 18px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+      <div class="card">
+        <div class="ch" style="background:#0f2944;color:white;">📍 Comparativa territorial · Monte en contexto</div>
+        <div class="cbody">
+          <table class="t">
+            <tr><th>Variable</th><th>Monte</th><th>Prom. Región</th></tr>
+            <tr><td>PJ intendente 2023</td><td class="bad">30,9%</td><td class="warn">~45%</td></tr>
+            <tr><td>PJ concejales 2025</td><td class="warn">42,3%</td><td class="ok">~47%</td></tr>
+            <tr><td>LLA nacional 2025</td><td class="bad">49,7%</td><td class="warn">~43%</td></tr>
+            <tr><td>Crecimiento padrón</td><td>+2,8%</td><td>+3,5%</td></tr>
+            <tr><td>Color intendente</td><td class="bad">OPOSITOR (UCR)</td><td class="ok">~60% aliados</td></tr>
+            <tr><td>Turismo lacustre</td><td class="ok">Único en PBA interior</td><td>—</td></tr>
+            <tr><td>Patrimonio histórico</td><td class="ok">Rancho de Rosas (único)</td><td>—</td></tr>
+          </table>
+          <div style="margin-top:9px;font-size:10px;color:#555;line-height:1.6;">Monte es el municipio de mayor adversidad para el PJ en este grupo, y el único con activos provinciales tan singulares (laguna + Rosas) que permiten presencia directa sin intendente aliado.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ch" style="background:#0f2944;color:white;">👥 Segmentos electorales · Mapa del electorado</div>
+        <div class="cbody">
+          <table class="t" style="font-size:10px;">
+            <tr><th>Segmento</th><th>%</th><th>Patrón de voto · Demanda</th></tr>
+            <tr><td>UCR/JxC fiel</td><td class="warn">~20%</td><td>UCR local + LLA nac. · Gestión eficiente</td></tr>
+            <tr><td>LLA convencido</td><td class="bad">~20%</td><td>LLA en todo · Ajuste, antipolítica</td></tr>
+            <tr><td>PJ base duro</td><td class="ok">~30%</td><td>PJ en todo · Empleo, salud, obra</td></tr>
+            <tr><td>Turismo y servicios</td><td class="warn">~15%</td><td>Volátil · Acceso laguna, infraestructura</td></tr>
+            <tr><td>Campo · ganadero</td><td class="warn">~10%</td><td>LLA/JxC nac. · Precios cría, crédito</td></tr>
+            <tr><td>Joven anti-político</td><td class="warn">~5%</td><td>LLA creciente · Empleo, UBA local</td></tr>
+          </table>
+        </div>
+      </div>
+    </div><!-- /fila-1-cards -->
+  </div><!-- /anx-keep -->
+
+  <!-- FILA 2 (cards 3-4): fluye libremente -->
+  <div style="padding:12px 18px 16px;display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+    <div class="card">
+      <div class="ch" style="background:#D97706;color:white;">🏛️ Agenda Provincial · Intervenciones prioritarias</div>
+      <div class="cbody">
+        <table class="t">
+          <tr><th>Intervención</th><th>Impacto</th><th>Urgencia</th></tr>
+          <tr><td>Obras Ruta 41 (acceso laguna)</td><td class="ok">Muy alto</td><td class="ok">Alta</td></tr>
+          <tr><td>Valorización Rancho de Rosas</td><td class="ok">Alto cultural</td><td class="warn">Media</td></tr>
+          <tr><td>Equipamiento Hospital Videla Dorna</td><td class="ok">Alto social</td><td class="ok">Alta</td></tr>
+          <tr><td>Programas MinAgrario Cuenca Salado</td><td class="warn">Medio rural</td><td class="warn">Media</td></tr>
+          <tr><td>Infraestructura turística laguna</td><td class="ok">Muy alto</td><td class="ok">Alta</td></tr>
+          <tr><td>UBA XXI → tecnicaturas provinciales</td><td class="warn">Medio jóvenes</td><td>Baja</td></tr>
+          <tr><td>Circuito turístico federal</td><td class="ok">Alto sinérgico</td><td class="warn">Media</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ch" style="background:#9B1C1C;color:white;">🔮 Dinámica 2027 · Escenarios</div>
+      <div class="cbody">
+        <table class="t">
+          <tr><th>Escenario</th><th>Condición</th><th>Resultado PJ</th></tr>
+          <tr><td>Escenario A · Base</td><td>Sin obra visible, candidato débil</td><td class="bad">~33% intend.</td></tr>
+          <tr><td>Escenario B · Medio</td><td>Obra visible + candidato emergente PJ</td><td class="warn">~40–42%</td></tr>
+          <tr><td>Escenario C · Óptimo</td><td>Obras + turismo + patrimonio Rosas</td><td class="ok">~45%+ competitivo</td></tr>
+        </table>
+        <div style="margin-top:9px;font-size:10px;color:#555;line-height:1.6;"><strong>La variable diferencial:</strong> presencia provincial activa en los próximos 18 meses mueve a Monte del escenario A al C. Sin esa presencia, la apertura del ejecutivo en 2027 no necesariamente le pertenece al PJ.</div>
+      </div>
+    </div>
+  </div><!-- /fila-2-cards -->
+
+</div><!-- /anexo-ii-wrapper -->
+
+<div class="footer">PBA Analytics 2026 · San Miguel del Monte — Fichas de Campaña Completas · Uso reservado</div>
+
+</body>
+</html>

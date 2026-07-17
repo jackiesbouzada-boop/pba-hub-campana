@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GUAMINÍ — Narrativa · PBA 2026</title>
+<style>
+
+@page { size: A4 portrait; margin: 14mm 18mm 18mm; }
+@page :first { margin: 0; }
+
+*, *::before, *::after {
+  box-sizing: border-box; margin: 0; padding: 0;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 10.5pt; line-height: 1.82; color: #1a1a1a; background: white; orphans: 4; widows: 4; }
+
+.header { background: linear-gradient(135deg, #1F4E79 0%, #2563EB 100%); color: white; padding: 26px 22mm 22px; }
+.header-meta { font-family: 'Segoe UI', Arial, sans-serif; font-size: 8pt; letter-spacing: 2.5px; text-transform: uppercase; opacity: 0.6; margin-bottom: 8px; }
+.header h1 { font-family: 'Segoe UI', Arial, sans-serif; font-size: 24pt; font-weight: 900; letter-spacing: 1.5px; margin-bottom: 5px; line-height: 1.1; }
+.header-sub { font-family: 'Segoe UI', Arial, sans-serif; font-size: 9.5pt; opacity: 0.75; margin-bottom: 18px; }
+.header-datos { display: flex; gap: 0; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 14px; }
+.hd { flex: 1; padding-right: 20px; border-right: 1px solid rgba(255,255,255,0.15); margin-right: 20px; }
+.hd:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.hd-n { font-family: 'Segoe UI', Arial, sans-serif; font-size: 20pt; font-weight: 900; color: #FACC15; line-height: 1; margin-bottom: 4px; }
+.hd-l { font-family: 'Segoe UI', Arial, sans-serif; font-size: 9pt; opacity: 0.65; line-height: 1.5; }
+
+.doc { padding: 12mm 6mm 14mm; }
+
+.intendente-line {
+  background: #DCFCE7; border-left: 4px solid #16A34A;
+  padding: 9px 14px; font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt; color: #14532D; margin-bottom: 32px;
+  page-break-inside: avoid; break-inside: avoid;
+}
+.intendente-line strong { font-weight: 700; }
+
+h2 {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 10pt; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 2.5px; color: #2563EB;
+  border-bottom: 2px solid #2563EB; padding-bottom: 5px;
+  margin-bottom: 16px; margin-top: 32px;
+  page-break-after: avoid; break-after: avoid;
+}
+
+p { margin-bottom: 14px; color: #1a1a1a; orphans: 4; widows: 4; }
+p:last-child { margin-bottom: 0; }
+
+.lead {
+  font-size: 11.5pt; color: #1F4E79; border-left: 3px solid #2563EB;
+  padding-left: 16px; margin-bottom: 20px; line-height: 1.7;
+  page-break-after: avoid; break-after: avoid;
+}
+
+.pullquote {
+  border-top: 2px solid #1F4E79; border-bottom: 2px solid #1F4E79;
+  margin: 26px 0; padding: 16px 0; font-size: 13pt; font-style: italic;
+  color: #1F4E79; text-align: center; line-height: 1.55;
+  page-break-inside: avoid; break-inside: avoid;
+}
+
+.nota {
+  background: #FFFBEB; border-left: 4px solid #F59E0B;
+  padding: 13px 16px; margin: 22px 0; font-size: 9.5pt;
+  color: #78350F; line-height: 1.75;
+  page-break-inside: avoid; break-inside: avoid;
+}
+.nota strong { display: block; margin-bottom: 5px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 9pt; text-transform: uppercase; letter-spacing: 1.5px; color: #D97706; font-style: normal; }
+
+.nota-k {
+  background: #1e3a5f; border-left: 4px solid #FACC15;
+  padding: 13px 16px; margin: 22px 0; font-size: 9.5pt;
+  color: white; line-height: 1.75;
+  page-break-inside: avoid; break-inside: avoid;
+}
+.nota-k strong { display: block; margin-bottom: 5px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 9pt; text-transform: uppercase; letter-spacing: 1.5px; color: #FACC15; font-style: normal; }
+
+.nota-v {
+  background: #F0FDF4; border-left: 4px solid #16A34A;
+  padding: 13px 16px; margin: 22px 0; font-size: 9.5pt;
+  color: #14532D; line-height: 1.75;
+  page-break-inside: avoid; break-inside: avoid;
+}
+.nota-v strong { display: block; margin-bottom: 5px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 9pt; text-transform: uppercase; letter-spacing: 1.5px; color: #16A34A; font-style: normal; }
+
+.nota-r {
+  background: #FEF2F2; border-left: 4px solid #EF4444;
+  padding: 13px 16px; margin: 22px 0; font-size: 9.5pt;
+  color: #7F1D1D; line-height: 1.75;
+  page-break-inside: avoid; break-inside: avoid;
+}
+.nota-r strong { display: block; margin-bottom: 5px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 9pt; text-transform: uppercase; letter-spacing: 1.5px; color: #DC2626; font-style: normal; }
+
+.footer { text-align: center; padding: 10px 22mm; font-family: 'Segoe UI', Arial, sans-serif; font-size: 9pt; color: #aaa; border-top: 1px solid #e5e7eb; background: white; page-break-before: avoid; break-before: avoid; }
+
+.anexo-wrap { page-break-before: always; break-before: page; }
+
+.ah-azul { background: linear-gradient(135deg,#1F4E79,#2563EB); color: white; padding: 18px 22mm; margin: -14mm -18mm 0; display: flex; justify-content: space-between; align-items: center; font-family: 'Segoe UI', Arial, sans-serif; }
+.ah-ambar { background: linear-gradient(135deg,#78350F,#D97706); color: white; padding: 18px 22mm; margin: -14mm -18mm 0; display: flex; justify-content: space-between; align-items: center; font-family: 'Segoe UI', Arial, sans-serif; }
+.ah-meta { font-size: 9pt; opacity: 0.6; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
+.ah-title { font-size: 14pt; font-weight: 900; letter-spacing: 0.5px; }
+.ah-right { font-size: 8pt; opacity: 0.7; text-align: right; }
+
+.ag-body { padding: 12mm 0; background: #eef2f7; margin: 0 -18mm; padding-left: 18mm; padding-right: 18mm; }
+.ag3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.ag2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.card { background: white; border-radius: 8px; overflow: hidden; font-family: 'Segoe UI', Arial, sans-serif; page-break-inside: avoid; break-inside: avoid; }
+.ch { padding: 8px 13px; font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.cb { padding: 12px 13px; }
+.st { font-size: 9pt; font-weight: 700; color: #1F4E79; padding: 4px 0 5px; border-bottom: 2px solid #1F4E79; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.7px; }
+
+.t { width: 100%; border-collapse: collapse; font-size: 8pt; }
+.t th { background: #f5f6f8; color: #555; padding: 5px 8px; text-align: left; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 5px 8px; border-bottom: 1px solid #f3f4f6; vertical-align: top; }
+.t tr:last-child td { border-bottom: none; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+
+.al { border-radius: 6px; padding: 10px 12px; margin-top: 10px; font-size: 8pt; line-height: 1.6; page-break-inside: avoid; break-inside: avoid; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al-v { background: #F0FDF4; border: 1px solid #86EFAC; color: #14532D; }
+.al strong { display: block; margin-bottom: 3px; font-size: 9pt; }
+
+.ag-row { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px dashed #e8e8e8; font-size: 8pt; line-height: 1.6; }
+.ag-row:last-child { border-bottom: none; }
+.ag-ico { font-size: 14pt; min-width: 20px; margin-top: 1px; }
+.ag-txt strong { font-size: 8pt; display: block; margin-bottom: 2px; color: #1F4E79; font-weight: 700; }
+.ag-txt p { font-size: 9pt; color: #555; margin-bottom: 0; }
+
+.perf { width: 100%; border-collapse: collapse; font-size: 8pt; }
+.perf td { padding: 5px 8px; border-bottom: 1px solid #f3f4f6; vertical-align: top; }
+.perf tr:last-child td { border-bottom: none; }
+
+.anx-foot { text-align: center; padding: 8px 22mm; font-family: 'Segoe UI', Arial, sans-serif; font-size: 8.5pt; color: #aaa; background: white; border-top: 1px solid #e5e7eb; }
+
+@media print {
+  .ah-azul, .ah-ambar { margin-top: 0 !important; }
+  .ag-body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-meta">Campaña PBA 2026 · Briefing Municipal · Uso Reservado</div>
+  <h1>📍 GUAMINÍ</h1>
+  <div class="header-sub">Sur Bonaerense · 6ª Sección Electoral · ~630 km de CABA · Lagunas Encadenadas del Oeste</div>
+  <div class="header-datos">
+    <div class="hd">
+      <div class="hd-n">48,4%</div>
+      <div class="hd-l">PJ ganó la intendencia 2023. El partido más fuerte del sur bonaerense en términos relativos. Nobre Ferreira, UxP, aliado.</div>
+    </div>
+    <div class="hd">
+      <div class="hd-n">50,0%</div>
+      <div class="hd-l">LLA en Diputado Nacional 2025. Del 10% al 50% en dos años — el mismo salto que en el resto del interior bonaerense.</div>
+    </div>
+    <div class="hd">
+      <div class="hd-n">Pejerrey</div>
+      <div class="hd-l">La Laguna del Monte y Cochicó son el paraíso del pejerrey deportivo. Modelo de turismo lacustre que la Provincia todavía no potenció.</div>
+    </div>
+    <div class="hd">
+      <div class="hd-n">11.801</div>
+      <div class="hd-l">Habitantes · Censo 2022 · Carnaval con 100K visitantes · 3 hospitales · Visita provincial · abr 2026.</div>
+    </div>
+  </div>
+</div>
+
+<div class="doc">
+
+  <div class="intendente-line">
+    <strong>Gobierno municipal:</strong> José Nobre Ferreira · Unión por la Patria · Primer mandato · ALIADO · La Provincia inauguró la planta potabilizadora en abril 2026 — esta es una visita de continuidad, no de presentación
+  </div>
+
+  <h2>Por qué volver a Guaminí</h2>
+
+  <p class="lead">La Provincia ya estuvo en Guaminí en abril de 2026, inaugurando la nueva planta potabilizadora. Eso cambia el encuadre de cualquier visita futura: no se va a presentar, se va a profundizar. Guaminí ya tiene una historia con la Provincia, y Nobre Ferreira es un aliado consolidado en un territorio que vale la pena proteger.</p>
+
+  <p>Los números electorales confirman que el trabajo aquí es de mantenimiento activo, no de rescate. PJ ganó la intendencia en 2023 con 48,4% — el resultado más sólido de los municipios analizados en el sur bonaerense. En 2025, PJ mantuvo el 45,1% en la elección provincial de concejales, mostrando una base más resiliente que la de Lobos o Coronel Suárez. Sin embargo, en la elección nacional de diputados, LLA llegó al 50%. El patrón es el mismo: el voto anti-PJ, cuando se concentra en una sola fuerza, supera al justicialismo incluso en sus plazas más sólidas.</p>
+
+  <p>La conclusión no es que Guaminí está en peligro inmediato — es que está en el umbral. Con presencia activa de la Provincia antes de 2027, el territorio se consolida. Sin ella, el riesgo es que el 50% nacional de LLA se traduzca en candidatura local y derrota municipal.</p>
+
+  <div class="nota-v">
+    <strong>✅ Punto de partida favorable</strong>
+    Guaminí es el caso de mayor resiliencia PJ del sur bonaerense en este análisis. La planta potabilizadora inaugurada en abril 2026 ya instaló un precedente de trabajo conjunto. Nobre Ferreira tiene imagen positiva y gestión solvente. El camino es más corto que en otros municipios — pero requiere ser recorrido igual.
+  </div>
+
+  <h2>El territorio: economía estacional, campo y lagunas</h2>
+
+  <p class="lead">Guaminí tiene una economía con tres patas que coexisten en calendarios distintos: el campo trabaja todo el año, el turismo lacustre explota en verano y carnaval, y el empleo estatal sostiene la base durante todo el ciclo. Es una estructura más diversificada que la mayoría de los municipios del sur, y eso la hace más estable.</p>
+
+  <p>La <strong>base agropecuaria (~45%)</strong> es ganadería de cría y cosecha fina y gruesa — trigo, girasol, cebada. Los productores son medianos y pequeños, organizados en cooperativas activas. La demanda histórica del campo local es de crédito accesible, conectividad vial y acceso a mercados. Son también el segmento que más se movió hacia LLA en 2025 — no por convicción ideológica, sino por la sensación de que nadie los escuchaba.</p>
+
+  <p>El <strong>turismo lacustre estacional (~15%)</strong> es el activo diferencial del municipio: la Laguna del Monte y Cochicó son dos de los mejores espejo de agua para pesca deportiva del país. En temporada alta, el partido recibe flujos de visitantes que multiplican la población. El Carnaval del Arte y la Alegría suma 100.000 visitantes por temporada, con el singular modelo de cantinas comunitarias. Este sector tiene potencial de crecimiento si la Provincia lo pone en su agenda turística activa.</p>
+
+  <p>El <strong>empleo estatal y docente (~30%)</strong> actúa como amortiguador: en los años de recesión agrícola o baja temporada, los sueldos del municipio y la educación sostienen el consumo local. Es una estructura fiscal compleja para un municipio pequeño, especialmente cuando incluye sostener tres hospitales en localidades distantes.</p>
+
+  <h2>La Provincia tiene tres palancas claras</h2>
+
+  <p class="lead">Las demandas de Guaminí son concretas y respondibles. No requieren grandes presupuestos — requieren foco y presencia. Tres líneas de trabajo tienen impacto inmediato y medible antes de 2027.</p>
+
+  <p>La <strong>primera palanca es el turismo del pejerrey</strong>. Las Lagunas Encadenadas del Oeste son un activo provincial que el marketing turístico de la Provincia ignora. Un programa específico — señalización, certific ación de guías, infraestructura de muelles, línea FONDEP para cabañas y operadores lacustres — puede transformar lo que hoy es turismo espontáneo en un circuito organizado con proyección nacional. El anuncio en Guaminí, con los guías de pesca presentes, tiene alto impacto simbólico y económico concreto.</p>
+
+  <p>La <strong>segunda palanca es la gestión ambiental del sistema lacustre</strong>. Las Lagunas Encadenadas del Oeste son un sistema hidrológico compartido entre varios partidos del sur bonaerense. La calidad del agua, la salud del ecosistema y la productividad pesquera dependen de un manejo que ningún municipio puede hacer solo. Un programa provincial de monitoreo ambiental, control de vertidos y gestión de la piscicultura tiene impacto directo en el principal activo turístico del partido — y es una intervención que solo puede venir de la Provincia.</p>
+
+  <p>La <strong>tercera palanca es el sistema de salud trinuclear</strong>. Guaminí tiene tres hospitales para cubrir una población de 11.800 habitantes dispersos en localidades distantes entre sí. Eso es una ingeniería fiscal notable pero frágil: cualquier crisis de equipamiento o de recursos humanos golpea a las tres instalaciones al mismo tiempo. Programa de telemedicina, equipamiento diferenciado para hospitales rurales y fortalecimiento del plantel médico son demandas concretas con alta visibilidad política local.</p>
+
+  <div class="pullquote">
+    "El mejor pejerrey del país vive en un lago bonaerense que nadie conoce fuera de la provincia. La Provincia tiene que corregir eso."
+  </div>
+
+  <h2>Los actores que la Provincia debe conocer en Guaminí</h2>
+
+  <p class="lead">El valor de una visita ejecutiva a Guaminí no está solo en los anuncios — está en los interlocutores. Hay tres perfiles de actor que no aparecen en las reuniones de gabinete pero que mueven el voto y la economía real del partido.</p>
+
+  <p><strong>Los guías de pesca de Laguna del Monte y Cochicó</strong> son el sector más interesante y menos atendido del municipio. Son emprendedores de primera generación que construyeron un modelo de turismo deportivo alrededor del pejerrey: guías certificados, embarcaciones propias, contactos con torneos nacionales, redes de alojamiento. Un torneo de pesca en Cochicó puede mover 2.000 pescadores en un fin de semana. Estas personas conocen el lago mejor que nadie, generan trabajo genuino y tienen una demanda concreta: que la Provincia los reconozca, los certifique y los ponga en el mapa turístico oficial. La conversación con ellos produce el tipo de relato que después se cuenta en todos lados.</p>
+
+  <p><strong>Los organizadores del Carnaval del Arte y la Alegría</strong> — que son, en la práctica, los bomberos voluntarios y los clubes del partido — son el segundo actor clave. El Carnaval genera más de 100.000 visitantes por temporada. El municipio cede las cantinas a las instituciones comunitarias: los bomberos se financian con la venta de comida, los clubes con la barra. Es un modelo de economía comunitaria elegante que merece reconocimiento institucional explícito. Visitar el cuartel de bomberos o reunirse con los dirigentes de los clubes tiene altísimo retorno simbólico.</p>
+
+  <p><strong>Los médicos y enfermeros del sistema trinuclear</strong> son el tercer actor que no se puede ignorar. Trabajan en hospitales pequeños, con equipamiento limitado, cubriendo poblaciones rurales dispersas. Son el Estado presente en el territorio más alejado. Reconocerlos en persona — no en un acto protocolar, sino en una recorrida real por el hospital — tiene un impacto en la comunidad que ningún anuncio presupuestario puede replicar.</p>
+
+  <div class="nota">
+    <strong>🎣 Dato de color · La Economía del Pejerrey</strong>
+    Los guías de pesca de Laguna del Monte y Cochicó convirtieron un recurso natural en una economía sofisticada. Un torneo de pejerrey puede concentrar 2.000-3.000 pescadores de todo el país en un fin de semana. Hay guías certificados, lodges especializados, comercios de artículos de pesca y una gastronomía lacustre emergente — todo articulado alrededor del mismo ecosistema. Es el equivalente al tambo robotizado de Lobos: un sector tradicional que se modernizó de abajo hacia arriba, sin política pública que lo acompañara. Eso es tanto un reconocimiento como una oportunidad.
+  </div>
+
+  <p><strong>La Cooperativa La Fraagua y el CEA N°30</strong> son el cuarto actor — el más sorprendente. En 2014, Guaminí fue el primer municipio argentino en implementar la agroecología como política pública. Esa decisión generó la Renama (Red Nacional de Municipios y Comunidades que fomentan la Agroecología), hoy con 200.000 hectáreas en 9 provincias. La Fraagua produce alimentos agroecológicos con distribución en 200 km a la redonda. El CEA N°30 formó 8.177 personas de 50 localidades del sudoeste bonaerense. La Provincia puede capitalizar eso con dos acciones concretas: destrabar la Planta de Alimentos Balanceados Municipal (ofrecida en comodato a La Fraagua pero nunca transferida) y facilitar la apertura del Frigorífico Municipal de Aves y Cerdos (20 años en construcción, financiado por la Ley del Sudoeste).</p>
+
+  <div class="nota">
+    <strong>🎭 Dato de color · El Carnaval que se financia solo</strong>
+    El Carnaval del Arte y la Alegría de Guaminí atrae más de 100.000 visitantes por temporada — un número extraordinario para un municipio de 11.800 habitantes. El mecanismo es aún más notable que el número: el municipio cede el espacio y subsidia los premios, pero las cantinas de comida y bebida las gestionan los bomberos voluntarios y los clubes del partido. Los ingresos van a las instituciones comunitarias. Es una política pública de fomento al tejido social que funciona y que el gobierno provincial debería replicar en otros municipios y reconocer explícitamente en su visita.
+  </div>
+
+  <h2>La agroecología que salió de Guaminí y llegó al mundo</h2>
+
+  <p class="lead">Hay un dato sobre Guaminí que casi nadie conoce fuera del municipio: este pequeño partido del sur bonaerense cambió el mapa productivo de la Argentina. Y lo hizo desde una política pública municipal, sin recursos extraordinarios, sin marketing y sin apoyo nacional previo.</p>
+
+  <p>En abril de 2014, el municipio organizó una charla sobre agroecología para productores y vecinos. La decisión que siguió fue inédita: la Dirección de Medio Ambiente impulsó de inmediato la conformación de un grupo de productores agroecológicos del distrito. Los primeros resultados fueron tan positivos — costos descendieron, rindes se sostuvieron, semillas propias recuperadas — que para fines de 2015 la superficie agroecológica ya había crecido un 500%. En 2016 se formalizó la Renama. En 2020 se creó la Dirección Nacional de Agroecología. Hoy, la Renama cubre más de 200.000 hectáreas en 9 provincias y más de 500.000 en todo el país. Todo eso tiene su origen en una charla en Guaminí.</p>
+
+  <p>La <strong>Cooperativa La Fraagua</strong> — Familias Rurales Agricultoras y Artesanas Guaminenses Agroecológicas — produce hortalizas, quesos y harina integral con distribución en un radio de 200 km. Tiene dos Mercados de Abasto propios (Casbas y Guaminí, ambos abiertos en 2023). El <strong>CEA N°30</strong> formó 8.177 personas de 50 localidades y desarrolló 12 cursos innovadores ahora disponibles para toda la provincia. La producción hortícola local pasó de 40 a 600 toneladas anuales.</p>
+
+  <div class="nota-k">
+    <strong>🌱 Dos desbloqueos provinciales pendientes — bajo costo, alto impacto</strong>
+    El Frigorífico Municipal de Aves y Cerdos lleva más de 20 años en construcción con financiamiento de la Ley del Sudoeste y nunca abrió. La Planta de Alimentos Balanceados Municipal fue ofrecida a La Fraagua en comodato pero la transferencia nunca se ejecutó. Ambos desbloqueos son palancas concretas, de bajo costo para la Provincia y de impacto directo sobre el Faro Nacional. Son exactamente el tipo de gestión que un municipio aliado necesita y que distingue al espacio político que llega con algo concreto.
+  </div>
+
+  <div class="nota">
+    <strong>🏛️ Dato de color · El sesquicentenario y la Zanja de Alsina</strong>
+    Guaminí cumplió 150 años el 30 de marzo de 2026. La Provincia inauguró la planta potabilizadora en abril — en el mes del festejo. Ese contexto narrativo no es menor: "llegamos en tu cumpleaños de 150 años". El municipio fue fundado como uno de los cinco fortines de la <strong>Zanja de Alsina</strong> — una trinchera de 600 km diseñada para contener los malones mapuches. Los vestigios son visitables hoy: un sitio histórico de escala nacional que casi ningún turista conoce. El nombre "Guaminí" es mapuche y significa "isla en el agua" — elegido por el fundador para respetar la toponimia originaria, lo que en 1876 era una decisión cultural notable.
+  </div>
+
+  <h2>El sistema de salud que nadie ve desde afuera</h2>
+
+  <p>Guaminí tiene tres hospitales municipales: uno en la ciudad cabecera, uno en Casbas y uno en Garré. Para un municipio de 11.800 habitantes, sostener tres instalaciones de salud con plantel médico, farmacia y vacunación activa es una hazaña de gestión fiscal que la mayoría de los partidos grandes no podría replicar.</p>
+
+  <p>La razón es geográfica y no tiene solución fácil: las localidades están tan distantes entre sí que centralizar la salud equivaldría a dejar sin atención primaria a miles de personas. Nobre Ferreira eligió bancarse esa complejidad. El resultado: más de 1.500 consultas primarias mensuales resueltas en territorio. Sin ese sistema, muchas de esas personas tendrían que viajar 80 o 100 km para ver a un médico.</p>
+
+  <p>La demanda al gobierno provincial es específica: equipamiento diferenciado para hospitales rurales pequeños, medicamentos garantizados, telemedicina para teleconsulta entre los tres hospitales y el sistema provincial, y formación de médicos dispuestos a radicarse en el interior. Son inversiones de bajo costo relativo y altísimo retorno político y sanitario.</p>
+
+  <h2>Riesgos y oportunidades</h2>
+
+  <p class="lead">Guaminí es el municipio con mejor posición de partida entre los analizados en el sur bonaerense. Pero "mejor posición de partida" no significa territorio seguro — significa que la inversión política tiene mayor rendimiento marginal que en otros lugares.</p>
+
+  <p>El <strong>riesgo central</strong> sigue siendo el mismo que en todo el interior: si LLA consolida estructura local y candidatura propia en 2027, el 50% nacional puede convertirse en 50% municipal. El escenario de 2023 — donde la oposición dividida benefició a PJ — no se repetirá si la oposición va unida. Guaminí tiene ventaja de base, pero no puede relajarse.</p>
+
+  <p>La <strong>oportunidad concreta</strong> es que el sector turístico y el campo todavía tienen demandas respondibles con los instrumentos que la Provincia tiene disponibles. Los guías de pesca no están ideologizados — quieren crédito y reconocimiento. Los productores agropecuarios no son militantes de LLA — son pragmáticos que van donde alguien les habla de frente. Si la Provincia llega con algo concreto antes de 2027, el movimiento electoral es factible.</p>
+
+  <div class="nota-r">
+    <strong>⚠️ Alerta · La misma trampa del interior</strong>
+    LLA pasó del 10,2% en 2023 al 50,0% en la elección nacional 2025. El mismo salto se dio en Lobos, Tapalqué, Coronel Suárez. El denominador común es que el anti-PJ, cuando se concentra, supera al justicialismo. En Guaminí la posición de partida es mejor — pero el patrón estructural es idéntico. La ventana de trabajo es la misma: antes del cierre de listas 2027.
+  </div>
+
+  <div class="nota-k">
+    <strong>⚡ La frase que sintetiza la visita</strong>
+    "Ya empezamos con el agua potable. Ahora seguimos con el pejerrey, el campo y la salud. Guaminí es un municipio que trabaja, y la Provincia está acá para que ese trabajo tenga respaldo."
+  </div>
+
+</div>
+
+<div class="footer">
+  🔒 USO RESERVADO · Campaña PBA · Guaminí · PBA Analytics 2026
+</div>
+
+<!-- ANEXO I -->
+<div class="anexo-wrap">
+<div class="ah-azul">
+  <div>
+    <div class="ah-meta">Guaminí · Campaña PBA 2026</div>
+    <div class="ah-title">ANEXO I — INDICADORES, ACTORES Y ECONOMÍA</div>
+  </div>
+  <div class="ah-right">6ª Sección Electoral · Sur Bonaerense<br>Nobre Ferreira · UxP · Aliado</div>
+</div>
+<div class="ag-body">
+<div class="ag3">
+
+  <div class="card">
+    <div class="ch" style="background:#FFFBEB;color:#92400E;">🎣 Turismo Lacustre · Pejerrey</div>
+    <div class="cb">
+      <div class="st">Principal activo diferencial</div>
+      <table class="t">
+        <tr><td>Lagunas</td><td class="inf">Laguna del Monte · Cochicó</td></tr>
+        <tr><td>Especie ancla</td><td class="ok">Pejerrey · calidad premium</td></tr>
+        <tr><td>Modelo</td><td class="ok">Guías certificados · lodges · torneos</td></tr>
+        <tr><td>Alcance</td><td class="ok">Visitantes de todo el país</td></tr>
+        <tr><td>Programa prov.</td><td class="bad">Inexistente · oportunidad</td></tr>
+        <tr><td>Crédito disponible</td><td class="warn">Subutilizado · FONDEP turístico</td></tr>
+        <tr><td>Señalización prov.</td><td class="bad">Sin circuito oficial</td></tr>
+      </table>
+      <div class="al al-b">
+        <strong>💡 Acción concreta</strong>
+        Programa "Lagunas del Oeste": señalización, certificación de guías, FONDEP para cabañas y equipamiento. Anunciar en Cochicó con los guías presentes.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#F0FDF4;color:#15803D;">🌾 Sector Agropecuario</div>
+    <div class="cb">
+      <div class="st">Ganadería y cosecha fina</div>
+      <table class="t">
+        <tr><td>Ganadería</td><td class="inf">Cría vacuna · escala mediana</td></tr>
+        <tr><td>Agricultura</td><td class="ok">Trigo · Girasol · Cebada</td></tr>
+        <tr><td>Organización</td><td class="ok">Cooperativas activas</td></tr>
+        <tr><td>Crédito Bco Prov.</td><td class="warn">Subutilizado · oportunidad</td></tr>
+        <tr><td>Conectividad</td><td class="warn">RP67 · mejoras necesarias</td></tr>
+        <tr><td>Voto 2025</td><td class="bad">LLA · recuperación pendiente</td></tr>
+      </table>
+      <div class="al al-a">
+        <strong>🌾 Palanca cooperativa</strong>
+        Crédito Banco Provincia con ventanilla ágil para capital de campaña y silos. Las cooperativas son el canal directo al productor rural que se fue a LLA.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#ECFDF5;color:#065F46;">🌱 Agroecología · Faro Nacional</div>
+    <div class="cb">
+      <div class="st">Guaminí · primer municipio agroecológico de Argentina</div>
+      <table class="t">
+        <tr><td>Política pionera</td><td class="ok">2014 · primera municipal en el país</td></tr>
+        <tr><td>Expansión</td><td class="ok">100 ha (2014) → 5.000 ha (2024)</td></tr>
+        <tr><td>Producción hortícola</td><td class="ok">40 → 600 toneladas anuales</td></tr>
+        <tr><td>Personas formadas</td><td class="ok">8.177 · 50 localidades sudoeste</td></tr>
+        <tr><td>Alcance Renama</td><td class="ok">200.000 ha · 9 provincias</td></tr>
+        <tr><td>Reconocimiento</td><td class="ok">FAO · ONU · "Faro Agroecología"</td></tr>
+        <tr><td>Frigorífico Municipal</td><td class="bad">20 años en construcción · sin abrir</td></tr>
+        <tr><td>Planta Alimentos Bal.</td><td class="bad">Comodato ofrecido · no transferido</td></tr>
+      </table>
+      <div class="al al-v">
+        <strong>💡 Dos palancas provinciales desbloqueables ahora</strong>
+        Ejecutar la transferencia de la Planta de Alimentos Balanceados a La Fraagua y facilitar la apertura del Frigorífico Municipal. Bajo costo, alto impacto político y productivo. La Fraagua ya está lista para operar — solo necesita que la Provincia ejecute lo que el municipio ya ofreció.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#EFF6FF;color:#1E40AF;">📊 Datos Electorales</div>
+    <div class="cb">
+      <div class="st">Evolución del voto</div>
+      <table class="t">
+        <thead><tr><th>Elección</th><th>PJ/UxP</th><th>JxC</th><th>LLA</th></tr></thead>
+        <tbody>
+          <tr><td>Intend. 2023</td><td class="ok">48,4%</td><td class="warn">41,3%</td><td>10,2%</td></tr>
+          <tr><td>Conc. Prov.25</td><td class="ok">45,1%</td><td>—</td><td>26,7%</td></tr>
+          <tr><td>Dip. Nac.25</td><td class="warn">38,6%</td><td>—</td><td class="bad">50,0%</td></tr>
+        </tbody>
+      </table>
+      <div class="al al-v">
+        <strong>✅ La mejor base del sur</strong>
+        PJ es más sólido aquí que en Lobos (42,4%), Tapalqué o Coronel Suárez. Resiste mejor en provincial (45,1% vs LLA 26,7%). Pero el salto LLA en nacional es el mismo: del 10% al 50%.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#D1FAE5;color:#065F46;">🤝 Nobre Ferreira · Intendente UxP</div>
+    <div class="cb">
+      <div class="st">Perfil y gestión</div>
+      <table class="perf">
+        <tr><td>Partido</td><td class="ok">UxP · Aliado</td></tr>
+        <tr><td>Mandato</td><td>Primero · desde dic. 2023</td></tr>
+        <tr><td>Visita provincial</td><td class="ok">Abr 2026 · planta potabilizadora</td></tr>
+        <tr><td>Agenda turismo</td><td class="ok">Balnearios · temporada 2026</td></tr>
+        <tr><td>Agenda salud</td><td class="ok">3 hospitales sostenidos</td></tr>
+        <tr><td>Carnaval</td><td class="ok">100K visitantes · modelo comunitario</td></tr>
+        <tr><td>Riesgo electoral</td><td class="warn">Moderado · LLA en alza nac.</td></tr>
+      </table>
+      <div class="al al-v">
+        <strong>✅ Estrategia</strong>
+        Visita de continuidad, no presentación. Cada anuncio refuerza la narrativa de que ya empezamos juntos. Coordinar agenda completa con el intendente.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#FEE2E2;color:#7F1D1D;">🏥 Sistema Trinuclear de Salud</div>
+    <div class="cb">
+      <div class="st">3 hospitales para un municipio pequeño</div>
+      <table class="perf">
+        <tr><td>Hospital 1</td><td class="inf">Guaminí (ciudad cabecera)</td></tr>
+        <tr><td>Hospital 2</td><td class="inf">Casbas</td></tr>
+        <tr><td>Hospital 3</td><td class="inf">Garré</td></tr>
+        <tr><td>Consultas/mes</td><td class="ok">1.500+ atenciones primarias</td></tr>
+        <tr><td>Raíz del sistema</td><td>Dispersión geográfica · no centralizable</td></tr>
+        <tr><td>Equipamiento</td><td class="warn">Demanda urgente</td></tr>
+        <tr><td>Telemedicina</td><td class="bad">Sin programa provincial</td></tr>
+      </table>
+      <div class="al al-a">
+        <strong>⚡ Acción provincial urgente</strong>
+        Equipamiento + telemedicina + médicos rurales. Un municipio que banc a 3 hospitales merece soporte provincial específico, no genérico.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#F5F3FF;color:#4C1D95;">🎯 Mapa Estratégico</div>
+    <div class="cb">
+      <div class="st">Prioridades de campaña</div>
+      <table class="perf">
+        <tr><td>Clasificación</td><td class="warn">Disputado</td></tr>
+        <tr><td>Posición base</td><td class="ok">Mejor del sur bonaerense</td></tr>
+        <tr><td>Urgencia</td><td class="warn">Moderada · resiste mejor</td></tr>
+        <tr><td>Aliado</td><td class="ok">Nobre Ferreira · UxP</td></tr>
+        <tr><td>Visita previa</td><td class="ok">Abr 2026 · continuidad</td></tr>
+        <tr><td>Palanca 1</td><td class="inf">Turismo pejerrey · FONDEP</td></tr>
+        <tr><td>Palanca 2</td><td class="inf">Gestión ambiental lagunas</td></tr>
+        <tr><td>Palanca 3</td><td class="inf">Salud trinuclear</td></tr>
+        <tr><td>Palanca 4</td><td class="inf">Crédito agropecuario</td></tr>
+        <tr><td>Riesgo 2027</td><td class="warn">LLA consolida estructura local</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+</div>
+<div class="anx-foot">🔒 USO RESERVADO · ANEXO I · Guaminí · PBA Analytics 2026</div>
+</div>
+
+<!-- ANEXO II -->
+<div class="anexo-wrap">
+<div class="ah-ambar">
+  <div>
+    <div class="ah-meta">Guaminí · 2026</div>
+    <div class="ah-title">ANEXO II — ACTORES CLAVE, AGENDA Y DISCURSO</div>
+  </div>
+  <div class="ah-right">Sur Bonaerense · Nobre Ferreira UxP<br>Pejerrey · Carnaval · Lagunas · Campo</div>
+</div>
+<div class="ag-body">
+<div class="ag2">
+
+  <div class="card">
+    <div class="ch" style="background:#FFFBEB;color:#78350F;">🎤 Agenda de Discurso · Ejes y Frases</div>
+    <div class="cb">
+      <div class="st">Por prioridad de impacto</div>
+      <div class="ag-row">
+        <div class="ag-ico">🎣</div>
+        <div class="ag-txt">
+          <strong>1. El pejerrey como activo provincial</strong>
+          <p>"El mejor pejerrey del país está en Guaminí, y la Provincia va a asegurarse de que todo el país lo sepa." Anuncio del Programa Provincial de Turismo Lacustre con FONDEP, señalización y certificación de guías. Reunión con los guías de pesca en Cochicó o Laguna del Monte.</p>
+        </div>
+      </div>
+      <div class="ag-row">
+        <div class="ag-ico">🏗️</div>
+        <div class="ag-txt">
+          <strong>2. Continuidad post planta potabilizadora</strong>
+          <p>"Ya empezamos con el agua. Ahora seguimos." Identificar la próxima obra o programa para anclar la narrativa de continuidad. No repetir la visita del agua sin un entregable nuevo que la supere o complemente.</p>
+        </div>
+      </div>
+      <div class="ag-row">
+        <div class="ag-ico">🏥</div>
+        <div class="ag-txt">
+          <strong>3. El reconocimiento al sistema trinuclear</strong>
+          <p>"Un municipio de 12.000 habitantes que sostiene tres hospitales para no dejar solo a nadie merece apoyo provincial. Eso vamos a darle." Visita al hospital de Guaminí. Anuncio de equipamiento o telemedicina con nombre y número.</p>
+        </div>
+      </div>
+      <div class="ag-row">
+        <div class="ag-ico">🎭</div>
+        <div class="ag-txt">
+          <strong>4. El carnaval como modelo de comunidad</strong>
+          <p>Reconocimiento explícito al modelo de cantinas comunitarias del Carnaval del Arte y la Alegría. "Los bomberos de Guaminí se financian vendiendo comida en el carnaval — eso es inventiva bonaerense." Reunión con la comisión organizadora.</p>
+        </div>
+      </div>
+      <div class="ag-row">
+        <div class="ag-ico">🌾</div>
+        <div class="ag-txt">
+          <strong>5. El campo y las cooperativas</strong>
+          <p>Encuentro con cooperativa agropecuaria. Anuncio de línea de crédito Banco Provincia. "La Provincia está al lado del productor que trabaja en el sur."</p>
+        </div>
+      </div>
+      <div class="ag-row">
+        <div class="ag-ico">🚫</div>
+        <div class="ag-txt">
+          <strong>Qué evitar</strong>
+          <p>Política nacional. Comparaciones con LLA. El mensaje es de gestión y resultados — no de confrontación. Guaminí valora la solvencia, no la épica.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch" style="background:#F0FDF4;color:#15803D;">🤝 Actores Clave · Quién y Por Qué</div>
+    <div class="cb">
+      <div class="st">Agenda de contacto por sector</div>
+      <div class="ag-row">
+        <div class="ag-ico">🎣</div>
+        <div class="ag-txt">
+          <strong>Guías de Pesca · Laguna del Monte y Cochicó</strong>
+          <p>Emprendedores del turismo deportivo lacustre. Convirtieron el pejerrey en economía premium sin apoyo institucional. Son el actor más valioso que visitar: demanda concreta, impacto directo y mensaje poderoso. Candidatos naturales para ser protagonistas del Programa Provincial de Turismo Lacustre.</p>
+        </div>
+      </div>
+      <div class="ag-row">
+        <div class="ag-ico">🌊</div>
+        <div class="ag-txt">
+          <strong>Operadores de Balneario Cochicó</strong>
+          <p>Cabañas, camping, servicios de playa. PyMEs de turismo estacional con demanda de crédito Banco Provincia y marketing provincial. El municipio ya los apoya con tarifas diferenciadas para residentes — la Provincia puede escalar ese modelo.</p>
+        </div>
+      </div>
+      <div class="ag-row">
+        <div class="ag-ico">🎭</div>
+        <div class="ag-txt">
+          <strong>Bomberos Voluntarios de Guaminí</strong>
+          <p>Gestionan las cantinas del Carnaval del Arte y la Alegría. Son el corazón del modelo de economía comunitaria del Carnaval. Visita al cuartel = altísimo impacto territorial. La autoridad que conoce a los bomberos en persona es la que los vecinos recuerdan.</p>
+        </div>
+      </div>
+      <div class="ag-row">
+        <div class="ag-ico">🌾</div>
+        <div class="ag-txt">
+          <strong>Cooperativa Agropecuaria local</strong>
+          <p>Canal directo al productor rural. Ganadería de cría y cosecha fina. Son los más difíciles de recuperar políticamente porque el voto LLA en el campo tiene componente ideológico, pero la demanda concreta de crédito y conectividad les habla en su idioma.</p>
+        </div>
+      </div>
+      <div class="ag-row">
+        <div class="ag-ico">🏥</div>
+        <div class="ag-txt">
+          <strong>Médicos y personal de los 3 hospitales</strong>
+          <p>Recorrida real por el hospital de Guaminí — no acto protocolar. Los médicos que trabajan en hospitales rurales con equipamiento limitado son los mejores embajadores de la gestión pública responsable. Su reconocimiento en persona tiene valor político real.</p>
+        </div>
+      </div>
+      <div class="ag-row">
+        <div class="ag-ico">🏛️</div>
+        <div class="ag-txt">
+          <strong>José Nobre Ferreira · Intendente UxP</strong>
+          <p>Coordinar toda la agenda. Visita de continuidad — la Provincia ya estuvo en abril 2026. Reforzar a Nobre Ferreira en su territorio, no superponerle. Cualquier anuncio provincial debe tener su sello al lado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<div class="anx-foot">🔒 USO RESERVADO · ANEXO II · Guaminí · PBA Analytics 2026</div>
+</div>
+
+</body>
+</html>

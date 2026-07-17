@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LA MATANZA — Narrativa Política · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #b8c4bc; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; line-height: 1.6;
+  color: #1a1a2e; background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+
+/* HEADER */
+.hdr {
+  background: linear-gradient(135deg, #0C3B1E 0%, #165F35 60%, #1A7A40 100%);
+  color: white; padding: 28px 32px 22px;
+  border-bottom: 4px solid #22C55E;
+}
+.hdr-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.hdr h1 { font-size: 32px; font-weight: 900; letter-spacing: 3px; line-height: 1; }
+.hdr .sub { font-size: 12px; opacity: 0.78; margin-top: 6px; letter-spacing: 0.5px; }
+.hdr-meta { text-align: right; font-size: 10.5px; opacity: 0.8; line-height: 2; }
+.hdr-lead {
+  font-size: 13px; line-height: 1.75; opacity: 0.92;
+  border-top: 1px solid rgba(255,255,255,0.2); padding-top: 14px; margin-top: 4px;
+}
+.hdr-lead strong { color: #BBF7D0; }
+.badge-n {
+  display: inline-block; padding: 2px 10px; border-radius: 20px;
+  font-size: 10px; font-weight: 700; margin-left: 6px;
+  background: rgba(34,197,94,0.3); color: #BBF7D0;
+  border: 1px solid rgba(34,197,94,0.5);
+}
+
+/* SECTIONS */
+.sec { padding: 22px 28px; border-bottom: 1px solid #e8eceb; }
+.sec:last-child { border-bottom: none; }
+.sec h2 {
+  font-size: 14px; font-weight: 800; color: #0C3B1E;
+  border-left: 5px solid #22C55E; padding-left: 12px;
+  margin-bottom: 14px; line-height: 1.3;
+}
+.sec h3 {
+  font-size: 11.5px; font-weight: 700; color: #165F35;
+  margin: 14px 0 8px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.sec p { font-size: 11.5px; line-height: 1.85; color: #2d2d3a; margin-bottom: 10px; }
+.sec p:last-child { margin-bottom: 0; }
+.sec p strong { color: #0C3B1E; }
+
+/* BLOQUES */
+.blk-k {
+  background: linear-gradient(135deg, #0C3B1E 0%, #165F35 100%);
+  color: white; border-radius: 10px; padding: 18px 20px; margin: 14px 0;
+  border-left: 5px solid #22C55E;
+}
+.blk-k .bk-title { font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1.5px; color: #BBF7D0; margin-bottom: 8px; }
+.blk-k p { font-size: 11px; line-height: 1.75; color: rgba(255,255,255,0.92) !important; margin-bottom: 8px; }
+.blk-k p:last-child { margin-bottom: 0; }
+.blk-k p strong { color: #BBF7D0 !important; }
+
+.blk-w {
+  background: #FEF2F2; border-radius: 10px; padding: 16px 18px; margin: 14px 0;
+  border-left: 5px solid #EF4444;
+}
+.blk-w .bk-title { font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1.5px; color: #7F1D1D; margin-bottom: 8px; }
+.blk-w p { font-size: 11px; line-height: 1.75; color: #3b1a1a; margin-bottom: 8px; }
+.blk-w p:last-child { margin-bottom: 0; }
+.blk-w p strong { color: #7F1D1D; }
+
+.blk-n {
+  background: #F0FDF4; border-radius: 10px; padding: 16px 18px; margin: 14px 0;
+  border-left: 5px solid #22C55E;
+}
+.blk-n .bk-title { font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1.5px; color: #165F35; margin-bottom: 8px; }
+.blk-n p { font-size: 11px; line-height: 1.75; color: #1c2e1c; margin-bottom: 8px; }
+.blk-n p:last-child { margin-bottom: 0; }
+.blk-n p strong { color: #0C3B1E; }
+
+.blk-i {
+  background: #EFF6FF; border-radius: 10px; padding: 16px 18px; margin: 14px 0;
+  border-left: 5px solid #3B82F6;
+}
+.blk-i .bk-title { font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1.5px; color: #1E3A5F; margin-bottom: 8px; }
+.blk-i p { font-size: 11px; line-height: 1.75; color: #1e2e3e; margin-bottom: 8px; }
+.blk-i p:last-child { margin-bottom: 0; }
+.blk-i p strong { color: #1E3A5F; }
+
+/* TABLAS */
+.tbl { width: 100%; border-collapse: collapse; font-size: 10.5px; margin: 12px 0; }
+.tbl th {
+  background: #0C3B1E; color: white; padding: 7px 9px;
+  text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.tbl td { padding: 6px 9px; border-bottom: 1px solid #e5e7eb; vertical-align: top; line-height: 1.55; }
+.tbl tr:nth-child(even) td { background: #F0FDF4; }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl td:first-child { font-weight: 600; color: #165F35; width: 28%; }
+
+.etbl { width: 100%; border-collapse: collapse; font-size: 10.5px; margin: 12px 0; }
+.etbl th { background: #165F35; color: white; padding: 7px 9px; text-align: center; font-size: 9px; text-transform: uppercase; }
+.etbl th:first-child { text-align: left; }
+.etbl td { padding: 6px 9px; border-bottom: 1px solid #e5e7eb; text-align: center; }
+.etbl td:first-child { text-align: left; font-weight: 600; color: #374151; }
+.etbl tr:nth-child(even) td { background: #F9FBF9; }
+.etbl tr:last-child td { border-bottom: none; }
+.etbl .hi { font-weight: 800; color: #0C3B1E; }
+.etbl .lo { color: #DC2626; font-weight: 700; }
+.etbl .ok { color: #059669; font-weight: 700; }
+.etbl .warn { color: #D97706; font-weight: 700; }
+
+/* GRID */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+.gcard { border-radius: 9px; padding: 14px 15px; border: 1px solid #d1fae5; }
+.gcard.green { background: #F0FDF4; border-color: #22C55E; }
+.gcard.red   { background: #FEF2F2; border-color: #EF4444; }
+.gcard.blue  { background: #EFF6FF; border-color: #3B82F6; }
+.gcard.gray  { background: #F9FAFB; border-color: #D1D5DB; }
+.gcard .gc-title { font-size: 9.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.8px; margin-bottom: 6px; }
+.gcard.green .gc-title { color: #0C3B1E; }
+.gcard.red   .gc-title { color: #7F1D1D; }
+.gcard.blue  .gc-title { color: #1E3A5F; }
+.gcard.gray  .gc-title { color: #374151; }
+.gcard p { font-size: 10.5px; line-height: 1.7; color: #374151; }
+.gcard p strong { color: #0C3B1E; }
+
+/* PALANCAS */
+.palanca { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px dashed #d1fae5; }
+.palanca:last-child { border-bottom: none; }
+.palanca-ico { font-size: 24px; min-width: 36px; flex-shrink: 0; padding-top: 2px; }
+.palanca-body { flex: 1; }
+.palanca-body strong { font-size: 12px; display: block; margin-bottom: 5px; color: #0C3B1E; }
+.palanca-body p { font-size: 10.5px; line-height: 1.75; color: #444; margin-bottom: 0; }
+
+/* VISITAS */
+.visita { display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid #f0f4f0; }
+.visita:last-child { border-bottom: none; }
+.visita-ico { font-size: 20px; min-width: 28px; }
+.visita-body strong { font-size: 11px; display: block; color: #165F35; margin-bottom: 3px; }
+.visita-body p { font-size: 10.5px; color: #555; line-height: 1.65; }
+
+/* SÍNTESIS */
+.sintesis {
+  background: linear-gradient(135deg, #0C3B1E 0%, #165F35 100%);
+  color: white; padding: 22px 28px;
+}
+.sintesis h2 {
+  font-size: 14px; font-weight: 800; color: #BBF7D0;
+  border-left: 5px solid #22C55E; padding-left: 12px; margin-bottom: 16px;
+}
+.sintesis p { font-size: 11.5px; line-height: 1.85; color: rgba(255,255,255,0.88); margin-bottom: 10px; }
+.sintesis p strong { color: #BBF7D0; }
+.sintesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.sint-card {
+  background: rgba(255,255,255,0.08); border-radius: 9px; padding: 14px 15px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.sint-card .sc-title { font-size: 9.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.8px; color: #BBF7D0; margin-bottom: 8px; }
+.sint-card p { font-size: 10.5px; line-height: 1.7; color: rgba(255,255,255,0.82); margin-bottom: 5px; }
+.sint-card p:last-child { margin-bottom: 0; }
+.sint-card p strong { color: #BBF7D0; }
+
+@media print {
+  html { background: white; padding: 0; }
+  body { max-width: 100%; }
+  .sec, .hdr, .sintesis, .blk-k, .blk-w, .blk-n, .blk-i,
+  .palanca, .visita, .gcard, .sint-card, .tbl, .etbl {
+    break-inside: avoid !important;
+  }
+  @page { size: A4 portrait; margin: 7mm 8mm; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-top">
+    <div>
+      <h1>LA MATANZA</h1>
+      <div class="sub">Narrativa Política · 3ª Sección Electoral · Cluster 1 — Conurbano Bonaerense
+        <span class="badge-n">ALIADO UxP</span>
+      </div>
+    </div>
+    <div class="hdr-meta">
+      Padrón: <strong>1.200.368</strong> (el mayor de PBA)<br>
+      Intendente: <strong>Fernando Espinoza (UxP)</strong><br>
+      Hab: <strong>1.841.247</strong> · 327,4 km²<br>
+      PBA 2026
+    </div>
+  </div>
+  <div class="hdr-lead">
+    La Matanza no es un municipio: es la <strong>columna vertebral de la coalición provincial</strong>. Con 1,2 millones de electores — el 15% del padrón total de PBA — ningún candidato provincial puede ganar ignorando este distrito. El PJ obtuvo <strong>52,9% en provinciales 2025</strong> y <strong>48,4% en nacionales</strong> — el split más contenido del Conurbano. LLA penetró pero no quebró la fortaleza. El desafío de 2026 es sostener esa diferenciación y reforzar el tejido social antes de que <strong>la elección de 2027 se nacionalice</strong> en un distrito donde cada décima de porcentaje vale más de 12.000 votos.
+  </div>
+</div>
+
+<!-- SECCIÓN 1: EL MUNICIPIO -->
+<div class="sec">
+  <h2>📍 El Municipio: Una Provincia Dentro de la Provincia</h2>
+
+  <p>La Matanza tiene <strong>1.841.247 habitantes</strong> distribuidos en 327,4 km² y 14 localidades que forman una ciudad-partido de enorme heterogeneidad interna. El corredor este — Ciudadela, Ramos Mejía, Villa Luzuriaga — tiene perfil de clase media-baja con empleo formal, comercio activo y acceso razonable a servicios. El oeste profundo — Gregorio de Laferrere, González Catán, Virrey del Pino — concentra la mayor densidad de vulnerabilidad social de la provincia, con NBI que en algunas zonas supera el <strong>35%</strong> y una economía popular dominada por la informalidad.</p>
+
+  <p>Esta heterogeneidad geográfica es, al mismo tiempo, la riqueza y la complejidad del territorio: el mismo municipio alberga al votante de clase media que en 2023 migró de JxC a LLA, y al trabajador informal del oeste que mantiene su fidelidad al PJ porque el partido es el proveedor de red de seguridad más visible en su vida cotidiana — jardines, kits escolares, centros de salud, planes sociales.</p>
+
+  <div class="blk-n">
+    <div class="bk-title">📊 Perfil Demográfico · Segmentación Social</div>
+    <p>La Matanza tiene siete segmentos electoralmente distinguibles. Los cinco primeros representan la base histórica del PJ; los dos últimos son los que oscilan hacia LLA y definen el margen en cada elección.</p>
+  </div>
+
+  <table class="tbl">
+    <thead>
+      <tr>
+        <th>Segmento</th>
+        <th>% aprox.</th>
+        <th>Localización</th>
+        <th>Perfil de Voto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Clase obrera formal industrial</td>
+        <td>~15%</td>
+        <td>Corredor industrial, González Catán, Laferrere</td>
+        <td>PJ estructural. Base sindical. Alta lealtad</td>
+      </tr>
+      <tr>
+        <td>Sector popular informal / planes</td>
+        <td>~25%</td>
+        <td>Oeste profundo: V. del Pino, Laferrere, Catán</td>
+        <td>PJ captivo con erosión LLA entre jóvenes de 18-30</td>
+      </tr>
+      <tr>
+        <td>Empleados estatales y docentes</td>
+        <td>~18%</td>
+        <td>San Justo, Ramos Mejía, Villa Luzuriaga</td>
+        <td>PJ leal. Sensibles a salarios y ajuste nacional</td>
+      </tr>
+      <tr>
+        <td>Comunidad migrante (Bolivia, Paraguay, Perú)</td>
+        <td>~9%</td>
+        <td>Laferrere, González Catán, Virrey del Pino</td>
+        <td>PJ concentrado. Sensibles a programas y documentación</td>
+      </tr>
+      <tr>
+        <td>Clase media comercial / servicios</td>
+        <td>~15%</td>
+        <td>San Justo, Ramos Mejía, Ciudadela</td>
+        <td>JxC histórico → LLA consolidado 2023/2025</td>
+      </tr>
+      <tr>
+        <td>PYME y comerciantes industriales</td>
+        <td>~10%</td>
+        <td>Polígonos industriales, eje textil-metalúrgico</td>
+        <td>JxC → LLA creciente. Eje fiscal y crédito</td>
+      </tr>
+      <tr>
+        <td>Jóvenes universitarios (UNLAM/CUDI)</td>
+        <td>~8%</td>
+        <td>San Justo, González Catán, zonas universitarias</td>
+        <td>Fluidos. LLA ganó tracción 2023-2025. Disputa clave 2026</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Infraestructura y Brecha Este-Oeste</h3>
+
+  <table class="tbl">
+    <thead>
+      <tr><th>Indicador</th><th>Situación</th><th>Relevancia política</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>NBI estimado</td><td>~18-25% promedio; hasta 35% en oeste</td><td>El más alto del Conurbano industrializado</td></tr>
+      <tr><td>Pavimentación</td><td>⚠️ Déficit histórico en el oeste</td><td>Megaplán: 5.000+ cuadras en Laferrere/Catán/V. Pino</td></tr>
+      <tr><td>Cloacas</td><td>Parcial en cabecera. Crítico en oeste</td><td>Demanda estructural acumulada. Obra pendiente prioritaria</td></tr>
+      <tr><td>Transporte</td><td>Línea Belgrano Sur — túneles en obra</td><td>Conectividad crítica para trabajadores del oeste con CABA</td></tr>
+      <tr><td>Salud pública</td><td>Red de 80+ centros + 2 hospitales de alta complejidad</td><td>Alta cobertura. Digitalización de turnos 2026</td></tr>
+      <tr><td>Educación</td><td>Red jardines municipales + 300.000 kits universales</td><td>Altísimo impacto simbólico y material en familias</td></tr>
+      <tr><td>Tecnología/Innovación</td><td>CUDI inaugurado en González Catán</td><td>UBA+UTN+UNLAM. Arraigo joven en el oeste</td></tr>
+      <tr><td>Industria PYME</td><td>Capital Nacional PYME. Exenciones 2026</td><td>Mayor stock de pymes industriales del Conurbano</td></tr>
+      <tr><td>Seguridad</td><td>Alta percepción de inseguridad</td><td>Vector de captación de LLA en clase media este</td></tr>
+      <tr><td>Vivienda</td><td>Déficit alto en oeste. Autoconstrucción activa</td><td>Presión habitacional en barrios de Laferrere y Catán</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECCIÓN 2: ESPINOZA Y LA GESTIÓN -->
+<div class="sec">
+  <h2>🟢 Fernando Espinoza (UxP): La Gestión que Sostiene el Bastión</h2>
+
+  <p>Espinoza es el articulador de la maquinaria política más grande de la Provincia. No es solo un intendente: es el administrador de una red de relaciones entre el municipio, las organizaciones territoriales, los sindicatos, las pymes locales y la estructura del PJ que convierte a La Matanza en el anclaje electoral de toda la coalición provincial.</p>
+
+  <p>Su gestión 2024-2026 se distingue por combinar obra física en el oeste profundo — el megaplán de pavimentación de 5.000 cuadras focalizado en Laferrere, González Catán y Virrey del Pino — con política social de escala masiva como los <strong>300.000 kits escolares universales</strong>, y apuesta de futuro con el CUDI como proyecto de arraigo tecnológico para jóvenes que de otra manera emigrarían del partido.</p>
+
+  <div class="blk-k">
+    <div class="bk-title">📦 Los 300.000 Kits: La Política Social Más Eficiente del Conurbano</div>
+    <p>Al inicio de cada ciclo lectivo, el municipio entrega más de <strong>300.000 kits escolares, libros de texto gratuitos y kits de robótica</strong> a absolutamente todos los alumnos de escuelas primarias públicas del distrito. No hay focalización, no hay lista de beneficiarios, no hay criterio de corte. El kit llega a todos. En La Matanza, donde hay cientos de miles de familias con hijos en edad escolar, esta política alcanza prácticamente a la totalidad del padrón activo en alguna dimensión de su hogar.</p>
+    <p>La dimensión política es difícil de sobreestimar: <strong>300.000 kits significa 300.000 familias que reciben algo concreto del Estado municipal</strong> antes de que termine el primer mes del año. El impacto es inmediato, visible, atribuible y universal — las cuatro características que hacen que una política social construya lealtad electoral durable.</p>
+  </div>
+
+  <p>El <strong>CUDI en González Catán</strong> es la apuesta más audaz de la gestión. Ubicado en el corazón del oeste profundo, articula carreras de UBA, UTN y UNLAM orientadas a programación, robótica y biotecnología. El proyecto asociado contempla la radicación de empresas tech con incentivos fiscales municipales a cambio de contratar egresados del CUDI y la UNLAM. Si prospera, convierte a González Catán — históricamente definida por su vulnerabilidad — en el polo tecnológico del Conurbano Sur.</p>
+
+  <div class="g2">
+    <div class="gcard green">
+      <div class="gc-title">✅ Infraestructura — Obras Físicas</div>
+      <p><strong>Megaplán Pavimentación (5.000+ cuadras):</strong> Laferrere, González Catán, Virrey del Pino. Obra tangible donde el déficit histórico es mayor y el impacto electoral es más directo.</p>
+      <p><strong>Túneles Línea Belgrano Sur:</strong> Conectividad este-CABA para cientos de miles de trabajadores que viajan diariamente. Alta valoración en localidades del oeste.</p>
+    </div>
+    <div class="gcard green">
+      <div class="gc-title">✅ Salud — Red de Alta Cobertura</div>
+      <p><strong>Balestrini (Ciudad Evita) + Favaloro (Rafael Castillo):</strong> hospitales de alta complejidad como cabeceras de una red de 80+ centros municipales. Digitalización total de turnos 2026 para reducir esperas.</p>
+      <p><strong>Pinta Cuidarse:</strong> postas preventivas en plazas con arte urbano. Presencia del Estado en el espacio público con formato no asistencialista.</p>
+    </div>
+    <div class="gcard green">
+      <div class="gc-title">✅ Economía Local — Alivio PYME</div>
+      <p><strong>Plan de Generación de Trabajo 2026:</strong> exenciones hasta 100% en tasas para nuevas empresas. Reducción 50% en tasa de espacios gastronómicos. Asistencia técnica y crediticia para pymes textiles y metalúrgicas.</p>
+    </div>
+    <div class="gcard blue">
+      <div class="gc-title">🔵 Programa Podés — Arraigo Educativo</div>
+      <p>Becas para alumnos en situaciones económicas complejas para evitar deserción. Complementa la política universal de kits con una red de seguridad para los casos límite donde la variable económica puede interrumpir la trayectoria escolar.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 3: ARCO ELECTORAL -->
+<div class="sec">
+  <h2>📈 El Arco Electoral: La Fortaleza que Resiste y sus Fisuras</h2>
+
+  <p>La historia electoral de La Matanza entre 2023 y 2025 es la historia de una fortaleza que resistió el asalto de LLA mejor que cualquier otro municipio grande del Conurbano. Pero resistir no significa estar a salvo: las fisuras son reales, localizadas y estructuralmente distintas a las de otros distritos.</p>
+
+  <table class="etbl">
+    <thead>
+      <tr>
+        <th>Elección</th>
+        <th>PJ / UxP</th>
+        <th>LLA</th>
+        <th>JxC / PRO</th>
+        <th>FIT</th>
+        <th>Lectura</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2023 General (intend.)</td>
+        <td class="hi">53,7%</td>
+        <td class="warn">22,4%</td>
+        <td>18,4%</td>
+        <td>5,5%</td>
+        <td>PJ cómodo. LLA entra desde el margen</td>
+      </tr>
+      <tr>
+        <td>2025 Provinciales</td>
+        <td class="hi">52,9%</td>
+        <td class="warn">28,9%</td>
+        <td>—</td>
+        <td>7,8%</td>
+        <td>PJ mantiene. LLA crece 6,5 pts absorbiendo JxC</td>
+      </tr>
+      <tr>
+        <td>2025 Nacionales</td>
+        <td class="ok">48,4%</td>
+        <td class="warn">32,5%</td>
+        <td>—</td>
+        <td>7,1%</td>
+        <td>PJ cae 4,5 pts. LLA sube 3,6 pts. Split contenido</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="blk-i">
+    <div class="bk-title">🔍 El Split de 4,5 Puntos: La Diferenciación que Funciona</div>
+    <p>En 2025, el mismo electorado matancero votó <strong>52,9% al PJ en provinciales y 48,4% en nacionales</strong>: un split de solo 4,5 puntos. En municipios del interior bonaerense, ese split llega a 13 o 27 puntos. En La Matanza es el más contenido del Conurbano.</p>
+    <p>Esto indica que el electorado matancero <strong>no diferencia tanto los niveles</strong> como en otros distritos. El PJ resiste en ambos niveles, pero por razones diferentes: en el nivel provincial, la gestión Espinoza produce adhesión activa; en el nivel nacional, la inercia del tejido organizativo PJ retiene votantes que en otros distritos ya migraron hacia LLA. La implicancia estratégica es doble: La Matanza es más "PJ-proof" que el promedio, pero si esa inercia se debilita — por mejora económica nacional atribuida a LLA o por erosión del tejido territorial — el split podría ampliarse y el PJ caer más en nacionales 2027.</p>
+  </div>
+
+  <h3>La Geografía del Voto: Dónde Gana Cada Fuerza</h3>
+
+  <div class="g2">
+    <div class="gcard green">
+      <div class="gc-title">🟢 Base PJ sólida (oeste profundo)</div>
+      <p><strong>Gregorio de Laferrere, González Catán, Virrey del Pino, Isidro Casanova, Villa Insuperable:</strong> PJ supera el 60% en estas localidades. Combinación de red sindical, organizaciones territoriales, programas sociales municipales y alta presencia de empleo informal dependiente de la economía popular articulada por el partido.</p>
+    </div>
+    <div class="gcard red">
+      <div class="gc-title">🔴 Disputa — LLA en crecimiento (corredor este)</div>
+      <p><strong>Ramos Mejía, Ciudadela, parte de San Justo:</strong> Aquí LLA fue el sucesor natural de JxC. Clase media con empleo formal, comercio, sensible a inseguridad y carga fiscal. El PJ retiene administración pero ya no gana confortablemente. LLA podría ser primera fuerza en estas localidades en 2027.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 4: LA AMENAZA LLA — EL FENÓMENO EN EL OESTE JOVEN -->
+<div class="sec">
+  <h2>⚠️ El Punto Ciego: LLA en el Oeste Joven</h2>
+
+  <p>La penetración de LLA en La Matanza tiene dos geografías completamente diferentes que requieren lecturas distintas. La primera — en la clase media del corredor este — es previsible y ya estaba anunciada por el comportamiento histórico de JxC: es la misma base que siempre votó contra el PJ, ahora reencuadrada en LLA.</p>
+
+  <p>La segunda geografía es la verdaderamente peligrosa: <strong>la erosión de LLA en el sector popular joven del oeste profundo</strong>. Jóvenes entre 18 y 30 años de Laferrere, González Catán y Virrey del Pino que se criaron en hogares beneficiarios de planes sociales, que no accedieron al empleo formal, que sienten que el Estado PJ no resolvió su problema de movilidad social — y que en 2023 y 2025 votaron LLA no por ideología sino por ruptura con el sistema que conocen.</p>
+
+  <div class="blk-w">
+    <div class="bk-title">🔥 Por Qué Este Segmento es el Más Crítico</div>
+    <p>Si el joven de clase media de Ramos Mejía vota LLA, el PJ lo esperaba: ese elector nunca fue suyo con convicción. Pero si el joven de 22 años de Laferrere, hijo de beneficiarios del Potenciar Trabajo, que creció en un barrio donde el PJ organizaba todo, también vota LLA — eso no es un voto de cambio ideológico. Es una señal de que el <strong>tejido de contención se está desprendiendo desde abajo</strong>.</p>
+    <p>El relato de Milei que resuena en este segmento no es el liberal-libertario: es el anti-casta, anti-puntero, anti-intermediario. "¿Para qué sirve el puntero del barrio si yo sigo igual después de 20 años?" es la pregunta que LLA no necesita responder con una propuesta — alcanza con haberla hecho.</p>
+    <p>La respuesta del PJ no puede ser defensiva ni discursiva: tiene que ser material y visible. El CUDI en González Catán es exactamente la respuesta correcta — empleo genuino, no plan. El desafío es sostenerlo y escalarlo antes de 2027.</p>
+  </div>
+
+  <p>La dimensión cuantitativa del riesgo: cada décima de porcentaje en La Matanza equivale a <strong>más de 12.000 votos</strong>. Si LLA sube 5 puntos entre provinciales 2025 y provinciales 2027 en La Matanza — pasando de 28,9% a ~34% — eso no es solo un dato estadístico: es 60.000 votos que cambian de columna en el distrito más pesado de la provincia. La diferencia en el resultado global de PBA puede ser exactamente esa.</p>
+</div>
+
+<!-- SECCIÓN 5: LAS TRES PALANCAS -->
+<div class="sec">
+  <h2>🎯 Las Tres Palancas: Kits · CUDI · Pavimentación</h2>
+
+  <p>La gestión Espinoza tiene tres plataformas que operan como narrativas diferenciadas para segmentos distintos del padrón. Las tres pueden y deben ser escenarios de presencia provincial porque las tres requieren recursos o respaldo que el municipio solo no puede garantizar.</p>
+
+  <div class="palanca">
+    <div class="palanca-ico">📦</div>
+    <div class="palanca-body">
+      <strong>Los 300.000 Kits Escolares — La Palanca de Cobertura Total</strong>
+      <p>Ninguna política del Conurbano alcanza a más familias en menos tiempo. La entrega universal de kits al inicio del ciclo lectivo es el momento de mayor densidad de contacto entre el Estado municipal y la ciudadanía en todo el año. La Provincia puede potenciar la escena: si el gobernante provincial aparece en la entrega junto a Espinoza — con recursos provinciales complementando los municipales — el mensaje es "el Estado en todos sus niveles trabaja para vos". Es la imagen de cobertura total que diferencia la gestión PJ de cualquier alternativa. La cobertura mediática en un municipio de 1,8 millones multiplica el alcance exponencialmente.</p>
+    </div>
+  </div>
+
+  <div class="palanca">
+    <div class="palanca-ico">🎓</div>
+    <div class="palanca-body">
+      <strong>CUDI González Catán — La Palanca del Futuro</strong>
+      <p>El Centro Universitario de la Innovación es la apuesta más contracultural de La Matanza: lleva tecnología, ciencia y formación universitaria al corazón del oeste profundo. Carreras UBA, UTN y UNLAM en programación, robótica y biotecnología. Proyecto de radicación de empresas tech con empleo para egresados. La Provincia puede articular con MinCiencia, CONICET o agencias tecnológicas para ampliar la oferta, agregar financiamiento, o anunciar una nueva carrera en el CUDI como acto específico. El escenario: González Catán, jóvenes, computadoras, perspectiva de futuro. El contraste con el discurso de LLA — que no tiene una propuesta de qué va a hacer con los jóvenes populares del oeste — es máximo.</p>
+    </div>
+  </div>
+
+  <div class="palanca">
+    <div class="palanca-ico">🛣️</div>
+    <div class="palanca-body">
+      <strong>Megaplán de Pavimentación — La Palanca de la Presencia Física</strong>
+      <p>Cinco mil cuadras de asfalto en Laferrere, González Catán y Virrey del Pino es la obra más visible y cotidiana para la base social más fiel del PJ. Un barrio pavimentado tiene mejor drenaje, menos barro en invierno, mejor acceso del transporte público, valorización de las propiedades. No es una obra abstracta. Cada vecino que deja de caminar en barro en invierno lo atribuye al nivel de gobierno que anunció y ejecutó. Si la Provincia aporta maquinaria, financiamiento o logística — y aparece en el territorio cuando se corta la cinta — el crédito es compartido y refuerza la narrativa de que municipio y provincia trabajan en equipo.</p>
+    </div>
+  </div>
+
+  <div class="blk-n">
+    <div class="bk-title">🗓️ Calendario de Oportunidades 2026</div>
+    <p><strong>Inicio del ciclo lectivo (marzo):</strong> Entrega de 300.000 kits escolares. Mayor densidad de contacto familiar del año. Escena con Espinoza + conducción provincial.</p>
+    <p><strong>Julio:</strong> Aniversario del Partido de La Matanza (San Justo). Acto institucional. Escenario para balance de gestión conjunta y prospectiva 2027.</p>
+    <p><strong>Agosto:</strong> Fiesta Patronal Santos Justo y Pastor. Evento comunitario. Presencia cívica en la cabecera.</p>
+    <p><strong>Variable:</strong> Inauguraciones de cuadras pavimentadas en el oeste — alta frecuencia, alta visibilidad local, alcance en medios barriales y municipales.</p>
+    <p><strong>Variable:</strong> Actos del CUDI (nuevas carreras, graduaciones, anuncios tech). Escenario González Catán para comunicación de futuro.</p>
+    <p><strong>Diciembre:</strong> Aniversario de San Justo. Cierre del año electoral con balance de obras y agenda 2027.</p>
+  </div>
+</div>
+
+<!-- SECCIÓN 6: VISITAS -->
+<div class="sec">
+  <h2>🗓️ Agenda de Visitas: Cómo Llegar a La Matanza</h2>
+
+  <p>La Matanza no se recorre: se trabaja por zonas, por temáticas y por segmentos. Un único acto en San Justo alcanza al corredor este pero no al oeste profundo. El criterio estratégico es visitar la zona que necesita el mensaje específico que la visita tiene para ofrecer.</p>
+
+  <div class="visita">
+    <div class="visita-ico">📦</div>
+    <div class="visita-body">
+      <strong>Acto de Entrega de Kits Escolares (marzo) — Máxima Cobertura</strong>
+      <p>300.000 kits a 300.000 familias. La visita con mayor densidad de contacto familiar posible. Escena con Espinoza. Medios locales de La Matanza tienen alcance enorme. La imagen de conducción provincial en el municipio más grande de PBA repartiendo materiales escolares es prácticamente inapelable como señal de gestión.</p>
+    </div>
+  </div>
+
+  <div class="visita">
+    <div class="visita-ico">🎓</div>
+    <div class="visita-body">
+      <strong>CUDI González Catán — Visita al Oeste Profundo</strong>
+      <p>El oeste necesita una visita específica. El CUDI es el escenario correcto: jóvenes, tecnología, futuro, arraigo. Anuncio concreto (nueva carrera, ampliación de oferta, empresa tech radicada). El municipio de González Catán tiene la población más joven y más vulnerable — la visita envía un mensaje de inversión exactamente donde LLA creció más.</p>
+    </div>
+  </div>
+
+  <div class="visita">
+    <div class="visita-ico">🛣️</div>
+    <div class="visita-body">
+      <strong>Inauguración de Cuadras Pavimentadas — Laferrere o Virrey del Pino</strong>
+      <p>Cortar la cinta de pavimentación en el oeste con Espinoza. El asfalto es la obra más cotidiana que existe — antes y después son perfectamente comparables. Alta visibilidad vecinal, cobertura de medios barriales, impacto directo en la base PJ más fiel del municipio.</p>
+    </div>
+  </div>
+
+  <div class="visita">
+    <div class="visita-ico">🏭</div>
+    <div class="visita-body">
+      <strong>Evento PYME Industrial — Corredor Productivo</strong>
+      <p>Encuentro con el sector metalúrgico, textil o autopartista. Anuncio de línea BAPRO, crédito productivo o articulación con MinProducción provincial. El segmento PYME es el que oscila hacia LLA: una política crediticia concreta y visible compite con el discurso de "desregulación" de LLA en el segmento que más lo resuena.</p>
+    </div>
+  </div>
+
+  <div class="visita">
+    <div class="visita-ico">🎂</div>
+    <div class="visita-body">
+      <strong>Aniversario del Partido de La Matanza — Julio 2026</strong>
+      <p>Acto institucional de alta convocatoria con Espinoza como anfitrión. Escenario para discurso de balance conjunto municipio-provincia y agenda 2027. El aniversario de La Matanza convoca a toda la estructura política del distrito — dirigentes, sindicalistas, organizaciones territoriales — y es la plataforma natural para mostrar cohesión de la coalición provincial.</p>
+    </div>
+  </div>
+
+  <div class="visita">
+    <div class="visita-ico">🏥</div>
+    <div class="visita-body">
+      <strong>Hospital Balestrini o Favaloro — Salud y Digitalización</strong>
+      <p>Visita a la red de salud con anuncio de recurso provincial (equipamiento, programa, digitalización). Los hospitales son el punto de contacto más frecuente y más cargado emocionalmente entre el Estado y la ciudadanía. Alta receptividad para presencia provincial en un contexto de articulación con la gestión municipal.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 7: SÍNTESIS EJECUTIVA -->
+<div class="sintesis">
+  <h2>⚡ Síntesis Ejecutiva</h2>
+
+  <p>La Matanza es el territorio más importante de PBA para cualquier estrategia provincial. Con <strong>1,2 millones de electores</strong> — el 15% del padrón total — cada punto de ventaja o desventaja aquí vale más que en cualquier otro distrito. El PJ mantiene fortaleza real: <strong>52,9% en provinciales 2025</strong>, el split más contenido del Conurbano (4,5 pts), y una gestión Espinoza que produce adhesión activa con obras físicas y política social de escala masiva.</p>
+
+  <p>El riesgo no es un colapso — es un <strong>deslizamiento silencioso</strong>. LLA pasó de 22,4% (2023) a 32,5% (nacionales 2025) en diez puntos y dos años. Si esa curva se mantiene hacia 2027, el PJ puede caer del 52% al 43% y LLA subir al 37% en el distrito. En La Matanza, eso son <strong>más de 100.000 votos que cambian de columna</strong>. El efecto sobre el resultado provincial sería determinante.</p>
+
+  <div class="sintesis-grid">
+    <div class="sint-card">
+      <div class="sc-title">🟢 Activos del Territorio</div>
+      <p><strong>Espinoza:</strong> intendente con maquinaria política probada y gestión visible</p>
+      <p><strong>300.000 kits:</strong> la política social de mayor cobertura familiar del Conurbano</p>
+      <p><strong>CUDI:</strong> inversión en futuro en el oeste profundo — arraigo joven real</p>
+      <p><strong>Megaplán:</strong> 5.000 cuadras de asfalto donde más falta hace</p>
+      <p><strong>Red de salud:</strong> 80+ centros + 2 hospitales de alta complejidad</p>
+    </div>
+    <div class="sint-card">
+      <div class="sc-title">🔴 Vulnerabilidades</div>
+      <p><strong>LLA en jóvenes populares del oeste:</strong> el fenómeno más peligroso y el más difícil de revertir</p>
+      <p><strong>Inseguridad:</strong> eje discursivo donde el PJ no tiene respuesta convincente</p>
+      <p><strong>Clase media este consolidada en LLA:</strong> Ramos Mejía, Ciudadela ya no son disputables fácilmente</p>
+      <p><strong>Déficit habitacional y de cloacas:</strong> demanda estructural acumulada en el oeste</p>
+    </div>
+    <div class="sint-card">
+      <div class="sc-title">📌 Acción Prioritaria Provincia</div>
+      <p><strong>Escena kits (marzo):</strong> presencia en entrega de 300.000 kits. Cobertura total en una sola actividad</p>
+      <p><strong>CUDI (variable):</strong> anuncio de ampliación/nueva carrera en González Catán</p>
+      <p><strong>PYME (variable):</strong> crédito BAPRO o MinProducción al sector industrial matancero</p>
+      <p><strong>Pavimentación (variable):</strong> inauguración conjunta con Espinoza en el oeste</p>
+    </div>
+    <div class="sint-card">
+      <div class="sc-title">🎯 El Argumento Central</div>
+      <p>La Matanza se gana o se pierde según la capacidad de la coalición de demostrar que el Estado provincial y municipal <strong>producen resultados concretos</strong> donde LLA solo tiene discurso.</p>
+      <p>En el oeste profundo, el argumento no es ideológico: es la calle pavimentada, el turno en el hospital, el kit de robótica, el primer trabajo tech del CUDI. Eso es lo que retiene el voto popular ante el embate de LLA.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

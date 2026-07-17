@@ -1,0 +1,682 @@
+<style>
+
+@page {
+  size: A4 portrait;
+  margin: 14mm 18mm 18mm;
+}
+@page :first {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 10.5pt;
+  line-height: 1.82;
+  color: #1a1a1a;
+  background: white;
+}
+
+/* ── HEADER ─────────────────────────────────────── */
+.header {
+  background: linear-gradient(135deg, #1F4E79 0%, #2563EB 100%);
+  color: white;
+  padding: 26px 22mm 22px;
+}
+.header-meta {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 8pt;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+.header h1 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 24pt;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  margin-bottom: 5px;
+  line-height: 1.1;
+}
+.header-sub {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9.5pt;
+  opacity: 0.75;
+  margin-bottom: 18px;
+}
+.header-datos {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 14px;
+}
+.hd {
+  flex: 1;
+  padding-right: 20px;
+  border-right: 1px solid rgba(255,255,255,0.15);
+  margin-right: 20px;
+}
+.hd:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.hd-n {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 20pt;
+  font-weight: 900;
+  color: #FACC15;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hd-l {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt;
+  opacity: 0.65;
+  line-height: 1.5;
+}
+
+/* ── DOCUMENTO ───────────────────────────────────── */
+.doc {
+  padding: 12mm 6mm 14mm;
+}
+
+.intendente-line {
+  background: #FEE2E2;
+  border-left: 4px solid #DC2626;
+  padding: 9px 14px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt;
+  color: #7F1D1D;
+  margin-bottom: 32px;
+}
+.intendente-line strong { font-weight: 700; }
+
+h2 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 10pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #2563EB;
+  border-bottom: 2px solid #2563EB;
+  padding-bottom: 5px;
+  margin-bottom: 16px;
+  margin-top: 32px;
+  page-break-after: avoid;
+}
+
+p {
+  margin-bottom: 14px;
+  color: #1a1a1a;
+  orphans: 3;
+  widows: 3;
+}
+p:last-child { margin-bottom: 0; }
+
+.lead {
+  font-size: 11.5pt;
+  color: #1F4E79;
+  border-left: 3px solid #2563EB;
+  padding-left: 16px;
+  margin-bottom: 20px;
+  line-height: 1.7;
+  page-break-after: avoid;
+}
+
+.pullquote {
+  border-top: 2px solid #1F4E79;
+  border-bottom: 2px solid #1F4E79;
+  margin: 26px 0;
+  padding: 16px 0;
+  font-size: 13pt;
+  font-style: italic;
+  color: #1F4E79;
+  text-align: center;
+  line-height: 1.55;
+  page-break-inside: avoid;
+}
+
+.nota {
+  background: #FFFBEB;
+  border-left: 4px solid #F59E0B;
+  padding: 13px 16px;
+  margin: 22px 0;
+  font-size: 9.5pt;
+  color: #78350F;
+  line-height: 1.75;
+  page-break-inside: avoid;
+}
+.nota strong {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #D97706;
+  font-style: normal;
+}
+
+.nota-k {
+  background: #1e3a5f;
+  border-left: 4px solid #FACC15;
+  padding: 13px 16px;
+  margin: 22px 0;
+  font-size: 9.5pt;
+  color: white;
+  line-height: 1.75;
+  page-break-inside: avoid;
+}
+.nota-k strong {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #FACC15;
+  font-style: normal;
+}
+
+.nota-r {
+  background: #FEF2F2;
+  border-left: 4px solid #EF4444;
+  padding: 13px 16px;
+  margin: 22px 0;
+  font-size: 9.5pt;
+  color: #7F1D1D;
+  line-height: 1.75;
+  page-break-inside: avoid;
+}
+.nota-r strong {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #DC2626;
+  font-style: normal;
+}
+
+/* ── FOOTER ──────────────────────────────────────── */
+.footer {
+  text-align: center;
+  padding: 10px 22mm;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9pt;
+  color: #aaa;
+  border-top: 1px solid #e5e7eb;
+  background: white;
+}
+
+/* ── ANEXOS ──────────────────────────────────────── */
+.anexo-wrap {
+  page-break-before: always;
+  break-before: page;
+}
+
+.ah-azul {
+  background: linear-gradient(135deg, #1F4E79, #2563EB);
+  color: white;
+  padding: 18px 22mm;
+  margin: -14mm -18mm 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.ah-ambar {
+  background: linear-gradient(135deg, #78350F, #D97706);
+  color: white;
+  padding: 18px 22mm;
+  margin: -14mm -18mm 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.ah-meta { font-size: 9pt; opacity: 0.6; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
+.ah-title { font-size: 14pt; font-weight: 900; letter-spacing: 0.5px; }
+.ah-right { font-size: 8pt; opacity: 0.7; text-align: right; }
+
+/* Grid de anexos */
+.ag-body { padding: 12mm 0; background: #eef2f7; margin: 0 -18mm; padding-left: 18mm; padding-right: 18mm; }
+.ag3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.ag2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  page-break-inside: avoid;
+}
+.ch {
+  padding: 8px 13px;
+  font-size: 9pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.cb { padding: 12px 13px; }
+.st {
+  font-size: 9pt;
+  font-weight: 700;
+  color: #1F4E79;
+  padding: 4px 0 5px;
+  border-bottom: 2px solid #1F4E79;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+/* Tablas */
+.t { width: 100%; border-collapse: collapse; font-size: 8pt; }
+.t th {
+  background: #f5f6f8;
+  color: #555;
+  padding: 5px 8px;
+  text-align: left;
+  font-size: 8.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e5e7eb;
+}
+.t td { padding: 5px 8px; border-bottom: 1px solid #f3f4f6; vertical-align: top; }
+.t tr:last-child td { border-bottom: none; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+
+/* Alertas en anexos */
+.al { border-radius: 6px; padding: 10px 12px; margin-top: 10px; font-size: 8pt; line-height: 1.6; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al strong { display: block; margin-bottom: 3px; font-size: 9pt; }
+
+/* Filas de hitos */
+.ag-row { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px dashed #e8e8e8; font-size: 8pt; line-height: 1.6; }
+.ag-row:last-child { border-bottom: none; }
+.ag-ico { font-size: 14pt; min-width: 20px; margin-top: 1px; }
+.ag-txt strong { font-size: 8pt; display: block; margin-bottom: 2px; color: #1F4E79; font-weight: 700; }
+.ag-txt p { font-size: 9pt; color: #555; }
+
+/* Perfil intendente */
+.perf td { padding: 5px 8px; border-bottom: 1px solid #f3f4f6; font-size: 8pt; }
+.perf tr:last-child td { border-bottom: none; }
+
+/* Footer de anexo */
+.anx-foot {
+  text-align: center;
+  padding: 8px 22mm;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 8.5pt;
+  color: #aaa;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ── PRINT IMPROVEMENTS (narrativa) ───────────── */
+/* Orphans/widows for running text */
+body    { orphans: 4; widows: 4; }
+p       { orphans: 4; widows: 4; }
+
+/* Grids in annexes: avoid mid-grid breaks */
+.ag3 { page-break-inside: avoid; break-inside: avoid; }
+.ag2 { page-break-inside: avoid; break-inside: avoid; }
+
+/* Tables */
+thead { display: table-header-group; }
+tr    { page-break-inside: avoid; break-inside: avoid; }
+
+/* Keep section headings with next content */
+h2 { page-break-after: avoid; break-after: avoid; }
+h3 { page-break-after: avoid; break-after: avoid; }
+h2 + p, h3 + p, h2 + div, h3 + div { page-break-before: avoid; break-before: avoid; }
+
+/* Cards */
+.card  { page-break-inside: avoid; break-inside: avoid; }
+
+/* Don't break alerts/callout boxes */
+.al    { page-break-inside: avoid; break-inside: avoid; }
+
+/* Footer stays on last page */
+.footer { page-break-before: avoid; break-before: avoid; }
+
+/* First page: header full-bleed (margin already 0 globally) */
+@page :first { margin: 0; }
+
+</style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<div class="header">
+  <div class="header-meta">Campaña PBA 2026 · Briefing Municipal · Uso Reservado</div>
+  <h1>📍 SAN NICOLÁS DE LOS ARROYOS</h1>
+  <div class="header-sub">Capital Siderúrgica de la Provincia · 2ª Sección Electoral · Norte Bonaerense · 652 km²</div>
+  <div class="header-datos">
+    <div class="hd">
+      <div class="hd-n">1947</div>
+      <div class="hd-l">Decreto peronista crea SOMISA. Hito fundacional de la industria pesada argentina.</div>
+    </div>
+    <div class="hd">
+      <div class="hd-n">7.000</div>
+      <div class="hd-l">Empleos directos e indirectos vinculados a Ternium. Más del 30% de los ingresos comerciales del municipio.</div>
+    </div>
+    <div class="hd">
+      <div class="hd-n">60 años</div>
+      <div class="hd-l">Sin una acería nueva en Argentina. Sidersa+ rompe esa brecha. En construcción, inicio 2028.</div>
+    </div>
+    <div class="hd">
+      <div class="hd-n">42,3%</div>
+      <div class="hd-l">Obtuvo JxC en 2023. UxP sacó 29,9%. LLA captó 20,6% del voto obrero. Territorio a disputar.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ CUERPO ═══════ -->
+<div class="doc">
+
+  <div class="intendente-line">
+    <strong>Gobierno municipal:</strong> Ismael Santiago Passaglia · Juntos por el Cambio · 3er mandato consecutivo (2011–2027) · Concejales PJ: 2 de 20 · Territorio político hostil
+  </div>
+
+  <!-- SECCIÓN 1 -->
+  <h2>Por qué visitar San Nicolás</h2>
+
+  <p class="lead">San Nicolás no es un municipio más en el itinerario de campaña. Es el lugar donde Argentina tomó, en 1947, la decisión de fabricar acero propio. Ir a San Nicolás desde la perspectiva provincial es ir al corazón histórico de la industrialización bonaerense.</p>
+
+  <p>La visita llega en un momento de inflexión precisa. En 2025, Ternium Siderar —la empresa que opera la ex-SOMISA, la planta siderúrgica integrada más grande del país— protagonizó su peor conflicto laboral en más de una década: paro por tiempo indeterminado, 220 despidos de contratistas, el fantasma de los años noventa sobrevolando la ciudad. Esa herida sigue abierta. Al mismo tiempo, a pocos kilómetros de la planta, el Grupo Sidersa está construyendo la primera acería nueva en Argentina en sesenta años. <strong>Tensión y oportunidad en el mismo momento, en la misma ciudad.</strong> La perspectiva provincial puede contener esa contradicción y darle un relato.</p>
+
+  <p>Existe también un riesgo político concreto que justifica la visita: el 20,6% que La Libertad Avanza obtuvo en San Nicolás en 2023 no llegó de la nada. Llegó desde una clase trabajadora industrial que siente que el peronismo dejó de hablar de trabajo e industria en términos que la interpelan. En una ciudad donde el 30% de los ingresos comerciales depende de una sola empresa transnacional, la incertidumbre laboral es una constante que las fuerzas antisistema saben explotar. No ir a San Nicolás, o ir sin un mensaje industrial claro, sería dejarle ese espacio libre.</p>
+
+  <div class="nota">
+    <strong>📌 El terreno político en números</strong>
+    JxC ganó con el 42,3%. UxP quedó segundo con el 29,9%. La brecha de 12,4 puntos es recuperable con una narrativa anclada en trabajo e industria. Passaglia lleva tres mandatos —es un operador consolidado— pero el PJ tiene apenas 2 de 20 concejales en el Concejo Deliberante. La estrategia no es confrontar al intendente. Es hablar desde otro nivel: el nivel provincial, con una agenda que el municipio no puede ofrecerle a la ciudad.
+  </div>
+
+  <!-- SECCIÓN 2 -->
+  <h2>Lo que produce San Nicolás</h2>
+
+  <p class="lead">La economía de San Nicolás es, en términos prácticos, la economía de Ternium. Todo lo demás es consecuencia de eso.</p>
+
+  <p>La industria representa el 26,1% del Producto Bruto Geográfico y está casi enteramente concentrada en la actividad siderúrgica. Ternium Siderar produce dos millones de toneladas anuales de acero plano —insumo crítico para la industria automotriz, la construcción y los electrodomésticos en todo el país— y emplea directa e indirectamente a más de siete mil personas del partido. No hay sector económico en San Nicolás que no dependa, de una u otra forma, del ciclo de la planta.</p>
+
+  <p>El 54,2% del PBG que corresponde a servicios es, en gran medida, una derivada del salario industrial. El comercio (10,5%), el transporte (10,5%), la actividad inmobiliaria (12,7%) y los servicios financieros (7,4%) respiran al ritmo de lo que paga Ternium. Es una economía procíclica en su forma más pura: cuando la planta va bien, la ciudad prospera; cuando la planta ajusta, la ciudad lo siente de inmediato. El conflicto de 2025 lo demostró con claridad.</p>
+
+  <p>El sector agropecuario aporta el 5,6% del PBG, con producción granaria —soja, maíz, girasol— que sale por el Puerto San Nicolás en el kilómetro 343 del río Paraná. El puerto tiene 34 pies de calado y puede recibir buques oceánicos, pero opera muy por debajo de su potencial. Es el activo logístico más sub-utilizado de la ciudad y, paradójicamente, el que más depende de decisiones del nivel provincial para ser valorizado.</p>
+
+  <p>El hecho productivo más relevante de los próximos años es Sidersa+: la nueva acería minimill que el Grupo Sidersa está construyendo en el partido. Tecnología italiana Danieli, horno de arco eléctrico, 360.000 toneladas anuales de acero largo para la construcción, emisiones de CO₂ equivalentes a un tercio de las acerías convencionales. Más de 400 personas trabajan ya en la obra. Cuando arranque, en 2028, será la primera acería nueva en Argentina en sesenta años. <strong>No es un proyecto del intendente. Tampoco es todavía un proyecto de la Provincia. Podría ser las dos cosas.</strong></p>
+
+  <!-- SECCIÓN 3 -->
+  <h2>La perspectiva provincial — Lo que solo la Provincia puede ver</h2>
+
+  <p class="lead">Lo que el intendente gestiona es el municipio. Lo que se ve desde la Provincia es otra escala. San Nicolás importa por lo que representa en el tablero industrial y logístico de toda la provincia de Buenos Aires.</p>
+
+  <p>San Nicolás es el eslabón norte de un corredor industrial que baja por la ribera del Paraná hasta el Gran Buenos Aires: Ramallo con su agroindustria y química, Campana con Tenaris y su producción de tubos de acero, Zárate con la planta de Volkswagen y la industria automotriz. Cuatro partidos, cuatro vocaciones industriales complementarias, todos conectados por la hidrovía y la Ruta 9. Una agenda de Corredor Industrial Norte Bonaerense —parques industriales integrados, logística portuaria compartida, atracción coordinada de proveedores de la cadena siderúrgica— es exactamente el tipo de política que ningún intendente puede impulsar solo y que le corresponde al nivel provincial.</p>
+
+  <p>En relación a Sidersa+, la Provincia tiene palancas concretas que pueden convertir un proyecto privado en un símbolo de gestión: las habilitaciones ambientales, la conexión vial y ferroviaria, la gestión del suministro eléctrico. Comprometerse públicamente con acompañar ese proceso tiene un valor político directo en una ciudad que lleva sesenta años esperando que alguien vuelva a construir algo grande en ella.</p>
+
+  <p>La educación técnica es otra palanca de impacto directo y narrativo inmediato. Proponer escuelas técnicas provinciales con práctica curricular en Ternium y Sidersa+ es educación con retorno económico medible. Conecta con la memoria de SOMISA, que durante décadas funcionó también como una escuela técnica de hecho: la planta formaba operarios especializados que no existían en el mercado. Esa identidad formativa es parte de lo que se perdió con la privatización y parte de lo que la perspectiva provincial puede ofrecer reconstruir.</p>
+
+  <p>El riesgo estructural que la Provincia debe tener en radar —aunque no sea el mensaje de la visita— es la mono-dependencia. Una ciudad de 168.000 habitantes donde más del 30% de la actividad comercial depende de una sola empresa transnacional es una ciudad estructuralmente frágil. El saldo migratorio negativo del 11,1% —en una ciudad con servicios básicos por encima del promedio provincial— lo confirma: la gente joven no se va por falta de agua o salud. Se va porque la incertidumbre laboral de largo plazo hace que San Nicolás se sienta, para muchos, como un lugar sin futuro propio.</p>
+
+  <div class="pullquote">
+    "San Nicolás no necesita que la Provincia la rescate.<br>Necesita que la acompañe a crecer."
+  </div>
+
+  <!-- SECCIÓN 4 -->
+  <h2>El conflicto Ternium 2025 y lo que abre</h2>
+
+  <p>En septiembre de 2025, Ternium Siderar resolvió contratos con empresas subcontratistas de mantenimiento, logística y seguridad. El resultado fueron 220 despidos y un paro por tiempo indeterminado que paralizó la producción. No fue el conflicto laboral más grande en términos numéricos absolutos, pero fue el que más peso político tuvo en la ciudad en más de una década.</p>
+
+  <p>La razón es histórica y no económica. En San Nicolás, cualquier reducción de personal en la planta activa una memoria colectiva que va directamente a los años noventa: la privatización de SOMISA, los ajustes, la ciudad que se vació de trabajo y de futuro. Los 220 despidos de contratistas —trabajadores en el eslabón más vulnerable de la cadena— generaron una reacción que excedió su magnitud numérica porque tocó esa cuerda.</p>
+
+  <p>Lo que el conflicto abre, desde la perspectiva provincial, es la posibilidad de proponer algo que no existe hoy: una <strong>mesa de diálogo laboral permanente para el sector siderúrgico bonaerense</strong>, con representación de la empresa, los sindicatos y la Provincia, que establezca mecanismos para que los ajustes de la empresa no recaigan exclusivamente sobre los trabajadores más precarios. No es una propuesta que el intendente pueda hacer. Es una propuesta que pertenece al nivel provincial.</p>
+
+  <div class="nota-r">
+    <strong>⚠ Señal que no puede ignorarse</strong>
+    El saldo migratorio negativo de San Nicolás —ciudad con agua de red al 98,5%, NBI del 7,7%, por encima del promedio provincial en casi todos los indicadores de bienestar— no tiene explicación en la falta de servicios. Tiene explicación en la incertidumbre laboral estructural que genera vivir en una ciudad donde el trabajo depende de las decisiones de una sola empresa. Los hijos de los obreros de SOMISA se van. La Provincia puede ofrecer algo que el intendente no puede: un proyecto de desarrollo económico que vaya más allá de la planta.
+  </div>
+
+  <!-- SECCIÓN 5 -->
+  <h2>Agenda de discurso — Cómo entrar y cómo salir</h2>
+
+  <p>El eje central del discurso en San Nicolás es uno solo: <strong>trabajo e industria desde la perspectiva provincial</strong>. No emergencia social, no asistencia, no subsidios. La ciudad no tiene ese perfil y ese tipo de mensaje no conecta aquí. Lo que mueve a San Nicolás es la memoria de haber construido algo grande y la ansiedad de no saber si volverá a construir algo así.</p>
+
+  <p>El primer mensaje es histórico y emocional: el peronismo construyó esta ciudad en 1947. Ese decreto transformó un pequeño puerto agrícola en la capital siderúrgica del país. Esa decisión le dio trabajo, identidad y orgullo a generaciones enteras. Ese es el punto de entrada. Reconocerlo no es nostalgia, es pertenencia.</p>
+
+  <p>El segundo mensaje es concreto y presente: Sidersa+, la primera acería nueva en Argentina en sesenta años, se está construyendo en San Nicolás ahora mismo. Cuatrocientas personas trabajan ya en la obra. La Provincia va a acompañar ese proceso. "Lo que Perón empezó en 1947, nosotros lo estamos haciendo crecer en 2026" es una línea que tiene sustento real.</p>
+
+  <p>El tercer mensaje es de posicionamiento del Estado: cuando la empresa ajusta, los contratistas no pueden quedar solos. La propuesta de la mesa de diálogo laboral siderúrgico es una señal de que la Provincia se ve como mediadora activa, no como espectadora. En una ciudad que vivió en carne propia lo que pasa cuando el Estado desaparece del sector industrial, esa señal tiene peso.</p>
+
+  <p>Lo que se debe evitar es igualmente claro: cualquier referencia que suene a asistencialismo, cualquier crítica frontal a Passaglia que lo haga víctima en su propio territorio, y cualquier mensaje que suene a que la Provincia viene a resolver problemas que la ciudad no tiene. San Nicolás no está en emergencia. Está en una encrucijada. El mensaje tiene que estar a la altura de esa diferencia.</p>
+
+  <div class="nota-k">
+    <strong>⚡ Los interlocutores clave antes de la visita</strong>
+    Contacto con la conducción de la UOM San Nicolás y ASIMRA es recomendado antes de la visita. Lideraron el paro de 2025 y negociaron las reincorporaciones. Su respaldo o su neutralidad ante la presencia provincial marca una diferencia significativa en cómo se lee el acto en la ciudad. También: el Santuario de la Virgen del Rosario recibe entre 500.000 y 800.000 peregrinos por año. Para muchos sannicolasenses, el Santuario es tan central como la planta. Una mención respetuosa o una visita breve al lugar puede humanizar el discurso de formas que ningún dato económico puede igualar.
+  </div>
+
+</div>
+
+<div class="footer">
+  🔒 USO RESERVADO · Campaña PBA · Briefing San Nicolás de los Arroyos · Datos: Min. Economía PBA (14/05/2026) · PBA Analytics 2026
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ANEXO I — PRINCIPALES INDICADORES
+     ═══════════════════════════════════════════════════════ -->
+<div class="anexo-wrap">
+  <div class="ah-azul">
+    <div>
+      <div class="ah-meta">San Nicolás de los Arroyos · 2026</div>
+      <div class="ah-title">ANEXO I — PRINCIPALES INDICADORES</div>
+    </div>
+    <div class="ah-right">Fuente: Min. Economía PBA<br>INDEC Censo 2022 · CUD 2026</div>
+  </div>
+
+  <div class="ag-body">
+    <div class="ag3">
+
+      <div class="card">
+        <div class="ch" style="background:#EFF6FF;color:#1E40AF;">👥 Población y Territorio</div>
+        <div class="cb">
+          <table class="t">
+            <tr><th>Indicador</th><th>Valor</th><th>Ref.</th></tr>
+            <tr><td>Población total (2022)</td><td class="bld">168.041</td><td>—</td></tr>
+            <tr><td>Población total (2010)</td><td>145.857</td><td>—</td></tr>
+            <tr><td>Crecimiento intercensal</td><td class="ok">+15,2%</td><td>Prov: +9,8%</td></tr>
+            <tr><td>Superficie</td><td class="bld">652 km²</td><td>—</td></tr>
+            <tr><td>Densidad</td><td>258 hab/km²</td><td>Prov: 73</td></tr>
+            <tr><td>% Urbana</td><td class="ok">98%</td><td>Prov: 97%</td></tr>
+            <tr><td>Saldo migratorio</td><td class="bad">Expulsora −11,1%</td><td>Prov: Receptora</td></tr>
+            <tr><td>Sección Electoral</td><td class="inf">2ª Sección</td><td>—</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch" style="background:#F0FDF4;color:#14532D;">🏠 Condiciones de Vida</div>
+        <div class="cb">
+          <table class="t">
+            <tr><th>Indicador</th><th>San Nicolás</th><th>Prov.</th></tr>
+            <tr><td>NBI</td><td class="ok">7,7%</td><td>11,0%</td></tr>
+            <tr><td>Agua de red</td><td class="ok">98,5%</td><td>~75%</td></tr>
+            <tr><td>Gas de red</td><td class="ok">72,3%</td><td>~65%</td></tr>
+            <tr><td>Cloacas</td><td>~65% est.</td><td>~55%</td></tr>
+            <tr><td>Energía eléctrica</td><td class="ok">&gt;99%</td><td>~97%</td></tr>
+            <tr><td>Cobertura salud</td><td class="ok">Alta</td><td>Media</td></tr>
+            <tr><td>Calificación social</td><td class="ok inf">Sobre promedio prov.</td><td>—</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch" style="background:#FEF3C7;color:#78350F;">⚙️ Estructura PBG</div>
+        <div class="cb">
+          <table class="t">
+            <tr><th>Sector</th><th>% PBG</th><th>Nota</th></tr>
+            <tr><td>Industria</td><td class="inf bld">26,1%</td><td>Siderurgia</td></tr>
+            <tr><td>Act. Inmobiliaria</td><td>12,7%</td><td>—</td></tr>
+            <tr><td>Comercio</td><td>10,5%</td><td>Dep. industria</td></tr>
+            <tr><td>Transporte y Com.</td><td>10,5%</td><td>—</td></tr>
+            <tr><td>Serv. financieros</td><td>7,4%</td><td>—</td></tr>
+            <tr><td>Agropecuario</td><td>5,6%</td><td>Granos + puerto</td></tr>
+            <tr><td>Construcción</td><td>5,6%</td><td>—</td></tr>
+            <tr><td><strong>Servicios (total)</strong></td><td class="bld">54,2%</td><td>Trac. industria</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch" style="background:#F5F3FF;color:#4C1D95;">💰 Finanzas Municipales · 2025–26</div>
+        <div class="cb">
+          <table class="t">
+            <tr><th>Indicador</th><th>Valor</th><th>Señal</th></tr>
+            <tr><td>Resultado financiero 2025</td><td class="ok">+$7.962M</td><td>Superávit</td></tr>
+            <tr><td>Autonomía fiscal</td><td class="ok">62%</td><td>Alta</td></tr>
+            <tr><td>Inversión / Gasto total</td><td class="ok">26%</td><td>Alto</td></tr>
+            <tr><td>Activos / Nómina</td><td class="warn">8,26x</td><td>Rel. alta</td></tr>
+            <tr><td>CUD 2026</td><td class="inf">0,58987%</td><td>—</td></tr>
+            <tr><td>Transferencias 2026</td><td class="ok">$37.852M</td><td>+32%</td></tr>
+            <tr><td>Concejales PJ</td><td class="bad">2 de 20</td><td>Minoría</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch" style="background:#FEE2E2;color:#7F1D1D;">🗳️ Performance Electoral · 2023</div>
+        <div class="cb">
+          <table class="t">
+            <tr><th>Fuerza</th><th>%</th><th>Señal</th></tr>
+            <tr><td>Juntos por el Cambio</td><td class="bad">42,3%</td><td>Ganó holgado</td></tr>
+            <tr><td>Unión por la Patria</td><td class="warn">29,9%</td><td>2º · Piso propio</td></tr>
+            <tr><td>La Libertad Avanza</td><td class="warn">20,6%</td><td>3º · Voto obrero</td></tr>
+            <tr><td>Otras fuerzas</td><td>7,2%</td><td>—</td></tr>
+          </table>
+          <div class="al al-a">
+            <strong>⚠ Lectura estratégica</strong>
+            Brecha JxC–UxP: 12,4 pts. Recuperable. El 20,6% de LLA es voto obrero desencantado — el PJ debe recuperarlo con narrativa industrial.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch" style="background:#1F4E79;color:white;">🏭 Indicadores Productivos</div>
+        <div class="cb">
+          <table class="t">
+            <tr><th>Dato</th><th>Valor</th></tr>
+            <tr><td>Producción Ternium</td><td class="bld">2.000.000 ton/año</td></tr>
+            <tr><td>Empleos Ternium</td><td class="bld">&gt;7.000 dir. + ind.</td></tr>
+            <tr><td>Dep. de Ternium</td><td class="warn">&gt;30% ingr. comerc.</td></tr>
+            <tr><td>Conflicto laboral 2025</td><td class="bad">Paro + 220 despidos</td></tr>
+            <tr><td>Sidersa+ (acería)</td><td class="ok">En construc. · 2028</td></tr>
+            <tr><td>Capacidad Sidersa+</td><td>360.000 ton/año</td></tr>
+            <tr><td>Puerto Paraná</td><td class="ok">34 pies · Km 343</td></tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="anx-foot">🔒 USO RESERVADO · ANEXO I · San Nicolás de los Arroyos · PBA Analytics 2026</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ANEXO II — HITOS DE GESTIÓN Y DATOS HISTÓRICOS
+     ═══════════════════════════════════════════════════════ -->
+<div class="anexo-wrap">
+  <div class="ah-ambar">
+    <div>
+      <div class="ah-meta">San Nicolás de los Arroyos · 2026</div>
+      <div class="ah-title">ANEXO II — HITOS DE GESTIÓN Y DATOS HISTÓRICOS</div>
+    </div>
+    <div class="ah-right">Gestión Passaglia · 3er mandato<br>Historia y datos de color</div>
+  </div>
+
+  <div class="ag-body">
+    <div class="ag2">
+
+      <div class="card">
+        <div class="ch" style="background:#FEE2E2;color:#7F1D1D;">🏛️ Passaglia · Intendente JxC · 3er Mandato</div>
+        <div class="cb">
+          <div class="st">Perfil político</div>
+          <table class="t perf" style="margin-bottom:14px;">
+            <tr><td class="bld">Nombre</td><td>Ismael Santiago Passaglia</td></tr>
+            <tr><td class="bld">Fuerza</td><td>Juntos por el Cambio / Pro</td></tr>
+            <tr><td class="bld">Mandatos</td><td>3 consecutivos (2011–2027)</td></tr>
+            <tr><td class="bld">Concejales PJ</td><td class="bad">2 de 20 — Minoría extrema</td></tr>
+            <tr><td class="bld">Perfil</td><td>Administrativo, moderado, sin confrontaciones</td></tr>
+            <tr><td class="bld">Ternium 2025</td><td>Posición neutral — no tomó partido en conflicto</td></tr>
+          </table>
+          <div class="st">Hitos de Gestión Destacados</div>
+          <div class="ag-row">
+            <div class="ag-ico">🏗️</div>
+            <div class="ag-txt"><strong>Renovación del casco histórico</strong><p>Peatonalización y mejora de plaza central y avenidas principales. Gestión de imagen urbana consistente en tres mandatos.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">💰</div>
+            <div class="ag-txt"><strong>Gestión fiscal equilibrada</strong><p>Superávit de $7.962M en 2025. Autonomía fiscal del 62%. Inversión pública = 26% del gasto total.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">🏭</div>
+            <div class="ag-txt"><strong>Habilitación municipal de Sidersa+</strong><p>Permisos locales otorgados durante su gestión. No es un proyecto propio pero ocurrió bajo su mandato.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">🩺</div>
+            <div class="ag-txt"><strong>Red de atención primaria de salud</strong><p>Ampliación de centros de salud periféricos. Indicadores de cobertura sobre el promedio provincial.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">⚠️</div>
+            <div class="ag-txt"><strong>Límite estructural: la dependencia de Ternium no se modificó</strong><p>Saldo migratorio negativo persiste en tres mandatos. Es el flanco más débil de su gestión y la oportunidad más clara para el relato provincial.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch" style="background:#FEF3C7;color:#78350F;">📜 Historia y Datos de Color · Para la reunión</div>
+        <div class="cb">
+          <div class="ag-row">
+            <div class="ag-ico">⛪</div>
+            <div class="ag-txt"><strong>La Virgen del Rosario de San Nicolás (1983)</strong><p>El 25 de septiembre de 1983, Gladys de Motta reportó las primeras apariciones. San Nicolás se convirtió en uno de los tres santuarios marianos más importantes de Argentina. Recibe entre 500.000 y 800.000 peregrinos por año. Para mucha gente en la ciudad, la Virgen es tan o más central que la siderurgia. No ignorarlo en ninguna visita.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">📜</div>
+            <div class="ag-txt"><strong>El Acuerdo de San Nicolás (31 de mayo de 1852)</strong><p>Los gobernadores de las provincias argentinas se reunieron aquí para acordar los principios que derivaron en la Constitución Nacional de 1853. San Nicolás tiene relevancia constitucional de primera magnitud. Ideal para un discurso sobre unidad nacional desde la perspectiva bonaerense.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">🏭</div>
+            <div class="ag-txt"><strong>SOMISA · Decreto de Perón · 19 de marzo de 1947</strong><p>El decreto transformó un modesto puerto agrícola en la capital siderúrgica del país. La privatización bajo Menem en 1992 fue una herida colectiva aún presente. La memoria de SOMISA es el alma política de la ciudad. Es el punto de entrada emocional de cualquier discurso.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">🎭</div>
+            <div class="ag-txt"><strong>Carnaval de San Nicolás</strong><p>Uno de los carnavales más antiguos y tradicionales de la provincia. Corsódromo activo, comparsas de larga historia. Parte de la identidad festiva que convive con el perfil industrial. Un dato de cultura popular que humaniza el discurso.</p></div>
+          </div>
+          <div class="ag-row">
+            <div class="ag-ico">🎭</div>
+            <div class="ag-txt"><strong>Teatro Colonial</strong><p>Uno de los teatros más antiguos de la provincia de Buenos Aires. Símbolo del patrimonio cultural que precedió a la industrialización. La coexistencia de ciudad histórica, santuario mariano y capital siderúrgica es una identidad única en la PBA.</p></div>
+          </div>
+          <div class="al al-b" style="margin-top:10px;">
+            <strong>💡 Clave para la reunión</strong>
+            San Nicolás tiene tres identidades superpuestas: industrial (SOMISA/Ternium), religiosa (el Santuario), e histórica (el Acuerdo de 1852). Cualquiera puede ser punto de entrada. Conocerlos todos evita errores y abre puertas inesperadas.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="anx-foot">🔒 USO RESERVADO · ANEXO II · San Nicolás de los Arroyos · PBA Analytics 2026</div>
+</div>
+
+</body>
+</html>

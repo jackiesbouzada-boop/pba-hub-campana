@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Villarino — Narrativa Política · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: Georgia, 'Times New Roman', serif; font-size: 13.5px; line-height: 1.75; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.cover { color: white; padding: 38px 36px 32px; min-height: 200px; display: flex; flex-direction: column; justify-content: flex-end; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.cover-eyebrow { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.6; margin-bottom: 10px; }
+.cover-title { font-size: 38px; font-weight: 700; line-height: 1.1; margin-bottom: 8px; letter-spacing: -0.5px; }
+.cover-sub { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; opacity: 0.8; line-height: 1.7; margin-bottom: 16px; max-width: 600px; }
+.cover-meta { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10.5px; opacity: 0.55; border-top: 1px solid rgba(255,255,255,0.25); padding-top: 12px; }
+.art { padding: 0 42px; background: white; }
+h2 { font-family: 'Segoe UI', Arial, sans-serif; font-size: 17px; font-weight: 800; color: #78350F; margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 2px solid #FBBF24; letter-spacing: -0.2px; }
+h3 { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; font-weight: 700; color: #92400E; margin: 18px 0 7px; }
+p { margin-bottom: 13px; text-align: justify; hyphens: auto; }
+.lead { font-size: 15px; font-weight: 600; line-height: 1.65; color: #78350F; margin-bottom: 18px; border-left: 4px solid #FBBF24; padding-left: 16px; font-family: 'Segoe UI', Arial, sans-serif; }
+.pull { border-left: 4px solid #92400E; background: #FFF7ED; padding: 13px 16px; margin: 18px 0; font-style: italic; font-size: 13px; color: #78350F; border-radius: 0 6px 6px 0; break-inside: avoid; page-break-inside: avoid; }
+.pull strong { font-style: normal; display: block; font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; color: #92400E; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+.epig { background: #FFF7ED; border-left: 5px solid #92400E; padding: 13px 16px; margin: 18px 0; font-size: 12px; line-height: 1.65; border-radius: 0 6px 6px 0; break-inside: avoid; page-break-inside: avoid; }
+.epig strong { display: block; font-family: 'Segoe UI', Arial, sans-serif; color: #78350F; font-size: 11px; margin-bottom: 3px; }
+.blk { border: 1px solid #e5e7eb; border-radius: 8px; padding: 15px 18px; margin: 18px 0; break-inside: avoid; page-break-inside: avoid; }
+.blk h4 { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; font-weight: 700; margin-bottom: 8px; color: #92400E; }
+.blk p { font-size: 12px; margin-bottom: 8px; }
+.blk p:last-child { margin-bottom: 0; }
+.blk-g { background: #FFF7ED; border-color: #FBBF24; }
+.blk-k { background: #0C2340; border: none; border-left: 4px solid #FBBF24; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-k h4 { color: #FBBF24; }
+.blk-k p { color: rgba(255,255,255,0.88); font-size: 12px; }
+.blk-w { background: #FFFBEB; border-color: #FCD34D; }
+.blk-w h4 { color: #78350F; }
+.blk-r { background: #FEF2F2; border-color: #FCA5A5; }
+.blk-r h4 { color: #7F1D1D; }
+.nota { background: #FFF7ED; border: 1px solid #FBBF24; border-radius: 6px; padding: 10px 14px; margin: 14px 0; font-size: 11.5px; color: #78350F; line-height: 1.65; break-inside: avoid; page-break-inside: avoid; }
+.nota strong { font-family: 'Segoe UI', Arial, sans-serif; display: block; margin-bottom: 3px; color: #92400E; }
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 28px 0; }
+.anx-break { break-before: page; height: 0; margin: 0; padding: 0; font-size: 0; }
+.anx-keep { break-inside: avoid; page-break-inside: avoid; }
+.anx-hdr { color: white; padding: 18px 26px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.anx-body { padding: 18px 26px; break-inside: avoid; page-break-inside: avoid; }
+table { width: 100%; border-collapse: collapse; font-size: 11.5px; font-family: 'Segoe UI', Arial, sans-serif; margin: 12px 0; }
+th { background: #f5f6f8; color: #555; padding: 5px 8px; text-align: left; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+td { padding: 5px 8px; border-bottom: 1px solid #f3f4f6; vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+td:first-child { color: #555; }
+.ok  { color: #14532D; font-weight: 700; }
+.bad { color: #7F1D1D; font-weight: 700; }
+.warn { color: #78350F; font-weight: 700; }
+.inf  { color: #1E40AF; font-weight: 700; }
+.footer { text-align: center; padding: 14px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; font-family: 'Segoe UI', Arial, sans-serif; }
+@media print {
+  @page { size: A4 portrait; margin: 7mm 8mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; font-size: 8pt !important; }
+  .art { padding: 0 28px !important; }
+  h2 { font-size: 11pt !important; margin: 18px 0 7px !important; }
+  .lead { font-size: 9pt !important; }
+  p { margin-bottom: 7px !important; }
+  .blk, .pull, .epig, .nota { break-inside: avoid !important; page-break-inside: avoid !important; }
+  .anx-break { break-before: page !important; }
+  .anx-keep { break-inside: avoid !important; page-break-inside: avoid !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover" style="background: linear-gradient(135deg, #78350F 0%, #92400E 100%);">
+  <div class="cover-eyebrow">Análisis Político Territorial · Carlos Bevilacqua (Vecinalismo · Independiente) · 6ª Sección Electoral · Cluster 6 · Sur Bonaerense · PBA 2026</div>
+  <div class="cover-title">🧅 Villarino (Médanos)</div>
+  <div class="cover-sub">El municipio que exporta cebolla al mundo desde la puerta de la Patagonia. Vecinalismo independiente, PJ 13,8% en 2023 (4° lugar). La agenda es productiva e institucional — no electoral.</div>
+  <div class="cover-meta">6ª Sección Electoral · Cluster 6 · Sur Bonaerense · 10.399 km² · Padrón 2025: 28.855 · Capital Nacional de la Cebolla · Colonia Judía · Comunidad Boliviana 10% · Acueductos $5.700M · CoReSa 2026</div>
+</div>
+
+<div class="art">
+
+<!-- I. EL MUNICIPIO -->
+<h2>I. El Municipio: La Cebolla que Sale al Mundo desde la Triple Identidad</h2>
+
+<div class="lead">Villarino (Médanos) es un caso único en la geografía bonaerense: el principal productor y exportador de cebolla del país, en la puerta de la Patagonia, con una historia de colonización judía que fundó la economía del campo y una comunidad boliviana que hoy sostiene la cosecha. Tres identidades superpuestas en 10.399 km² del sur bonaerense profundo.</div>
+
+<p>La cebolla de Villarino no es un cultivo más — es la razón de ser del municipio como nodo económico. Los galpones de empaque de Buratovich y Médanos procesan la producción del sur bonaerense y la exportan directamente a Brasil y Europa bajo certificación del EMPROMUV (Ente Municipal de Producción de Villarino). El ritmo de la cosecha dicta el empleo, el movimiento de camiones hacia el Puerto de Bahía Blanca y la actividad comercial de todo el casco urbano de Médanos.</p>
+
+<div class="epig">
+  <strong>🌍 Tres culturas que hicieron la cebolla</strong>
+  La historia económica de Villarino la construyeron tres comunidades. Las familias judías que se alejaron de la colonización organizada de Santa Fe y se radicaron en la pampa sur bonaerense cultivando primero ajo y luego cebolla — fundando la economía productiva del municipio. Con los años llegó la comunidad boliviana, que hoy representa el 10% de la población total y aporta la mano de obra especializada del cultivo y el empaque — la columna vertebral de la cosecha. Y el vecinalismo local que gobierna el municipio con pragmatismo productivo.
+</div>
+
+<p>El municipio es geográficamente singular: con 10.399 km², limita al sur con Carmen de Patagones y al este con el Atlántico — es la "puerta de la Patagonia" bonaerense, el último municipio productivo antes de cruzar al sur del río Colorado. Esa posición de frontera genera una identidad cultural de distancia y autonomía respecto de los centros de poder, similar a la de Villegas en el noroeste pero con la impronta del mar y la Patagonia al sur en lugar del desierto pampeano.</p>
+
+<p>La ganadería y los cereales completan la matriz productiva junto con la cebolla. El sistema de riego del canal que alimenta a Pedro Luro y Ascasubi permite producciones bajo riego que diversifican la economía más allá del secano. El Lago del Monte y Chapalcó son los nodos de un incipiente turismo regional que el municipio intenta potenciar como fuente complementaria de ingreso.</p>
+
+<!-- II. BEVILACQUA Y EL VECINALISMO INDEPENDIENTE -->
+<h2>II. Bevilacqua: El Vecinalismo que Gobierna con Agenda Productiva</h2>
+
+<div class="lead">Carlos Bevilacqua no es PJ, no es JxC, no es LLA. Es vecinalismo puro — ganó la intendencia en 2023 con el 32,9% en una elección fragmentada donde JxC quedó segundo (32,4%), LLA tercero (21,0%) y el PJ cuarto (13,8%). Su gobierno se define por la obra concreta: acueductos, EMPROMUV, digitalización y posicionamiento regional sanitario.</div>
+
+<p>El vecinalismo en el sur bonaerense tiene una lógica propia: es la expresión política de productores, comerciantes y vecinos que no se identifican con los partidos nacionales pero que tienen demandas concretas de infraestructura, agua, salud y servicios. Bevilacqua representa esa lógica — un intendente que ganó por su conocimiento del territorio y por una propuesta de gestión local, no por alineación ideológica.</p>
+
+<div class="pull">
+  <strong>El vecinalismo como pragmatismo productivo</strong>
+  "El vecinalismo de Villarino no es una posición anti-todo — es la expresión de un municipio donde el productor agropecuario y el comerciante local gobiernan a través de sus propios representantes. Bevilacqua no necesita a los partidos nacionales para gobernar bien: necesita los acueductos, el EMPROMUV y el CoReSa."
+</div>
+
+<p>El hito de gestión más importante del período de Bevilacqua son los acueductos. El Sauce Chico-Médanos y el Pedro Luro-Ascasubi son obras estructurales de infraestructura hídrica financiadas con organismos internacionales, con una licitación histórica de $5.700 millones para reemplazar 16 km de cañería. En un municipio con desafíos históricos de salinidad y escasez de agua potable, esos acueductos son la transformación más concreta de la vida cotidiana del vecino de cualquier localidad del partido.</p>
+
+<p>La modernización del Centro Operativo de Buratovich del EMPROMUV es el segundo hito. La certificación de calidad de exportación de la cebolla de Villarino para Brasil y Europa depende de la confiabilidad del EMPROMUV como garante de estándares fitosanitarios. Modernizar ese centro operativo es una inversión directa en la competitividad exportadora del primer productor de cebolla del país.</p>
+
+<div class="epig">
+  <strong>💻 Papel Cero: la innovación de gobierno que nadie esperaba del sur bonaerense</strong>
+  Villarino es pionero nacional en la implementación de la gestión documental digital. El municipio digitalizó el 100% de sus trámites internos — un logro que en la mayoría de los municipios del interior bonaerense todavía es aspiracional. "Papel Cero" no es solo eficiencia administrativa: en un partido de 10.399 km² con localidades dispersas, poder hacer un trámite sin viajar a Médanos es una mejora concreta en la calidad de vida del vecino rural.
+</div>
+
+<p>El CoReSa 2026 (Consejo Regional de Salud) cierra el cuadro: Villarino fue elegido sede de la planificación sanitaria de 15 municipios del sudoeste bonaerense. Ese liderazgo regional no es casual — refleja la capacidad del municipio de articular con sus pares y de posicionarse como nodo de referencia del sur bonaerense más allá de su propio territorio.</p>
+
+<!-- III. EL PJ EN VILLARINO: EL PISO MÁS BAJO -->
+<h2>III. El PJ en Villarino: El 13,8% que Describe un Municipio</h2>
+
+<div class="lead">El 13,8% que obtuvo el PJ en la intendencia 2023 de Villarino no es una anomalía estadística — es la descripción de una estructura política donde el peronismo nunca tuvo arraigo profundo. El municipio tiene una identidad productiva y vecinalista que no encaja naturalmente con el espacio PJ.</div>
+
+<p>En términos absolutos, el PJ obtuvo 2.611 votos en la intendencia 2023 — cuarto lugar, detrás del Vecinalismo (6.237), JxC (6.137) y LLA (3.977). El anti-PJ del 86,2% es el más alto del grupo de municipios analizados en este ciclo. No hay un peronismo histórico en Villarino que se haya desgastado — lo que hay es una ausencia histórica de identificación entre el municipio y el peronismo nacional.</p>
+
+<div class="blk blk-r">
+  <h4>⚠️ ¿Por qué el PJ es 4° en Villarino?</h4>
+  <p>La economía cebolera tiene una lógica política propia: el productor y el empacador de cebolla son actores que históricamente se identifican con el campo anti-intervencionista, con la demanda de bajos impuestos a la exportación y con la desconfianza hacia el Estado redistributivo. Esa lógica encuentra representación natural en el vecinalismo local o en JxC/LLA a nivel nacional — no en el PJ.</p>
+  <p>La comunidad boliviana, por su parte, aunque tiene necesidades concretas que el PJ históricamente ha atendido en otros contextos, en Villarino opera mayoritariamente como mano de obra temporaria estacional con baja inserción en la vida política local permanente.</p>
+</div>
+
+<p>En las concejales provinciales 2025, el PJ mejoró al 19,0% — casi empatando con LLA (19,6%). La diferencia fue de apenas 95 votos (2.838 PJ vs 2.933 LLA). Esa mejora relativa se explica principalmente por la ausencia de candidatos JxC: sin esa opción, parte del voto no-peronista y no-LLA buscó otra salida y el PJ se benefició marginalmente. En el Diputado Nacional 2025, el PJ llegó al 26,7% pero con LLA dominando al 58,8%.</p>
+
+<div class="pull">
+  <strong>El piso real del PJ en Villarino</strong>
+  "El PJ en Villarino tiene un piso que oscila entre el 14% y el 27% según el tipo de elección y la fragmentación del resto. Sin candidatos propios fuertes y sin estructura local consolidada, el 20-25% es el techo realista en legislativas. En ejecutiva, necesitaría un candidato con arraigo local muy sólido para superar el 25-30% — y aun así, el vecinalismo con un buen candidato puede ganarle."
+</div>
+
+<!-- IV. LLA Y EL ANTI-PJ CONSOLIDADO -->
+<h2>IV. La Libertad Avanza: 58,8% en Nacionales y la Absorbción del Voto JxC</h2>
+
+<p>LLA obtuvo el 21,0% en la intendencia 2023 — tercer lugar, pero con un caudal propio. En las concejales PBA 2025, con JxC sin candidatos, LLA llegó al 19,6% (casi empatando con el PJ que obtuvo 19,0% — un resultado llamativamente parejo). Y en el Diputado Nacional 2025, LLA alcanzó el 58,8% con 8.670 votos — absorbiendo de forma masiva el voto JxC de 2023 (que fue de 6.137 votos, el 32,4%).</p>
+
+<p>La aritmética es clara: JxC tenía 6.137 votos en 2023. En 2025 (sin JxC), LLA llegó a 8.670 en el Diputado Nacional — un crecimiento de 4.693 votos sobre los 3.977 de 2023, que coincide aproximadamente con el voto JxC absorbido. El anti-PJ del 86,2% de 2023 está hoy mayoritariamente concentrado en LLA para las elecciones nacionales.</p>
+
+<div class="epig">
+  <strong>📊 La paradoja del 19,6% en concejales vs 58,8% en nacionales</strong>
+  LLA obtuvo el 19,6% en los concejales PBA 2025 pero el 58,8% en el Diputado Nacional 2025 — mismo año, diferente elección. La explicación es la "elección de dos velocidades": en concejales provinciales el voto es más local y el vecinalismo retiene parte de su caudal; en la elección nacional el votante vota "al gobierno de Milei" y LLA concentra todo el voto anti-PJ disponible. Esta dualidad es característica del sur bonaerense con vecinalismo fuerte.
+</div>
+
+<!-- V. LA AGENDA PROVINCIAL: INSTITUCIONAL PURA -->
+<h2>V. La Agenda Provincial: Tres Puertas de Entrada Institucional</h2>
+
+<p>En Villarino no hay aliado activo que anclar. No hay intendente del espacio provincial, no hay concejales PJ que organicen visitas, no hay estructura local que movilice. La presencia provincial en Villarino debe ser completamente institucional — y tiene tres puertas de entrada concretas.</p>
+
+<div class="blk blk-k">
+  <h4>🎯 Las tres palancas provinciales en Villarino</h4>
+  <p><strong>1. Los acueductos:</strong> Los acueductos Sauce Chico-Médanos y Pedro Luro-Ascasubi son la obra más importante del sur bonaerense en el ciclo actual. La Provincia puede visibilizar su apoyo, co-financiar etapas adicionales o articular con los organismos internacionales que los financian. Una recorrida de obra con el intendente Bevilacqua y un anuncio de apoyo provincial tiene impacto concreto en el 100% de la población del municipio que se beneficia del agua segura.</p>
+  <p><strong>2. El EMPROMUV y la cadena de la cebolla:</strong> Villarino es el primer exportador de cebolla del país. Una agenda MinAgrario específica para la cadena cebolera — financiamiento para modernización de galpones, apoyo a la certificación del EMPROMUV, articulación con el complejo portuario de Bahía Blanca — tiene impacto directo en la economía del municipio y construye imagen provincial con el sector productivo más relevante del distrito.</p>
+  <p><strong>3. El CoReSa 2026:</strong> Villarino como sede del Consejo Regional de Salud de 15 municipios del sudoeste bonaerense es una plataforma de liderazgo regional que la Provincia puede potenciar. Un acto de respaldo con los 15 intendentes del sudoeste y un anuncio de co-financiamiento de infraestructura sanitaria para la sede tiene multiplicador regional: impacta en 15 municipios simultáneamente.</p>
+</div>
+
+<p>La clave del encuadre correcto para Villarino es que la Provincia no "viene a hacer campaña" — viene a co-gestionar obras e inversiones que benefician a los vecinos de un municipio que tiene demandas concretas. Bevilacqua es un interlocutor institucional legítimo con quien la Provincia puede trabajar independientemente de la alineación electoral de su vecinalismo.</p>
+
+<p>La comunidad boliviana es una cuarta entrada posible, más delicada: políticas de inclusión, regularización documental, acceso a la educación y a la salud para un colectivo que sostiene la economía productiva del municipio sin siempre tener acceso pleno a derechos. Esta agenda no tiene retorno electoral inmediato pero construye presencia real con un segmento que en otros contextos vota PJ cuando se siente reconocido.</p>
+
+<div class="nota">
+  <strong>📌 El Museo de la Sinagoga como narrativa de identidad</strong>
+  El Proyecto Museo de la Sinagoga en Médanos es la política cultural más simbólicamente rica del municipio: recupera la historia de las familias judías que fundaron la economía cebolera del sur bonaerense. La Provincia puede articular con el proyecto a través del programa de patrimonio cultural, aportando recursos para la restauración o la curaduría. Es una intervención de bajo costo y alto valor simbólico — que además conecta con la agenda de memoria histórica del campo bonaerense.
+</div>
+
+<!-- VI. LAS VISITAS -->
+<h2>VI. Visitas Estratégicas · Villarino · Agenda de Gestión Concreta</h2>
+
+<p>Las visitas en Villarino tienen una lógica diferente a los municipios aliados: no se trata de reforzar al intendente del espacio sino de mostrar que la Provincia trabaja en el sur bonaerense con quien gobierna ese sur. La agenda es de gestión, no de alineación.</p>
+
+<div class="blk">
+  <h4>💧 Visita 1 — Acueducto Sauce Chico-Médanos · Obra activa (Score 9.0)</h4>
+  <p>Recorrida de obra con Bevilacqua + anuncio de apoyo o co-financiamiento provincial. El acueducto es el hito de gestión más visible del período — una obra que cambia la vida de los vecinos de Médanos y del partido. Marco discursivo: "agua segura para el sur bonaerense". La obra también conecta con la agenda hídrica de otros municipios del sudoeste, lo que le da resonancia regional más allá de Villarino.</p>
+</div>
+
+<div class="blk">
+  <h4>🧅 Visita 2 — EMPROMUV · Buratovich (Score 9.0)</h4>
+  <p>Visita al Centro Operativo del EMPROMUV con equipo técnico, productores y empacadores + agenda MinAgrario. Anuncio de convenio provincial para modernización de laboratorio o protocolos de certificación. La Provincia con el principal exportador de cebolla del país — imagen de apoyo al campo exportador. Alta resonancia en el sector productivo dominante.</p>
+</div>
+
+<div class="blk">
+  <h4>🏭 Visita 3 — Galpones de Empaque en Cosecha (Score 8.5)</h4>
+  <p>Visita a un gran galpón de empaque durante la temporada de cosecha. Presencia con trabajadores temporarios, propietarios y representantes del sector. La cosecha es el momento de máxima actividad del municipio — el momento en que la economía de Villarino se hace visible en camiones, en el olor a cebolla en toda la ruta, en el movimiento de Buratovich. Agenda MinAgrario: financiamiento, logística, apertura de mercados.</p>
+</div>
+
+<div class="blk">
+  <h4>🏥 Visita 4 — CoReSa 2026 · Acto Regional (Score 8.0)</h4>
+  <p>Acto de respaldo provincial al CoReSa 2026 con los 15 intendentes del sudoeste. Anuncio de co-financiamiento de infraestructura sanitaria para la sede o para alguno de los 15 municipios participantes. Un acto con 15 intendentes tiene multiplicador regional — es la mayor convocatoria posible en el sudoeste bonaerense en un solo evento. No todos los intendentes del CoReSa son del espacio provincial, pero la agenda de salud regional es territorio neutral.</p>
+</div>
+
+<!-- VII. SÍNTESIS EJECUTIVA -->
+<h2>VII. Síntesis Ejecutiva · Villarino</h2>
+
+<div class="lead">Villarino es el municipio más difícil electoralmente del grupo analizado para el PJ — 13,8% en la intendencia 2023, 4° lugar, sin aliado activo. La única presencia provincial posible es institucional pura: acueductos, cadena cebolera, CoReSa y comunidad boliviana. Bevilacqua es un interlocutor, no un aliado.</div>
+
+<div class="blk blk-k">
+  <h4>🎯 Los cuatro puntos que definen a Villarino en 2026</h4>
+  <p><strong>1. El PJ más débil del interior bonaerense analizado.</strong> 13,8% en 2023 — sin estructura, sin arraigo, sin aliado activo. La estrategia no puede ser electoral en el corto plazo. El objetivo es construir presencia institucional que abra una puerta para 2027.</p>
+  <p><strong>2. El vecinalismo de Bevilacqua es pragmático, no hostil.</strong> Un intendente vecinalista que recibe apoyo provincial en obra concreta (acueductos) y en agenda productiva (EMPROMUV) no tiene razones para ser adversario activo de la Provincia. La interlocución institucional correcta con Bevilacqua puede crear un clima político menos hostil para el espacio en el municipio.</p>
+  <p><strong>3. La cebolla es la agenda.</strong> En un municipio donde el 60% de la economía es la cebolla de exportación, la agenda MinAgrario es más importante que cualquier otra agenda provincial. Estar en el galpón de empaque en cosecha, modernizar el EMPROMUV, abrir mercados para la cebolla de Villarino — esa es la política provincial que tiene impacto real en la vida del distrito.</p>
+  <p><strong>4. El CoReSa multiplica el impacto.</strong> La sede del CoReSa convierte a Villarino en el punto de entrada para presencia regional en 15 municipios del sudoeste bonaerense. Es la plataforma de mayor multiplicador político-institucional disponible en el sur de la Provincia en 2026.</p>
+</div>
+
+</div><!-- /art -->
+
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Narrativa Política — Villarino (Médanos) · PBA Analytics 2026</div>
+
+<!-- ANEXO I -->
+<div class="anx-break"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div class="anx-hdr" style="background:linear-gradient(135deg,#78350F,#92400E);display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Villarino · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:18px;font-weight:900;">ANEXO I — DATOS ELECTORALES</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">Bevilacqua · Vecinalismo · PJ 13,8% (4°) · Anti-PJ 86,2%<br>6ª Sección · Cluster 6 · Sur Bonaerense</div>
+  </div>
+  <div class="anx-body" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;background:#eef2f7;">
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div style="background:#92400E;color:white;padding:8px 12px;font-family:'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;">📊 Intendencia 2023</div>
+      <div style="padding:12px;">
+        <table>
+          <tbody>
+            <tr><td>Vecinalismo (ganó)</td><td class="ok">32,9% · 6.237 ✓</td></tr>
+            <tr><td>JxC</td><td class="warn">32,4% · 6.137 · 2°</td></tr>
+            <tr><td>LLA</td><td class="warn">21,0% · 3.977 · 3°</td></tr>
+            <tr><td>PJ</td><td class="bad">13,8% · 2.611 · 4°</td></tr>
+            <tr><td>Total votos pos.</td><td>18.962</td></tr>
+            <tr><td>Anti-PJ</td><td class="bad">86,2%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div style="background:#92400E;color:white;padding:8px 12px;font-family:'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;">📊 Concejales PBA 2025</div>
+      <div style="padding:12px;">
+        <table>
+          <tbody>
+            <tr><td>LLA</td><td class="bad">19,6% · 2.933</td></tr>
+            <tr><td>PJ</td><td class="warn">19,0% · 2.838</td></tr>
+            <tr><td>JxC</td><td class="inf">— sin candidatos</td></tr>
+            <tr><td>Total votos pos.</td><td>14.931</td></tr>
+            <tr><td>Padrón</td><td>28.855</td></tr>
+            <tr><td>LLA vs PJ</td><td class="warn">+95 votos · casi empate</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div style="background:#92400E;color:white;padding:8px 12px;font-family:'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;">📊 Dip. Nacional 2025</div>
+      <div style="padding:12px;">
+        <table>
+          <tbody>
+            <tr><td>LLA</td><td class="bad">58,8% · 8.670 ✓</td></tr>
+            <tr><td>PJ</td><td class="bad">26,7% · 3.940</td></tr>
+            <tr><td>FIT</td><td>2,5% · 376</td></tr>
+            <tr><td>Total votos pos.</td><td>14.757</td></tr>
+            <tr><td>Padrón</td><td>25.067</td></tr>
+            <tr><td>LLA vs PJ</td><td class="bad">+32,1 pts</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ANEXO II -->
+<div class="anx-break"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div class="anx-hdr" style="background:linear-gradient(135deg,#78350F,#92400E);display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Villarino · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:18px;font-weight:900;">ANEXO II — ACTORES Y AGENDA PROVINCIAL</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">EMPROMUV · Acueductos · CoReSa · Cebolla · Comunidad Boliviana</div>
+  </div>
+  <div class="anx-body" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;background:#eef2f7;">
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div style="background:#92400E;color:white;padding:8px 12px;font-family:'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;">👥 Actores Clave</div>
+      <div style="padding:12px;">
+        <table>
+          <thead><tr><th style="width:32%">Actor</th><th style="width:20%">Perfil</th><th>Relevancia</th></tr></thead>
+          <tbody>
+            <tr><td>Bevilacqua (Intend.)</td><td class="warn">Vecinalismo</td><td>Interlocutor institucional. No aliado activo. Interlocución productiva.</td></tr>
+            <tr><td>EMPROMUV</td><td class="ok">Protocolar</td><td>Certificación cebolla exportación. MinAgrario.</td></tr>
+            <tr><td>Galpones empaque</td><td class="warn">Privado</td><td>JxC→LLA. Empleo masivo cosecha. Agenda campo.</td></tr>
+            <tr><td>Com. boliviana</td><td class="ok">Protocolar</td><td>10% de la pobl. Mano de obra cosecha. Inclusión.</td></tr>
+            <tr><td>Com. judía/Sinagoga</td><td class="ok">Protocolar</td><td>Patrimonio histórico. Proyecto Museo.</td></tr>
+            <tr><td>CoReSa · 15 intend.</td><td class="ok">Protocolar</td><td>Plataforma regional salud. 15 municipios sudoeste.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:8px;overflow:hidden;">
+      <div style="background:#92400E;color:white;padding:8px 12px;font-family:'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;">🏛️ Agenda Provincial + Visitas</div>
+      <div style="padding:12px;">
+        <table>
+          <thead><tr><th style="width:4%">#</th><th>Acción / Visita</th><th style="width:12%">Score</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>💧 Acueducto Sauce Chico-Médanos · recorrida + apoyo</td><td class="ok">9.0</td></tr>
+            <tr><td>2</td><td>🧅 EMPROMUV Buratovich · MinAgrario + certificación</td><td class="ok">9.0</td></tr>
+            <tr><td>3</td><td>🏭 Galpones en cosecha · presencia productiva</td><td class="ok">8.5</td></tr>
+            <tr><td>4</td><td>🏛️ Municipalidad · Bevilacqua · co-anuncio obra</td><td class="warn">8.0</td></tr>
+            <tr><td>5</td><td>🏥 CoReSa 2026 · acto regional 15 municipios</td><td class="warn">8.0</td></tr>
+            <tr><td>6</td><td>🌊 Lago del Monte · Chapalcó · turismo rural</td><td class="inf">6.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Quilmes — Narrativa Estratégica 2026</title>
+<style>
+:root{--primary:#0C3B1E;--accent:#22C55E;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:860px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#0C3B1E 0%,#165F35 55%,#16a34a 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px}
+.h-tag{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.85rem;opacity:.8;margin-bottom:14px}
+.h-thesis{font-size:.95rem;line-height:1.65;max-width:680px;color:rgba(255,255,255,.92);border-left:3px solid #86efac;padding-left:16px;margin-top:10px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#0C3B1E,#165F35);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:18px 20px}
+.sec-body p{color:#374151;font-size:.84rem;line-height:1.7;margin-bottom:12px}
+.sec-body p:last-child{margin-bottom:0}
+.sec-body strong{color:#0C3B1E}
+.cita{background:#f0fdf4;border-left:4px solid #22C55E;border-radius:0 8px 8px 0;padding:16px 18px;margin:14px 0}
+.cita p{font-size:.88rem;font-style:italic;color:#1a3a2a;line-height:1.6;margin:0}
+.cita .attr{font-size:.73rem;font-style:normal;color:#4b7a5a;margin-top:8px;font-weight:600}
+.alert{border-radius:8px;padding:14px 16px;margin:12px 0}
+.alert-warn{background:#fff7ed;border:1.5px solid #fed7aa}
+.alert-win{background:#f0fdf4;border:1.5px solid #bbf7d0}
+.alert-neutral{background:#f0fdf4;border:1.5px solid #86efac}
+.alert-title{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.alert-warn .alert-title{color:#b45309}
+.alert-win .alert-title{color:#15803d}
+.alert-neutral .alert-title{color:#15803d}
+.alert p{font-size:.8rem;color:#374151;line-height:1.6;margin:0}
+.seg-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.seg{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.seg-nm{font-size:.8rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.seg-body{font-size:.77rem;color:#475569;line-height:1.55}
+.seg-pct{display:inline-block;background:#dcfce7;color:#15803d;font-size:.7rem;font-weight:800;padding:2px 8px;border-radius:10px;margin-bottom:6px}
+.tabla{width:100%;border-collapse:collapse;font-size:.78rem;margin:14px 0}
+.tabla th{background:#0C3B1E;color:#fff;padding:8px 10px;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.4px}
+.tabla td{padding:8px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tabla tr:last-child td{border-bottom:none}
+.tabla tr:hover td{background:#f8fafc}
+.tg-pj{color:#15803d;font-weight:700}
+.tg-lla{color:#7c3aed;font-weight:700}
+.tg-jxc{color:#d97706;font-weight:700}
+.eje-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0}
+.eje{background:#f8fafc;border:1.5px solid var(--border);border-radius:8px;padding:12px 14px;border-top:3px solid #0C3B1E}
+.eje-n{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:4px}
+.eje-ttl{font-size:.85rem;font-weight:800;color:var(--primary);margin-bottom:6px}
+.eje-body{font-size:.76rem;color:#475569;line-height:1.5}
+.sint{background:linear-gradient(135deg,#0C3B1E,#165F35);border-radius:var(--radius);padding:22px 24px;color:#fff;margin-top:14px}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bbf7d0;margin-bottom:14px}
+.sint p{font-size:.84rem;color:rgba(255,255,255,.9);line-height:1.7;margin-bottom:10px}
+.sint p:last-child{margin-bottom:0}
+.sint strong{color:#bbf7d0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-tag">🌆 Conurbano Sur · 3ª Sección · Narrativa Estratégica 2026</div>
+  <div class="h-name">QUILMES</div>
+  <div class="h-sub">PJ aliada (Mayra Mendoza) · Padrón 479,621 · La ciudad que le dio nombre a la cerveza</div>
+  <div class="h-thesis">Quilmes no se gana — se maximiza. El PJ tiene 45-50% estable, intendenta aliada y el activo identitario más reconocible de todo el Conurbano: la Cervecería Quilmes. La tarea no es defender el territorio; es sacar la mayor diferencia posible en un bastión donde cada punto vale casi 5,000 votos en el padrón.</div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗺️ El Municipio que Necesitás Entender</div>
+  <div class="sec-body">
+    <p>Quilmes no es el Conurbano de la vulnerabilidad. Es el Conurbano de la identidad: el partido que le prestó su nombre a la cerveza más vendida de Argentina, que tiene un EcoParque de biodiversidad costera sobre el Río de la Plata, que alojó el festival de rock más grande del país durante años, y que tiene en Bernal y Don Bosco zonas residenciales de clase media con fuerte raíz peronista.</p>
+    <p>Mayra Mendoza es la intendenta más visible de La Cámpora a nivel nacional — una figura política con peso propio que supera el municipio. Esa visibilidad es un activo para la coordinación: la gestión municipal y el gobierno provincial se alinean naturalmente. El acceso a todos los activos del partido —EcoParque, red de salud, escuelas— pasa por una aliada que tiene interés en mostrar resultados conjuntos.</p>
+    <p>El riesgo no es político — es de volumen. Quilmes tiene 479,000 electores. Si el PJ saca 45% acá, son ~215,000 votos. Si saca 50%, son ~240,000. Esa diferencia de 25,000 votos en un solo municipio equivale a ganar un municipio mediano de interior. La inversión de agenda en Quilmes tiene retorno electoral directo y masivo.</p>
+
+    <div class="alert alert-neutral">
+      <div class="alert-title">📌 La Matemática del Bastión</div>
+      <p>En 2025 provincial, el PJ sacó 153,458 votos sobre un padrón de 525,087 (48.4%). Con un padrón de 479,621 en la nacional, cada 1% adicional equivale a ~4,796 votos. Pasar de 45.7% a 49% en la boleta nacional es +15,500 votos — el equivalente a ganar Cañuelas completa. Los bastiones se trabajan porque el retorno por esfuerzo es el más alto del sistema.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 El Arco Electoral: Resistencia en un Vendaval</div>
+  <div class="sec-body">
+    <table class="tabla">
+      <thead><tr><th>Elección</th><th>PJ</th><th>JxC</th><th>LLA</th><th>FIT</th></tr></thead>
+      <tbody>
+        <tr><td>2023 Gral (Intendente)</td><td class="tg-pj">50.9% (184,225)</td><td class="tg-jxc">28.6% (103,460)</td><td class="tg-lla">17.1% (61,907)</td><td>3.4%</td></tr>
+        <tr><td>2025 Prov</td><td class="tg-pj">48.4% (153,458)</td><td>—</td><td class="tg-lla">31.3% (99,280)</td><td>—</td></tr>
+        <tr><td>2025 Nac</td><td class="tg-pj">45.7% (148,977)</td><td>—</td><td class="tg-lla">37.3% (121,603)</td><td>5.6% (18,384)</td></tr>
+      </tbody>
+    </table>
+
+    <p>La historia electoral de Quilmes entre 2023 y 2025 es una historia de resistencia. El PJ bajó de 50.9% a 45.7% nacional — solo 5.2 puntos de caída mientras LLA subía 20 puntos. Eso no es un colapso: es una fortaleza que absorbió el vendaval más intenso de la política argentina en décadas y lo sostuvo. La intendenta Mendoza fue parte de esa resistencia.</p>
+    <p>El desafío de 2025 fue que los votos JxC (28.6%) migraron casi en su totalidad a LLA, haciendo que LLA pasara de tercera fuerza marginal a segunda fuerza sólida con 37.3%. Pero el PJ sigue siendo primera fuerza con 8+ puntos de ventaja. Quilmes sigue siendo territorio PJ.</p>
+
+    <div class="alert alert-win">
+      <div class="alert-title">✅ El Dato Clave: Split −2.7 pts</div>
+      <p>El split mínimo de −2.7 pts (PJ prov 48.4% vs PJ nac 45.7%) dice que Quilmes vota de manera <strong>muy consistente entre boletas</strong>. No hay fracturas internas relevantes. El trabajo en la boleta provincial y en la nacional tienen efecto prácticamente equivalente acá — un distrito sin ruido.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 El Argumento: No Defender, Ampliar</div>
+  <div class="sec-body">
+    <div class="eje-grid">
+      <div class="eje">
+        <div class="eje-n">Eje 1</div>
+        <div class="eje-ttl">La Cerveza como Política Industrial</div>
+        <div class="eje-body">Quilmes nació con la industrialización peronista del siglo XX. La Cervecería sigue siendo una planta activa con empleo de calidad. El vínculo entre identidad quilmeña e industria no es nostalgia — es presente. El argumento de industria que permanece cuando el Estado crea las condiciones tiene su mejor escenario en la planta de Quilmes.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-n">Eje 2</div>
+        <div class="eje-ttl">Ambiente y Calidad de Vida Popular</div>
+        <div class="eje-body">El EcoParque sobre el Río de la Plata no es un lujo de clase alta — es espacio público para familias populares del Conurbano Sur. Los programas provinciales de gestión de humedales y biodiversidad costera tienen en Quilmes su mejor ejemplo disponible. "Estado que cuida el río para que el quilmeño lo disfrute."</div>
+      </div>
+      <div class="eje">
+        <div class="eje-n">Eje 3</div>
+        <div class="eje-ttl">Salud y Primera Infancia en el Barrio</div>
+        <div class="eje-body">La red de CAPS y jardines municipales es el punto de contacto diario entre el Estado y el vecino popular de Quilmes. Los programas provinciales de primera infancia, vacunación y salud materna se articulan directamente con Mendoza. Ampliar la escala provincial de esa red es el argumento de Estado presente más concreto disponible.</div>
+      </div>
+    </div>
+
+    <div class="cita">
+      <p>"En Quilmes saben que somos los de la cerveza. Pero también somos los de la intendenta que sigue siendo peronista cuando todo el mundo se iba para LLA. Eso vale."</p>
+      <div class="attr">Marco de conversación con dirigente barrial de Quilmes — Argumento de resistencia y lealtad política</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">⚠️ Riesgos y Puntos de Atención</div>
+  <div class="sec-body">
+    <div class="alert alert-warn">
+      <div class="alert-title">⚠️ Riesgo 1: El Barrio Popular No Es Incondicional</div>
+      <p>El 18% de NBI y el déficit en cloacas (solo 60% de cobertura) muestran que el voto popular en Quilmes tiene bases materiales concretas. Los sectores más vulnerables no votan por lealtad ideológica abstracta — votan por qué perciben como gobierno que resuelve problemas cotidianos. Los programas de infraestructura barrial y acceso a servicios tienen que mantenerse visibles.</p>
+    </div>
+    <div class="alert alert-warn">
+      <div class="alert-title">⚠️ Riesgo 2: LLA con Crecimiento Sostenido (+20 pts en dos años)</div>
+      <p>El salto de LLA de 17% (2023) a 37.3% (2025 nac) es el crecimiento más rápido que un partido ha tenido en Quilmes en décadas. Aunque el PJ mantiene ventaja, ese crecimiento en un bastión histórico indica que hay segmentos — clase media popular, jóvenes, pequeños comerciantes — que se están corriendo. No son recuperables con discurso ideológico; lo son con gestión concreta visible.</p>
+    </div>
+    <div class="alert alert-neutral">
+      <div class="alert-title">📌 FIT como Señal: 5.6% Nacional en 2025</div>
+      <p>El FIT tiene 5.6% en Quilmes nac 2025 — un número relevante en un partido tan poblado (~27,000 votos). Es un voto que salió del PJ por izquierda. Recuperable con un discurso que defienda salario real, trabajo registrado, y condiciones de vida popular sin abandonar el campo.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🎯 Síntesis Narrativa</h3>
+  <p>La lógica de Quilmes no es "ganar" — es <strong>maximizar el margen en el bastión más poblado del Conurbano Sur</strong>. Con 479,000 electores y el PJ en 45-48%, cada punto adicional son 5,000 votos. Una visita bien ejecutada a la Cervecería, el EcoParque y una recorrida por la red de salud con Mendoza puede mover el número en la dirección correcta.</p>
+  <p>El argumento no necesita ser defensivo. El PJ <strong>resistió en Quilmes cuando casi todo el Conurbano se movía</strong>. Esa resistencia tiene una causa: Mendoza fue intendenta peronista cuando ser peronista no era fácil, y el vecino lo notó. El relato de 2026 es de continuidad y amplificación — la provincia suma donde el municipio ya ganó.</p>
+  <p>La Cerveza Quilmes es el activo identitario más potente disponible en el sur del Conurbano. No hay otro municipio en PBA donde el nombre de la ciudad, el orgullo industrial y la identidad colectiva estén tan fusionados. Eso es político aunque no lo parezca — y es una entrada que el PJ tiene y LLA no puede replicar.</p>
+</div>
+
+</body>
+</html>

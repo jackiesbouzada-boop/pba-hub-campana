@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)file:///Users/jacquelinebouzada/Documents/Claude/Projects/PBA%20-%20Analitica/Ficha_Campana_LOBOS.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOBOS — Ficha de Campaña · PBA 2026</title>
+<style>
+/* ═══════════════════════════════════════════════════
+   CSS LIMPIO - FICHA CAMPAÑA PBA 2026
+   Diseñado para A4 vertical. Sin herencias.
+   ═══════════════════════════════════════════════════ */
+
+/* RESET */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* PÁGINA */
+@page { size: A4 portrait; margin: 0; }
+
+/* COLORES */
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #1a1a2e;
+  background: white;
+  max-width: 794px;
+  margin: 0 auto;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* HEADER */
+.header {
+  color: white;
+  padding: 22px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.82; line-height: 1.9; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-rival  { background: rgba(220,38,38,0.65); }
+.badge-aliado { background: rgba(34,197,94,0.65); }
+
+/* BANNER */
+.banner {
+  background: #0f2944;
+  color: white;
+  padding: 20px 28px;
+  border-left: 7px solid #FACC15;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #FACC15; margin-bottom: 7px; }
+.b-title  { font-size: 16px; font-weight: 800; margin-bottom: 13px; line-height: 1.3; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11.5px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #FACC15; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 20px; font-weight: 900; color: #FACC15; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+
+/* GRID PRINCIPAL */
+.main {
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #eef2f7;
+}
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+
+/* CARDS */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  overflow: hidden;
+}
+.ch {
+  padding: 11px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  border-radius: 10px 10px 0 0;
+  flex-shrink: 0;
+}
+.cbody { padding: 14px; flex: 1; }
+
+/* SECTION TITLE */
+.st {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #1F4E79;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #1F4E79;
+  margin-bottom: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* CHIPS */
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #EDE9FE; border: 1px solid #C4B5FD; color: #4C1D95; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+
+/* TABLA - columnas fijas para evitar overflow */
+.t {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11.5px;
+  table-layout: fixed;
+}
+.t th {
+  background: #f5f6f8;
+  color: #555;
+  padding: 6px 8px;
+  text-align: left;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 2px solid #e5e7eb;
+}
+.t td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: top;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child   { width: 42%; color: #555; }
+.t td:last-child    { width: 58%; }
+.t th:first-child   { width: 25%; }
+thead { display: table-header-group; }
+
+/* Colores de celda */
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+
+/* KPI */
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 12px 13px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9.5px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 22px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9.5px; color: #999; margin-top: 3px; line-height: 1.35; }
+
+/* SECTORES */
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.sgrid > * { min-width: 0; }
+.sc   { border-radius: 7px; padding: 12px; border-left: 4px solid; }
+.sc.p { border-color: #2563EB; background: #EFF6FF; }
+.sc.s { border-color: #059669; background: #ECFDF5; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #7C3AED; background: #F5F3FF; }
+.sl   { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.6; margin-bottom: 3px; }
+.sn   { font-size: 13px; font-weight: 800; margin-bottom: 2px; }
+.sp   { font-size: 20px; font-weight: 900; margin: 3px 0 6px; }
+.sd   { font-size: 10.5px; line-height: 1.65; color: #444; }
+
+/* BARRAS PBG */
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
+.pbl { width: 110px; font-size: 10px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; min-width: 0; height: 17px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 6px; }
+.pbt { font-size: 9.5px; font-weight: 700; color: white; white-space: nowrap; }
+.pbp { width: 34px; font-size: 10px; font-weight: 700; text-align: right; flex-shrink: 0; }
+
+/* PALANCAS */
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pgrid > * { min-width: 0; }
+.pi   { border-radius: 7px; padding: 12px 14px; border-left: 4px solid; }
+.pi.o { background: #F0FDF4; border-color: #22C55E; }
+.pi.r { background: #FFF7ED; border-color: #F97316; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pt   { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.6; margin-bottom: 4px; }
+.pti  { font-size: 11.5px; font-weight: 700; margin-bottom: 5px; }
+.pd   { font-size: 10.5px; line-height: 1.65; color: #444; word-break: break-word; }
+
+/* ACTORES */
+.ar  { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.ar:last-child { border-bottom: none; }
+.ai  { font-size: 20px; min-width: 26px; flex-shrink: 0; }
+.ain { flex: 1; min-width: 0; }
+.an  { font-size: 11.5px; font-weight: 700; color: #1F4E79; margin-bottom: 3px; }
+.ad  { font-size: 10.5px; color: #555; line-height: 1.6; word-break: break-word; }
+.ats { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 5px; }
+.at  { font-size: 9.5px; font-weight: 700; padding: 2px 7px; border-radius: 7px; }
+
+/* AGENDA */
+.ag  { display: flex; gap: 10px; padding: 11px 0; border-bottom: 1px dashed #e8e8e8; }
+.ag:last-child { border-bottom: none; }
+.agi { font-size: 18px; min-width: 22px; flex-shrink: 0; }
+.agt { min-width: 0; }
+.agt strong { font-size: 11.5px; display: block; margin-bottom: 3px; color: #1F4E79; font-weight: 700; }
+.agt p { font-size: 10.5px; color: #666; line-height: 1.6; word-break: break-word; }
+
+/* ALERTAS */
+.al  { border-radius: 7px; padding: 11px 13px; margin-top: 10px; font-size: 10.5px; line-height: 1.6; word-break: break-word; }
+.al-v { background: #F0FDF4; border: 1px solid #86EFAC; color: #14532D; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al-k { background: #1e3a5f; color: white; }
+.al strong { display: block; margin-bottom: 3px; font-size: 11.5px; }
+.al-k strong { color: #FACC15; }
+
+/* NOTA */
+.nt { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 7px; padding: 10px 13px; font-size: 10.5px; color: #1E3A5F; margin-top: 10px; line-height: 1.6; word-break: break-word; }
+.nt strong { display: block; font-size: 11.5px; margin-bottom: 3px; color: #1E40AF; }
+
+/* HISTORIA */
+.hist { background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 7px; padding: 11px 13px; margin-top: 10px; }
+.hist strong { font-size: 11.5px; font-weight: 700; color: #78350F; display: block; margin-bottom: 4px; }
+.hist p { font-size: 10.5px; color: #78350F; line-height: 1.65; word-break: break-word; }
+
+/* CORREDOR */
+.corr { background: linear-gradient(135deg, #1e3a5f 0%, #2563EB 100%); color: white; border-radius: 8px; padding: 14px 16px; margin-top: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.corr h3 { font-size: 11.5px; font-weight: 800; margin-bottom: 6px; color: #FACC15; }
+.corr p  { font-size: 10.5px; line-height: 1.65; opacity: 0.9; }
+.cms { display: flex; gap: 7px; margin-top: 10px; flex-wrap: wrap; }
+.cm  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; padding: 7px 9px; flex: 1; text-align: center; font-size: 10.5px; font-weight: 700; min-width: 80px; word-break: break-word; }
+.cm span { display: block; font-size: 9px; font-weight: 400; opacity: 0.65; margin-top: 2px; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 12px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+
+/* ANEXOS - header y grilla */
+.anx-header {
+  color: white;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.anx-header .anx-left .anx-sup { font-size: 10px; opacity: 0.6; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3px; }
+.anx-header .anx-left .anx-tit { font-size: 20px; font-weight: 900; letter-spacing: 1px; }
+.anx-header .anx-right { font-size: 10px; opacity: 0.7; text-align: right; line-height: 1.8; }
+.anx-grid {
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 13px;
+  background: #eef2f7;
+}
+.anx-grid > * { min-width: 0; }
+.anx-footer { text-align: center; padding: 10px; font-size: 10px; color: #aaa; background: white; border-top: 1px solid #e5e7eb; }
+
+/* ═══════════════════════════════════════════════════
+   PRINT
+   ═══════════════════════════════════════════════════ */
+@media print {
+  @page { size: A4 portrait; margin: 0; }
+
+  html { background: white !important; padding: 0 !important; }
+  body {
+    max-width: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    font-size: 8.5pt;
+    background: #eef2f7 !important;
+  }
+
+  /* Mantener backgrounds en print */
+  .banner, .corr, .anx-header, .header { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  /* Cards */
+  .card { box-shadow: none !important; page-break-inside: avoid; break-inside: avoid; }
+  .ch   { font-size: 7.5pt !important; padding: 7px 11px !important; }
+  .cbody{ padding: 11px !important; }
+  .st   { font-size: 7.5pt !important; }
+
+  /* Grids */
+  .main     { padding: 12px 16px !important; gap: 10px !important; grid-template-columns: 1fr 1fr !important; max-width: 100% !important; }
+  .anx-grid { padding: 12px 16px !important; gap: 10px !important; }
+  .kpis     { grid-template-columns: 1fr 1fr !important; }
+  .sgrid    { gap: 9px !important; }
+  .pgrid    { gap: 9px !important; }
+
+  /* Banner */
+  .banner { page-break-inside: avoid; break-inside: avoid; }
+  .b-col p { font-size: 8pt !important; }
+  .b-num .n { font-size: 15pt !important; }
+  .b-num .l { font-size: 7.5pt !important; }
+  .header h1 { font-size: 18pt !important; }
+  .header-right { font-size: 8.5pt !important; }
+
+  /* Tablas */
+  .t    { font-size: 8pt !important; }
+  .t th { font-size: 7pt !important; padding: 4px 6px !important; }
+  .t td { padding: 4px 6px !important; }
+
+  /* KPIs */
+  .kl { font-size: 7.5pt !important; }
+  .kv { font-size: 15pt !important; }
+  .ks { font-size: 7.5pt !important; }
+
+  /* Sectores */
+  .sl { font-size: 7.5pt !important; }
+  .sn { font-size: 10pt !important; }
+  .sp { font-size: 13pt !important; }
+  .sd { font-size: 8pt !important; }
+
+  /* Palancas */
+  .pt  { font-size: 7.5pt !important; }
+  .pti { font-size: 9pt !important; }
+  .pd  { font-size: 8pt !important; }
+
+  /* Actores */
+  .an { font-size: 9pt !important; }
+  .ad { font-size: 8pt !important; }
+  .at { font-size: 7.5pt !important; }
+
+  /* Agenda */
+  .agt strong { font-size: 9pt !important; }
+  .agt p      { font-size: 8pt !important; }
+
+  /* Alertas/notas */
+  .al        { font-size: 8pt !important; page-break-inside: avoid; }
+  .al strong { font-size: 9pt !important; }
+  .nt        { font-size: 8pt !important; }
+  .hist p    { font-size: 8pt !important; }
+  .hist strong { font-size: 9pt !important; }
+
+  /* Chips */
+  .chip { font-size: 8pt !important; }
+
+  /* Corredor */
+  .corr { page-break-inside: avoid; }
+  .cm   { font-size: 8pt !important; }
+
+  /* Saltos */
+  .header { page-break-after: avoid; }
+  .banner { page-break-after: avoid; }
+  .ch     { page-break-after: avoid; }
+  .footer { page-break-before: avoid; font-size: 7.5pt !important; }
+  p, li   { orphans: 3; widows: 3; }
+}
+
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<div class="header" style="background: linear-gradient(135deg, #1F4E79 0%, #2563EB 100%);">
+  <div class="header-left">
+    <h1>📍 LOBOS</h1>
+    <div class="sub">Ficha de Campaña · Polo Turístico y Cuenca Lechera · 2026</div>
+    <div class="tag">3ª Sección Electoral · Interior Agropecuario · 1.726 km² · 110 km de CABA</div>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente:</strong> Jorge Etcheverry <span class="badge-rival">JxC · 3er mandato</span></div>
+    <div><strong>Voto LLA (gral 2023):</strong> 52,8% — Alarma roja</div>
+    <div><strong>Población:</strong> 41.760 hab. (Censo 2022)</div>
+    <div><strong>Vocación:</strong> Turismo laguna · Cuenca lechera · Agro</div>
+    <div style="margin-top:5px;font-size:10px;opacity:0.55;">Datos 2026 · PBA Analytics · MatrizPBA + fuentes verificadas</div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="b-label">⚠️ DISTRITO A RECUPERAR · LLA GANÓ CON 52,8% EN GRAL 2023</div>
+  <div class="b-title">La laguna que atrae turistas y vota libertad</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>¿Por qué visitar Lobos?</strong> Porque en 2023 La Libertad Avanza se llevó el 52,8% de los votos en un municipio que el PJ había ganado apenas dos años antes. Ese movimiento de 20 puntos en 24 meses no fue ideológico: fue emocional. El electorado de Lobos — turístico, tambero, de clase media rural — sintió que el Estado los ignoraba y se fue con quien prometía sacudirlo. Esa narrativa tiene que romperse con hechos concretos.</p>
+      <p><strong>¿Cuál es el activo central?</strong> La Laguna de Lobos. Un espejo de agua de 3.000 hectáreas a 110 km de Buenos Aires que mueve más de 15.000 turistas por fin de semana largo. Pesca deportiva, náutica, paracaidismo, cabañas, gastronomía. Es el motor del municipio. Y ese motor depende de decisiones que el intendente Etcheverry no puede tomar solo: el manejo hídrico, la Ruta 205, el plan turístico provincial.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>¿Qué ve la perspectiva provincial que la gestión local no alcanza?</strong> La Laguna de Lobos como recurso hídrico provincial, no solo como atractivo turístico municipal. El manejo integral del espejo de agua, el control de efluentes, el dragado, la conectividad vial — todo eso excede la escala del municipio. Hay una demanda insatisfecha que solo la Provincia puede cubrir, y LLA no puede ofrecer porque no gobierna PBA.</p>
+      <p><strong>¿Cuál es el riesgo de no ir?</strong> Que el voto LLA del 52,8% se consolide como identidad y no como protesta. La diferencia importa: el voto protesta es recuperable, la identidad no lo es. La ventana es ahora, antes de que ese electorado se convenza de que el libertarismo es lo que los representa. Lobos es un ejemplo de lo que la Provincia puede perder si no trabaja el interior.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">41.760</div><div class="l">Habitantes (Censo 2022)<br>Municipio intermedio</div></div>
+    <div class="b-num"><div class="n">52,8%</div><div class="l">LLA en Gral 2023<br>Desde 16,3% en PASO</div></div>
+    <div class="b-num"><div class="n">15.000+</div><div class="l">Turistas por fin de semana<br>largo · Ruta 205</div></div>
+    <div class="b-num"><div class="n">3er</div><div class="l">Mandato de Etcheverry<br>JxC · Estructura rival</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- KPIs -->
+<div class="card full">
+  <div class="ch" style="background:#1F4E79;color:white;">📊 Datos Clave · Lobos</div>
+  <div class="cbody" style="padding:16px 18px;">
+    <div class="kpis">
+      <div class="kpi" style="background:#F0FDF4;border-color:#86EFAC;">
+        <div class="kl">Población (Censo 2022)</div>
+        <div class="kv" style="color:#15803D;">41.760</div>
+        <div class="ks">Municipio intermedio · Interior Agropecuario · 3ª Sección</div>
+      </div>
+      <div class="kpi" style="background:#FEF2F2;border-color:#FCA5A5;">
+        <div class="kl">LLA Gral 2023</div>
+        <div class="kv" style="color:#DC2626;">52,8%</div>
+        <div class="ks">UxP 31,3% · Diferencia de 21,5 pp · Alarma máxima</div>
+      </div>
+      <div class="kpi" style="background:#FFFBEB;border-color:#FCD34D;">
+        <div class="kl">Dinámica Turística</div>
+        <div class="kv" style="color:#92400E;">15.000+</div>
+        <div class="ks">Turistas por fin de semana largo · Principal motor económico</div>
+      </div>
+      <div class="kpi" style="background:#EFF6FF;border-color:#93C5FD;">
+        <div class="kl">Partido del intendente</div>
+        <div class="kv" style="color:#1D4ED8;font-size:16px;">JxC Rival</div>
+        <div class="ks">Etcheverry · 3 mandatos consecutivos · Estructura hostil</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDAD TERRITORIAL -->
+<div class="card one">
+  <div class="ch" style="background:#ECFDF5;color:#065F46;">🗺️ Identidad Territorial</div>
+  <div class="cbody">
+    <div class="chips">
+      <span class="chip cg">🌊 Polo Turístico</span>
+      <span class="chip cb">🐄 Cuenca Lechera</span>
+      <span class="chip cg">🌾 Agro Pampeano</span>
+      <span class="chip co">🚗 Turismo de Weekend</span>
+      <span class="chip cr">🗳️ LLA 52,8% 2023</span>
+    </div>
+    <table class="t">
+      <tbody><tr><th>Indicador</th><th>Lobos</th><th>Ref. Pcia.</th></tr>
+      <tr><td>Superficie</td><td class="bld">1.726 km²</td><td>—</td></tr>
+      <tr><td>Distancia a CABA</td><td class="inf">110 km · Ruta 205</td><td>—</td></tr>
+      <tr><td>Atractivo principal</td><td class="ok">Laguna · 3.000 ha</td><td>Único en radio</td></tr>
+      <tr><td>Saldo migratorio</td><td class="warn">Estable-negativo</td><td>Mixto</td></tr>
+      <tr><td>Red vial rural</td><td class="ok">Alta inversión municipal</td><td>—</td></tr>
+      <tr><td>Educación superior</td><td class="ok">Centro Univ. · UNLZ</td><td>Bien posicionado</td></tr>
+    </tbody></table>
+    <div class="nt">
+      <strong>📌 Posición en el mapa provincial</strong>
+      Interior Agropecuario, 3ª Sección Electoral, entre la cuenca lechera y la laguna. Lobos es el municipio turístico de mayor tracción del interior sin contar Mar del Plata. La Laguna actúa como imán para el AMBA en busca de esparcimiento de bajo costo a corta distancia.
+    </div>
+    <div class="hist">
+      <strong>📜 Historia que sostiene el relato</strong>
+      <p>La Laguna de Lobos existía antes que el municipio. La identidad del partido se construyó alrededor del agua: pesca, veraneo, campo. Cuando la Ruta 205 se asfaltó, el turismo explotó. Hoy la economía local y la laguna son indisociables. <strong style="color:#78350F;">El peronismo no construyó Lobos, pero puede construirle el futuro que la laguna necesita.</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- MATRIZ PRODUCTIVA -->
+<div class="card two">
+  <div class="ch" style="background:#1F4E79;color:white;">⚙️ Matriz Productiva · En qué se destaca Lobos</div>
+  <div class="cbody">
+    <div class="st">Sectores Productivos</div>
+    <div class="sgrid">
+      <div class="sc t">
+        <div class="sl">🥇 Motor económico actual</div>
+        <div class="sn">Turismo · Laguna de Lobos</div>
+        <div class="sp" style="color:#D97706;">~30% actividad</div>
+        <div class="sd">La Laguna tracciona gastronomía, hotelería, cabañas, alquiler de equipos náuticos, campings y comercio de insumos de pesca. Picos de más de 15.000 visitantes en fines de semana largos. Sensible a la calidad del agua y la conectividad vial — ambas dependen de la Provincia.</div>
+      </div>
+      <div class="sc s">
+        <div class="sl">🔹 Base económica histórica</div>
+        <div class="sn">Cuenca Lechera y Agro</div>
+        <div class="sp" style="color:#059669;">~25% actividad</div>
+        <div class="sd">Tambos de primera línea y producción agrícola (soja, maíz, girasol). La cuenca lechera de la 3ª sección tiene escala y calidad. Los productores tamberos son los principales empleadores rurales del partido. Su voto: PJ en 2021, LLA en 2023.</div>
+      </div>
+      <div class="sc p">
+        <div class="sl">🔸 Derivada del turismo y el campo</div>
+        <div class="sn">Comercio y Servicios Locales</div>
+        <div class="sp" style="color:#1D4ED8;">~35% actividad</div>
+        <div class="sd">El comercio del casco urbano vive del turismo estacional y del salario rural. Alta sensibilidad al ciclo agrícola y a los fines de semana. El 2023 post-pandemia fue bueno para el comercio, pero la inflación y la recesión 2024-25 golpearon al pequeño comerciante.</div>
+      </div>
+      <div class="sc e">
+        <div class="sl">🔸 Sector emergente</div>
+        <div class="sn">Educación y Servicios Universitarios</div>
+        <div class="sp" style="color:#6D28D9;">Crecimiento</div>
+        <div class="sd">El Centro Universitario de Lobos (convenio UNLZ) ofrece tecnicaturas en turismo sustentable y administración agraria. Un activo de largo plazo que la Provincia puede ampliar con nuevas carreras técnicas ligadas al perfil productivo local.</div>
+      </div>
+    </div>
+
+    <div class="st">Estructura de Actividad Estimada</div>
+    <div class="pbr"><div class="pbl">Comercio y Servicios</div><div class="pbo"><div class="pbi" style="width:70%;background:#2563EB"><div class="pbt">~35%</div></div></div><div class="pbp" style="color:#2563EB;">35%</div></div>
+    <div class="pbr"><div class="pbl">Turismo · Laguna</div><div class="pbo"><div class="pbi" style="width:60%;background:#D97706"><div class="pbt">~30%</div></div></div><div class="pbp" style="color:#D97706;">30%</div></div>
+    <div class="pbr"><div class="pbl">Agropecuario · Tambo</div><div class="pbo"><div class="pbi" style="width:50%;background:#059669"><div class="pbt">~25%</div></div></div><div class="pbp" style="color:#059669;">25%</div></div>
+    <div class="pbr"><div class="pbl">Construcción / Otros</div><div class="pbo"><div class="pbi" style="width:20%;background:#7C3AED"><div class="pbt">~10%</div></div></div><div class="pbp" style="color:#7C3AED;">10%</div></div>
+
+    <div class="st" style="margin-top:18px;">Actores Clave del Territorio</div>
+    <div class="ar">
+      <div class="ai">🌊</div>
+      <div class="ain">
+        <div class="an">Asociación de Turismo y Pesca · Laguna de Lobos</div>
+        <div class="ad">Organiza y regula las actividades turísticas en la laguna: pesca deportiva, náutica, paracaidismo, campings. Su aval es indispensable para cualquier anuncio de plan de manejo. Interlocutores naturales para la visita. Son el puente entre el discurso provincial y el comercio turístico local.</div>
+        <div class="ats">
+          <span class="at" style="background:#D1FAE5;color:#065F46;">Aliado potencial</span>
+          <span class="at" style="background:#DBEAFE;color:#1E40AF;">Contacto previo recomendado</span>
+        </div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🐄</div>
+      <div class="ain">
+        <div class="an">Cooperativas y Tambos · Cuenca Lechera 3ª Sección</div>
+        <div class="ad">Los productores tamberos del partido son quizás el grupo que más se alejó del PJ hacia LLA. Votan campo. Sensibles a crédito, costo de flete, estado de las rutas rurales y política de precios de leche. Una reunión con referentes del sector, más un anuncio de crédito Banco Provincia, tiene efecto inmediato.</div>
+        <div class="ats">
+          <span class="at" style="background:#FEF3C7;color:#92400E;">Recuperación clave</span>
+          <span class="at" style="background:#FEE2E2;color:#7F1D1D;">Voto LLA 2023</span>
+        </div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🏪</div>
+      <div class="ain">
+        <div class="an">Cámara de Comercio de Lobos</div>
+        <div class="ad">El comercio minorista y gastronómico vive del turismo de la laguna. En 2023 votaron mayoritariamente LLA. Son recuperables con propuestas concretas: financiamiento para equipamiento gastronómico, posicionamiento de Lobos en el circuito bonaerense oficial. No son ideológicos — son pragmáticos.</div>
+        <div class="ats">
+          <span class="at" style="background:#FEF3C7;color:#92400E;">A cultivar</span>
+          <span class="at" style="background:#F3F4F6;color:#374151;">Voto volátil</span>
+        </div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🎓</div>
+      <div class="ain">
+        <div class="an">Centro Universitario de Lobos · Convenio UNLZ</div>
+        <div class="ad">Tecnicaturas en turismo sustentable y administración agraria. Vínculo con jóvenes del municipio que no migran al Gran Buenos Aires. La Provincia puede ampliar la oferta educativa y financiar nuevas tecnicaturas ligadas al manejo de recursos naturales y a la logística agropecuaria.</div>
+        <div class="ats">
+          <span class="at" style="background:#EDE9FE;color:#4C1D95;">Multiplicador generacional</span>
+          <span class="at" style="background:#D1FAE5;color:#065F46;">Inversión provincia posible</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSPECTIVA PROVINCIAL -->
+<div class="card full">
+  <div class="ch" style="background:#0f2944;color:#FACC15;">👁️ Perspectiva Provincial · Palancas que solo el nivel provincial puede activar</div>
+  <div class="cbody">
+    <p style="font-size:12px;color:#666;margin-bottom:16px;line-height:1.7;">Etcheverry puede gestionar el municipio — el alumbrado, la costanera, el SAME. Lo que no puede hacer es manejar el recurso hídrico de la laguna, sostener las rutas provinciales o posicionar a Lobos en el circuito turístico oficial de Buenos Aires. Esas son palancas de otro nivel.</p>
+    <div class="pgrid">
+      <div class="pi o">
+        <div class="pt">✅ Inversión con impacto inmediato</div>
+        <div class="pti">Plan Integral de Manejo de la Laguna de Lobos</div>
+        <div class="pd">La laguna es un recurso hídrico provincial que requiere intervención sistemática: dragado, control de efluentes de campos y urbanizaciones cercanas, monitoreo de calidad de agua, modernización de la costanera. Comprometerse con el plan de manejo transforma la visita en un hito. "La Provincia va a ser socia permanente de la Laguna de Lobos."</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 Decisión de infraestructura vial</div>
+        <div class="pti">Ruta 205 y Ruta 41: la conectividad que hace posible el turismo y la lechería</div>
+        <div class="pd">Ambas rutas son provinciales y son la columna vertebral de la economía de Lobos. Sin Ruta 205 en buen estado no hay turismo de fin de semana. Sin Ruta 41 la lechería pierde competitividad. Un plan diferenciado de mantenimiento para las rutas de acceso turístico y agroindustrial tiene efecto directo sobre los dos sectores que definen el voto local.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 Política agroalimentaria provincial</div>
+        <div class="pti">Banco Provincia + MAGYP: apoyo a los productores tamberos de la 3ª sección</div>
+        <div class="pd">La cuenca lechera de la 3ª sección tiene potencial productivo subutilizado por falta de crédito accesible y asistencia técnica. Articular el Banco Provincia con el Ministerio de Agroindustria provincial para ofrecer líneas específicas para pequeños y medianos tamberos de la zona. "La leche que produce Lobos alimenta al país. La Provincia lo sabe y va a acompañar."</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">✅ Agenda de turismo provincial</div>
+        <div class="pti">Lobos en el circuito bonaerense oficial: de destino informal a polo turístico de la Provincia</div>
+        <div class="pd">Lobos recibe 15.000 turistas por fin de semana largo pero no aparece en ningún circuito turístico oficial de la Provincia. Incluirlo en el plan de turismo bonaerense, la señalética en rutas nacionales y provinciales, el apoyo a eventos de pesca deportiva de escala: todo suma visibilidad sin costo municipal y genera aliados entre el sector gastronómico y hotelero.</div>
+      </div>
+      <div class="pi r">
+        <div class="pt">⚠️ Riesgo ambiental · Urgencia</div>
+        <div class="pti">Calidad del agua de la laguna: el activo en riesgo</div>
+        <div class="pd">La laguna tiene historial de floraciones de algas (cianobacterias) en veranos de calor extremo, agravadas por efluentes rurales y aguas residuales no tratadas. Un episodio grave en temporada alta puede destruir una temporada turística. El monitoreo y las obras de saneamiento son competencia provincial. Si la laguna se enferma, Lobos se queda sin turismo y sin argumento.</div>
+      </div>
+      <div class="pi x">
+        <div class="pt">🔴 Tensión política · Navegar con cuidado</div>
+        <div class="pti">Presencia provincial sin confrontar al intendente JxC</div>
+        <div class="pd">Etcheverry tiene tres mandatos y control territorial. El error sería ir a Lobos a disputarle su gestión. La estrategia: hablar desde la Provincia hacia arriba — la laguna, las rutas, la cuenca lechera — sin tocar lo municipal. La gente percibe la diferencia entre quien viene a sumar y quien viene a competir.</div>
+      </div>
+    </div>
+    <div class="corr">
+      <h3>🌊 Corredor Turístico Interior 3ª Sección · La dimensión regional</h3>
+      <p>Lobos no está solo. Es el nodo más fuerte de un corredor de turismo de fin de semana y agroturismo en la 3ª sección que incluye municipios con recursos naturales y gastronómicos complementarios. Una política provincial que integre este corredor multiplica el impacto de cada peso invertido.</p>
+      <div class="cms">
+        <div class="cm">📍 LOBOS<span>Laguna · pesca · náutica</span></div>
+        <div class="cm">↔ ROQUE PÉREZ<span>Reserva Natural · rural</span></div>
+        <div class="cm">↔ SALADILLO<span>Turismo rural · agro</span></div>
+        <div class="cm">↔ MONTE<span>Cuenca lechera · campo</span></div>
+        <div class="cm">↔ CAÑUELAS<span>Caballos · agro · polo</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ANÁLISIS POLÍTICO DEL MOMENTO -->
+<div class="card two">
+  <div class="ch" style="background:#FFFBEB;color:#78350F;">📈 Análisis del Momento · LLA 52,8% y lo que revela</div>
+  <div class="cbody">
+    <div class="st">Diagnóstico electoral · Evolución del voto</div>
+    <table class="t" style="margin-bottom:16px;">
+      <thead><tr><th>Elección</th><th>PJ / UxP</th><th>JxC</th><th>LLA</th><th>Ganador</th></tr></thead>
+      <tbody>
+        <tr><td class="bld">Legislativas 2021</td><td class="ok">40,2%</td><td>—</td><td class="warn">31,2%</td><td>PJ</td></tr>
+        <tr><td class="bld">PASO 2023</td><td>37,7%</td><td class="ok">43,5%</td><td>16,3%</td><td>JxC</td></tr>
+        <tr><td class="bld">General 2023</td><td class="warn">31,3%</td><td>—</td><td class="bad">52,8%</td><td style="color:#DC2626;font-weight:700;">LLA</td></tr>
+      </tbody>
+    </table>
+    <div class="ag">
+      <div class="agi">🔴</div>
+      <div class="agt">
+        <strong>Causa: volatilidad del electorado rural y turístico</strong>
+        <p>El electorado de Lobos no tiene identidad partidaria fija. El tambero, el comerciante gastronómico, el propietario de cabañas — son votantes de resultado, no de lealtad. En 2021 votaron PJ porque "había que darle una chance". En el PASO 2023 probaron JxC. En la general 2023 se fueron con LLA porque el discurso de cambio radical era el más fuerte. Cada elección es una nueva partida.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🟡</div>
+      <div class="agt">
+        <strong>Señal: LLA creció del 16% al 52% en tres meses</strong>
+        <p>Ese salto de 36 puntos entre el PASO y la general indica que no es un voto de convicción: es de ola. Los votantes de JxC migran masivamente a LLA en la general. El suelo LLA propio en Lobos probablemente es 20-25%. El resto es ola trasvasada. Eso es recuperable con trabajo territorial y propuesta concreta.</p>
+      </div>
+    </div>
+    <div class="ag" style="border-bottom:none;">
+      <div class="agi">🟢</div>
+      <div class="agt">
+        <strong>Apertura: el electorado de Lobos es pragmático — responde a propuestas</strong>
+        <p>El 31,3% de UxP en la general 2023 es el suelo propio. Sobre ese piso hay espacio real de crecimiento si la propuesta es concreta (la laguna, las rutas, el crédito tambero) y si hay presencia física. Lobos no está perdido — está esperando que alguien llegue con algo tangible.</p>
+      </div>
+    </div>
+    <div class="al al-a">
+      <strong>⚠️ El riesgo que no puede ignorarse</strong>
+      Si LLA logra consolidar estructura local y candidatos propios en las elecciones de 2025-2027, el 52,8% puede transformarse en mayoría estable. La ventana de recuperación es ahora, cuando ese voto sigue siendo protest y no identidad. Después puede ser tarde.
+    </div>
+  </div>
+</div>
+
+<!-- AGENDA DE DISCURSO -->
+<div class="card one">
+  <div class="ch" style="background:#1F4E79;color:white;">🎤 Agenda de Discurso · Perspectiva Provincial</div>
+  <div class="cbody">
+    <div class="st">Ejes · Por prioridad de impacto</div>
+    <div class="ag">
+      <div class="agi">🌊</div>
+      <div class="agt">
+        <strong>1. La laguna como responsabilidad provincial</strong>
+        <p>"La Laguna de Lobos no es solo del municipio — es de toda la Provincia. Y la Provincia va a asumir esa responsabilidad."</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🛣️</div>
+      <div class="agt">
+        <strong>2. Rutas que conectan el campo con el mercado</strong>
+        <p>"El tambero de Lobos produce leche todos los días. La Ruta 205 tiene que estar en condiciones todos los días."</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🐄</div>
+      <div class="agt">
+        <strong>3. Crédito para quien produce</strong>
+        <p>Banco Provincia con líneas específicas para tamberos y pequeños productores agropecuarios. Anuncio tangible de resultado inmediato.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🎓</div>
+      <div class="agt">
+        <strong>4. Educación con perfil productivo</strong>
+        <p>Ampliación del Centro Universitario con nuevas tecnicaturas ligadas al manejo del agua y a la logística agroindustrial. Para que los jóvenes de Lobos puedan quedarse.</p>
+      </div>
+    </div>
+    <div class="ag" style="border-bottom:none;">
+      <div class="agi">🚫</div>
+      <div class="agt">
+        <strong>Qué evitar</strong>
+        <p>Hablar de asistencialismo social. Atacar a Etcheverry. Prometer obras de escala municipal. Hablar de política nacional. Lo que mueve a Lobos es la laguna y el campo — el resto no conecta.</p>
+      </div>
+    </div>
+    <div class="al al-k">
+      <strong>⚡ La frase que sintetiza la visita</strong>
+      "Lobos tiene el activo. La Provincia tiene la escala. Juntos podemos hacer de esta laguna el polo turístico más importante del interior bonaerense."
+    </div>
+  </div>
+</div>
+
+
+
+<div class="footer">
+  🔒 USO RESERVADO · Campaña PBA · Ficha Lobos · PBA Analytics 2026
+</div>
+
+<!-- ANEXO I -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;">
+  <div style="background:linear-gradient(135deg,#1F4E79,#2563EB);color:white;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-size:11px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Lobos · Campaña PBA 2026</div>
+      <div style="font-size:22px;font-weight:900;letter-spacing:1px;">ANEXO I — PRINCIPALES INDICADORES</div>
+    </div>
+    <div style="font-size:11px;opacity:0.7;text-align:right;">3ª Sección Electoral · Interior<br>PBA Analytics 2026</div>
+  </div>
+  <div style="padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:13px;background:#eef2f7;">
+
+    <div class="card">
+      <div class="ch" style="background:#ECFDF5;color:#065F46;">🌊 Recurso Turístico · Laguna</div>
+      <div class="cbody">
+        <div class="st">La Laguna de Lobos</div>
+        <table class="t">
+          <tbody><tr><td>Superficie</td><td class="inf">~3.000 hectáreas</td></tr>
+          <tr><td>Actividades</td><td>Pesca deportiva, náutica, paracaidismo, camping</td></tr>
+          <tr><td>Turistas (fin de semana largo)</td><td class="ok">+15.000 visitantes</td></tr>
+          <tr><td>Distancia a CABA</td><td>110 km · Ruta 205</td></tr>
+          <tr><td>Estado del agua</td><td class="warn">Riesgo estacional cianobacterias</td></tr>
+          <tr><td>Plan de Manejo Municipal</td><td class="ok">En curso desde 2025</td></tr>
+          <tr><td>Intervención provincial</td><td class="bad">Pendiente · demanda urgente</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#F0FDF4;color:#15803D;">🐄 Sector Agropecuario</div>
+      <div class="cbody">
+        <div class="st">Cuenca lechera y agro</div>
+        <table class="t">
+          <tbody><tr><td>Perfil productivo</td><td class="inf">Tambo + soja/maíz/girasol</td></tr>
+          <tr><td>Cuenca lechera</td><td class="ok">3ª sección · primera línea</td></tr>
+          <tr><td>Acceso vial rural</td><td class="ok">Alta inversión municipal (alteo)</td></tr>
+          <tr><td>Crédito Banco Provincia</td><td class="warn">Subutilizado · oportunidad</td></tr>
+          <tr><td>Asistencia técnica MAGYP</td><td class="warn">Escasa presencia en campo</td></tr>
+          <tr><td>Exportación granaria</td><td>Vía mercados de la región</td></tr>
+          <tr><td>Voto productores 2023</td><td class="bad">LLA · recuperación clave</td></tr>
+          <tr><td>Tambo Don Juan</td><td class="ok">Robotizado desde nov. 2023 · Arévalo</td></tr>
+          <tr><td>Tecnología</td><td class="inf">4 robots Lely Astronaut (Holanda)</td></tr>
+          <tr><td>Producción</td><td class="ok">6.600-6.700 litros/día · 260-270 vacas</td></tr>
+        </tbody></table>
+        <div class="al al-v" style="margin-top:10px;">
+          <strong>🤖 Dato de color · Tambo Don Juan</strong>
+          El 21 de noviembre de 2023, el Establecimiento Don Juan — en Arévalo, localidad rural de Lobos — se convirtió en el primer tambo robotizado de la región. Cuatro robots Lely Astronaut ordeñan las 24 horas: 260-270 vacas, más de 6.600 litros diarios. Pablo García (veterinario, 33 años) lleva adelante un proyecto que la familia Tomatis inició en 2016, construyó en 2018 y arrancó a fines de 2023 — sobre un tambo que el abuelo Don Juan fundó hace más de 80 años con ordeñe a mano. Activo narrativo de alto impacto: tecnología de precisión agropecuaria en el interior bonaerense, con nombre y apellido.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#EFF6FF;color:#1E40AF;">📊 Datos Municipales Generales</div>
+      <div class="cbody">
+        <div class="st">Indicadores de base</div>
+        <table class="t">
+          <tbody><tr><td>Población (Censo 2022)</td><td class="inf">41.760 hab.</td></tr>
+          <tr><td>Superficie</td><td>1.726 km²</td></tr>
+          <tr><td>Sección Electoral</td><td>3ª · Interior Agropecuario</td></tr>
+          <tr><td>Intendente</td><td class="bad">Jorge Etcheverry · JxC · Rival</td></tr>
+          <tr><td>Mandatos consecutivos</td><td class="bad">3er mandato</td></tr>
+          <tr><td>Categoría electoral</td><td class="warn">Disputado → LLA ganó 2023</td></tr>
+          <tr><td>Distancia a CABA</td><td>~110 km · Ruta 205</td></tr>
+          <tr><td>Seguridad vial</td><td class="ok">Cámaras LPR Rutas 205 y 41</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#FFFBEB;color:#78350F;">🏛️ Gestión Municipal Actual</div>
+      <div class="cbody">
+        <div class="st">Etcheverry · JxC · Hitos 2023-2026</div>
+        <table class="t">
+          <tbody><tr><td>Vial rural</td><td class="ok">Alteo permanente · presupuesto prioritario</td></tr>
+          <tr><td>Pavimentación urbana</td><td class="ok">Barrios periféricos · Empalme Lobos</td></tr>
+          <tr><td>Costanera Laguna</td><td class="ok">Nuevos espacios recreativos</td></tr>
+          <tr><td>Turismo</td><td class="ok">Plan de Manejo 2026 activo</td></tr>
+          <tr><td>Seguridad</td><td class="ok">Centro de Monitoreo · cámaras LPR</td></tr>
+          <tr><td>Salud</td><td class="ok">SAME local + CAPS barrios</td></tr>
+          <tr><td>Vivienda</td><td class="ok">Banco de Tierras Municipal</td></tr>
+          <tr><td>Educación superior</td><td class="ok">Centro Univ. · tecnicaturas</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#FEE2E2;color:#7F1D1D;">🗳️ Historial Electoral</div>
+      <div class="cbody">
+        <div class="st">Evolución del voto · Lobos</div>
+        <table class="t">
+          <thead><tr><th>Elección</th><th>FP/PJ</th><th>JxC/LLA·Etch.</th><th>LLA</th><th>Resultado</th></tr></thead>
+          <tbody>
+            <tr><td>Leg. 2021</td><td class="ok">40,2%</td><td>—</td><td class="warn">31,2%</td><td class="bld">PJ</td></tr>
+            <tr><td>PASO 2023</td><td>37,7%</td><td class="ok">43,5%</td><td>16,3%</td><td class="bld">JxC</td></tr>
+            <tr><td>Gral 2023</td><td class="warn">31,3%</td><td>—</td><td class="bad">52,8%</td><td class="bld" style="color:#DC2626;">LLA</td></tr>
+            <tr><td>Leg. Prov. Sept·25</td><td class="ok">40,2%</td><td class="warn">~28,6%*</td><td class="warn">31,2%</td><td class="bld ok">FP ✓</td></tr>
+            <tr><td>Leg. Nac. Oct·25</td><td class="warn">31,3%</td><td>—</td><td class="bad">52,8%</td><td class="bld" style="color:#DC2626;">LLA</td></tr>
+          </tbody>
+        </table>
+        <div style="font-size:9.5px;color:#888;margin-top:4px;font-style:italic;">*Sept·25 col. JxC: Etcheverry/UVC + SBA corrieron separados de LLA (~28,6% combinados). Oposición sumada: ~60%.</div>
+        <div class="hist" style="margin-top:10px;">
+          <strong>📌 Lectura de 2025</strong>
+          <p>En septiembre (prov.) FP ganó — pero con oposición dividida: Etcheverry/UVC (~15%) y LLA (31%) corrieron separados. Sumados, la oposición superó el 59%. En octubre (nac.), la oposición se unió y LLA volvió al 52,8%: casi idéntico a 2023. El voto anti-PJ en Lobos es mayoritario y consistente cuando se concentra. La recuperación peronista requiere que la oposición permanezca fragmentada.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#F5F3FF;color:#4C1D95;">🎯 Prioridad Estratégica</div>
+      <div class="cbody">
+        <div class="st">Posición en el mapa de campaña</div>
+        <table class="t">
+          <tbody><tr><td>Clasificación PBA</td><td class="warn">Disputado</td></tr>
+          <tr><td>Urgencia política</td><td class="bad">Alta · LLA ganó</td></tr>
+          <tr><td>Potencial de recuperación</td><td class="ok">Alto · voto no fidelizado</td></tr>
+          <tr><td>Palanca principal</td><td class="inf">Laguna + Rutas + Crédito</td></tr>
+          <tr><td>Vínculo con intendente</td><td class="bad">Rival · no confrontar</td></tr>
+          <tr><td>Perfil electorado</td><td>Rural / turístico / clase media</td></tr>
+          <tr><td>Tipo de voto LLA</td><td class="warn">Protest vote · recuperable</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;padding:12px;font-size:11px;color:#aaa;background:white;border-top:1px solid #e5e7eb;">
+    🔒 USO RESERVADO · ANEXO I · Lobos · PBA Analytics 2026
+  </div>
+</div>
+
+<!-- ANEXO II -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;">
+  <div style="background:linear-gradient(135deg,#78350F,#D97706);color:white;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-size:11px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Lobos · 2026</div>
+      <div style="font-size:22px;font-weight:900;letter-spacing:1px;">ANEXO II — GESTIÓN LOCAL Y DATOS DE CONTEXTO</div>
+    </div>
+    <div style="font-size:11px;opacity:0.7;text-align:right;">Gestión Etcheverry · JxC<br>3er mandato · Rival</div>
+  </div>
+  <div style="padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:13px;background:#eef2f7;">
+
+    <div class="card">
+      <div class="ch" style="background:#FEE2E2;color:#7F1D1D;">🏛️ Gestión Etcheverry · JxC · Diagnóstico</div>
+      <div class="cbody">
+        <div class="st">Fortalezas y debilidades desde la mirada provincial</div>
+        <table class="t" style="margin-bottom:14px;">
+          <tbody><tr><td>Perfil político</td><td>Intendente consolidado · bajo perfil ideológico · pragmático</td></tr>
+          <tr><td>Legitimidad local</td><td class="bad">Alta · 3 mandatos consecutivos</td></tr>
+          <tr><td>Estructura opositora PJ</td><td class="bad">Débil · Concejo en minoría</td></tr>
+          <tr><td>Relación con la Provincia</td><td class="warn">Transaccional · no natural</td></tr>
+          <tr><td>Agenda turística</td><td class="ok">Activa · centrada en la laguna</td></tr>
+          <tr><td>Agenda agropecuaria</td><td class="ok">Fuerte en vial rural</td></tr>
+          <tr><td>Agenda social</td><td class="warn">Moderada · CAPS y SAME</td></tr>
+        </tbody></table>
+        <div class="al al-b">
+          <strong>💡 Estrategia de convivencia</strong>
+          No disputar el terreno municipal. Llegar con propuestas que Etcheverry no puede vetar porque exceden su jurisdicción: manejo de la laguna, rutas provinciales, circuito turístico oficial. La agenda provincial no compite con la municipal — la complementa.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#F0FDF4;color:#15803D;">🌊 Programa Municipal · Laguna y Desarrollo</div>
+      <div class="cbody">
+        <div class="st">Principales programas en ejecución</div>
+        <table class="t" style="margin-bottom:14px;">
+          <tbody><tr><td>Plan de Manejo Laguna</td><td class="ok">Dragado + control efluentes en proceso</td></tr>
+          <tr><td>Costanera</td><td class="ok">Nuevos espacios recreativos 2025-26</td></tr>
+          <tr><td>Ruta 205 (tramo urbano)</td><td class="ok">Mantenimiento municipal</td></tr>
+          <tr><td>Puesta en Valor Laguna</td><td class="ok">Campings regulados · infraestructura</td></tr>
+          <tr><td>LPR (seguridad vial)</td><td class="ok">Cámaras en accesos Rtas 205 y 41</td></tr>
+          <tr><td>SAME local</td><td class="ok">Base operativa municipal activa</td></tr>
+          <tr><td>Banco de Tierras</td><td class="ok">Lotes para familias jóvenes</td></tr>
+        </tbody></table>
+        <div class="al al-v">
+          <strong>✅ Señal</strong>
+          La gestión municipal tiene razonable nivel de obra concreta. Lo que falta es la escala provincial: el recurso hídrico de la laguna no puede manejarse solo desde el municipio. Ahí está el espacio político disponible.
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;padding:12px;font-size:11px;color:#aaa;background:white;border-top:1px solid #e5e7eb;">
+    🔒 USO RESERVADO · ANEXO II · Lobos · PBA Analytics 2026
+  </div>
+</div>
+
+</body></html>

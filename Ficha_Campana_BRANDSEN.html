@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRANDSEN — Ficha de Campaña · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.header { color: white; padding: 22px 28px; display: flex; justify-content: space-between; align-items: flex-start; }
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.85; line-height: 1.95; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-aliado { background: rgba(52,211,153,0.3); color: #A7F3D0; }
+.badge-rival  { background: rgba(239,68,68,0.3);  color: #FCA5A5; }
+.banner { background: #0E1D06; color: white; padding: 20px 28px; border-left: 7px solid #65A30D; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #A3E635; margin-bottom: 7px; }
+.b-title  { font-size: 15.5px; font-weight: 800; margin-bottom: 13px; line-height: 1.35; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #BEF264; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 19px; font-weight: 900; color: #BEF264; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+.main { padding: 18px 22px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; background: #eef2f7; }
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+.card { background: white; border-radius: 10px; box-shadow: 0 1px 5px rgba(0,0,0,0.07); overflow: hidden; }
+.ch { padding: 10px 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.9px; }
+.cbody { padding: 13px; }
+.st  { font-size: 9.5px; font-weight: 700; color: #3A7518; padding-bottom: 5px; border-bottom: 2px solid #65A30D; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.st2 { font-size: 9.5px; font-weight: 700; color: #3A7518; padding-bottom: 5px; border-bottom: 2px solid #65A30D; margin-top: 14px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #EDE9FE; border: 1px solid #C4B5FD; color: #4C1D95; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+.ct { background: #ECFDF5; border: 1px solid #65A30D; color: #1F3B0A; }
+.t { width: 100%; border-collapse: collapse; font-size: 11px; }
+.t th { background: #f5f6f8; color: #555; padding: 5px 7px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 5px 7px; border-bottom: 1px solid #f3f4f6; vertical-align: top; word-break: break-word; }
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child { color: #555; }
+.t.two-col td:first-child { width: 44%; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 11px 12px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 21px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9px; color: #999; margin-top: 3px; line-height: 1.35; }
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.sc   { border-radius: 7px; padding: 11px 12px; border-left: 4px solid; }
+.sc.p { border-color: #3A7518; background: #ECFDF5; }
+.sc.s { border-color: #059669; background: #F0FDF4; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #7C3AED; background: #F5F3FF; }
+.sc.r { border-color: #DC2626; background: #FEF2F2; }
+.sc.g { border-color: #1F3B0A; background: #F0FDFA; }
+.sl { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.sn { font-size: 12.5px; font-weight: 800; margin-bottom: 3px; }
+.sp { font-size: 18px; font-weight: 900; margin: 3px 0 6px; }
+.sd { font-size: 10px; line-height: 1.65; color: #444; }
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.pbl { width: 120px; font-size: 9.5px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; height: 16px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 5px; }
+.pbt { font-size: 9px; font-weight: 700; color: white; white-space: nowrap; }
+.pbp { width: 32px; font-size: 9.5px; font-weight: 700; text-align: right; flex-shrink: 0; }
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pi   { border-radius: 7px; padding: 11px 13px; border-left: 4px solid; }
+.pi.o { background: #ECFDF5; border-color: #3A7518; }
+.pi.r { background: #FFF7ED; border-color: #F97316; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pi.p { background: #F5F3FF; border-color: #7C3AED; }
+.pi.a { background: #FFFBEB; border-color: #D97706; }
+.pt   { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.65; margin-bottom: 3px; }
+.pti  { font-size: 11px; font-weight: 700; margin-bottom: 5px; }
+.pd   { font-size: 10px; line-height: 1.65; color: #444; }
+.ar   { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f0f0f0; }
+.ar:last-child { border-bottom: none; }
+.ai   { font-size: 18px; min-width: 24px; flex-shrink: 0; }
+.ain  { flex: 1; min-width: 0; }
+.an   { font-size: 11px; font-weight: 700; color: #3A7518; margin-bottom: 3px; }
+.ad   { font-size: 10px; color: #555; line-height: 1.6; }
+.ats  { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+.at   { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 7px; }
+.ag   { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px dashed #e8e8e8; }
+.ag:last-child { border-bottom: none; }
+.agi  { font-size: 17px; min-width: 22px; flex-shrink: 0; }
+.agt  { min-width: 0; }
+.agt strong { font-size: 11px; display: block; margin-bottom: 3px; color: #3A7518; font-weight: 700; }
+.agt p { font-size: 10px; color: #666; line-height: 1.6; }
+.al   { border-radius: 7px; padding: 10px 12px; margin-top: 10px; font-size: 10px; line-height: 1.6; }
+.al-v { background: #ECFDF5; border: 1px solid #65A30D; color: #1F3B0A; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al-r { background: #FEF2F2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.al-k { background: #0E1D06; color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.al strong { display: block; margin-bottom: 3px; font-size: 11px; }
+.al-k strong { color: #BEF264; }
+.nt   { background: #ECFDF5; border: 1px solid #65A30D; border-radius: 7px; padding: 9px 12px; font-size: 10px; color: #1F3B0A; margin-top: 10px; line-height: 1.6; }
+.nt strong { display: block; font-size: 11px; margin-bottom: 3px; color: #3A7518; }
+.hist { background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 7px; padding: 10px 12px; margin-top: 10px; }
+.hist strong { font-size: 11px; font-weight: 700; color: #78350F; display: block; margin-bottom: 4px; }
+.hist p { font-size: 10px; color: #78350F; line-height: 1.65; }
+.corr { background: linear-gradient(135deg, #1F3B0A 0%, #3A7518 100%); color: white; border-radius: 8px; padding: 13px 15px; margin-top: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.corr h3 { font-size: 11px; font-weight: 800; margin-bottom: 5px; color: #BEF264; }
+.corr p  { font-size: 10px; line-height: 1.65; opacity: 0.9; }
+.cms { display: flex; gap: 7px; margin-top: 9px; flex-wrap: wrap; }
+.cm  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; padding: 6px 9px; flex: 1; text-align: center; font-size: 10px; font-weight: 700; min-width: 70px; }
+.cm span { display: block; font-size: 8.5px; font-weight: 400; opacity: 0.65; margin-top: 2px; }
+.acc-nac  { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#dde3f5; color:#1d3461; border:1px solid #1d346144; white-space:nowrap; }
+.acc-prot { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#fef3c7; color:#5c3317; border:1px solid #5c331744; white-space:nowrap; }
+.acc-priv { display:inline-block; padding:2px 7px; border-radius:4px; font-size:9px; font-weight:700; background:#EDE9FE; color:#4C1D95; border:1px solid #C4B5FD; white-space:nowrap; }
+.locs { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+.loc  { border-radius: 6px; padding: 8px 10px; border-left: 3px solid; font-size: 10px; line-height: 1.55; }
+.loc strong { font-size: 10.5px; display: block; margin-bottom: 2px; }
+.footer { text-align: center; padding: 12px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+@media print {
+  @page { size: A4 portrait; margin: 6mm 7mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; padding: 0 !important; font-size: 7pt !important; background: #eef2f7 !important; }
+  .main { padding: 7px 9px !important; gap: 7px !important; }
+  .card { box-shadow: none !important; page-break-inside: avoid; break-inside: avoid; }
+  .ch { font-size: 6pt !important; padding: 5px 7px !important; }
+  .cbody { padding: 7px !important; }
+  .header h1 { font-size: 15pt !important; }
+  .banner { page-break-inside: avoid; }
+  .t { font-size: 6pt !important; }
+  .t td, .t th { padding: 3px 4px !important; }
+  .kv { font-size: 13pt !important; }
+  .kpis { grid-template-columns: 1fr 1fr 1fr 1fr !important; }
+  .anx-break { break-before: page; }
+  .anx-keep  { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header" style="background: linear-gradient(135deg, #1F3B0A 0%, #3A7518 100%);">
+  <div class="header-left">
+    <h1>🥛 BRANDSEN</h1>
+    <div class="sub">Ficha de Campaña · Cuenca Lechera del Abasto Sur · Bisagra CABA-Interior · 2026</div>
+    <div class="tag">3ª Sección Electoral · Cluster 4 · Interior Agropecuario Pampeano · Superficie: 1.114,2 km² · Padrón 2025: 28.865</div>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente:</strong> Fernando Raitelli <span class="badge badge-aliado">UxP · Aliado</span></div>
+    <div><strong>PJ Intendencia 2023:</strong> 41,4% — ganó con pluralidad (bloque anti-PJ 55%)</div>
+    <div><strong>PJ Conc. Prov. 2025:</strong> 39,5% — cae 1,9 pts · señal de presión</div>
+    <div><strong>LLA Dip. Nac. 2025:</strong> 46,6% — ⚠️ ya supera al PJ en nacionales</div>
+    <div><strong>Padrón 2025:</strong> 28.865 · crecimiento +1.541 (+5,6%) desde 2023</div>
+    <div style="margin-top:5px;font-size:9.5px;opacity:0.5;">PBA Analytics 2026 · Uso reservado</div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="b-label">✅ MUNICIPIO ALIADO UxP · RAITELLI · CUENCA LECHERA · LLA SUPERÓ AL PJ EN NACIONALES 2025 CON 46,6% → MUNICIPIO COMPETITIVO 2027 · 800 KM CAMINOS RURALES LECHEROS · BISAGRA CABA-INTERIOR</div>
+  <div class="b-title">Brandsen es el corazón de la Cuenca Lechera del Abasto Sur y el municipio aliado más expuesto electoralmente de la 3ª Sección: Raitelli ganó en 2023 con el 41,4% en un municipio donde el anti-PJ sumaba el 55%. La Libertad Avanza, que era tercera fuerza con el 18% en 2023, llegó al 46,6% en el Diputado Nacional 2025 absorbiendo el voto JxC. La agenda provincial debe amplificar la gestión de Raitelli para evitar que ese bloque se consolide en la ejecutiva 2027.</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>La economía que define el municipio:</strong> Brandsen produce leche. Los tambos de la Cuenca del Abasto Sur son la columna vertebral de la economía local: 500+ productores lecheros, más de 800 kilómetros de caminos rurales que el municipio mantiene con cuadrillas propias para garantizar la salida del tambo todos los días del año, y una cadena que conecta al productor con las grandes usinas de la provincia. La Vialidad Rural — el programa más importante de Raitelli en términos de escala — es lo que hace viable al tambero.</p>
+      <p><strong>La gestión de Raitelli:</strong> Salud rural (CAPs en Jeppener y Altamirano para evitar traslados), seguridad rural y urbana (videovigilancia + patrullas CPR en el campo), el Hospital Francisco Caram con 8.000 atenciones mensuales, y el debate "Brandsen 50 Años" como ejercicio participativo de planificación. La economía social — Brandsen Cata (vinos y quesos), Feria Municipal con más de 150 emprendedores empadronados — complementa el perfil lechero con turismo de fin de semana.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>El riesgo: LLA ya ganó en lo nacional:</strong> Sin candidatos JxC en 2025, La Libertad Avanza absorbió el voto opositor y llegó al 46,6% en la categoría de Diputado Nacional — superando al PJ por 9,3 puntos. El bloque JxC de 2023 (37,4%) migró casi íntegramente a LLA en las categorías nacionales. En los concejales provinciales 2025, el PJ cayó de 41,4% a 39,5% — la tendencia es de pérdida de votos en todas las categorías. Brandsen es el municipio aliado donde el riesgo de cambio de color en la ejecutiva 2027 es más alto.</p>
+      <p><strong>La estrategia provincial:</strong> Co-gestión con Raitelli para amplificar la gestión visible: vialidad rural (los caminos lecheros son la demanda #1), salud rural (CAPs de Jeppener y Altamirano), y presencia del Ministerio de Agroindustria con agenda concreta para el sector lácteo. El circuito turístico "Brandsen Cata" puede articularse con el turismo de campo de La Plata y Cañuelas como destino de fin de semana a menos de 100 km de CABA.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">41,4%</div><div class="l">PJ Intendencia 2023<br>Raitelli UxP · 8.228 votos</div></div>
+    <div class="b-num"><div class="n">39,5%</div><div class="l">PJ Conc. Prov. 2025<br>−1,9 pts · 6.820 votos</div></div>
+    <div class="b-num"><div class="n">46,6%</div><div class="l">LLA Dip. Nac. 2025<br>⚠️ supera PJ · 8.365 votos</div></div>
+    <div class="b-num"><div class="n">+1.541</div><div class="l">Padrón 2023→2025<br>+5,6% · 28.865 electores</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- KPIs -->
+<div class="card full">
+  <div class="ch" style="background:#3A7518;color:white;">📊 Datos Electorales y Demográficos Clave · Brandsen</div>
+  <div class="cbody" style="padding:14px 16px;">
+    <div class="kpis">
+      <div class="kpi warn">
+        <div class="kl">PJ Ejecutivo 2023</div>
+        <div class="kv" style="color:#92400E;">41,4%</div>
+        <div class="ks">8.228 votos · ganó con pluralidad · bloque anti-PJ sumaba 55,4%</div>
+      </div>
+      <div class="kpi warn">
+        <div class="kl">PJ Concejales PBA 2025</div>
+        <div class="kv" style="color:#D97706;">39,5%</div>
+        <div class="ks">6.820 votos · cae −1,9 pts vs intend 2023 · presión electoral creciente</div>
+      </div>
+      <div class="kpi bad">
+        <div class="kl">LLA Nacional 2025</div>
+        <div class="kv" style="color:#DC2626;">46,6%</div>
+        <div class="ks">8.365 votos · ya supera PJ · absorbió voto JxC 2023 · alerta ejecutiva 2027</div>
+      </div>
+      <div class="kpi ok">
+        <div class="kl">Crecimiento Padrón</div>
+        <div class="kv" style="color:#15803D;">+1.541</div>
+        <div class="ks">+5,6% · 27.324→28.865 · tendencia positiva · proyección 2027: ~29.800</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDAD + MATRIZ PRODUCTIVA -->
+<div class="card one">
+  <div class="ch" style="background:#3A7518;color:white;">📍 Identidad Territorial</div>
+  <div class="cbody">
+    <div class="chips">
+      <span class="chip ct">🥛 Cuenca Lechera</span>
+      <span class="chip cz">3ª Sección Electoral</span>
+      <span class="chip cb">Bisagra CABA-Interior</span>
+      <span class="chip cg">Tambos · Lácteos</span>
+      <span class="chip co">Turismo Rural</span>
+      <span class="chip cz">~95 km de CABA</span>
+    </div>
+    <div class="st">Datos Básicos</div>
+    <table class="t two-col">
+      <tbody>
+        <tr><td>Intendente</td><td class="bld">Fernando Raitelli <span class="badge-aliado" style="border-radius:10px;padding:1px 7px;font-size:9px;font-weight:700;background:#14532D;color:#A7F3D0;">Aliado</span></td></tr>
+        <tr><td>Partido</td><td class="bld">Unión por la Patria</td></tr>
+        <tr><td>Sección</td><td>3ª Sección Electoral</td></tr>
+        <tr><td>Superficie</td><td>1.114,2 km²</td></tr>
+        <tr><td>Población 2022</td><td>32.448 hab. (INDEC)</td></tr>
+        <tr><td>Padrón 2025</td><td class="ok">28.865 electores</td></tr>
+        <tr><td>Clave identitaria</td><td>Cuenca Lechera · Campo gaucho</td></tr>
+        <tr><td>Distancia CABA</td><td>~95 km · Ruta 6 / Ruta 36</td></tr>
+      </tbody>
+    </table>
+    <div class="st2">Localidades</div>
+    <div class="locs">
+      <div class="loc" style="border-color:#3A7518;background:#ECFDF5;">
+        <strong>🏘️ Brandsen (cab.)</strong>
+        Cabecera · Centro comercial · Feria emprendedores · Hospital Caram
+      </div>
+      <div class="loc" style="border-color:#3A7518;background:#ECFDF5;">
+        <strong>🌾 Jeppener</strong>
+        Tambos · CAP salud rural · Caminos lecheros · Comunidad rural activa
+      </div>
+      <div class="loc" style="border-color:#65A30D;background:#F7FEE7;">
+        <strong>🌾 Altamirano</strong>
+        Ganadería · CAP salud rural · Zona de campo bajo · Cuenca Salado
+      </div>
+      <div class="loc" style="border-color:#65A30D;background:#F7FEE7;">
+        <strong>🏡 Gorchs</strong>
+        Paraje rural · Tamberos · Caminos rurales críticos · Campo extensivo
+      </div>
+    </div>
+    <div class="nt">
+      <strong>📍 Posición regional</strong>
+      Brandsen pertenece a la 3ª Sección Electoral — la misma de La Matanza, Lomas de Zamora y Lanús — pero tiene idiosincrasia de pueblo rural y tradición gaucha. Esa "bisagra" lo convierte en destino de turismo de campo para el AMBA y polo de atracción inmobiliaria para quienes buscan vida de campo cerca de la Capital.
+    </div>
+  </div>
+</div>
+
+<div class="card two">
+  <div class="ch" style="background:#3A7518;color:white;">🏭 Matriz Productiva · Brandsen · Cuenca Lechera del Abasto Sur</div>
+  <div class="cbody">
+    <div class="sgrid">
+      <div class="sc p">
+        <div class="sl">Sector Primario</div>
+        <div class="sn">Tambos y Ganadería</div>
+        <div class="sp" style="color:#3A7518;">~60%</div>
+        <div class="sd">500+ tamberos en actividad. Brandsen es proveedor clave de las usinas lácteas de la Cuenca del Abasto Sur. La ganadería de cría bovina complementa la actividad lechera en los campos bajos. Dependencia total de los caminos rurales para la salida del tambo.</div>
+      </div>
+      <div class="sc s">
+        <div class="sl">Sector Secundario</div>
+        <div class="sn">Industria Láctea</div>
+        <div class="sp" style="color:#059669;">~18%</div>
+        <div class="sd">Elaboración de quesos artesanales y productos lácteos. Varias pequeñas industrias de transformación que agregan valor a la leche producida localmente. Brandsen Cata promueve los quesos regionales como activo gastronómico y turístico.</div>
+      </div>
+      <div class="sc t">
+        <div class="sl">Turismo y Servicios</div>
+        <div class="sn">Turismo Rural · Gastronomía</div>
+        <div class="sp" style="color:#D97706;">~14%</div>
+        <div class="sd">Turismo de fin de semana a menos de 100 km de CABA. Brandsen Cata (vinos y quesos regionales), Feria Municipal de Emprendedores, gastronomía rural. Creciente demanda desde el AMBA de escapadas de campo.</div>
+      </div>
+      <div class="sc e">
+        <div class="sl">Empleo y Comercio</div>
+        <div class="sn">Emprendedores · Comercio</div>
+        <div class="sp" style="color:#7C3AED;">~8%</div>
+        <div class="sd">Feria Municipal con +150 emprendedores empadronados. Comercio de cabecera que abastece a las localidades rurales. Microcréditos y asistencia técnica para la formalización de emprendimientos locales.</div>
+      </div>
+    </div>
+    <div class="st">Desagregado por actividad</div>
+    <div class="pbr"><div class="pbl">Tambos lecheros</div><div class="pbo"><div class="pbi" style="width:65%;background:#3A7518;"><span class="pbt">Actividad central</span></div></div><div class="pbp">65%</div></div>
+    <div class="pbr"><div class="pbl">Ganadería bovina</div><div class="pbo"><div class="pbi" style="width:22%;background:#059669;"></div></div><div class="pbp">22%</div></div>
+    <div class="pbr"><div class="pbl">Industria láctea</div><div class="pbo"><div class="pbi" style="width:7%;background:#D97706;"></div></div><div class="pbp">7%</div></div>
+    <div class="pbr"><div class="pbl">Turismo rural</div><div class="pbo"><div class="pbi" style="width:4%;background:#7C3AED;"></div></div><div class="pbp">4%</div></div>
+    <div class="pbr"><div class="pbl">Emprendedores</div><div class="pbo"><div class="pbi" style="width:2%;background:#9CA3AF;"></div></div><div class="pbp">2%</div></div>
+    <div class="st2">Actores Económicos Clave</div>
+    <div class="ar">
+      <div class="ai">🐄</div>
+      <div class="ain">
+        <div class="an">Sociedad Rural de Brandsen / CARBAP</div>
+        <div class="ad">Productores ganaderos y tamberos. Demanda central: caminos rurales transitables 365 días al año, crédito de campaña, precios de leche. Elección 2023 →JxC. 2025 →LLA. Recuperación posible con agenda concreta MinAgrario.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🏭</div>
+      <div class="ain">
+        <div class="an">Sector Industrial Lácteo · Usinas / Quesos</div>
+        <div class="ad">Industrias de transformación láctea con sede en Brandsen y la zona. Demanda: financiamiento, acceso a mercados, articulación con programas provinciales de economía social. Volátiles electoralmente.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🎪</div>
+      <div class="ain">
+        <div class="an">Prestadores Brandsen Cata · Turismo Rural</div>
+        <div class="ad">Productores de vinos y quesos, bodegueros locales, gastronomía. Brandsen Cata los nuclea. Demanda: apoyo a la marca territorial, infraestructura de acceso, difusión turística provincial. Aliados naturales del proyecto de desarrollo local.</div>
+        <div class="ats"><span class="at acc-priv">PRIVADO</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🛍️</div>
+      <div class="ain">
+        <div class="an">Feria Municipal de Emprendedores · +150 empadronados</div>
+        <div class="ad">Red de emprendedores formalizados a través de la Feria Municipal. Más de 150 con ingreso constante. Demanda: continuidad del programa, más fechas y espacios. Públicamente vinculados a la gestión Raitelli.</div>
+        <div class="ats"><span class="at acc-priv">PRIVADO</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSPECTIVA PROVINCIAL -->
+<div class="card full">
+  <div class="ch" style="background:#3A7518;color:white;">🏛️ Perspectiva Provincial · Brandsen en la Agenda PBA</div>
+  <div class="cbody">
+    <div class="pgrid">
+      <div class="pi o">
+        <div class="pt">Oportunidad · Identidad productiva</div>
+        <div class="pti">Cuenca Lechera del Abasto Sur · el corredor lácteo de la 3ª</div>
+        <div class="pd">Brandsen es el municipio más específicamente lechero de la 3ª Sección — una identidad productiva fuerte y movilizable que la Provincia puede potenciar. El corredor Ruta 36 articula a Brandsen con Cañuelas, La Plata y los circuitos lácteos del interior. Programas de valor agregado lácteo, denominación de origen para quesos artesanales y financiamiento a la cadena son intervenciones de alta visibilidad con el sector productivo.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Oportunidad · Infraestructura crítica</div>
+        <div class="pti">Vialidad rural: 800 km de caminos lecheros</div>
+        <div class="pd">El programa de Vialidad Rural de Raitelli sostiene 800 km de caminos con cuadrillas municipales, pero los recursos son insuficientes para el nivel de desgaste. La co-inversión provincial en el mantenimiento y mejora de los caminos rurales lecheros es la intervención con mayor retorno en el sector que más vota anti-PJ: los tamberos y ganaderos de Jeppener, Altamirano y Gorchs que actualmente miran a LLA.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">Oportunidad · Turismo de proximidad</div>
+        <div class="pti">Brandsen como destino de escapada: a 95 km de CABA</div>
+        <div class="pd">La "bisagra conurbano-interior" de Brandsen tiene valor turístico real. A menos de 100 km de CABA por Ruta 6 y variantes, con Brandsen Cata (vinos y quesos), la Feria de Emprendedores y una gastronomía rural creciente, el municipio puede articularse en el circuito turístico provincial de fin de semana junto con Cañuelas y La Plata. La Provincia puede agregar señalética, comunicación y programas de turismo social.</div>
+      </div>
+      <div class="pi r">
+        <div class="pt">Riesgo · Electoral</div>
+        <div class="pti">LLA 46,6% en nacionales: ya supera al PJ por 9,3 puntos</div>
+        <div class="pd">La Libertad Avanza obtuvo el 46,6% en el Diputado Nacional 2025 — superando al PJ (37,3%) por más de 9 puntos. El bloque JxC de 2023 (37,4%) migró casi íntegramente a LLA sin candidatos propios. Si LLA o una coalición opositora presenta candidato para la ejecutiva municipal en 2027, el PJ pasa de tener la ejecutiva a ser segunda fuerza. El tiempo entre ahora y agosto de 2027 es el período crítico para fortalecer a Raitelli.</div>
+      </div>
+      <div class="pi p">
+        <div class="pt">Programas Activos</div>
+        <div class="pti">Salud rural · Seguridad CPR · Vialidad</div>
+        <div class="pd">Salud rural: CAPs en Jeppener y Altamirano (evitar traslados). Hospital Caram: 8.000 atenciones mensuales. Seguridad: videovigilancia + patrullas rurales (CPR) activas. Vialidad: 800 km mantenidos con cuadrillas municipales. La Provincia puede co-financiar y ampliar todos estos programas con co-gestión directa con Raitelli.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">Desafío · Político</div>
+        <div class="pti">Consolidar el liderazgo de Raitelli como candidato 2027</div>
+        <div class="pd">La continuidad de Raitelli como candidato (reelección) o la construcción de un sucesor sólido del mismo espacio es la variable política más importante para 2027. El espacio Cámpora tiene base movilizada y leal, pero con techo estructuralmente bajo (41,4% en 2023 con la oposición dividida). La co-gestión provincial amplifica los activos de la gestión y eleva ese techo antes de la próxima campaña.</div>
+      </div>
+    </div>
+    <div class="corr">
+      <h3>🛤️ Corredor Ruta 36 Láctea · La Plata – Brandsen – Cañuelas</h3>
+      <p>Brandsen es el nodo central del corredor lácteo que corre por la Ruta 36 entre La Plata y el interior lechero. Al norte, Cañuelas (aliada, cuenca lechera complementaria); al este, La Plata (mercado consumidor y polo universitario); al oeste, el interior profundo del Salado. La articulación del circuito turístico regional Brandsen-Cañuelas-La Plata y la intervención del MinAgrario en toda la cuenca son intervenciones de escala regional que trascienden el municipio y tienen impacto político en todos los aliados del corredor.</p>
+      <div class="cms">
+        <div class="cm">La Plata<span>Capital Provincial</span></div>
+        <div class="cm">→ Ruta 36<span>Corredor lácteo</span></div>
+        <div class="cm">Brandsen ★<span>Nodo central</span></div>
+        <div class="cm">→ Ruta 6<span>Interior</span></div>
+        <div class="cm">Cañuelas<span>Aliado lechero</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISIS POLÍTICO + ACTORES -->
+<div class="card two">
+  <div class="ch" style="background:#1F3B0A;color:white;">🗳️ Análisis Político · Brandsen · Tendencia Electoral 2023–2025</div>
+  <div class="cbody">
+    <div class="st">Resultados electorales comparados</div>
+    <table class="t">
+      <thead><tr><th>Elección</th><th>PJ</th><th>JxC</th><th>LLA</th><th>Otros</th><th>Padrón</th></tr></thead>
+      <tbody>
+        <tr><td>Intend. 2023</td><td class="ok">41,4%<br>8.228 ✓</td><td class="warn">37,4%<br>7.436</td><td>18,0%<br>3.576</td><td>3,2% / 634</td><td>27.324</td></tr>
+        <tr><td>Conc. PBA 2025</td><td class="warn">39,5%<br>6.820</td><td class="inf">— sin cand.</td><td class="warn">26,5%<br>4.580</td><td>2,9% FIT / 501</td><td>28.865</td></tr>
+        <tr><td>Dip. Nac. 2025</td><td class="warn">37,3%<br>6.694</td><td class="inf">— sin cand.</td><td class="bad">46,6%<br>8.365</td><td>3,3% FIT / 591</td><td>27.805</td></tr>
+      </tbody>
+    </table>
+    <div class="st2">Análisis por eje</div>
+    <div class="ag">
+      <div class="agi">🏆</div>
+      <div class="agt">
+        <strong>Raitelli ganó con minoría absoluta — la oposición dividida fue el factor</strong>
+        <p>El PJ ganó en 2023 con 41,4% en un municipio donde el anti-PJ sumaba el 55,4% (JxC 37,4% + LLA 18% + vecinalistas 3,2%). Raitelli ganó porque la oposición estaba fragmentada. Sin esa fragmentación, el PJ pierde. Ese es el dato estructural que define la situación de Brandsen: el PJ no tiene mayoría, tiene pluralidad en un campo opositor dividido.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">📈</div>
+      <div class="agt">
+        <strong>LLA absorbió el voto JxC y en 2025 ya supera al PJ en lo nacional</strong>
+        <p>Sin candidatos propios JxC en 2025, La Libertad Avanza pasó del 18% (2023) al 46,6% (Dip. Nac. 2025) — un crecimiento de 28,6 puntos que corresponde casi exactamente a la traslación del voto JxC. El PJ en cambio cayó de 41,4% a 37,3% en nacionales. La convergencia opositora en LLA es completa: el bloque anti-PJ que antes estaba dividido hoy está unificado en una sola fuerza.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🌿</div>
+      <div class="agt">
+        <strong>El espacio Cámpora en Brandsen: base movilizada, techo bajo</strong>
+        <p>Raitelli es del espacio de La Cámpora — una pertenencia que activa la base kirchnerista local con cuadros militantes, pero que también fija un techo en el electorado más amplio. En municipios de perfil rural y campo, la identidad Cámpora puede generar rechazo en sectores que migraron a LLA precisamente por oposición a ese espacio. La estrategia electoral 2027 deberá equilibrar esa tensión.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">⚠️</div>
+      <div class="agt">
+        <strong>2027: el escenario de mayor riesgo entre los municipios aliados de la región</strong>
+        <p>Brandsen tiene el mayor riesgo de cambio de color de todos los municipios aliados de la 3ª Sección por su patrón electoral: ganó con 41,4%, LLA ya tiene 46,6% en nacionales, y el padrón crece (+1.541) lo que en principio no favorece a ningún partido. La inversión provincial activa en los próximos 18 meses — con co-gestión visible y presencia directa — es lo que puede sostener la ejecutiva aliada en 2027.</p>
+      </div>
+    </div>
+    <div class="al al-r">
+      <strong>⛔ ALERTA ELECTORAL: LLA YA SUPERA AL PJ EN NACIONALES</strong>
+      Brandsen 2025: LLA 46,6% vs PJ 37,3% en Dip. Nacional. El bloque JxC 2023 (37,4%) migró casi íntegramente a LLA. Si LLA o una coalición presenta candidato ejecutivo local en 2027, el PJ es segunda fuerza. La intervención provincial activa en 2025-2026 es la variable que puede revertir esta tendencia.
+    </div>
+  </div>
+</div>
+
+<div class="card one">
+  <div class="ch" style="background:#1F3B0A;color:white;">👥 Actores Clave</div>
+  <div class="cbody">
+    <div class="ar">
+      <div class="ai">🟢</div>
+      <div class="ain">
+        <div class="an">Fernando Raitelli · Intendente</div>
+        <div class="ad">UxP · Cámpora. Base movilizada y leal. Gestión local visible (vialidad rural, salud, seguridad, turismo). Abierto a la coordinación con la Provincia. El activo político más valioso del municipio para 2027.</div>
+        <div class="ats"><span class="badge-aliado" style="border-radius:10px;padding:2px 8px;font-size:9px;font-weight:700;background:#14532D;color:#A7F3D0;">ALIADO UxP</span><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🐄</div>
+      <div class="ain">
+        <div class="an">Sociedad Rural · CARBAP zona</div>
+        <div class="ad">Tamberos y ganaderos. Históricamente JxC, migraron a LLA en 2025. La agenda de caminos rurales y apoyo MinAgrario puede recuperar parte de este segmento para el PJ.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🏥</div>
+      <div class="ain">
+        <div class="an">Hospital Caram · Dirección médica</div>
+        <div class="ad">Hospital Francisco Caram. 8.000 atenciones mensuales, guardia activa 24 hs, shock room. Co-financiamiento provincial para equipamiento es bienvenido.</div>
+        <div class="ats"><span class="at acc-prot">PROTOCOLAR</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🎪</div>
+      <div class="ain">
+        <div class="an">Prestadores Brandsen Cata · Turismo Rural</div>
+        <div class="ad">Productores de vinos, quesos y gastronomía. Economía social vinculada a la marca territorial. Aliados del desarrollo local. Posible articulación con circuito turístico regional.</div>
+        <div class="ats"><span class="at acc-priv">PRIVADO</span></div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🛍️</div>
+      <div class="ain">
+        <div class="an">Feria Municipal · +150 emprendedores</div>
+        <div class="ad">Red de emprendedores formalizados. Beneficiarios directos de la gestión Raitelli. Público y visible. Movilización posible en eventos conjuntos Provincia-Municipio.</div>
+        <div class="ats"><span class="at acc-priv">PRIVADO</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AGENDA DISCURSIVA + ALERTAS -->
+<div class="card two">
+  <div class="ch" style="background:#1F3B0A;color:white;">💬 Agenda Discursiva · Brandsen</div>
+  <div class="cbody">
+    <div class="ag">
+      <div class="agi">🥛</div>
+      <div class="agt">
+        <strong>Leche y trabajo: Brandsen produce lo que el país consume</strong>
+        <p>La cadena láctea es la identidad productiva de Brandsen y la que genera empleo en todo el territorio, desde el tambo hasta la usina. El rol de la Provincia es garantizar que esa cadena tenga caminos, financiamiento y acceso a mercados. Cada litro de leche de Brandsen que llega a la góndola es resultado de una política de infraestructura rural que la Provincia co-construye con el municipio aliado.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🛤️</div>
+      <div class="agt">
+        <strong>Los caminos del tambo: vialidad rural como política de Estado</strong>
+        <p>800 kilómetros de caminos rurales son la infraestructura crítica de Brandsen. Sin caminos transitables, el tambo no puede sacar la leche. El programa de vialidad rural de Raitelli mantiene esas rutas con cuadrillas municipales propias, pero necesita co-inversión provincial para escalar. La leche de Brandsen depende de que el barro no gane.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🏥</div>
+      <div class="agt">
+        <strong>Salud en el territorio: el médico más cerca del campo</strong>
+        <p>Los Centros de Atención Primaria en Jeppener y Altamirano son la respuesta al problema más concreto del trabajador rural: cómo atenderse sin viajar 40 km hasta Brandsen. El Hospital Caram con 8.000 atenciones mensuales y guardia activa 24 horas es la red de contención que sostiene a toda la cadena productiva.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🔒</div>
+      <div class="agt">
+        <strong>Seguridad para el campo y la ciudad: CPR en cada rincón del distrito</strong>
+        <p>Las patrullas rurales (CPR) y el sistema de videovigilancia del centro de monitoreo son la respuesta local al problema de seguridad que más preocupa al productor rural: los robos en el campo y el abigeato. El programa de seguridad rural de Raitelli, con cámaras, lectoras y coordinación con la policía provincial, es un activo diferencial en el municipio.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🎪</div>
+      <div class="agt">
+        <strong>Brandsen como destino: vinos, quesos y campo a 100 km de CABA</strong>
+        <p>Brandsen Cata y la Feria de Emprendedores convierten al municipio en un destino de fin de semana para el AMBA. La economía social de los emprendedores locales — +150 formalizados, con ingresos constantes — y la gastronomía rural son el complemento moderno de la identidad tambera. La Provincia puede amplificar ese circuito con turismo social y señalética regional.</p>
+      </div>
+    </div>
+    <div class="al al-k">
+      <strong>🎯 Síntesis de Brandsen</strong>
+      Brandsen es el municipio aliado más expuesto de la 3ª Sección. Raitelli tiene gestión visible y base leal, pero el anti-PJ ya es mayoría estructural y LLA ganó en nacionales. La estrategia correcta: co-gestión intensa con la Provincia (vialidad rural, salud, MinAgrario) para amplificar los activos del intendente y elevar el techo electoral del PJ antes de 2027. Sin intervención activa, el escenario de pérdida de la ejecutiva es real.
+    </div>
+  </div>
+</div>
+
+<div class="card one">
+  <div class="ch" style="background:#1F3B0A;color:white;">⚠️ Alertas y Notas</div>
+  <div class="cbody">
+    <div class="al al-r">
+      <strong>🔴 LLA ya supera al PJ en nacionales</strong>
+      46,6% vs 37,3% en Dip. Nac. 2025. El bloque JxC (37,4% en 2023) migró casi íntegramente. Riesgo de pérdida de la ejecutiva en 2027 si LLA consolida candidato local propio.
+    </div>
+    <div class="al al-a">
+      <strong>🟡 Anti-PJ histórico: mayoría estructural del 55%</strong>
+      En 2023, JxC+LLA+Vecinalistas sumaron 55,4% de los votos positivos. El PJ ganó por fragmentación opositora, no por mayoría. Sin esa fragmentación, el PJ es segunda fuerza.
+    </div>
+    <div class="al al-a">
+      <strong>🟡 Campo migrado a LLA: segmento crítico</strong>
+      Los tamberos y ganaderos de Jeppener, Altamirano y Gorchs votaron JxC en 2023 y LLA en 2025. La agenda de caminos rurales y MinAgrario es la única vía de recuperación para este segmento.
+    </div>
+    <div class="al al-b">
+      <strong>🔵 "Brandsen 50 Años": plan participativo</strong>
+      El debate de planificación estratégica lanzado por Raitelli puede articularse con programas provinciales de desarrollo territorial para generar co-construcción visible antes de 2027.
+    </div>
+    <div class="al al-v">
+      <strong>🟢 Bisagra turística: <95 km de CABA</strong>
+      La identidad "bisagra conurbano-interior" de Brandsen es un activo turístico real. El circuito Brandsen Cata + Feria + campo puede articularse con el turismo provincial de fin de semana.
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS -->
+<div class="card full">
+  <div class="ch" style="background:#1F3B0A;color:white;">🗺️ Visitas Estratégicas · Brandsen · Priorización y Modalidad</div>
+  <div class="cbody">
+    <table class="t" style="table-layout:fixed;">
+      <colgroup><col style="width:4%"><col style="width:22%"><col style="width:12%"><col style="width:8%"><col></colgroup>
+      <thead>
+        <tr><th>#</th><th>Lugar / Evento</th><th>Tipo</th><th>Score</th><th>Descripción estratégica</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bld">1</td>
+          <td class="bld">🥛 Tambo representativo / Usina láctea local</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="ok bld">9.5</td>
+          <td>Recorrida de un tambo activo con productores locales + anuncio de programa MinAgrario provincial para la cuenca lechera. Acto conjunto Provincia-Municipio con tamberos. La leche es la identidad del municipio — la presencia provincial en el tambo amplifica la co-gestión con Raitelli y construye credibilidad directa con el sector que migró a LLA.</td>
+        </tr>
+        <tr>
+          <td class="bld">2</td>
+          <td class="bld">🏥 Hospital Francisco Caram</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="ok bld">9.0</td>
+          <td>Recorrida del hospital + anuncio de equipamiento o co-financiamiento provincial para guardia y shock room. 8.000 atenciones mensuales hacen del Caram el servicio de salud más importante del municipio. La presencia provincial en salud tiene alta resonancia emocional en la comunidad.</td>
+        </tr>
+        <tr>
+          <td class="bld">3</td>
+          <td class="bld">🛤️ Camino rural lechero · Jeppener o Altamirano</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="warn bld">8.5</td>
+          <td>Recorrida de camino rural con productores + anuncio de co-financiamiento vialidad rural provincial. El segmento tambero que migró a LLA tiene como demanda central los caminos. La visita al camino con el intendente y productores es la señal más concreta de que la Provincia atiende al campo que produce, independientemente de su voto reciente.</td>
+        </tr>
+        <tr>
+          <td class="bld">4</td>
+          <td class="bld">🏘️ CAP Jeppener · Centro de Atención Primaria</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="warn bld">8.0</td>
+          <td>Visita al CAP rural de Jeppener con profesionales de salud y vecinos. El programa de salud rural de Raitelli (CAPs en Jeppener y Altamirano) es el hito de gestión más vinculado con la calidad de vida concreta en las localidades rurales. Co-anuncio con Ministerio de Salud provincial.</td>
+        </tr>
+        <tr>
+          <td class="bld">5</td>
+          <td class="bld">🎪 Brandsen Cata · Feria Municipal de Emprendedores</td>
+          <td><span class="acc-priv">PRIVADO</span></td>
+          <td class="warn bld">7.5</td>
+          <td>Asistencia al evento Brandsen Cata (vinos y quesos locales) o a la Feria Municipal con emprendedores. El contexto es festivo y con participación amplia. +150 emprendedores empadronados, productores de quesos, turistas del AMBA. Muestra la economía social activa del municipio y la "bisagra turística" con la Capital.</td>
+        </tr>
+        <tr>
+          <td class="bld">6</td>
+          <td class="bld">🔒 Centro de Monitoreo de Seguridad · CPR</td>
+          <td><span class="acc-prot">PROTOCOLAR</span></td>
+          <td class="inf bld">7.0</td>
+          <td>Visita al centro de monitoreo con cámaras y lectoras + recorrida con patrulla rural (CPR). El programa de seguridad rural es el más diferencial de Raitelli para el electorado rural que migró a LLA. Mostrar la tecnología de videovigilancia y las patrullas de campo construye credibilidad con el sector más desafiante.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="nt">
+      <strong>📌 Nota de coordinación</strong>
+      Toda visita debe coordinarse directamente con Raitelli (intendente, UxP). La modalidad es co-gestión: la Provincia y el municipio aparecen juntos como socios, no como actores separados. El mensaje debe subrayar que la Provincia apoya la agenda del intendente aliado, no que viene a resolver lo que el municipio no hizo.
+    </div>
+  </div>
+</div>
+
+<!-- NOTAS -->
+<div class="card full">
+  <div class="ch" style="background:#3A7518;color:white;">📋 Hitos de Gestión Raitelli · Brandsen</div>
+  <div class="cbody">
+    <div class="st">Principales ejes de gestión del período</div>
+    <div class="sgrid">
+      <div class="sc g">
+        <div class="sl">Gobierno / Participación</div>
+        <div class="sn">Debate "Brandsen 50 Años"</div>
+        <div class="sd">Convocatoria comunitaria para construir un plan director que defina el crecimiento y las prioridades estratégicas del distrito para las próximas décadas. Ejercicio participativo de largo plazo. Palanca de articulación con programas provinciales de desarrollo territorial.</div>
+      </div>
+      <div class="sc p">
+        <div class="sl">Salud Rural</div>
+        <div class="sn">CAPs en Jeppener y Altamirano</div>
+        <div class="sd">Refuerzo de los Centros de Atención Primaria en ambas localidades rurales para evitar traslados innecesarios hasta la cabecera. Hospital Francisco Caram: guardia, shock room, ambulancias, 8.000 atenciones/mes.</div>
+      </div>
+      <div class="sc r">
+        <div class="sl">Seguridad</div>
+        <div class="sn">CPR Rural + Videovigilancia</div>
+        <div class="sd">Centro de monitoreo con cámaras y lectoras de patentes. Patrullas rurales (CPR) en los caminos de campo. Coordinación con la policía provincial. Prioriza corredores, accesos y zonas calientes del distrito.</div>
+      </div>
+      <div class="sc t">
+        <div class="sl">Vialidad Rural</div>
+        <div class="sn">Plan Vial Productivo · 800 km</div>
+        <div class="sd">Cuadrillas fijas con motoniveladoras para mantenimiento de 800 km de caminos rurales. Prioridad: rutas lecheras que garantizan la salida del tambo todos los días del año.</div>
+      </div>
+      <div class="sc s">
+        <div class="sl">Economía Social</div>
+        <div class="sn">Feria Emprendedores · +150 empadronados</div>
+        <div class="sd">Circuito regular de ferias en plazas principales. Escenarios, espectáculos, exención de tasas. +150 emprendedores con ingreso constante y formal gracias a la tracción turística dominical.</div>
+      </div>
+      <div class="sc e">
+        <div class="sl">Turismo y Cultura</div>
+        <div class="sn">Brandsen Cata · Identidad territorial</div>
+        <div class="sd">Evento que promueve el consumo local y pone en valor la producción regional de vinos y quesos. Reúne a emprendedores y artistas. Posiciona a Brandsen como destino gastronómico en la región.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Ficha Estructurada — Brandsen · PBA Analytics 2026</div>
+
+<!-- ANEXO I -->
+<div class="anx-break" style="height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div style="background:linear-gradient(135deg,#1F3B0A,#3A7518);color:white;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Brandsen · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO I — DATOS ELECTORALES Y DEMOGRÁFICOS</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">3ª Sección Electoral · Fernando Raitelli · UxP · Aliado</div>
+  </div>
+  <div style="padding:18px 22px;background:#eef2f7;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#3A7518;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">🗳️ Electoral completo 2023–2025</div>
+      <div style="padding:13px;">
+        <table class="t">
+          <thead><tr><th>Elección</th><th>PJ</th><th>JxC</th><th>LLA</th><th>Padrón</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Intend. 2023</strong></td><td class="ok">41,4%<br>8.228 ✓</td><td class="warn">37,4%<br>7.436</td><td>18,0%<br>3.576</td><td>27.324</td></tr>
+            <tr><td><strong>Conc. PBA 2025</strong></td><td class="warn">39,5%<br>6.820</td><td class="inf">— sin cand.</td><td class="warn">26,5%<br>4.580</td><td>28.865</td></tr>
+            <tr><td><strong>Dip. Nac. 2025</strong></td><td class="warn">37,3%<br>6.694</td><td class="inf">— sin cand.</td><td class="bad">46,6%<br>8.365</td><td>27.805</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;"><strong>Tendencia:</strong> PJ cae 4,1 pts (41,4%→37,3%) mientras LLA sube 28,6 pts (18%→46,6%). El bloque JxC 2023 (37,4%) migró íntegramente a LLA en las categorías nacionales. Brandsen: municipio aliado con mayor riesgo electoral 2027 de la 3ª Sección.</p>
+      </div>
+    </div>
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#3A7518;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">📊 Demografía y Padrón</div>
+      <div style="padding:13px;">
+        <table class="t">
+          <thead><tr><th style="width:55%">Indicador</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>Población 2022</td><td><strong>32.448 hab.</strong></td></tr>
+            <tr><td>Padrón 2023</td><td>27.324 electores</td></tr>
+            <tr><td>Padrón 2025</td><td class="ok">28.865 electores</td></tr>
+            <tr><td>Crecimiento padrón</td><td class="ok">+1.541 (+5,6%)</td></tr>
+            <tr><td>Proyección 2027</td><td class="ok">~29.800–30.200</td></tr>
+            <tr><td>Superficie</td><td>1.114,2 km²</td></tr>
+            <tr><td>Distancia CABA</td><td>~95 km · Ruta 6/36</td></tr>
+            <tr><td>Sección Electoral</td><td>3ª Sección</td></tr>
+            <tr><td>Intendente</td><td class="ok">Raitelli · UxP · Aliado</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div style="padding:0 22px 18px;background:#eef2f7;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#1F3B0A;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">📍 Localidades y perfiles</div>
+      <div style="padding:13px;">
+        <table class="t">
+          <thead><tr><th>Localidad</th><th>Perfil productivo</th><th>Voto est.</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Brandsen (cab.)</strong></td><td>Comercio · Feria · Hospital</td><td class="ok">PJ ~44% base</td></tr>
+            <tr><td><strong>Jeppener</strong></td><td>Tambos · CAP salud rural</td><td class="warn">LLA creciendo</td></tr>
+            <tr><td><strong>Altamirano</strong></td><td>Ganadería · Campo bajo</td><td class="warn">LLA fuerte</td></tr>
+            <tr><td><strong>Gorchs</strong></td><td>Paraje rural · Campo extensivo</td><td class="bad">LLA dominante</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;">Las localidades rurales (Jeppener, Altamirano, Gorchs) son las más expuestas al avance de LLA. La cabecera Brandsen concentra la mayor parte del voto PJ activo.</p>
+      </div>
+    </div>
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#9B1C1C;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">⚠️ Riesgos y oportunidades 2027</div>
+      <div style="padding:13px;">
+        <table class="t">
+          <thead><tr><th>Factor</th><th>Tipo</th><th>Impacto</th></tr></thead>
+          <tbody>
+            <tr><td>LLA 46,6% nac. 2025</td><td class="bad">Riesgo alto</td><td class="bad">Monitorear</td></tr>
+            <tr><td>Anti-PJ >55% hist.</td><td class="bad">Riesgo struct.</td><td class="bad">Crítico</td></tr>
+            <tr><td>Campo migrado LLA</td><td class="bad">Riesgo rural</td><td class="warn">MinAgrario</td></tr>
+            <tr><td>Raitelli gestionando</td><td class="ok">Oportunidad</td><td class="ok">Amplificar</td></tr>
+            <tr><td>Cuenca lechera</td><td class="ok">Identidad</td><td class="ok">Potenciar</td></tr>
+            <tr><td>Padrón creciendo</td><td class="ok">Neutro+</td><td class="ok">Capturar</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ANEXO II -->
+<div class="anx-break" style="height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div style="background:linear-gradient(135deg,#3A7518,#1F3B0A);color:white;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Brandsen · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO II — ANÁLISIS ESTRATÉGICO Y SEGMENTOS</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">Cuenca Lechera · Segmentos · Agenda · Escenarios 2027</div>
+  </div>
+  <div style="padding:18px 22px;background:#eef2f7;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#1d3461;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">📍 Comparativa 3ª Sección</div>
+      <div style="padding:13px;">
+        <table class="t">
+          <thead><tr><th>Variable</th><th>Brandsen</th><th>Prom. 3ª Sec.</th></tr></thead>
+          <tbody>
+            <tr><td>PJ ejecutivo 2023</td><td class="warn">41,4%</td><td class="ok">~47%</td></tr>
+            <tr><td>PJ conc. 2025</td><td class="warn">39,5%</td><td class="ok">~45%</td></tr>
+            <tr><td>LLA nac. 2025</td><td class="bad">46,6%</td><td class="warn">~43%</td></tr>
+            <tr><td>Crec. padrón 2 años</td><td class="ok">+5,6%</td><td>+3,5%</td></tr>
+            <tr><td>Color intendente</td><td class="ok">ALIADO UxP</td><td class="ok">~60% aliados</td></tr>
+            <tr><td>Perfil productivo</td><td class="ok">Cuenca lechera</td><td>Diverso</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;">Brandsen tiene LLA más alto y PJ ejecutivo más bajo que el promedio de la 3ª Sección — el municipio con mayor tensión electoral de la sección entre aliados.</p>
+      </div>
+    </div>
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#1d3461;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">👥 Segmentos electorales</div>
+      <div style="padding:13px;">
+        <table class="t">
+          <thead><tr><th>Segmento</th><th>%</th><th>Patrón · Demanda</th></tr></thead>
+          <tbody>
+            <tr><td>PJ base dura</td><td class="ok">~28%</td><td>PJ todo · gestión local</td></tr>
+            <tr><td>PJ soft favorable</td><td class="ok">~13%</td><td>PJ local · volátil en nac.</td></tr>
+            <tr><td>JxC migrado a LLA</td><td class="bad">~28%</td><td>LLA nac · anti-kirchner</td></tr>
+            <tr><td>LLA convencido</td><td class="bad">~15%</td><td>LLA todo · antipolítica</td></tr>
+            <tr><td>Campo tambero</td><td class="warn">~12%</td><td>LLA/JxC · caminos, precios</td></tr>
+            <tr><td>Joven / nuevos</td><td class="warn">~4%</td><td>LLA creciente · empleo</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;">El PJ tiene base de ~41% (dura+soft). El segmento JxC migrado (~28%) es el más importante a disputar — de su comportamiento depende si 2027 es competitivo o se pierde.</p>
+      </div>
+    </div>
+  </div>
+  <div style="padding:0 22px 18px;background:#eef2f7;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#D97706;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">🏛️ Agenda provincial prioritaria</div>
+      <div style="padding:13px;">
+        <table class="t">
+          <thead><tr><th>Intervención</th><th>Modalidad</th><th>Urgencia</th></tr></thead>
+          <tbody>
+            <tr><td>Caminos rurales lecheros</td><td class="ok">Co-inversión</td><td class="bad">Urgente</td></tr>
+            <tr><td>MinAgrario · cadena láctea</td><td class="ok">Directa</td><td class="bad">Urgente</td></tr>
+            <tr><td>Hospital Caram · equip.</td><td class="ok">Co-financiamiento</td><td class="ok">Alta</td></tr>
+            <tr><td>CAPs · salud rural</td><td class="ok">Co-gestión</td><td class="ok">Alta</td></tr>
+            <tr><td>Seguridad CPR · apoyo prov.</td><td class="ok">Coordinación</td><td class="warn">Media</td></tr>
+            <tr><td>Brandsen Cata · turismo</td><td class="ok">Amplificación</td><td class="warn">Media</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#9B1C1C;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">🔮 Escenarios electorales 2027</div>
+      <div style="padding:13px;">
+        <table class="t">
+          <thead><tr><th>Escenario</th><th>Condición</th><th>PJ exec.</th></tr></thead>
+          <tbody>
+            <tr><td class="bad">A · Riesgo</td><td>LLA cand. único + PJ sin gestión</td><td class="bad">~36–38%</td></tr>
+            <tr><td class="warn">B · Competitivo</td><td>Raitelli + co-gestión prov. activa</td><td class="warn">~42–44%</td></tr>
+            <tr><td class="ok">C · Sostenible</td><td>Co-gestión intensa + JxC fragmentado</td><td class="ok">~46%+</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;">Escenario base actual: A (sin intervención). La intervención provincial activa en caminos, lácteos y salud puede llevarlo a B. El escenario C requiere además que la oposición llegue fragmentada a 2027. La variable más importante: si LLA o JxC se unen en candidato único.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Ficha Estructurada — Brandsen · PBA Analytics 2026</div>
+
+</body>
+</html>

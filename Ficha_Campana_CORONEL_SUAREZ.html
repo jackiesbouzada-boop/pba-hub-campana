@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CORONEL SUÁREZ — Ficha de Campaña · PBA 2026</title>
+<style>
+/* ═══════════════════════════════════════════════════
+   CSS LIMPIO - FICHA CAMPAÑA PBA 2026
+   Diseñado para A4 vertical. Sin herencias.
+   ═══════════════════════════════════════════════════ */
+
+/* RESET */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* PÁGINA */
+@page { size: A4 portrait; margin: 0; }
+
+/* COLORES */
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #1a1a2e;
+  background: white;
+  max-width: 794px;
+  margin: 0 auto;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* HEADER */
+.header {
+  color: white;
+  padding: 22px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.header-left h1 { font-size: 28px; font-weight: 900; letter-spacing: 2px; }
+.header-left .sub { font-size: 11px; opacity: 0.82; margin-top: 5px; }
+.header-left .tag { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+.header-right { text-align: right; font-size: 11px; opacity: 0.82; line-height: 1.9; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-rival  { background: rgba(220,38,38,0.65); }
+.badge-aliado { background: rgba(34,197,94,0.65); }
+
+/* BANNER */
+.banner {
+  background: #0f2944;
+  color: white;
+  padding: 20px 28px;
+  border-left: 7px solid #FACC15;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.b-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #FACC15; margin-bottom: 7px; }
+.b-title  { font-size: 16px; font-weight: 800; margin-bottom: 13px; line-height: 1.3; }
+.b-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.b-col p  { font-size: 11.5px; line-height: 1.75; opacity: 0.9; margin-bottom: 8px; }
+.b-col p strong { color: #FACC15; }
+.b-nums   { display: flex; gap: 10px; margin-top: 16px; }
+.b-num    { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; flex: 1; }
+.b-num .n { font-size: 20px; font-weight: 900; color: #FACC15; line-height: 1; }
+.b-num .l { font-size: 9.5px; opacity: 0.68; margin-top: 3px; line-height: 1.4; }
+
+/* GRID PRINCIPAL */
+.main {
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #eef2f7;
+}
+.full { grid-column: 1 / -1; }
+.two  { grid-column: span 2; }
+.one  { grid-column: span 1; }
+
+/* CARDS */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  overflow: hidden;
+}
+.ch {
+  padding: 11px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  border-radius: 10px 10px 0 0;
+  flex-shrink: 0;
+}
+.cbody { padding: 14px; flex: 1; }
+
+/* SECTION TITLE */
+.st {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #1F4E79;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #1F4E79;
+  margin-bottom: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* CHIPS */
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 11px; }
+.chip  { padding: 3px 10px; border-radius: 14px; font-size: 10.5px; font-weight: 600; }
+.cb { background: #DBEAFE; border: 1px solid #93C5FD; color: #1E40AF; }
+.cg { background: #D1FAE5; border: 1px solid #6EE7B7; color: #065F46; }
+.co { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; }
+.cr { background: #FEE2E2; border: 1px solid #FCA5A5; color: #7F1D1D; }
+.cp { background: #EDE9FE; border: 1px solid #C4B5FD; color: #4C1D95; }
+.cz { background: #F3F4F6; border: 1px solid #D1D5DB; color: #374151; }
+
+/* TABLA */
+.t {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11.5px;
+  table-layout: fixed;
+}
+.t th {
+  background: #f5f6f8;
+  color: #555;
+  padding: 6px 8px;
+  text-align: left;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 2px solid #e5e7eb;
+}
+.t td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: top;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child   { width: 42%; color: #555; }
+.t td:last-child    { width: 58%; }
+.t th:first-child   { width: 25%; }
+thead { display: table-header-group; }
+
+/* Colores de celda */
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+
+/* KPI */
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.kpi  { border-radius: 8px; padding: 12px 13px; border: 1px solid #e5e7eb; }
+.kl   { font-size: 9.5px; color: #777; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+.kv   { font-size: 22px; font-weight: 800; line-height: 1.1; }
+.ks   { font-size: 9.5px; color: #999; margin-top: 3px; line-height: 1.35; }
+
+/* SECTORES */
+.sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.sgrid > * { min-width: 0; }
+.sc   { border-radius: 7px; padding: 12px; border-left: 4px solid; }
+.sc.p { border-color: #2563EB; background: #EFF6FF; }
+.sc.s { border-color: #059669; background: #ECFDF5; }
+.sc.t { border-color: #D97706; background: #FFFBEB; }
+.sc.e { border-color: #7C3AED; background: #F5F3FF; }
+.sl   { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.6; margin-bottom: 3px; }
+.sn   { font-size: 13px; font-weight: 800; margin-bottom: 2px; }
+.sp   { font-size: 20px; font-weight: 900; margin: 3px 0 6px; }
+.sd   { font-size: 10.5px; line-height: 1.65; color: #444; }
+
+/* BARRAS */
+.pbr { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
+.pbl { width: 110px; font-size: 10px; color: #666; text-align: right; flex-shrink: 0; }
+.pbo { flex: 1; min-width: 0; height: 17px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+.pbi { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 6px; }
+.pbt { font-size: 9.5px; font-weight: 700; color: white; white-space: nowrap; }
+.pbp { width: 34px; font-size: 10px; font-weight: 700; text-align: right; flex-shrink: 0; }
+
+/* PALANCAS */
+.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pgrid > * { min-width: 0; }
+.pi   { border-radius: 7px; padding: 12px 14px; border-left: 4px solid; }
+.pi.o { background: #F0FDF4; border-color: #22C55E; }
+.pi.r { background: #FFF7ED; border-color: #F97316; }
+.pi.d { background: #EFF6FF; border-color: #3B82F6; }
+.pi.x { background: #FEF2F2; border-color: #EF4444; }
+.pt   { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.6; margin-bottom: 4px; }
+.pti  { font-size: 11.5px; font-weight: 700; margin-bottom: 5px; }
+.pd   { font-size: 10.5px; line-height: 1.65; color: #444; word-break: break-word; }
+
+/* ACTORES */
+.ar  { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.ar:last-child { border-bottom: none; }
+.ai  { font-size: 20px; min-width: 26px; flex-shrink: 0; }
+.ain { flex: 1; min-width: 0; }
+.an  { font-size: 11.5px; font-weight: 700; color: #1F4E79; margin-bottom: 3px; }
+.ad  { font-size: 10.5px; color: #555; line-height: 1.6; word-break: break-word; }
+.ats { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 5px; }
+.at  { font-size: 9.5px; font-weight: 700; padding: 2px 7px; border-radius: 7px; }
+
+/* AGENDA */
+.ag  { display: flex; gap: 10px; padding: 11px 0; border-bottom: 1px dashed #e8e8e8; }
+.ag:last-child { border-bottom: none; }
+.agi { font-size: 18px; min-width: 22px; flex-shrink: 0; }
+.agt { min-width: 0; }
+.agt strong { font-size: 11.5px; display: block; margin-bottom: 3px; color: #1F4E79; font-weight: 700; }
+.agt p { font-size: 10.5px; color: #666; line-height: 1.6; word-break: break-word; }
+
+/* ALERTAS */
+.al  { border-radius: 7px; padding: 11px 13px; margin-top: 10px; font-size: 10.5px; line-height: 1.6; word-break: break-word; }
+.al-v { background: #F0FDF4; border: 1px solid #86EFAC; color: #14532D; }
+.al-a { background: #FFFBEB; border: 1px solid #FCD34D; color: #78350F; }
+.al-b { background: #EFF6FF; border: 1px solid #93C5FD; color: #1E3A5F; }
+.al-k { background: #1e3a5f; color: white; }
+.al strong { display: block; margin-bottom: 3px; font-size: 11.5px; }
+.al-k strong { color: #FACC15; }
+
+/* NOTA */
+.nt { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 7px; padding: 10px 13px; font-size: 10.5px; color: #1E3A5F; margin-top: 10px; line-height: 1.6; word-break: break-word; }
+.nt strong { display: block; font-size: 11.5px; margin-bottom: 3px; color: #1E40AF; }
+
+/* HISTORIA */
+.hist { background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 7px; padding: 11px 13px; margin-top: 10px; }
+.hist strong { font-size: 11.5px; font-weight: 700; color: #78350F; display: block; margin-bottom: 4px; }
+.hist p { font-size: 10.5px; color: #78350F; line-height: 1.65; word-break: break-word; }
+
+/* CORREDOR */
+.corr { background: linear-gradient(135deg, #1e3a5f 0%, #2563EB 100%); color: white; border-radius: 8px; padding: 14px 16px; margin-top: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.corr h3 { font-size: 11.5px; font-weight: 800; margin-bottom: 6px; color: #FACC15; }
+.corr p  { font-size: 10.5px; line-height: 1.65; opacity: 0.9; }
+.cms { display: flex; gap: 7px; margin-top: 10px; flex-wrap: wrap; }
+.cm  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; padding: 7px 9px; flex: 1; text-align: center; font-size: 10.5px; font-weight: 700; min-width: 80px; word-break: break-word; }
+.cm span { display: block; font-size: 9px; font-weight: 400; opacity: 0.65; margin-top: 2px; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 12px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+
+/* PRINT */
+@media print {
+  @page { size: A4 portrait; margin: 6mm 8mm; }
+
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  html { background: white !important; padding: 0 !important; }
+  body {
+    max-width: 100% !important;
+    box-shadow: none !important;
+    margin: 0 !important; padding: 0 !important;
+    font-size: 7pt !important;
+    background: #eef2f7 !important;
+  }
+
+  .main     { padding: 8px 10px !important; gap: 7px !important;
+              grid-template-columns: 1fr 1fr 1fr !important; max-width: 100% !important; }
+  .anx-grid { padding: 8px 10px !important; gap: 7px !important; }
+  .kpis     { grid-template-columns: 1fr 1fr 1fr !important; gap: 7px !important; }
+  .sgrid    { gap: 7px !important; }
+  .pgrid    { gap: 7px !important; }
+
+  .card  { box-shadow: none !important; page-break-inside: avoid; break-inside: avoid; }
+  .ch    { font-size: 6.5pt !important; padding: 5px 8px !important; }
+  .cbody { padding: 7px 8px !important; }
+  .st    { font-size: 6.5pt !important; }
+
+  .header h1         { font-size: 16pt !important; }
+  .header-right      { font-size: 7.5pt !important; }
+  .header            { page-break-after: avoid; padding: 16px 20px !important; }
+  .sub, .tag         { font-size: 7pt !important; }
+
+  .banner            { page-break-inside: avoid; break-inside: avoid; page-break-after: avoid; }
+  .b-col p           { font-size: 7pt !important; }
+  .b-num .n          { font-size: 13pt !important; }
+  .b-num .l          { font-size: 6.5pt !important; }
+  .b-title           { font-size: 10pt !important; }
+  .b-label           { font-size: 7pt !important; }
+
+  .t    { font-size: 6.5pt !important; }
+  .t th { font-size: 6pt !important; padding: 3px 4px !important; }
+  .t td { padding: 3px 4px !important; }
+
+  .kl { font-size: 6pt !important; }
+  .kv { font-size: 13pt !important; }
+  .ks { font-size: 6pt !important; }
+
+  .sl,.pt,.at,.cm,.chip,.an { font-size: 6pt !important; }
+  .sn { font-size: 9pt !important; }
+  .sp { font-size: 11pt !important; }
+  .sd,.pd,.ad,.agt p,.hist p,.al,.nt { font-size: 6.5pt !important; }
+  .pti,.agt strong,.hist strong { font-size: 7.5pt !important; }
+
+  .al { page-break-inside: avoid; padding: 6px 8px !important; }
+  .corr { page-break-inside: avoid; }
+  .banner { padding: 10px 14px !important; }
+  .footer { page-break-before: avoid; font-size: 6.5pt !important; }
+  p, li   { orphans: 3; widows: 3; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header" style="background: linear-gradient(135deg, #1F4E79 0%, #2563EB 100%);">
+  <div class="header-left">
+    <h1>📍 CORONEL SUÁREZ</h1>
+    <div class="sub">Ficha de Campaña · Colonia Alemana e Industria del Calzado · 2026</div>
+    <div class="tag">6ª Sección Electoral · Sur Bonaerense · ~5.200 km² · 550 km de CABA</div>
+  </div>
+  <div class="header-right">
+    <div><strong>Intendente:</strong> Ricardo Moccero <span class="badge-aliado">UxP · Aliado</span></div>
+    <div><strong>PJ ganó intendencia 2023:</strong> 42,4% (LLA: 15,2%)</div>
+    <div><strong>LLA nac. 2025:</strong> 52,5% — Alarma creciente</div>
+    <div><strong>Población:</strong> 42.110 hab. (Censo 2022)</div>
+    <div><strong>Vocación:</strong> Calzado · Trigo · Ganadería · Colonia Alemana</div>
+    <div style="margin-top:5px;font-size:10px;opacity:0.55;">Datos 2026 · PBA Analytics · MatrizPBA + fuentes verificadas</div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="b-label">⚠️ ALIADO EN RIESGO · LLA SUBIÓ AL 52,5% EN DIPUTADO NAC. 2025</div>
+  <div class="b-title">La colonia alemana que fabrica zapatos y mira con desconfianza al Estado</div>
+  <div class="b-grid">
+    <div class="b-col">
+      <p><strong>¿Por qué visitar Coronel Suárez?</strong> Porque PJ ganó la intendencia en 2023 con 42,4% — pero lo hizo gracias a la división de la oposición (JxC 39,7% + LLA 15,2%). Ese margen no es una victoria: es una advertencia. En 2025, LLA alcanzó el 52,5% en la elección de diputados nacionales, replicando exactamente el patrón de Lobos. El intendente Moccero es aliado, pero el terreno electoral se mueve rápido en su contra. La Provincia tiene que aparecer ahora, antes de que ese movimiento se consolide.</p>
+      <p><strong>¿Cuál es el activo central?</strong> La industria del calzado. Coronel Suárez tiene uno de los clusters de fabricación de calzado más relevantes del sur bonaerense: curtiembres, pequeñas y medianas fábricas, trabajo artesanal con raíz en las colonias alemanas. Ese sector necesita política industrial provincial — crédito, habilitaciones, mercados de exportación — que el intendente no puede dar solo.</p>
+    </div>
+    <div class="b-col">
+      <p><strong>¿Qué puede ofrecer la perspectiva provincial?</strong> El FONDEP y las líneas industriales del Banco Provincia, adaptadas a una PyME de calzado: crédito blando, asistencia técnica, acceso a ferias sectoriales. Además, la articulación con las cooperativas agropecuarias del sur: el trigo de la 6ª sección se exporta pero el productor local no tiene suficiente apoyo en logística y acopio.</p>
+      <p><strong>¿Cuál es el riesgo de no ir?</strong> Que Moccero enfrente solo un LLA en alza con poca cobertura provincial. El intendente aliado es un activo que hay que cuidar — si queda aislado, pierde. Y si Coronel Suárez cae en 2027, la Provincia pierde uno de los pocos anclajes que tiene en el sur bonaerense.</p>
+    </div>
+  </div>
+  <div class="b-nums">
+    <div class="b-num"><div class="n">42.110</div><div class="l">Habitantes (Censo 2022)<br>Sur Bonaerense</div></div>
+    <div class="b-num"><div class="n">42,4%</div><div class="l">PJ ganó intendencia 2023<br>Moccero · UxP · Aliado</div></div>
+    <div class="b-num"><div class="n">52,5%</div><div class="l">LLA Diputado Nac. 2025<br>Alarma — subida crítica</div></div>
+    <div class="b-num"><div class="n">Sur</div><div class="l">6ª Sección Electoral<br>Calzado + Trigo</div></div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- KPIs -->
+<div class="card full">
+  <div class="ch" style="background:#1F4E79;color:white;">📊 Datos Clave · Coronel Suárez</div>
+  <div class="cbody" style="padding:16px 18px;">
+    <div class="kpis">
+      <div class="kpi" style="background:#F0FDF4;border-color:#86EFAC;">
+        <div class="kl">PJ Intendencia 2023</div>
+        <div class="kv" style="color:#15803D;">42,4%</div>
+        <div class="ks">Moccero (UxP) · JxC 39,7% · LLA 15,2% · ALIADO</div>
+      </div>
+      <div class="kpi" style="background:#FEF2F2;border-color:#FCA5A5;">
+        <div class="kl">LLA Nac. 2025</div>
+        <div class="kv" style="color:#DC2626;">52,5%</div>
+        <div class="ks">PJ 28,4% · FI 4,0% · Tendencia de alarma</div>
+      </div>
+      <div class="kpi" style="background:#FFFBEB;border-color:#FCD34D;">
+        <div class="kl">Industria del Calzado</div>
+        <div class="kv" style="color:#92400E;">Cluster</div>
+        <div class="ks">PyMEs de calzado y curtiembres · Raíz colonia alemana</div>
+      </div>
+      <div class="kpi" style="background:#EFF6FF;border-color:#93C5FD;">
+        <div class="kl">Padrón Electoral</div>
+        <div class="kv" style="color:#1D4ED8;font-size:18px;">35.587</div>
+        <div class="ks">Electores 2025 · 6ª Sección Electoral</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDAD TERRITORIAL -->
+<div class="card one">
+  <div class="ch" style="background:#ECFDF5;color:#065F46;">🗺️ Identidad Territorial</div>
+  <div class="cbody">
+    <div class="chips">
+      <span class="chip cb">👟 Industria Calzado</span>
+      <span class="chip cg">🌾 Cinturón Triguero</span>
+      <span class="chip cz">🇩🇪 Colonia Alemana</span>
+      <span class="chip co">🐴 Cuna del Polo</span>
+      <span class="chip cp">📚 Borges · El Sur</span>
+      <span class="chip cr">📈 LLA en alza</span>
+    </div>
+    <table class="t">
+      <tr><th>Indicador</th><th>Cnel. Suárez</th><th>Ref. Pcia.</th></tr>
+      <tr><td>Superficie</td><td class="bld">~5.200 km²</td><td>—</td></tr>
+      <tr><td>Distancia a CABA</td><td class="inf">~550 km · RN 33</td><td>—</td></tr>
+      <tr><td>Identidad productiva</td><td class="ok">Calzado + Agro + Polo</td><td>Única en sur</td></tr>
+      <tr><td>Saldo migratorio</td><td class="warn">Leve negativo</td><td>Mixto</td></tr>
+      <tr><td>Legado colonial</td><td class="ok">Colonias alemanas activas</td><td>—</td></tr>
+      <tr><td>Cooperativas</td><td class="ok">Fuerte tradición cooperativa</td><td>Alta</td></tr>
+      <tr><td>Nombre original</td><td class="inf">Sauce Corto · hasta 1889</td><td>—</td></tr>
+      <tr><td>Polo</td><td class="ok">Cuna del polo bonaerense</td><td>Clubes centenarios</td></tr>
+      <tr><td>Vínculo cultural</td><td class="inf">Borges · "El Sur" · estancias</td><td>—</td></tr>
+    </table>
+    <div class="nt">
+      <strong>📌 Posición en el mapa provincial</strong>
+      Sur Bonaerense, 6ª Sección Electoral. Coronel Suárez combina agricultura de secano (trigo, cebada, girasol), ganadería y un cluster industrial de calzado de escala regional. Las colonias de inmigrantes alemanes del Volga y alemanes del Rin le dan una identidad cultural fuerte y una tradición cooperativa que no tiene par en el sur de la Provincia.
+    </div>
+    <div class="hist">
+      <strong>📜 Historia que sostiene el relato</strong>
+      <p><strong style="color:#78350F;">Sauce Corto</strong> — así se llamó este partido antes de 1889. Un nombre que la tierra puso antes que los mapas. Borges visitó el sur bonaerense; el paisaje de estas estancias aparece en "El Sur", el cuento que él mismo consideraba su mejor obra. El partido es también <strong style="color:#78350F;">cuna del polo bonaerense</strong>: clubes centenarios donde el deporte que Argentina domina en el mundo todavía se practica. Y sus colonias alemanas del Volga trajeron desde Rusia una doble identidad — alemanes de alma, rusos de historia, argentinos de elección — que hoy sostiene la cooperativa, el taller y la fábrica de calzado.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MATRIZ PRODUCTIVA -->
+<div class="card two">
+  <div class="ch" style="background:#1F4E79;color:white;">⚙️ Matriz Productiva · En qué se destaca Coronel Suárez</div>
+  <div class="cbody">
+    <div class="st">Sectores Productivos</div>
+    <div class="sgrid">
+      <div class="sc t">
+        <div class="sl">🥇 Identidad productiva industrial</div>
+        <div class="sn">Industria del Calzado</div>
+        <div class="sp" style="color:#D97706;">~25% actividad</div>
+        <div class="sd">Curtiembres, fábricas de calzado y marroquinería con raíz en las colonias alemanas. PyMEs medianas que compiten con el calzado brasileño y necesitan crédito industrial, certificaciones y acceso a ferias sectoriales. El Banco Provincia y el FONDEP son las herramientas disponibles. Un anuncio en esta visita tiene impacto inmediato en el sector.</div>
+      </div>
+      <div class="sc s">
+        <div class="sl">🔹 Base histórica principal</div>
+        <div class="sn">Agricultura de Secano · Cinturón Triguero</div>
+        <div class="sp" style="color:#059669;">~40% actividad</div>
+        <div class="sd">Trigo, cebada, girasol y soja (menor presencia que en el norte). El campo del sur bonaerense tiene rendimientos más bajos que la pampa húmeda pero opera con escalas mayores. Los productores necesitan infraestructura de acopio, rutas en condiciones y crédito. Votan más JxC y LLA que PJ — son el principal desafío electoral.</div>
+      </div>
+      <div class="sc p">
+        <div class="sl">🔸 Complemento económico</div>
+        <div class="sn">Ganadería y Comercio Local</div>
+        <div class="sp" style="color:#1D4ED8;">~25% actividad</div>
+        <div class="sd">Cría y engorde de bovinos en los establecimientos del partido. El comercio local y los servicios son la tercera pata de la economía — sensible al ciclo agrícola y a la dinámica de los pueblos de colonia. La tradición cooperativa organiza el acopio y la comercialización de granos.</div>
+      </div>
+      <div class="sc e">
+        <div class="sl">🔸 Sector con potencial</div>
+        <div class="sn">Turismo Cultural e Industrial</div>
+        <div class="sp" style="color:#6D28D9;">Emergente</div>
+        <div class="sd">Las colonias alemanas son un activo turístico subexplotado: arquitectura, gastronomía, artesanías, festividades. Un programa provincial de turismo cultural que integre Coronel Suárez en un circuito del "sur alemán" bonaerense puede generar economía sin requerir inversión masiva.</div>
+      </div>
+    </div>
+
+    <div class="st">Estructura de Actividad Estimada</div>
+    <div class="pbr"><div class="pbl">Agro · Trigo/Ganadería</div><div class="pbo"><div class="pbi" style="width:80%;background:#059669"><div class="pbt">~40%</div></div></div><div class="pbp" style="color:#059669;">40%</div></div>
+    <div class="pbr"><div class="pbl">Calzado · Industria</div><div class="pbo"><div class="pbi" style="width:50%;background:#D97706"><div class="pbt">~25%</div></div></div><div class="pbp" style="color:#D97706;">25%</div></div>
+    <div class="pbr"><div class="pbl">Comercio y Servicios</div><div class="pbo"><div class="pbi" style="width:50%;background:#2563EB"><div class="pbt">~25%</div></div></div><div class="pbp" style="color:#2563EB;">25%</div></div>
+    <div class="pbr"><div class="pbl">Turismo / Otros</div><div class="pbo"><div class="pbi" style="width:20%;background:#7C3AED"><div class="pbt">~10%</div></div></div><div class="pbp" style="color:#7C3AED;">10%</div></div>
+
+    <div class="st" style="margin-top:18px;">Actores Clave del Territorio</div>
+    <div class="ar">
+      <div class="ai">👟</div>
+      <div class="ain">
+        <div class="an">Cámara del Calzado · Coronel Suárez</div>
+        <div class="ad">Agrupa a los fabricantes locales de calzado y marroquinería. Son los principales empleadores del sector industrial del partido. Sus demandas: crédito blando para maquinaria, reducción de trámites de habilitación, acceso a programas de exportación. Un diálogo con la cámara más un anuncio del Banco Provincia genera adhesión concreta.</div>
+        <div class="ats">
+          <span class="at" style="background:#FEF3C7;color:#92400E;">Recuperación industrial</span>
+          <span class="at" style="background:#DBEAFE;color:#1E40AF;">Crédito Banco Provincia</span>
+        </div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🌾</div>
+      <div class="ain">
+        <div class="an">Cooperativas Agropecuarias del Sur · COPROBA y asociadas</div>
+        <div class="ad">La tradición cooperativa del distrito es fuerte. Las cooperativas organizan el acopio de trigo y la comercialización de granos. Son los principales interlocutores del sector agrícola. Sus demandas: rutas, financiamiento de silos, crédito para capital de trabajo. El canal cooperativo es el más confiable para llegar al productor mediano y pequeño.</div>
+        <div class="ats">
+          <span class="at" style="background:#D1FAE5;color:#065F46;">Canal estratégico</span>
+          <span class="at" style="background:#FEF3C7;color:#92400E;">Voto LLA en recuperación</span>
+        </div>
+      </div>
+    </div>
+    <div class="ar">
+      <div class="ai">🇩🇪</div>
+      <div class="ain">
+        <div class="an">Comunidades de Colonias Alemanas · San José, Piranó, D'Orbigny</div>
+        <div class="ad">Las comunidades de descendientes de colonos alemanes del Volga mantienen identidad cultural activa: gastronomía, festividades, arquitectura, artesanías. Son comunidades cohesionadas, pragmáticas y electoralmente relevantes. No tienen lealtad partidaria fija — valoran la presencia y la propuesta concreta. La dimensión cultural es clave para conectar con ellas.</div>
+        <div class="ats">
+          <span class="at" style="background:#EDE9FE;color:#4C1D95;">Identidad cultural</span>
+          <span class="at" style="background:#F3F4F6;color:#374151;">Voto volátil</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSPECTIVA PROVINCIAL -->
+<div class="card full">
+  <div class="ch" style="background:#0f2944;color:#FACC15;">👁️ Perspectiva Provincial · Palancas que solo el nivel provincial puede activar</div>
+  <div class="cbody">
+    <p style="font-size:12px;color:#666;margin-bottom:16px;line-height:1.7;">Moccero gestiona el municipio — el alumbrado, las calles, el SAME local. Lo que no puede hacer es financiar a las PyMEs del calzado con tasas competitivas, conectar la cooperativa triguera con los mercados de exportación, ni mejorar la Ruta 33. Esas son palancas de otro nivel. Y son exactamente lo que el municipio aliado necesita para defender el territorio.</p>
+    <div class="pgrid">
+      <div class="pi o">
+        <div class="pt">✅ Inversión con impacto inmediato</div>
+        <div class="pti">Banco Provincia + FONDEP: crédito industrial para PyMEs del calzado</div>
+        <div class="pd">Las fábricas de calzado de Coronel Suárez compiten con producto importado y necesitan renovar maquinaria, certificar calidad y acceder a ferias nacionales. Una línea de crédito del Banco Provincia a tasa subsidiada para PyMEs industriales del sur, anunciada en la visita, tiene impacto directo en el sector que más emplea en la ciudad. "La Provincia apuesta a lo que Coronel Suárez fabrica con sus manos."</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 Infraestructura vial estratégica</div>
+        <div class="pti">Ruta Nacional 33: la columna vertebral del sur bonaerense</div>
+        <div class="pd">La RN33 conecta el sur de la Provincia con Buenos Aires. Es la ruta del trigo y del calzado. Cualquier mejora en mantenimiento, señalética o seguridad vial tiene impacto económico directo para productores y fabricantes. La articulación con Nación para el plan de mejora de la RN33 es un anuncio que todos en el sur valoran — independientemente de su color político.</div>
+      </div>
+      <div class="pi o">
+        <div class="pt">✅ Agenda cooperativa provincial</div>
+        <div class="pti">Programa de fortalecimiento cooperativo agropecuario: acopio, logística y mercados</div>
+        <div class="pd">Las cooperativas del sur tienen infraestructura de acopio pero necesitan financiamiento para silos, fletes y acceso a mercados de exportación de trigo y cebada. Un programa de crédito cooperativo del Banco Provincia, articulado con el Ministerio de Agroindustria, puede reducir la intermediación y mejorar el precio al productor. Es la propuesta que diferencia a la Provincia de la promesa vacía.</div>
+      </div>
+      <div class="pi d">
+        <div class="pt">🔵 Turismo cultural · Sur alemán bonaerense</div>
+        <div class="pti">Circuito de colonias alemanas: San José, Piranó, D'Orbigny integrados al turismo provincial</div>
+        <div class="pd">Las colonias alemanas del sur son un activo turístico con identidad única en la Provincia. Un circuito que integre la gastronomía, la arquitectura colonial, los festivales y la artesanía local puede posicionar a Coronel Suárez como destino de turismo cultural. Requiere señalética, promoción digital y articulación con la agencia de turismo provincial — inversión baja, retorno político alto.</div>
+      </div>
+      <div class="pi r">
+        <div class="pt">⚠️ Riesgo electoral · Urgencia</div>
+        <div class="pti">LLA al 52,5% en 2025: el patrón se repite</div>
+        <div class="pd">El salto de LLA del 15,2% en 2023 al 52,5% en elecciones nacionales de 2025 replica exactamente el patrón visto en Lobos y otros distritos del interior. El voto protesta contra el Estado está activo. El partido que llegue primero con propuestas concretas puede interceptarlo. Si la Provincia no lo hace, LLA consolida estructura local y el municipio aliado queda en minoría en el Concejo.</div>
+      </div>
+      <div class="pi x">
+        <div class="pt">🔴 Tensión política · Gestionar con cuidado</div>
+        <div class="pti">Moccero es aliado pero el territorio no es PJ: hablar al ciudadano, no al partido</div>
+        <div class="pd">Coronel Suárez no es un bastión peronista: la identidad local es más corporativa (calzado, campo, colonia) que partidaria. El discurso tiene que ser de gestión y de propuesta concreta, no de construcción política explícita. El vecino de colonia alemana que votó LLA en 2025 no quiere escuchar al PJ — quiere escuchar a alguien que entiende su industria y su campo.</div>
+      </div>
+    </div>
+    <div class="corr">
+      <h3>🌾 Corredor Sur Bonaerense · La dimensión regional</h3>
+      <p>Coronel Suárez es el municipio con mayor peso industrial del corredor sur de la 6ª sección. Una política provincial que articule el calzado, el trigo y el turismo de las colonias a escala regional tiene mucho más impacto que una intervención aislada.</p>
+      <div class="cms">
+        <div class="cm">📍 CNEL. SUÁREZ<span>Calzado · Trigo · Colonia</span></div>
+        <div class="cm">↔ PIGÜÉ<span>Agro · Colonia francesa</span></div>
+        <div class="cm">↔ TORNQUIST<span>Sierra de la Ventana · turismo</span></div>
+        <div class="cm">↔ PUAN<span>Ganadería · trigo</span></div>
+        <div class="cm">↔ SAAVEDRA<span>Pigüé · agro · campo</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANÁLISIS POLÍTICO -->
+<div class="card two">
+  <div class="ch" style="background:#FFFBEB;color:#78350F;">📈 Análisis del Momento · PJ ganó la intendencia pero LLA sube</div>
+  <div class="cbody">
+    <div class="st">Diagnóstico electoral · Evolución del voto</div>
+    <table class="t" style="margin-bottom:16px;">
+      <thead><tr><th>Elección</th><th>PJ / UxP</th><th>JxC</th><th>LLA</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><td class="bld">Intendencia 2023</td><td class="ok">42,4%</td><td class="warn">39,7%</td><td>15,2%</td><td style="color:#059669;font-weight:700;">PJ · Moccero</td></tr>
+        <tr><td class="bld">Concejales Prov. 2025</td><td class="bad">10,6%</td><td>—</td><td class="warn">24,3%</td><td>LLA</td></tr>
+        <tr><td class="bld">Diputado Nac. 2025</td><td class="warn">28,4%</td><td>—</td><td class="bad">52,5%</td><td style="color:#DC2626;font-weight:700;">LLA</td></tr>
+      </tbody>
+    </table>
+    <div class="ag">
+      <div class="agi">🟢</div>
+      <div class="agt">
+        <strong>Causa de la victoria 2023: división de la oposición</strong>
+        <p>Moccero ganó la intendencia porque JxC (39,7%) y LLA (15,2%) se presentaron separados. Sumados superaban el 54%. Si la oposición hubiera ido unida, PJ habría perdido. La pregunta para 2027 es si esa división se mantiene. En 2025, LLA ya absorbió a buena parte del votante JxC.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🔴</div>
+      <div class="agt">
+        <strong>Señal de alarma: PJ al 10,6% en concejales provinciales 2025</strong>
+        <p>El derrumbe a 10,6% en concejales provinciales revela un problema de candidatura local, pero también de imagen del espacio. No se puede descartar que parte del voto fue castigo al gobierno nacional peronista. La recuperación a 28,4% en diputados nacionales muestra que el suelo propio existe — el problema es activarlo en lo local.</p>
+      </div>
+    </div>
+    <div class="ag" style="border-bottom:none;">
+      <div class="agi">🟡</div>
+      <div class="agt">
+        <strong>El intendente aliado es el activo a proteger</strong>
+        <p>Moccero tiene la gestión municipal. Si la Provincia lo apoya con anuncios concretos (crédito para calzado, rutas, cooperativas), puede proyectar una imagen de "gobierno que funciona" que contraste con la fragmentación opositora. La visita provincial tiene que fortalecer a Moccero, no opacarlo.</p>
+      </div>
+    </div>
+    <div class="al al-a">
+      <strong>⚠️ El riesgo que no puede ignorarse</strong>
+      LLA al 52,5% en 2025 es la misma foto que Lobos. Si en 2027 la oposición va unida detrás de LLA, Moccero pierde la intendencia. La Provincia tiene dos años para construir en el territorio. La ventana es estrecha.
+    </div>
+  </div>
+</div>
+
+<!-- AGENDA DE DISCURSO -->
+<div class="card one">
+  <div class="ch" style="background:#1F4E79;color:white;">🎤 Agenda de Discurso · Perspectiva Provincial</div>
+  <div class="cbody">
+    <div class="st">Ejes · Por prioridad de impacto</div>
+    <div class="ag">
+      <div class="agi">👟</div>
+      <div class="agt">
+        <strong>1. El calzado como orgullo industrial del sur</strong>
+        <p>"Coronel Suárez fabrica lo que el resto de la Provincia usa. La Provincia va a acompañar esa industria con crédito real, no con promesas."</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🌾</div>
+      <div class="agt">
+        <strong>2. Las cooperativas como puente entre el campo y el mercado</strong>
+        <p>"El trigo del sur es de los mejores del mundo. La Provincia va a asegurarse de que el productor reciba lo que merece, sin intermediarios innecesarios."</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🛣️</div>
+      <div class="agt">
+        <strong>3. La Ruta 33 como arteria del sur bonaerense</strong>
+        <p>La ruta que conecta el calzado y el trigo con Buenos Aires tiene que estar en condiciones. Un anuncio de gestión con Nación para la RN33 es concreto y trasciende la política.</p>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="agi">🇩🇪</div>
+      <div class="agt">
+        <strong>4. Las colonias como identidad que la Provincia reconoce</strong>
+        <p>"Las familias de las colonias alemanas construyeron el sur bonaerense con sus manos. La Provincia va a poner ese legado en el mapa del turismo cultural argentino."</p>
+      </div>
+    </div>
+    <div class="ag" style="border-bottom:none;">
+      <div class="agi">🚫</div>
+      <div class="agt">
+        <strong>Qué evitar</strong>
+        <p>Hablar de política nacional o de la interna del PJ. No referirse al voto 2023 como victoria propia. En el sur, la gente valora el trabajo concreto y desconfía de la retórica. El lenguaje tiene que ser de producción y de gestión.</p>
+      </div>
+    </div>
+    <div class="al al-k">
+      <strong>⚡ La frase que sintetiza la visita</strong>
+      "Coronel Suárez es el sur que trabaja. La Provincia está acá para que ese trabajo tenga mercado, crédito y rutas dignas."
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  🔒 USO RESERVADO · Campaña PBA · Ficha Coronel Suárez · PBA Analytics 2026
+</div>
+
+<!-- ANEXO I -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;">
+  <div style="background:linear-gradient(135deg,#1F4E79,#2563EB);color:white;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-size:11px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Coronel Suárez · Campaña PBA 2026</div>
+      <div style="font-size:22px;font-weight:900;letter-spacing:1px;">ANEXO I — PRINCIPALES INDICADORES</div>
+    </div>
+    <div style="font-size:11px;opacity:0.7;text-align:right;">6ª Sección Electoral · Sur Bonaerense<br>PBA Analytics 2026</div>
+  </div>
+  <div style="padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:13px;background:#eef2f7;">
+
+    <div class="card">
+      <div class="ch" style="background:#FFFBEB;color:#92400E;">👟 Industria del Calzado</div>
+      <div class="cbody">
+        <div class="st">Cluster calzado y marroquinería</div>
+        <table class="t">
+          <tr><td>Perfil productivo</td><td class="inf">Calzado cuero + curtiembres</td></tr>
+          <tr><td>Escala</td><td class="ok">PyMEs medianas y pequeñas</td></tr>
+          <tr><td>Raíz histórica</td><td class="ok">Colonias alemanas · artesanía</td></tr>
+          <tr><td>Competencia</td><td class="bad">Calzado importado · presión fuerte</td></tr>
+          <tr><td>Crédito industrial actual</td><td class="warn">Banco Provincia · subutilizado</td></tr>
+          <tr><td>Acceso a exportación</td><td class="warn">Limitado · oportunidad</td></tr>
+          <tr><td>Empleo industrial</td><td class="ok">Principal empleador urbano</td></tr>
+        </table>
+        <div class="al al-v" style="margin-top:10px;">
+          <strong>💡 Palanca concreta disponible</strong>
+          El FONDEP tiene líneas para industria PyME. Un convenio específico para el cluster del calzado de Coronel Suárez, anunciado en la visita, puede desbloquearse en semanas. Impacto directo en empleo y en imagen del intendente aliado.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#F0FDF4;color:#15803D;">🌾 Sector Agropecuario</div>
+      <div class="cbody">
+        <div class="st">Cinturón triguero del sur</div>
+        <table class="t">
+          <tr><td>Cultivos principales</td><td class="inf">Trigo · Cebada · Girasol · Soja</td></tr>
+          <tr><td>Ganadería</td><td class="ok">Cría y engorde · Escala media</td></tr>
+          <tr><td>Cooperativas</td><td class="ok">Fuerte tradición · COPROBA</td></tr>
+          <tr><td>Infraestructura de acopio</td><td class="warn">Capacidad media · subutilizada</td></tr>
+          <tr><td>Acceso vial rural</td><td class="warn">Caminos · estado variable</td></tr>
+          <tr><td>Crédito Banco Provincia</td><td class="warn">Subutilizado · oportunidad</td></tr>
+          <tr><td>Voto productores 2025</td><td class="bad">LLA amplia mayoría</td></tr>
+        </table>
+        <div class="al al-v" style="margin-top:10px;">
+          <strong>🌾 Dato de color · Las colonias que fundaron cooperativas</strong>
+          Las cooperativas agropecuarias del sur bonaerense nacieron en Coronel Suárez impulsadas por los inmigrantes de las colonias alemanas del Volga: familias que llegaron entre 1880 y 1920 y aplicaron al campo argentino la misma lógica comunitaria con la que habían sobrevivido en Rusia. Las cooperativas actuales son herederas directas de esa cultura — el cooperativismo no es aquí una ideología sino una forma de vida productiva con más de cien años de historia local.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#EFF6FF;color:#1E40AF;">📊 Datos Municipales Generales</div>
+      <div class="cbody">
+        <div class="st">Indicadores de base</div>
+        <table class="t">
+          <tr><td>Población (Censo 2022)</td><td class="inf">42.110 hab.</td></tr>
+          <tr><td>Superficie</td><td>~5.200 km²</td></tr>
+          <tr><td>Sección Electoral</td><td>6ª · Sur Bonaerense</td></tr>
+          <tr><td>Intendente</td><td class="ok">Ricardo Moccero · UxP · Aliado</td></tr>
+          <tr><td>Padrón 2025</td><td>35.587 electores</td></tr>
+          <tr><td>Categoría electoral</td><td class="warn">Disputado → LLA sube</td></tr>
+          <tr><td>Distancia a CABA</td><td>~550 km · RN 33</td></tr>
+          <tr><td>Identidad territorial</td><td class="ok">Sauce Corto · Polo · Borges · Colonias · Calzado</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#FFFBEB;color:#78350F;">🏛️ Gestión Municipal · Moccero UxP</div>
+      <div class="cbody">
+        <div class="st">Moccero · UxP · Principales ejes de gestión</div>
+        <table class="t">
+          <tr><td>Calzado e industria</td><td class="ok">Apoyo municipal al sector</td></tr>
+          <tr><td>Vial rural</td><td class="ok">Programa de mantenimiento activo</td></tr>
+          <tr><td>Obras de infraestructura</td><td class="ok">Pavimento barrios · obras en curso</td></tr>
+          <tr><td>Salud</td><td class="ok">CAPS · Hospital Municipal</td></tr>
+          <tr><td>Turismo cultural</td><td class="warn">Colonias · agenda en desarrollo</td></tr>
+          <tr><td>Seguridad</td><td class="warn">Demanda vecinal creciente</td></tr>
+          <tr><td>Relación con Provincia</td><td class="ok">Aliado · coordinación posible</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#FEE2E2;color:#7F1D1D;">🗳️ Historial Electoral</div>
+      <div class="cbody">
+        <div class="st">Evolución del voto · Coronel Suárez</div>
+        <table class="t">
+          <thead><tr><th>Elección</th><th>PJ/UxP</th><th>JxC</th><th>LLA</th><th>Resultado</th></tr></thead>
+          <tbody>
+            <tr><td>Intendencia 2023</td><td class="ok">42,4%</td><td class="warn">39,7%</td><td>15,2%</td><td class="bld" style="color:#059669;">PJ ✓</td></tr>
+            <tr><td>Concejales Prov. 2025</td><td class="bad">10,6%</td><td>—</td><td class="warn">24,3%</td><td class="bld" style="color:#DC2626;">LLA</td></tr>
+            <tr><td>Diputado Nac. 2025</td><td class="warn">28,4%</td><td>—</td><td class="bad">52,5%</td><td class="bld" style="color:#DC2626;">LLA</td></tr>
+          </tbody>
+        </table>
+        <div class="hist" style="margin-top:10px;">
+          <strong>📌 Lectura electoral clave</strong>
+          <p>PJ ganó la intendencia 2023 por división opositora (JxC + LLA sumaban 54,9%). En 2025, LLA absorbió ese voto y llegó al 52,5% en diputados nacionales. Si en 2027 la oposición va unida detrás de un candidato único, Moccero enfrenta un escenario de alta exigencia. La Provincia tiene que construir en el territorio antes de ese cierre de listas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#F5F3FF;color:#4C1D95;">🎯 Prioridad Estratégica</div>
+      <div class="cbody">
+        <div class="st">Posición en el mapa de campaña</div>
+        <table class="t">
+          <tr><td>Clasificación PBA</td><td class="warn">Disputado</td></tr>
+          <tr><td>Urgencia política</td><td class="warn">Alta · LLA sube fuerte</td></tr>
+          <tr><td>Potencial de retención</td><td class="ok">Medio-Alto · aliado activo</td></tr>
+          <tr><td>Palanca principal</td><td class="inf">Calzado + Cooperativas + RN33</td></tr>
+          <tr><td>Vínculo con intendente</td><td class="ok">Aliado · coordinar visita</td></tr>
+          <tr><td>Perfil electorado</td><td>Industrial / rural / colonia</td></tr>
+          <tr><td>Tipo de voto LLA</td><td class="warn">Protest + identidad naciente</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;padding:12px;font-size:11px;color:#aaa;background:white;border-top:1px solid #e5e7eb;">
+    🔒 USO RESERVADO · ANEXO I · Coronel Suárez · PBA Analytics 2026
+  </div>
+</div>
+
+<!-- ANEXO II -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;">
+  <div style="background:linear-gradient(135deg,#78350F,#D97706);color:white;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="font-size:11px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Coronel Suárez · 2026</div>
+      <div style="font-size:22px;font-weight:900;letter-spacing:1px;">ANEXO II — GESTIÓN LOCAL Y DATOS DE CONTEXTO</div>
+    </div>
+    <div style="font-size:11px;opacity:0.7;text-align:right;">Gestión Moccero · UxP<br>Aliado · Sur Bonaerense</div>
+  </div>
+  <div style="padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:13px;background:#eef2f7;">
+
+    <div class="card">
+      <div class="ch" style="background:#D1FAE5;color:#065F46;">🤝 Gestión Moccero · UxP · Diagnóstico</div>
+      <div class="cbody">
+        <div class="st">Fortalezas y oportunidades desde la mirada provincial</div>
+        <table class="t" style="margin-bottom:14px;">
+          <tr><td>Perfil político</td><td>Intendente aliado · gestión de cercanía</td></tr>
+          <tr><td>Legitimidad local</td><td class="ok">Ganó en 2023 con 42,4%</td></tr>
+          <tr><td>Estructura PJ local</td><td class="warn">Moderada · concejo en riesgo</td></tr>
+          <tr><td>Relación con la Provincia</td><td class="ok">Aliado natural · articulación fluida</td></tr>
+          <tr><td>Agenda industrial</td><td class="ok">Apoyo al calzado · activa</td></tr>
+          <tr><td>Agenda agropecuaria</td><td class="ok">Presencia rural · mantenimiento</td></tr>
+          <tr><td>Agenda social</td><td class="ok">CAPS · Hospital Municipal</td></tr>
+        </table>
+        <div class="al al-v">
+          <strong>✅ Estrategia de refuerzo mutuo</strong>
+          Moccero es el intendente aliado que necesita respaldo provincial para mantenerse frente al avance de LLA. La visita provincial no compite con la gestión municipal — la amplifica. Cada anuncio de la Provincia en Coronel Suárez fortalece la narrativa de que "tener un intendente del espacio hace la diferencia".
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ch" style="background:#EFF6FF;color:#1E40AF;">🇩🇪 Identidad Cultural · Colonias Alemanas</div>
+      <div class="cbody">
+        <div class="st">Activo cultural y electoral de las colonias</div>
+        <table class="t" style="margin-bottom:14px;">
+          <tr><td>Colonias principales</td><td class="inf">San José · Piranó · D'Orbigny</td></tr>
+          <tr><td>Origen</td><td>Alemanes del Volga · 1880-1920</td></tr>
+          <tr><td>Cohesión comunitaria</td><td class="ok">Alta · asociaciones activas</td></tr>
+          <tr><td>Festividades</td><td class="ok">Festivales anuales · gastronomía</td></tr>
+          <tr><td>Peso electoral</td><td class="warn">Significativo · voto pragmático</td></tr>
+          <tr><td>Turismo actual</td><td class="warn">Subdesarrollado · oportunidad</td></tr>
+          <tr><td>Artesanías y producción</td><td class="ok">Activa · mercado local</td></tr>
+        </table>
+        <div class="al al-b">
+          <strong>💡 Oportunidad cultural</strong>
+          Incluir Coronel Suárez en el programa de turismo cultural de la Provincia, con señalética en rutas y promoción digital de las colonias, es una intervención de bajo costo y alto impacto simbólico. Las comunidades de colonias valoran el reconocimiento institucional de su identidad.
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;padding:12px;font-size:11px;color:#aaa;background:white;border-top:1px solid #e5e7eb;">
+    🔒 USO RESERVADO · ANEXO II · Coronel Suárez · PBA Analytics 2026
+  </div>
+</div>
+</body>
+</html>

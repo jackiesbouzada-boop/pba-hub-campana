@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GENERAL BELGRANO — Narrativa Política · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Georgia, serif;
+  font-size: 13px; line-height: 1.7; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.header { color: white; padding: 24px 30px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.header h1 { font-size: 30px; font-weight: 900; letter-spacing: 2px; margin-bottom: 5px; }
+.header .sub { font-size: 12px; opacity: 0.8; margin-bottom: 3px; }
+.header .tag { font-size: 10px; opacity: 0.55; }
+.epig { background: #f0f7fc; border-left: 5px solid #0F5E7A; padding: 15px 22px; font-style: italic; font-size: 13px; color: #444; line-height: 1.8; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.epig span { display: block; margin-top: 7px; font-size: 11px; font-style: normal; color: #888; }
+.body-wrap { padding: 24px 30px; }
+h2 { font-size: 16px; font-weight: 800; color: #0C3547; margin: 28px 0 10px; padding-bottom: 7px; border-bottom: 2px solid #F0A500; }
+h3 { font-size: 13.5px; font-weight: 700; color: #1d3461; margin: 20px 0 7px; }
+p { margin-bottom: 12px; text-align: justify; font-size: 13px; line-height: 1.8; }
+strong { color: #0C3547; }
+em { color: #1d3461; }
+.dato { display: inline-block; background: #E0F2FE; border: 1px solid #7DD3FC; border-radius: 4px; padding: 1px 6px; font-weight: 700; font-size: 11px; color: #0C3547; margin: 0 2px; }
+.warn { display: inline-block; background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 4px; padding: 1px 6px; font-weight: 700; font-size: 11px; color: #78350F; margin: 0 2px; }
+.alerta { display: inline-block; background: #FEE2E2; border: 1px solid #FCA5A5; border-radius: 4px; padding: 1px 6px; font-weight: 700; font-size: 11px; color: #7F1D1D; margin: 0 2px; }
+.azul { display: inline-block; background: #EFF6FF; border: 1px solid #93C5FD; border-radius: 4px; padding: 1px 6px; font-weight: 700; font-size: 11px; color: #1E40AF; margin: 0 2px; }
+.ag1 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+.ag2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.blk { border-radius: 8px; padding: 14px 16px; break-inside: avoid; }
+.blk-v { background: #E0F2FE; border-left: 4px solid #0F5E7A; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-a { background: #FFFBEB; border-left: 4px solid #D97706; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-r { background: #FEF2F2; border-left: 4px solid #DC2626; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-b { background: #EFF6FF; border-left: 4px solid #2563EB; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-d { background: #F5F3FF; border-left: 4px solid #7C3AED; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-k { background: #0f2944; color: white; border-left: 4px solid #F0A500; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk h4 { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 6px; opacity: 0.7; }
+.blk-k h4 { color: #FCD34D; opacity: 1; }
+.blk p  { font-size: 11px; line-height: 1.7; color: #444; margin-bottom: 0; }
+.blk-k p { color: rgba(255,255,255,0.9); }
+.blk .num { font-size: 24px; font-weight: 900; line-height: 1; margin-bottom: 4px; color: #0C3547; }
+.blk-r .num { color: #DC2626; }
+.blk-a .num { color: #D97706; }
+.blk-b .num { color: #2563EB; }
+.blk-d .num { color: #7C3AED; }
+.hr { border: none; border-top: 1px solid #e5e7eb; margin: 20px 0; }
+.pull { border-left: 4px solid #0F5E7A; padding: 12px 18px; margin: 18px 0; font-size: 14px; font-weight: 700; color: #0C3547; font-style: italic; line-height: 1.6; background: #E0F2FE; border-radius: 0 8px 8px 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.pull-d { border-left: 4px solid #DC2626; background: #FEF2F2; color: #7F1D1D; }
+.pull-a { border-left: 4px solid #D97706; background: #FFFBEB; color: #78350F; }
+.pull-b { border-left: 4px solid #1d3461; background: #EFF6FF; color: #1d3461; }
+.nota { background: #f8f4ed; border: 1px solid #e5c97e; border-radius: 7px; padding: 12px 15px; margin: 14px 0; font-size: 11px; color: #5c3317; line-height: 1.7; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.nota strong { color: #5c3317; display: block; margin-bottom: 4px; }
+.visita { border-radius: 8px; padding: 13px 16px; margin-bottom: 10px; break-inside: avoid; }
+.v-nac  { background: #EFF6FF; border-left: 5px solid #1d3461; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.v-prot { background: #FFFBEB; border-left: 5px solid #D97706; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.v-nac  .vlabel { font-size: 9px; font-weight: 700; background: #1d3461; color: white; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-bottom: 6px; }
+.v-prot .vlabel { font-size: 9px; font-weight: 700; background: #D97706; color: white; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-bottom: 6px; }
+.vscore { float: right; font-size: 18px; font-weight: 900; color: #1d3461; }
+.v-prot .vscore { color: #D97706; }
+.vname  { font-size: 13px; font-weight: 800; margin-bottom: 5px; }
+.vbody  { font-size: 11px; color: #555; line-height: 1.7; }
+.footer { text-align: center; padding: 14px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; background: white; }
+.anx-header { padding: 18px 26px; display: flex; justify-content: space-between; align-items: center; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.anx-body { padding: 18px 22px; background: #eef2f7; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.tbl { width: 100%; border-collapse: collapse; font-size: 11px; margin: 8px 0 16px; }
+.tbl th { background: rgba(0,0,0,0.07); padding: 6px 9px; text-align: left; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid rgba(0,0,0,0.12); }
+.tbl td { padding: 6px 9px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+.tbl tr:last-child td { border-bottom: none; }
+.ok { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.ww { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bb { background: #FEE2E2; color: #7F1D1D; font-weight: 700; }
+.ii { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.td-ok   { color: #15803D; font-weight: 700; }
+.td-warn { color: #D97706; font-weight: 700; }
+.td-bad  { color: #DC2626; font-weight: 700; }
+@media print {
+  @page { size: A4 portrait; margin: 7mm 8mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; box-shadow: none !important; margin: 0 !important; padding: 0 !important; font-size: 8pt !important; }
+  h2 { font-size: 11pt !important; margin: 14px 0 6px !important; break-after: avoid !important; page-break-after: avoid !important; }
+  h3 { font-size: 10pt !important; margin: 10px 0 5px !important; break-after: avoid !important; page-break-after: avoid !important; }
+  p { margin-bottom: 7px !important; font-size: 8pt !important; orphans: 2; widows: 2; }
+  .body-wrap { padding: 12px 16px !important; }
+  .ag1, .ag2 { gap: 7px !important; margin: 8px 0 !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+  .blk { padding: 8px 10px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+  .blk p { font-size: 7.5pt !important; }
+  .pull { font-size: 9pt !important; padding: 8px 12px !important; margin: 10px 0 !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+  .visita { padding: 8px 10px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+  .vbody { font-size: 7.5pt !important; }
+  .header { padding: 14px 18px !important; }
+  .header h1 { font-size: 16pt !important; }
+  .nota { font-size: 7.5pt !important; padding: 7px 10px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+  .anx-body { break-inside: avoid !important; page-break-inside: avoid !important; }
+  .anx-keep { break-inside: avoid !important; page-break-inside: avoid !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="header" style="background: linear-gradient(135deg, #0C3547 0%, #0F5E7A 100%);">
+  <h1>🌡️ GENERAL BELGRANO — NARRATIVA</h1>
+  <div class="sub">Análisis Político Territorial · Osvaldo Dinápoli (JxC — Opositor) · 5ª Sección Electoral · Interior Bonaerense · PBA 2026</div>
+  <div class="tag">Termas del Salado · Bosque Encantado · Ganadería Cuenca del Salado · Padrón 2025: 17.338 · ⚠️ Dinápoli es JxC, no UxP como figura en MatrizPBA</div>
+</div>
+
+<div class="epig">
+  "General Belgrano tiene algo que la mayoría de los municipios del interior bonaerense nunca tendrá: agua termal natural sobre el Río Salado, un bosque ribereño único y la capacidad de recibir cinco mil turistas por fin de semana largo. En ese activo excepcional está la clave de toda la estrategia provincial — porque las termas permiten construir presencia directa, visible y con llegada al AMBA sin necesitar al intendente opositor."
+  <span>— Síntesis estratégica del territorio</span>
+</div>
+
+<div class="body-wrap">
+
+<h2>1. El Municipio: Agua Termal, Campo y una Deuda Electoral</h2>
+
+<p>El Partido de General Belgrano es la combinación poco probable de un municipio ganadero de la Cuenca del Salado con un destino termal que recibe turistas del AMBA todos los fines de semana. Sobre un territorio de 1.857 km² en el interior profundo de la 5ª Sección Electoral, a unos 170 kilómetros de CABA por la Ruta 3, conviven dos economías que hablan idiomas distintos: la ganadería de cría extensiva en los campos bajos e inundables del Salado — extensiva, silenciosa, con demanda de caminos y no mucho más — y la economía termal y turística de las Termas del Salado y el Bosque Encantado, que en los últimos veinte años transformó radicalmente la identidad del partido.</p>
+
+<p>La paradoja electoral de fondo es que un municipio con este perfil tiene los resultados del PJ más bajos de toda la región. Osvaldo Dinápoli (JxC) ganó la intendencia en 2023 con el <span class="dato">50,3%</span> mientras el candidato PJ Jorge Eijo quedaba en <span class="warn">36,7%</span>. En los dos años siguientes, La Libertad Avanza pasó del <span class="warn">13,1%</span> al <span class="alerta">51,1%</span> en la categoría nacional. El municipio con el activo turístico más singular de la 5ª Sección es hoy uno de los territorios electoralmente más complejos de la región.</p>
+
+<div class="ag1">
+  <div class="blk blk-r">
+    <h4>PJ 2023 — Intendencia</h4>
+    <div class="num">36,7%</div>
+    <p>El resultado más bajo de la región para el PJ. JxC/Dinápoli ganó con 50,3%. El voto JxC, consolidado y articulado en varios períodos. Difícil de quebrar sin candidato propio sólido y agenda concreta.</p>
+  </div>
+  <div class="blk blk-a">
+    <h4>PJ 2025 — Conc. Provinciales</h4>
+    <div class="num">41,2%</div>
+    <p>Recuperación de 4,5 puntos sobre la elección ejecutiva. La base PJ existe — la pregunta es si puede convertirse en mayoría. LLA 23,4% es señal de fragmentación del voto no-PJ que podría trabajarse.</p>
+  </div>
+  <div class="blk blk-r">
+    <h4>LLA 2025 — Dip. Nacional</h4>
+    <div class="num">51,1%</div>
+    <p>El voto JxC sin candidato propio en las categorías nacionales migró en masa a LLA. +38 puntos en dos años. Si baja a la categoría ejecutiva en 2027, el PJ compite con dos fuerzas opositoras simultáneas.</p>
+  </div>
+</div>
+
+<div class="nota">
+  <strong>⚠️ Corrección crítica — MatrizPBA vs. realidad</strong>
+  La base de datos MatrizPBA asigna al intendente Osvaldo Dinápoli como perteneciente a "Unión por la Patria" (UxP). Ese dato es incorrecto. Dinápoli integra Juntos por el Cambio (JxC) y ganó la intendencia 2023 con el 50,3% frente al candidato PJ Jorge Eijo que obtuvo el 36,7%. La clasificación correcta en toda la documentación de campaña es: Dinápoli = JxC = OPOSITOR. Este error ya fue identificado en el análisis del municipio de Monte (caso Castro/UCR, mismo patrón de error en MatrizPBA para municipios JxC del interior).
+</div>
+
+<h2>2. Osvaldo Dinápoli: El Intendente que Administra el Activo Sin Resolverlo</h2>
+
+<p>Osvaldo Dinápoli lleva varios períodos al frente de General Belgrano. En la política local de la 5ª Sección Electoral, es una figura con arraigo territorial propio y una base de votantes JxC que respondió con fidelidad en 2023. El 50,3% que obtuvo frente a un candidato PJ no fue un resultado apretado: fue una victoria clara que refleja un dominio del ejecutivo municipal consolidado a lo largo de múltiples períodos de gestión.</p>
+
+<p>La paradoja de Dinápoli es que administra el activo turístico más singular de la región — las Termas del Salado, el Bosque Encantado, el corredor de cabañas y gastronomía — pero lo hace con recursos municipales limitados y sin poder acceder a los grandes fondos de inversión turística provincial que históricamente se canalizan más fluidamente hacia municipios aliados. Eso genera una situación objetiva: el complejo termal tiene un déficit de acceso (Ruta 41), de mantenimiento de senderos (Bosque Encantado) y de defensas costeras frente a las crecidas del Salado que ningún intendente municipal puede resolver con fondos propios, pero que el nivel provincial puede activar directamente — sin necesitar a Dinápoli como intermediario.</p>
+
+<h3>Los desafíos locales del municipio</h3>
+
+<p>El primer desafío es la <strong>infraestructura de acceso a las termas</strong>. La Ruta 41 es el principal corredor de ingreso al complejo y presenta déficits que ya se notan cuando hay flujos de 5.000 visitantes en un fin de semana largo. La obra es del nivel provincial — no municipal — y tiene un retorno de visibilidad inmediato: todos los turistas que llegan experimentan la calidad del acceso antes de experimentar la del complejo.</p>
+
+<p>El segundo desafío es el <strong>riesgo hídrico de la Cuenca del Salado</strong>. Los campos bajos del partido son inundables de forma periódica — las crecidas del Río Salado afectan tanto a los productores ganaderos como a la ribera turística. Las defensas costeras son una demanda histórica que excede la capacidad municipal pero que el nivel provincial puede financiar y ejecutar directamente.</p>
+
+<p>El tercer desafío es la <strong>salud</strong>. En un municipio del interior de 20.000 habitantes a 170 km de CABA, el hospital local es la única opción para una emergencia médica. El equipamiento, la infraestructura y los recursos humanos de ese hospital dependen críticamente de la inversión provincial.</p>
+
+<h2>3. Las Termas del Salado: El Activo Sin Intermediación</h2>
+
+<p>Pocas veces en la política provincial un municipio opositor ofrece una oportunidad tan clara de presencia directa como la que ofrecen las Termas del Salado. En la mayoría de los partidos con intendente opositor, la lógica es inevitable: la Provincia llega a través de la estructura municipal del intendente, que capitaliza políticamente la obra, la anuncia y se la atribuye a su gestión. El PJ termina financiando victorias electorales del adversario.</p>
+
+<p>Las termas rompen esa lógica. El complejo recibe más de 5.000 visitantes por fin de semana largo — no son vecinos de Belgrano sino turistas que llegan del AMBA, de La Plata, de municipios vecinos. Vienen a pasar el día o el fin de semana, no tienen ningún vínculo con la política local y no les importa si el intendente es aliado u opositor. Lo que ven es el complejo termal, la calidad del acceso, la infraestructura de recepción. Si la Provincia anuncia y ejecuta obras en ese espacio — mejora del acceso por Ruta 41, obras en el Bosque Encantado, defensas costeras — la visibilidad es ante 5.000 personas por fin de semana que llevan el mensaje de vuelta al AMBA y La Plata.</p>
+
+<div class="pull">
+  "La Provincia puede hacer un acto en las Termas del Salado con 500 personas presentes y llegar visualmente a 5.000 turistas que ya estaban ahí — turistas del AMBA con conexiones en todo el conurbano. La obra en las termas no la capitaliza Dinápoli: la capitaliza quien la financia y la anuncia. Ese es el diferencial estratégico de este activo en un municipio con intendente opositor."
+</div>
+
+<h3>La señalética QR del Bosque Encantado: el caso de uso</h3>
+
+<p>En 2026 se implementó señalética inteligente con códigos QR en el Bosque Encantado que deriva a los visitantes hacia el comercio local. Ese proyecto de alcance modesto tuvo un efecto concreto en la experiencia turística y en el ingreso de los prestadores locales. La Provincia puede replicar ese modelo a escala mayor con señalética oficial en todo el circuito termal, integración a plataformas de reservas y capacitación a prestadores.</p>
+
+<div class="ag2">
+  <div class="blk blk-v">
+    <h4>El activo turístico · lo que ya existe</h4>
+    <p>5.000+ visitantes/finde largo · Ocupación &gt;70% fuera de temporada · Termas naturales sobre el Río Salado · Bosque Encantado con senderos · Red de cabañas y gastronomía local · Señalética QR 2026 · Actividades náuticas y pesca.</p>
+  </div>
+  <div class="blk blk-b">
+    <h4>Lo que falta · la inversión provincial</h4>
+    <p>Ruta 41 mejorada (acceso con déficit) · Defensas costeras Salado (crecidas periódicas) · Senderos habilitados Bosque Encantado · Sanitarios y accesibilidad · Integración circuito regional con Chascomús y Lobos.</p>
+  </div>
+</div>
+
+<h2>4. La Economía: Turismo Termal y Ganadería en Tensión</h2>
+
+<p>La estructura económica de General Belgrano tiene dos pilares que se complementan sin integrarse del todo. La <strong>ganadería de cría bovina extensiva</strong> es la actividad histórica del partido, con campos que abarcan aproximadamente el 80% del territorio. Los productores ganaderos de la Cuenca del Salado crían en campos bajos e inundables, conviven con el riesgo hídrico de las crecidas del Salado y tienen una demanda muy concreta: caminos rurales que aguanten la lluvia, crédito accesible y precios del ganado que justifiquen la cría. Votan estructuralmente JxC o LLA.</p>
+
+<p>La <strong>economía turística</strong> es el fenómeno más dinámico de las últimas dos décadas. Los prestadores turísticos — cabañeros, gastronómicos, guías de pesca y kayak — representan aproximadamente el 15% del electorado local y tienen una característica fundamental: no tienen lealtad política fija. Responden a quien resuelve sus demandas concretas: más acceso para que lleguen más turistas, más infraestructura para que la experiencia mejore y más crédito para invertir. Es el segmento más accesible para el PJ con una agenda provincial concreta.</p>
+
+<div class="pull pull-a">
+  "La paradoja de la economía de Belgrano es que el sector más dinámico — turismo termal — vota volátil y es accesible para el PJ con una agenda concreta, mientras que el sector más tradicional — ganadería — vota JxC o LLA de manera estructural. La inversión provincial que apunte al sector turístico es la que tiene mayor retorno electoral por peso invertido."
+</div>
+
+<h2>5. El Mapa Electoral: Lo que los Números Dicen y No Dicen</h2>
+
+<p>Los tres resultados electorales de General Belgrano entre 2023 y 2025 no cuentan una historia lineal sino una con tensiones que requieren interpretación cuidadosa.</p>
+
+<p>En la <strong>intendencia de 2023</strong>, el PJ quedó en 36,7% con Jorge Eijo mientras Dinápoli ganaba con el 50,3%. Ese resultado refleja el dominio local de JxC en un municipio donde el apellido Dinápoli tiene arraigo de varios períodos. LLA obtuvo el 13,1% — una presencia menor en la categoría ejecutiva local.</p>
+
+<p>En los <strong>concejales provinciales de 2025</strong>, el PJ subió al 41,2% — una recuperación de 4,5 puntos sobre el ejecutivo 2023. LLA creció al 23,4%. La señal es importante: el PJ tiene una base que supera el piso del ejecutivo cuando hay candidatos locales con identidad propia y la elección no está dominada por la figura de un intendente consolidado.</p>
+
+<p>En el <strong>Diputado Nacional de 2025</strong>, LLA llegó al 51,1% — un salto de 38 puntos sobre su resultado en el ejecutivo 2023. La lectura más plausible: el votante de JxC, sin candidato propio en la categoría nacional, migró masivamente a LLA. Si en 2027 LLA presenta candidato propio al ejecutivo municipal, el PJ deja de competir con uno para competir con dos.</p>
+
+<div class="ag2">
+  <div class="blk blk-a">
+    <h4>La señal positiva: recuperación en concejales</h4>
+    <p>+4,5 puntos PJ entre ejecutivo 2023 y concejales 2025. Indica que hay electorado PJ que volvió en categorías legislativas locales. Base real de ~41% que puede ser el piso de construcción para 2027.</p>
+  </div>
+  <div class="blk blk-r">
+    <h4>La señal negativa: LLA 51% en nacional</h4>
+    <p>38 puntos de crecimiento en dos años. El voto JxC sin candidatos propios en categorías nacionales migra a LLA. Si esa dinámica baja a 2027 con candidato LLA local, el escenario se fragmenta gravemente contra el PJ.</p>
+  </div>
+</div>
+
+<p>El análisis electoral tiene un componente que los porcentajes solos no capturan: el peso del candidato local en una comunidad de 17.000 electores. Una persona conocida, con trayectoria local y llegada directa a los distintos sectores puede mover 5-7 puntos en la categoría ejecutiva — que en Belgrano puede ser la diferencia entre perder por 13 puntos y ganar por 1.</p>
+
+<h2>6. La Agenda Provincial: Lo que Solo el Nivel Provincial Puede Activar</h2>
+
+<p>En General Belgrano, la agenda de intervención provincial es más directa que en la mayoría de los municipios opositores porque el activo principal — las termas — es un espacio público donde la Provincia puede actuar sin intermediación. Hay cinco intervenciones de alta prioridad.</p>
+
+<p>La <strong>mejora de la Ruta 41</strong> es la intervención de mayor retorno. El corredor de acceso a las Termas del Salado es la puerta de entrada al activo turístico más singular de la región. Una obra de mejora es visible para los 5.000 turistas por fin de semana largo que la transitan y que vuelven a sus hogares en el AMBA y La Plata con una experiencia concreta de infraestructura mejorada por la Provincia.</p>
+
+<p>El <strong>equipamiento del hospital local</strong> es la intervención con mayor retorno en la base PJ y en la población general. En un municipio de 20.000 habitantes a 170 km de CABA, el hospital no es un servicio más: es la única opción de atención de emergencia. Un acto de entrega de equipamiento médico tiene llegada a toda la población, independientemente de su orientación política.</p>
+
+<p>Las <strong>defensas costeras del Río Salado</strong> son la demanda histórica más concreta del sector ganadero y de los vecinos de la ribera. Las crecidas son un evento recurrente que afecta tanto a los establecimientos ganaderos como a la zona turística de la costanera. La inversión es visible y tiene impacto directo en ambos sectores.</p>
+
+<p>Los <strong>senderos y señalética del Bosque Encantado</strong> son la intervención de menor costo y mayor diferenciación turística. El bosque ribereño tiene un valor natural que no tiene equivalente en la región pero con infraestructura de visita deficitaria. Senderos habilitados, sanitarios y señalética interpretativa pueden construirse con inversión modesta y tienen impacto inmediato en la experiencia turística.</p>
+
+<p>El <strong>circuito termal regional</strong> que conecte General Belgrano con Chascomús y Lobos es la intervención de mayor impacto comunicacional. Los tres municipios tienen activos naturales complementarios — las Termas del Salado, la Laguna de Chascomús, la estancia y la historia de Lobos. Un circuito integrado con comunicación provincial tiene alcance regional y posiciona a la Provincia como gestora del desarrollo turístico sostenible del interior bonaerense.</p>
+
+<div class="pull pull-b">
+  "La Provincia puede entrar en General Belgrano sin pedirle permiso a Dinápoli. Las termas, el bosque, el hospital, las defensas del Salado — todos son espacios donde el nivel provincial actúa directamente y con plena visibilidad. En un municipio opositor donde la intermediación del intendente es imposible, esa es exactamente la estrategia correcta."
+</div>
+
+<h2>7. Visitas Estratégicas: Los Lugares que Justifican la Presencia</h2>
+
+<div class="visita v-prot">
+  <div class="vlabel">PROTOCOLAR</div>
+  <div class="vscore">9.5</div>
+  <div class="vname">🌡️ Termas del Salado</div>
+  <div class="vbody">El activo estratégico central. Recorrida del complejo + anuncio de obra (Ruta 41 o defensas costeras). El acto tiene audiencia directa en 5.000+ turistas por fin de semana largo que provienen del AMBA y La Plata. No requiere intermediación con Dinápoli. Es la visita de mayor retorno por peso invertido en cualquier municipio opositor de la Provincia. Coordinar con administración del complejo termal, no con la intendencia.</div>
+</div>
+
+<div class="visita v-prot">
+  <div class="vlabel">PROTOCOLAR</div>
+  <div class="vscore">9.0</div>
+  <div class="vname">🏥 Hospital de General Belgrano</div>
+  <div class="vbody">Entrega de equipamiento médico con financiación provincial. El hospital es la demanda transversal número uno — impacta a toda la población sin distinción política. Los vecinos de perfil JxC y LLA también tienen familia que depende del hospital local. El mensaje es inequívoco: la Provincia llega a donde hace falta, independientemente del color del intendente.</div>
+</div>
+
+<div class="visita v-prot">
+  <div class="vlabel">PROTOCOLAR</div>
+  <div class="vscore">9.0</div>
+  <div class="vname">🌿 Bosque Encantado</div>
+  <div class="vbody">Recorrida del paraje natural contiguo a las termas + anuncio de senderos, sanitarios y señalética provincial. El bosque amplía la oferta turística más allá del agua termal y atrae un segmento de senderismo y naturaleza que complementa al turista termal. Inversión de bajo costo y alto impacto visual. Permite posicionar a la Provincia en el espacio ambiental y de turismo sustentable sin necesitar al intendente.</div>
+</div>
+
+<div class="visita v-prot">
+  <div class="vlabel">PROTOCOLAR</div>
+  <div class="vscore">8.5</div>
+  <div class="vname">🐄 Sociedad Rural de General Belgrano</div>
+  <div class="vbody">Reunión con productores ganaderos. Presentación de programa MinAgrario provincial: caminos rurales, asistencia técnica, crédito agropecuario. La Cuenca del Salado concentra productores que migran a LLA. La presencia directa del Ministerio de Agroindustria — sin mediación del intendente — muestra que la Provincia atiende al campo incluso en municipios opositores. Es el acto de diferenciación en el sector más difícil de convertir pero más sensible a la resolución de demandas concretas.</div>
+</div>
+
+<div class="visita v-prot">
+  <div class="vlabel">PROTOCOLAR</div>
+  <div class="vscore">8.0</div>
+  <div class="vname">🌊 Balneario · Costanera del Río Salado</div>
+  <div class="vbody">Recorrida de la costanera histórica + anuncio de defensas costeras del Río Salado con financiación provincial. Las crecidas periódicas afectan a la ribera turística y a los establecimientos ganaderos aledaños. La obra de defensa es concreta, visual e impacta directamente a los prestadores turísticos de la costanera y a los vecinos de la zona ribereña. El espacio es público y la Provincia puede actuar directamente.</div>
+</div>
+
+<h2>8. Síntesis Ejecutiva: El Municipio con el Activo Más Valioso y el Resultado Más Bajo</h2>
+
+<p>General Belgrano es la paradoja más interesante de la 5ª Sección Electoral. Tiene el activo turístico más singular de toda la región — agua termal natural, bosque ribereño único, 5.000 visitantes por fin de semana largo — y al mismo tiempo tiene el resultado electoral del PJ más bajo de la zona. En la tensión entre esas dos variables está la clave de toda la estrategia para este municipio.</p>
+
+<p>La oportunidad de las termas es real y concreta: permiten construir presencia provincial directa en un municipio con intendente opositor, con audiencia que va más allá de los 17.000 electores locales y con visibilidad ante turistas del AMBA que ninguna otra intervención en el interior bonaerense puede ofrecer con la misma eficiencia. Cuando la Provincia anuncia obras en las Termas del Salado, el mensaje llega a 5.000 personas por fin de semana que se llevan de vuelta a sus casas en el conurbano y La Plata una imagen concreta de inversión provincial.</p>
+
+<p>La amenaza de LLA también es real. El 51,1% en la categoría nacional de 2025 no es una anomalía: es la cristalización de una tendencia que comenzó en 2023 y que crecerá si en 2027 LLA presenta candidato propio al ejecutivo municipal. El bloque JxC + LLA supera históricamente el 60% cuando opera de forma coordinada. El PJ necesita fragmentar ese bloque y capturar el segmento turismo/comercio con agenda concreta antes de que se fije electoralmente en el campo opositor.</p>
+
+<div class="blk blk-k" style="margin-top:24px;">
+  <h4>⚡ General Belgrano · La síntesis</h4>
+  <p>General Belgrano tiene agua termal, bosque ribereño y ganadería de la Cuenca del Salado — una combinación de naturaleza, producción y turismo que define su identidad como municipio único en la 5ª Sección Electoral. El resultado del PJ es el más bajo de la región, pero el activo más disponible para la presencia provincial directa también es el más singular. Las Termas del Salado permiten construir presencia ante turistas del AMBA sin pedir permiso al intendente opositor. El hospital atiende a todos sin distinción política. Las defensas del Salado protegen al campo que vota en contra. En cada uno de esos espacios, la Provincia puede demostrar que llega donde hace falta — y que en Belgrano eso vale más que en cualquier municipio aliado donde la estructura ya está ganada.</p>
+</div>
+
+</div>
+
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Narrativa General Belgrano · PBA Analytics 2026</div>
+
+<!-- ANEXO I -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div class="anx-header" style="background:linear-gradient(135deg,#0C3547,#0F5E7A);color:white;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">General Belgrano · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO I — INDICADORES TERRITORIALES Y ELECTORALES</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">5ª Sección Electoral · Interior Bonaerense<br>⚠️ Dinápoli es JxC, no UxP (error MatrizPBA)</div>
+  </div>
+  <div class="anx-body" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#0C3547;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">🗳️ Electoral completo · 2023–2025</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Elección</th><th>PJ</th><th>JxC</th><th>LLA</th><th>Padrón</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Intend. 2023</strong></td><td class="ww">36,7% · 4.495</td><td class="ok">50,3% · 6.154 ✓</td><td>13,1% · 1.600</td><td>17.065</td></tr>
+            <tr><td><strong>Conc. 2025</strong></td><td class="ww">41,2% · 4.146</td><td>—</td><td class="ww">23,4% · 2.356</td><td>17.338</td></tr>
+            <tr><td><strong>Nac. 2025</strong></td><td class="ww">34,7% · 3.790</td><td>—</td><td class="bb">51,1% · 5.575</td><td>16.996</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;margin-bottom:0;"><strong>Tendencia LLA:</strong> 13,1% → 23,4% → 51,1%. +38 pts en dos años. El voto JxC sin candidato propio migra a LLA en categorías nacionales.</p>
+      </div>
+    </div>
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#0C3547;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">📊 Padrón · Demografía · Termas</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Indicador</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>Padrón 2025</td><td><strong>17.338</strong></td></tr>
+            <tr><td>Crecimiento 2023–25</td><td class="ww">+273 · +1,6%</td></tr>
+            <tr><td>Ritmo anual</td><td>~135 electores/año</td></tr>
+            <tr><td>Proyección 2027</td><td class="ww">~17.600–17.900</td></tr>
+            <tr><td>Superficie</td><td>1.857,5 km²</td></tr>
+            <tr><td>Distancia CABA</td><td>~170 km · Rutas 3+41</td></tr>
+            <tr><td>Turistas/finde largo</td><td class="ok">5.000+</td></tr>
+            <tr><td>Ocupación fuera temp.</td><td class="ok">&gt;70%</td></tr>
+            <tr><td>Señalética QR</td><td class="ok">Implementada 2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div class="anx-body" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:0;">
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#D97706;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">🌡️ Localidades y activos principales</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Lugar</th><th>Perfil</th><th>Electoral est.</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Gral. Belgrano (cab.)</strong></td><td>Urbano · Servicios · Estado</td><td class="ww">PJ ~42% · JxC ~35%</td></tr>
+            <tr><td><strong>Gorchs</strong></td><td>Rural · Ganadería extensiva</td><td class="bb">JxC/LLA &gt;60%</td></tr>
+            <tr><td><strong>Termas del Salado</strong></td><td>Turístico · 5.000+/finde</td><td>Acceso Ruta 41</td></tr>
+            <tr><td><strong>Bosque Encantado</strong></td><td>Natural · Ribera Salado</td><td>Senderos + señalética</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#9B1C1C;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">⚠️ Riesgos y oportunidades clave</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Factor</th><th>Tipo</th><th>Lectura</th></tr></thead>
+          <tbody>
+            <tr><td>LLA 51,1% nac. 2025</td><td class="bb">Riesgo</td><td class="bb">Alarma máxima</td></tr>
+            <tr><td>Termas sin intermediación</td><td class="ok">Oportunidad</td><td class="ok">Alta</td></tr>
+            <tr><td>PJ +4,5 pts concejales</td><td class="ok">Señal positiva</td><td class="ww">Moderada</td></tr>
+            <tr><td>Ruta 41 déficit acceso</td><td class="ww">Demanda concreta</td><td class="ok">Retorno alto</td></tr>
+            <tr><td>Crecidas Río Salado</td><td class="bb">Riesgo hídrico</td><td class="ww">Obra defensas</td></tr>
+            <tr><td>Hospital equipamiento</td><td class="ok">Oportunidad base</td><td class="ok">Alta</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ANEXO II -->
+<div style="page-break-before:always;break-before:page;height:0;margin:0;padding:0;font-size:0;"></div>
+<div style="background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+<div class="anx-keep">
+  <div class="anx-header" style="background:linear-gradient(135deg,#0F5E7A,#0C3547);color:white;">
+    <div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.6;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">General Belgrano · PBA 2026</div>
+      <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;">ANEXO II — ANÁLISIS POLÍTICO-TERRITORIAL</div>
+    </div>
+    <div style="font-family:'Segoe UI',Arial,sans-serif;font-size:10px;opacity:0.7;text-align:right;">Segmentos · Agenda · Escenarios 2027<br>Dinámica electoral de tres fuerzas</div>
+  </div>
+  <div class="anx-body" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#1d3461;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">📍 Comparativa Belgrano vs. 5ª Secc.</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Variable</th><th>Belgrano</th><th>Prom. región</th></tr></thead>
+          <tbody>
+            <tr><td>PJ ejecutivo 2023</td><td class="bb">36,7%</td><td class="ww">~45%</td></tr>
+            <tr><td>PJ concejales 2025</td><td class="ww">41,2%</td><td class="ok">~46%</td></tr>
+            <tr><td>LLA nacional 2025</td><td class="bb">51,1%</td><td class="ww">~44%</td></tr>
+            <tr><td>Crec. padrón 2 años</td><td class="ww">+1,6%</td><td>+2,8%</td></tr>
+            <tr><td>Color intendente</td><td class="bb">OPOSITOR JxC</td><td class="ok">~65% aliados</td></tr>
+            <tr><td>Activo singular</td><td class="ok">Termas únicas</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;margin-bottom:0;">Belgrano tiene los resultados PJ más bajos de la 5ª Sección pero el activo de presencia directa más singular. Municipio de alto esfuerzo y alto retorno potencial.</p>
+      </div>
+    </div>
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#1d3461;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">👥 Segmentos electorales</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Segmento</th><th>%</th><th>Voto · Demanda</th></tr></thead>
+          <tbody>
+            <tr><td>PJ base dura</td><td class="ok">~30%</td><td>PJ · Salud, empleo, obra</td></tr>
+            <tr><td>JxC fiel Dinápoli</td><td class="bb">~22%</td><td>JxC · Gestión local</td></tr>
+            <tr><td>LLA convencido</td><td class="bb">~20%</td><td>LLA · Antipolítica</td></tr>
+            <tr><td>Turismo/comercio</td><td class="ww">~15%</td><td>Volátil · Acceso termas</td></tr>
+            <tr><td>Campo ganadero</td><td class="ww">~8%</td><td>LLA/JxC · Caminos</td></tr>
+            <tr><td>Joven antipolítico</td><td class="ww">~5%</td><td>LLA · Empleo y futuro</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;margin-bottom:0;">Segmento turismo/comercio (~15%) es el objetivo de conversión más accesible para el PJ con agenda provincial concreta en las termas.</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="anx-body" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:0;">
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#D97706;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">🏛️ Agenda provincial · prioridades</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Intervención</th><th>Impacto</th><th>Urgencia</th></tr></thead>
+          <tbody>
+            <tr><td>Ruta 41 · acceso termas</td><td class="ok">Muy alto</td><td class="ok">Alta</td></tr>
+            <tr><td>Equipamiento hospital</td><td class="ok">Alto social</td><td class="ok">Alta</td></tr>
+            <tr><td>Defensas costeras Salado</td><td class="ok">Alto territorial</td><td class="ok">Alta</td></tr>
+            <tr><td>Senderos Bosque Encantado</td><td class="ok">Alto turístico</td><td class="ww">Media</td></tr>
+            <tr><td>Caminos rurales MinAgrario</td><td class="ww">Medio rural</td><td class="ww">Media</td></tr>
+            <tr><td>Circuito termal regional</td><td class="ok">Alto sinérgico</td><td class="ww">Media</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.07);overflow:hidden;">
+      <div style="background:#9B1C1C;color:white;padding:9px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;">🔮 Escenarios 2027</div>
+      <div style="padding:13px;">
+        <table class="tbl">
+          <thead><tr><th>Escenario</th><th>Condición</th><th>PJ exec.</th></tr></thead>
+          <tbody>
+            <tr><td class="bb">A · Base</td><td>Sin obra, candidato débil</td><td class="bb">~35%</td></tr>
+            <tr><td class="ww">B · Medio</td><td>Obra termal + emergente local</td><td class="ww">~41–43%</td></tr>
+            <tr><td class="ok">C · Óptimo</td><td>Termas+salud+campo+cand. sólido</td><td class="ok">~46%+</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#555;margin-top:6px;margin-bottom:0;">La diferencia entre A y C es la presencia provincial activa en los próximos 18 meses. En municipios de 17.000 electores, la figura del candidato local mueve 5-7 puntos adicionales.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Narrativa General Belgrano · PBA Analytics 2026</div>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAUCH — Narrativa Política · PBA 2026</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #c8cfd8; padding: 20px 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; line-height: 1.6; color: #1a1a2e;
+  background: white; max-width: 794px; margin: 0 auto;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.hdr { background: linear-gradient(135deg, #0C2A3E 0%, #1C4872 100%); color: white; padding: 22px 28px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.hdr h1 { font-size: 26px; font-weight: 900; letter-spacing: 1.5px; margin-bottom: 5px; }
+.hdr .meta { font-size: 11px; opacity: 0.75; line-height: 1.7; }
+.hdr .kpis-top { display: flex; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
+.hdr-kpi { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 7px; padding: 8px 12px; }
+.hdr-kpi .n { font-size: 18px; font-weight: 900; color: #4FC3F7; line-height: 1; }
+.hdr-kpi .l { font-size: 9px; opacity: 0.68; margin-top: 2px; }
+.body { padding: 24px 28px; }
+.sec { margin-bottom: 30px; }
+.sec h2 { font-size: 13.5px; font-weight: 800; color: #1C4872; border-left: 4px solid #4FC3F7; padding-left: 10px; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.8px; }
+.sec p { font-size: 11.5px; line-height: 1.8; color: #2d2d3a; margin-bottom: 11px; }
+.sec p strong { color: #1C4872; }
+.blk { border-radius: 7px; padding: 13px 15px; margin-bottom: 13px; }
+.blk-k { background: #0C2340; border-left: 4px solid #4FC3F7; color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.blk-k h4 { color: #4FC3F7; font-size: 11px; margin-bottom: 6px; font-weight: 800; }
+.blk-k p { font-size: 11px; line-height: 1.75; color: rgba(255,255,255,0.92) !important; }
+.blk-v { background: #EFF6FF; border-left: 4px solid #4FC3F7; color: #0C2A3E; }
+.blk-v h4 { color: #1C4872; font-size: 11px; margin-bottom: 6px; font-weight: 800; }
+.blk-v p { font-size: 11px; line-height: 1.75; color: #2d2d3a; }
+.blk-w { background: #FEF3C7; border-left: 4px solid #D97706; color: #78350F; }
+.blk-w h4 { color: #78350F; font-size: 11px; margin-bottom: 6px; font-weight: 800; }
+.blk-w p { font-size: 11px; line-height: 1.75; color: #78350F; }
+.blk-g { background: #F0FDF4; border-left: 4px solid #16A34A; color: #14532D; }
+.blk-g h4 { color: #14532D; font-size: 11px; margin-bottom: 6px; font-weight: 800; }
+.blk-g p { font-size: 11px; line-height: 1.75; color: #14532D; }
+.blk-r { background: #FEF2F2; border-left: 4px solid #EF4444; color: #7F1D1D; }
+.blk-r h4 { color: #7F1D1D; font-size: 11px; margin-bottom: 6px; font-weight: 800; }
+.blk-r p { font-size: 11px; line-height: 1.75; color: #7F1D1D; }
+.t { width: 100%; border-collapse: collapse; font-size: 11px; margin-bottom: 13px; }
+.t th { background: #f5f6f8; color: #555; padding: 5px 7px; text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #e5e7eb; }
+.t td { padding: 5px 7px; border-bottom: 1px solid #f3f4f6; vertical-align: top; }
+.t tr:last-child td { border-bottom: none; }
+.t td:first-child { color: #555; }
+.ok   { background: #F0FDF4; color: #14532D; font-weight: 700; }
+.warn { background: #FEF3C7; color: #92400E; font-weight: 700; }
+.bad  { background: #FEF2F2; color: #7F1D1D; font-weight: 700; }
+.inf  { background: #EFF6FF; color: #1E40AF; font-weight: 700; }
+.bld  { font-weight: 700; }
+.div-h { height: 1px; background: #e5e7eb; margin: 22px 0; }
+.vrow { display: flex; gap: 12px; margin-bottom: 10px; align-items: flex-start; }
+.vscore { font-size: 15px; font-weight: 900; color: #1C4872; min-width: 34px; padding-top: 2px; }
+.vbody { flex: 1; }
+.vbody strong { font-size: 11px; font-weight: 700; color: #0C2A3E; display: block; margin-bottom: 3px; }
+.vbody p { font-size: 10.5px; color: #555; line-height: 1.65; }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 4px; }
+.badge-rival { background: rgba(239,68,68,0.2); color: #DC2626; border: 1px solid rgba(239,68,68,0.3); }
+.footer { text-align: center; padding: 14px; font-size: 10px; color: #aaa; border-top: 1px solid #e5e7eb; }
+@media print {
+  @page { size: A4 portrait; margin: 7mm 8mm; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { background: white !important; padding: 0 !important; }
+  body { max-width: 100% !important; font-size: 7.5pt !important; }
+  .body { padding: 14px 18px !important; }
+  .sec p, .blk-v p, .blk-w p, .blk-g p, .blk-r p { font-size: 7pt !important; }
+  .blk-k p { font-size: 7pt !important; color: rgba(255,255,255,0.92) !important; }
+  .sec h2 { font-size: 8.5pt !important; }
+  .hdr h1 { font-size: 15pt !important; }
+  .sec { margin-bottom: 16px !important; break-inside: avoid; page-break-inside: avoid; }
+  .blk { break-inside: avoid; page-break-inside: avoid; }
+  .div-h { margin: 12px 0 !important; }
+  .t { font-size: 7pt !important; }
+  .t td, .t th { padding: 3px 5px !important; }
+  .hdr { break-inside: avoid; page-break-inside: avoid; }
+  .vrow { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <h1>🐓 RAUCH — NARRATIVA POLÍTICA 2026</h1>
+  <div class="meta">
+    5ª Sección Electoral · Cluster 7 · Cuenca del Salado · 4.312,8 km² · 16.635 hab. (CENSO 2022) · Padrón: 14.180<br>
+    Intendente: Maximiliano Suescun <span class="badge badge-rival">JxC · Opositor</span> · Capital Nacional del Ave de Raza · SIP · URRA
+  </div>
+  <div class="kpis-top">
+    <div class="hdr-kpi"><div class="n">41,9%</div><div class="l">PJ Intend. 2023 · 2° · JxC 49%</div></div>
+    <div class="hdr-kpi"><div class="n">48,5% ✅</div><div class="l">PJ Conc. PBA 2025 · PRIMERO</div></div>
+    <div class="hdr-kpi"><div class="n">44,1% ✅</div><div class="l">PJ Dip. Nac. 2025 · PRIMERO</div></div>
+    <div class="hdr-kpi"><div class="n">~400 vts</div><div class="l">PJ vs LLA en Nac. 2025 · muy ajustado</div></div>
+    <div class="hdr-kpi"><div class="n">27 pts</div><div class="l">Ticket split LLA nac vs prov. 2025</div></div>
+  </div>
+</div>
+
+<div class="body">
+
+<!-- I. EL MUNICIPIO -->
+<div class="sec">
+  <h2>I. El Municipio · Capital del Ave de Raza en el corazón de la Cuenca del Salado</h2>
+  <p>Rauch es un municipio ganadero de la 5ª Sección enclavado en el centro de la <strong>Cuenca del Salado</strong> — el corredor húmedo de la provincia, con campos de cría bovina extensiva, pastizales naturales y una economía que sigue los ritmos del campo. Con 16.635 habitantes y 4.312,8 km², Rauch es un partido mediano del interior, cuya economía real gira en torno a los remates de hacienda, las agronomías, la Sociedad Rural y los ciclos estacionales del productor ganadero.</p>
+  <p>Pero Rauch tiene también una identidad cultural singular que lo distingue en la Cuenca del Salado: es la <strong>Capital Nacional del Ave de Raza</strong>. La Fiesta Nacional del Ave de Raza es el evento identitario más importante del partido — un concurso y exposición de avicultura de exhibición (gallinas ornamentales, razas puras, aves de colección) que convoca expositores y coleccionistas de todo el país y genera un movimiento turístico y comercial que dinamiza fuertemente la economía local. No es un evento masivo como la Fiesta del Ternero de Ayacucho, pero tiene un alcance nacional en un nicho muy específico y una identidad local profunda que el partido entero reconoce como propia.</p>
+  <div class="blk blk-v">
+    <h4>📍 Rauch en el corredor de la Cuenca del Salado (Cluster 7)</h4>
+    <p>El Cluster 7 de la Cuenca del Salado agrupa 19 municipios del corredor ganadero: Chascomús, Dolores, Las Flores, General Belgrano, General Paz, San Miguel del Monte, Maipú, Ayacucho, y otros. Rauch está en el centro geográfico de ese corredor. Lo que pasa en Rauch electoralmente — y la señal del PJ primero en 2025 — resuena en el resto de la Cuenca: es el municipio disputado de referencia de la 5ª Sección.</p>
+  </div>
+</div>
+
+<div class="div-h"></div>
+
+<!-- II. SUESCUN Y LA GESTIÓN JxC -->
+<div class="sec">
+  <h2>II. Maximiliano Suescun · JxC y los Tres Ejes de Gestión</h2>
+  <p>Maximiliano Suescun ganó la intendencia de Rauch en 2023 con el <strong>49,0%</strong> de los votos (4.917 votos) sobre el PJ (41,9%, 4.206 votos) y LLA (9,1%, 912). La diferencia fue de apenas 7 puntos — nada que ver con las victorias aplastantes de otros municipios JxC del interior. Suescun es un intendente con arraigo local y una gestión articulada en tres ejes concretos:</p>
+  <p>El primero es el <strong>Sector Industrial Planificado (SIP)</strong>: la radicación de pequeñas unidades productivas dedicadas al procesamiento de derivados cárnicos y textiles (lana), para que la riqueza generada por el campo no se vaya del partido sin procesarse localmente. El SIP es la apuesta de industrialización más ambiciosa de la gestión y la que mejor conecta con la agenda productiva de la Provincia.</p>
+  <p>El segundo eje es la <strong>Fiesta Nacional de la Ternera y Día de la Yerra</strong>, que Suescun potenció en 2026 como feria de negocios ganaderos — atrayendo cabañas y productores de toda la provincia para posicionar la calidad genética de Rauch. Y el tercero es la <strong>URRA</strong> — la Unidad de Reciclado de Rauch, una de las plantas de tratamiento de residuos más eficientes de la región, con un programa de compostaje domiciliario cuyo beneficio se reinvierte en la propia planta.</p>
+  <div class="blk blk-w">
+    <h4>⚠️ Suescun tiene gestión concreta y margen de crecimiento propio</h4>
+    <p>Con el 49% en 2023 y tres ejes de gestión visibles (SIP, Fiesta del Ave de Raza/Ternera, URRA), Suescun tiene una base sólida pero no inexpugnable. La clave para el PJ no es atacar la gestión local sino construir presencia provincial propia — con agenda concreta que llegue al productor ganadero y a la identidad cultural de Rauch — y construir para 2027 desde el piso del 48,5% provincial de 2025.</p>
+  </div>
+</div>
+
+<div class="div-h"></div>
+
+<!-- III. EL DATO CENTRAL: PJ PRIMERO EN LOS DOS NIVELES -->
+<div class="sec">
+  <h2>III. El PJ · Primero en los Dos Niveles 2025 — Señal Histórica en la Cuenca del Salado</h2>
+  <p>El resultado electoral de Rauch en 2025 es el más notable del Cluster 7 desde la perspectiva del PJ. En concejales PBA, el PJ obtuvo el <strong>48,5%</strong> (4.363 votos) y quedó <strong>primero</strong> — pasando del 41,9% de 2023 al primer lugar con una diferencia de más de 6 puntos. Y en el Diputado Nacional, el PJ (44,1%, 4.002 votos) ganó sobre LLA (39,7%, 3.603 votos) por apenas <strong>~400 votos</strong> — en un municipio donde en 2023 JxC había ganado la intendencia con 7 puntos de ventaja.</p>
+  <p>Esto significa que Rauch es el único municipio de la Cuenca del Salado con intendente JxC donde el PJ ganó <strong>los dos niveles electorales 2025</strong> — tanto el provincial como el nacional. Es una señal de solidez estructural del voto peronista local que va más allá de la coyuntura: el votante de Rauch que distingue entre candidato local y nivel provincial/nacional prefiere el PJ para la gestión pública.</p>
+  <div class="blk blk-g">
+    <h4>✅ La lectura correcta del +6,6 pts del PJ entre 2023 y 2025</h4>
+    <p>El PJ pasó del 41,9% en la intendencia 2023 al 48,5% en concejales PBA 2025 — un crecimiento de 6,6 puntos. En ese mismo ciclo, LLA entró como tercer partido con el 9,1% en 2023 y solo llegó al 12,5% en provinciales 2025 (apenas 3,4 puntos más). Eso significa que el voto LLA en Rauch no creció a costa del PJ en el nivel provincial — el PJ creció igual. Donde LLA explotó fue en el Diputado Nacional (del 9,1% al 39,7%), captando mayoritariamente el voto que en 2023 había ido a JxC para la intendencia. El voto peronista de Rauch no migró a LLA en ninguno de los dos niveles 2025.</p>
+  </div>
+  <table class="t">
+    <thead><tr><th>Elección</th><th>PJ</th><th>JxC</th><th>LLA</th><th>Otros</th><th>Observación</th></tr></thead>
+    <tbody>
+      <tr><td>Intendencia 2023</td><td class="warn">41,9% · 4.206 · 2°</td><td class="ok">49,0% · 4.917 ✓</td><td class="inf">9,1% · 912</td><td class="inf">—</td><td>Diferencia 7,1 pts · tripartidismo desde el inicio</td></tr>
+      <tr><td>Conc. PBA 2025</td><td class="ok">48,5% ✅ 1°</td><td class="inf">~39% · ~3.501</td><td class="warn">12,5% · 1.127</td><td class="inf">—</td><td>PJ primero · LLA débil en prov. · split evidente</td></tr>
+      <tr><td>Dip. Nac. 2025</td><td class="ok">44,1% ✅ · 4.002</td><td class="inf">—</td><td class="warn">39,7% · 3.603</td><td>2,5% · 228</td><td>⚡ ~400 votos · PJ gana · LLA explotó en nac.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="div-h"></div>
+
+<!-- IV. EL TICKET SPLIT DE RAUCH -->
+<div class="sec">
+  <h2>IV. El Ticket Split · LLA 12,5% Provincial vs 39,7% Nacional — 27 Puntos de Diferencia</h2>
+  <p>El fenómeno más interesante de Rauch en 2025 no es el PJ primero en provinciales — es la <strong>brecha de 27 puntos</strong> entre el resultado de LLA en el nivel provincial (12,5%) y el nacional (39,7%) en el mismo año electoral. Es la diferencia más amplia de ticket split en el Cluster 7, y probablemente una de las más altas de toda la Cuenca del Salado en 2025.</p>
+  <p>Esto tiene una lectura política precisa: hay un electorado significativo en Rauch que votó LLA para el Congreso (identificación con el proyecto nacional de Milei, descontento con la representación política nacional) pero no trasladó esa preferencia al nivel provincial. Para los concejales PBA, ese mismo votante eligió PJ (o JxC/otros) — demostrando que distingue entre lo que quiere para la nación y lo que quiere para la gestión de los servicios públicos provinciales.</p>
+  <div class="blk blk-k">
+    <h4>🔍 Por qué el split de 27 puntos es una señal favorable para el PJ provincial</h4>
+    <p>Cuando el votante distingue entre niveles — y prefiere el PJ para el nivel provincial aunque vote LLA en el nacional — significa que el PJ tiene credibilidad como gestor de servicios públicos. El split de 27 puntos en Rauch indica que 27 puntos de electores confían más en el PJ para gestionar la Provincia que en LLA. Esa brecha es el activo más valioso para la campaña provincial: no hay que convencer al votante de que abandone su identificación con Milei, sino de que el nivel provincial requiere un perfil diferente — y que el PJ provincial lo tiene.</p>
+  </div>
+</div>
+
+<div class="div-h"></div>
+
+<!-- V. LAS TRES PALANCAS -->
+<div class="sec">
+  <h2>V. Agenda Provincial · Las Tres Palancas de Rauch</h2>
+
+  <div class="blk blk-k">
+    <h4>🐓 PALANCA 1 · Fiesta Nacional del Ave de Raza — La identidad cultural más fuerte del partido</h4>
+    <p>La Fiesta Nacional del Ave de Raza es el evento que define la identidad de Rauch. No convoca 50.000 personas como la Fiesta del Ternero de Ayacucho, pero tiene alcance nacional en un nicho muy específico (avicultura de exhibición, gallinas de raza, aves ornamentales) y un profundo arraigo en la comunidad local. La Provincia puede llegar como patrocinadora y co-organizadora a través del MinTurismo — presencia en el escenario, logo en la cartelería, acto de inauguración. El encuadre es directo: "la Fiesta del Ave de Raza es el orgullo de Rauch y de toda la Provincia". Un evento en el que la Provincia está presente como socia activa construye capital simbólico con toda la comunidad local — que es el votante de Rauch en su totalidad.</p>
+  </div>
+
+  <div class="blk blk-k">
+    <h4>🐄 PALANCA 2 · Ganadería Bovina y Sociedad Rural — Acompañar la economía real del partido</h4>
+    <p>La economía de Rauch es ganadera. Los remates de hacienda, el movimiento de terneros, los insumos agropecuarios y los servicios al campo son lo que hace girar la rueda económica del partido. La Sociedad Rural de Rauch es el actor institucional más representativo de ese universo — la puerta de entrada al productor ganadero. MinAgrario puede llegar con un programa concreto de apoyo a la ganadería bovina de cría: mejoramiento genético (inseminación artificial subsidiada), sanidad animal (articulación con SENASA), financiamiento de infraestructura productiva (aguadas, alambrados, reproductores). El acto en la Sociedad Rural con anuncio de programa provincial bovino es el acto que llega al corazón económico de Rauch — y llega al productor, no al militante. Alta resonancia, bajo riesgo político.</p>
+  </div>
+
+  <div class="blk blk-k">
+    <h4>🏭 PALANCA 3 · Sector Industrial Planificado (SIP) — Socio productivo del valor agregado cárnico</h4>
+    <p>El SIP de Rauch es la iniciativa productiva más ambiciosa de la gestión Suescun y la que mejor conecta con la agenda provincial de industrialización del interior. MinProducción puede participar como socio con un programa de crédito y asistencia técnica para las unidades del SIP (procesamiento de carne y lana). El acto: visita a una unidad del SIP con empresarios locales + anuncio de línea de crédito MinProducción para industrialización del interior bonaerense. El encuadre es poderoso: "que el ternero se procese en Rauch, no en otro lado". Llega al productor que ya hace ganadería y al trabajador que ve en el SIP su fuente de empleo local. Es co-gestión con el municipio sin ceder el rédito político.</p>
+  </div>
+</div>
+
+<div class="div-h"></div>
+
+<!-- VI. VISITAS -->
+<div class="sec">
+  <h2>VI. Visitas · Rauch · Ranking Estratégico</h2>
+
+  <div class="vrow">
+    <div class="vscore">10.0</div>
+    <div class="vbody">
+      <strong>🐓 Fiesta Nacional del Ave de Raza · Palanca 1</strong>
+      <p>Presencia oficial como co-organizadora y patrocinadora (MinTurismo). La Fiesta define la identidad de Rauch — toda la comunidad local más expositores nacionales. Encuadre: "la Fiesta del Ave de Raza es patrimonio de toda la Provincia". Máximo retorno simbólico por acto en el interior bonaerense.</p>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vscore">9.0</div>
+    <div class="vbody">
+      <strong>🐄 Sociedad Rural de Rauch · Programa MinAgrario Bovino · Palanca 2</strong>
+      <p>Visita con comisión directiva + consignatarios + anuncio programa MinAgrario bovino (mejoramiento genético, sanidad, financiamiento infraestructura). Llega al corazón económico del partido. El productor ganadero ve la Provincia presente en su mundo real. Alta resonancia, muy bajo riesgo político.</p>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vscore">9.0</div>
+    <div class="vbody">
+      <strong>🏭 Sector Industrial Planificado (SIP) · MinProducción Crédito · Palanca 3</strong>
+      <p>Visita a unidades del SIP (cárnico, textil/lana) + anuncio línea MinProducción para industrialización del interior. Acto con empresarios locales. Encuadre: "valor agregado en Rauch, no afuera". Co-gestión con el municipio sin ceder rédito político. Llega al productor y al trabajador local simultáneamente.</p>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vscore">8.0</div>
+    <div class="vbody">
+      <strong>🐓 Fiesta Nacional de la Ternera y Día de la Yerra · Feria de Negocios</strong>
+      <p>Participación en la feria de negocios ganaderos que Suescun organizó en 2026. Presencia con agenda MinAgrario en el espacio productivo del evento. Llega al productor y a las cabañas de la provincia que se reúnen en Rauch. Complementa la Palanca 2 (ganadería) con formato de feria comercial.</p>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vscore">7.5</div>
+    <div class="vbody">
+      <strong>♻️ URRA · Unidad de Reciclado · MinAmbiente</strong>
+      <p>Visita a la planta de tratamiento de residuos modelo + reconocimiento MinAmbiente + anuncio de extensión del modelo a municipios de la Cuenca del Salado. Llega a la comunidad con agenda ambiental concreta y a los medios con una historia de buenas prácticas municipales. Encuadre: "Rauch es referencia ambiental para toda la Provincia".</p>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vscore">7.5</div>
+    <div class="vbody">
+      <strong>👴 Encuentro Regional de Adultos Mayores (11 de abril)</strong>
+      <p>Presencia en el evento que concentra participantes de varios municipios del corredor de la Cuenca del Salado. Agenda de cuidado y asistencia social provincial. Alta visibilidad comunitaria, muy alto retorno simbólico, bajo costo político. Las residencias de adultos mayores de Rauch son modelo provincial — reconocerlas suma.</p>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vscore">7.0</div>
+    <div class="vbody">
+      <strong>🏛️ Municipalidad · Maximiliano Suescun (JxC)</strong>
+      <p>Visita corta y focalizada en obra o convenio concreto. La Provincia trabaja con todos los municipios bonaerenses. Encuadre institucional. Útil para abrir agenda del SIP y de la Sociedad Rural. Acto breve — no foto política sino co-gestión de obra concreta.</p>
+    </div>
+  </div>
+</div>
+
+<div class="div-h"></div>
+
+<!-- VII. SÍNTESIS EJECUTIVA -->
+<div class="sec">
+  <h2>VII. Síntesis Ejecutiva · Rauch</h2>
+  <div class="blk blk-k">
+    <h4>🎯 DIAGNÓSTICO CENTRAL</h4>
+    <p>Rauch es el municipio de referencia electoral del Cluster 7 en el ciclo 2025: el PJ ganó los dos niveles electorales de 2025 (concejales PBA 48,5% y Diputado Nacional 44,1%) en un partido con intendente JxC. La señal más importante es el ticket split de 27 puntos — LLA obtuvo el 39,7% en nacionales pero solo el 12,5% en provinciales, lo que indica que el votante de Rauch distingue entre niveles y prefiere el PJ para gestionar la Provincia. Las tres palancas provinciales son la Fiesta Nacional del Ave de Raza (identidad cultural + MinTurismo), la ganadería bovina (Sociedad Rural + MinAgrario programa bovino) y el SIP (industrialización local + MinProducción crédito productivo). Rauch tiene condiciones para consolidar la ventaja provincial del PJ y construir el camino a la intendencia 2027.</p>
+  </div>
+  <div class="blk blk-v">
+    <h4>📌 Tres prioridades para el ciclo 2026-2027</h4>
+    <p><strong>1. Consolidar el 48,5% provincial como piso:</strong> El piso del 48,5% debe transformarse en 51-53% para ganar la intendencia en 2027. El split de 27 puntos indica que el electorado provincial de Rauch es sólido para el PJ. La agenda provincial concreta (ganadería, SIP, Fiesta del Ave de Raza) es el vector de consolidación.</p>
+    <p><strong>2. Gestionar el riesgo LLA:</strong> El 39,7% de LLA en nacionales 2025 es la señal de alerta para 2027. Si LLA baja el split y crece en provinciales, la competencia se complejiza. La agenda provincial visible — presente en el territorio con obra concreta — es el dique contra ese avance. El votante que distingue niveles debe ver razones para seguir distinguiendo.</p>
+    <p><strong>3. Capitalizar el SIP y la Fiesta del Ave de Raza:</strong> El SIP y la Fiesta son los dos activos de identidad más fuertes de Rauch. La Provincia debe estar presente en los dos — como socia del SIP (MinProducción) y como co-organizadora de la Fiesta (MinTurismo). Presencia en ambos ancla la agenda provincial en los dos ejes que el partido reconoce como propios: trabajo e identidad.</p>
+  </div>
+  <table class="t">
+    <thead><tr><th>Dimensión</th><th>Lectura</th><th>Prioridad</th></tr></thead>
+    <tbody>
+      <tr><td>PJ en Conc. PBA 2025</td><td class="ok">48,5% — PRIMERO · señal sólida</td><td class="ok">Alta · consolidar como piso</td></tr>
+      <tr><td>PJ en Dip. Nac. 2025</td><td class="ok">44,1% — PRIMERO · ~400 votos</td><td class="ok">Alta · mantener y ampliar</td></tr>
+      <tr><td>PJ vs JxC en Ejecutivo 2023</td><td class="warn">41,9% vs 49,0% · 7,1 pts abajo</td><td class="warn">Media · construir candidato 2027</td></tr>
+      <tr><td>Ticket split LLA prov/nac</td><td class="ok">27 pts a favor del PJ en prov.</td><td class="ok">Alta · explotar brecha · agenda prov. concreta</td></tr>
+      <tr><td>LLA en Nacionales</td><td class="warn">39,7% · riesgo de cierre del split en 2027</td><td class="warn">Atención · dique = agenda prov. visible</td></tr>
+      <tr><td>Fiesta Nacional Ave de Raza</td><td class="ok">Palanca identitaria #1</td><td class="ok">Alta · MinTurismo patrocinadora</td></tr>
+      <tr><td>Sociedad Rural / Ganadería</td><td class="ok">Corazón económico del partido</td><td class="ok">Alta · MinAgrario programa bovino</td></tr>
+      <tr><td>SIP · Industrialización</td><td class="ok">Ventana de co-gestión MinProducción</td><td class="ok">Alta · crédito productivo + visita</td></tr>
+      <tr><td>URRA · Ambiental</td><td class="ok">Modelo replicable para el Cluster 7</td><td class="warn">Media · reconocimiento MinAmbiente</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div><!-- /body -->
+<div class="footer">🔒 USO RESERVADO · Campaña PBA · Narrativa Política — Rauch · PBA Analytics 2026</div>
+
+</body>
+</html>

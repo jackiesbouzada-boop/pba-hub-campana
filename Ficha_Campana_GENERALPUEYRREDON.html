@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>General Pueyrredón — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#005f87;--accent:#0ea5e9;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#003554 0%,#0077b6 55%,#0ea5e9 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-op{display:inline-block;background:rgba(220,38,38,.25);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.4);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#003554,#0077b6);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#003554;border-color:#003554}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#0ea5e9;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#003554,#0077b6);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-op-pol{background:#fee2e2;color:#b91c1c}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#0369a1;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#e0f2fe;color:#0369a1;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#0369a1}
+.tbl-ok{color:#15803d;font-weight:700}
+.tbl-warn{color:#b45309;font-weight:700}
+.tbl-crit{color:#b91c1c;font-weight:700}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#e0f2fe,#bae6fd);border-color:#7dd3fc}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-fit{color:#dc2626}.v-vec{color:#0369a1}.v-grey{color:#374151}
+.split-box{background:#e0f2fe;border:1.5px solid #7dd3fc;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.split-title{font-size:.72rem;font-weight:800;color:#0369a1;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.split-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid #bae6fd}
+.split-row:last-child{border-bottom:none}
+.split-lbl{font-size:.77rem;color:#374151}
+.split-val{font-size:.82rem;font-weight:800;color:#0369a1}
+.split-pos{color:#15803d}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#003554,#0077b6);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#003554,#0077b6);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌊 CLUSTER 4 · Costero Atlántico &nbsp;|&nbsp; 5ª Sección Electoral</div>
+  <div class="h-name">GENERAL PUEYRREDÓN</div>
+  <div class="h-name2">Mar del Plata</div>
+  <div class="h-sub">Cabecera: Mar del Plata · Sierra de los Padres · Batán</div>
+  <div><span class="badge-op">⚠️ INTENDENTE OPOSITOR — Juntos por el Cambio</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">574,890</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">~667,000</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">1,462 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">31.0%</span><span class="h-stat-l">PJ 2025 Nac</span></div>
+    <div class="h-stat"><span class="h-stat-v">49.3%</span><span class="h-stat-l">LLA 2025 Nac</span></div>
+    <div class="h-stat"><span class="h-stat-v">+10.6 pts</span><span class="h-stat-l">Split Nac&gt;Prov PJ</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌊 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Mar del Plata · Puerto · UNMDP · Piazzolla</h4>
+        <p>Mar del Plata es la ciudad más importante de la costa atlántica argentina y el único municipio de PBA comparable a las grandes ciudades metropolitanas. Con 667,000 habitantes, alberga la <strong>Universidad Nacional de Mar del Plata</strong> (UNMDP, 30,000 estudiantes), el <strong>Puerto de Mar del Plata</strong> (la flota pesquera más grande del Atlántico Sur), el <strong>CONICET Mar del Plata</strong> (un nodo de ciencia y tecnología de primer nivel), y es cuna del bandoneonista y compositor <strong>Astor Piazzolla</strong> — el músico argentino más reconocido en el mundo. Es también la segunda ciudad más visitada por turistas nacionales después de Buenos Aires.</p>
+      </div>
+      <div class="blk">
+        <h4>El Municipio Más Grande Fuera del PJ</h4>
+        <p>Mar del Plata es históricamente el municipio más grande de PBA que el PJ no domina. La ciudad tiene una tradición política compleja: radicales, peronistas moderados, kirchneristas, vecinalistas y ahora LLA han competido por décadas sin que ninguna fuerza consolide una hegemonía estable. En 2023, el PJ no presentó candidato propio a intendente — la fuerza afín al kirchnerismo corrió bajo sello vecinalista y obtuvo 36.2%. La 5ª Sección tiene 14 municipios y Mar del Plata concentra más del 75% de su padrón total.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">Nº1</span>
+        <span class="l">Puerto pesquero del Atlántico Sur — la flota más grande de Argentina</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">ATICMA</span>
+        <span class="l">Cluster de IA y tecnología — uno de los hubs más activos de Latinoamérica</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Guillermo Montenegro</h3>
+        <div class="meta">Juntos por el Cambio &nbsp;·&nbsp; <span class="badge-pol badge-op-pol">OPOSITOR</span></div>
+        <div class="desc">Intendente de General Pueyrredón desde 2019 (reelecto 2023). JxC ganó en 2023 con 41.2% — el kirchnerismo corrió bajo sello vecinalista y sacó 36.2%, LLA 19.3%. Montenegro es un opositor consolidado en una ciudad con tradición de autonomía política respecto de Buenos Aires. La relación con el gobierno provincial es protocolar fría. Los activos más potentes del municipio —UNMDP, CONICET, Puerto, ATICMA— son todos federales o de gestión privada, sin dependencia del intendente.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Turismo · Temporada Alta</div>
+        <div class="gest-txt">Montenegro prioriza la infraestructura turística estacional. Inversión en paseo costero, iluminación, seguridad de temporada. Mar del Plata tiene 3M+ de turistas estivales anuales.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Seguridad Urbana</div>
+        <div class="gest-txt">Cámaras de seguridad, presencia policial reforzada. La percepción de inseguridad es uno de los principales reclamos vecinales marplatenses, especialmente en el turismo de alta temporada.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Puerto · Pesca</div>
+        <div class="gest-txt">La gestión del puerto es clave para el sector pesquero. Conflictos por administración, dragado y uso del espacio portuario entre empresas, cooperativas y el municipio son permanentes.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">ATICMA · Sector Tecnológico</div>
+        <div class="gest-txt">Montenegro apoya activamente el Cluster ATICMA (Agencia de Tecnologías de la Información, Comunicaciones y Medios Audiovisuales). Mar del Plata tiene una de las comunidades tech más activas de Argentina fuera de CABA.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>% aprox.</th><th>Localización</th><th>Perfil de Voto</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Clase media urbana</strong> (servicios, comercio, profesionales)</td><td class="tbl-num">35%</td><td>Centro, Playa Grande, Los Troncos</td><td>JxC histórico; migró en gran parte a LLA. Alta sensibilidad a gestión económica.</td></tr>
+        <tr><td><strong>Trabajadores del sector pesquero y portuario</strong></td><td class="tbl-num">15%</td><td>Puerto, La Perla, Barrio Belgrano</td><td>PJ con raíz sindical (SOMU, SICONARA). Sector muy organizado sindicalmente.</td></tr>
+        <tr><td><strong>Estudiantes y comunidad universitaria</strong> (UNMDP)</td><td class="tbl-num">10%</td><td>Centro, Barrio de las Chacras</td><td>Alta volatilidad. PJ, FIT y vecinalistas según ciclo. Argumento de educación pública resonante.</td></tr>
+        <tr><td><strong>Sector tecnológico y servicios digitales</strong> (ATICMA)</td><td class="tbl-num">8%</td><td>Centro, Barrio de los Macrosignos</td><td>Mixto. Afín a LLA en su discurso desregulatorio. PJ puede llegar con eje exportación digital.</td></tr>
+        <tr><td><strong>Turismo y gastronomía</strong> (temporada)</td><td class="tbl-num">12%</td><td>Costa, centro turístico</td><td>Alta volatilidad estacional. Sensible a políticas económicas y dólar.</td></tr>
+        <tr><td><strong>Sectores populares</strong> (barrios, periurbano)</td><td class="tbl-num">20%</td><td>Batán, Santa Rosa del Mar, periferia</td><td>PJ sólido. Base más estable del kirchnerismo marplatense.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 Arco Electoral 2023 → 2025 · El Split Más Espectacular de PBA</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">2023 — General (Intendente)</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP oficial</span><span class="arc-val v-pj">0%* <small style="font-weight:400;color:#64748b">(sin candidato)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Vecinalista (PJ afín)</span><span class="arc-val v-vec">36.2% <small style="font-weight:400;color:#64748b">(141,788)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Juntos x el Cambio</span><span class="arc-val v-jxc">41.2% <small style="font-weight:400;color:#64748b">(161,375)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">19.3% <small style="font-weight:400;color:#64748b">(75,696)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">589,157</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Provincial</div>
+        <div class="arc-row"><span class="arc-lbl">PJ</span><span class="arc-val v-pj">20.4% <small style="font-weight:400;color:#64748b">(68,210)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">38.1% <small style="font-weight:400;color:#64748b">(127,299)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val v-fit">2.2% <small style="font-weight:400;color:#64748b">(7,350)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Total</span><span class="arc-val v-grey">333,770</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">596,177</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">PJ</span><span class="arc-val v-pj">31.0% <small style="font-weight:400;color:#64748b">(108,695)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">49.3% <small style="font-weight:400;color:#64748b">(172,937)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val v-fit">4.9% <small style="font-weight:400;color:#64748b">(17,327)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">574,890</span></div>
+      </div>
+    </div>
+    <div style="font-size:.72rem;color:#64748b;margin-bottom:10px;font-style:italic">* En 2023, el PJ/kirchnerismo corrió bajo sello vecinalista y obtuvo 36.2% (141,788 votos). El campo "PJ" en la grilla de 2023 figura vacío por ausencia de candidato bajo etiqueta partidaria.</div>
+    <div class="split-box">
+      <div class="split-title">📐 Split Ticket 2025 — El Caso Más Extremo de PBA</div>
+      <div class="split-row"><span class="split-lbl">PJ Elección Provincial</span><span class="split-val">20.4% (68,210 votos)</span></div>
+      <div class="split-row"><span class="split-lbl">PJ Elección Nacional</span><span class="split-val split-pos">31.0% (108,695 votos)</span></div>
+      <div class="split-row"><span class="split-lbl">Diferencia (Nac − Prov)</span><span class="split-val split-pos">+10.6 pts · 40,485 votos más</span></div>
+      <div class="split-row"><span class="split-lbl" style="max-width:50%">Lectura estratégica</span><span class="split-lbl" style="max-width:50%;text-align:right;font-size:.74rem">El PJ nac obtuvo 40,000 votos más que el PJ prov en el mismo padrón. El candidato provincial fue muy débil en MDQ; el candidato nacional mucho más fuerte. Indicio: hay un bloque de ~40k votantes marplatenses dispuestos a votar PJ en la boleta nacional pero no en la provincial.</span></div>
+    </div>
+    <div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:8px;padding:12px 14px">
+      <div style="font-size:.72rem;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px">⚠️ LLA Primera Fuerza con Casi 50%</div>
+      <div style="font-size:.79rem;color:#374151;line-height:1.6">En 2025 nac, LLA obtuvo 172,937 votos (49.3%) — casi el doble del PJ. Es la mayor proporción LLA de cualquier municipio grande de PBA. Mar del Plata ha sido históricamente el gran bastión anti-kirchnerista del interior bonaerense. LLA consolidó y amplió esa tradición. El campo nacional para el PJ es duro.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <p style="color:#64748b;font-size:.78rem;margin-bottom:14px;">Personas, lugares y tradiciones que dan textura humana a la visita.</p>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🎵</div>
+        <div class="cl-tipo">Patrimonio cultural mundial</div>
+        <div class="cl-nm">Astor Piazzolla</div>
+        <div class="cl-desc">Mar del Plata es la ciudad natal de Astor Piazzolla, el músico argentino más reconocido en el mundo. El Festival Piazzolla Marplatense es un evento anual de altísimo prestigio cultural. Piazzolla es el activo simbólico más potente que tiene la ciudad para cualquier visitante que quiera conectar con la identidad cultural marplatense en un plano que trasciende lo local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎣</div>
+        <div class="cl-tipo">Comunidad laboral · Identidad portuaria</div>
+        <div class="cl-nm">Los pescadores del Puerto</div>
+        <div class="cl-desc">El Puerto de Mar del Plata aloja la flota pesquera más grande del Atlántico Sur. Los pescadores y procesadores de pescado son una comunidad laboral muy organizada sindicalmente (SOMU, SICONARA) con fuerte identidad propia. El muelle de madrugada, las cajas de langostinos, el olor a salitre — esa es la Mar del Plata que los visitantes de las clases altas no ven. Es donde el PJ tiene raíz más profunda.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎬</div>
+        <div class="cl-tipo">Cultura · Cine internacional</div>
+        <div class="cl-nm">Festival Internacional de Cine</div>
+        <div class="cl-desc">El Festival Internacional de Cine de Mar del Plata es el único festival de cine latinoamericano Categoría A de la FIAPF. Cada diciembre, directores, actores y críticos de todo el mundo se congregan en la ciudad. Es el evento cultural más prestigioso de PBA y el que pone a Mar del Plata en el mapa internacional del arte. Escenario de visita con impacto en el segmento cultural urbano más exigente.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🦞</div>
+        <div class="cl-tipo">Gastronomía · Tradición</div>
+        <div class="cl-nm">La Fiesta del Pescador</div>
+        <div class="cl-desc">La Fiesta Nacional de los Pescadores en julio es un evento de alta convocatoria popular que celebra la pesca como industria y cultura. Langostinos, merluza, pulpo. El Puerto se convierte en un festival de olores, sabores y sociabilidad donde los marplatenses de base —no los turistas de playa— son los protagonistas.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">💻</div>
+        <div class="cl-tipo">Innovación · Tecnología</div>
+        <div class="cl-nm">ATICMA: el Silicon Beach</div>
+        <div class="cl-desc">Mar del Plata tiene una comunidad de desarrolladores y startups que la convierte en el "Silicon Beach" de Argentina. El Cluster ATICMA concentra más de 100 empresas tech con foco en exportación digital. Un perfil de ciudad que no encaja con la imagen política tradicional de MDQ pero que es cada vez más influyente en el votante joven calificado.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏟️</div>
+        <div class="cl-tipo">Deporte · Pasión popular</div>
+        <div class="cl-nm">Aldosivi y Alvarado</div>
+        <div class="cl-desc">Aldosivi FC (con historia en Primera División) y Club Atlético Alvarado son las dos identidades futbolísticas del partido. La rivalidad entre ellas es el eje de sociabilidad más pasional de la ciudad. Los estadios de ambos son el espacio donde la identidad barrial de Mar del Plata se expresa sin filtros. Una visita a cualquiera de los dos tiene impacto comunitario real.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 1</div>
+          <div class="pal-ttl">UNMDP · Universidad Nacional</div>
+        </div>
+        <div class="pal-body">
+          <p>La Universidad Nacional de Mar del Plata tiene 30,000 estudiantes y es la institución pública más importante de la ciudad. Acceso directo — es federal. Eje: <strong>educación pública como política de Estado, ciencia como motor de desarrollo costero, CONICET como articulación entre conocimiento e industria local</strong>. Audiencia: docentes, investigadores, estudiantes, egresados.</p>
+          <span class="pal-tag acc-nac">🏛️ NACIONAL — UNMDP / Min. Educación</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 2</div>
+          <div class="pal-ttl">Puerto de MDQ · La Pesca como Industria</div>
+        </div>
+        <div class="pal-body">
+          <p>La flota pesquera marplatense exporta al mundo. El Puerto es el activo económico más real y más trabajador del municipio. Eje: <strong>trabajo portuario, sindicatos pesqueros, soberanía de los recursos del mar, política pesquera que protege al trabajador embarcado</strong>. Coordinar con SOMU (Sindicato de Obreros Marítimos Unidos) y SICONARA. El acceso es sindical, no municipal.</p>
+          <span class="pal-tag acc-priv">🏭 PRIVADO/SINDICAL — SOMU · SICONARA · Cámara pesquera</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 3</div>
+          <div class="pal-ttl">CONICET · ATICMA · Exportación Digital</div>
+        </div>
+        <div class="pal-body">
+          <p>Mar del Plata tiene uno de los centros CONICET más activos de PBA y el cluster tech ATICMA. Eje: <strong>Argentina que exporta conocimiento, ciencia aplicada al desarrollo costero, economía del conocimiento que se construye desde el Estado</strong>. Coordinar directamente con CONICET MDQ y con las empresas del cluster. No requiere intendente. Audiencia: científicos, tech workers, emprendedores.</p>
+          <span class="pal-tag acc-nac">🏛️ NACIONAL — CONICET · Min. CyT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Puerto de Mar del Plata · Muelle Pesquero <span style="background:#fef3c7;color:#92400e;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">SINDICAL — SOMU/SICONARA</span></div>
+          <div class="vis-desc">El escenario más potente del PJ en Mar del Plata. Pescadores, embarcados, procesadores. Coordinación con sindicatos. Discurso: trabajo pesquero, soberanía marítima, Estado que protege al trabajador del mar. Madrugada o primera hora — el ritmo del puerto.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">UNMDP — Campus universitario <span style="background:#dbeafe;color:#1e40af;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">NACIONAL</span></div>
+          <div class="vis-desc">La universidad pública más importante de la ciudad. Recorrida con rectorado, docentes y estudiantes. Eje educación pública y ciencia. Alta visibilidad. No requiere municipio.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">CONICET Mar del Plata <span style="background:#dbeafe;color:#1e40af;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">NACIONAL</span></div>
+          <div class="vis-desc">Centro de investigación con decenas de grupos activos en biología marina, pesca sustentable, tecnología y materiales. Argumento: ciencia al servicio del territorio costero. Audiencia: investigadores, técnicos, jóvenes científicos.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Festival Piazzolla (octubre-noviembre) / Festival de Cine (diciembre) <span style="background:#f3e8ff;color:#6b21a8;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PROTOCOLAR</span></div>
+          <div class="vis-desc">Los dos eventos culturales de mayor proyección nacional e internacional. Alta visibilidad con audiencia de clase media cultural y progresista urbana. Coordinar con organizadores de cada festival.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">ATICMA — Cluster tecnológico <span style="background:#fef3c7;color:#92400e;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PRIVADO — Empresas cluster</span></div>
+          <div class="vis-desc">La comunidad tech exportadora de Mar del Plata. Audencia: desarrolladores, emprendedores, tech workers. Discurso: exportación digital como política de Estado, economía del conocimiento que la Argentina construye desde el interior. Acceso directo con el cluster.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🎯 Síntesis Ejecutiva</h3>
+  <p>Mar del Plata es el municipio más complicado del sur bonaerense para el PJ y también el más importante. Con 574,000 electores en padrón, es la segunda concentración de votos de PBA después del Conurbano norte. LLA obtuvo aquí 49.3% en 2025 nacional — su mejor resultado en cualquier municipio grande de la provincia.</p>
+  <p>El dato más revelador es el split ticket de +10.6 pts: el PJ sacó 20.4% provincial y 31.0% nacional en el mismo padrón. Esos 40,000 votos adicionales en la boleta nacional dicen que hay un bloque de marplatenses dispuesto a votar PJ cuando el candidato les convence — pero que el candidato provincial de 2025 no les convenció. La ciudad no es impenetrable; tiene un precio de entrada que en 2025 no fue pagado por el candidato bonaerense.</p>
+  <p>Los activos son federales y privados — no dependen de Montenegro. El Puerto con los sindicatos pesqueros, la UNMDP, el CONICET y ATICMA son los cuatro vectores de entrada posibles. La narrativa correcta para Mar del Plata no es social ni asistencial: es de <strong>Estado que invierte en lo que Mar del Plata ya tiene</strong> — ciencia, pesca, cultura, tecnología. Una ciudad que merece más que gestión municipal y que la provincia puede articular.</p>
+</div>
+
+</body>
+</html>
