@@ -45,6 +45,7 @@ body{font-family:"Segoe UI",system-ui,Arial,sans-serif;background:var(--bg);colo
 .filter-bar select{padding:5px 9px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:.77rem;color:#475569}
 .pba-lf-popup .leaflet-popup-content-wrapper{border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.18);padding:0}
 .pba-lf-popup .leaflet-popup-content{margin:12px 14px;font-family:system-ui,sans-serif}
+.pba-m{background:none!important;border:none!important;}
 .map-toggle-btn{margin-left:auto;padding:6px 14px;background:#0f2944;color:#fff;border:none;border-radius:8px;font-size:.77rem;font-weight:700;cursor:pointer;transition:.15s}
 .map-toggle-btn:hover,.map-toggle-btn.active{background:#1d4e89}
 
@@ -356,8 +357,8 @@ function _linitMap(){
   if(window.LUGARES){
     window.LUGARES.forEach(function(p){
       var icon=L.divIcon({
-        html:'<div style="width:11px;height:11px;border-radius:50%;background:'+p.clr+';border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.45)"></div>',
-        className:'',iconSize:[11,11],iconAnchor:[5,5],popupAnchor:[0,-8]
+        html:'<div style="width:13px;height:13px;border-radius:50%;background:'+p.clr+';border:2px solid #fff;box-shadow:0 1px 6px rgba(0,0,0,.55)"></div>',
+        className:'pba-m',iconSize:[13,13],iconAnchor:[6,6],popupAnchor:[0,-8]
       });
       var ej=p.eje?'<span style="font-size:.6rem;font-weight:700;padding:2px 6px;border-radius:10px;background:#f1f5f9;color:#374151;border:1px solid #e2e8f0">'+p.eje+'</span>':'';
       var ca=p.cat?'<span style="font-size:.6rem;font-weight:700;padding:2px 6px;border-radius:10px;background:#dbeafe;color:#1e40af">'+p.cat+'</span>':'';
