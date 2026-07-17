@@ -830,6 +830,36 @@ body { background: #e8edf4 !important; }
   background: #f0f4f9;
   color: #0f2944;
 }
+
+/* ── Clusters colapsables ── */
+.cl-header {
+  cursor: pointer;
+  user-select: none;
+  transition: opacity .15s;
+}
+.cl-header:hover { opacity: .9; }
+
+.cl-body {
+  overflow: hidden;
+  transition: max-height .35s cubic-bezier(.4,0,.2,1), opacity .3s ease;
+  max-height: 4000px;
+  opacity: 1;
+}
+.cl-section.cl-collapsed .cl-body {
+  max-height: 0 !important;
+  opacity: 0;
+}
+
+.cl-chev {
+  margin-left: auto;
+  font-size: .8rem;
+  opacity: .55;
+  transition: transform .3s ease;
+  flex-shrink: 0;
+}
+.cl-section.cl-collapsed .cl-chev {
+  transform: rotate(-90deg);
+}
 </style>
 </head>
 <body>
@@ -840,14 +870,14 @@ body { background: #e8edf4 !important; }
     <span class="vtag">v3 · IE desde datos reales</span>
   </div>
   <div class="ntabs">
-    <button id="t-inm"  class="ntab active" onclick="showTab('inm')">📖 Inmersión Provincial</button>
-    <button id="t-rec"  class="ntab"        onclick="showTab('rec')">🗺️ Recorrida Territorial</button>
+    <button id="t-inm"  class="ntab"        onclick="showTab('inm')">📖 Inmersión Provincial</button>
+    <button id="t-rec"  class="ntab active" onclick="showTab('rec')">🗺️ Recorrida Territorial</button>
     <button id="t-fich" class="ntab"        onclick="showTab('fich')">📋 Fichas Municipales</button>
     <button id="t-met"  class="ntab"        onclick="showTab('met')">🔬 Metodología &amp; Estrategia</button>
   </div>
 </nav>
 
-<div id="s-inm" class="tsec active">
+<div id="s-inm" class="tsec">
   <style>
 
 @page { size: A4 portrait; margin: 12mm 12mm 15mm 12mm; }
@@ -1759,7 +1789,7 @@ h2 + p, h2 + div, h3 + p, h3 + div { page-break-before: avoid; break-before: avo
 
 </div>
 
-<div id="s-rec" class="tsec">
+<div id="s-rec" class="tsec active">
   
 <div class="rec-hero">
   <div class="rh-left">
@@ -1793,11 +1823,11 @@ h2 + p, h2 + div, h3 + p, h3 + div { page-break-before: avoid; break-before: avo
     <option value="PROTOCOLAR">🤝 Protocolar</option>
     <option value="ALTPRIV">🔄 Solo Alt. Privadas</option>
   </select>
-  <button class="map-toggle-btn" id="map-toggle-btn" onclick="toggleMap()">🗺️ Ver mapa</button>
+  <button class="map-toggle-btn active" id="map-toggle-btn" onclick="toggleMap()">✕ Cerrar mapa</button>
 </div>
 
-<div id="map-wrap" style="display:none;margin:0 16px 16px;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.15)">
-  <div id="main-map" style="height:520px;width:100%"></div>
+<div id="map-wrap" style="display:block;margin:0 16px 16px;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.15)">
+  <div id="main-map" style="height:560px;width:100%"></div>
 </div>
 
 <div id="clusters-wrap">
@@ -4014,6 +4044,45 @@ La visita ideal: 2 de abril, con veteranos de Malvinas, en la base. Imagen de ca
 {n:"🔄 Alt. Priv. — Calzados Guante — El calzado de trabajo que usa la mitad de los obreros de Argentina",m:"Coronel Suárez",cl:"SUR",clr:"#2e4057",acc:"PRIVADO",bg:"#d8f3dc",tc:"#1b4332",tot:7.55,ie:5,pc:9,ut:9,rs:8,lv:7,lat:-37.45447,lng:-61.93414,eje:"⚙️ Producción",cat:"⚙️ 3–5M",hook:"El calzado de seguridad que usa la mitad de los obreros industriales del país",just:"Guante fabrica el calzado de seguridad industrial que usa la mitad de los obreros industriales de Argentina. Fundada en Coronel Suárez en 1966, sigue siendo fam",rec:"A"},
 {n:"🔄 Alt. Priv. — Cooperativa Hortícola del Río Colorado — La cebolla del desierto que llega a Brasil",m:"Villarino",cl:"SUR",clr:"#2e4057",acc:"PRIVADO",bg:"#d8f3dc",tc:"#1b4332",tot:7.00,ie:5,pc:8,ut:9,rs:7,lv:6,lat:-39.24663,lng:-62.92022,eje:"🌾 Campo",cat:"🔬 2–3.5M",hook:"Produce cebollas en el desierto sur bonaerense bajo riego gota a gota",just:"En el desierto del sur bonaerense, esta cooperativa produce cebollas y pimientos bajo riego que se exportan a Brasil y Bolivia. Tecnología de riego gota a gota ",rec:"V"}];</script>
 <script>
+/* ── Mapa: init automático al cargar (ya está visible por defecto) ── */
+document.addEventListener('DOMContentLoaded', function() {
+  // Pequeño delay para que Leaflet CSS termine de calcular dimensiones
+  setTimeout(function() {
+    if (!_lmap) _linitMap();
+  }, 120);
+});
+
+/* ── Clusters colapsables ── */
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.cl-section').forEach(function(sec) {
+    var header = sec.querySelector('.cl-header');
+    if (!header) return;
+
+    // Envolver el contenido (todo menos .cl-header) en un .cl-body
+    var body = document.createElement('div');
+    body.className = 'cl-body';
+    var children = Array.from(sec.children);
+    children.forEach(function(child) {
+      if (!child.classList.contains('cl-header')) body.appendChild(child);
+    });
+    sec.appendChild(body);
+
+    // Agregar chevron al header
+    var chev = document.createElement('span');
+    chev.className = 'cl-chev';
+    chev.innerHTML = '&#9660;';
+    header.appendChild(chev);
+
+    // Empezar colapsado
+    sec.classList.add('cl-collapsed');
+
+    // Toggle al click
+    header.addEventListener('click', function() {
+      sec.classList.toggle('cl-collapsed');
+    });
+  });
+});
+
 /* ── Zona de usuario en nav ── */
 (function() {
   var body = document.body;
