@@ -216,7 +216,8 @@ app.get('/PBA_Maestro_2026.html', (req, res) => {
   try {
     let html = fs.readFileSync(path.join(__dirname, 'PBA_Maestro_2026.html'), 'utf8');
     const isAdmin = ADMIN_USER && req.session.username === ADMIN_USER;
-    html = html.replace('<body>', `<body data-admin="${isAdmin}">`);
+    const username = req.session.username || '';
+    html = html.replace('<body>', `<body data-admin="${isAdmin}" data-user="${username}">`);
     res.type('html').send(html);
   } catch (e) {
     res.status(500).send('Error al cargar el hub');
