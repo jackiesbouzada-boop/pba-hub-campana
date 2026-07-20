@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Pinamar — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#001d2e;--accent:#0077b6;--bg:#e8f4f8;--surface:#fff;--border:#90cce0;--text:#002b40;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#000e18 0%,#001d2e 55%,#0077b6 100%);color:#fff;padding:28px 32px 22px;border-radius:10px;margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'🌊';position:absolute;right:-10px;top:-10px;font-size:8rem;opacity:.1}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:5px}
+.h-name{font-size:2.1rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.8rem;opacity:.75;margin-bottom:12px}
+.badge{display:inline-block;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;margin-right:6px;margin-bottom:4px}
+.badge-op{background:rgba(185,28,28,.3);color:#fca5a5;border:1px solid rgba(185,28,28,.5)}
+.badge-crit{background:rgba(109,40,217,.3);color:#ddd6fe;border:1px solid rgba(109,40,217,.5)}
+.h-stats{display:flex;flex-wrap:wrap;gap:20px;margin-top:10px}
+.h-stat-v{font-size:1.1rem;font-weight:800;color:#7dd3fc;display:block}
+.h-stat-l{font-size:.67rem;opacity:.7;text-transform:uppercase}
+.sec{background:var(--surface);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#001d2e,#004e7c);color:#fff;padding:9px 18px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:14px 18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:12px 14px}
+.blk-k{background:#001d2e;border-color:#001d2e}
+.blk-k h4{color:#7dd3fc}
+.blk-k p{color:rgba(255,255,255,.9) !important}
+.blk h4{font-size:.72rem;font-weight:800;color:var(--accent);margin-bottom:5px;text-transform:uppercase}
+.blk p,.sec-body p{font-size:.8rem;color:#374151;line-height:1.6;margin-bottom:7px}
+.blk p:last-child,.sec-body p:last-child{margin-bottom:0}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:10px}
+.arc-card{border-radius:8px;padding:11px 13px;border:1.5px solid var(--border)}
+.arc-danger{background:#faf5ff;border-color:#ddd6fe}
+.arc-neutral{background:#f8fafc}
+.arc-year{font-size:.66rem;font-weight:800;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
+.arc-row{display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid #e8f4f8;font-size:.75rem}
+.arc-row:last-child{border-bottom:none}
+.lla-win{color:#7c3aed;font-weight:800;background:#f3e8ff;padding:1px 4px;border-radius:3px}
+.pj-win{color:#1d4ed8;font-weight:800;background:#eff6ff;padding:1px 4px;border-radius:3px}
+.pj{color:#1d4ed8;font-weight:700}
+.lla{color:#7c3aed;font-weight:700}
+.jxc{color:#d97706;font-weight:700}
+.grey{color:#374151;font-weight:600}
+.alert{border-radius:8px;padding:11px 14px;margin-top:9px}
+.alert-red{background:#fef2f2;border:1.5px solid #fca5a5}.alert-red .a-ttl{color:#991b1b}
+.alert-info{background:#eff6ff;border:1.5px solid #bfdbfe}.alert-info .a-ttl{color:#1e40af}
+.a-ttl{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.a-body{font-size:.78rem;color:#374151;line-height:1.6}
+.sint{background:linear-gradient(135deg,#001d2e,#004e7c);border-radius:10px;padding:18px 22px;color:#fff}
+.sint h3{font-size:.82rem;font-weight:800;text-transform:uppercase;color:#7dd3fc;margin-bottom:10px}
+.sint p{font-size:.81rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:7px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌊 COSTERO &nbsp;|&nbsp; 5ª Sección Electoral</div>
+  <div class="h-name">PINAMAR</div>
+  <div class="h-sub">Costa Premium · Cariló · Valeria del Mar · 65.7 km² · Economía estacional</div>
+  <div>
+    <span class="badge badge-op">🔴 OPOSITOR — Juan Manuel Ibarguren (JxC)</span>
+    <span class="badge badge-crit">🟣 LLA 50.7% GANÓ PROVINCIAL 2025 — PJ 30.2%</span>
+  </div>
+  <div class="h-stats">
+    <div><span class="h-stat-v">37,343</span><span class="h-stat-l">Padrón Prov 2025</span></div>
+    <div><span class="h-stat-v">39,449</span><span class="h-stat-l">Habitantes</span></div>
+    <div><span class="h-stat-v">30.2%</span><span class="h-stat-l">PJ Prov 2025</span></div>
+    <div><span class="h-stat-v">50.7%</span><span class="h-stat-l">LLA Prov 2025 🟣</span></div>
+    <div><span class="h-stat-v">58.4%</span><span class="h-stat-l">LLA Nac 2025 🔴</span></div>
+    <div><span class="h-stat-v">65.7 km²</span><span class="h-stat-l">Superficie (mínima)</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏖️ Identidad Territorial — Costa Premium</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="blk blk-k">
+        <h4>Pinamar · Cariló · Valeria del Mar</h4>
+        <p>El corredor turístico de mayor poder adquisitivo de la costa atlántica bonaerense. Arquitectura de autor, gastronomía premium, barrios privados, segunda residencia de la clase media-alta porteña. Pinamar Norte y Cariló concentran el desarrollo inmobiliario de lujo más activo de la costa.</p>
+      </div>
+      <div class="blk">
+        <h4>📊 Economía estacional — padrón flotante</h4>
+        <p>Pinamar tiene 37,343 electores en el padrón provincial pero solo 31,980 en el nacional — una diferencia de 5,363 personas. Residentes de verano inscriptos en el partido. La economía gira alrededor del turismo: el 80% de los ingresos del comercio se concentran en los meses de verano y los fines de semana largos.</p>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:9px">
+      <div class="blk">
+        <h4>🔒 Anillo Digital de Seguridad</h4>
+        <p>Cámaras de reconocimiento de patentes (LPR) en todos los accesos al partido — Pinamar, Ostende, Valeria del Mar y Cariló. Drones con IA para control de tránsito y detección de incendios en reserva forestal. Inversión de más de $1.000 millones en vehículos y tecnología. El programa Ojos en Alerta.</p>
+      </div>
+      <div class="blk">
+        <h4>🌿 Recuperación del Cordón Dunícola</h4>
+        <p>Enquinchados (captadores pasivos de arena) en más de 8 kilómetros de costa — de Pinamar norte a Cariló sur. Protección del médano costero y la biodiversidad. Programa de gestión del agua para monitorear la interfaz agua dulce/salada. Agenda ambiental genuina para una costa que vive de su entorno.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Juan Manuel Ibarguren (JxC) — OPOSITOR</div>
+  <div class="sec-body">
+    <p><strong>Juan Manuel Ibarguren (JxC)</strong> — Un opositor que llegó al poder en un partido donde el PJ y JxC tuvieron en 2023 literalmente 1 voto de diferencia (PJ 8,114 vs JxC 8,115). La victoria fue microscópica pero la tendencia posterior fue clara: LLA dominó el distrito en 2025 con más del 50% en la provincial.</p>
+    <p>La agenda de Ibarguren combina seguridad tecnológica, salud (nuevo servicio de hemodinamia, proyecto de hospital mayor) y medio ambiente costero. Un perfil de gestión moderno que sintoniza con el perfil socioeconómico del electorado de Pinamar — clase media-alta, consumidor de tecnología, preocupado por la calidad de vida en la costa.</p>
+    <p><strong>Nuevo Servicio de Hemodinamia:</strong> Inauguración en el Hospital Municipal para atender emergencias cardiovasculares in situ, evitando traslados críticos a Mar del Plata o Buenos Aires. Hito sanitario de impacto real para una población que incluye muchos adultos mayores en temporada.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025 — LLA domina el distrito premium</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-neutral">
+        <div class="arc-year">2023 — Intendente</div>
+        <div class="arc-row"><span>JxC 🟠</span><span class="jxc">37.2% (8,115)</span></div>
+        <div class="arc-row"><span>PJ / UxP</span><span class="pj">37.2% (8,114)</span></div>
+        <div class="arc-row"><span>LLA</span><span class="lla">25.6%</span></div>
+        <div class="arc-row"><span>Diferencia</span><span style="color:#991b1b;font-weight:800">1 VOTO</span></div>
+        <div class="arc-row"><span>Padrón</span><span class="grey">35,202</span></div>
+      </div>
+      <div class="arc-card arc-danger">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span>LLA 🟣</span><span class="lla-win">50.7% (8,670)</span></div>
+        <div class="arc-row"><span>PJ / UxP</span><span class="pj">30.2% (5,162)</span></div>
+        <div class="arc-row"><span>Padrón prov</span><span class="grey">37,343</span></div>
+      </div>
+      <div class="arc-card arc-danger">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span>LLA 🔴</span><span class="lla-win">58.4% (10,456)</span></div>
+        <div class="arc-row"><span>PJ / UxP</span><span class="pj">24.6% (4,413)</span></div>
+        <div class="arc-row"><span>Padrón nac</span><span class="grey">31,980</span></div>
+      </div>
+    </div>
+    <div class="alert alert-red">
+      <div class="a-ttl">🟣 LLA 50.7% en provincial — el distrito costero más duro para el PJ</div>
+      <div class="a-body">En 2023, el PJ perdió por literalmente 1 voto (8,114 vs 8,115). En 2025, LLA tomó el partido con mayoría absoluta: 50.7% en la provincial y 58.4% en la nacional. El PJ cayó del 37.2% al 30.2% (prov) y al 24.6% (nac). Pinamar es el distrito costero donde LLA tiene mayor hegemonía y donde el PJ tiene su techo más bajo.</div>
+    </div>
+    <div class="alert alert-info">
+      <div class="a-ttl">📊 El padrón flotante — clave para entender los números</div>
+      <div class="a-body">La diferencia de 5,363 electores entre el padrón provincial (37,343) y el nacional (31,980) refleja residentes de verano inscriptos en Pinamar que votaron en la provincial (celebrada en noviembre, cuando ya algunos volvieron al domicilio real) pero no en la nacional. El electorado real permanente del partido es considerablemente más pequeño que el padrón formal.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📋 Palancas · Visita · Estrategia</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="blk">
+        <h4>🎯 Realismo estratégico — no es distrito prioritario</h4>
+        <p>Con LLA al 50.7% en la provincial y el intendente opositor, Pinamar no es un distrito donde el PJ pueda aspirar a ganar en el corto plazo. La estrategia realista es limitar la caída: mantener al PJ por encima del 30% en la provincial y trabajar el electorado de trabajadores de servicios del partido.</p>
+      </div>
+      <div class="blk">
+        <h4>🏗️ El trabajador de la economía turística</h4>
+        <p>La población residente permanente de Pinamar tiene un perfil muy diferente al turista de verano. Los trabajadores de gastronomía, hotelería, construcción y servicios son el segmento más accesible para el PJ. La agenda de vivienda y empleo estacional es el canal más directo para llegar a ese electorado.</p>
+      </div>
+      <div class="blk">
+        <h4>🌿 Agenda ambiental costera</h4>
+        <p>La erosión del médano, la calidad del agua, el cuidado del bosque. Son temas que trascienden la grieta política en un partido donde la identidad está atada al entorno natural. Agenda ambiental como punto de contacto con un electorado que no es peronista pero valora el cuidado del territorio.</p>
+      </div>
+      <div class="blk">
+        <h4>🏥 Salud costera — agenda de base</h4>
+        <p>El nuevo servicio de hemodinamia y el proyecto de hospital mayor son temas de gestión concreta que impactan en la población residente. El PJ puede acompañar esas demandas desde la agenda provincial — salud de calidad en la costa, sin tener que trasladarse a Mar del Plata.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>Pinamar es el distrito costero donde LLA tiene mayor dominio: 50.7% en la provincial y 58.4% en la nacional.</strong> El intendente es JxC. El PJ cayó del 37.2% (2023) al 24.6% (nac 2025). No es un distrito recuperable en el corto plazo — el perfil socioeconómico del electorado (clase media-alta, propietarios de segunda residencia) es el que más se movió hacia LLA en toda la costa.</p>
+  <p>La estrategia realista es contener la caída por debajo del 30% en la próxima provincial y trabajar el segmento de trabajadores permanentes del partido (gastronomía, construcción, servicios). La agenda ambiental (médano, agua, bosque) puede ser un punto de entrada transversal.</p>
+  <p><strong>Prioridad provincial:</strong> BAJA. Pinamar requiere presencia institucional mínima, no inversión de capital político intenso. Los recursos de campaña tienen mayor retorno en otros distritos del COSTERO donde el PJ es más competitivo.</p>
+</div>
+
+</body>
+</html>
