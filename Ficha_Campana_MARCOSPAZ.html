@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Marcos Paz — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#3d2b00;--primary-dark:#1e1400;--accent:#7b5e00;--accent-light:#a07c00;--bg:#f5f0e8;--surface:#ffffff;--border:#d4c5a0;--text:#1a1200;--muted:#5a4a1a;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+
+.hero{background:linear-gradient(135deg,#1e1400 0%,#3d2b00 55%,#7b5e00 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'🌳';position:absolute;right:-20px;top:-20px;font-size:8rem;opacity:.08}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2.2rem;font-weight:900;letter-spacing:-.01em;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:14px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:4px}
+.badge-ok{display:inline-block;background:rgba(21,128,61,.3);color:#86efac;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(21,128,61,.4);letter-spacing:.5px;margin-left:6px;margin-bottom:4px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:10px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#fde68a}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#3d2b00,#5e4300);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.6;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#3d2b00;border-color:#3d2b00;color:#fff}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#fde68a}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--accent);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:var(--accent);display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#3d2b00,#7b5e00);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800;color:var(--text)}
+.int-info .int-meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .int-desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#3d2b00;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-ok{background:#f0fdf4;border-color:#86efac}
+.arc-neutral{background:#f8fafc;border-color:var(--border)}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f0f2f5}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.arc-pj{color:#1d4ed8}
+.arc-pj-win{color:#15803d;background:#dcfce7;padding:1px 5px;border-radius:4px}
+.arc-lla{color:#7c3aed}
+.arc-jxc{color:#d97706}
+.arc-fit{color:#dc2626}
+.arc-vec{color:#065f46}
+.arc-grey{color:#374151}
+
+.alert-box{border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-green{background:#f0fdf4;border:1.5px solid #86efac}
+.alert-green .a-ttl{color:#15803d}
+.alert-info{background:#eff6ff;border:1.5px solid #bfdbfe}
+.alert-info .a-ttl{color:#1e40af}
+.alert-gold{background:#fffbeb;border:1.5px solid #fde68a}
+.alert-gold .a-ttl{color:#92400e}
+.a-ttl{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.a-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:6px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#3d2b00,#7b5e00);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px;background:#fff}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-body p:last-child{margin-bottom:0}
+.pal-access{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-gest{background:#dcfce7;color:#15803d}
+.acc-inst{background:#dbeafe;color:#1e40af}
+.acc-priv{background:#fef3c7;color:#92400e}
+
+.prog-list{display:flex;flex-direction:column;gap:8px}
+.prog-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;gap:12px;align-items:flex-start}
+.prog-item.prog-highlight{border-color:#fde68a;background:#fffbeb}
+.prog-ico{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.prog-body h5{font-size:.78rem;font-weight:800;color:var(--primary);margin-bottom:3px}
+.prog-body p{font-size:.75rem;color:#374151;line-height:1.5}
+
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafaf7}
+.vis-num{background:var(--accent);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800;color:var(--text)}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.vis-tag{display:inline-block;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.tag-tech{background:#ede9fe;color:#6d28d9}
+.tag-eco{background:#dcfce7;color:#15803d}
+.tag-amb{background:#d1fae5;color:#065f46}
+.tag-soc{background:#dbeafe;color:#1e40af}
+
+.sint{background:linear-gradient(135deg,#1e1400,#3d2b00);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#fde68a;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}
+  .hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="h-cluster">🌾 INTERIOR &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">MARCOS PAZ</div>
+  <div class="h-sub">Ciudad del Árbol · Corredor Ruta 6 · Periferia Sur-Oeste · Blockchain Municipal · Municipio Digital 100%</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-ok">🟢 BASTIÓN PJ — 50% en provincial Y nacional 2025</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">53,841</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">67,011</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">422 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">49.8%</span><span class="h-stat-l">PJ 2025 Prov ✅</span></div>
+    <div class="h-stat"><span class="h-stat-v">27.4%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">49.8%</span><span class="h-stat-l">PJ 2025 Nac ✅✅</span></div>
+  </div>
+</div>
+
+<!-- IDENTIDAD -->
+<div class="sec">
+  <div class="sec-hdr">🌳 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>La Ciudad del Árbol — 100.000 plantaciones como política pública</h4>
+        <p>En 1994, Marcos Paz se declaró por decreto municipal <strong>"Ciudad del Árbol"</strong>. No fue un gesto simbólico: se convirtió en política pública sostenida. Más de 100.000 plantaciones en las últimas décadas, con la Fiesta Nacional del Árbol como evento identitario que posiciona al partido en la agenda ambiental bonaerense. En un corredor periurbano de alto crecimiento como la Ruta 6, esa identidad verde es también un activo diferencial frente al avance de la urbanización sin planificación.</p>
+      </div>
+      <div class="blk">
+        <h4>Ruta 6 — El corredor que conecta la periferia con el conurbano</h4>
+        <p>Marcos Paz está en el cruce del corredor productivo de la Ruta 6 — el eje que articula los partidos del sur-oeste bonaerense con el Gran Buenos Aires. Su ubicación estratégica lo convierte en zona de tránsito de producción agropecuaria e industrial ligera, pero también de crecimiento poblacional: familias que buscan tierra y acceso al transporte hacia el AMBA. El partido está en una transición acelerada de rural a periurbano, con todos los desafíos que eso implica.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">100K+</span>
+        <span class="l">Plantaciones de árboles — Ciudad del Árbol desde 1994</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">Digital 100%</span>
+        <span class="l">Municipio paperless — todos los trámites y expedientes electrónicos</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTENDENTE -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🌳</div>
+      <div class="int-info">
+        <h3>Ricardo Curutchet</h3>
+        <div class="int-meta">Unión por la Patria &nbsp;·&nbsp; <span class="badge-pol badge-al-pol">ALIADO</span></div>
+        <div class="int-desc">Intendente de Marcos Paz, uno de los pocos municipios de la provincia donde el PJ obtuvo aproximadamente el 50% del voto en ambas categorías electorales de 2025 — tanto en la categoría provincial como en la nacional. Gestión con perfil innovador notable: implementó blockchain para beneficios ciudadanos (programa "Activos Marcos Paz"), eliminó el papel de la administración pública por completo, y creó el SMILE (transporte subsidiado que conecta la periferia con el Tren Sarmiento). Una gestión que combina arraigo peronista profundo con apuestas tecnológicas de vanguardia poco habituales en el interior bonaerense.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">🚌 SMILE — Transporte Municipal Subsidiado</div>
+        <div class="gest-txt">Sistema municipal de colectivos con tarifas subsidiadas diseñado para conectar la periferia del partido con el Tren Sarmiento y el Centro Comercial. Resuelve el problema estructural de acceso al transporte de los barrios más alejados — la primera milla que separa a los vecinos del sistema de transporte interurbano.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🏢 UMIs — Red de Servicios Descentralizados</div>
+        <div class="gest-txt">Las Unidades Municipales Integradas funcionan como nodos de descentralización del Estado municipal: atención primaria de salud, desarrollo social y servicios comunitarios en los barrios, sin que el vecino deba trasladarse al centro. El municipio va al vecino en lugar de que el vecino vaya al municipio.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🌾 Hecho en Marcos Paz — Producción Local</div>
+        <div class="gest-txt">Programa de fomento a productores locales con marca propia y concentración en mercados de abaratamiento. Invernáculos, cría de aves y producción periurbana posicionados bajo la marca "Hecho en Marcos Paz" — conectando producción local con consumo local. El municipio como articulador entre el pequeño productor y el vecino consumidor.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">📱 Activos Marcos Paz — Blockchain Municipal</div>
+        <div class="gest-txt">App móvil sostenida sobre plataforma blockchain exclusiva para ciudadanos del municipio. Permite intercambiar beneficios, descuentos, promociones, créditos y ahorros. Una billetera de beneficios ciudadanos en blockchain — tecnología de punta aplicada a la política social local. Único en el interior bonaerense.</div>
+      </div>
+    </div>
+    <div class="gest-grid" style="margin-top:10px">
+      <div class="gest-item">
+        <div class="gest-label">💻 Municipio Digital 100%</div>
+        <div class="gest-txt">Eliminación absoluta del papel en la administración pública. Todos los expedientes, firmas y trámites ciudadanos se realizan de forma electrónica. El primer municipio del interior bonaerense en lograr la digitalización completa de su burocracia — sin excepciones, sin papel.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🌳 Ciudad del Árbol — Política Ambiental</div>
+        <div class="gest-txt">Sostenimiento y expansión del programa de arborización iniciado en 1994. La Fiesta Nacional del Árbol como evento identitario y la marca "Ciudad del Árbol" como activo de posicionamiento ambiental del partido en el corredor periurbano de la Ruta 6.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025 — Bastión peronista con 50% en ambas categorías 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-ok">
+        <div class="arc-year">2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP 🔵</span><span class="arc-val arc-pj-win">43.0% (15,811)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Vecinalismo</span><span class="arc-val arc-vec">23.4% (8,601)</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">18.0% (6,628)</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC</span><span class="arc-val arc-jxc">13.4% (4,929)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">51,674</span></div>
+      </div>
+      <div class="arc-card arc-ok">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP ✅✅</span><span class="arc-val arc-pj-win">49.8% (15,458)</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">27.4% (8,506)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">3.1% (970)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">53,841</span></div>
+      </div>
+      <div class="arc-card arc-ok">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP ✅✅</span><span class="arc-val arc-pj-win">49.8% (16,315)</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">35.7% (11,689)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">3.8% (1,246)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">50,640</span></div>
+      </div>
+    </div>
+    <div class="alert-box alert-green">
+      <div class="a-ttl">✅✅ Dato excepcional: PJ al 50% en AMBAS categorías el mismo día</div>
+      <div class="a-body">En la jornada electoral de 2025, el PJ de Marcos Paz obtuvo 49.8% tanto en la categoría provincial como en la nacional — con solo 8.3 puntos de diferencia en LLA entre una y otra (27.4% provincial vs 35.7% nacional). Es uno de los resultados más sólidos del peronismo en toda la provincia: el único distrito del INTERIOR donde el PJ supera el 49% en la categoría nacional de diputados. El split prov-nac en Marcos Paz es de apenas 8 puntos — contra 20-25 puntos de promedio en el interior. Esto no es casualidad; es una base electoral peronista extraordinariamente consolidada.</div>
+    </div>
+    <div class="alert-box alert-info">
+      <div class="a-ttl">📊 Tendencia: PJ suma 7 puntos entre 2023 y 2025 provincial</div>
+      <div class="a-body">En 2023, el PJ ganó la intendencia con 43.0%. En 2025, la categoría provincial subió al 49.8% — una ganancia de casi 7 puntos en dos años. El vecinalismo y JxC que en 2023 sumaban 36.8% se disolvieron como fuerzas autónomas y una parte sustancial fue al PJ. Marcos Paz no solo mantiene su base — la amplía. Es el modelo del peronismo que retiene su voto natural Y captura a los votantes que antes elegían otras opciones no libertarias.</div>
+    </div>
+    <div class="alert-box alert-gold">
+      <div class="a-ttl">🌾 Contexto territorial: periurbano en crecimiento, base fiel</div>
+      <div class="a-body">Marcos Paz está en transición de rural a periurbano acelerada — familias que llegan al partido buscando tierra, servicios y acceso al Gran Buenos Aires por la Ruta 6. Ese crecimiento poblacional (51.674 electores en 2023 → 53.841 en 2025) no ha diluido la base peronista. Al contrario: las políticas de integración (SMILE, UMIs, Hecho en Marcos Paz) construyen fidelización en los nuevos vecinos con la misma intensidad que en los históricos. El crecimiento territorial se convierte en crecimiento electoral.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COLOR LOCAL -->
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Economía &amp; Identidad</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🌳</div>
+        <div class="cl-tipo">Ambiente</div>
+        <div class="cl-nm">Ciudad del Árbol desde 1994</div>
+        <div class="cl-desc">100.000 plantaciones en tres décadas de política pública ambiental continua. La Fiesta Nacional del Árbol como evento identitario. El árbol como metáfora del partido: arraigado, creciente, verde en el periurbano del sur-oeste bonaerense.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📱</div>
+        <div class="cl-tipo">Innovación</div>
+        <div class="cl-nm">Blockchain · Municipio Digital</div>
+        <div class="cl-desc">El partido más innovador tecnológicamente del interior bonaerense: app blockchain para ciudadanos ("Activos Marcos Paz") y eliminación total del papel en la administración. La tecnología como herramienta de política social y eficiencia del Estado.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚌</div>
+        <div class="cl-tipo">Transporte</div>
+        <div class="cl-nm">SMILE — Colectivos Municipales</div>
+        <div class="cl-desc">Sistema propio de transporte subsidiado que conecta la periferia con el Tren Sarmiento. La primera milla resuelta por el municipio cuando el Estado nacional y provincial no llega a los barrios más alejados del corredor de la Ruta 6.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🌾</div>
+        <div class="cl-tipo">Producción</div>
+        <div class="cl-nm">Agro periurbano · Hecho en Marcos Paz</div>
+        <div class="cl-desc">Invernáculos, cría de aves y producción periurbana con marca propia. El programa "Hecho en Marcos Paz" conecta pequeños productores locales con el mercado de consumo del partido. Economía circular periurbana.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏢</div>
+        <div class="cl-tipo">Gestión Social</div>
+        <div class="cl-nm">UMIs — El Estado que va al vecino</div>
+        <div class="cl-desc">Las Unidades Municipales Integradas descentralizan servicios de salud y desarrollo social en los barrios. El modelo opuesto al ventanillo central: el Estado se desplaza al territorio, no el ciudadano al Estado.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🔄</div>
+        <div class="cl-tipo">Corredor</div>
+        <div class="cl-nm">Ruta 6 — Acceso al AMBA</div>
+        <div class="cl-desc">Posición estratégica en el corredor sur-oeste: producción agropecuaria e industrial ligera en tránsito hacia el Gran Buenos Aires. Crecimiento poblacional sostenido de familias que buscan el equilibrio entre espacio y acceso urbano.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMAS -->
+<div class="sec">
+  <div class="sec-hdr">📋 Programas Municipales Destacados</div>
+  <div class="sec-body">
+    <div class="prog-list">
+      <div class="prog-item prog-highlight">
+        <div class="prog-ico">📱</div>
+        <div class="prog-body">
+          <h5>Activos Marcos Paz — Billetera Blockchain para Ciudadanos</h5>
+          <p>App móvil única en Argentina para un municipio del interior: sostenida sobre plataforma blockchain, permite que los ciudadanos de Marcos Paz intercambien beneficios, descuentos, promociones, ahorros y créditos municipales. Una infraestructura digital de política social sin intermediación bancaria tradicional. El primer caso concreto de blockchain aplicado a política social local en la provincia de Buenos Aires.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">💻</div>
+        <div class="prog-body">
+          <h5>Municipio Digital 100% — Cero papel en la administración</h5>
+          <p>Eliminación completa del papel en toda la administración pública municipal. Expedientes, firmas digitales, trámites ciudadanos: todo electrónico, todo trazable, todo sin papel. No hay un área excluida. Marcos Paz es el municipio más digitalizado del interior bonaerense — con impacto en eficiencia administrativa, acceso ciudadano y costos operativos.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🚌</div>
+        <div class="prog-body">
+          <h5>SMILE — Sistema Municipal de Transporte Subsidiado</h5>
+          <p>Red de colectivos municipales con tarifas subsidiadas diseñada para resolver la "primera milla": conectar los barrios periféricos del partido con el Tren Sarmiento y el Centro Comercial. El SMILE parte de un diagnóstico simple: las líneas provinciales e interurbanas no llegan a los barrios más alejados. El municipio crea su propio sistema para cubrir ese vacío, subsidiando las tarifas con recursos propios.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🏢</div>
+        <div class="prog-body">
+          <h5>UMIs — Red de Unidades Municipales Integradas</h5>
+          <p>Nodos descentralizados de servicios municipales distribuidos por los barrios del partido. Cada UMI funciona como punto de acceso a atención primaria de salud, desarrollo social y servicios comunitarios — sin que el vecino deba desplazarse al centro. El modelo es simple: el Estado va al territorio, no el ciudadano al Estado. Las UMIs son la respuesta de Marcos Paz al problema de la distancia en el periurbano.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🌾</div>
+        <div class="prog-body">
+          <h5>Hecho en Marcos Paz — Producción y Economía Social Local</h5>
+          <p>Programa de fomento a la producción periurbana local — invernáculos, avicultura, huertas — bajo la marca propia "Hecho en Marcos Paz". Se articula con un mercado de abaratamiento donde los vecinos acceden a precios directos del productor. La marca no es solo branding: es el canal que conecta la pequeña producción local con el consumo interno del partido y genera una economía circular periurbana.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PALANCAS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Palancas de Impacto</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Gestión</div>
+          <div class="pal-ttl">📱 Activos MP · Blockchain</div>
+        </div>
+        <div class="pal-body">
+          <p>La app blockchain de Marcos Paz es el activo más singular de la gestión Curutchet. Una visita o evento en torno a "Activos Marcos Paz" posiciona una innovación concreta en política social que es única en la provincia. Narrativa de vanguardia tecnológica aplicada al vecino común.</p>
+          <p><span class="pal-access acc-gest">Gestión Local</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Social</div>
+          <div class="pal-ttl">🚌 SMILE · Transporte</div>
+        </div>
+        <div class="pal-body">
+          <p>El sistema de transporte subsidiado muestra la inversión concreta en los sectores con menor acceso. Los beneficiarios del SMILE son el núcleo más fiel del voto peronista en el partido — familias de barrios periféricos que dependen del transporte para trabajar. Canal directo de llegada.</p>
+          <p><span class="pal-access acc-soc">Social / Municipal</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Ambiente</div>
+          <div class="pal-ttl">🌳 Ciudad del Árbol</div>
+        </div>
+        <div class="pal-body">
+          <p>La Fiesta Nacional del Árbol y la identidad ambiental de Marcos Paz son el activo más visible del partido en la agenda verde bonaerense. Canal de llegada a vecinos con sensibilidad ambiental y a productores que valoran el entorno verde del corredor periurbano.</p>
+          <p><span class="pal-access acc-inst">Identidad / Ambiental</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS -->
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Sugeridas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Demo "Activos Marcos Paz" — La app blockchain municipal<span class="vis-tag tag-tech">INNOVACIÓN</span></div>
+          <div class="vis-desc">El producto más singular de la gestión Curutchet: una app blockchain de política social que no existe en ningún otro municipio bonaerense. Una visita con demostración en vivo posiciona a Marcos Paz como laboratorio de innovación política del interior — y al peronismo como la fuerza que acompaña la tecnología de vanguardia.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">UMI de barrio periférico — El Estado que va al vecino<span class="vis-tag tag-soc">SOCIAL</span></div>
+          <div class="vis-desc">Una visita a una Unidad Municipal Integrada en los barrios más alejados del centro muestra el modelo de descentralización del Estado con vecinos reales en contexto real. Canal de llegada a las familias que votan más consolidadamente al PJ en Marcos Paz.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Fiesta Nacional del Árbol — Identidad ambiental<span class="vis-tag tag-amb">AMBIENTE</span></div>
+          <div class="vis-desc">Evento identitario central del partido. La Fiesta del Árbol convoca a productores, vecinos y familias en torno a la identidad verde de Marcos Paz. Visibilidad positiva en un entorno de actividad comunitaria — el peronismo en el corazón de la identidad local.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Mercado Hecho en Marcos Paz — Producción periurbana<span class="vis-tag tag-eco">PRODUCCIÓN</span></div>
+          <div class="vis-desc">La articulación entre pequeños productores y consumidores locales bajo la marca propia. Canal de llegada al sector productivo periurbano — invernáculos, avicultores, productores de huerta — y a los vecinos que acceden a precios directos del campo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS -->
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>Marcos Paz es el bastión peronista más sólido del interior bonaerense.</strong> En 2025, el PJ obtuvo exactamente el mismo porcentaje — 49.8% — tanto en la categoría provincial como en la nacional. En un contexto donde la mayoría de los distritos del interior muestran splits prov-nac de 20 a 30 puntos, el split de apenas 8 puntos en Marcos Paz es una anomalía estadística positiva para el peronismo. Es el distrito donde la base peronista es más homogénea y más resistente al "voto cruzado" nacional.</p>
+  <p>La gestión Curutchet tiene una identidad propia que la distingue en el interior bonaerense: la combinación de arraigo peronista tradicional (SMILE, UMIs, Hecho en Marcos Paz) con innovación tecnológica genuina (blockchain municipal, municipio digital 100%). No es un municipio que hace mucho ruido — pero es un municipio que entrega resultados concretos y los convierte en fidelización electoral.</p>
+  <p><strong>El activo más estratégico es la app "Activos Marcos Paz":</strong> blockchain aplicado a política social local es una innovación única en la provincia. Posiciona a Marcos Paz como caso de vanguardia y al peronismo como la fuerza política que está en la frontera de la tecnología al servicio del vecino. Un activo de narrativa que trasciende al partido y construye imagen a escala provincial.</p>
+</div>
+
+</body>
+</html>
