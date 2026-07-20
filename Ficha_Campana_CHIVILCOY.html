@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Chivilcoy — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#3d2b00;--primary-dark:#1e1400;--accent:#7b5e00;--accent-light:#c49a16;--bg:#f5f0e8;--surface:#ffffff;--border:#e2d8c0;--text:#1a1a2e;--muted:#6b5c3e;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#1e1400 0%,#3d2b00 55%,#7b5e00 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2.2rem;font-weight:900;letter-spacing:-.01em;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:14px}
+.badge-op{display:inline-block;background:rgba(180,30,30,.25);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(180,30,30,.45);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#f5c842}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTION */
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#3d2b00,#5c4200);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;display:flex;align-items:center;gap:8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.6;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+
+/* BLOCKS */
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#3d2b00;border-color:#3d2b00;color:#fff}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#f5c842}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--accent);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:var(--accent);display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+
+/* INTENDENTE */
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#3d2b00,#7b5e00);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800;color:var(--text)}
+.int-info .int-meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .int-desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-op-pol{background:#fee2e2;color:#991b1b}
+.badge-vec-pol{background:#fef3c7;color:#78350f}
+
+/* GESTIÓN */
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#78350f;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+
+/* ARCO ELECTORAL */
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#fef9ef,#fef3c7);border-color:#f5c842}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f5f0e8}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.arc-pj{color:#1d4ed8}
+.arc-lla{color:#7c3aed}
+.arc-jxc{color:#d97706}
+.arc-vec{color:#78350f}
+.arc-fit{color:#dc2626}
+.arc-grey{color:#374151}
+
+/* SPLIT */
+.split-box{background:#fef9ef;border:1.5px solid #f5d77a;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.split-title{font-size:.72rem;font-weight:800;color:#78350f;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.split-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid #fef3c7}
+.split-row:last-child{border-bottom:none}
+.split-lbl{font-size:.77rem;color:#374151}
+.split-val{font-size:.82rem;font-weight:800}
+
+/* ALERTS */
+.alert-box{border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-ok{background:#f0fdf4;border:1.5px solid #bbf7d0}
+.alert-ok .a-ttl{color:#15803d}
+.alert-warn{background:#fef3c7;border:1.5px solid #fde68a}
+.alert-warn .a-ttl{color:#78350f}
+.alert-info{background:#fffbeb;border:1.5px solid #fde68a}
+.alert-info .a-ttl{color:#92400e}
+.alert-red{background:#fef2f2;border:1.5px solid #fecaca}
+.alert-red .a-ttl{color:#b91c1c}
+.a-ttl{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.a-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+/* COLOR LOCAL */
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:6px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+
+/* PALANCAS */
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#3d2b00,#7b5e00);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px;background:#fff}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-body p:last-child{margin-bottom:0}
+.pal-access{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-gest{background:#dcfce7;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+
+/* PROGRAMAS */
+.prog-list{display:flex;flex-direction:column;gap:8px}
+.prog-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;gap:12px;align-items:flex-start}
+.prog-ico{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.prog-body h5{font-size:.78rem;font-weight:800;color:var(--primary);margin-bottom:3px}
+.prog-body p{font-size:.75rem;color:#374151;line-height:1.5}
+
+/* VISITAS */
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafaf5}
+.vis-num{background:var(--accent);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800;color:var(--text)}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.vis-tag{display:inline-block;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.tag-ind{background:#fef3c7;color:#78350f}
+.tag-seg{background:#fee2e2;color:#991b1b}
+.tag-edu{background:#ede9fe;color:#6b21a8}
+.tag-sal{background:#dcfce7;color:#15803d}
+.tag-com{background:#dbeafe;color:#1e40af}
+
+/* SÍNTESIS */
+.sint{background:linear-gradient(135deg,#1e1400,#3d2b00);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#f5c842;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}
+  .hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="h-cluster">🌾 INTERIOR PAMPEANO &nbsp;|&nbsp; 4ª Sección Electoral</div>
+  <div class="h-name">CHIVILCOY</div>
+  <div class="h-sub">Partido de Chivilcoy · Buenos Aires · Cabecera: Chivilcoy · Ruta 5</div>
+  <div><span class="badge-op">⚠️ INTENDENTE VECINALISTA — Sin alineación UxP</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">62,440</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">70,839</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">2,059 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">52.6%</span><span class="h-stat-l">Vecinalismo 2023</span></div>
+    <div class="h-stat"><span class="h-stat-v">38.1%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">+17.2 pts</span><span class="h-stat-l">LLA Nac &gt; Prov</span></div>
+  </div>
+</div>
+
+<!-- IDENTIDAD TERRITORIAL -->
+<div class="sec">
+  <div class="sec-hdr">🌾 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Polo Industrial de Ruta 5 · Epicentro del Noroeste</h4>
+        <p>Chivilcoy es la capital comercial y de servicios del noroeste bonaerense. Sobre la Ruta 5 tiene uno de los parques industriales más activos del interior provincial: calzado y confección, agroalimentos, ensambladoras y plástico. Funciona como ciudad regional para localidades menores de la 4ª Sección — atrae consumo, salud, servicios técnicos agropecuarios y profesionales de todo el área. Su base productiva combina la industria liviana con el soporte al agro pampeano circundante.</p>
+      </div>
+      <div class="blk">
+        <h4>La ciudad del vecinalismo fuerte</h4>
+        <p>Chivilcoy tiene una de las tradiciones de movimiento vecinal más consolidadas del interior bonaerense. En 2023, el vecinalismo ganó la intendencia con el 52.6% de los votos — una contundencia inusual. La gestión de Guillermo Britos, ex comisario, instaló la <strong>seguridad</strong> como marca central del municipio: Centro Multiagencia 911, lectoras de patentes, patrullaje rural tecnificado (CPR). El municipio también sostiene su propio sistema de emergencias médicas (SAME) y un programa universitario municipal con más de 1.500 alumnos.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">1,500+</span>
+        <span class="l">Alumnos en tecnicaturas del CUCH — programa universitario municipal gratuito</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">1,200+</span>
+        <span class="l">Salidas mensuales del SAME municipal — único sistema de emergencias del partido</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTENDENTE -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🚔</div>
+      <div class="int-info">
+        <h3>Guillermo Britos</h3>
+        <div class="int-meta">Vecinalismo &nbsp;·&nbsp; <span class="badge-pol badge-vec-pol">SIN ALINEACIÓN UxP</span></div>
+        <div class="int-desc">Ex comisario. Ganó la intendencia en 2023 con el <strong>52.6% de los votos</strong> bajo una fuerza vecinal propia, superando ampliamente al PJ local (31%) y a LLA (8.6%). Instaló la seguridad como eje central de gestión. No tiene alineación formal con el espacio peronista provincial — es un actor autónomo que gobierna desde el vecinalismo.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">🚨 Seguridad y Blindaje Tecnológico</div>
+        <div class="gest-txt">Centro Multiagencia 911 con unificación de emergencias, lectoras de patentes en todos los accesos y red de cámaras. Patrullaje urbano y rural tecnificado (CPR). La seguridad como marca principal de la gestión de Britos.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🚑 SAME Chivilcoy</div>
+        <div class="gest-txt">El municipio absorbió el sistema de emergencias médicas y lo financia con su presupuesto. Bases con ambulancias de alta complejidad, médicos terapistas y radiooperadores. Más de 1.200 salidas mensuales — cubre también accidentes de Ruta 5.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🎓 CUCH — Centro Universitario Municipal</div>
+        <div class="gest-txt">Programa 100% municipal: el municipio financia convenios con UBA, UNLP y UTN para que docentes viajen a dictar tecnicaturas gratuitas en Chivilcoy. Más de 1.500 alumnos en programación, diseño y psicología. No es una universidad nacional — es una apuesta de gestión local.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🏗️ Infraestructura con Recursos Propios</div>
+        <div class="gest-txt">Plan masivo de asfalto y piedra caliza en barrios periféricos, sin depender de fondos provinciales o nacionales. Britos destaca la "autonomía municipal" como logro: integrar todos los cuadrantes de la ciudad con recursos propios.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">Vecinalismo</span><span class="arc-val arc-vec">52.6% (24,225)</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">31.0% (14,264)</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">8.6% (3,950)</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC</span><span class="arc-val arc-jxc">7.8% (3,590)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">61,691</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">38.1% (13,750)</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">24.4% (8,792)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">2.8% (1,025)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">62,440</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">32.6% (12,950)</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">41.6% (16,518)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">2.8% (1,119)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">60,809</span></div>
+      </div>
+    </div>
+    <div class="split-box">
+      <div class="split-title">📊 Claves del mapa electoral</div>
+      <div class="split-row"><span class="split-lbl">2023: Vecinalismo abrumador — 52.6% vs PJ 31%</span><span class="split-val" style="color:#78350f">Territorio no-PJ en lo local</span></div>
+      <div class="split-row"><span class="split-lbl">PJ Provincial 2025 sin vecinalismo en cancha</span><span class="split-val" style="color:#1d4ed8">38.1% — sube sin competencia vecinal</span></div>
+      <div class="split-row"><span class="split-lbl">LLA Prov 2025 → Nac 2025</span><span class="split-val" style="color:#dc2626">+17.2 pts (24.4% → 41.6%)</span></div>
+      <div class="split-row"><span class="split-lbl">PJ Prov 2025 → Nac 2025</span><span class="split-val" style="color:#78350f">-5.5 pts (38.1% → 32.6%)</span></div>
+    </div>
+    <div class="alert-box alert-warn">
+      <div class="a-ttl">⚠️ El voto vecinalista: ¿adónde va en 2025?</div>
+      <div class="a-body">En 2023, el 52.6% del padrón votó a Britos como intendente. En las legislativas 2025 sin candidato vecinalista, ese voto se redistribuyó: PJ subió a 38.1% y LLA subió a 24.4%. El volcado completo no es controlable — parte fue al PJ, parte a LLA. En la elección nacional 2025, LLA llegó al 41.6%, superando al PJ (32.6%). El partido sin conducción vecinalista en elecciones legislativas es territorio abierto y competitivo.</div>
+    </div>
+    <div class="alert-box alert-red">
+      <div class="a-ttl">🔴 LLA: crecimiento marcado en el interior</div>
+      <div class="a-body">LLA pasó de 8.6% en 2023 a 24.4% provincial y 41.6% nacional en 2025. El salto de +17 puntos entre la provincial y la nacional indica que hay un electorado que en lo local respalda al vecinalismo o al PJ pero en lo nacional optó por LLA. Es el interior pampeano respondiendo al discurso de cambio de la gestión nacional — el mismo fenómeno que aparece en Tandil, Olavarría y otras ciudades medianas.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COLOR LOCAL -->
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Economía &amp; Territorio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">👟</div>
+        <div class="cl-tipo">Industria</div>
+        <div class="cl-nm">Calzado · Confección · Agroalimentos</div>
+        <div class="cl-desc">Parque industrial sobre Ruta 5 con calzado, textil, agroalimentos, ensambladoras y plástico. Una de las concentraciones industriales más diversificadas del interior bonaerense.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏙️</div>
+        <div class="cl-tipo">Servicios / Regional</div>
+        <div class="cl-nm">Epicentro del Noroeste</div>
+        <div class="cl-desc">Ciudad polo de consumo, salud, servicios técnicos y agropecuarios para toda la 4ª Sección. Concentra comercio, profesionales y equipamiento que las localidades menores no tienen.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌾</div>
+        <div class="cl-tipo">Agropecuario</div>
+        <div class="cl-nm">Pampa Húmeda · Soja · Ganadería</div>
+        <div class="cl-desc">El partido está rodeado de producción agrícola extensiva. El sector agropecuario provee demanda de servicios técnicos, maquinaria y agroalimentos al parque industrial local.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🚨</div>
+        <div class="cl-tipo">Seguridad Pública</div>
+        <div class="cl-nm">Centro Multiagencia 911</div>
+        <div class="cl-desc">Sistema integrado de emergencias con cámaras, lectoras de patentes y patrullaje rural tecnificado. Marca distintiva de la gestión Britos — ex comisario con prioridad en seguridad urbana y de rutas.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación Municipal</div>
+        <div class="cl-nm">CUCH — Tecnicaturas Gratuitas</div>
+        <div class="cl-desc">Centro universitario municipal con convenios UBA, UNLP y UTN. Más de 1.500 alumnos en programación, diseño y psicología. Programa propio, no universidad nacional.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚑</div>
+        <div class="cl-tipo">Salud / Emergencias</div>
+        <div class="cl-nm">SAME Chivilcoy Municipal</div>
+        <div class="cl-desc">Sistema de emergencias absorbido y financiado por el municipio. Ambulancias de alta complejidad, médicos terapistas, más de 1.200 salidas mensuales. Cobertura también de accidentes en Ruta 5.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMAS -->
+<div class="sec">
+  <div class="sec-hdr">📋 Programas Municipales Destacados</div>
+  <div class="sec-body">
+    <div class="prog-list">
+      <div class="prog-item">
+        <div class="prog-ico">🚨</div>
+        <div class="prog-body">
+          <h5>Seguridad y Blindaje Tecnológico</h5>
+          <p>Centro Multiagencia 911, unificación de sistemas de emergencia, lectoras de patentes en accesos y red de monitoreo urbano. Patrullaje rural tecnificado (CPR) en áreas rurales del partido. La marca central de la gestión — instaló la seguridad como diferencial competitivo del municipio en la región.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🚑</div>
+        <div class="prog-body">
+          <h5>SAME Chivilcoy</h5>
+          <p>El municipio absorbió y financia el sistema de emergencias médicas pre-hospitalarias. Bases con ambulancias de alta complejidad, médicos terapistas y radiooperadores. Más de 1.200 salidas mensuales efectivas — el único escudo de respuesta rápida del partido, incluyendo cobertura de accidentes en Ruta 5.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🎓</div>
+        <div class="prog-body">
+          <h5>CUCH — Centro Universitario Chivilcoy</h5>
+          <p>Programa netamente municipal: el municipio financia convenios con UBA, UNLP y UTN para que docentes dicten tecnicaturas en Chivilcoy. Más de 1.500 alumnos en programación, diseño y psicología — totalmente gratuito y local. Frena el éxodo de jóvenes hacia La Plata o Buenos Aires para estudiar.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🏟️</div>
+        <div class="prog-body">
+          <h5>Becas Deportivas y Apoyo a Clubes</h5>
+          <p>Becas económicas directas a atletas amateurs de alto rendimiento. Fondos mensuales con rendición a clubes de barrio para material deportivo y mantenimiento de categorías infantiles gratuitas. Política de cohesión social a través del deporte en una ciudad que tiene tejido de clubes consolidado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PALANCAS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Palancas de Impacto</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🏭 Parque Industrial Ruta 5</div>
+        </div>
+        <div class="pal-body">
+          <p>El parque industrial es el actor económico más relevante del partido. Empresas de calzado, agroalimentos y plástico con empleados locales y cadenas de valor regionales. Interlocutor clave en una ciudad que no tiene intendente alineado.</p>
+          <p><span class="pal-access acc-priv">Ingreso PRIVADO</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🎓 Comunidad CUCH</div>
+        </div>
+        <div class="pal-body">
+          <p>Los 1.500 alumnos del Centro Universitario Municipal y sus familias son un núcleo de electores que valoran fuertemente la educación como política pública. Interlocutores directos con el discurso de inversión en capital humano.</p>
+          <p><span class="pal-access acc-gest">Educación Local</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🚜 Sector Agropecuario Regional</div>
+        </div>
+        <div class="pal-body">
+          <p>Chivilcoy es el centro de servicios del agro de la 4ª Sección. Cooperativas, técnicos agropecuarios, proveedores de insumos y financiamiento rural concentran su actividad en el partido. Canal de llegada a todo el noroeste bonaerense.</p>
+          <p><span class="pal-access acc-prot">Protocolar</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS SUGERIDAS -->
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Sugeridas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Parque Industrial Ruta 5 — Recorrida con empresas<span class="vis-tag tag-ind">INDUSTRIA</span></div>
+          <div class="vis-desc">Visita al principal parque industrial del noroeste bonaerense. Contacto con empresas de calzado, agroalimentos y plástico. Mensaje de apoyo a la producción interior.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Centro Universitario Chivilcoy (CUCH)<span class="vis-tag tag-edu">EDUCACIÓN</span></div>
+          <div class="vis-desc">Visita al programa universitario municipal. Contacto con alumnos de tecnicaturas gratuitas. Política educativa de alto impacto comunicacional — sin ser universidad nacional, el CUCH tiene más visibilidad que muchas universidades menores.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Centro Multiagencia 911 / SAME Municipal<span class="vis-tag tag-seg">SEGURIDAD</span></div>
+          <div class="vis-desc">Sistema de seguridad y emergencias integrado. En una ciudad donde la seguridad es el tema central de la gestión local, este espacio es el corazón operativo del municipio.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Cooperativas agropecuarias regionales<span class="vis-tag tag-com">REGIONAL</span></div>
+          <div class="vis-desc">Chivilcoy como epicentro de servicios del noroeste. Encuentro con cooperativas y productores de la 4ª Sección — interlocutores con llegada a toda el área rural circundante.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS -->
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>Chivilcoy es territorio no-peronista en lo local</strong> — el vecinalismo ganó con el 52.6% en 2023, duplicando al PJ. Guillermo Britos gobierna desde la autonomía municipal, con seguridad como marca central y un programa universitario propio que tiene más de 1.500 alumnos. No hay intendente aliado en este partido.</p>
+  <p>El mapa electoral de 2025 muestra la complejidad del partido: sin candidato vecinalista en las legislativas, el PJ llegó al 38.1% provincial — pero en la nacional cayó al 32.6%, mientras LLA escaló al 41.6%. El crecimiento de LLA (+17 pts entre provincial y nacional) refleja el mismo patrón de las ciudades medianas del interior: un electorado que en lo local respeta la gestión vecinal pero en lo nacional optó por el cambio.</p>
+  <p><strong>Para la provincia, Chivilcoy es un territorio de llegada indirecta</strong>: el canal pasa por la economía local (parque industrial, CUCH, cooperativas agropecuarias) y no por el intendente. El eje productivo — Ruta 5, industria liviana, servicios agropecuarios — es la puerta de entrada más concreta y desconectada del plano político local.</p>
+</div>
+
+</body>
+</html>

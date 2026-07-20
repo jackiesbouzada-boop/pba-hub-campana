@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Chivilcoy — Narrativa Política 2026</title>
+<style>
+:root{--primary:#3d2b00;--accent:#7b5e00;--bg:#f5f0e8;--surface:#fff;--border:#e2d8c0;--text:#1a1a2e;--muted:#6b5c3e;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:860px;margin:0 auto}
+
+.cover{background:linear-gradient(135deg,#1e1400 0%,#3d2b00 55%,#7b5e00 100%);color:#fff;padding:36px 36px 30px;border-radius:var(--radius);margin-bottom:16px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cv-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:8px}
+.cv-title{font-size:2.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:4px;line-height:1}
+.cv-sub{font-size:.9rem;opacity:.75;margin-bottom:20px}
+.cv-strip{display:flex;flex-wrap:wrap;gap:28px;border-top:1px solid rgba(255,255,255,.15);padding-top:18px}
+.cv-item{display:flex;flex-direction:column;gap:2px}
+.cv-val{font-size:1.1rem;font-weight:800;color:#f5c842}
+.cv-lbl{font-size:.67rem;opacity:.65;text-transform:uppercase;letter-spacing:.5px}
+
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#3d2b00,#5c4200);color:#fff;padding:11px 20px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:18px 20px;font-size:.84rem;color:#374151;line-height:1.7}
+.sec-body p{margin-bottom:12px}
+.sec-body p:last-child{margin-bottom:0}
+.sec-body strong{color:var(--primary)}
+
+.hbox{border-radius:8px;padding:14px 16px;margin:12px 0}
+.hbox-gold{background:#fef9ef;border-left:4px solid #f5c842}
+.hbox-blue{background:#eff6ff;border-left:4px solid #2563eb}
+.hbox-red{background:#fef2f2;border-left:4px solid #ef4444}
+.hbox-green{background:#f0fdf4;border-left:4px solid #22c55e}
+.hbox-title{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.hbox-gold .hbox-title{color:#78350f}
+.hbox-blue .hbox-title{color:#1d4ed8}
+.hbox-red .hbox-title{color:#b91c1c}
+.hbox-green .hbox-title{color:#15803d}
+.hbox p{font-size:.81rem;line-height:1.6;color:#374151}
+
+.tabla{width:100%;border-collapse:collapse;margin:12px 0;font-size:.8rem}
+.tabla th{background:#3d2b00;color:#fff;padding:8px 12px;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px}
+.tabla td{padding:8px 12px;border-bottom:1px solid var(--border);color:#374151}
+.tabla tr:last-child td{border-bottom:none}
+.tabla tr:nth-child(even){background:#faf7f0}
+.pj{font-weight:800;color:#1d4ed8}
+.lla{font-weight:800;color:#7c3aed}
+.vec{font-weight:800;color:#78350f}
+.jxc{font-weight:700;color:#d97706}
+.fit{font-weight:700;color:#dc2626}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.stat-card{border:1.5px solid var(--border);border-radius:8px;padding:14px;text-align:center;background:#faf7f0}
+.sc-num{font-size:1.8rem;font-weight:900;color:var(--accent);display:block}
+.sc-lbl{font-size:.72rem;color:var(--muted);margin-top:3px}
+
+.timeline{display:flex;flex-direction:column;gap:10px;margin:10px 0}
+.tl-item{display:flex;gap:14px;align-items:flex-start}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px}
+.tl-year{font-size:.72rem;font-weight:800;color:var(--accent);white-space:nowrap;min-width:42px;margin-top:3px}
+.tl-body{font-size:.81rem;color:#374151;line-height:1.5}
+.tl-body strong{color:var(--primary)}
+
+.cierre{background:linear-gradient(135deg,#1e1400,#3d2b00);border-radius:var(--radius);padding:24px 26px;color:#fff;margin-top:4px}
+.cierre h3{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:#f5c842;margin-bottom:14px}
+.cierre p{font-size:.83rem;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:10px}
+.cierre p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec,.cover,.cierre{break-inside:avoid;box-shadow:none;border:1px solid #e2e8f0}
+  .cover,.cierre{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-label">🌾 Interior Pampeano · 4ª Sección Electoral · Narrativa Política 2026</div>
+  <div class="cv-title">Chivilcoy</div>
+  <div class="cv-sub">Guillermo Britos · Vecinalismo · Sin alineación UxP · La ciudad donde el vecinalismo ganó con el 52%</div>
+  <div class="cv-strip">
+    <div class="cv-item"><span class="cv-val">62,440</span><span class="cv-lbl">Padrón 2025</span></div>
+    <div class="cv-item"><span class="cv-val">70,839 hab</span><span class="cv-lbl">Habitantes</span></div>
+    <div class="cv-item"><span class="cv-val">52.6%</span><span class="cv-lbl">Vecinalismo 2023</span></div>
+    <div class="cv-item"><span class="cv-val">38.1%</span><span class="cv-lbl">PJ — Prov 2025</span></div>
+    <div class="cv-item"><span class="cv-val">41.6%</span><span class="cv-lbl">LLA — Nac 2025</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌾 I. El territorio — Ciudad polo del noroeste bonaerense</div>
+  <div class="sec-body">
+    <p>Chivilcoy no es una ciudad cualquiera del interior. Es el polo de servicios, comercio, salud y educación de toda la 4ª Sección Electoral bonaerense. Las localidades más chicas del noroeste gravitan en torno a Chivilcoy para todo lo que no pueden resolver localmente: una consulta médica especializada, un trámite que requiere profesional, maquinaria agropecuaria, insumos industriales. Esa posición de centralidad regional hace de Chivilcoy un municipio con escala e influencia mayor a lo que su padrón sugiere.</p>
+    <p>La base productiva tiene dos piernas. Por un lado, el parque industrial sobre Ruta 5: calzado, confección, agroalimentos, plástico y ensambladoras — una concentración industrial liviana inusual para el interior pampeano. Por otro, la economía de servicios al agro: técnicos, insumos, maquinaria y financiamiento para la producción sojera y ganadera de los campos circundantes. La Ruta 5 no es solo la carretera que conecta con Buenos Aires — es el eje vertebrador de toda la actividad económica del partido.</p>
+    <div class="hbox hbox-gold">
+      <div class="hbox-title">La ciudad que hace todo sola</div>
+      <p>La gestión de Britos instaló el concepto de "autonomía municipal" como valor central: SAME propio con financiamiento municipal, CUCH con convenios universitarios pagados por el municipio, plan de asfalto con recursos propios. Es un modelo de gestión que no espera al Estado provincial o nacional — lo cual tiene consecuencias políticas en un contexto donde la articulación con la provincia es clave para el flujo de recursos.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🚔 II. Britos: el vecinalismo como marca de gobierno</div>
+  <div class="sec-body">
+    <p>Guillermo Britos llegó a la intendencia desde una trayectoria que no es la del peronismo ni la del macrismo: fue comisario. Su marca de campaña fue la seguridad, y su gestión la convirtió en política de Estado. El Centro Multiagencia 911, las lectoras de patentes en los accesos al partido, el patrullaje rural tecnificado — es un modelo de seguridad integrada que pocas ciudades del interior bonaerense tienen.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">2023</div>
+        <div class="tl-body"><strong>Victoria contundente del vecinalismo</strong> — 52.6% vs 31% del PJ. La primera vez que el vecinalismo gana tan claramente en Chivilcoy. Britos construyó una fuerza propia, no una coalición oportunista.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Gestión</div>
+        <div class="tl-body"><strong>Centro Multiagencia 911</strong> — Unificación de los sistemas de emergencia con cámaras, lectoras de patentes y canal de alerta vecinal. Cubre tanto el casco urbano como los corredores rurales del partido. La seguridad como inversión pública visible.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Gestión</div>
+        <div class="tl-body"><strong>SAME Chivilcoy</strong> — El municipio absorbió el sistema de emergencias médicas y lo financia íntegramente. Más de 1.200 salidas mensuales, incluyendo accidentes de Ruta 5. Britos usó el SAME para mostrar que el municipio puede hacer lo que el Estado provincial no hizo.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Gestión</div>
+        <div class="tl-body"><strong>CUCH</strong> — El Centro Universitario Municipal es el activo más singular: convenios con UBA, UNLP y UTN financiados por el municipio para traer docentes a Chivilcoy. 1.500 alumnos en tecnicaturas de programación, diseño y psicología — todo gratuito y local. No es una universidad nacional; es una apuesta de gestión local con impacto real.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Gestión</div>
+        <div class="tl-body"><strong>Plan de asfalto con recursos propios</strong> — Despliegue de pavimentación y piedra caliza en barrios periféricos financiado con presupuesto municipal. El "sin depender de nadie" es la narrativa que Britos usa para construir identidad autónoma.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ III. El mapa electoral — El elector chivilcoyano en tres momentos</div>
+  <div class="sec-body">
+    <p>El mapa electoral de Chivilcoy entre 2023 y 2025 cuenta tres historias distintas de cómo vota el mismo electorado según qué está en juego.</p>
+
+    <table class="tabla">
+      <thead>
+        <tr><th>Elección</th><th>Vecinalismo</th><th>PJ / UxP</th><th>LLA</th><th>JxC</th><th>Padrón</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2023 — Intendente</td><td class="vec">52.6% (24,225)</td><td class="pj">31.0% (14,264)</td><td class="lla">8.6% (3,950)</td><td class="jxc">7.8% (3,590)</td><td>61,691</td></tr>
+        <tr><td>2025 — Provincial</td><td>—</td><td class="pj">38.1% (13,750)</td><td class="lla">24.4% (8,792)</td><td>—</td><td>62,440</td></tr>
+        <tr><td>2025 — Nacional</td><td>—</td><td class="pj">32.6% (12,950)</td><td class="lla">41.6% (16,518)</td><td>—</td><td>60,809</td></tr>
+      </tbody>
+    </table>
+
+    <div class="two-col">
+      <div class="stat-card">
+        <span class="sc-num" style="color:#78350f">52.6%</span>
+        <div class="sc-lbl">Vecinalismo en 2023<br>La fuerza más potente de la historia chivilcoyana reciente</div>
+      </div>
+      <div class="stat-card">
+        <span class="sc-num" style="color:#7c3aed">+17.2 pts</span>
+        <div class="sc-lbl">LLA entre provincial y nacional 2025<br>El mayor salto en el interior pampeano</div>
+      </div>
+    </div>
+
+    <div class="hbox hbox-gold">
+      <div class="hbox-title">🗳️ 2023: Chivilcoy eligió a su intendente por lo local</div>
+      <p>Con el 52.6%, el vecinalismo no ganó — arrasó. El PJ quedó en 31% y LLA apenas llegó al 8.6%. En 2023, el electorado chivilcoyano razonó en clave municipal: eligió al ex comisario con propuesta de seguridad y servicios concretos, sin importar la etiqueta partidaria nacional. Es la lógica de la ciudad interior que separa lo local de lo nacional.</p>
+    </div>
+    <div class="hbox hbox-blue">
+      <div class="hbox-title">📊 2025 Provincial: el voto vecinalista sin candidato</div>
+      <p>Sin un candidato vecinalista en las legislativas provinciales, el PJ subió a 38.1% y LLA a 24.4%. El volcado del 52.6% vecinalista de 2023 se distribuyó: una parte fue al PJ (más cercano a Britos en lo local), otra parte a LLA. No todo el voto vecinalista es ideológicamente homogéneo — parte es peronismo de fondo, parte es pragmatismo que en 2023 eligió a Britos por su perfil y en 2025 buscó otro espacio.</p>
+    </div>
+    <div class="hbox hbox-red">
+      <div class="hbox-title">🔴 2025 Nacional: LLA al 41.6% — la ciudad que se mueve en lo nacional</div>
+      <p>El salto de LLA de 24.4% (provincial) a 41.6% (nacional) en la misma elección 2025 revela que hay una parte del electorado chivilcoyano que vota local/provincial de una forma y nacional de otra. El interior pampeano es el territorio donde el discurso de LLA sobre el ajuste, el Estado y la política tiene mayor adhesión. Chivilcoy no es la excepción — es parte del patrón de ciudad mediana del interior que en 2025 optó por LLA en lo nacional.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 IV. Ejes Estratégicos para 2026–2027</div>
+  <div class="sec-body">
+    <div class="hbox hbox-red">
+      <div class="hbox-title">🔴 El punto crítico: no hay intendente aliado</div>
+      <p>Britos es vecinalista autónomo. La articulación con la provincia no pasa por la política partidaria sino por las necesidades concretas de gestión. En una ciudad donde el municipio tiene SAME propio y plan de asfalto con recursos propios, la narrativa de la "autonomía municipal" hace más difícil instalar la necesidad de coordinación provincial.</p>
+    </div>
+    <div class="hbox hbox-blue">
+      <div class="hbox-title">📍 El canal de llegada: la economía, no el municipio</div>
+      <p>Chivilcoy tiene actores privados con gran peso: el parque industrial de Ruta 5, las cooperativas agropecuarias de la región, el tejido de comercios y servicios del polo regional. Esos actores tienen intereses concretos en infraestructura, conectividad, financiamiento y exportaciones — y son el canal de llegada más directo y legítimo en un municipio con intendente no alineado.</p>
+    </div>
+    <div class="hbox hbox-green">
+      <div class="hbox-title">🎓 El CUCH como punto de contacto provincial</div>
+      <p>El Centro Universitario Municipal funciona con convenios de universidades nacionales. Ese vínculo con la UBA, UNLP y UTN es un canal institucional que no pasa por Britos — pasa por las propias universidades y el Ministerio de Educación. Fortalecer ese eje es una palanca que beneficia directamente a los 1.500 alumnos sin necesitar la intermediación del intendente vecinalista.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cierre">
+  <h3>📌 Cierre Narrativo</h3>
+  <p>Chivilcoy es el municipio más claro del interior bonaerense en cuanto a identidad vecinalista: el 52.6% de 2023 no fue un accidente — fue la expresión de una ciudad que prefirió lo concreto sobre la etiqueta. Britos gobernó con esa lógica: SAME propio, tecnicaturas municipales, asfalto con recursos propios. La autonomía municipal es su bandera.</p>
+  <p>El mapa electoral de 2025 revela la complejidad que sigue: sin vecinalista en la boleta, el PJ llega al 38% pero LLA al 41.6% en la nacional. Es el interior pampeano en movimiento — el mismo electorado que en 2023 eligió a un ex comisario local en 2025 eligió a LLA en la nacional. Esa doble identidad (pragmático local, liberal nacional) es el perfil del votante chivilcoyano que define los límites de lo que el PJ provincial puede esperar del partido.</p>
+  <p><strong>La estrategia no pasa por el intendente — pasa por la economía local.</strong> El parque industrial, las cooperativas agropecuarias y la comunidad del CUCH son las puertas de entrada reales. Chivilcoy se trabaja por lo productivo, no por lo político.</p>
+</div>
+
+</body>
+</html>
