@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ficha de Campaña — Mar Chiquita</title>
+<style>
+:root{--prim:#001d2e;--acc:#0077b6;--light:#e8f4f8;--border:#90cce0;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#dceef5;color:#002b40;font-size:13px;max-width:900px;margin:0 auto;padding:14px}
+.fich-hero{background:linear-gradient(135deg,#000e18 0%,#001d2e 45%,#004e7c 80%,#0077b6 100%);color:#fff;border-radius:var(--radius);padding:26px 28px 22px;margin-bottom:12px;position:relative;overflow:hidden}
+.fich-hero::before{content:'🦩';position:absolute;right:-10px;bottom:-18px;font-size:10rem;opacity:.09}
+.fh-over{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;opacity:.6;margin-bottom:5px}
+.fich-hero h1{font-size:2.2rem;font-weight:900;line-height:1;margin-bottom:3px;text-transform:uppercase}
+.fh-sub{font-size:.85rem;opacity:.72;margin-bottom:14px;font-style:italic}
+.fh-tags{display:flex;flex-wrap:wrap;gap:6px}
+.fh-tag{font-size:.66rem;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff}
+.badge-warn{background:rgba(180,130,0,.35);border-color:rgba(250,204,21,.5);color:#fde68a}
+.badge-al{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:12px 14px}
+.card-dark{background:var(--prim);border-color:var(--prim);color:#fff}
+.card-dark .c-lbl{color:rgba(255,255,255,.65)}
+.card-dark .c-val{color:#fff}
+.card-dark h4{color:#7dd3fc}
+.c-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;color:#0077b6;letter-spacing:.5px;margin-bottom:3px}
+.c-val{font-size:1.5rem;font-weight:900;color:var(--prim);line-height:1}
+.c-note{font-size:.69rem;color:#666;margin-top:3px;line-height:1.4}
+.sec-hdr{background:var(--prim);color:#fff;border-radius:7px 7px 0 0;padding:8px 14px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 7px 7px;padding:14px;margin-bottom:10px}
+.prog-row{display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid #e8f4f8}
+.prog-row:last-child{border-bottom:none}
+.prog-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+.prog-body h4{font-size:.72rem;font-weight:800;color:var(--prim);margin-bottom:2px;text-transform:uppercase}
+.prog-body p{font-size:.76rem;color:#374151;line-height:1.5}
+.elec-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #e8f4f8;font-size:.76rem}
+.elec-row:last-child{border-bottom:none}
+.v-pj{color:#15803d;font-weight:800}
+.v-lla{color:#7c3aed;font-weight:800}
+.v-jxc{color:#d97706;font-weight:800}
+.bar-wrap{margin:6px 0}
+.bar-lbl{display:flex;justify-content:space-between;font-size:.66rem;margin-bottom:2px;color:#555}
+.bar{height:8px;border-radius:4px;background:#e5e7eb;overflow:hidden}
+.bar-fill-pj{height:100%;background:#16a34a;border-radius:4px}
+.bar-fill-lla{height:100%;background:#7c3aed;border-radius:4px}
+.bar-fill-jxc{height:100%;background:#d97706;border-radius:4px}
+.ok-box{background:#f0fdf4;border:1.5px solid #16a34a;border-radius:7px;padding:10px 13px;margin-bottom:10px}
+.ok-box p{font-size:.76rem;color:#14532d;line-height:1.55}
+.ok-box strong{color:#064e3b}
+@media print{body{background:#fff;padding:0}.fich-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card-dark,.sec-hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:9mm 11mm}}
+</style>
+</head>
+<body>
+
+<div class="fich-hero">
+  <div class="fh-over">🌊 Cluster COSTERO · 5ª Sección Electoral · PBA Analítica 2026</div>
+  <h1>Mar Chiquita</h1>
+  <div class="fh-sub">Única albufera del país · Santa Clara del Mar · Costa tranquila vs MDQ · Biósfera + Polo Agro</div>
+  <div class="fh-tags">
+    <span class="fh-tag badge-al">✅ Aliado — Walter Wischnivetzky (UxP)</span>
+    <span class="fh-tag badge-warn">⚠️ PJ 49.9% prov / LLA 44.9% nac — el más sólido del COSTERO</span>
+    <span class="fh-tag">🦩 Albufera única — Reserva Biósfera UNESCO</span>
+    <span class="fh-tag">🏖️ Costa tranquila adyacente a MDQ</span>
+    <span class="fh-tag">🐄 Ganadería interior — Coronel Vidal</span>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="card card-dark">
+    <div class="c-lbl">Padrón 2025</div>
+    <div class="c-val">33,970</div>
+    <div class="c-note">5ª Sección Electoral · 3,088 km²</div>
+  </div>
+  <div class="card card-dark">
+    <div class="c-lbl">PJ provincial 2025</div>
+    <div class="c-val">49.9%</div>
+    <div class="c-note">9,483 votos · +18 pts sobre LLA — el mejor del COSTERO</div>
+  </div>
+  <div class="card card-dark">
+    <div class="c-lbl">LLA nacional 2025</div>
+    <div class="c-val">44.9%</div>
+    <div class="c-note">9,078 votos · solo 851 votos sobre PJ (40.7%)</div>
+  </div>
+</div>
+
+<div class="sec-hdr">🦩 Identidad Territorial</div>
+<div class="sec-body">
+  <div class="grid2">
+    <div class="card">
+      <div class="c-lbl">Ecosistema único</div>
+      <h4 style="font-size:.8rem;color:#001d2e;margin-bottom:5px">Albufera Mar Chiquita — único ecosistema del país</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">La albufera de Mar Chiquita es única en Argentina — una laguna conectada directamente al mar, como la Albufera de Valencia en España. Es el hito ecológico más relevante de toda la costa bonaerense, declarado Reserva de Biósfera por UNESCO. Un patrimonio natural que diferencia radicalmente a Mar Chiquita de cualquier otro municipio costero.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Turismo costero</div>
+      <h4 style="font-size:.8rem;color:#001d2e;margin-bottom:5px">Santa Clara del Mar — la costa tranquila pegada a MDQ</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">Santa Clara del Mar, Mar de Cobo y Balneario Parque Mar Chiquita son la alternativa silenciosa a la masificación de Mar del Plata. El turismo que busca playas menos saturadas y precios más accesibles. El boom inmobiliario y turístico de los últimos años refleja una demanda real que el municipio no puede satisfacer todavía a plena escala.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Interior agropecuario</div>
+      <h4 style="font-size:.8rem;color:#001d2e;margin-bottom:5px">Coronel Vidal, Pirán y Vivoratá — el campo profundo</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">El partido tiene una dualidad marcada: la franja costera vive del turismo y la segunda residencia; el interior profundo (Coronel Vidal, General Pirán, Vivoratá) es ganadero y agrícola tradicional. Dos economías que coexisten y que requieren dos agendas de campaña diferenciadas.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Conectividad</div>
+      <h4 style="font-size:.8rem;color:#001d2e;margin-bottom:5px">Autovía Ruta 11 — obra con la Provincia</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">El tramo Villa Gesell - Mar Chiquita de la Autovía Ruta 11 es la obra de infraestructura más relevante del partido en 2026. Mejora la seguridad vial y el flujo turístico, dinamizando el acceso a balnearios antes aislados. Una obra de coordinación provincia-municipio que tiene impacto directo en la economía turística local.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec-hdr">🗳️ Mapa Electoral</div>
+<div class="sec-body">
+  <div class="grid2">
+    <div class="card">
+      <div class="c-lbl">Evolución electoral</div>
+      <div class="elec-row"><span>2023 PJ — Wischnivetzky ✅</span><span class="v-pj">50.3% (10,775)</span></div>
+      <div class="elec-row"><span>2023 JxC</span><span class="v-jxc">27.0% (5,778)</span></div>
+      <div class="elec-row"><span>2023 LLA</span><span class="v-lla">22.7% (4,863)</span></div>
+      <div class="elec-row"><span>2025 Prov PJ ✅</span><span class="v-pj">49.9% (9,483)</span></div>
+      <div class="elec-row"><span>2025 Prov LLA</span><span class="v-lla">31.8% (6,046)</span></div>
+      <div class="elec-row"><span>2025 Nac LLA ⚠️</span><span class="v-lla">44.9% (9,078)</span></div>
+      <div class="elec-row"><span>2025 Nac PJ</span><span class="v-pj">40.7% (8,227)</span></div>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Distribución 2025 provincial</div>
+      <div class="bar-wrap">
+        <div class="bar-lbl"><span>PJ — 49.9%</span><span>9,483 votos</span></div>
+        <div class="bar"><div class="bar-fill-pj" style="width:49.9%"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-lbl"><span>LLA — 31.8%</span><span>6,046 votos</span></div>
+        <div class="bar"><div class="bar-fill-lla" style="width:31.8%"></div></div>
+      </div>
+      <div style="margin-top:10px">
+        <div class="c-lbl">Distribución 2025 nacional</div>
+        <div class="bar-wrap">
+          <div class="bar-lbl"><span>LLA — 44.9%</span><span>9,078 votos</span></div>
+          <div class="bar"><div class="bar-fill-lla" style="width:44.9%"></div></div>
+        </div>
+        <div class="bar-wrap">
+          <div class="bar-lbl"><span>PJ — 40.7%</span><span>8,227 votos</span></div>
+          <div class="bar"><div class="bar-fill-pj" style="width:40.7%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ok-box">
+    <p><strong>✅ El municipio costero más sólido para el PJ:</strong> 49.9% en la provincial 2025 — casi mayoría absoluta. LLA gana la nacional por solo 851 votos (44.9% vs 40.7%). El split es de apenas 9 puntos entre provincial y nacional, muy inferior al promedio costero. Mar Chiquita es el distrito COSTERO donde el PJ tiene mejor posición relativa y mayor piso electoral.</p>
+  </div>
+</div>
+
+<div class="sec-hdr">🎯 Programas Municipales</div>
+<div class="sec-body">
+  <div class="prog-row">
+    <div class="prog-icon">🦩</div>
+    <div class="prog-body">
+      <h4>Reserva de Biósfera Mar Chiquita</h4>
+      <p>Plan de manejo 2026 para el único ecosistema de albufera de Argentina: límites estrictos a la urbanización en zonas de amortiguación, programa de turismo ecológico, protección de biodiversidad. La albufera conectada al mar es el activo diferencial más poderoso del municipio. Cuidarla es defender el modelo económico del partido.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🎉</div>
+    <div class="prog-body">
+      <h4>Fiestas Populares Descentralizadas</h4>
+      <p>Fiesta del Potrillo, Empanada Costera y Cerveza Artesanal: el municipio pone escenarios, sonido y promoción; los puestos de cantina son concesionados exclusivamente a instituciones locales — bomberos, clubes, escuelas. Un fin de semana de fiesta genera lo que una institución necesita para funcionar todo el año. Modelo de economía social aplicado a la cultura popular.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🏥</div>
+    <div class="prog-body">
+      <h4>Guardias Permanentes en CAPS</h4>
+      <p>Incentivos municipales para garantizar médicos 24 horas y ambulancias de alta complejidad en los CAPS de Santa Clara del Mar (costa) y Vivoratá (interior profundo). En verano resuelven in situ miles de atenciones mensuales — politraumatismos de ruta y urgencias turísticas — derivando ya estabilizados. Salud de primer nivel sin depender del traslado a Mar del Plata.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🚌</div>
+    <div class="prog-body">
+      <h4>Transporte Educativo Municipal</h4>
+      <p>Flota de colectivos subsidiados y coordinados por el municipio para traslado diario y gratuito de alumnos desde el interior (Pirán, Vidal) hacia escuelas técnicas costeras y hacia la universidad en Mar del Plata. Sin este transporte, el derecho a la educación es solo formal para los jóvenes del interior del partido.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🏗️</div>
+    <div class="prog-body">
+      <h4>Polideportivo Coronel Vidal + Circuito Costero</h4>
+      <p>Infraestructura deportiva en Coronel Vidal y pavimentación del circuito costero que conecta localidades antes aisladas. Una política de integración territorial que une las "dos Mar Chiquitas": la costa turística y el interior ganadero. El Polideportivo es para la ciudad del interior; el circuito costero es para el turismo.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
