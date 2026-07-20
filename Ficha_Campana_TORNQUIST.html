@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ficha de Campaña — TORNQUIST</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;min-height:100vh}
+  .page{max-width:960px;margin:0 auto;padding:20px}
+
+  .header{background:linear-gradient(135deg,#2e4057 0%,#1a2535 100%);color:#fff;border-radius:14px 14px 0 0;padding:28px 32px 22px}
+  .header-top{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+  .cluster-badge{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:4px 14px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .muni-name{font-size:2.1rem;font-weight:800;letter-spacing:-.5px;line-height:1.1}
+  .muni-sub{font-size:.95rem;opacity:.82;margin-top:4px}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .badge{padding:5px 14px;border-radius:20px;font-size:.78rem;font-weight:700;letter-spacing:.04em}
+  .badge-al{background:#2563eb;color:#fff}
+  .badge-warn{background:#d97706;color:#fff}
+  .badge-op{background:#dc2626;color:#fff}
+  .badge-crit{background:#7c3aed;color:#fff}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .card{background:#fff;padding:22px 24px;border:1px solid #e5e7eb}
+  .card:nth-child(1){border-radius:0;border-top:none;border-right:none}
+  .card:nth-child(2){border-radius:0;border-top:none}
+  .card.full{grid-column:1/-1;border-top:none;border-radius:0 0 14px 14px}
+  .card-title{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#2e4057;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #2e4057}
+
+  .intendente-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#2e4057,#1a2535);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+  .int-name{font-size:1.05rem;font-weight:700;color:#1a1a2e}
+  .int-partido{font-size:.8rem;color:#6b7280;margin-top:2px}
+  .int-meta{font-size:.78rem;color:#374151;margin-top:8px;line-height:1.5;background:#f0f4ff;border-left:3px solid #2563eb;padding:8px 12px;border-radius:0 6px 6px 0}
+
+  .stat-big{text-align:center;padding:10px 0}
+  .stat-num{font-size:2rem;font-weight:800;color:#2e4057;line-height:1}
+  .stat-lbl{font-size:.72rem;color:#6b7280;margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+  .stat-row{display:flex;gap:10px;margin-top:12px}
+  .stat-mini{flex:1;text-align:center;background:#f9fafb;border-radius:8px;padding:10px 6px}
+  .stat-mini .num{font-size:1.1rem;font-weight:700;color:#1a1a2e}
+  .stat-mini .lbl{font-size:.65rem;color:#9ca3af;margin-top:2px}
+
+  .elec-block{margin-bottom:16px}
+  .elec-year{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;margin-bottom:8px}
+  .bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .bar-label{font-size:.78rem;color:#374151;width:36px;text-align:right;font-weight:600;flex-shrink:0}
+  .bar-track{flex:1;height:22px;background:#f3f4f6;border-radius:4px;overflow:hidden;position:relative}
+  .bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:6px}
+  .bar-fill span{font-size:.7rem;font-weight:700;color:#fff;white-space:nowrap}
+  .bar-pj{background:#1d4ed8}
+  .bar-jxc{background:#dc2626}
+  .bar-lla{background:#7c3aed}
+  .elec-note{font-size:.72rem;color:#9ca3af;font-style:italic;margin-top:4px}
+
+  .id-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .id-tag{background:#e8edf5;border:1px solid #2e4057;border-radius:20px;padding:3px 11px;font-size:.73rem;color:#1a2535;font-weight:600}
+  .id-text{font-size:.82rem;line-height:1.65;color:#374151}
+  .id-text p{margin-bottom:8px}
+
+  .prog-list{list-style:none}
+  .prog-list li{display:flex;gap:10px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #f3f4f6;align-items:flex-start}
+  .prog-list li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .prog-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+  .prog-name{font-size:.83rem;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .prog-desc{font-size:.76rem;color:#6b7280;line-height:1.5}
+
+  .footer{background:#1a1a2e;color:#9ca3af;text-align:center;font-size:.72rem;padding:12px;border-radius:0 0 14px 14px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="header-top">
+      <span style="font-size:2rem">⛰️</span>
+      <div>
+        <span class="cluster-badge">SUR · 6ª Sección Electoral</span>
+        <div class="muni-name">TORNQUIST</div>
+        <div class="muni-sub">PJ aliado (electo 2023 con 42.7%) · Comarca de la Ventana · Padrón 16.637</div>
+      </div>
+    </div>
+    <div class="badges">
+      <span class="badge badge-al">✅ PJ Aliado 2023</span>
+      <span class="badge badge-warn">⚠️ LLA 50.4% en nac.</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">🏛️ Situación Política</div>
+      <div class="intendente-row">
+        <div class="avatar">⛰️</div>
+        <div>
+          <div class="int-name">PJ — Electo 2023</div>
+          <div class="int-partido">6ª Sección Electoral · SUR bonaerense</div>
+        </div>
+      </div>
+      <div class="int-meta">
+        PJ ganó 2023 con 42.7% vs JxC 36.1% y LLA 21.2%. El ex intendente Bordoni (JxC) pasó al Directorio del Banco Provincia. PJ lidera la prov. 2025 con 44.9%. LLA se disparó a 50.4% en la nacional — señal de atención en territorio turístico.
+      </div>
+
+      <div style="margin-top:20px">
+        <div class="card-title">📊 Padrón Electoral</div>
+        <div class="stat-big">
+          <div class="stat-num">16.637</div>
+          <div class="stat-lbl">electores habilitados 2025</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-mini">
+            <div class="num">10.347</div>
+            <div class="lbl">votos 2023</div>
+          </div>
+          <div class="stat-mini">
+            <div class="num">9.016</div>
+            <div class="lbl">votos prov. 2025</div>
+          </div>
+          <div class="stat-mini">
+            <div class="num">54.2%</div>
+            <div class="lbl">participación</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🗳️ Resultados Electorales</div>
+
+      <div class="elec-block">
+        <div class="elec-year">2023 — General Municipal</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:42.7%"><span>42.7% (4.420)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#dc2626">JxC</span>
+          <div class="bar-track"><div class="bar-fill bar-jxc" style="width:36.1%"><span>36.1% (3.736)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:21.2%"><span>21.2% (2.191)</span></div></div>
+        </div>
+        <div class="elec-note">Total votos: 10.347 · PJ gana municipales</div>
+      </div>
+
+      <div class="elec-block">
+        <div class="elec-year">2025 — Elección Provincial PBA</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:80%"><span>44.9% (4.056)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:63%"><span>35.8% (3.229)</span></div></div>
+        </div>
+        <div class="elec-note">PJ lidera provincial con ventaja de 9 pts · Total: 9.016</div>
+      </div>
+
+      <div class="elec-block">
+        <div class="elec-year">2025 — Elección Nacional</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:90%"><span>50.4% (7.432)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:64%"><span>35.9% (5.299)</span></div></div>
+        </div>
+        <div class="elec-note">LLA lidera la nacional por 14.5 pts · señal de riesgo</div>
+      </div>
+    </div>
+
+    <div class="card" style="grid-column:1/-1;border-top:none;border-bottom:none">
+      <div class="card-title">🏙️ Identidad Territorial</div>
+      <div class="id-tags">
+        <span class="id-tag">Comarca de la Ventana — Sierras del Sur PBA</span>
+        <span class="id-tag">Parque Provincial Tornquist</span>
+        <span class="id-tag">Cerro Tres Picos (único cerro en isla del país)</span>
+        <span class="id-tag">Sierra de la Ventana · Villa Ventana</span>
+        <span class="id-tag">Ruta del Vino — Saldungaray</span>
+        <span class="id-tag">Trigo · Cebada · Chacinados Artesanales</span>
+        <span class="id-tag">Turismo de pernocte todo el año</span>
+        <span class="id-tag">50ª Exposición Rural 2026</span>
+      </div>
+      <div class="id-text">
+        <p>Tornquist es el <strong>único municipio de la provincia de Buenos Aires con sierras reales</strong>. La Comarca de la Ventana —Sierra de la Ventana, Villa Ventana, el Parque Provincial Tornquist— atrae turismo todo el año con una oferta de cabañas, hotelería de montaña y gastronomía que es el principal motor de empleo privado del distrito. El Cerro Tres Picos, el pico más alto de la provincia (1.239 m), es acceso en campo privado a través de un único operador de ecoturismo: singularidad nacional irreproducible.</p>
+        <p>La economía agrícola del llano —trigo, cebada, ganadería de cría, chacinados y quesos artesanales— convive con el vector turístico sin tensión porque ocupan territorios distintos. La <strong>Ruta del Vino de Saldungaray</strong> representa la apuesta por el turismo de alta gama, con bodegas que posicionaron a Tornquist como productor vitivinícola de alcance provincial. Dufaur suma otro pueblo turístico al circuito.</p>
+        <p>La <strong>50ª Exposición Rural (bodas de oro, abril/mayo 2026)</strong> es el evento de mayor movilización del año, integrando producción, comercio y turismo en el principal encuentro socioproductivo de la región.</p>
+      </div>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">⚙️ Programas e Hitos de Gestión</div>
+      <ul class="prog-list">
+        <li>
+          <span class="prog-icon">🏔️</span>
+          <div>
+            <div class="prog-name">Plan de Turismo Sustentable 2026</div>
+            <div class="prog-desc">Regulación de desarrollos inmobiliarios en Villa Ventana y Sierra de la Ventana para proteger el acuífero y el paisaje serrano. Fomento del turismo de "pernocte largo" con mejora de oferta cultural y gastronómica fuera de fines de semana. Eje de diferenciación frente a destinos de día.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🔥</span>
+          <div>
+            <div class="prog-name">Alerta Temprana para Incendios Forestales</div>
+            <div class="prog-desc">Coordinación con la Provincia para mantenimiento de senderos y sendero de ascenso al Cerro Ventana, más implementación de sistemas de alerta temprana para incendios — amenaza crítica en zona serrana con alta carga combustible. Prioridad de seguridad territorial.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🏘️</span>
+          <div>
+            <div class="prog-name">Polo Turístico Comarca de las Sierras</div>
+            <div class="prog-desc">Inversión constante en infraestructura turística en Villa Ventana y Sierra de la Ventana: accesos, iluminación, servicios. Consolidación como principal destino serrano del sur bonaerense, con capacidad para sostener el crecimiento de la demanda de pernocte.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">💧</span>
+          <div>
+            <div class="prog-name">Red de Agua Potable — Sierra de la Ventana</div>
+            <div class="prog-desc">Ampliación estructural de la red de agua potable en Sierra de la Ventana para sostener el crecimiento de la población permanente y la demanda de las plazas hoteleras. Obra de infraestructura básica sin la cual el crecimiento turístico se vuelve insostenible.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">📡</span>
+          <div>
+            <div class="prog-name">Conectividad Crítica — Internet Satelital</div>
+            <div class="prog-desc">Entrega de antenas de internet satelital a todos los cuarteles de bomberos y dependencias críticas del distrito. Garantiza comunicaciones en zonas de difícil acceso serrano, especialmente durante temporada de incendios y emergencias climáticas.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🛤️</span>
+          <div>
+            <div class="prog-name">Consejo Vial Municipal — Caminos Rurales</div>
+            <div class="prog-desc">Inversión en maquinaria pesada propia para asegurar la transitabilidad de caminos rurales en zonas de relieve complejo. Clave para la base ganadera y cerealera que opera en los llanos del partido, donde el acceso es condición productiva.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🍷</span>
+          <div>
+            <div class="prog-name">Ruta del Vino — Apoyo Producción Vitivinícola</div>
+            <div class="prog-desc">Fomento de las bodegas locales de Saldungaray que producen vinos de alta gama. Tornquist es productor vitivinícola de alcance provincial: la Ruta del Vino integra turismo, gastronomía y producción artesanal en un circuito de diferenciación regional.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🏠</span>
+          <div>
+            <div class="prog-name">Plan de 38 Viviendas</div>
+            <div class="prog-desc">Preselección de beneficiarios abierta en 2025 para construcción de 38 unidades en la localidad cabecera, con financiamiento provincial. Avance en adjudicación y nuevos desembolsos para ampliar la oferta habitacional en un municipio con presión turística sobre el mercado inmobiliario.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🤝</span>
+          <div>
+            <div class="prog-name">Turismo Rural Regional — Convenio con Saavedra-Pigüé</div>
+            <div class="prog-desc">Firma de convenios con el municipio de Saavedra (Pigüé) para promoción conjunta de pueblos turísticos como Saldungaray y Dufaur. Estrategia de circuito regional que amplía la oferta y extiende la estadía promedio del visitante.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🌾</span>
+          <div>
+            <div class="prog-name">50ª Exposición Rural — Bodas de Oro 2026</div>
+            <div class="prog-desc">Organización de la edición especial (bodas de oro) de la Exposición Rural, integrando muestras industriales, comerciales y turísticas. Principal evento socioproductivo del año y motor de economía local durante la temporada otoñal.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">TORNQUIST · SUR · 6ª Sección Electoral · Padrón 16.637 · Ficha de Campaña 2025–2026</div>
+</div>
+</body>
+</html>
