@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ficha de Campaña — PATAGONES</title>
+<style>
+:root{--cl:#2e4057;--cl2:#1a2840;--cl3:#edf1f5;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f3f7;color:#1a1a1a;font-size:13px;max-width:900px;margin:0 auto;padding:14px}
+.hdr{background:linear-gradient(135deg,#050d1a 0%,#1a2840 40%,#2e4057 80%,#3d5470 100%);color:#fff;padding:28px 30px 22px;border-radius:var(--radius);margin-bottom:12px;position:relative;overflow:hidden}
+.hdr::before{content:'🧅';position:absolute;right:-10px;bottom:-18px;font-size:10rem;opacity:.1}
+.h-over{font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.6;margin-bottom:5px}
+.h-nm{font-size:2.4rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.85rem;opacity:.7;margin-bottom:14px}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-size:.68rem;font-weight:700;padding:3px 11px;border-radius:20px;border:1px solid transparent}
+.badge-warn{background:rgba(180,130,0,.25);border-color:rgba(250,204,21,.4);color:#fde68a}
+.badge-al{background:rgba(29,78,216,.25);border-color:rgba(59,130,246,.4);color:#93c5fd}
+.badge-op{background:rgba(220,38,38,.25);border-color:rgba(248,113,113,.4);color:#fca5a5}
+.badge-crit{background:rgba(109,40,217,.25);border-color:rgba(167,139,250,.4);color:#c4b5fd}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:#fff;border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.07);overflow:hidden}
+.c-hdr{background:var(--cl);color:#fff;padding:7px 14px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px}
+.c-hdr-dark{background:var(--cl2)}
+.c-body{padding:12px 14px}
+.kv{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #edf1f5;font-size:.78rem}
+.kv:last-child{border-bottom:none}
+.kv-k{color:#6b7280}
+.kv-v{font-weight:700;color:#1a1a1a}
+.kv-pj{color:#15803d;font-weight:800}
+.kv-lla{color:#7c3aed;font-weight:800}
+.kv-jxc{color:#d97706;font-weight:800}
+.prog-list{list-style:none;padding:0}
+.prog-list li{padding:5px 0;border-bottom:1px solid #edf1f5;font-size:.78rem;line-height:1.5}
+.prog-list li:last-child{border-bottom:none}
+.prog-list li::before{content:"▸ ";color:var(--cl);font-weight:700}
+.alert{background:#eff6ff;border:1.5px solid #3b82f6;border-radius:8px;padding:8px 12px;font-size:.75rem;color:#1e3a5f;margin-top:8px}
+.alert strong{color:#1e40af}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.stat{background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 2px 8px rgba(0,0,0,.07);text-align:center}
+.stat-n{font-size:1.6rem;font-weight:900;color:var(--cl);display:block}
+.stat-l{font-size:.63rem;color:#6b7280;text-transform:uppercase;margin-top:2px}
+.full{grid-column:1/-1}
+p{font-size:.8rem;color:#374151;line-height:1.6;margin-bottom:8px}
+p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.card{box-shadow:none;break-inside:avoid}.hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="h-over">🏔️ Cluster SUR · 6ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="h-nm">PATAGONES</div>
+  <div class="h-sub">Único municipio patagónico de PBA · Principal productor de cebolla del país · Capital del Pescador Deportivo · 13,564 km²</div>
+  <div class="badges">
+    <span class="badge badge-al">✅ Aliado — Ricardo Marino (UxP)</span>
+    <span class="badge badge-warn">⚠️ PJ 41.6% prov / LLA 48.1% nac</span>
+    <span class="badge">🧅 1º productor de cebolla — Zona Villalonga</span>
+    <span class="badge">⚖️ Único partido con Beneficios Patagónicos en PBA</span>
+    <span class="badge">🎣 Bahía San Blas — Cap. Nac. del Pescador Deportivo</span>
+  </div>
+</div>
+
+<div class="stat-grid">
+  <div class="stat"><span class="stat-n">30,237</span><span class="stat-l">Padrón Electoral</span></div>
+  <div class="stat"><span class="stat-n">6ª</span><span class="stat-l">Sección Electoral</span></div>
+  <div class="stat"><span class="stat-n">13,564</span><span class="stat-l">km² — el más grande de PBA</span></div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="c-hdr">Intendente</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Nombre</span><span class="kv-v">Ricardo Marino</span></div>
+      <div class="kv"><span class="kv-k">Fuerza política</span><span class="kv-v">Unión por la Patria</span></div>
+      <div class="kv"><span class="kv-k">Vínculo</span><span class="kv-v">Aliado (UxP)</span></div>
+      <div class="kv"><span class="kv-k">Sección</span><span class="kv-v">6ª Sección Electoral</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">Identidad Territorial</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Estatus único</span><span class="kv-v">Único municipio patagónico de PBA</span></div>
+      <div class="kv"><span class="kv-k">Producción estrella</span><span class="kv-v">Cebolla — 1º productor nacional (Villalonga)</span></div>
+      <div class="kv"><span class="kv-k">Turismo</span><span class="kv-v">Bahía San Blas — Cap. Nac. Pescador Deportivo</span></div>
+      <div class="kv"><span class="kv-k">Ciudad gemela</span><span class="kv-v">Viedma (Río Negro) — Comarca binacional</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="card">
+    <div class="c-hdr">2023 General</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">PJ (Marino)</span><span class="kv-pj">40.6% (8,183)</span></div>
+      <div class="kv"><span class="kv-k">JxC</span><span class="kv-jxc">38.6% (7,767)</span></div>
+      <div class="kv"><span class="kv-k">LLA</span><span class="kv-lla">20.8% (4,192)</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">20,142</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">2025 — Elec. Provincial</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">PJ ✅</span><span class="kv-pj">41.6% (5,950)</span></div>
+      <div class="kv"><span class="kv-k">LLA</span><span class="kv-lla">34.3% (4,905)</span></div>
+      <div class="kv"><span class="kv-k">JxC</span><span class="kv-jxc">NaN — corrió separado</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">14,304</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">2025 — Elec. Nacional</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">LLA 🔴</span><span class="kv-lla">48.1% (8,323)</span></div>
+      <div class="kv"><span class="kv-k">PJ</span><span class="kv-pj">37.2% (6,440)</span></div>
+      <div class="kv"><span class="kv-k">Margen LLA</span><span class="kv-lla">+1,883 votos</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">17,320</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="alert">
+  <strong>📌 Lectura electoral:</strong> Patagones tiene un electorado históricamente competitivo: en 2023 PJ ganó con 40.6% sobre JxC 38.6% — apenas 416 votos de diferencia. En 2025, la provincial mantuvo la ventaja del PJ (41.6% vs LLA 34.3%). La nacional invirtió la relación: LLA 48.1% vs PJ 37.2%, diferencia de 1,883 votos. El ex electorado de JxC (38.6% en 2023, ~7,767 votos) migró en proporción relevante a LLA en 2025. En 2025 JxC corrió como UCR y PRO por separado — los datos provinciales no consolidan ambas listas.
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="c-hdr">Identidad Profunda</div>
+    <div class="c-body">
+      <p>Patagones es el único municipio de la provincia de Buenos Aires con estatus legal de Zona Patagónica. Eso le otorga beneficios impositivos y laborales — incluyendo tarifas diferenciales de gas y combustibles — que definen la economía local y el costo de vida de sus habitantes. La gestión de Marino en 2026 ha girado en parte alrededor de la defensa de esos beneficios ante eventuales intentos de homologación tarifaria.</p>
+      <p>Villalonga es el epicentro de la producción de cebolla más importante del país: el partido de Patagones concentra el volumen más relevante de cebolla exportada desde Argentina. El riego por canales del Río Negro (acueductos) es la infraestructura invisible que hace posible esa producción en un territorio semiárido donde el agua no cae — hay que traerla.</p>
+      <p>Bahía San Blas es la joya turística: Capital Nacional del Pescador Deportivo, con playas vírgenes del Atlántico Sur que atraen turistas de todo el país. Carmen de Patagones y Viedma (Río Negro) forman una comarca binacional única — dos ciudades de provincias distintas que comparten servicios de salud, transporte y seguridad al cruzar el mismo río.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr c-hdr-dark">Programas de Gestión</div>
+    <div class="c-body">
+      <ul class="prog-list">
+        <li><strong>Defensa de Beneficios Patagónicos</strong> — Reclamos ante Nación y Provincia para mantener tarifas diferenciales de gas y combustibles. Impacto directo en el bolsillo de los vecinos y en la competitividad de las empresas locales.</li>
+        <li><strong>Comarca Viedma-Carmen de Patagones</strong> — Integración con la capital rionegrina: agenda conjunta en seguridad, transporte interurbano y salud. Eficiencia de escala binacional.</li>
+        <li><strong>Desarrollo del Riego (Villalonga)</strong> — Modernización de canales de riego y apoyo a productores de cebolla ante contingencias climáticas. Sostén de la primera producción cebolleara del país.</li>
+        <li><strong>Bahía San Blas — Puesta en Valor</strong> — Mejoras en accesos y servicios para el turismo de pesca deportiva. Capital Nacional del Pescador Deportivo como marca territorial.</li>
+        <li><strong>Plan de Agua Potable</strong> — Extensión de red hídrica en barrios periféricos de Carmen de Patagones y localidades internas (Villalonga, Stroeder).</li>
+        <li><strong>Fomento Agropecuario y Porcino</strong> — Microcréditos a tasa cero, semillas e insumos para pequeños productores. Canales de venta en ferias locales.</li>
+        <li><strong>Rondas Rurales y Atención Periférica</strong> — Médicos en el interior con incentivos económicos, rondas sanitarias itinerantes. Más de 3,000 consultas y urgencias mensuales en la población rural dispersa.</li>
+        <li><strong>Soberanía Hídrica (Acueductos)</strong> — Construcción y mantenimiento de acueductos desde el Río Negro hacia el interior del partido. Agua para la vida en territorio semiárido.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card full">
+  <div class="c-hdr">Lectura Estratégica</div>
+  <div class="c-body">
+    <p><strong>Fortaleza:</strong> Patagones tiene una identidad territorial única en toda la PBA: es el único municipio patagónico. Ese estatus define la economía (beneficios de zona) y la vida cotidiana (tarifas diferenciales). La gestión de Marino tiene argumentos concretos: la defensa de los beneficios patagónicos, la integración con Viedma como modelo de comarca binacional, y la obra hídrica en un territorio donde el agua es el activo más escaso.</p>
+    <p><strong>Tensión:</strong> El electorado de Patagones históricamente estuvo dividido entre PJ y JxC. El ex voto de JxC (38.6% en 2023) migró en parte a LLA en 2025, llevando a LLA a 48.1% en la nacional. Los productores agropecuarios, los comerciantes y el segmento de clase media urbana de Carmen de Patagones son los sectores más permeables a la agenda de desregulación de LLA.</p>
+    <p><strong>Ángulo provincial:</strong> Los Beneficios Patagónicos son el tema de máxima sensibilidad local — cualquier candidato provincial que pueda garantizar la continuidad del estatus de Zona Patagónica para Patagones tiene un argumento que trasciende el color político. La Comarca Viedma-Carmen es también un modelo de coordinación interprovincial que puede presentarse como ejemplo de gestión eficiente de recursos compartidos.</p>
+  </div>
+</div>
+
+</body>
+</html>
