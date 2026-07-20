@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ficha de Campaña — BENITO JUÁREZ</title>
+<style>
+:root{--cl:#2e4057;--cl2:#1a2535;--cl3:#f0f2f5;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f3f4f7;color:#1a1a1a;font-size:13px;max-width:900px;margin:0 auto;padding:14px}
+.hdr{background:linear-gradient(135deg,#060c14 0%,#1a2535 40%,#2e4057 80%,#3e546f 100%);color:#fff;padding:28px 30px 22px;border-radius:var(--radius);margin-bottom:12px;position:relative;overflow:hidden}
+.hdr::before{content:'🍇';position:absolute;right:-10px;bottom:-18px;font-size:10rem;opacity:.1}
+.h-over{font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.6;margin-bottom:5px}
+.h-nm{font-size:2.4rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.85rem;opacity:.7;margin-bottom:14px}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-size:.68rem;font-weight:700;padding:3px 11px;border-radius:20px;border:1px solid transparent}
+.badge-al{background:rgba(29,100,240,.25);border-color:rgba(96,165,250,.4);color:#bfdbfe}
+.badge-warn{background:rgba(180,130,0,.25);border-color:rgba(250,204,21,.4);color:#fde68a}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:#fff;border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.07);overflow:hidden}
+.c-hdr{background:var(--cl);color:#fff;padding:7px 14px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px}
+.c-hdr-dark{background:var(--cl2)}
+.c-body{padding:12px 14px}
+.kv{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #eef0f4;font-size:.78rem}
+.kv:last-child{border-bottom:none}
+.kv-k{color:#6b7280}
+.kv-v{font-weight:700;color:#1a1a1a}
+.kv-pj{color:#15803d;font-weight:800}
+.kv-lla{color:#7c3aed;font-weight:800}
+.kv-jxc{color:#d97706;font-weight:800}
+.kv-vec{color:#0369a1;font-weight:800}
+.prog-list{list-style:none;padding:0}
+.prog-list li{padding:5px 0;border-bottom:1px solid #eef0f4;font-size:.78rem;line-height:1.5}
+.prog-list li:last-child{border-bottom:none}
+.prog-list li::before{content:"▸ ";color:var(--cl);font-weight:700}
+.highlight{background:#eff6ff;border:1.5px solid #2563eb;border-radius:8px;padding:8px 12px;font-size:.75rem;color:#1e3a8a;margin-top:8px}
+.highlight strong{color:#1d4ed8}
+.alert-warn{background:#fffbeb;border:1.5px solid #d97706;border-radius:8px;padding:8px 12px;font-size:.75rem;color:#78350f;margin-top:8px}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.stat{background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 2px 8px rgba(0,0,0,.07);text-align:center}
+.stat-n{font-size:1.6rem;font-weight:900;color:var(--cl);display:block}
+.stat-l{font-size:.63rem;color:#6b7280;text-transform:uppercase;margin-top:2px}
+.full{grid-column:1/-1}
+p{font-size:.8rem;color:#374151;line-height:1.6;margin-bottom:8px}
+p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.card{box-shadow:none;break-inside:avoid}.hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="h-over">🏔️ Cluster SUR · 6ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="h-nm">BENITO JUÁREZ</div>
+  <div class="h-sub">Capital Nacional de la Frambuesa · Cemento y Canteras · Caminos Rurales · UNICEN · Taller X edición</div>
+  <div class="badges">
+    <span class="badge badge-al">🔵 Aliado — Julio Marini (UxP)</span>
+    <span class="badge badge-warn">⚠️ PJ 44.5% nac vs LLA 42.4% — solo 242 votos de margen en la nacional</span>
+    <span class="badge">🍇 Barker — Capital Nacional de la Frambuesa</span>
+    <span class="badge">🏗️ Cemento · canteras serranas · agro mixto</span>
+  </div>
+</div>
+
+<div class="stat-grid">
+  <div class="stat"><span class="stat-n">18,129</span><span class="stat-l">Padrón Electoral</span></div>
+  <div class="stat"><span class="stat-n">242</span><span class="stat-l">votos PJ sobre LLA en nacional 2025</span></div>
+  <div class="stat"><span class="stat-n">200+</span><span class="stat-l">Becas estudiantiles UNICEN</span></div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="c-hdr">Intendente</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Nombre</span><span class="kv-v">Julio Marini</span></div>
+      <div class="kv"><span class="kv-k">Fuerza política</span><span class="kv-v">Unión por la Patria</span></div>
+      <div class="kv"><span class="kv-k">Vínculo</span><span class="kv-v">Aliado (UxP)</span></div>
+      <div class="kv"><span class="kv-k">Sección</span><span class="kv-v">6ª Sección Electoral</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">Identidad Territorial</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Identidad central</span><span class="kv-v">Capital Nacional de la Frambuesa — Barker</span></div>
+      <div class="kv"><span class="kv-k">Industria</span><span class="kv-v">Cemento · canteras · cementeras zona serrana</span></div>
+      <div class="kv"><span class="kv-k">Agro</span><span class="kv-v">Agropecuaria tradicional — ganadería + cosecha</span></div>
+      <div class="kv"><span class="kv-k">Localidades</span><span class="kv-v">Barker (frambuesas) · Villa Cacique (cemento)</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="card">
+    <div class="c-hdr">2023 General</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">PJ ✅ (Marini)</span><span class="kv-pj">45.5% (5,919)</span></div>
+      <div class="kv"><span class="kv-k">Vecinalista</span><span class="kv-vec">41.2% (5,364)</span></div>
+      <div class="kv"><span class="kv-k">JxC</span><span class="kv-jxc">13.3% (1,734)</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">13,017</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">2025 — Elec. Provincial</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">PJ ✅</span><span class="kv-pj">44.1% (4,753)</span></div>
+      <div class="kv"><span class="kv-k">LLA</span><span class="kv-lla">23.8% (2,566)</span></div>
+      <div class="kv"><span class="kv-k">Margen PJ</span><span class="kv-pj">+2,187 votos</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">10,779</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">2025 — Elec. Nacional</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">PJ ⚠️</span><span class="kv-pj">44.5% (4,950)</span></div>
+      <div class="kv"><span class="kv-k">LLA ⚠️</span><span class="kv-lla">42.4% (4,708)</span></div>
+      <div class="kv"><span class="kv-k">Margen PJ</span><span class="kv-pj">+242 votos</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">11,113</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="highlight">
+  <strong>🔵 Bastión PJ sostenido con vecinalismo interno:</strong> En 2023, Marini (PJ) ganó con 45.5% frente a una lista Vecinalista muy fuerte (41.2%) y JxC (13.3%) — sin LLA significativa. En provincial 2025, PJ ganó cómodamente (44.1% vs LLA 23.8%). Benito Juárez tiene una base PJ orgánica real, reforzada por la gestión municipal de Marini que apostó a infraestructura rural (Caminos Rurales referente nacional), educación (UNICEN + 200 becas) y servicios en localidades del interior (Barker, Villa Cacique).
+</div>
+
+<div class="alert-warn">
+  ⚠️ <strong>Alerta nacional — solo 242 votos separan PJ de LLA:</strong> En la categoría nacional 2025, PJ 44.5% (4,950) vs LLA 42.4% (4,708) — margen de apenas 242 votos. El Vecinalista de 2023 (41.2%) distribuyó entre PJ y LLA, y LLA casi empató al PJ en la nacional. En 2027, si esa tendencia continúa, Benito Juárez puede pasar de bastión a disputa real en la provincial también.
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="c-hdr">Identidad Profunda</div>
+    <div class="c-body">
+      <p>Benito Juárez es un municipio de tres economías que raramente coexisten en la misma extensión territorial del sur bonaerense. La primera es la de Barker: el polo productivo de frambuesas que convirtió a esa localidad en la Capital Nacional de la Frambuesa, con producción artesanal de dulces, mermeladas y frutos que se venden en todo el país y generan turismo estacional durante la cosecha. La Fiesta Provincial de la Frambuesa es el evento que ancla esa identidad.</p>
+      <p>La segunda economía es la del cemento. Villa Cacique concentra las canteras y cementeras que explotan la roca serrana del extremo sur de las Sierras de Buenos Aires. No es una economía turística ni agropecuaria — es industria pesada en el interior bonaerense, con trabajadores calificados, sindicatos activos y una sensibilidad económica diferente al campo. La gestión Marini apostó a equiparar los servicios de Barker y Villa Cacique con los de la ciudad cabecera: cloacas, gas natural y pavimento en localidades que históricamente estaban postergadas.</p>
+      <p>La tercera economía es la agropecuaria tradicional: ganadería y cosecha que sigue siendo el sostén silencioso del partido. Y sobre ese trípode productivo — frambuesa, cemento, campo — Marini construyó una gestión que destacó especialmente en dos áreas: los Caminos Rurales (referente nacional, X edición del Taller Técnico en 2026) y la educación universitaria (articulación con UNICEN, 200 becas directas y residencias estudiantiles gratuitas).</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr c-hdr-dark">Programas de Gestión (UxP-Marini)</div>
+    <div class="c-body">
+      <ul class="prog-list">
+        <li><strong>Taller Técnico de Caminos Rurales (X edición, 2026)</strong> — Referente nacional en mantenimiento profesional de vías rurales. Obras ejecutadas con recursos y personal propio del municipio. Impacto directo en productividad agropecuaria y logística del campo.</li>
+        <li><strong>Plan Quinquenal de Salud</strong> — Atención Primaria y Salud Mental articulada con la Provincia. Operativos conjuntos en escuelas y centros de salud. Diplomaturas en salud pública y bienestar animal para personal municipal de Bromatología.</li>
+        <li><strong>Desarrollo Barker y Villa Cacique</strong> — Extensión de cloacas, gas natural y pavimento a las localidades del interior. Inversión equitativa en todas las zonas del partido. Impulso de la Fiesta Provincial de la Frambuesa como evento productivo-turístico.</li>
+        <li><strong>Becas al Transporte Estudiantil</strong> — Sistema de apoyo económico para estudiantes que se trasladan diariamente a instituciones educativas del partido. Retención de jóvenes sin necesidad de migrar.</li>
+        <li><strong>Programa Puentes — Carreras en el Distrito</strong> — Convenio para el dictado de carreras universitarias y tecnicaturas en Juárez. Los jóvenes del sur bonaerense acceden a educación superior sin emigrar.</li>
+        <li><strong>Apoyo a Clubes y Polideportivo</strong> — Subsidios mensuales y profesores de ed. física a clubes de barrio. 800+ jóvenes hacen deporte supervisado y gratuito por semana.</li>
+        <li><strong>Centro Regional y Sistema de Becas UNICEN</strong> — Articulación con la Universidad Nacional del Centro (Tandil). 200+ becas económicas directas y mensuales. Residencias estudiantiles gratuitas para estudiantes del interior del partido.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card full">
+  <div class="c-hdr">Lectura Estratégica</div>
+  <div class="c-body">
+    <p><strong>Bastión PJ con señal de alerta nacional:</strong> Benito Juárez tiene una base PJ real y una gestión municipal aliada sólida. La provincial 2025 se ganó con comodidad (44.1% vs LLA 23.8%). Pero la nacional 2025 fue un llamado de atención: PJ 44.5% vs LLA 42.4% — 242 votos. El Vecinalista de 2023 (41.2%) distribuyó sus votos y LLA casi empató al PJ en la categoría más alta. Si ese proceso de migración vecinalista-a-LLA continúa, Benito Juárez puede convertirse en distrito competitivo en 2027.</p>
+    <p><strong>La frambuesa como argumento de política productiva diferencial:</strong> Barker/Capital Nacional de la Frambuesa es un activo comunicacional único: visita a las plantaciones durante la cosecha estacional, anuncio de financiamiento provincial para el procesamiento artesanal (dulces, conservas, turismo rural de la frambuesa), escena visual completamente diferente al agro pampeano standard. El PJ que apoya la frambuesa no está haciendo agro — está haciendo economía regional distintiva con identidad local.</p>
+    <p><strong>Los Caminos Rurales como modelo provincial:</strong> La X edición del Taller Técnico de Caminos Rurales es reconocida como referente nacional. Marini ejecuta las obras con recursos propios — sin depender de licitaciones provinciales lentas. Una propuesta de financiamiento provincial para escalar ese modelo ("lo que Juárez hizo con sus propios recursos, la Provincia lo puede hacer en 50 municipios con fondos adicionales") tiene llegada al electorado agropecuario que valora la gestión eficiente.</p>
+    <p><strong>El cemento como clase media industrial:</strong> Los trabajadores de las canteras y cementeras de Villa Cacique son el perfil de clase media industrial que el PJ históricamente tiene como base. Los 800 jóvenes del programa de clubes, los 200 becarios de UNICEN y los trabajadores del cemento son el triángulo social de Juárez donde el PJ tiene presencia real. Mantener esa presencia con servicios concretos (salud, educación, deporte) es la forma de defender el margen electoral en la categoría provincial.</p>
+  </div>
+</div>
+
+</body>
+</html>
