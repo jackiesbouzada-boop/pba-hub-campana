@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Colón — Narrativa Territorial</title>
+<style>
+:root{--primary:#3d2e00;--accent:#7b5e00;--light:#f5f0e8;--border:#c9a84c;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#2e1a00;font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#0d0800 0%,#3d2e00 40%,#6b5000 75%,#7b5e00 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'🔬';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.09}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-green{background:rgba(21,128,61,.3);border-color:rgba(74,222,128,.5);color:#bbf7d0}
+.pill-warn{background:rgba(180,130,0,.3);border-color:rgba(250,204,21,.5);color:#fde68a}
+.pill-red{background:rgba(220,38,38,.3);border-color:rgba(248,113,113,.5);color:#fca5a5}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#3d2e00,#7b5e00);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#3d2e00;line-height:1.65;margin-bottom:12px;border-left:4px solid #7b5e00;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#3d2e00;border-color:#3d2e00;color:#fff}
+.card-dark h4{color:#fcd34d !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#3d2e00;margin-bottom:6px;text-transform:uppercase}
+.card p{font-size:.78rem;color:#374151}
+.num-big{font-size:2rem;font-weight:900;color:#fcd34d;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f5f0e8;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.pj-v{color:#15803d;font-weight:800}
+.lla-v{color:#7c3aed;font-weight:800}
+.jxc-v{color:#d97706;font-weight:800}
+.close{background:linear-gradient(135deg,#3d2e00,#7b5e00);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#fcd34d;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🌾 Cluster INTERIOR · 2ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">COLÓN</div>
+  <div class="cv-sub">La Meca de la Semilla bonaerense — donde el PJ gana sin municipio, las multinacionales investigan y el lago refleja el único faro del interior</div>
+  <div class="cv-pills">
+    <span class="pill-red">🔴 Opositor — Giordano (JxC) — sin respaldo municipal</span>
+    <span class="pill-green">✅ PJ gana prov (32.8%) y nac (42.7%) con intendente JxC</span>
+    <span class="pill-warn">⚠️ Margen nacional: solo 174 votos sobre LLA (41.5%)</span>
+    <span class="pill">🔬 Bayer/Monsanto · Syngenta · Corteva · BASF</span>
+    <span class="pill">🌊 Lago Municipal — faro e isla — turismo regional</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🔬 Territorio: La tierra más productiva del país y los laboratorios que la mejoran</div>
+  <div class="sec-body">
+    <div class="lead">Colón está sobre la zona núcleo — el territorio que los agrónomos consideran la tierra con mayor aptitud agrícola del país. Pero en Colón, esa riqueza del suelo no se expresa solo en hectáreas sembradas: se expresa en laboratorios de investigación. Las multinacionales semilleras más grandes del mundo eligieron Colón para instalar sus plantas de investigación y procesamiento porque el suelo y el clima del norte bonaerense son el mejor ambiente para probar variedades que después se exportan al mundo.</div>
+    <p>Bayer/Monsanto, Syngenta, Corteva, BASF: cuatro de los cinco grandes grupos mundiales de agroquímica y semillas tienen presencia en Colón. Eso crea un perfil laboral inusual para una ciudad del interior: técnicos con formación universitaria, ingenieros agrónomos, biotecnólogos que trabajan en condiciones formales con sueldos de empresa global. No son obreros rurales — son empleados del conocimiento agropecuario. Y ese perfil tiene implicancias electorales que el campo tradicional no tiene.</p>
+    <p>El Lago Municipal con su faro y su isla artificial es la postal de Colón: convoca turismo recreativo de todo el norte de Buenos Aires y del sur de Santa Fe. No hay otro lago con faro en toda la provincia. La gestión actual (Giordano, JxC) apostó a la infraestructura del predio — luminarias, servicios — para consolidar ese turismo. El resultado visual es poderoso: el faro sobre el lago al atardecer es la imagen que Colón proyecta en redes y en la identidad regional.</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">4</span><span class="num-lbl">multinacionales globales de semillas y agroquímica con plantas de investigación en Colón — zona núcleo bonaerense</span></div>
+        <p style="margin-top:8px">No hay otro municipio del interior bonaerense con esa concentración de I+D agroindustrial privado. Colón es donde el futuro de la semilla se investiga. Eso crea empleos de alto valor y un perfil socioeconómico único en la región.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">174</span><span class="num-lbl">votos de diferencia entre PJ (42.7%) y LLA (41.5%) en la elección nacional 2025 — empate técnico</span></div>
+        <p style="margin-top:8px">El PJ ganó la nacional en Colón, pero por 174 votos. Con intendente JxC activo y el técnico semillero que puede migrar a LLA, ese margen es una advertencia, no una comodidad.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: El PJ que gana sin municipio — voto cruzado extremo</div>
+  <div class="sec-body">
+    <div class="lead">En 2023, el PJ obtuvo 48.3% (7,715) en la categoría legislativa con JxC en 36.4% (5,806) y LLA apenas en 12.8% (2,044). En 2025 provincial: PJ 32.8% (4,330), LLA 22.2% (2,932) — PJ primera fuerza. En 2025 nacional: PJ 42.7% (6,323) vs LLA 41.5% (6,149) — PJ gana por 174 votos. Todo esto con Giordano (JxC) en la intendencia. El voto cruzado es el fenómeno más llamativo de Colón.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Evolución electoral</h4>
+        <div class="data-row"><span>2023 PJ ✅</span><span class="pj-v">48.3% (7,715)</span></div>
+        <div class="data-row"><span>2023 JxC (Giordano intend.)</span><span class="jxc-v">36.4% (5,806)</span></div>
+        <div class="data-row"><span>2023 LLA</span><span class="lla-v">12.8% (2,044)</span></div>
+        <div class="data-row"><span>2025 Prov PJ ✅</span><span class="pj-v">32.8% (4,330)</span></div>
+        <div class="data-row"><span>2025 Prov LLA</span><span class="lla-v">22.2% (2,932)</span></div>
+        <div class="data-row"><span>2025 Nac PJ ✅</span><span class="pj-v">42.7% (6,323)</span></div>
+        <div class="data-row"><span>2025 Nac LLA</span><span class="lla-v">41.5% (6,149)</span></div>
+      </div>
+      <div class="card">
+        <h4>🔍 La paradoja de Colón</h4>
+        <p>Colón es el caso más extremo de voto cruzado en el norte bonaerense: el electorado que elige a Giordano (JxC) para gobernar la ciudad vota simultáneamente al PJ en todas las categorías legislativas — tanto en 2023 como en 2025. Ese electorado no ve contradicción: elige al gestor local que conoce por su cara y su historia, y separa esa elección del voto político provincial y nacional.</p>
+        <p>La base PJ de Colón existe, es sólida y no depende del municipio. Eso libera a la campaña provincial de negociar con Giordano: se puede entrar en Colón con agenda propia, contacto directo con las semilleras, con los trabajadores, con los jóvenes del Polo Educativo — sin pasar por el municipio. La presencia del candidato provincial en Colón refuerza la base propia del PJ.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>🔬 Las semilleras — el argumento de ciencia y trabajo</h4>
+        <p>Una visita a las instalaciones de una de las grandes semilleras de Colón es una escena que no existe en otro municipio de la 2ª Sección. El argumento: la Provincia respalda la inversión extranjera en I+D agropecuario porque genera empleo calificado en el interior, forma técnicos que no tienen que irse a Buenos Aires, y conecta a la Argentina con los mercados globales de tecnología semillera. El técnico de Bayer o Syngenta que vive en Colón es un elector con sensibilidad muy particular: valora la estabilidad regulatoria, la inversión en educación técnica y la política de innovación.</p>
+      </div>
+      <div class="card">
+        <h4>🏭 La maquinaria agrícola — la industria propia de Colón</h4>
+        <p>Junto a las semilleras globales, Colón tiene fábricas locales de maquinaria agrícola. Esa industria habla de otro público: el trabajador industrial que produce en Colón lo que el campo de toda la región usa. Las políticas de compre nacional de maquinaria, los créditos para modernización tecnológica y la política de sustitución de importaciones tienen destinatarios concretos en Colón. No es el mismo elector que el técnico semillero — y el mensaje tiene que ser diferente.</p>
+      </div>
+      <div class="card">
+        <h4>🌊 El Lago Municipal — la escena de identidad regional</h4>
+        <p>El Lago con su faro e isla es la escena más fotogénica del norte bonaerense. Una recorrida por el predio — con vecinos, con familias, con la imagen del faro de fondo — tiene el potencial de comunicar "presencia en el interior" de manera inmediata. El argumento: la Provincia puede financiar inversión en infraestructura turística del lago que consolide el turismo regional y genere más actividad económica para Colón y sus localidades.</p>
+      </div>
+      <div class="card">
+        <h4>🎓 Polo Educativo — retención juvenil con salida técnica</h4>
+        <p>El programa municipal de tecnicaturas para las agroindustrias de la zona núcleo es exactamente el tipo de política que el PJ puede escalar a nivel provincial: formación técnica con demanda laboral concreta, sin necesidad de migrar a universidades urbanas. Una propuesta provincial de inversión en el Polo Educativo de Colón — ampliando los convenios, sumando carreras biotecnológicas en línea con lo que las semilleras demandan — tiene un argumento económico directo para el joven y para la familia.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>Colón es un caso paradójico y valioso: tiene intendente JxC (Giordano) pero el PJ gana tanto la provincial como la nacional. Esa base propia es el punto de partida — no hace falta el municipio para construir resultado aquí. La visita provincial puede ir directamente a las semilleras, a la maquinaria, al lago y al Polo Educativo sin pasar por el municipio.</p>
+  <p>El riesgo es el margen nacional: 174 votos de diferencia en 2025 entre PJ y LLA en la categoría nacional. El técnico semillero y el trabajador industrial que en 2023 votaba JxC puede en 2027 migrar a LLA si la conversación es solo ideológica. El argumento que funciona en Colón es el de política productiva concreta: I+D agroindustrial, maquinaria local, formación técnica, turismo del lago. No es un municipio de trinchera — es un municipio de gestión.</p>
+  <p><strong>Mensaje recomendado:</strong> "Colón prueba que el norte bonaerense puede ser una potencia del conocimiento agropecuario, no solo de la producción de commodities. Las semilleras, la maquinaria local y el Polo Educativo son el modelo del interior que queremos para toda la provincia". El PJ tiene la base; necesita el argumento.</p>
+</div>
+
+</body>
+</html>
