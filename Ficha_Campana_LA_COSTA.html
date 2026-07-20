@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>La Costa — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#005f8a;--primary-dark:#003d5c;--accent:#0077b6;--accent-light:#48cae4;--bg:#f0f9ff;--surface:#ffffff;--border:#e0f2fe;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#003d5c 0%,#005f8a 50%,#0077b6 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2.2rem;font-weight:900;letter-spacing:-.01em;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:14px}
+.badge-al{display:inline-block;background:rgba(72,202,228,.25);color:#90e0ef;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(72,202,228,.4);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#90e0ef}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTION */
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#003d5c,#005f8a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;display:flex;align-items:center;gap:8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.6;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+
+/* BLOCKS */
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#003d5c;border-color:#003d5c;color:#fff}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#90e0ef}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:var(--accent);display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+
+/* INTENDENTE */
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#003d5c,#0077b6);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800;color:var(--text)}
+.int-info .int-meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .int-desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+
+/* GESTIÓN */
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#005f8a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+
+/* TABLES */
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#e0f2fe;color:#005f8a;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f0f9ff;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:var(--accent)}
+.tbl-ok{color:#15803d;font-weight:700}
+.tbl-warn{color:#b45309;font-weight:700}
+.tbl-bad{color:#b91c1c;font-weight:700}
+
+/* ARCO ELECTORAL */
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#e0f9ff,#b3e9ff);border-color:#90e0ef}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #e0f2fe}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.arc-pj{color:#1d4ed8}
+.arc-lla{color:#7c3aed}
+.arc-jxc{color:#d97706}
+.arc-fit{color:#dc2626}
+.arc-grey{color:#374151}
+
+/* SPLIT */
+.split-box{background:#e0f9ff;border:1.5px solid #90e0ef;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.split-title{font-size:.72rem;font-weight:800;color:#005f8a;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.split-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid #b3e9ff}
+.split-row:last-child{border-bottom:none}
+.split-lbl{font-size:.77rem;color:#374151}
+.split-val{font-size:.82rem;font-weight:800;color:#005f8a}
+.split-pos{color:#15803d}
+
+/* ALERT */
+.lla-alert{background:#fef2f2;border:1.5px solid #fecaca;border-radius:8px;padding:12px 14px}
+.lla-alert-ttl{font-size:.72rem;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.lla-alert-body{font-size:.79rem;color:#374151;line-height:1.6}
+.fenomeno{background:#fffbeb;border:1.5px solid #fde68a;border-radius:8px;padding:12px 14px;margin-top:10px}
+.fenomeno-ttl{font-size:.72rem;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.fenomeno-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+/* LOCALIDADES */
+.loc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.loc-tag{border:1.5px solid var(--border);border-radius:6px;padding:7px 10px;text-align:center;font-size:.72rem;font-weight:700;color:var(--primary);background:#f0f9ff}
+
+/* COLOR LOCAL */
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:6px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+
+/* PALANCAS */
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#003d5c,#0077b6);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px;background:#fff}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-body p:last-child{margin-bottom:0}
+.pal-access{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-gest{background:#dcfce7;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+
+/* PROGRAMAS */
+.prog-list{display:flex;flex-direction:column;gap:8px}
+.prog-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;gap:12px;align-items:flex-start}
+.prog-ico{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.prog-body h5{font-size:.78rem;font-weight:800;color:var(--primary);margin-bottom:3px}
+.prog-body p{font-size:.75rem;color:#374151;line-height:1.5}
+
+/* VISITAS */
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#f0f9ff}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800;color:var(--text)}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.vis-tag{display:inline-block;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.tag-priv{background:#fef3c7;color:#92400e}
+.tag-gest{background:#dcfce7;color:#15803d}
+.tag-com{background:#ede9fe;color:#6b21a8}
+
+/* SÍNTESIS */
+.sint{background:linear-gradient(135deg,#003d5c,#005f8a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#90e0ef;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec{box-shadow:none;border:1px solid #e0f2fe;break-inside:avoid !important}
+  .hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="h-cluster">🌊 CLUSTER 6 · COSTERO &nbsp;|&nbsp; 5ª Sección Electoral</div>
+  <div class="h-name">LA COSTA</div>
+  <div class="h-sub">Partido de La Costa · Buenos Aires · 14 localidades · San Clemente del Tuyú → Mar de Ajó</div>
+  <div><span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">88,966</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">100,689</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">14</span><span class="h-stat-l">Localidades</span></div>
+    <div class="h-stat"><span class="h-stat-v">36.6%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">24.5%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">+22.2 pts</span><span class="h-stat-l">Split Nac &gt; Prov</span></div>
+  </div>
+</div>
+
+<!-- IDENTIDAD TERRITORIAL -->
+<div class="sec">
+  <div class="sec-hdr">🏖️ Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Turismo Masivo de Sol y Playa</h4>
+        <p>La Costa es el epicentro del turismo de verano del litoral bonaerense. Sus 14 localidades consecutivas sobre el Atlántico —desde San Clemente del Tuyú hasta Mar de Ajó— absorben uno de los mayores flujos de turismo interno del país. El verano activa una economía de gastronomía, hotelería y alquileres temporarios de escala masiva: lo que en otros partidos es empleo formal estable, aquí es empleo intenso y estacional.</p>
+      </div>
+      <div class="blk">
+        <h4>Construcción: el Motor Invernal</h4>
+        <p>Cuando el verano termina, el motor que sostiene el empleo privado es la <strong>industria de la construcción</strong>. El boom inmobiliario trae desarrollos constantes, refacciones y barrios privados en la zona norte (Costa Esmeralda). Esta economía dual —turismo en verano, construcción en invierno— define la vida laboral y política de la mayoría de los residentes permanentes del partido.</p>
+      </div>
+    </div>
+    <div style="margin-top:12px">
+      <p style="font-size:.78rem;font-weight:700;color:var(--primary);margin-bottom:8px">📍 LAS 14 LOCALIDADES</p>
+      <div class="loc-grid">
+        <div class="loc-tag">San Clemente del Tuyú</div>
+        <div class="loc-tag">Costa del Este</div>
+        <div class="loc-tag">Costa Chica</div>
+        <div class="loc-tag">San Bernardo</div>
+        <div class="loc-tag">Mar del Tuyú</div>
+        <div class="loc-tag">Aguas Verdes</div>
+        <div class="loc-tag">La Lucila del Mar</div>
+        <div class="loc-tag">Santa Teresita</div>
+        <div class="loc-tag">Las Toninas</div>
+        <div class="loc-tag">Mar de Ajó Norte</div>
+        <div class="loc-tag">Mar de Ajó</div>
+        <div class="loc-tag">Mar del Este</div>
+        <div class="loc-tag">Costa Esmeralda</div>
+        <div class="loc-tag">Nueva Atlantis</div>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">60+ km</span>
+        <span class="l">Costa atlántica continua · Una de las franjas litorales más largas de la Provincia</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">14</span>
+        <span class="l">Localidades sobre el Atlántico · Gestión municipal distribuida en geografía fragmentada</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTENDENTE -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Juan de Jesús</h3>
+        <div class="int-meta">Unión por la Patria &nbsp;·&nbsp; <span class="badge-pol badge-al-pol">ALIADO</span></div>
+        <div class="int-desc">Intendente del Partido de La Costa. En 2023 ganó con <strong>36.7%</strong> en una elección muy ajustada frente a JxC (35.5%), con LLA como tercera fuerza (23.7%). Gobierna el partido más geográficamente fragmentado de la Provincia: 14 localidades sobre 60 km de costa implican una gestión descentralizada de alta complejidad logística. Su apuesta central es modernizar la respuesta del Estado en emergencias, salud y educación sin depender del ciclo turístico.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">🚨 Sistema Único de Emergencias (SUE)</div>
+        <div class="gest-txt">Unificación del monitoreo de cámaras, despacho de ambulancias y coordinación con bomberos y policía en una sola plataforma digital. Vital en una geografía que se congestiona extremadamente en verano.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🎓 Fortalecimiento Universitario</div>
+        <div class="gest-txt">Red de educación superior con CBC de la UBA, carrera de Arquitectura y tecnicaturas en Informática. Objetivo: que los jóvenes residentes no emigren a Mar del Plata o La Plata para profesionalizarse.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">💧 Soberanía Hídrica</div>
+        <div class="gest-txt">Nuevas plantas potabilizadoras y extensión de redes de agua corriente hacia localidades del sur (Mar de Ajó, San Bernardo), terminando con la dependencia de pozo individual en zonas de riesgo de intrusión salina.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">📡 Gestión Distribuida</div>
+        <div class="gest-txt">Con 14 localidades en 60 km, la gestión descentralizó los centros de atención de salud, educación y seguridad para que ningún vecino residente deba recorrer larga distancia para acceder a servicios básicos.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">36.7%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC</span><span class="arc-val arc-jxc">35.5%</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">23.7%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">84,740</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">36.6%</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">24.5%</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">3.0%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">88,966</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">46.7%</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">37.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">4.2%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">83,021</span></div>
+      </div>
+    </div>
+    <div class="split-box">
+      <div class="split-title">📊 Fenómeno Electoral: Split sin precedentes</div>
+      <div class="split-row"><span class="split-lbl">PJ: 36.7% (2023) → 36.6% (2025 Prov)</span><span class="split-val" style="color:#15803d">Estable −0.1 pts</span></div>
+      <div class="split-row"><span class="split-lbl">LLA: 23.7% (2023) → 24.5% (2025 Prov)</span><span class="split-val tbl-warn">Estable +0.8 pts</span></div>
+      <div class="split-row"><span class="split-lbl">LLA en Nacional 2025</span><span class="split-val tbl-bad">46.7% (+22.2 pts sobre provincial)</span></div>
+      <div class="split-row"><span class="split-lbl">PJ en Nacional vs Provincial</span><span class="split-val" style="color:#15803d">37.1% vs 36.6% — prácticamente igual</span></div>
+    </div>
+    <div class="lla-alert">
+      <div class="lla-alert-ttl">⚠️ Split Electoral Extremo — Clave de Lectura</div>
+      <div class="lla-alert-body">La Costa tiene el split electoral más inusual del mapa: LLA sacó <strong>24.5% en la elección provincial pero 46.7% en la nacional</strong> — una diferencia de 22 puntos en el mismo año. El PJ se mantuvo estable en ambas (36–37%). Lo que esto revela es un electorado que <em>vota al candidato, no a la estructura</em>: apoya gestión local del PJ pero acompañó la propuesta nacional de LLA. Ese votante no es antisistema ni antikirchnerista en clave local — es pragmático. Es el electorado que define el partido hacia 2027.</div>
+    </div>
+    <div class="fenomeno">
+      <div class="fenomeno-ttl">🏖️ Efecto Turismo sobre el Padrón</div>
+      <div class="fenomeno-body">El padrón de La Costa varía entre elecciones (84.740 en 2023, 88.966 en 2025 PBA, 83.021 en 2025 Nacional) porque parte del electorado son propietarios de segunda residencia que votan aquí sin ser residentes permanentes. Este "electorado flotante" responde diferente al residente estable: es más susceptible al voto nacional y menos vinculado a la gestión municipal cotidiana.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COLOR LOCAL -->
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Economía &amp; Territorio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏖️</div>
+        <div class="cl-tipo">Turismo / Temporada</div>
+        <div class="cl-nm">Costa Atlántica Bonaerense</div>
+        <div class="cl-desc">El litoral de La Costa recibe uno de los mayores flujos de turismo interno del país en verano. Gastronomía, hotelería y alquiler temporario son el motor estacional.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏗️</div>
+        <div class="cl-tipo">Economía Invernal</div>
+        <div class="cl-nm">Industria de la Construcción</div>
+        <div class="cl-desc">Desarrollos inmobiliarios, refacciones y barrios privados (Costa Esmeralda) sostienen el empleo durante los meses de baja turística. Motor del ingreso estable para familias locales.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌿</div>
+        <div class="cl-tipo">Naturaleza / Fauna</div>
+        <div class="cl-nm">Reserva de Biósfera Bahía Samborombón</div>
+        <div class="cl-desc">Área de conservación de relevancia internacional. Fauna marina, aves migratorias y ecosistemas únicos que dan identidad natural a la zona norte del partido.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación Superior</div>
+        <div class="cl-nm">Red Universitaria Local</div>
+        <div class="cl-desc">CBC UBA, Arquitectura y tecnicaturas en Informática. Política del municipio para retener juventud local y reducir la emigración educativa hacia Mar del Plata o La Plata.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">💧</div>
+        <div class="cl-tipo">Infraestructura</div>
+        <div class="cl-nm">Acueducto Sur</div>
+        <div class="cl-desc">Extensión de agua corriente a Mar de Ajó y San Bernardo. Fin a décadas de dependencia de pozo individual en zonas con riesgo de intrusión salina.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚨</div>
+        <div class="cl-tipo">Innovación / Gestión</div>
+        <div class="cl-nm">Sistema Único de Emergencias</div>
+        <div class="cl-desc">Plataforma digital unificada para cámaras, ambulancias, bomberos y policía. Responde a la geografía fragmentada del partido y a los picos de verano.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMAS -->
+<div class="sec">
+  <div class="sec-hdr">📋 Programas Municipales Destacados</div>
+  <div class="sec-body">
+    <div class="prog-list">
+      <div class="prog-item">
+        <div class="prog-ico">🎒</div>
+        <div class="prog-body">
+          <h5>Pasaporte Universitario y Becas</h5>
+          <p>El Estado local financia becas económicas y transporte gratuito entre las 14 localidades para más de 1.000 estudiantes terciarios y universitarios por año. Reduce la deserción por razones de distancia y costo en un partido donde las universidades están concentradas geográficamente.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">❤️</div>
+        <div class="prog-body">
+          <h5>Cuidar la Vida</h5>
+          <p>Dispositivos móviles en escuelas primarias para controles clínicos, odontológicos y oftalmológicos gratuitos. Atienden a más de 300 niños por semana con enfoque preventivo y descentralizado.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🚐</div>
+        <div class="prog-body">
+          <h5>Salud Móvil en Tu Barrio</h5>
+          <p>Unidades equipadas con odontología, ginecología y vacunación que rotan por los centros comunitarios de las 14 localidades. Atienden a más de 3.000 vecinos mensuales en temporada baja, incluyendo firmas de libretas escolares y testeos rápidos.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🛒</div>
+        <div class="prog-body">
+          <h5>Sello de Calidad y Ferias Pulpo</h5>
+          <p>Ferias itinerantes exclusivas para productores locales en plazas centrales. El municipio provee gazebos y promoción a más de 250 emprendedores textiles y artesanos, generando facturación estable fuera de temporada.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PALANCAS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Palancas de Impacto</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🏖️ Sector Turístico</div>
+        </div>
+        <div class="pal-body">
+          <p>Hotelería, gastronomía y alquileres temporarios son el primer empleador del partido. Interlocutores naturales con escala provincial e interés en infraestructura, seguridad y conectividad.</p>
+          <p><span class="pal-access acc-priv">Ingreso PRIVADO</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">💧 Infraestructura Hídrica</div>
+        </div>
+        <div class="pal-body">
+          <p>El acueducto sur y las plantas potabilizadoras son obra provincial-municipal articulada con el intendente aliado. Presencia concreta donde el Estado históricamente no llegaba.</p>
+          <p><span class="pal-access acc-gest">Gestión Provincial</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🎓 Juventud Residente</div>
+        </div>
+        <div class="pal-body">
+          <p>+1.000 estudiantes con becas municipales son un electorado joven en formación. La apuesta educativa del municipio es la palanca más directa sobre el voto de largo plazo.</p>
+          <p><span class="pal-access acc-prot">Electorado Futuro</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS SUGERIDAS -->
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Sugeridas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Reserva de Biósfera Bahía Samborombón<span class="vis-tag tag-priv">NATURAL</span></div>
+          <div class="vis-desc">Área de conservación internacional en la zona norte del partido. Identidad ambiental única del Costero. Alta visibilidad en medios y posicionamiento diferencial.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Inauguración / Recorrida Plantas Potabilizadoras Sur<span class="vis-tag tag-gest">GESTIÓN</span></div>
+          <div class="vis-desc">Obra de agua corriente en Mar de Ajó y San Bernardo — presencia donde el Estado llegó por primera vez. Impacto concreto en calidad de vida de los residentes del sur.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Centro Universitario Local (CBC UBA / Arquitectura)<span class="vis-tag tag-gest">GESTIÓN</span></div>
+          <div class="vis-desc">Apuesta educativa para retener jóvenes en el partido. Contacto directo con estudiantes y familias que apostaron a quedarse en La Costa.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Feria Pulpo (Emprendedores Locales)<span class="vis-tag tag-com">COMUNITARIO</span></div>
+          <div class="vis-desc">250+ emprendedores artesanos y textiles con feria itinerante. Contacto directo con la economía informal del interior del partido fuera de temporada.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Recorrida Litoral: San Clemente → Santa Teresita → Mar de Ajó<span class="vis-tag tag-com">TERRITORIAL</span></div>
+          <div class="vis-desc">Recorrida estratégica norte-sur por las localidades principales. Visibilidad en toda la franja costera. La Costa se gana barrio por barrio, localidad por localidad.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS -->
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>La Costa es el distrito más singular del mapa bonaerense:</strong> 14 localidades sobre 60 km de costa, economía dual (turismo en verano, construcción en invierno) y el split electoral más inusual de la Provincia — LLA sacó 24.5% en la elección provincial y 46.7% en la nacional en el mismo año.</p>
+  <p>El PJ es primera fuerza provincial con 36–37% en todas las elecciones. La gestión de Juan de Jesús es aliada y sus programas están bien focalizados: agua corriente en el sur, salud móvil en 14 localidades, becas para retener juventud. El canal con la provincia está abierto.</p>
+  <p><strong>La clave estratégica es entender el fenómeno del split:</strong> el votante de La Costa que eligió LLA en la nacional pero PJ en la provincial no es un adversario — es un electorado pragmático que separa gestión local de propuesta nacional. Ese elector puede consolidarse hacia 2027 si la gestión provincial hace lo que la municipal ya demostró que puede: llegar a cada localidad con algo concreto. El agua en Mar de Ajó, la beca en Santa Teresita, el control médico en San Clemente. Localidad por localidad, sobre 60 km de costa.</p>
+</div>
+
+</body>
+</html>

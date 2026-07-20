@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>La Costa — Narrativa Estratégica 2026</title>
+<style>
+:root{--primary:#005f8a;--accent:#0077b6;--bg:#f0f9ff;--surface:#fff;--border:#e0f2fe;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;max-width:860px;margin:0 auto;padding:20px}
+
+/* COVER */
+.cover{background:linear-gradient(135deg,#003d5c 0%,#005f8a 50%,#0077b6 100%);color:#fff;border-radius:var(--radius);padding:36px 40px 32px;margin-bottom:20px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;right:-80px;bottom:-80px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cov-tag{font-size:.68rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#90e0ef;margin-bottom:12px}
+.cov-title{font-size:2.6rem;font-weight:900;line-height:1.05;margin-bottom:8px;letter-spacing:-.02em}
+.cov-sub{font-size:1rem;opacity:.75;margin-bottom:20px}
+.cov-meta{display:flex;gap:28px;flex-wrap:wrap}
+.cov-m{display:flex;flex-direction:column}
+.cov-mv{font-size:1.1rem;font-weight:800;color:#90e0ef}
+.cov-ml{font-size:.68rem;opacity:.65;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTIONS */
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.06);margin-bottom:16px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#003d5c,#005f8a);color:#fff;padding:11px 20px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:18px 20px}
+
+/* PROSE */
+.prose p{font-size:.85rem;color:#374151;line-height:1.7;margin-bottom:12px}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--primary);font-weight:700}
+
+/* QUOTE */
+.quote{background:linear-gradient(135deg,#e0f9ff,#b3e9ff);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 18px;margin:14px 0;font-size:.85rem;color:#005f8a;line-height:1.65;font-style:italic}
+
+/* DATA STRIP */
+.data-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0f2fe;border-radius:8px;overflow:hidden;margin-bottom:14px}
+.ds-cell{background:#fff;padding:12px 14px;text-align:center}
+.ds-v{font-size:1.25rem;font-weight:900;color:var(--accent)}
+.ds-l{font-size:.67rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:2px}
+
+/* ALERT */
+.alert{border-radius:8px;padding:14px 16px;margin-bottom:14px}
+.alert-warn{background:#fef2f2;border:1.5px solid #fecaca}
+.alert-warn .a-ttl{color:#b91c1c}
+.alert-info{background:#e0f9ff;border:1.5px solid #90e0ef}
+.alert-info .a-ttl{color:#005f8a}
+.alert-ok{background:#f0fdf4;border:1.5px solid #bbf7d0}
+.alert-ok .a-ttl{color:#15803d}
+.alert-yellow{background:#fffbeb;border:1.5px solid #fde68a}
+.alert-yellow .a-ttl{color:#92400e}
+.a-ttl{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.a-body{font-size:.8rem;color:#374151;line-height:1.6}
+
+/* EJES */
+.eje-list{display:flex;flex-direction:column;gap:10px}
+.eje{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.eje-ttl{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.eje-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+/* CIERRE */
+.cierre{background:linear-gradient(135deg,#003d5c,#005f8a);border-radius:var(--radius);padding:22px 24px;color:#fff}
+.cierre h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#90e0ef;margin-bottom:14px}
+.cierre p{font-size:.84rem;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:10px}
+.cierre p:last-child{margin-bottom:0}
+.cierre strong{color:#90e0ef}
+
+@media print{
+  body{background:#fff;padding:0}
+  .sec{box-shadow:none;border:1px solid #e0f2fe;break-inside:avoid}
+  .cover,.cierre{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:12mm 14mm}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cov-tag">🌊 COSTERO · 5ª Sección Electoral · Narrativa Estratégica 2026</div>
+  <div class="cov-title">La Costa</div>
+  <div class="cov-sub">60 km de Atlántico: el split más inusual de la Provincia y el electorado que vota al candidato</div>
+  <div class="cov-meta">
+    <div class="cov-m"><span class="cov-mv">Juan de Jesús</span><span class="cov-ml">Intendente · UxP · Aliado</span></div>
+    <div class="cov-m"><span class="cov-mv">14</span><span class="cov-ml">Localidades</span></div>
+    <div class="cov-m"><span class="cov-mv">36.6%</span><span class="cov-ml">PJ 2025 Prov</span></div>
+    <div class="cov-m"><span class="cov-mv">+22 pts</span><span class="cov-ml">Split LLA Nac/Prov</span></div>
+  </div>
+</div>
+
+<!-- DATOS -->
+<div class="data-strip">
+  <div class="ds-cell"><div class="ds-v">84,740</div><div class="ds-l">Padrón 2023</div></div>
+  <div class="ds-cell"><div class="ds-v">88,966</div><div class="ds-l">Padrón 2025 Prov</div></div>
+  <div class="ds-cell"><div class="ds-v">100,689</div><div class="ds-l">Habitantes</div></div>
+  <div class="ds-cell"><div class="ds-v">233.9 km²</div><div class="ds-l">Superficie</div></div>
+</div>
+
+<!-- IDENTIDAD -->
+<div class="sec">
+  <div class="sec-hdr">🏖️ El Territorio: 14 Localidades sobre el Atlántico</div>
+  <div class="sec-body">
+    <div class="prose">
+      <p>La Costa no es un partido: es un archipiélago continental. Catorce localidades consecutivas sobre la costa atlántica —desde San Clemente del Tuyú en el norte hasta Mar de Ajó en el sur— forman un territorio de más de 60 kilómetros de franja litoral que comparte intendente, presupuesto y servicios pero que funciona con lógicas completamente distintas según la localidad, la época del año y el perfil de quien vive ahí.</p>
+      <p>La economía del partido tiene dos tiempos. En verano, la maquinaria es el <strong>turismo masivo de sol y playa</strong>: uno de los flujos de turismo interno más grandes del país activa gastronomía, hotelería y alquileres temporarios que emplean a miles de residentes. En invierno, cuando las playas quedan casi vacías, el motor es la <strong>construcción</strong>: desarrollos inmobiliarios, refacciones de casas de veraneo y barrios privados en expansión (Costa Esmeralda al norte) sostienen el empleo de los meses fríos.</p>
+      <p>Esta dualidad crea un perfil de residente permanente muy particular: alguien que trabaja en servicios o en la construcción, que vive en un partido que se transforma radicalmente con cada cambio de estación, y que necesita del Estado municipal como ancla de estabilidad en medio de esa fluctuación. El Hospital en invierno. La escuela todo el año. El agua corriente en el sur donde el pozo individual no alcanza. El sistema de emergencias que en verano tiene que escalar diez veces.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GESTIÓN -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ La Gestión de Juan de Jesús: Estabilidad sobre la Fluctuación</div>
+  <div class="sec-body">
+    <div class="prose">
+      <p>Gobernar La Costa implica resolver un problema que pocos intendentes de la Provincia enfrentan: prestar servicios de calidad a una población que puede triplicarse en dos semanas. La lógica de Juan de Jesús es construir una plataforma de Estado que funcione bien en invierno —cuando el residente permanente la necesita— y escale en verano —cuando el turista y el propietario de segunda residencia la exige.</p>
+      <p>El <strong>Sistema Único de Emergencias (SUE)</strong> es el hito más innovador de la gestión: unificó en una sola plataforma digital el monitoreo de cámaras, el despacho de ambulancias municipales y la coordinación con bomberos y policía. En una geografía donde en enero el tráfico colapsa 60 kilómetros de ruta, tener todos los recursos de seguridad hablando en el mismo idioma no es un lujo tecnológico — es una necesidad operativa.</p>
+      <p>En educación, la apuesta fue retener juventud: el municipio construyó una <strong>red de educación superior local</strong> con el CBC de la UBA, la carrera de Arquitectura y tecnicaturas en Informática. El objetivo es que los jóvenes que crecen en La Costa no tengan que emigrar a Mar del Plata o La Plata para profesionalizarse. El programa de <strong>Pasaporte Universitario y Becas</strong> financia a más de 1.000 estudiantes por año y les subsidia el transporte entre las 14 localidades.</p>
+      <p>El hito de infraestructura más significativo es la <strong>Soberanía Hídrica</strong>: nuevas plantas potabilizadoras y extensión de redes de agua corriente hacia las localidades del sur (Mar de Ajó, San Bernardo), donde la dependencia histórica del pozo individual traía riesgo real de intrusión salina en zonas costeras. Llevar agua de red a esas localidades es cerrar una deuda de décadas con los residentes del sur del partido.</p>
+    </div>
+    <div class="quote">"Gobernar La Costa en invierno es gobernar para los que se quedan. Y en un partido donde el Estado funciona de verdad, los que se quedan votan."</div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ El Mapa Electoral: El Split que Hay que Entender</div>
+  <div class="sec-body">
+    <div class="alert alert-ok">
+      <div class="a-ttl">✅ PJ primera fuerza en elecciones provinciales — estable</div>
+      <div class="a-body">2023: 36.7% · 2025 Provincial: 36.6%. El caudal peronista se mantuvo prácticamente idéntico en dos elecciones. La base electoral existe y es sólida para la gestión local.</div>
+    </div>
+    <div class="alert alert-warn">
+      <div class="a-ttl">⚠️ LLA ganó la elección nacional con 46.7%</div>
+      <div class="a-body">En la elección nacional de 2025, LLA superó al PJ (37.1%) por casi 10 puntos. El mismo partido que acompañó al PJ provincial con 36.6% eligió LLA nacional con 46.7%. La diferencia para LLA entre ambas elecciones: +22.2 puntos.</div>
+    </div>
+    <div class="alert alert-yellow">
+      <div class="a-ttl">💡 El fenómeno del split: clave de interpretación</div>
+      <div class="a-body">Este no es un split de traición ni de inconsistencia — es un split de pragmatismo. El votante de La Costa distingue entre el candidato municipal (confía en quien le gestiona el agua, la ambulancia, la escuela) y el candidato nacional (donde el discurso y el momento político pesan más). Es un electorado sofisticado que vota personas, no estructuras. Ese votante puede consolidarse hacia 2027 si se construye el mismo vínculo de confianza concreta que la gestión municipal ya ganó.</div>
+    </div>
+    <div class="prose">
+      <p>Hay además un factor técnico que distorsiona las comparaciones: el <strong>padrón flotante</strong>. La Costa tiene propietarios de segunda residencia que están empadronados en el partido pero no son residentes permanentes. En la elección de 2025 PBA, el padrón registró 88.966 electores; en la nacional del mismo año, 83.021 — más de 5.000 de diferencia. Ese diferencial corresponde en parte a personas que votan en La Costa en elecciones provinciales pero en otro distrito en nacionales, o viceversa. El electorado real del residente permanente es más estable y predecible que lo que los números brutos sugieren.</p>
+    </div>
+  </div>
+</div>
+
+<!-- EJES ESTRATÉGICOS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos para 2026–2027</div>
+  <div class="sec-body">
+    <div class="eje-list">
+      <div class="eje">
+        <div class="eje-ttl">🤝 <span>Articular la gestión provincial con la municipal</span></div>
+        <div class="eje-body">Juan de Jesús gobierna bien y tiene el canal abierto. La estrategia es que la presencia provincial sea visible en sus logros: que el agua en Mar de Ajó, las plantas potabilizadoras, los centros de salud móvil lleven el doble sello. Los vecinos del sur del partido saben que el agua llegó — que también sepan con qué apoyo.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-ttl">🌊 <span>Presencia en toda la franja costera</span></div>
+        <div class="eje-body">La Costa no se gana desde San Clemente. Se gana localidad por localidad. Santa Teresita tiene sus demandas. Mar de Ajó tiene las suyas. La recorrida tiene que ser literal: 60 kilómetros de costa, 14 paradas, 14 conversaciones distintas. El intendente aliado es el guía perfecto para esa recorrida.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-ttl">📚 <span>Capitalizar la apuesta educativa</span></div>
+        <div class="eje-body">Más de 1.000 estudiantes con becas municipales son un electorado joven que ya tomó la decisión de quedarse en La Costa. Ese es exactamente el votante que se puede consolidar en una identidad política local. La apuesta educativa del municipio es también una apuesta electoral de largo plazo.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-ttl">🏗️ <span>Conectar con la economía de la construcción</span></div>
+        <div class="eje-body">La industria de la construcción es el principal empleador invernal. Desarrolladores, constructores locales y trabajadores de la construcción son interlocutores con intereses concretos en zonificación, infraestructura y habilitaciones. Un sector que se siente reconocido por la gestión es un sector que multiplica el mensaje.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CIERRE -->
+<div class="cierre">
+  <h3>📌 Lectura Final</h3>
+  <p>La Costa es el partido bonaerense que más fielmente ilustra la diferencia entre el voto al candidato y el voto a la estructura. Sus vecinos permanentes confían en quien les gestiona el día a día — y ese voto es consistentemente peronista en lo local. Pero en la elección nacional, votan al discurso que los interpela en ese momento.</p>
+  <p>El trabajo de 2026–2027 no es convencer a los que ya están — es consolidar a los que están a mitad del camino. Los 1.000 estudiantes con becas. Las familias del sur del partido que por primera vez tienen agua de red. Los trabajadores de la construcción que pasan el invierno en el partido y el verano atendiendo turistas. Esos son los vecinos que pueden pasar de split a voto unificado si la presencia es consistente y los resultados son concretos.</p>
+  <p><strong>En La Costa no alcanza con ganar en verano. Hay que ganar en invierno — cuando las playas están vacías, los residentes están, y el Estado es todo lo que queda.</strong></p>
+</div>
+
+</body>
+</html>
