@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Saavedra — Narrativa Territorial</title>
+<style>
+:root{--primary:#1a2535;--accent:#2e4057;--light:#f0f2f7;--border:#4a6080;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#0a0e1a;font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#030507 0%,#0d1520 40%,#1a2535 75%,#2e4057 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'🏔️';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.09}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-blue{background:rgba(29,100,240,.3);border-color:rgba(96,165,250,.5);color:#bfdbfe}
+.pill-purple{background:rgba(124,58,237,.3);border-color:rgba(167,139,250,.5);color:#ddd6fe}
+.pill-warn{background:rgba(180,130,0,.3);border-color:rgba(250,204,21,.5);color:#fde68a}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a2535,#2e4057);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#1a2535;line-height:1.65;margin-bottom:12px;border-left:4px solid #2e4057;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#1a2535;border-color:#1a2535;color:#fff}
+.card-dark h4{color:#a5c0e0 !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#1a2535;margin-bottom:6px;text-transform:uppercase}
+.card p{font-size:.78rem;color:#374151}
+.num-big{font-size:2rem;font-weight:900;color:#a5c0e0;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eef0f5;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.pj-v{color:#15803d;font-weight:800}
+.lla-v{color:#7c3aed;font-weight:800}
+.jxc-v{color:#d97706;font-weight:800}
+.vec-v{color:#0369a1;font-weight:800}
+.close{background:linear-gradient(135deg,#0d1520,#2e4057);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#a5c0e0;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🏔️ Cluster SUR · 6ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">SAAVEDRA (Pigüé)</div>
+  <div class="cv-sub">La Colonia Francesa del sur serrano — donde el omelette gigante, las Sierras de Cura Malal y la UPSO conviven con LLA 57.9% y un vecinalismo que le ganó al PJ en 2023</div>
+  <div class="cv-pills">
+    <span class="pill-blue">🔵 Aliado — Nebot (UxP, Vecinalista 2023)</span>
+    <span class="pill-purple">🟣 LLA ganó provincial 2025 (31.9% vs PJ 21.3%)</span>
+    <span class="pill-warn">⚠️ LLA 57.9% nac — sur serrano LLA-dominante</span>
+    <span class="pill">🥚 Fiesta de la Omelette Gigante — 20,000+ turistas</span>
+    <span class="pill">🎓 UPSO en Pigüé — universidad del sudoeste</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏔️ Territorio: La Francia del sur bonaerense y las sierras de Cura Malal</div>
+  <div class="sec-body">
+    <div class="lead">En 1884, familias de inmigrantes del Departamento de Aveyron desembarcaron en Buenos Aires y viajaron hacia el sur hasta fundar Pigüé — la colonia francesa más grande de Argentina. Ciento cuarenta años después, esa identidad sigue siendo la matriz cultural del partido de Saavedra: los apellidos franceses en las calles, la Fiesta de la Omelette Gigante que cada año convoca a más de 20,000 personas, el Convenio de Cooperación vigente con el Departamento de Aveyron. No es un museo vivo — es una comunidad que preservó su identidad de origen porque encontró en ella un activo económico y cultural concreto.</div>
+    <p>El otro activo de Saavedra es geográfico: las Sierras de Cura Malal. No tienen la fama de las Sierras de la Ventana ni la escala de las Sierras de Tandilia, pero ofrecen exactamente lo que busca el turismo que huye de los grandes complejos costeros: rutas de montaña poco transitadas, cabalgatas por senderos serranos, paisaje de sierra tranquilo y genuino. Saavedra es la puerta de entrada norte a ese corredor serrano — y el municipio lo aprovecha con la Cabalgata por la Sierra de Cura Malal como producto turístico activo.</p>
+    <p>La economía de base es agroganadera: el partido produce trigo y cebada (cosecha fina) y tiene una ganadería de cría muy activa que abastece a frigoríficos y remates ferias de la 6ª Sección. Y desde hace una década, Pigüé es sede de la UPSO — Universidad Provincial del Sudoeste — con licenciaturas y tecnicaturas gratuitas que convirtieron a la ciudad en polo educativo regional: los jóvenes de Saavedra, Coronel Suárez y municipios vecinos estudian en Pigüé en lugar de emigrar a Bahía Blanca o Buenos Aires.</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">37.6%</span><span class="num-lbl">Nebot (Vecinalista) en 2023 — ganó la intendencia sobre JxC (32%) y PJ (15.3%), y hoy es aliado UxP: el perfil más complejo del SUR</span></div>
+        <p style="margin-top:8px">El vecinalismo de Nebot no es PJ — es una construcción local independiente con raíces comunitarias. Su alianza con UxP es política, no orgánica. La visita tiene que activarlo sin intentar reemplazar su perfil vecinalista por uno partidario.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">57.9%</span><span class="num-lbl">LLA en la nacional 2025 — el sur serrano bonaerense votó a Milei de manera contundente, superando incluso la media provincial de LLA</span></div>
+        <p style="margin-top:8px">En la provincial, LLA igualmente ganó con 31.9% vs PJ 21.3%. El electorado de Saavedra es conservador-agropecuario: JxC tenía el 32% en 2023 y ese voto fue casi íntegro a LLA en 2025. El PJ partió de un piso muy bajo (15.3% en 2023) y subió solo a 21.3% provincial.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: El vecinalismo que fue a LLA, y el PJ que nunca fue primera minoría</div>
+  <div class="sec-body">
+    <div class="lead">En 2023, Saavedra tuvo el mapa electoral más atípico del sur bonaerense: el Vecinalista (Nebot) ganó con 37.6%, JxC quedó segundo con 32%, y el PJ apenas llegó al 15.3% — casi empatado con LLA (15.1%). En este municipio, el peronismo nunca fue la primera fuerza: el vecinalismo local y el radicalismo/JxC han sido históricamente las fuerzas dominantes. En 2025, sin JxC como bloque, ese 32% del JxC migró casi íntegro a LLA: LLA ganó la provincial con 31.9% vs PJ 21.3%, y la nacional con 57.9% vs PJ 25.2%.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Evolución electoral</h4>
+        <div class="data-row"><span>2023 Vecinalista ✅ (Nebot)</span><span class="vec-v">37.6% (4,920)</span></div>
+        <div class="data-row"><span>2023 JxC</span><span class="jxc-v">32.0% (4,189)</span></div>
+        <div class="data-row"><span>2023 PJ</span><span class="pj-v">15.3% (2,002)</span></div>
+        <div class="data-row"><span>2023 LLA</span><span class="lla-v">15.1% (1,981)</span></div>
+        <div class="data-row"><span>2025 Prov LLA 🟣</span><span class="lla-v">31.9% (3,141)</span></div>
+        <div class="data-row"><span>2025 Prov PJ</span><span class="pj-v">21.3% (2,093)</span></div>
+        <div class="data-row"><span>2025 Nac LLA 🟣</span><span class="lla-v">57.9% (6,431)</span></div>
+        <div class="data-row"><span>2025 Nac PJ</span><span class="pj-v">25.2% (2,794)</span></div>
+      </div>
+      <div class="card">
+        <h4>🔍 Por qué el PJ no tiene base en Saavedra</h4>
+        <p>Saavedra es un municipio donde el peronismo nunca tuvo raíces profundas: la colonia francesa fundacional, el agro de cosecha fina, la ganadería de cría y el turismo serrano generaron una cultura política que históricamente favoreció a fuerzas de centro-derecha (vecinalismo local, radicalismo, UCR, JxC). El PJ es tercera o cuarta fuerza en Saavedra desde hace décadas.</p>
+        <p>El salto de LLA en 2025 (57.9% en la nacional) se explica por la migración casi completa del voto JxC: esos 4,189 votos de 2023 se distribuyeron entre LLA y algo del vecinalismo de Nebot que se dispersó en categorías superiores. El PJ subió apenas de 15.3% a 21.3% en la provincial — un crecimiento modesto que no altera el mapa estructural.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos — la Francia bonaerense y el sur serrano</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>🥚 La Omelette Gigante — la escena cultural más original de la Provincia</h4>
+        <p>No hay otro municipio de la Provincia que cook un omelette de 100 metros para 20,000 turistas. La Fiesta de la Omelette Gigante es única en toda la Argentina — y probablemente en toda América Latina. Una visita durante la fiesta (o un acuerdo de apoyo provincial a su promoción turística, financiamiento de infraestructura del parque municipal) genera el tipo de contenido visual que ningún staff de comunicación puede fabricar: el interior bonaerense auténtico, vivo y completamente diferente de la imagen de pampa monótona que el litoral suele proyectar del interior.</p>
+      </div>
+      <div class="card">
+        <h4>🎓 La UPSO — la inversión que se ve</h4>
+        <p>La Universidad Provincial del Sudoeste en Pigüé es el activo concreto más valorado por los jóvenes y las familias de Saavedra. Una propuesta de nueva carrera (agronomía con enfoque serrano, turismo rural, tecnología alimentaria vinculada a la gastronomía francesa), ampliación edilicia, o convenio de becas provinciales tiene llegada directa al perfil que puede escuchar al PJ en un municipio donde el PJ no ganó en 2023. La universidad como política de arraigo juvenil es el argumento transversal que no requiere afiliación peronista para convencer.</p>
+      </div>
+      <div class="card">
+        <h4>🇫🇷 El Convenio Aveyron — la diplomacia provincial</h4>
+        <p>El Convenio de Cooperación Descentralizada con el Departamento de Aveyron (Francia) es una herramienta de política exterior subnacional que pocas provincias en Argentina tienen activa con ese nivel de especificidad. Una visita con agenda de cooperación franco-bonaerense — agricultura de montaña, gastronomía, identidad cultural, intercambio académico UPSO — tiene resonancia en el elector de Saavedra porque toca el núcleo de su identidad: la herencia francesa que los define como comunidad distinta de todas las demás del sur bonaerense.</p>
+      </div>
+      <div class="card">
+        <h4>🏔️ Las Sierras de Cura Malal — turismo serrano diferencial</h4>
+        <p>La Cabalgata por la Sierra de Cura Malal es el producto turístico serrano que Saavedra tiene y no sabe exactamente cómo escalar. Una propuesta de apoyo provincial al desarrollo turístico serrano — señalización, acceso a crédito para cabañeros y guías, circuito serrano bonaerense que una Saavedra con Coronel Suárez y Tornquist — tiene llegada al pequeño emprendedor turístico que en 2025 votó LLA pero que necesita política pública provincial para que su negocio funcione.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>Saavedra es el municipio del SUR con la identidad cultural más singular de toda la Provincia: colonia francesa centenaria, Fiesta de la Omelette Gigante, Sierras de Cura Malal, UPSO. El problema electoral es claro: el PJ partió de 15.3% en 2023 y llegó a 21.3% en la provincial 2025, mientras LLA dominó con 31.9% provincial y 57.9% nacional. El intendente aliado (Nebot, Vecinalista convertido en UxP) no puede arrastrar electorado que nunca fue peronista.</p>
+  <p>La estrategia correcta en Saavedra no es construir PJ — es construir imagen de gestión provincial responsable con un aliado que tiene sus propias raíces. La Omelette Gigante, la UPSO, el Convenio Aveyron y las Sierras de Cura Malal son los cuatro activos de comunicación que permiten presencia con legitimidad cultural en un electorado conservador que en 2025 eligió LLA masivamente.</p>
+  <p><strong>Mensaje recomendado:</strong> "Saavedra tiene lo que ningún otro municipio bonaerense tiene: una identidad francesa que es orgullo de toda la Provincia, sierras que guardan el turismo más auténtico del sur, y una universidad que hace que los jóvenes del sudoeste puedan quedarse en su tierra. La Provincia viene a cuidar lo que Saavedra construyó — y a sumar lo que todavía falta". El PJ que llega con agenda concreta de UPSO, turismo serrano y cooperación con Aveyron es el PJ que puede hablar sin ser rechazado en el sur más difícil de la Provincia.</p>
+</div>
+
+</body>
+</html>
