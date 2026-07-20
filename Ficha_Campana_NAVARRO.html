@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ficha de Campaña — NAVARRO</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;min-height:100vh}
+  .page{max-width:960px;margin:0 auto;padding:20px}
+
+  .header{background:linear-gradient(135deg,#7b5e00 0%,#4a3800 100%);color:#fff;border-radius:14px 14px 0 0;padding:28px 32px 22px}
+  .header-top{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+  .cluster-badge{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:4px 14px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .muni-name{font-size:2.1rem;font-weight:800;letter-spacing:-.5px;line-height:1.1}
+  .muni-sub{font-size:.95rem;opacity:.82;margin-top:4px}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .badge{padding:5px 14px;border-radius:20px;font-size:.78rem;font-weight:700;letter-spacing:.04em}
+  .badge-al{background:#2563eb;color:#fff}
+  .badge-warn{background:#d97706;color:#fff}
+  .badge-op{background:#dc2626;color:#fff}
+  .badge-crit{background:#7c3aed;color:#fff}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .card{background:#fff;padding:22px 24px;border:1px solid #e5e7eb}
+  .card:nth-child(1){border-radius:0;border-top:none;border-right:none}
+  .card:nth-child(2){border-radius:0;border-top:none}
+  .card.full{grid-column:1/-1;border-top:none;border-radius:0 0 14px 14px}
+  .card-title{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7b5e00;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #7b5e00}
+
+  .intendente-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#7b5e00,#4a3800);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+  .int-name{font-size:1.05rem;font-weight:700;color:#1a1a2e}
+  .int-partido{font-size:.8rem;color:#6b7280;margin-top:2px}
+  .int-meta{font-size:.78rem;color:#374151;margin-top:8px;line-height:1.5;background:#f0f4ff;border-left:3px solid #2563eb;padding:8px 12px;border-radius:0 6px 6px 0}
+
+  .stat-big{text-align:center;padding:10px 0}
+  .stat-num{font-size:2rem;font-weight:800;color:#7b5e00;line-height:1}
+  .stat-lbl{font-size:.72rem;color:#6b7280;margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+  .stat-row{display:flex;gap:10px;margin-top:12px}
+  .stat-mini{flex:1;text-align:center;background:#f9fafb;border-radius:8px;padding:10px 6px}
+  .stat-mini .num{font-size:1.1rem;font-weight:700;color:#1a1a2e}
+  .stat-mini .lbl{font-size:.65rem;color:#9ca3af;margin-top:2px}
+
+  .elec-block{margin-bottom:16px}
+  .elec-year{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;margin-bottom:8px}
+  .bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .bar-label{font-size:.78rem;color:#374151;width:36px;text-align:right;font-weight:600;flex-shrink:0}
+  .bar-track{flex:1;height:22px;background:#f3f4f6;border-radius:4px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:6px}
+  .bar-fill span{font-size:.7rem;font-weight:700;color:#fff;white-space:nowrap}
+  .bar-pj{background:#1d4ed8}
+  .bar-jxc{background:#dc2626}
+  .bar-lla{background:#7c3aed}
+  .elec-note{font-size:.72rem;color:#9ca3af;font-style:italic;margin-top:4px}
+
+  .id-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .id-tag{background:#fef9ee;border:1px solid #d97706;border-radius:20px;padding:3px 11px;font-size:.73rem;color:#92400e;font-weight:600}
+  .id-text{font-size:.82rem;line-height:1.65;color:#374151}
+  .id-text p{margin-bottom:8px}
+
+  .prog-list{list-style:none}
+  .prog-list li{display:flex;gap:10px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #f3f4f6;align-items:flex-start}
+  .prog-list li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .prog-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+  .prog-name{font-size:.83rem;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .prog-desc{font-size:.76rem;color:#6b7280;line-height:1.5}
+
+  .footer{background:#1a1a2e;color:#9ca3af;text-align:center;font-size:.72rem;padding:12px;border-radius:0 0 14px 14px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="header-top">
+      <span style="font-size:2rem">🐄</span>
+      <div>
+        <span class="cluster-badge">INTERIOR · 1ª Sección Electoral</span>
+        <div class="muni-name">NAVARRO</div>
+        <div class="muni-sub">Facundo Diz · Unión por la Patria · Padrón 16.189</div>
+      </div>
+    </div>
+    <div class="badges">
+      <span class="badge badge-al">✅ UxP Aliado</span>
+      <span class="badge badge-warn">⚠️ LLA 52.2% en nac.</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">🏛️ Intendente</div>
+      <div class="intendente-row">
+        <div class="avatar">🐄</div>
+        <div>
+          <div class="int-name">Facundo Diz</div>
+          <div class="int-partido">Unión por la Patria · 1ª Sección Electoral</div>
+        </div>
+      </div>
+      <div class="int-meta">
+        PJ ganó 2023 con 39.1% vs JxC 33.3% y LLA 18.2%. En 2025 el PJ lidera la provincial (30.9%) pero LLA se disparó a 52.2% en la nacional — el municipio tiene voto diferenciado marcado entre prov. y nac.
+      </div>
+
+      <div style="margin-top:20px">
+        <div class="card-title">📊 Padrón Electoral</div>
+        <div class="stat-big">
+          <div class="stat-num">16.189</div>
+          <div class="stat-lbl">electores habilitados 2025</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-mini">
+            <div class="num">11.954</div>
+            <div class="lbl">votos 2023</div>
+          </div>
+          <div class="stat-mini">
+            <div class="num">9.980</div>
+            <div class="lbl">votos nac. 2025</div>
+          </div>
+          <div class="stat-mini">
+            <div class="num">62.6%</div>
+            <div class="lbl">participación</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🗳️ Resultados Electorales</div>
+
+      <div class="elec-block">
+        <div class="elec-year">2023 — General Municipal</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:73%"><span>39.1% (4.678)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#dc2626">JxC</span>
+          <div class="bar-track"><div class="bar-fill bar-jxc" style="width:62%"><span>33.3% (3.979)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:34%"><span>18.2% (2.176)</span></div></div>
+        </div>
+        <div class="elec-note">Total: 11.954 · Diz UxP electo intendente</div>
+      </div>
+
+      <div class="elec-block">
+        <div class="elec-year">2025 — Elección Provincial PBA</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:57%"><span>30.9% (2.982)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:39%"><span>20.9% (2.022)</span></div></div>
+        </div>
+        <div class="elec-note">PJ lidera prov. por 10 pts · Total: 9.657 votos</div>
+      </div>
+
+      <div class="elec-block">
+        <div class="elec-year">2025 — Elección Nacional</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:95%"><span>52.2% (5.212)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:61%"><span>33.7% (3.366)</span></div></div>
+        </div>
+        <div class="elec-note">LLA gana Nacional por 18.5 pts · desdoblamiento pronunciado</div>
+      </div>
+    </div>
+
+    <div class="card" style="grid-column:1/-1;border-top:none;border-bottom:none">
+      <div class="card-title">🏙️ Identidad Territorial</div>
+      <div class="id-tags">
+        <span class="id-tag">Polo Tambero — Cuenca Lechera</span>
+        <span class="id-tag">Laguna de Navarro</span>
+        <span class="id-tag">Fusilamiento del Brigadier Dorrego (1828)</span>
+        <span class="id-tag">Turismo histórico de cercanía</span>
+        <span class="id-tag">Campo agropecuario mixto</span>
+        <span class="id-tag">Las Marianas · JJ Almeyra · Moll</span>
+      </div>
+      <div class="id-text">
+        <p>Navarro es un municipio con dos identidades superpuestas: la <strong>producción tambera</strong> como motor económico principal —la cuenca lechera navarra es uno de los polos más consolidados de la 1ª Sección— y el <strong>valor histórico-simbólico</strong> que le aporta ser el lugar donde fue fusilado el Brigadier General Manuel Dorrego en diciembre de 1828. Ese hecho histórico convierte a Navarro en un destino de turismo cultural de cercanía con peso identitario difícilmente reproducible.</p>
+        <p>La <strong>Laguna de Navarro</strong> suma el vector de espacio verde y turismo de escapada para el público de La Plata y el AMBA. El municipio está consolidando la laguna no solo como espacio de recreación sino como atractivo regional que puede sostener estadías más largas y mayor gasto promedio.</p>
+        <p>El interior profundo del partido —Las Marianas, JJ Almeyra, Moll— son localidades rurales menores que dependen de servicios básicos (salud, caminos, vivienda) que el municipio prioriza como eje de equidad territorial.</p>
+      </div>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">⚙️ Programas e Hitos de Gestión</div>
+      <ul class="prog-list">
+        <li>
+          <span class="prog-icon">🛤️</span>
+          <div>
+            <div class="prog-name">Caminos Rurales "Lecheros" — Corralón Municipal</div>
+            <div class="prog-desc">Arreglo constante y entoscado de los caminos rurales por los que circulan los camiones de leche. El corralón municipal prioriza operativamente la transitabilidad de la red tambera: sin caminos accesibles, la leche no sale y la producción colapsa. Política de infraestructura productiva directa.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🌊</span>
+          <div>
+            <div class="prog-name">Puesta en Valor de la Laguna de Navarro</div>
+            <div class="prog-desc">Consolidación de la Laguna como espacio verde de calidad y atractivo regional. Inversión en infraestructura recreativa, accesos y equipamiento para ampliar la afluencia de público de la región y de La Plata/AMBA. Complemento al turismo histórico del distrito.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🏠</span>
+          <div>
+            <div class="prog-name">Banco de Tierras Municipal</div>
+            <div class="prog-desc">El Estado local adquiere terrenos fiscales o lotes ociosos, ejecuta el amanzanamiento, gestiona luz y calles de tosca, y los entrega mediante planes sociales de vivienda o loteos financiados para familias locales. Política de arraigo orientada especialmente a los segmentos más jóvenes para reducir la emigración.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🏗️</span>
+          <div>
+            <div class="prog-name">Reactivación de Planes de Vivienda Social</div>
+            <div class="prog-desc">Retoma y finalización de planes de vivienda social con financiamiento provincial y nacional. Apunta a cubrir el déficit habitacional acumulado en la cabecera municipal y las localidades del interior del partido.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🏥</span>
+          <div>
+            <div class="prog-name">Fortalecimiento de CAPS Rurales — Guardias 24 Horas</div>
+            <div class="prog-desc">Inversión sostenida para garantizar guardias médicas y ambulancias operativas las 24 horas en los pueblos del interior profundo: Las Marianas, JJ Almeyra y Moll. El primer auxilio en el lugar evita que una emergencia rural se convierta en una tragedia por distancia.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">NAVARRO · INTERIOR · 1ª Sección Electoral · Padrón 16.189 · Ficha de Campaña 2025–2026</div>
+</div>
+</body>
+</html>
