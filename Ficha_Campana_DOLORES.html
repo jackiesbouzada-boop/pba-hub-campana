@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ficha de Campaña — DOLORES</title>
+<style>
+:root{--cl:#8b3a3a;--cl2:#3a0000;--cl3:#f5eaea;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f5eaea;color:#1a1a1a;font-size:13px;max-width:900px;margin:0 auto;padding:14px}
+.hdr{background:linear-gradient(135deg,#0d0000 0%,#3a0000 40%,#6b1a1a 80%,#8b3a3a 100%);color:#fff;padding:28px 30px 22px;border-radius:var(--radius);margin-bottom:12px;position:relative;overflow:hidden}
+.hdr::before{content:'🎸';position:absolute;right:-10px;bottom:-18px;font-size:10rem;opacity:.1}
+.h-over{font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.6;margin-bottom:5px}
+.h-nm{font-size:2.4rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.85rem;opacity:.7;margin-bottom:14px}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-size:.68rem;font-weight:700;padding:3px 11px;border-radius:20px;border:1px solid transparent}
+.badge-warn{background:rgba(180,130,0,.25);border-color:rgba(250,204,21,.4);color:#fde68a}
+.badge-al{background:rgba(29,78,216,.25);border-color:rgba(59,130,246,.4);color:#93c5fd}
+.badge-op{background:rgba(220,38,38,.25);border-color:rgba(248,113,113,.4);color:#fca5a5}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:#fff;border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.07);overflow:hidden}
+.c-hdr{background:var(--cl);color:#fff;padding:7px 14px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px}
+.c-hdr-dark{background:var(--cl2)}
+.c-body{padding:12px 14px}
+.kv{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #f5eaea;font-size:.78rem}
+.kv:last-child{border-bottom:none}
+.kv-k{color:#6b7280}
+.kv-v{font-weight:700;color:#1a1a1a}
+.kv-pj{color:#15803d;font-weight:800}
+.kv-lla{color:#7c3aed;font-weight:800}
+.kv-jxc{color:#d97706;font-weight:800}
+.prog-list{list-style:none;padding:0}
+.prog-list li{padding:5px 0;border-bottom:1px solid #f5eaea;font-size:.78rem;line-height:1.5}
+.prog-list li:last-child{border-bottom:none}
+.prog-list li::before{content:"▸ ";color:var(--cl);font-weight:700}
+.alert{background:#fffbeb;border:1.5px solid #f59e0b;border-radius:8px;padding:8px 12px;font-size:.75rem;color:#78350f;margin-top:8px}
+.alert strong{color:#92400e}
+.highlight{background:#fff0f0;border:1.5px solid #8b3a3a;border-radius:8px;padding:8px 12px;font-size:.75rem;color:#3a0000;margin-top:8px}
+.highlight strong{color:#8b3a3a}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.stat{background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 2px 8px rgba(0,0,0,.07);text-align:center}
+.stat-n{font-size:1.6rem;font-weight:900;color:var(--cl);display:block}
+.stat-l{font-size:.63rem;color:#6b7280;text-transform:uppercase;margin-top:2px}
+.full{grid-column:1/-1}
+p{font-size:.8rem;color:#374151;line-height:1.6;margin-bottom:8px}
+p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.card{box-shadow:none;break-inside:avoid}.hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="h-over">🌿 Cluster SALADO · 5ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="h-nm">DOLORES</div>
+  <div class="h-sub">Primera ciudad del interior PBA · Polo Judicial 5ª Sección · Parque Termal · Fiesta Nacional de la Guitarra</div>
+  <div class="badges">
+    <span class="badge badge-al">✅ Aliado — Juan Pablo García (UxP)</span>
+    <span class="badge badge-warn">⚠️ PJ 60% prov / LLA 49.9% nac — split extremo 21.6 pts</span>
+    <span class="badge">🎸 Fiesta Nacional de la Guitarra</span>
+    <span class="badge">⚖️ Cabecera Judicial 5ª Sección</span>
+    <span class="badge">💧 Parque Termal — turismo de destino</span>
+  </div>
+</div>
+
+<div class="stat-grid">
+  <div class="stat"><span class="stat-n">26,102</span><span class="stat-l">Padrón Electoral</span></div>
+  <div class="stat"><span class="stat-n">5ª</span><span class="stat-l">Sección Electoral</span></div>
+  <div class="stat"><span class="stat-n">1,978</span><span class="stat-l">km² superficie</span></div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="c-hdr">Intendente</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Nombre</span><span class="kv-v">Juan Pablo García</span></div>
+      <div class="kv"><span class="kv-k">Fuerza política</span><span class="kv-v">Unión por la Patria</span></div>
+      <div class="kv"><span class="kv-k">Vínculo</span><span class="kv-v">Aliado (UxP)</span></div>
+      <div class="kv"><span class="kv-k">Sección</span><span class="kv-v">5ª Sección Electoral</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">Identidad Territorial</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Fundación</span><span class="kv-v">1817 — primera ciudad del interior PBA</span></div>
+      <div class="kv"><span class="kv-k">Rol institucional</span><span class="kv-v">Cabecera Judicial Dept. 5ª Sección</span></div>
+      <div class="kv"><span class="kv-k">Turismo</span><span class="kv-v">Parque Termal + Fiesta Nac. Guitarra</span></div>
+      <div class="kv"><span class="kv-k">Ganadería</span><span class="kv-v">Cuenca del Salado — genética bovina</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="card">
+    <div class="c-hdr">2023 General</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">PJ (García)</span><span class="kv-pj">45.3% (9,149)</span></div>
+      <div class="kv"><span class="kv-k">JxC</span><span class="kv-jxc">44.1% (8,925)</span></div>
+      <div class="kv"><span class="kv-k">LLA</span><span class="kv-lla">10.6% (2,143)</span></div>
+      <div class="kv"><span class="kv-k">Margen PJ</span><span class="kv-pj">+224 votos</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">2025 — Elec. Provincial</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">PJ ✅✅</span><span class="kv-pj">60.0% (10,975)</span></div>
+      <div class="kv"><span class="kv-k">LLA</span><span class="kv-lla">15.5% (2,825)</span></div>
+      <div class="kv"><span class="kv-k">JxC</span><span class="kv-jxc">NaN — corrió separado</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">18,280</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">2025 — Elec. Nacional</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">LLA 🔴</span><span class="kv-lla">49.9% (8,050)</span></div>
+      <div class="kv"><span class="kv-k">PJ</span><span class="kv-pj">38.4% (6,190)</span></div>
+      <div class="kv"><span class="kv-k">Margen LLA</span><span class="kv-lla">+1,860 votos</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">16,132</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="highlight">
+  <strong>⚡ Dato electoral excepcional:</strong> Dolores tiene el split provincial-nacional más llamativo de la Cuenca del Salado: PJ 60.0% en la provincial (superando de lejos el 45.3% de 2023) pero sólo 38.4% en la nacional (donde LLA ganó con 49.9%). La diferencia LLA entre provincial (15.5%) y nacional (49.9%) es de 34.4 puntos — uno de los splits más extremos de toda la provincia. El electorado de Dolores separa radicalmente el voto local/provincial del nacional.
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="c-hdr">Identidad Profunda</div>
+    <div class="c-body">
+      <p>Dolores fue fundada en 1817 y es la primera ciudad del interior de la provincia de Buenos Aires. Ese título no es solo histórico — es la razón por la que Dolores es la cabecera del Departamento Judicial que cubre gran parte de la 5ª Sección. Los tribunales, las fiscalías y las dos unidades penitenciarias generan un movimiento diario de abogados, funcionarios y servicios que es el motor económico más estable del casco urbano. La ciudad vive en parte del sistema judicial que atiende una región enorme.</p>
+      <p>El Parque Termal transformó la matriz de ingresos del municipio. Lo que antes era una ciudad que la gente cruzaba de paso hacia la costa atlántica se convirtió en un destino turístico con piletas de aguas saladas y dulces, y hoteles de cadena internacional que eligieron Dolores como ubicación. La Fiesta Nacional de la Guitarra completa el perfil cultural: un evento de alcance nacional que atrae visitantes y consolida la identidad artística de la ciudad.</p>
+      <p>En el campo, Dolores está en la Cuenca del Salado con ganadería de cría y genética bovina que exporta hacia el mundo desde establecimientos como Cabañas Cumelén — una de las pocas cabañas de genética bovina del país que vende embriones a más de 12 países.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr c-hdr-dark">Programas de Gestión</div>
+    <div class="c-body">
+      <ul class="prog-list">
+        <li><strong>Parque Termal Dolores</strong> — La obra de infraestructura turística más grande de la historia reciente del municipio. Piletas de aguas saladas y dulces, radicación de hoteles de cadena internacional. Cambió la matriz económica de la ciudad.</li>
+        <li><strong>Austeridad Administrativa</strong> — Eliminación de 23 cargos políticos desde el inicio de la gestión. Restricción en el uso de recursos municipales (combustibles, telefonía). Mensaje de responsabilidad fiscal.</li>
+        <li><strong>Plan Buenos Aires Hábitat</strong> — Primer municipio bonaerense en adherir a esta iniciativa provincial. Planificación sostenible del territorio y desarrollo de proyectos habitacionales.</li>
+        <li><strong>Monitoreo Urbano y Prevención</strong> — Centro de Monitoreo con más de 150 cámaras HD y anillos LPR en accesos viales. Reducción drástica del robo automotor y desarticulación de bandas itinerantes.</li>
+        <li><strong>Salud en Acción / Operativos Barriales</strong> — Unidades móviles e itinerantes en sedes barriales. Más de 800 vecinos mensuales atendidos con ginecología, testeos sífilis/HIV y trámites ANSES sin turno previo.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card full">
+  <div class="c-hdr">Lectura Estratégica</div>
+  <div class="c-body">
+    <p><strong>Fortaleza excepcional:</strong> El 60% provincial de 2025 en un municipio que en 2023 ganó por 224 votos es el indicador más importante de esta ficha. García construyó en dos años un dominio provincial que va muy por encima de su resultado municipal de 2023. Ese 60% es el piso desde donde se construye la estrategia de campaña provincial en Dolores: hay base, hay confianza, hay estructura.</p>
+    <p><strong>Tensión:</strong> El split de 34 puntos entre LLA provincial (15.5%) y LLA nacional (49.9%) es el más extremo de la cuenca. El electorado de Dolores vota al PJ para la Provincia con convicción, pero migra masivamente a LLA en la categoría nacional. Ese electorado dual — que existe en la misma persona — es el que la campaña provincial necesita entender: no es incoherente, es deliberado. El votante que elige PJ para la Provincia y LLA para la Nación tiene sus razones y no va a cambiar de opinión solo con argumentos ideológicos.</p>
+    <p><strong>Ángulo provincial:</strong> El Parque Termal es la obra que más puede vincularse a la articulación provincial — fue posible con gestión e inversión que requirió más que el municipio solo. García activo, visita al Parque Termal como obra de desarrollo turístico, recorrida por el casco histórico de la primera ciudad del interior bonaerense. Las Termas como modelo de transformación económica que el interior puede lograr cuando tiene la gestión correcta.</p>
+  </div>
+</div>
+
+</body>
+</html>

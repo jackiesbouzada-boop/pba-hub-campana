@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dolores — Narrativa Territorial</title>
+<style>
+:root{--primary:#3a0000;--accent:#8b3a3a;--light:#f5eaea;--border:#c07070;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#2e0000;font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#0d0000 0%,#3a0000 40%,#6b1a1a 75%,#8b3a3a 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'🎸';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.09}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-blue{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.pill-warn{background:rgba(180,130,0,.3);border-color:rgba(250,204,21,.5);color:#fde68a}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#3a0000,#8b3a3a);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#3a0000;line-height:1.65;margin-bottom:12px;border-left:4px solid #8b3a3a;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#3a0000;border-color:#3a0000;color:#fff}
+.card-dark h4{color:#fca5a5 !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#3a0000;margin-bottom:6px;text-transform:uppercase}
+.card p{font-size:.78rem;color:#374151}
+.num-big{font-size:2rem;font-weight:900;color:#fca5a5;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f5eaea;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.pj-v{color:#15803d;font-weight:800}
+.lla-v{color:#7c3aed;font-weight:800}
+.jxc-v{color:#d97706;font-weight:800}
+.close{background:linear-gradient(135deg,#3a0000,#8b3a3a);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#fca5a5;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🌿 Cluster SALADO · 5ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">DOLORES</div>
+  <div class="cv-sub">La primera ciudad del interior bonaerense — donde el agua caliente y la guitarra transformaron lo que la justicia y los campos no alcanzaban</div>
+  <div class="cv-pills">
+    <span class="pill-blue">✅ Aliado — Juan Pablo García (UxP)</span>
+    <span class="pill-warn">⚠️ PJ 60% prov / LLA 49.9% nac — split extremo de 34 puntos LLA prov→nac</span>
+    <span class="pill">🎸 Fiesta Nacional de la Guitarra</span>
+    <span class="pill">💧 Parque Termal Dolores</span>
+    <span class="pill">⚖️ Cabecera Judicial 5ª Sección</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌿 Territorio: La primera ciudad del interior y sus tres vidas paralelas</div>
+  <div class="sec-body">
+    <div class="lead">Dolores tiene 1817 de fundación y tres economías que no se explican entre sí: la de la Cuenca del Salado con su ganadería bovina de exportación, la del Polo Judicial con sus tribunales y unidades penitenciarias, y la del turismo termal que llegó tarde pero llegó para quedarse. La ciudad que durante décadas fue el lugar que la gente cruzaba de paso hacia la costa decidió, a fuerza de gestión y agua caliente, convertirse en destino.</div>
+    <p>La condición de primera ciudad del interior de Buenos Aires no es un dato del almanaque. Es la explicación de por qué Dolores tiene la cabecera del Departamento Judicial de la 5ª Sección: los tribunales, las fiscalías, dos unidades penitenciarias y todo el movimiento de abogados, funcionarios, defensores y familias que van a visitar internos se asientan en Dolores porque en 1817 alguien trazó el primer plano de ciudad del interior bonaerense aquí. Ese estatus judicial genera una economía de servicios que ningún partido de la Cuenca del Salado replicó: hotelería de trabajo, gastronomía de lunes a viernes, comercio formal que vive del movimiento del Palacio de Tribunales.</p>
+    <p>El Parque Termal cambió la matriz del fin de semana. Lo que antes era turismo de paso hacia Mar del Plata o la Costa Atlántica se convirtió en turismo de estadía: piletas de aguas saladas y dulces, hoteles de cadena internacional que eligieron Dolores como sede — una decisión empresarial que no se toma por inercia. La Fiesta Nacional de la Guitarra completa el ciclo: un festival que convoca artistas y públicos de todo el país y que le da a Dolores una identidad cultural que no compete con ninguna otra ciudad de la cuenca.</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">60%</span><span class="num-lbl">PJ en la provincial 2025 — desde un 45.3% que ganó por 224 votos en 2023. Un salto de 15 puntos en dos años</span></div>
+        <p style="margin-top:8px">García ganó en 2023 por el filo de la navaja. Dos años después, el PJ saca 60% en la categoría provincial. Eso no se construye solo con obra — se construye con presencia, con austeridad visible (23 cargos eliminados) y con el tipo de gestión cotidiana que la gente recuerda el día de la elección.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">34.4</span><span class="num-lbl">puntos de diferencia entre el voto LLA en la provincial (15.5%) y en la nacional (49.9%) — el split más extremo de la cuenca</span></div>
+        <p style="margin-top:8px">El mismo vecino que vota PJ al 60% para la Provincia vota LLA al 49.9% para la Nación. Eso no es contradicción — es el electorado diciéndole al sistema político dos cosas distintas en dos categorías distintas. El mensaje provincial de Dolores es favorable. El nacional es la advertencia.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: El split más llamativo de la Cuenca del Salado</div>
+  <div class="sec-body">
+    <div class="lead">En 2023, García ganó con 45.3% sobre un JxC al 44.1% — 224 votos. LLA apenas llegó al 10.6%. En 2025, la provincial fue excepcional: PJ 60.0% vs LLA 15.5%. Pero en la nacional, LLA ganó con 49.9% (8,050) vs PJ 38.4% (6,190). La diferencia entre el LLA provincial (15.5%) y el LLA nacional (49.9%) es de 34.4 puntos — el split más extremo de toda la Cuenca del Salado.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Evolución electoral completa</h4>
+        <div class="data-row"><span>2023 PJ — García ✅</span><span class="pj-v">45.3% (9,149)</span></div>
+        <div class="data-row"><span>2023 JxC</span><span class="jxc-v">44.1% (8,925)</span></div>
+        <div class="data-row"><span>2023 LLA</span><span class="lla-v">10.6% (2,143)</span></div>
+        <div class="data-row"><span>2025 Prov PJ ✅✅</span><span class="pj-v">60.0% (10,975)</span></div>
+        <div class="data-row"><span>2025 Prov LLA</span><span class="lla-v">15.5% (2,825)</span></div>
+        <div class="data-row"><span>2025 Nac LLA 🔴</span><span class="lla-v">49.9% (8,050)</span></div>
+        <div class="data-row"><span>2025 Nac PJ</span><span class="pj-v">38.4% (6,190)</span></div>
+      </div>
+      <div class="card">
+        <h4>🔍 La anatomía del electorado dolerense</h4>
+        <p>El electorado de Dolores tiene una particularidad: el 60% provincial de 2025 convive con el 49.9% nacional de LLA. No es un electorado dividido — es un electorado que distingue con claridad entre el voto provincial y el nacional. Hay algo en cómo García gestionó la ciudad que generó confianza en la Provincia como categoría. Y hay algo en la agenda nacional — economía, inflación, ajuste — que llevó a esos mismos vecinos a votar LLA para la Nación. El PJ provincial tiene que existir como una cosa diferente al kirchnerismo nacional para que ese electorado lo siga distinguiendo.</p>
+        <p>El ex electorado de JxC (44.1% en 2023) casi desapareció como tal en 2025. Una parte migró al PJ provincial (lo que explica el salto de 45.3% a 60%). Otra parte migró a LLA en la nacional. El JxC de 2023 fue el electorado en tránsito de 2025.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos — construir sobre el 60%</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>💧 El Parque Termal — la obra que cuenta su propia historia</h4>
+        <p>El Parque Termal de Dolores no necesita mucha explicación: antes no existía, ahora hay hoteles de cadena internacional y miles de visitantes cada fin de semana. La historia de cómo se concretó esa obra — gestión, inversión, articulación — es el tipo de narrativa de transformación económica que el interior puede escalar. No es solo Dolores: es el modelo de lo que se puede hacer cuando hay gestión que acompaña. Una visita al Parque Termal tiene la escena concreta, la emoción del espacio y el argumento de gestión en el mismo lugar.</p>
+      </div>
+      <div class="card">
+        <h4>⚖️ La cabecera judicial — la ciudad que sostiene una región</h4>
+        <p>Dolores atiende judicialmente a municipios que están a más de 100 km. Los abogados, los defensores, los funcionarios que se desplazan a diario a Dolores para trabajar en el sistema judicial representan una economía de servicios que solo es posible por la inversión histórica del Estado en la infraestructura judicial. El argumento provincial en Dolores puede construirse alrededor de la modernización del sistema de justicia regional: digitalización de expedientes, ampliación de la oferta de defensores públicos, mejora edilicia del Palacio de Tribunales.</p>
+      </div>
+      <div class="card">
+        <h4>🎸 La Fiesta Nacional de la Guitarra — identidad transversal</h4>
+        <p>La Fiesta Nacional de la Guitarra es uno de los festivales de mayor tradición folklórica del interior bonaerense. Convoca artistas nacionales y públicos que no se mueven habitualmente por el calendario político. La presencia en el Festival — o la promesa de acompañar su crecimiento — es el tipo de argumento que llega al vecino que no es militante. El folklore y la identidad cultural son transversales. El que vota LLA en la nacional también va al festival.</p>
+      </div>
+      <div class="card">
+        <h4>🏥 Salud y seguridad — la gestión cotidiana que explica el 60%</h4>
+        <p>Los operativos barriales con 800 vecinos por mes, los testeos de VIH/sífilis sin turno, los trámites ANSES en el barrio son el tipo de gestión que no sale en los diarios pero que los vecinos recuerdan el día de la elección. Las 150+ cámaras y la reducción del robo automotor son el argumento de seguridad sin slogan. García no gobernó con discurso — gobernó con presencia. Esa es la explicación del salto de 45.3% a 60%. La visita provincial puede construirse sobre esa base: lo que hizo García en Dolores es el modelo, y el modelo se puede escalar.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>Dolores es uno de los municipios más favorables de la Cuenca del Salado. García ganó por 224 votos en 2023 y llegó al 60% provincial en 2025 — ese salto de 15 puntos es el indicador más claro de que la gestión cotidiana genera capital político transferible. El municipio es aliado, el intendente es activo, y el 60% provincial es una base excepcional para cualquier acción de campaña.</p>
+  <p>La tensión es el split nacional: el mismo vecino que vota 60% para la Provincia vota 49.9% LLA para la Nación. El PJ que funcionó en Dolores es el que se percibió como distinto del PJ nacional. Esa distinción tiene que sostenerse: la gestión concreta (Termas, seguridad, salud barrial) es lo que la fundamenta, no el discurso.</p>
+  <p><strong>Mensaje recomendado:</strong> "La primera ciudad del interior que se transformó con agua caliente, guitarra y gestión — y que demostró que cuando el PJ trabaja en serio, el resultado se ve en los números". Dolores tiene historia, tiene obra y tiene un intendente que construyó en dos años lo que muchos no construyeron en veinte. La visita escribe sola.</p>
+</div>
+
+</body>
+</html>
