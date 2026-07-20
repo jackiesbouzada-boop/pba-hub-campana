@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Las Flores — Narrativa Territorial</title>
+<style>
+:root{--primary:#3a0000;--accent:#8b3a3a;--light:#f5eaea;--border:#c07070;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#2e0000;font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#0d0000 0%,#3a0000 40%,#6b1a1a 75%,#8b3a3a 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'🧵';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.09}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-blue{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.pill-warn{background:rgba(180,130,0,.3);border-color:rgba(250,204,21,.5);color:#fde68a}
+.pill-red{background:rgba(220,38,38,.3);border-color:rgba(248,113,113,.5);color:#fca5a5}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#3a0000,#8b3a3a);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#3a0000;line-height:1.65;margin-bottom:12px;border-left:4px solid #8b3a3a;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#3a0000;border-color:#3a0000;color:#fff}
+.card-dark h4{color:#fca5a5 !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#3a0000;margin-bottom:6px;text-transform:uppercase}
+.card p{font-size:.78rem;color:#374151}
+.num-big{font-size:2rem;font-weight:900;color:#fca5a5;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f5eaea;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.pj-v{color:#15803d;font-weight:800}
+.lla-v{color:#7c3aed;font-weight:800}
+.jxc-v{color:#d97706;font-weight:800}
+.close{background:linear-gradient(135deg,#3a0000,#8b3a3a);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#fca5a5;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🌿 Cluster SALADO · 5ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">LAS FLORES</div>
+  <div class="cv-sub">El municipio textil de la Cuenca del Salado — donde 130 votos separan al PJ de la derrota provincial y el hilo de la industria sostiene miles de empleos</div>
+  <div class="cv-pills">
+    <span class="pill-blue">✅ Aliado — Blanstein (UxP interino)</span>
+    <span class="pill-warn">⚠️ PJ 39.4% prov / LLA 38.4% prov — margen de 130 votos</span>
+    <span class="pill-red">🔴 LLA 48.4% nac — peligro real 2027</span>
+    <span class="pill">🧵 Polo Textil — GGM — principal empleador privado</span>
+    <span class="pill">🏭 Parque Industrial Ruta 3</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🧵 Territorio: La ciudad que cose, produce y tiene un libro en cada estancia</div>
+  <div class="sec-body">
+    <div class="lead">Las Flores no encaja fácil en la imagen del interior bonaerense ganadero-sojero. Su identidad productiva más fuerte es la industria textil: fábricas de indumentaria, plantas de calzado, cooperativas de costura que emplean a trabajadores que no aparecen en las estadísticas del agro pero que sienten el tipo de cambio, el costo de la energía y la competencia importada con una sensibilidad que el productor agropecuario no tiene. Cuando la industria textil tiembla, Las Flores tiembla con ella.</div>
+    <p>GGM (Grupo de Moda) es la empresa insignia del sector — una marca que produce en Las Flores lo que se vende en todo el país. Junto a ella, una constelación de pymes textiles y cooperativas de ensamblado de calzado que son el principal empleador privado masivo del distrito. No son empleos en el campo ni en el Estado: son empleos en una fábrica, con presentismo, con turnos, con gremio. Ese perfil socioeconómico es distinto al del resto del Salado.</p>
+    <p>La localidad de Pardo tiene algo que ninguna otra localidad de la Cuenca del Salado puede ofrecer: una estancia históricamente vinculada a Adolfo Bioy Casares, el escritor de La Invención de Morel. Ese vínculo literario es modesto en términos de volumen turístico, pero es único en términos de identidad: Pardo se convirtió en destino de "turismo de autor" para visitantes que mezclan el paisaje rural con la búsqueda cultural. El municipio apoya ese perfil con infraestructura de conectividad moderna y preservación del patrimonio histórico.</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">130</span><span class="num-lbl">votos de margen PJ sobre LLA en la provincial 2025 — el más ajustado de toda la Cuenca del Salado</span></div>
+        <p style="margin-top:8px">5,406 (PJ) vs 5,276 (LLA) en la categoría provincial 2025. Esa diferencia no es un margen — es un empate técnico. Las Flores es el municipio de la cuenca que más cerca está del punto de quiebre.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">10 pts</span><span class="num-lbl">caída PJ entre 2023 (50.1%) y 2025 prov (39.4%) — la mayor pérdida relativa del Salado aliado</span></div>
+        <p style="margin-top:8px">En dos años, el PJ perdió diez puntos porcentuales en la categoría provincial en Las Flores. Ese ritmo de erosión, proyectado a 2027, da pérdida. El trabajo territorial es urgente.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: La erosión más rápida del Salado</div>
+  <div class="sec-body">
+    <div class="lead">En 2023, el PJ ganó con 50.1% (8,047) sobre JxC 30.3% (4,866) y LLA 19.6% (3,143). En 2025 provincial, el panorama cambió radicalmente: PJ 39.4% (5,406) vs LLA 38.4% (5,276) — 130 votos. En la nacional, LLA subió a 48.4% (7,083) vs PJ 35.5% (5,201). La trayectoria es la más preocupante de los municipios aliados de la cuenca.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Evolución electoral</h4>
+        <div class="data-row"><span>2023 PJ ✅</span><span class="pj-v">50.1% (8,047)</span></div>
+        <div class="data-row"><span>2023 JxC</span><span class="jxc-v">30.3% (4,866)</span></div>
+        <div class="data-row"><span>2023 LLA</span><span class="lla-v">19.6% (3,143)</span></div>
+        <div class="data-row"><span>2025 Prov PJ ⚠️</span><span class="pj-v">39.4% (5,406)</span></div>
+        <div class="data-row"><span>2025 Prov LLA 🔴</span><span class="lla-v">38.4% (5,276)</span></div>
+        <div class="data-row"><span>2025 Nac LLA 🔴</span><span class="lla-v">48.4% (7,083)</span></div>
+        <div class="data-row"><span>2025 Nac PJ</span><span class="pj-v">35.5% (5,201)</span></div>
+      </div>
+      <div class="card">
+        <h4>🔍 Anatomía del movimiento de votos</h4>
+        <p>Los 30.3% de JxC de 2023 (4,866 votos) migraron entre 2025 y la nacional. Una parte fue al PJ provincial (lo que explica que el PJ siga siendo primera fuerza), pero la mayor parte migró a LLA — especialmente en la nacional donde LLA llegó al 48.4%. El trabajador textil que en 2023 votaba a Bullrich o a Vidal en 2025 encontró en LLA un canal nuevo para expresar su malestar económico.</p>
+        <p>La pregunta decisiva para Las Flores: ¿está ese voto LLA fijado ideológicamente, o es un voto de descontento económico que puede recuperarse? La industria textil es sensible a las políticas económicas: si el tipo de cambio competitivo o el crédito PyME mejoran con la Provincia, hay argumentos para recuperar ese segmento. Si la conversación es solo política, el terreno es más difícil.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos — cómo defender el territorio más amenazado del Salado</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>🧵 La industria textil — el argumento económico directo</h4>
+        <p>El trabajador de GGM y de las cooperativas textiles necesita que la Provincia tenga una política activa de compra estatal de textiles locales, crédito para pymes, energía industrial con tarifa razonable. Esos no son argumentos ideológicos — son argumentos de billetera. El candidato provincial que tiene una propuesta concreta para la industria textil tiene algo que decirle al vecino de Las Flores que no es simplemente "nosotros somos los buenos". La industria habla de resultados.</p>
+      </div>
+      <div class="card">
+        <h4>🏭 El Parque Industrial Ruta 3 — la obra que conecta</h4>
+        <p>La expansión del Parque Industrial para servicios y logística en 2026 es una obra que requiere coordinación con la Provincia para avanzar: suelo industrial con infraestructura, conectividad a la Ruta 3, acceso a crédito empresarial. Una visita al Parque Industrial con Blanstein y los empresarios del sector es la escena que une la gestión local con la política provincial de desarrollo productivo. El argumento: el interior bonaerense no es solo campo — es también fábrica.</p>
+      </div>
+      <div class="card">
+        <h4>🌊 La Laguna y Pardo — el turismo como argumento de arraigo</h4>
+        <p>El Parque Plaza Montero y la Laguna de Las Flores son activos naturales que requieren inversión provincial en infraestructura turística. La localidad de Pardo es un destino de nicho que puede crecer con conectividad y servicios. El turismo interno de fin de semana es la apuesta del municipio — y tiene base real: la laguna y el paisaje ya atraen visitantes. El argumento provincial puede ser el apoyo a la infraestructura que convierte esa base en una industria turística real.</p>
+      </div>
+      <div class="card">
+        <h4>🎓 El Centro Universitario — el argumento anti-éxodo</h4>
+        <p>El Centro Universitario Florense (convenios con universidades nacionales, carreras presenciales y a distancia) es el programa más importante para retener jóvenes en Las Flores. El candidato provincial puede presentarlo como modelo de política educativa territorial: "los jóvenes de Las Flores no tienen que irse para estudiar". Ese argumento toca a las familias que miran con angustia el momento en que sus hijos tienen que elegir entre quedarse sin estudiar o irse a La Plata.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>Las Flores es la alarma más urgente de la Cuenca del Salado para el PJ. Con 130 votos de margen en la provincial 2025 y LLA ganando la nacional con 48.4%, el municipio aliado tiene el riesgo más alto de la cuenca de voltearse en 2027. La caída de 10 puntos del PJ en dos años en la categoría provincial no admite interpretaciones optimistas.</p>
+  <p>La visita tiene que ser de gestión concreta, no de foto política. El Parque Industrial y las pymes textiles son el territorio donde el PJ puede construir un argumento económico que compita con LLA: políticas de industria local, crédito, energía, compra estatal. Sin ese argumento, el municipio textil que perdió confianza en el PJ no tiene razón para volver.</p>
+  <p><strong>Mensaje recomendado:</strong> "Las Flores fabrica lo que el interior necesita — y la Provincia tiene que estar al lado de la fábrica, no solo del campo". El textil es el diferencial. Blanstein activo, Parque Industrial en expansión, laguna y centro universitario como sello de calidad de vida. La visita es urgente y tiene que traducirse en compromisos concretos para la industria.</p>
+</div>
+
+</body>
+</html>
