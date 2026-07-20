@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ficha de Campaña — MAGDALENA</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;min-height:100vh}
+  .page{max-width:960px;margin:0 auto;padding:20px}
+
+  /* HEADER */
+  .header{background:linear-gradient(135deg,#7b5e00 0%,#4a3800 100%);color:#fff;border-radius:14px 14px 0 0;padding:28px 32px 22px}
+  .header-top{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+  .cluster-badge{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:4px 14px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .muni-name{font-size:2.1rem;font-weight:800;letter-spacing:-.5px;line-height:1.1}
+  .muni-sub{font-size:.95rem;opacity:.82;margin-top:4px}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .badge{padding:5px 14px;border-radius:20px;font-size:.78rem;font-weight:700;letter-spacing:.04em}
+  .badge-op{background:#dc2626;color:#fff}
+  .badge-warn{background:#d97706;color:#fff}
+  .badge-al{background:#2563eb;color:#fff}
+  .badge-crit{background:#7c3aed;color:#fff}
+
+  /* GRID */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .card{background:#fff;padding:22px 24px;border:1px solid #e5e7eb}
+  .card:nth-child(1){border-radius:0;border-top:none;border-right:none}
+  .card:nth-child(2){border-radius:0;border-top:none}
+  .card.full{grid-column:1/-1;border-top:none;border-radius:0 0 14px 14px}
+  .card-title{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7b5e00;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #7b5e00}
+
+  /* INTENDENTE */
+  .intendente-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#7b5e00,#4a3800);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+  .int-name{font-size:1.05rem;font-weight:700;color:#1a1a2e}
+  .int-partido{font-size:.8rem;color:#6b7280;margin-top:2px}
+  .int-meta{font-size:.78rem;color:#374151;margin-top:8px;line-height:1.5;background:#fef9ee;border-left:3px solid #d97706;padding:8px 12px;border-radius:0 6px 6px 0}
+
+  /* PADRON */
+  .stat-big{text-align:center;padding:10px 0}
+  .stat-num{font-size:2rem;font-weight:800;color:#7b5e00;line-height:1}
+  .stat-lbl{font-size:.72rem;color:#6b7280;margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+  .stat-row{display:flex;gap:10px;margin-top:12px}
+  .stat-mini{flex:1;text-align:center;background:#f9fafb;border-radius:8px;padding:10px 6px}
+  .stat-mini .num{font-size:1.1rem;font-weight:700;color:#1a1a2e}
+  .stat-mini .lbl{font-size:.65rem;color:#9ca3af;margin-top:2px}
+
+  /* ELECTORAL */
+  .elec-block{margin-bottom:16px}
+  .elec-year{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;margin-bottom:8px}
+  .bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .bar-label{font-size:.78rem;color:#374151;width:36px;text-align:right;font-weight:600;flex-shrink:0}
+  .bar-track{flex:1;height:22px;background:#f3f4f6;border-radius:4px;overflow:hidden;position:relative}
+  .bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:6px}
+  .bar-fill span{font-size:.7rem;font-weight:700;color:#fff;white-space:nowrap}
+  .bar-pj{background:#1d4ed8}
+  .bar-jxc{background:#dc2626}
+  .bar-lla{background:#7c3aed}
+  .bar-vec{background:#059669}
+  .bar-otros{background:#9ca3af}
+  .elec-note{font-size:.72rem;color:#9ca3af;font-style:italic;margin-top:4px}
+
+  /* IDENTIDAD */
+  .id-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .id-tag{background:#fef9ee;border:1px solid #d97706;border-radius:20px;padding:3px 11px;font-size:.73rem;color:#92400e;font-weight:600}
+  .id-text{font-size:.82rem;line-height:1.65;color:#374151}
+  .id-text p{margin-bottom:8px}
+
+  /* PROGRAMAS */
+  .prog-list{list-style:none}
+  .prog-list li{display:flex;gap:10px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #f3f4f6;align-items:flex-start}
+  .prog-list li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .prog-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+  .prog-body{}
+  .prog-name{font-size:.83rem;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .prog-desc{font-size:.76rem;color:#6b7280;line-height:1.5}
+
+  /* FOOTER */
+  .footer{background:#1a1a2e;color:#9ca3af;text-align:center;font-size:.72rem;padding:12px;border-radius:0 0 14px 14px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="header-top">
+      <span style="font-size:2rem">🌾</span>
+      <div>
+        <span class="cluster-badge">INTERIOR · 3ª Sección Electoral</span>
+        <div class="muni-name">MAGDALENA</div>
+        <div class="muni-sub">Lisandro Hourcade · Juntos por el Cambio · Padrón 16.758</div>
+      </div>
+    </div>
+    <div class="badges">
+      <span class="badge badge-op">⚔️ JxC Opositor</span>
+      <span class="badge badge-warn">⚠️ LLA creció fuerte en nac.</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- COL IZQ -->
+    <div class="card">
+      <div class="card-title">🏛️ Intendente</div>
+      <div class="intendente-row">
+        <div class="avatar">🌾</div>
+        <div>
+          <div class="int-name">Lisandro Hourcade</div>
+          <div class="int-partido">Juntos por el Cambio — 3ª Sección Electoral</div>
+        </div>
+      </div>
+      <div class="int-meta">
+        JxC ganó 2023 con 41.6% en municipales. En 2025 el PJ lideró el voto provincial (25.9%) pero LLA se disparó a 43.2% en la nacional — margen de riesgo a monitorear.
+      </div>
+
+      <div style="margin-top:20px">
+        <div class="card-title">📊 Padrón Electoral</div>
+        <div class="stat-big">
+          <div class="stat-num">16.758</div>
+          <div class="stat-lbl">electores habilitados 2025</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-mini">
+            <div class="num">11.775</div>
+            <div class="lbl">votos 2023</div>
+          </div>
+          <div class="stat-mini">
+            <div class="num">10.806</div>
+            <div class="lbl">votos nac. 2025</div>
+          </div>
+          <div class="stat-mini">
+            <div class="num">64.5%</div>
+            <div class="lbl">participación</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COL DER — ELECTORAL -->
+    <div class="card">
+      <div class="card-title">🗳️ Resultados Electorales</div>
+
+      <div class="elec-block">
+        <div class="elec-year">2023 — General Municipal</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#dc2626">JxC</span>
+          <div class="bar-track"><div class="bar-fill bar-jxc" style="width:41.6%"><span>41.6% (4.903)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:23.5%"><span>23.5% (2.769)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:11.9%"><span>11.9% (1.406)</span></div></div>
+        </div>
+        <div class="elec-note">Total votos: 11.775 · Hourcade JxC electo</div>
+      </div>
+
+      <div class="elec-block">
+        <div class="elec-year">2025 — Elección Provincial PBA</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:25.9%"><span>25.9% (2.645)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:18.5%"><span>18.5% (1.893)</span></div></div>
+        </div>
+        <div class="elec-note">PJ lidera prov. · Total: 10.211 votos</div>
+      </div>
+
+      <div class="elec-block">
+        <div class="elec-year">2025 — Elección Nacional</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:80%"><span>43.2% (4.670)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:62%"><span>33.3% (3.601)</span></div></div>
+        </div>
+        <div class="elec-note">LLA gana Nacional por 10 puntos · señal de alerta</div>
+      </div>
+    </div>
+
+    <!-- IDENTIDAD full -->
+    <div class="card" style="grid-column:1/-1;border-top:none;border-bottom:none">
+      <div class="card-title">🏙️ Identidad Territorial</div>
+      <div class="id-tags">
+        <span class="id-tag">Complejo Penitenciario Provincial</span>
+        <span class="id-tag">Ganadería de cría · Cuenca Tambera</span>
+        <span class="id-tag">Atalaya — Turismo costero LP/AMBA</span>
+        <span class="id-tag">Reserva de la Biosfera (Río de la Plata)</span>
+        <span class="id-tag">Bavio · Balneario Municipal</span>
+        <span class="id-tag">Plan 2030 · Parque Industrial</span>
+      </div>
+      <div class="id-text">
+        <p>Magdalena tiene una economía que gira en torno a dos ejes históricos: el <strong>empleo público estatal</strong> (penitenciarios, policías, docentes) generado por el Complejo Penitenciario Provincial —uno de los más grandes de la provincia— y una base <strong>agropecuaria mixta</strong> de ganadería de cría y tambos consolidada en el interior rural del distrito.</p>
+        <p>El tercer vector es emergente pero estratégico: la <strong>costa del Río de la Plata</strong>. Atalaya se ha posicionado como destino de turismo de cercanía para el público platense y del AMBA, con su balneario municipal y los talares costeros integrados en la Reserva de la Biosfera. Bavio, por su parte, es el segundo polo urbano del distrito.</p>
+        <p>El <strong>Plan 2030</strong> define la hoja de ruta para los próximos años: generación de empleo, impulso al turismo sustentable y la creación de un nuevo Parque Industrial —señal de diversificación productiva en un municipio históricamente dependiente del empleo estatal.</p>
+      </div>
+    </div>
+
+    <!-- PROGRAMAS full -->
+    <div class="card full">
+      <div class="card-title">⚙️ Programas e Hitos de Gestión</div>
+      <ul class="prog-list">
+        <li>
+          <span class="prog-icon">🛣️</span>
+          <div class="prog-body">
+            <div class="prog-name">Inversión en Asfalto — Cabecera + Bavio</div>
+            <div class="prog-desc">Completar el asfalto en todas las calles urbanas de la cabecera municipal y de Bavio. Financiamiento mixto: recursos propios más transferencias provinciales. Objetivo 2026 de conectividad barrial total.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🌊</span>
+          <div class="prog-body">
+            <div class="prog-name">Puesta en Valor de la Costa — Atalaya y Reserva Biosfera</div>
+            <div class="prog-desc">Mejora de servicios en el balneario municipal: nuevos espacios recreativos, plan de manejo ambiental para los talares costeros (ecosistema singular del Río de la Plata) e integración en circuito de turismo educativo y sustentable. Trabajo conjunto con organismos ambientales provinciales y nacionales.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🏭</span>
+          <div class="prog-body">
+            <div class="prog-name">Plan 2030 — Parque Industrial y Diversificación Productiva</div>
+            <div class="prog-desc">Hoja de ruta 2025-2030 con tres ejes: generación de empleo privado, turismo sustentable y creación del primer Parque Industrial del distrito. Apunta a diversificar una base económica históricamente dependiente del sector público.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🎓</span>
+          <div class="prog-body">
+            <div class="prog-name">Centro Universitario de Magdalena — UNLP/Puentes</div>
+            <div class="prog-desc">A través del programa Puentes de la UNLP, el municipio trajo carreras universitarias vinculadas a gestión pública y producción agropecuaria. Los jóvenes de Magdalena, Atalaya y Bavio acceden a educación superior sin abandonar el distrito. Complementa con fomento a emprendimientos digitales y coworking de alta velocidad.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🤝</span>
+          <div class="prog-body">
+            <div class="prog-name">Becas y Transporte Estudiantil</div>
+            <div class="prog-desc">Empadronamiento de estudiantes, contratación de combis y colectivos diarios, y ayudas económicas directas para estudiantes de Magdalena, Atalaya y Bavio. Traslado a costo cero o subsidiado para cientos de jóvenes cada día.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🛒</span>
+          <div class="prog-body">
+            <div class="prog-name">Mercado de Sabores Magdalenenses</div>
+            <div class="prog-desc">Ferias mensuales con estructura municipal gratuita: gazebos, fletes y controles bromatológicos sin costo para productores locales. Decenas de pequeños productores comercializan directamente, generando ingresos formales y constantes. Motor de economía social local.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">💻</span>
+          <div class="prog-body">
+            <div class="prog-name">UACGD — Unidad de Atención Ciudadana y Gestión Digital</div>
+            <div class="prog-desc">Ventanilla única que unifica atención presencial, telefónica y online. Habilita firma electrónica y pago de tasas municipales sin desplazamiento. Modernización del vínculo municipio-vecino.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🌱</span>
+          <div class="prog-body">
+            <div class="prog-name">Gestión para el Desarrollo — CFI</div>
+            <div class="prog-desc">Participación en el programa del Consejo Federal de Inversiones para formación de jóvenes líderes en diseño de políticas públicas innovadoras. Apuesta al capital humano local como vector de desarrollo territorial.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">MAGDALENA · INTERIOR · 3ª Sección Electoral · Padrón 16.758 · Ficha de Campaña 2025–2026</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Narrativa Territorial — MAGDALENA</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f0e8;color:#1a1a2e;min-height:100vh}
+  .page{max-width:860px;margin:0 auto;padding:24px 20px}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#7b5e00 0%,#4a3800 100%);border-radius:16px;padding:36px 40px 30px;color:#fff;margin-bottom:24px;position:relative;overflow:hidden}
+  .hero::after{content:'🌾';position:absolute;right:32px;bottom:-10px;font-size:7rem;opacity:.12}
+  .hero-cluster{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-bottom:8px}
+  .hero-title{font-size:2.4rem;font-weight:900;letter-spacing:-.5px;line-height:1.05;margin-bottom:10px}
+  .hero-sub{font-size:1.0rem;opacity:.85;line-height:1.5;max-width:580px;margin-bottom:18px}
+  .pills{display:flex;gap:8px;flex-wrap:wrap}
+  .pill{padding:5px 14px;border-radius:20px;font-size:.75rem;font-weight:700}
+  .pill-blue{background:#2563eb;color:#fff}
+  .pill-warn{background:#d97706;color:#fff}
+  .pill-red{background:#dc2626;color:#fff}
+  .pill-purple{background:#7c3aed;color:#fff}
+
+  /* SECTION */
+  .section{background:#fff;border-radius:12px;padding:26px 30px;margin-bottom:16px;border-left:5px solid #7b5e00}
+  .section-title{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7b5e00;margin-bottom:14px}
+  .prose{font-size:.88rem;line-height:1.75;color:#374151}
+  .prose p{margin-bottom:12px}
+  .prose p:last-child{margin-bottom:0}
+  .prose strong{color:#1a1a2e;font-weight:700}
+
+  /* ELECTORAL SNAPSHOT */
+  .snap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+  .snap-card{background:#f9fafb;border-radius:10px;padding:14px;text-align:center;border-top:3px solid #7b5e00}
+  .snap-year{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#9ca3af;margin-bottom:8px}
+  .snap-winner{font-size:.9rem;font-weight:800;margin-bottom:4px}
+  .snap-pct{font-size:.75rem;color:#6b7280}
+  .snap-lla{color:#7c3aed}
+  .snap-pj{color:#1d4ed8}
+  .snap-jxc{color:#dc2626}
+
+  /* CLAVE */
+  .clave-list{list-style:none;margin-top:4px}
+  .clave-list li{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:.84rem;line-height:1.5;align-items:flex-start}
+  .clave-list li:last-child{border-bottom:none}
+  .clave-icon{font-size:1.1rem;flex-shrink:0}
+
+  .footer{text-align:center;font-size:.7rem;color:#a0936a;margin-top:24px;padding-top:12px;border-top:1px solid #e5d9c0;letter-spacing:.05em}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="hero-cluster">🌾 INTERIOR · 3ª Sección Electoral</div>
+    <div class="hero-title">MAGDALENA</div>
+    <div class="hero-sub">El penal que financia el municipio, la costa de la Biosfera que podría reinventarlo — con JxC entrinchado en 2023 y LLA creciendo diez puntos por elección</div>
+    <div class="pills">
+      <span class="pill pill-red">JxC Opositor — Hourcade</span>
+      <span class="pill pill-warn">LLA 43.2% en Nacional</span>
+      <span class="pill pill-blue">PJ lidera prov. 25.9%</span>
+    </div>
+  </div>
+
+  <!-- SNAPSHOT ELECTORAL -->
+  <div class="section">
+    <div class="section-title">📊 Fotografía Electoral</div>
+    <div class="snap-grid">
+      <div class="snap-card">
+        <div class="snap-year">2023 Municipal</div>
+        <div class="snap-winner snap-jxc">JxC 41.6%</div>
+        <div class="snap-pct">PJ 23.5% · LLA 11.9%</div>
+      </div>
+      <div class="snap-card">
+        <div class="snap-year">2025 Prov. PBA</div>
+        <div class="snap-winner snap-pj">PJ 25.9%</div>
+        <div class="snap-pct">LLA 18.5% — brecha 7 pt</div>
+      </div>
+      <div class="snap-card">
+        <div class="snap-year">2025 Nacional</div>
+        <div class="snap-winner snap-lla">LLA 43.2%</div>
+        <div class="snap-pct">PJ 33.3% — LLA +10 pt</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NARRATIVA TERRITORIAL -->
+  <div class="section">
+    <div class="section-title">🗺️ Narrativa Territorial</div>
+    <div class="prose">
+      <p>Magdalena es, antes que nada, una <strong>economía de empleo público</strong>. El Complejo Penitenciario Provincial —uno de los más grandes de Buenos Aires— tracciona miles de puestos de trabajo de penitenciarios, policías y administrativos que a su vez sostienen el comercio de la cabecera. Este es el hecho estructural más importante del distrito: la dependencia del Estado como empleador dominante genera un patrón de voto históricamente moderado y conservador.</p>
+      <p>Pero Magdalena tiene un segundo capítulo que todavía no terminó de escribir: su <strong>costa sobre el Río de la Plata</strong>. Atalaya es hoy destino de turismo de cercanía para el público platense y del AMBA —un balneario municipal que convive con los talares, uno de los ecosistemas más singulares de la provincia, integrado en la Reserva de la Biosfera. El Plan 2030 apuesta a que esa costa sea el nuevo motor del distrito, complementando la ganadería de cría y la cuenca tambera del interior rural.</p>
+      <p>El <strong>Centro Universitario de Magdalena</strong> via Puentes-UNLP y el Mercado de Sabores son las dos señales más concretas de que el municipio intenta diversificar su oferta: retener jóvenes con educación superior en el propio territorio y formalizar productores locales con infraestructura pública gratuita. Son intervenciones chicas pero con impacto político real en comunidades donde el Estado municipal es el único actor que llega.</p>
+    </div>
+  </div>
+
+  <!-- CLAVES ESTRATÉGICAS -->
+  <div class="section">
+    <div class="section-title">⚡ Claves Estratégicas</div>
+    <ul class="clave-list">
+      <li>
+        <span class="clave-icon">⚠️</span>
+        <span><strong>LLA creció de 11.9% (2023) a 43.2% (2025 nac.) en dos años.</strong> El salto más vertical del período: 31 puntos en 24 meses. Terreno en movimiento acelerado.</span>
+      </li>
+      <li>
+        <span class="clave-icon">🏛️</span>
+        <span><strong>El Complejo Penitenciario como ancla económica.</strong> Los empleados públicos son el segmento más estable del padrón. Prioridad: presencia institucional concreta, no abstracta.</span>
+      </li>
+      <li>
+        <span class="clave-icon">🌊</span>
+        <span><strong>Atalaya y la Reserva de la Biosfera son activos subutilizados.</strong> El turismo de cercanía desde La Plata/AMBA puede ser palanca productiva si hay inversión pública sostenida en infraestructura costera.</span>
+      </li>
+      <li>
+        <span class="clave-icon">🎓</span>
+        <span><strong>UNLP/Puentes y Becas Estudiantiles retienen jóvenes.</strong> En municipios con emigración estudiantil, estos programas tienen efecto político y social directo. Son el argumento más sólido de gestión.</span>
+      </li>
+      <li>
+        <span class="clave-icon">🏭</span>
+        <span><strong>El Parque Industrial del Plan 2030 es la apuesta de futuro.</strong> Sin datos de avance concreto aún. Si se instala, transforma la economía local. Monitorear con proximidad.</span>
+      </li>
+      <li>
+        <span class="clave-icon">🌾</span>
+        <span><strong>El Mercado de Sabores y la economía social son contacto directo.</strong> Decenas de productores locales con presencia mensual = audiencia activa de vecinos con vínculo al municipio.</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- LECTURA POLÍTICA -->
+  <div class="section">
+    <div class="section-title">🧭 Lectura Política</div>
+    <div class="prose">
+      <p>Hourcade ganó 2023 con JxC de manera sólida (41.6%) en un municipio donde el PJ era históricamente más competitivo. La consolidación de JxC en la gestión municipal lo convierte en <strong>opositor con base local firme</strong> pero en un contexto donde LLA se está quedando con el voto anti-PJ progresivamente.</p>
+      <p>La curva electoral es preocupante: LLA pasó de 11.9% en 2023 a 18.5% en la provincial 2025 y a 43.2% en la nacional 2025. No hubo techo visible. El PJ necesita construir diferenciación con propuestas concretas para el distrito antes de que LLA termine de encapsular el voto de descontento.</p>
+      <p><strong>Bavio y Atalaya</strong> son los dos sub-territorios donde la presencia territorial puede hacer diferencia: distancias, servicios limitados y necesidades concretas de infraestructura crean oportunidades de llegada directa que el peronismo debe aprovechar antes que otro espacio lo haga.</p>
+    </div>
+  </div>
+
+  <div class="footer">MAGDALENA · Padrón 16.758 · INTERIOR · 3ª Sección Electoral · Narrativa Territorial 2025–2026</div>
+</div>
+</body>
+</html>
