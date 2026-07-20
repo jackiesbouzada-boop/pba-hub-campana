@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ficha de Campaña — GENERAL ARENALES</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;min-height:100vh}
+  .page{max-width:960px;margin:0 auto;padding:20px}
+
+  .header{background:linear-gradient(135deg,#7b5e00 0%,#4a3800 100%);color:#fff;border-radius:14px 14px 0 0;padding:28px 32px 22px}
+  .header-top{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+  .cluster-badge{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:4px 14px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .muni-name{font-size:2.1rem;font-weight:800;letter-spacing:-.5px;line-height:1.1}
+  .muni-sub{font-size:.95rem;opacity:.82;margin-top:4px}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .badge{padding:5px 14px;border-radius:20px;font-size:.78rem;font-weight:700;letter-spacing:.04em}
+  .badge-al{background:#2563eb;color:#fff}
+  .badge-warn{background:#d97706;color:#fff}
+  .badge-op{background:#dc2626;color:#fff}
+  .badge-crit{background:#7c3aed;color:#fff}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .card{background:#fff;padding:22px 24px;border:1px solid #e5e7eb}
+  .card:nth-child(1){border-radius:0;border-top:none;border-right:none}
+  .card:nth-child(2){border-radius:0;border-top:none}
+  .card.full{grid-column:1/-1;border-top:none;border-radius:0 0 14px 14px}
+  .card-title{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7b5e00;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #7b5e00}
+
+  .intendente-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#7b5e00,#4a3800);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+  .int-name{font-size:1.05rem;font-weight:700;color:#1a1a2e}
+  .int-partido{font-size:.8rem;color:#6b7280;margin-top:2px}
+  .int-meta{font-size:.78rem;color:#374151;margin-top:8px;line-height:1.5;background:#fff5f5;border-left:3px solid #dc2626;padding:8px 12px;border-radius:0 6px 6px 0}
+
+  .stat-big{text-align:center;padding:10px 0}
+  .stat-num{font-size:2rem;font-weight:800;color:#7b5e00;line-height:1}
+  .stat-lbl{font-size:.72rem;color:#6b7280;margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+  .stat-row{display:flex;gap:10px;margin-top:12px}
+  .stat-mini{flex:1;text-align:center;background:#f9fafb;border-radius:8px;padding:10px 6px}
+  .stat-mini .num{font-size:1.1rem;font-weight:700;color:#1a1a2e}
+  .stat-mini .lbl{font-size:.65rem;color:#9ca3af;margin-top:2px}
+
+  .elec-block{margin-bottom:16px}
+  .elec-year{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;margin-bottom:8px}
+  .bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .bar-label{font-size:.78rem;color:#374151;width:36px;text-align:right;font-weight:600;flex-shrink:0}
+  .bar-track{flex:1;height:22px;background:#f3f4f6;border-radius:4px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:6px}
+  .bar-fill span{font-size:.7rem;font-weight:700;color:#fff;white-space:nowrap}
+  .bar-pj{background:#1d4ed8}
+  .bar-jxc{background:#dc2626}
+  .bar-lla{background:#7c3aed}
+  .elec-note{font-size:.72rem;color:#9ca3af;font-style:italic;margin-top:4px}
+
+  .id-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .id-tag{background:#fef9ee;border:1px solid #d97706;border-radius:20px;padding:3px 11px;font-size:.73rem;color:#92400e;font-weight:600}
+  .id-text{font-size:.82rem;line-height:1.65;color:#374151}
+  .id-text p{margin-bottom:8px}
+
+  .prog-list{list-style:none}
+  .prog-list li{display:flex;gap:10px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #f3f4f6;align-items:flex-start}
+  .prog-list li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .prog-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+  .prog-name{font-size:.83rem;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .prog-desc{font-size:.76rem;color:#6b7280;line-height:1.5}
+
+  .footer{background:#1a1a2e;color:#9ca3af;text-align:center;font-size:.72rem;padding:12px;border-radius:0 0 14px 14px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="header-top">
+      <span style="font-size:2rem">🌾</span>
+      <div>
+        <span class="cluster-badge">INTERIOR · 4ª Sección Electoral</span>
+        <div class="muni-name">GENERAL ARENALES</div>
+        <div class="muni-sub">Érica Revilla · JxC opositor · Padrón 15.481</div>
+      </div>
+    </div>
+    <div class="badges">
+      <span class="badge badge-op">⚔️ JxC Opositor</span>
+      <span class="badge badge-warn">⚠️ LLA 53.7% en nac.</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">🏛️ Intendente</div>
+      <div class="intendente-row">
+        <div class="avatar">🌾</div>
+        <div>
+          <div class="int-name">Érica Revilla</div>
+          <div class="int-partido">Juntos por el Cambio · 4ª Sección Electoral</div>
+        </div>
+      </div>
+      <div class="int-meta">
+        JxC ganó 2023 con 48.5%. En 2025 PJ lidera la provincial (30.9% vs LLA 22.8%) pero LLA dominó la nacional con 53.7% vs PJ 32.1%. Municipio de Zona Núcleo con JxC entrinchado localmente y LLA creciendo desde el campo.
+      </div>
+
+      <div style="margin-top:20px">
+        <div class="card-title">📊 Padrón Electoral</div>
+        <div class="stat-big">
+          <div class="stat-num">15.481</div>
+          <div class="stat-lbl">electores habilitados 2025</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-mini">
+            <div class="num">10.997</div>
+            <div class="lbl">votos 2023</div>
+          </div>
+          <div class="stat-mini">
+            <div class="num">9.758</div>
+            <div class="lbl">votos nac. 2025</div>
+          </div>
+          <div class="stat-mini">
+            <div class="num">63.0%</div>
+            <div class="lbl">participación</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🗳️ Resultados Electorales</div>
+
+      <div class="elec-block">
+        <div class="elec-year">2023 — General Municipal</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#dc2626">JxC</span>
+          <div class="bar-track"><div class="bar-fill bar-jxc" style="width:87%"><span>48.5% (5.332)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:63%"><span>35.1% (3.859)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:29%"><span>16.4% (1.806)</span></div></div>
+        </div>
+        <div class="elec-note">Total: 10.997 · Revilla JxC electa intendente</div>
+      </div>
+
+      <div class="elec-block">
+        <div class="elec-year">2025 — Elección Provincial PBA</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:57%"><span>30.9% (2.834)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:42%"><span>22.8% (2.092)</span></div></div>
+        </div>
+        <div class="elec-note">PJ lidera provincial por 8 pts · Total: 9.172</div>
+      </div>
+
+      <div class="elec-block">
+        <div class="elec-year">2025 — Elección Nacional</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:97%"><span>53.7% (5.242)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:58%"><span>32.1% (3.130)</span></div></div>
+        </div>
+        <div class="elec-note">LLA gana nacional por 21.6 pts · brecha amplia</div>
+      </div>
+    </div>
+
+    <div class="card" style="grid-column:1/-1;border-top:none;border-bottom:none">
+      <div class="card-title">🏙️ Identidad Territorial</div>
+      <div class="id-tags">
+        <span class="id-tag">Corazón de la Zona Núcleo — soja · maíz · trigo</span>
+        <span class="id-tag">Polo Textil Regional (Ascensión)</span>
+        <span class="id-tag">Cooperativas agrícolas y acopios</span>
+        <span class="id-tag">Parque Industrial de Ascensión</span>
+        <span class="id-tag">Localidades: Ferré · Ascensión</span>
+        <span class="id-tag">Equinoterapia — inclusión con caballos</span>
+      </div>
+      <div class="id-text">
+        <p>General Arenales está ubicado en una de las zonas de mayor rendimiento agrícola del país. El <strong>campo puro y duro</strong> —soja, maíz y trigo— con el movimiento que generan las grandes cooperativas agrícolas y los acopios es la base económica del distrito. A diferencia de otros municipios agropecuarios de la región, Arenales tiene un componente industrial diferenciador: el <strong>Polo Textil de Ascensión</strong>, con fábricas y pymes textiles que generan empleo industrial estable en una localidad del interior.</p>
+        <p>Ascensión también es sede del <strong>Parque Industrial</strong> proyectado para atraer plantas de acopio y servicios para el agro. La diversificación productiva entre campo, textil e industria de apoyo agrícola le da al municipio una estructura económica más robusta que sus pares puramente sojeros.</p>
+        <p>Ferré y Ascensión son los dos sub-territorios más activos del partido, donde la política de vivienda social (Círculo Cerrado) y los caminos rurales tienen impacto directo en la vida cotidiana de productores y trabajadores industriales.</p>
+      </div>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">⚙️ Programas e Hitos de Gestión</div>
+      <ul class="prog-list">
+        <li>
+          <span class="prog-icon">🛤️</span>
+          <div>
+            <div class="prog-name">Mantenimiento Troncal de Caminos Rurales</div>
+            <div class="prog-desc">Inversión operativa prioritaria en la red vial rural. En Zona Núcleo, garantizar que los camiones puedan sacar la cosecha en época de lluvias es la política de mayor impacto productivo. El municipio destina maquinaria y recursos propios para el mantenimiento continuo de los accesos a los campos.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🏭</span>
+          <div>
+            <div class="prog-name">Parque Industrial de Ascensión</div>
+            <div class="prog-desc">Avance en dotación de infraestructura para el sector industrial planificado en Ascensión, apuntando a atraer plantas de acopio y servicios para el agro que generen empleo local permanente. Complementa el polo textil existente con oferta industrial diversificada.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🏠</span>
+          <div>
+            <div class="prog-name">Plan de Vivienda Municipal — Sistema Círculo Cerrado</div>
+            <div class="prog-desc">Ante la falta de fondos nacionales, el municipio implementó planes propios de vivienda social: financiados por los propios adjudicatarios con apoyo logístico y tierras del municipio. Entrega de unidades concretada en Ferré y Ascensión en 2025/2026.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">💡</span>
+          <div>
+            <div class="prog-name">Programa Impulso Emprendedor</div>
+            <div class="prog-desc">Microcréditos a tasa blanda y acompañamiento técnico (cursos de redes sociales y costos) para proyectos familiares textiles, gastronómicos y metalúrgicos ligeros. Financia decenas de proyectos exigiendo a cambio la inscripción en AFIP — formalización como condición del subsidio.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">👩‍⚕️</span>
+          <div>
+            <div class="prog-name">Jornadas de Salud de la Mujer — Mamógrafo Móvil</div>
+            <div class="prog-desc">Operativos masivos e itinerantes en los CAPS del interior: ginecólogos, ecógrafos y mamógrafo móvil. En campañas concentradas de 48 horas logran cientos de Papanicolau y mamografías por demanda espontánea. Prevención primaria de alta calidad sin desplazamiento de las mujeres del interior.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">♻️</span>
+          <div>
+            <div class="prog-name">Arenales Recicla — Campanas Verdes</div>
+            <div class="prog-desc">Red de Campanas Verdes en plazas, separación domiciliaria y planta de clasificación municipal. Los operarios separan, enfardan y venden toneladas mensuales de cartón, PET y aluminio al mercado industrial. Economía circular con generación de empleo local.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🐴</span>
+          <div>
+            <div class="prog-name">Centro de Equinoterapia</div>
+            <div class="prog-desc">Programa de inclusión coordinado por la Secretaría de Desarrollo Social, iniciado en 2026 en la Sociedad Rural. Terapias asistidas por caballos y profesionales especializados para personas con necesidades especiales. Singularidad de gestión con impacto social directo y visibilidad comunitaria.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🏘️</span>
+          <div>
+            <div class="prog-name">Municipio Cerca — Atención Territorial</div>
+            <div class="prog-desc">Funcionarios de Obras Públicas, Salud y Desarrollo Social recorren barrios para dialogar con vecinos y resolver inquietudes directamente en el territorio. El municipio va al vecino en lugar de esperar que el vecino llegue al municipio.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">GENERAL ARENALES · INTERIOR · 4ª Sección Electoral · Padrón 15.481 · Ficha de Campaña 2025–2026</div>
+</div>
+</body>
+</html>
