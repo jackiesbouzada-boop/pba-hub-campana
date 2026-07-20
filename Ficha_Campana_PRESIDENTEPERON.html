@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Presidente Perón — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#1a3a5c;--primary-dark:#0c2340;--accent:#2563eb;--accent-light:#60a5fa;--bg:#f1f5f9;--surface:#ffffff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0c2340 0%,#1a3a5c 55%,#1d4ed8 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2.2rem;font-weight:900;letter-spacing:-.01em;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:14px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#93c5fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTION */
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a3a5c,#1e4575);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;display:flex;align-items:center;gap:8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.6;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+
+/* BLOCKS */
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a3a5c;border-color:#1a3a5c;color:#fff}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#93c5fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:var(--accent);display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+
+/* INTENDENTE */
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a3a5c,#2563eb);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800;color:var(--text)}
+.int-info .int-meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .int-desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+
+/* GESTIÓN */
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#1e40af;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+
+/* TABLES */
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:var(--accent)}
+.tbl-ok{color:#15803d;font-weight:700}
+.tbl-warn{color:#b45309;font-weight:700}
+.tbl-bad{color:#b91c1c;font-weight:700}
+
+/* ARCO ELECTORAL */
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.arc-pj{color:#1d4ed8}
+.arc-lla{color:#7c3aed}
+.arc-jxc{color:#d97706}
+.arc-vec{color:#15803d}
+.arc-fit{color:#dc2626}
+.arc-grey{color:#374151}
+
+/* SPLIT */
+.split-box{background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.split-title{font-size:.72rem;font-weight:800;color:#1e40af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.split-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid #dbeafe}
+.split-row:last-child{border-bottom:none}
+.split-lbl{font-size:.77rem;color:#374151}
+.split-val{font-size:.82rem;font-weight:800;color:#1d4ed8}
+
+/* ALERT */
+.lla-alert{background:#fef2f2;border:1.5px solid #fecaca;border-radius:8px;padding:12px 14px}
+.lla-alert-ttl{font-size:.72rem;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.lla-alert-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+/* COLOR LOCAL */
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:6px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+
+/* PALANCAS */
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a3a5c,#1d4ed8);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px;background:#fff}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-body p:last-child{margin-bottom:0}
+.pal-access{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-gest{background:#dcfce7;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+
+/* PROGRAMAS */
+.prog-list{display:flex;flex-direction:column;gap:8px}
+.prog-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;gap:12px;align-items:flex-start}
+.prog-ico{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.prog-body h5{font-size:.78rem;font-weight:800;color:var(--primary);margin-bottom:3px}
+.prog-body p{font-size:.75rem;color:#374151;line-height:1.5}
+
+/* VISITAS */
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800;color:var(--text)}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.vis-tag{display:inline-block;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.tag-obra{background:#fef3c7;color:#92400e}
+.tag-gest{background:#dcfce7;color:#15803d}
+.tag-com{background:#ede9fe;color:#6b21a8}
+
+/* SÍNTESIS */
+.sint{background:linear-gradient(135deg,#0c2340,#1a3a5c);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#93c5fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}
+  .hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO &nbsp;|&nbsp; 3ª Sección Electoral</div>
+  <div class="h-name">PRESIDENTE PERÓN</div>
+  <div class="h-sub">Partido de Presidente Perón · Buenos Aires · Cabecera: Guernica</div>
+  <div><span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">84,687</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">102,106</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">122 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">40.8%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">23.9%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">+8.4 pts</span><span class="h-stat-l">LLA Nac &gt; Prov</span></div>
+  </div>
+</div>
+
+<!-- IDENTIDAD TERRITORIAL -->
+<div class="sec">
+  <div class="sec-hdr">🌆 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Ciudad Dormitorio sobre la Ruta 210</h4>
+        <p>Presidente Perón es el distrito del trabajador que viaja. Su motor económico central es el consumo minorista de sus propios habitantes — la mayoría de los cuales trabaja en CABA o en distritos vecinos y regresa a Guernica a vivir. El corredor comercial de la <strong>Ruta 210</strong> es el termómetro del consumo popular: cuando al vecino le va bien, la Ruta 210 se llena. Cuando hay presión en el bolsillo, se nota inmediatamente en la actividad comercial.</p>
+      </div>
+      <div class="blk">
+        <h4>La Autopista que Cambia Todo</h4>
+        <p>La extensión de la <strong>Autopista Presidente Perón</strong> (tramo de la Buen Ayre) transformó la geografía funcional del distrito en 2026. La finalización de los tramos hacia Guernica redujo drásticamente el tiempo de viaje al norte y al oeste del conurbano sin pasar por CABA. No es solo una obra vial — es una reconfiguración del rol del partido en la red metropolitana, que abre la posibilidad de radicar logística e industria donde antes no llegaban.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">102,106</span>
+        <span class="l">Habitantes — uno de los partidos de más rápido crecimiento del conurbano sur</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">5</span>
+        <span class="l">Nuevas localidades creadas bajo la gestión actual — el partido deja de ser solo Guernica</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTENDENTE -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Blanca Cantero</h3>
+        <div class="int-meta">Unión por la Patria &nbsp;·&nbsp; <span class="badge-pol badge-al-pol">ALIADO</span></div>
+        <div class="int-desc">Intendente de Presidente Perón. En 2023 obtuvo el <strong>51.2%</strong> con una oposición fragmentada en múltiples fuerzas (LLA 21.9%, JxC 12.2%, vecinalistas 11%). Su gestión se concentra en resolver la infraestructura que el crecimiento acelerado del partido exige: conectividad vial, acceso al FFCC sin barreras, y descentralización territorial con la creación de 5 nuevas localidades. Canal abierto con la provincia en obras de relevancia provincial.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">🛣️ Autopista Presidente Perón</div>
+        <div class="gest-txt">Extensión de la Buen Ayre hacia Guernica, completada en 2026. Reconfiguró la conectividad del distrito con el norte y oeste del AMBA, reduciendo tiempos de viaje y abriendo posibilidades de radicación industrial.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🚆 Paso Bajo Nivel FFCC Roca</div>
+        <div class="gest-txt">Túneles bajo las vías del Ferrocarril Roca (Ruta 210) para unificar Guernica, históricamente partida por el tren. La obra más demandada por los vecinos para terminar con el corte cotidiano del tráfico.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🏭 Sector Industrial Planificado</div>
+        <div class="gest-txt">Impulso al desarrollo industrial aprovechando la nueva conectividad de la autopista. Transición de ciudad dormitorio pura hacia municipio con capacidad de generar empleo local en logística y manufactura.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🗺️ Creación de 5 Nuevas Localidades</div>
+        <div class="gest-txt">Hito histórico de descentralización territorial. El partido deja de tener a Guernica como única localidad y reconoce la identidad barrial de zonas que habían crecido sin nombre oficial.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">51.2%</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">21.9%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Vecinalismo</span><span class="arc-val arc-vec">11.0%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC</span><span class="arc-val arc-jxc">12.2%</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">40.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">23.9%</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">5.7%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">84,687</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">47.7%</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">32.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">6.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">75,243</span></div>
+      </div>
+    </div>
+    <div class="split-box">
+      <div class="split-title">📊 Evolución de fuerzas · 2023 → 2025</div>
+      <div class="split-row"><span class="split-lbl">PJ: 51.2% (2023) → 40.8% (2025 Prov) → 47.7% (2025 Nac)</span><span class="split-val tbl-warn">−10.4 pts Prov / recupera en Nac</span></div>
+      <div class="split-row"><span class="split-lbl">LLA: 21.9% (2023) → 23.9% (2025 Prov) → 32.3% (2025 Nac)</span><span class="split-val tbl-bad">+10.4 pts entre 2023 y Nac 2025</span></div>
+      <div class="split-row"><span class="split-lbl">Split LLA Nacional vs Provincial</span><span class="split-val tbl-warn">+8.4 pts (Nacional gana más)</span></div>
+      <div class="split-row"><span class="split-lbl">Voto vecinalista 2023 (desaparece en 2025)</span><span class="split-val" style="color:#374151">5,765 votos absorbidos por LLA y FIT</span></div>
+    </div>
+    <div class="lla-alert">
+      <div class="lla-alert-ttl">📊 Lectura Electoral</div>
+      <div class="lla-alert-body">El PJ ganó con amplia mayoría en 2023 (51.2%) pero retrocedió en la elección provincial 2025 (40.8%). La recuperación en la nacional (47.7%) sugiere que parte de los votos perdidos son blandos — votantes que acompañan al PJ en lo local y en lo nacional cuando el candidato es convincente, pero que en la elección provincial de medio término evaluaron con más dureza. El crecimiento de LLA es real pero moderado para un partido del conurbano sur: 21.9% → 23.9% (Prov) → 32.3% (Nac). El voto vecinalista de 2023 (11%) que desapareció migró en parte a LLA y en parte al FIT — no está perdido para el PJ si la gestión responde.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COLOR LOCAL -->
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Economía &amp; Territorio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🛣️</div>
+        <div class="cl-tipo">Infraestructura / Conectividad</div>
+        <div class="cl-nm">Autopista Presidente Perón</div>
+        <div class="cl-desc">La extensión de la Buen Ayre hacia Guernica (2026) reconfiguró el partido. Menor tiempo de viaje al AMBA, apertura para logística e industria.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚆</div>
+        <div class="cl-tipo">Conectividad / Barrera</div>
+        <div class="cl-nm">Paso Bajo Nivel FFCC Roca</div>
+        <div class="cl-desc">Obra que resuelve la barrera histórica del tren en la Ruta 210. Guernica, partido en dos por el FFCC durante décadas, recupera su continuidad urbana.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛒</div>
+        <div class="cl-tipo">Economía / Consumo</div>
+        <div class="cl-nm">Corredor Comercial Ruta 210</div>
+        <div class="cl-desc">El termómetro del consumo popular local. Comercio minorista, gastronomía y servicios que reflejan la situación económica de las familias trabajadoras de Guernica.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏭</div>
+        <div class="cl-tipo">Desarrollo / Futuro</div>
+        <div class="cl-nm">Sector Industrial Planificado</div>
+        <div class="cl-desc">Apuesta al empleo local a través de la radicación de logística y manufactura, aprovechando la nueva conectividad de la autopista. Transición del modelo dormitorio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📋</div>
+        <div class="cl-tipo">Gestión / Acceso</div>
+        <div class="cl-nm">Mi Escritura (Regularización Dominial)</div>
+        <div class="cl-desc">Miles de escrituras tramitadas gratuitamente. En barrios históricamente informales, acceder a la escritura es ganar certeza jurídica sobre el mayor activo familiar.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🗺️</div>
+        <div class="cl-tipo">Identidad / Descentralización</div>
+        <div class="cl-nm">Las 5 Nuevas Localidades</div>
+        <div class="cl-desc">Reconocimiento oficial de barrios que habían crecido sin nombre. La descentralización territorial como política de identidad y de distribución de servicios.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMAS -->
+<div class="sec">
+  <div class="sec-hdr">📋 Programas Municipales Destacados</div>
+  <div class="sec-body">
+    <div class="prog-list">
+      <div class="prog-item">
+        <div class="prog-ico">🏠</div>
+        <div class="prog-body">
+          <h5>Mi Escritura — Regularización Dominial</h5>
+          <p>El municipio realiza censos puerta a puerta en barrios históricos, elabora planos de mensura y gestiona escrituración gratuita a través de la Escribanía General. Miles de familias regularizaron su tenencia en los últimos años. Es la política de mayor impacto en la vida concreta de los vecinos más vulnerables.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🩺</div>
+        <div class="prog-body">
+          <h5>Salud en Tu Barrio</h5>
+          <p>Operativos móviles semanales en plazas y sociedades de fomento, con vacunadoras, pediatras y clínicos. Promedio de 800 atenciones mensuales sin turno previo, incluyendo firmas de libretas de la AUH — servicio crítico para las familias que acceden a planes sociales.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🛍️</div>
+        <div class="prog-body">
+          <h5>Feria de Emprendedores y Artesanos</h5>
+          <p>Espacio público (plaza céntrica) cedido los fines de semana con stands provistos por la municipalidad. Incluye capacitaciones en costos y redes sociales. Más de 150 familias emprendedoras de Guernica sostienen ingresos complementarios a través del programa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PALANCAS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Palancas de Impacto</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🛣️ Obra Provincial</div>
+        </div>
+        <div class="pal-body">
+          <p>La Autopista Presidente Perón y el paso bajo nivel del FFCC Roca son obras que llevaron el sello provincial. La visibilidad de estas obras es la palanca más fuerte: el vecino sabe que el tren ya no corta la ciudad.</p>
+          <p><span class="pal-access acc-gest">Gestión Provincial</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">📋 Escrituración Masiva</div>
+        </div>
+        <div class="pal-body">
+          <p>Miles de familias con escritura gratuita es miles de familias que ganaron certeza jurídica sobre su hogar. Es el activo de gestión más tangible y emocional del partido — cada escritura es un vínculo con el Estado que entregó algo concreto.</p>
+          <p><span class="pal-access acc-gest">Gestión Municipal/Prov</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🏭 Desarrollo Industrial</div>
+        </div>
+        <div class="pal-body">
+          <p>El Sector Industrial Planificado es la apuesta al futuro. En un distrito que quiere dejar de ser solo dormitorio, la radicación de industria y logística es la promesa de empleo local sin depender del AMBA.</p>
+          <p><span class="pal-access acc-priv">Inversión Privada</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS SUGERIDAS -->
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Sugeridas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Paso Bajo Nivel FFCC Roca — Inauguración<span class="vis-tag tag-obra">OBRA PROV</span></div>
+          <div class="vis-desc">Hito urbano emblemático. La obra que terminó con la barrera histórica del tren que dividía Guernica. Alta visibilidad y demanda vecinal de larga data.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Autopista Presidente Perón — Tramo Guernica<span class="vis-tag tag-obra">OBRA PROV</span></div>
+          <div class="vis-desc">Recorrida sobre la nueva traza que conecta Guernica al AMBA. La obra que reconfiguró la vida cotidiana del distrito y abre las puertas al desarrollo industrial.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Entrega de Escrituras — Barrios Históricos<span class="vis-tag tag-gest">GESTIÓN</span></div>
+          <div class="vis-desc">Acto de entrega de escrituras en barrios informales. Es la política que más profundamente cambia la vida de familias que esperaron décadas por su documento.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Feria de Emprendedores — Plaza Central<span class="vis-tag tag-com">COMUNITARIO</span></div>
+          <div class="vis-desc">Contacto directo con emprendedores locales. Economía popular con nombre y cara propia. 150+ familias que sostienen ingresos gracias al espacio municipal.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Sector Industrial Planificado<span class="vis-tag tag-obra">DESARROLLO</span></div>
+          <div class="vis-desc">Visita al área de desarrollo industrial. Mensaje de futuro: Guernica no es solo dormitorio, es un municipio que está construyendo su propio empleo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS -->
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>Presidente Perón es un distrito aliado con base peronista sólida y dos grandes obras de infraestructura provincial que anclan el relato de gestión.</strong> La Autopista Presidente Perón y el paso bajo nivel del FFCC Roca son los activos más concretos de la relación provincia-municipio — y el vecino de Guernica lo sabe porque los usa todos los días.</p>
+  <p>El retroceso del PJ de 51.2% (2023) a 40.8% en la elección provincial de 2025 es real pero no alarmante: en la nacional del mismo año recuperó a 47.7%. El voto vecinalista de 2023 (11%) desapareció y parte migró a LLA — eso es el campo de disputa. Pero el PJ sigue siendo ampliamente primera fuerza y LLA apenas alcanza el 23.9% en la provincial.</p>
+  <p><strong>La clave estratégica es consolidar la narrativa de transformación:</strong> Guernica ya no está partida por el tren. La autopista la conecta con el AMBA en menos tiempo. Familias con escritura por primera vez. Un municipio que deja de ser solo dormitorio para convertirse en polo productivo. Eso es lo que la gestión aliada puede mostrar — y la provincia puede amplificar.</p>
+</div>
+
+</body>
+</html>

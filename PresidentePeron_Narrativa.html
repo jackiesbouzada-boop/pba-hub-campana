@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Presidente Perón — Narrativa Estratégica 2026</title>
+<style>
+:root{--primary:#1a3a5c;--accent:#2563eb;--bg:#f8fafc;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;max-width:860px;margin:0 auto;padding:20px}
+
+/* COVER */
+.cover{background:linear-gradient(135deg,#0c2340 0%,#1a3a5c 50%,#1e3a8a 100%);color:#fff;border-radius:var(--radius);padding:36px 40px 32px;margin-bottom:20px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;right:-80px;bottom:-80px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cov-tag{font-size:.68rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#60a5fa;margin-bottom:12px}
+.cov-title{font-size:2.6rem;font-weight:900;line-height:1.05;margin-bottom:8px;letter-spacing:-.02em}
+.cov-sub{font-size:1rem;opacity:.75;margin-bottom:20px}
+.cov-meta{display:flex;gap:28px;flex-wrap:wrap}
+.cov-m{display:flex;flex-direction:column}
+.cov-mv{font-size:1.1rem;font-weight:800;color:#93c5fd}
+.cov-ml{font-size:.68rem;opacity:.65;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTIONS */
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.06);margin-bottom:16px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#0c2340,#1a3a5c);color:#fff;padding:11px 20px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:18px 20px}
+
+/* PROSE */
+.prose p{font-size:.85rem;color:#374151;line-height:1.7;margin-bottom:12px}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--primary);font-weight:700}
+
+/* QUOTE */
+.quote{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 18px;margin:14px 0;font-size:.85rem;color:#1e40af;line-height:1.65;font-style:italic}
+
+/* DATA STRIP */
+.data-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:14px}
+.ds-cell{background:#fff;padding:12px 14px;text-align:center}
+.ds-v{font-size:1.25rem;font-weight:900;color:var(--accent)}
+.ds-l{font-size:.67rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:2px}
+
+/* ALERT */
+.alert{border-radius:8px;padding:14px 16px;margin-bottom:14px}
+.alert-ok{background:#f0fdf4;border:1.5px solid #bbf7d0}
+.alert-ok .a-ttl{color:#15803d}
+.alert-info{background:#eff6ff;border:1.5px solid #bfdbfe}
+.alert-info .a-ttl{color:#1e40af}
+.alert-warn{background:#fef2f2;border:1.5px solid #fecaca}
+.alert-warn .a-ttl{color:#b91c1c}
+.a-ttl{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.a-body{font-size:.8rem;color:#374151;line-height:1.6}
+
+/* EJES */
+.eje-list{display:flex;flex-direction:column;gap:10px}
+.eje{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.eje-ttl{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.eje-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+/* CIERRE */
+.cierre{background:linear-gradient(135deg,#0c2340,#1a3a5c);border-radius:var(--radius);padding:22px 24px;color:#fff}
+.cierre h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#93c5fd;margin-bottom:14px}
+.cierre p{font-size:.84rem;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:10px}
+.cierre p:last-child{margin-bottom:0}
+.cierre strong{color:#93c5fd}
+
+@media print{
+  body{background:#fff;padding:0}
+  .sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid}
+  .cover,.cierre{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:12mm 14mm}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cov-tag">🌆 CONURBANO · 3ª Sección Electoral · Narrativa Estratégica 2026</div>
+  <div class="cov-title">Presidente Perón</div>
+  <div class="cov-sub">Guernica en transformación: la autopista que lo cambia todo y el trabajador que ya no quiere ser solo dormitorio</div>
+  <div class="cov-meta">
+    <div class="cov-m"><span class="cov-mv">Blanca Cantero</span><span class="cov-ml">Intendente · UxP · Aliada</span></div>
+    <div class="cov-m"><span class="cov-mv">102,106</span><span class="cov-ml">Habitantes</span></div>
+    <div class="cov-m"><span class="cov-mv">40.8%</span><span class="cov-ml">PJ 2025 Prov</span></div>
+    <div class="cov-m"><span class="cov-mv">23.9%</span><span class="cov-ml">LLA 2025 Prov</span></div>
+  </div>
+</div>
+
+<!-- DATOS -->
+<div class="data-strip">
+  <div class="ds-cell"><div class="ds-v">79,315</div><div class="ds-l">Padrón 2023</div></div>
+  <div class="ds-cell"><div class="ds-v">84,687</div><div class="ds-l">Padrón 2025</div></div>
+  <div class="ds-cell"><div class="ds-v">102,106</div><div class="ds-l">Habitantes</div></div>
+  <div class="ds-cell"><div class="ds-v">122 km²</div><div class="ds-l">Superficie</div></div>
+</div>
+
+<!-- IDENTIDAD -->
+<div class="sec">
+  <div class="sec-hdr">🌆 El Territorio: Guernica en el Umbral del Cambio</div>
+  <div class="sec-body">
+    <div class="prose">
+      <p>Guernica fue durante décadas la imagen clásica del conurbano trabajador: un partido que funcionaba como dormitorio del AMBA. La mayoría de sus vecinos salía temprano rumbo a CABA o a los distritos industriales vecinos, regresaba al anochecer, y en los fines de semana movía el corredor comercial de la <strong>Ruta 210</strong>. Esa Ruta 210 —y el estado de actividad de su comercio minorista— era el termómetro más fiel de cómo le iba al bolsillo del vecino.</p>
+      <p>Pero en 2026, Guernica está en el umbral de una transformación que pocas veces ocurre en la historia de un partido bonaerense. Dos obras de infraestructura de escala metropolitana cambiaron la ecuación: la extensión de la <strong>Autopista Presidente Perón</strong> (tramo de la Buen Ayre hacia Guernica) y los <strong>pasos bajo nivel del Ferrocarril Roca</strong> en la Ruta 210. La primera eliminó el tiempo de viaje que durante décadas definió al partido como lejos. La segunda eliminó la barrera física que durante décadas dividió a Guernica en dos ciudades que no podían mirarse de frente.</p>
+      <p>A esto se suma un hito de identidad territorial sin precedentes: la creación de <strong>cinco nuevas localidades</strong> — reconocimiento oficial de barrios que habían crecido sin nombre, sin administración propia, sin identidad en el mapa. Para un partido que hasta ayer tenía una sola localidad, esto es una redefinición de quién es.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GESTIÓN -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ La Gestión de Blanca Cantero: Infraestructura y Acceso</div>
+  <div class="sec-body">
+    <div class="prose">
+      <p>La gestión de Blanca Cantero se inscribe en la lógica de dar respuesta a lo que el propio crecimiento del partido exige. Presidente Perón pasó de ser una pequeña localidad a tener más de 100.000 habitantes en pocas décadas — eso es una ciudad nueva que apareció sin la infraestructura de una ciudad nueva. La tarea de la intendente fue construir esa infraestructura que faltaba.</p>
+      <p>El <strong>paso bajo nivel del FFCC Roca</strong> en la Ruta 210 es quizás la obra más simbólica. Durante años, el tren cortaba Guernica literalmente en dos: quien vivía de un lado tardaba veinte minutos en cruzar al otro cuando el tren bajaba la barrera. Esa demora cotidiana, multiplicada por miles de vecinos y por décadas, es el tipo de fricción que erosiona la fe en el Estado. La obra que quitó esa barrera es la obra que demostrará, cada mañana de aquí en adelante, que el Estado puede resolver lo que parecía eterno.</p>
+      <p>En el plano social, el programa <strong>"Mi Escritura"</strong> es el activo de gestión más profundo: censos puerta a puerta, planos de mensura y escrituración gratuita para familias que vivían en terrenos sin título desde hace décadas. En el conurbano, tener la escritura de la propia casa no es solo un trámite — es ganar la certeza de que lo que construiste es tuyo. Miles de familias la tienen por primera vez gracias a este programa.</p>
+      <p>El <strong>programa de Salud en Tu Barrio</strong> despliega operativos móviles semanales en plazas y sociedades de fomento: pediatras, clínicos, vacunadoras. En un distrito con alta proporción de beneficiarios de AUH, incluir la firma de libretas en esos operativos es eliminar un trámite que para muchas familias implica perderse un turno de trabajo.</p>
+    </div>
+    <div class="quote">"En un partido que estuvo dividido por el tren durante décadas, la obra que cierra ese corte no es solo ingeniería — es la demostración de que el Estado puede hacer lo que la gente esperaba desde siempre."</div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ El Mapa Electoral: Base Sólida, Señales a Atender</div>
+  <div class="sec-body">
+    <div class="alert alert-ok">
+      <div class="a-ttl">✅ PJ primera fuerza en todas las elecciones</div>
+      <div class="a-body">2023: 51.2% · 2025 Provincial: 40.8% · 2025 Nacional: 47.7%. El PJ ganó en Presidente Perón en todas las instancias. La base peronista está consolidada y es ampliamente mayoritaria.</div>
+    </div>
+    <div class="alert alert-info">
+      <div class="a-ttl">📊 La caída provincial se explica por la fragmentación previa</div>
+      <div class="a-body">En 2023 el 11% del electorado votó por fuerzas vecinalistas que desaparecieron en 2025. Ese voto fue absorbido mayormente por LLA y el FIT. El PJ no perdió votos propios — perdió el beneficio de la fragmentación de la oposición. Diferencia clave de leer.</div>
+    </div>
+    <div class="alert alert-warn">
+      <div class="a-ttl">⚠️ LLA creció: de 21.9% (2023) a 32.3% (Nacional 2025)</div>
+      <div class="a-body">El avance de LLA es real pero moderado para un partido del conurbano sur: ganó 10 puntos en dos años. La diferencia entre su resultado provincial (23.9%) y nacional (32.3%) marca un split de +8.4 puntos — votantes que eligieron PJ en lo local pero LLA en lo nacional.</div>
+    </div>
+    <div class="prose">
+      <p>La lectura más honesta es que Presidente Perón es un partido peronista en el que la presión de LLA existe pero no es dominante. El PJ tiene un piso del 40% en lo provincial y recupera al 47% en lo nacional. La tarea de 2026-2027 es consolidar ese piso y trabajar el split: convencer al votante que eligió PJ provincial y LLA nacional de que en 2027 ambas candidaturas valen el mismo voto.</p>
+    </div>
+  </div>
+</div>
+
+<!-- EJES ESTRATÉGICOS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos para 2026–2027</div>
+  <div class="sec-body">
+    <div class="eje-list">
+      <div class="eje">
+        <div class="eje-ttl">🛣️ <span>Capitalizar la transformación de la infraestructura</span></div>
+        <div class="eje-body">La Autopista Presidente Perón y el paso bajo nivel son obras que el vecino de Guernica ve, usa y agradece todos los días. La estrategia es que ese agradecimiento tenga un destinatario claro: la articulación entre la gestión de la intendente aliada y el apoyo provincial que hizo posible la obra. Las obras no se relatan solas — necesitan comunicación que vincule el hecho concreto con el actor político que lo hizo.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-ttl">📋 <span>Profundizar la escrituración como activo emocional</span></div>
+        <div class="eje-body">La escritura de la casa propia es el símbolo más potente de lo que el Estado puede dar que el mercado no da. Cada acto de entrega de escrituras es una escena política de altísimo impacto: una familia con su documento, una historia de décadas de incertidumbre resuelta. Ese activo tiene que tener presencia provincial y tiene que ampliarse.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-ttl">🏭 <span>Acompañar la transición industrial</span></div>
+        <div class="eje-body">El Sector Industrial Planificado y la nueva conectividad de la autopista abren una ventana para que Presidente Perón deje de ser solo dormitorio. La provincia puede acompañar esa transición con promoción industrial, facilitación de radicaciones y comunicación del nuevo perfil productivo del distrito. Empleo local es el argumento más poderoso contra el relato de LLA.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-ttl">🗺️ <span>Recorrer las nuevas localidades</span></div>
+        <div class="eje-body">Las cinco nuevas localidades son barrios que acaban de ser reconocidos por el Estado. Sus vecinos son nuevos en el mapa pero viejos en sus demandas. Llegar ahí, con presencia concreta y el sello de la gestión aliada que los nombró, es construir vínculo donde antes no había historia política.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CIERRE -->
+<div class="cierre">
+  <h3>📌 Lectura Final</h3>
+  <p>Presidente Perón es un distrito aliado que está viviendo un momento de transformación física y política simultáneas. La autopista y el paso bajo nivel son los primeros grandes cambios en la infraestructura del partido en décadas — y llegan en un momento en que el electorado está evaluando si el Estado puede hacer más que sostener lo que ya existe.</p>
+  <p>El PJ es primera fuerza con margen y la intendente aliada tiene obras concretas para mostrar. El avance de LLA es real pero moderado. El split electoral es la señal más importante: hay votantes en Presidente Perón que confían en la gestión local del PJ pero que en la elección nacional buscaron algo diferente. Ese votante no está perdido — está evaluando.</p>
+  <p><strong>La clave estratégica es simple: el vecino que cruza todos los días por el paso bajo nivel del FFCC Roca y recuerda cómo era antes, es el mejor argumento de que la gestión funciona. La obra le habla por sí misma. La política tiene que asegurarse de que el vecino sepa a quién agradecerle.</strong></p>
+</div>
+
+</body>
+</html>
