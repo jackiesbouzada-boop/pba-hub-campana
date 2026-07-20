@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>General Rodríguez — Narrativa Estratégica 2026</title>
+<style>
+:root{--primary:#1a3a5c;--accent:#2563eb;--gold:#d97706;--bg:#f8fafc;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;max-width:860px;margin:0 auto;padding:20px}
+
+/* COVER */
+.cover{background:linear-gradient(135deg,#0c2340 0%,#1a3a5c 50%,#1e3a8a 100%);color:#fff;border-radius:var(--radius);padding:36px 40px 32px;margin-bottom:20px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;right:-80px;bottom:-80px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cov-tag{font-size:.68rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#60a5fa;margin-bottom:12px}
+.cov-title{font-size:2.6rem;font-weight:900;line-height:1.05;margin-bottom:8px;letter-spacing:-.02em}
+.cov-sub{font-size:1rem;opacity:.75;margin-bottom:20px}
+.cov-meta{display:flex;gap:28px;flex-wrap:wrap}
+.cov-m{display:flex;flex-direction:column}
+.cov-mv{font-size:1.1rem;font-weight:800;color:#93c5fd}
+.cov-ml{font-size:.68rem;opacity:.65;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTIONS */
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.06);margin-bottom:16px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#0c2340,#1a3a5c);color:#fff;padding:11px 20px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:18px 20px}
+
+/* PROSE */
+.prose p{font-size:.85rem;color:#374151;line-height:1.7;margin-bottom:12px}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--primary);font-weight:700}
+
+/* QUOTE */
+.quote{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 18px;margin:14px 0;font-size:.85rem;color:#1e40af;line-height:1.65;font-style:italic}
+
+/* DATA STRIP */
+.data-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:14px}
+.ds-cell{background:#fff;padding:12px 14px;text-align:center}
+.ds-v{font-size:1.25rem;font-weight:900;color:var(--accent)}
+.ds-l{font-size:.67rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:2px}
+
+/* ALERT */
+.alert{border-radius:8px;padding:14px 16px;margin-bottom:14px}
+.alert-warn{background:#fef2f2;border:1.5px solid #fecaca}
+.alert-warn .a-ttl{color:#b91c1c}
+.alert-info{background:#eff6ff;border:1.5px solid #bfdbfe}
+.alert-info .a-ttl{color:#1e40af}
+.alert-ok{background:#f0fdf4;border:1.5px solid #bbf7d0}
+.alert-ok .a-ttl{color:#15803d}
+.a-ttl{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.a-body{font-size:.8rem;color:#374151;line-height:1.6}
+
+/* EJES */
+.eje-list{display:flex;flex-direction:column;gap:10px}
+.eje{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.eje-ttl{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.eje-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+/* CIERRE */
+.cierre{background:linear-gradient(135deg,#0c2340,#1a3a5c);border-radius:var(--radius);padding:22px 24px;color:#fff}
+.cierre h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#93c5fd;margin-bottom:14px}
+.cierre p{font-size:.84rem;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:10px}
+.cierre p:last-child{margin-bottom:0}
+.cierre strong{color:#93c5fd}
+
+@media print{
+  body{background:#fff;padding:0}
+  .sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid}
+  .cover,.cierre{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:12mm 14mm}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cov-tag">🛤️ Corredor Industrial Norte · 1ª Sección Electoral · Narrativa Estratégica 2026</div>
+  <div class="cov-title">General Rodríguez</div>
+  <div class="cov-sub">El polo alimenticio que crece: aliados consolidados, electorado nuevo en disputa</div>
+  <div class="cov-meta">
+    <div class="cov-m"><span class="cov-mv">Mauro García</span><span class="cov-ml">Intendente · UxP · Aliado</span></div>
+    <div class="cov-m"><span class="cov-mv">142,709</span><span class="cov-ml">Habitantes</span></div>
+    <div class="cov-m"><span class="cov-mv">43.1%</span><span class="cov-ml">PJ 2025 Prov</span></div>
+    <div class="cov-m"><span class="cov-mv">36.3%</span><span class="cov-ml">LLA 2025 Prov</span></div>
+  </div>
+</div>
+
+<!-- DATOS -->
+<div class="data-strip">
+  <div class="ds-cell"><div class="ds-v">103,592</div><div class="ds-l">Padrón 2023</div></div>
+  <div class="ds-cell"><div class="ds-v">112,074</div><div class="ds-l">Padrón 2025</div></div>
+  <div class="ds-cell"><div class="ds-v">+8,482</div><div class="ds-l">Nuevos electores</div></div>
+  <div class="ds-cell"><div class="ds-v">366.5 km²</div><div class="ds-l">Superficie</div></div>
+</div>
+
+<!-- IDENTIDAD -->
+<div class="sec">
+  <div class="sec-hdr">🏭 El Territorio: Un Polo Productivo en Expansión</div>
+  <div class="sec-body">
+    <div class="prose">
+      <p>General Rodríguez no es un municipio que se explique solo por su política. Se explica primero por su economía. En un partido de 366 kilómetros cuadrados al noroeste del AMBA, conviven tres gigantes industriales de alcance nacional: <strong>La Serenísima</strong>, con una de sus plantas históricas de producción láctea; <strong>Marolio</strong>, con operaciones de producción y distribución de consumo masivo; y <strong>Yamaha Argentina</strong>, con su centro logístico y de ensamble de motovehículos. Este trío convierte al partido en un nodo silencioso pero estratégico de la cadena productiva del AMBA: lo que se elabora aquí llega a millones de hogares.</p>
+      <p>Pero General Rodríguez también se explica por lo que está pasando en sus márgenes. El boom inmobiliario de la última década trajo <strong>loteos abiertos y barrios cerrados</strong> sobre la Ruta 24 y la Ruta 7: familias jóvenes que buscan acceso a la propiedad fuera del GBA central, con capacidad de endeudarse y la necesidad urgente de servicios que todavía no llegan. El padrón electoral pasó de <strong>103.592 en 2023 a 112.074 en 2025</strong> — más de 8.400 nuevos electores en apenas dos años. Ese crecimiento no es un dato marginal: es la variable que define el perfil político del partido hacia 2027.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GESTIÓN -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ La Gestión de Mauro García: Responder al Crecimiento</div>
+  <div class="sec-body">
+    <div class="prose">
+      <p>Mauro García llegó a la intendencia en un distrito que ya crecía y gobernó exactamente para ese crecimiento. Su agenda no fue la de un municipio estático: fue la de uno que necesita correrse para alcanzar a su propia población. Los resultados más visibles de su gestión responden a esa lógica.</p>
+      <p>En salud, apostó por la <strong>descentralización</strong>: puso en marcha el Hospital Odontológico y el Hospital Oftalmológico con lógica de atención barrial, quitando presión al sistema central. Completó esa apuesta con el programa <em>"Oftalmología y Odontología en Tu Barrio"</em>, trailers que recorren zonas periféricas llevando especialistas donde la demanda crece más rápido que la oferta institucional.</p>
+      <p>En educación, construyó <strong>nuevos jardines y escuelas primarias</strong> en barrios de expansión reciente, con el criterio de que si la familia llega, la escuela tiene que llegar antes que el problema. El programa de <em>"Expansión Educativa y Arraigo"</em> busca sostener trayectorias completas sin que los chicos tengan que movilizarse al centro.</p>
+      <p>En infraestructura, el <strong>Plan Estratégico de Gas</strong> es quizás la iniciativa de mayor impacto político: extender redes troncales hacia barrios que históricamente dependieron de la garrafa es reducir el costo de vida de las familias más vulnerables de forma concreta, mensurable y permanente. Se complementa con un <strong>plan de pavimentación masivo</strong> sobre arterias troncales y recambio total a luminarias LED.</p>
+    </div>
+    <div class="quote">"Lo que distingue a esta gestión es que no administró lo heredado: salió a buscar la demanda donde estaba creciendo. Eso es exactamente lo que se le pide a un municipio de frontera demográfica."</div>
+    <div class="prose">
+      <p>Tres programas adicionales merecen mención por su creatividad: el <strong>Mercado de Abaratamiento</strong> (ferias itinerantes de alimentos y garrafas), la <strong>Liga Municipal de Fútbol</strong> (donde el municipio absorbe arbitraje, trofeos y seguridad de toda la liga amateur), y la <strong>Casa de la Justicia</strong> — defensorías, juzgados y mediación descentralizados para que los vecinos no tengan que ir a Mercedes a resolver un trámite judicial.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ El Mapa Electoral: Solidez con Señal de Alerta</div>
+  <div class="sec-body">
+    <div class="alert alert-ok">
+      <div class="a-ttl">✅ El PJ es primera fuerza en todas las elecciones</div>
+      <div class="a-body">2023: 54.4% · 2025 Provincial: 43.1% · 2025 Nacional: 44.5%. El peronismo ganó en General Rodríguez en todas las instancias recientes. La base electoral está.</div>
+    </div>
+    <div class="alert alert-warn">
+      <div class="a-ttl">⚠️ LLA casi duplicó su caudal en dos años</div>
+      <div class="a-body">2023: 18.3% (tercera fuerza) → 2025 Provincial: 36.3% → 2025 Nacional: 40.1%. En dos años, LLA pasó de ser un actor secundario a situarse a 6.6 puntos del PJ en elecciones provinciales y a 4.4 puntos en nacionales. La tendencia es clara y no puede ignorarse.</div>
+    </div>
+    <div class="prose">
+      <p>El cuadro de General Rodríguez en 2025 es el de un PJ que sigue ganando pero que acortó márgenes de modo significativo. La pérdida de 11 puntos entre 2023 y 2025 no fue por colapso propio — fue por absorción: LLA capitalizó el voto anti-kirchnerista que antes dispersó JxC y avanzó sobre los nuevos electores del boom inmobiliario.</p>
+      <p>El dato del <strong>split Nacional vs Provincial</strong> (LLA sacó 3.8 puntos más en la elección nacional que en la provincial) sugiere que hay votantes que eligieron candidatos provinciales del PJ pero nacionales de LLA — electorado golondrina que responde al candidato más que a la estructura. Ese segmento es el campo de disputa hacia 2027.</p>
+    </div>
+  </div>
+</div>
+
+<!-- EJES ESTRATÉGICOS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos para 2026–2027</div>
+  <div class="sec-body">
+    <div class="eje-list">
+      <div class="eje">
+        <div class="eje-ttl">🤝 <span>Capitalizar la gestión aliada</span></div>
+        <div class="eje-body">Mauro García gobierna bien y tiene el canal abierto con la provincia. La estrategia es que esa articulación sea visible: que las obras de gas, las escuelas nuevas y los hospitales descentralizados lleven el sello provincial y el municipal juntos. El intendente aliado es un multiplicador de presencia territorial, no solo un voto seguro.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-ttl">🏘️ <span>Vincular a los nuevos electores</span></div>
+        <div class="eje-body">Los 8.400 nuevos electores llegados por el boom inmobiliario no tienen raíz política consolidada. Son familias jóvenes que evalúan gestión concreta: ¿llegó el gas? ¿hay jardín para el nene? ¿el médico viene al barrio? Esas preguntas se responden con presencia y programas, no con discurso. Es el segmento que define el resultado en 2027.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-ttl">🏭 <span>Articular con el polo industrial</span></div>
+        <div class="eje-body">La Serenísima, Yamaha y Marolio son interlocutores del mundo privado con impacto real en el empleo local. El vínculo con estos actores no es solo de imagen — es de política productiva concreta: capacitación, cadena de proveedores locales, empleabilidad de los nuevos residentes.</div>
+      </div>
+      <div class="eje">
+        <div class="eje-ttl">📉 <span>Defender el piso ante el avance de LLA</span></div>
+        <div class="eje-body">LLA creció 18 puntos en dos años en un municipio con intendente aliado fuerte. Eso indica que el voto presidencial y el voto local son fenómenos parcialmente separados. La respuesta no es atacar a LLA: es profundizar el vínculo entre la gestión provincial y la vida cotidiana de los vecinos hasta que el costo de cambiar no valga la pena.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CIERRE -->
+<div class="cierre">
+  <h3>📌 Lectura Final</h3>
+  <p>General Rodríguez es uno de los activos del mapa bonaerense: un distrito aliado, con gestión sólida, economía real y base electoral peronista que se sostiene. Pero el avance de LLA en un municipio con estas condiciones es una señal que no puede leerse como anécdota.</p>
+  <p>El partido está creciendo físicamente — nuevas familias, nuevos barrios, nuevos electores. Ese crecimiento es simultáneamente la mayor oportunidad y el mayor riesgo: si la provincia llega con servicios concretos antes de que LLA llegue con relato, el municipio se consolida. Si llega tarde, el electorado nuevo se define en otro sentido.</p>
+  <p><strong>La clave no es defender General Rodríguez — es construirlo.</strong> Cada escuela nueva, cada cuadra de gas, cada tráiler de salud barrial es una inversión en un electorado que todavía está formando su identidad política. Ese es el trabajo de los próximos dieciocho meses.</p>
+</div>
+
+</body>
+</html>

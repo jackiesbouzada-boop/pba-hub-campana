@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>General Rodríguez — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#1a3a5c;--primary-dark:#0c2340;--accent:#2563eb;--accent-light:#60a5fa;--bg:#f1f5f9;--surface:#ffffff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0c2340 0%,#1a3a5c 55%,#1d4ed8 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2.2rem;font-weight:900;letter-spacing:-.01em;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:14px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#93c5fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTION */
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a3a5c,#1e4575);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;display:flex;align-items:center;gap:8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.6;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+
+/* BLOCKS */
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a3a5c;border-color:#1a3a5c;color:#fff}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#93c5fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:var(--accent);display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+
+/* INTENDENTE */
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a3a5c,#2563eb);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800;color:var(--text)}
+.int-info .int-meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .int-desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+
+/* GESTIÓN */
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#1e40af;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+
+/* TABLES */
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:var(--accent)}
+.tbl-ok{color:#15803d;font-weight:700}
+.tbl-warn{color:#b45309;font-weight:700}
+.tbl-bad{color:#b91c1c;font-weight:700}
+
+/* ARCO ELECTORAL */
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.arc-pj{color:#1d4ed8}
+.arc-lla{color:#7c3aed}
+.arc-jxc{color:#d97706}
+.arc-fit{color:#dc2626}
+.arc-grey{color:#374151}
+
+/* SPLIT */
+.split-box{background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.split-title{font-size:.72rem;font-weight:800;color:#1e40af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.split-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid #dbeafe}
+.split-row:last-child{border-bottom:none}
+.split-lbl{font-size:.77rem;color:#374151}
+.split-val{font-size:.82rem;font-weight:800;color:#1d4ed8}
+.split-pos{color:#15803d}
+
+/* LLA ALERTA */
+.lla-alert{background:#fef2f2;border:1.5px solid #fecaca;border-radius:8px;padding:12px 14px}
+.lla-alert-ttl{font-size:.72rem;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.lla-alert-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+/* COLOR LOCAL */
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:6px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+
+/* PALANCAS */
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a3a5c,#1d4ed8);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px;background:#fff}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-body p:last-child{margin-bottom:0}
+.pal-access{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+
+/* VISITAS */
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800;color:var(--text)}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.vis-tag{display:inline-block;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.tag-priv{background:#fef3c7;color:#92400e}
+.tag-gest{background:#dcfce7;color:#15803d}
+.tag-com{background:#ede9fe;color:#6b21a8}
+
+/* SÍNTESIS */
+.sint{background:linear-gradient(135deg,#0c2340,#1a3a5c);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#93c5fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+
+/* PROGRAMAS */
+.prog-list{display:flex;flex-direction:column;gap:8px}
+.prog-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;gap:12px;align-items:flex-start}
+.prog-ico{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.prog-body h5{font-size:.78rem;font-weight:800;color:var(--primary);margin-bottom:3px}
+.prog-body p{font-size:.75rem;color:#374151;line-height:1.5}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}
+  .hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="h-cluster">🛤️ CLUSTER 3 · Corredor Industrial Norte &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">GENERAL RODRÍGUEZ</div>
+  <div class="h-sub">Partido de General Rodríguez · Buenos Aires · Cabecera: General Rodríguez</div>
+  <div><span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">112,074</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">142,709</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">366.5 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">43.1%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">36.3%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">+3.8 pts</span><span class="h-stat-l">LLA Nac &gt; Prov</span></div>
+  </div>
+</div>
+
+<!-- IDENTIDAD TERRITORIAL -->
+<div class="sec">
+  <div class="sec-hdr">🏭 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Polo Alimenticio &amp; Logístico</h4>
+        <p>General Rodríguez es uno de los grandes nodos de la industria alimentaria bonaerense. La Serenísima tiene aquí una de sus plantas históricas; Marolio opera su cadena de producción y distribución; Yamaha radicó en el partido su centro logístico y de ensamble. Este combo de alimentación y logística convierte al distrito en un proveedor silencioso pero estratégico del AMBA: lo que se produce aquí llega a millones de hogares.</p>
+      </div>
+      <div class="blk">
+        <h4>Crecimiento Demográfico Acelerado</h4>
+        <p>El padrón creció de <strong>103,592</strong> en 2023 a <strong>112,074</strong> en 2025 — un salto de casi 8.500 votantes en dos años. Loteos abiertos y barrios cerrados se expanden sobre la Ruta 24 y la Ruta 7, incorporando familias jóvenes que buscan acceso a la propiedad más accesible que en el GBA central. Este crecimiento genera una demanda sostenida de servicios: escuelas, gas, pavimento, salud descentralizada.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">+8.500</span>
+        <span class="l">Nuevos electores entre 2023 y 2025 — crecimiento demográfico de frontera</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">3</span>
+        <span class="l">Grandes industrias nacionales con planta en el partido (La Serenísima · Marolio · Yamaha)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTENDENTE -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Mauro García</h3>
+        <div class="int-meta">Unión por la Patria &nbsp;·&nbsp; <span class="badge-pol badge-al-pol">ALIADO</span></div>
+        <div class="int-desc">Intendente del partido desde el ciclo peronista. En 2023 obtuvo el <strong>54.4%</strong> de los votos, consolidando un dominio sólido frente a una oposición fragmentada (JxC 24.7%, LLA 18.3%). Su gestión se concentra en atender la demanda de servicios básicos que genera el crecimiento explosivo del distrito: salud descentralizada, educación, infraestructura de gas y pavimento. Actitud constructiva con la provincia.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">🏥 Salud Descentralizada</div>
+        <div class="gest-txt">Puesta en marcha del Hospital Odontológico y el Hospital Oftalmológico descentralizados, respondiendo al crecimiento poblacional que saturaba la atención centralizada.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🏫 Expansión Educativa</div>
+        <div class="gest-txt">Nuevos jardines y escuelas primarias en barrios de rápida expansión, con foco en sostener trayectorias educativas en zonas periféricas sin necesidad de trasladarse al centro.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🛣️ Pavimentación &amp; LED</div>
+        <div class="gest-txt">Plan de pavimentación masivo sobre arterias troncales del partido, combinado con recambio total del alumbrado público a tecnología LED.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🔥 Plan Estratégico de Gas</div>
+        <div class="gest-txt">Extensión de redes troncales de gas natural hacia barrios periféricos que históricamente dependieron de la garrafa — impacto directo en el costo de vida de los sectores más vulnerables.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">54.4%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC</span><span class="arc-val arc-jxc">24.7%</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">18.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">103,592</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">43.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">36.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">2.7%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">112,074</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">44.5%</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">40.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">4.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">99,248</span></div>
+      </div>
+    </div>
+    <div class="split-box">
+      <div class="split-title">📊 Evolución de fuerzas · 2023 → 2025</div>
+      <div class="split-row"><span class="split-lbl">PJ: 54.4% (2023) → 43.1% (2025 Prov)</span><span class="split-val tbl-warn">−11.3 pts</span></div>
+      <div class="split-row"><span class="split-lbl">LLA: 18.3% (2023) → 36.3% (2025 Prov)</span><span class="split-val tbl-bad">+18.0 pts</span></div>
+      <div class="split-row"><span class="split-lbl">Split LLA Nacional vs Provincial</span><span class="split-val tbl-warn">+3.8 pts (Nacional gana más)</span></div>
+      <div class="split-row"><span class="split-lbl">Crecimiento padrón 2023→2025</span><span class="split-val split-pos">+8,482 electores (+8.2%)</span></div>
+    </div>
+    <div class="lla-alert">
+      <div class="lla-alert-ttl">⚠️ Señal de Alerta Electoral</div>
+      <div class="lla-alert-body">LLA casi duplicó su caudal entre 2023 y 2025, pasando de ser tercera fuerza (18.3%) a segunda con 36.3% provincial y 40.1% nacional. El PJ sigue siendo primera fuerza con 43–44%, pero el margen se está comprimiendo. Los nuevos electores que llegan al partido por el boom inmobiliario son un vector de disputa: familias jóvenes con acceso limitado a servicios, susceptibles de ambos discursos. La red de atención de salud descentralizada y el plan de gas son los activos más concretos para consolidar vínculo.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COLOR LOCAL -->
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Economía &amp; Territorio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🥛</div>
+        <div class="cl-tipo">Agroindustria</div>
+        <div class="cl-nm">La Serenísima</div>
+        <div class="cl-desc">Planta histórica del mayor productor de lácteos de Argentina. Ancla industrial que define la identidad productiva del partido desde hace décadas.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏍️</div>
+        <div class="cl-tipo">Industria / Logística</div>
+        <div class="cl-nm">Yamaha Argentina</div>
+        <div class="cl-desc">Centro logístico y de ensamble de motovehículos. Genera empleo calificado y consolida al partido como nodo industrial diversificado.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🧴</div>
+        <div class="cl-tipo">Alimentos / Distribución</div>
+        <div class="cl-nm">Marolio</div>
+        <div class="cl-desc">Empresa de consumo masivo con operaciones de producción y distribución. Polo alimenticio que articula empleo industrial con el abastecimiento del AMBA.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏘️</div>
+        <div class="cl-tipo">Desarrollo Urbano</div>
+        <div class="cl-nm">Loteos &amp; Barrios Cerrados</div>
+        <div class="cl-desc">Expansión inmobiliaria sobre Ruta 24 y Ruta 7. Familias jóvenes buscan acceso a la propiedad fuera del GBA central — nuevo electorado en formación.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚌</div>
+        <div class="cl-tipo">Conectividad</div>
+        <div class="cl-nm">Acceso AMBA</div>
+        <div class="cl-desc">Conexión directa con el AMBA vía Ruta 7 y autopistas del oeste. Perfil de ciudad-dormitorio con identidad productiva propia.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⚖️</div>
+        <div class="cl-tipo">Justicia / Acceso</div>
+        <div class="cl-nm">Casa de la Justicia</div>
+        <div class="cl-desc">Defensorías, juzgados y mediación descentralizados. Permite resolver trámites sin trasladarse a Mercedes — innovación en acceso a justicia local.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMAS MUNICIPALES -->
+<div class="sec">
+  <div class="sec-hdr">📋 Programas Municipales Destacados</div>
+  <div class="sec-body">
+    <div class="prog-list">
+      <div class="prog-item">
+        <div class="prog-ico">🎓</div>
+        <div class="prog-body">
+          <h5>Expansión Educativa y Arraigo</h5>
+          <p>Sostén de trayectorias educativas completas en zonas periféricas de crecimiento acelerado. Jardines y escuelas descentralizadas para evitar que las familias jóvenes deban trasladar a sus hijos largas distancias para estudiar.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">👁️</div>
+        <div class="prog-body">
+          <h5>Oftalmología y Odontología en Tu Barrio</h5>
+          <p>Trailers móviles con especialistas que recorren barrios periféricos, acercando dos especialidades habitualmente escasas. Incluye gestión de entrega de anteojos y seguimiento odontológico básico.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🛒</div>
+        <div class="prog-body">
+          <h5>Mercado de Abaratamiento</h5>
+          <p>Ferias itinerantes que incluyen alimentos básicos y garrafas a precio subsidiado. Llegada directa al vecino de menores ingresos, con impacto tangible en el costo de vida cotidiano.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">⚽</div>
+        <div class="prog-body">
+          <h5>Liga Municipal de Fútbol</h5>
+          <p>El municipio absorbe los costos de arbitraje, trofeos y seguridad para toda la liga amateur del partido. Política de cohesión social de alto alcance con mínima inversión y altísima visibilidad comunitaria.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">⚖️</div>
+        <div class="prog-body">
+          <h5>Casa de la Justicia</h5>
+          <p>Espacio con defensorías, juzgados y mediación, que permite a los vecinos resolver conflictos legales y trámites judiciales sin trasladarse a la ciudad de Mercedes. Desburocratización del acceso a la justicia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PALANCAS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Palancas de Impacto</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🏭 Privado Industrial</div>
+        </div>
+        <div class="pal-body">
+          <p>La Serenísima, Yamaha y Marolio son actores con escala nacional que operan desde el partido. Representan empleo directo e indirecto para miles de familias locales.</p>
+          <p><span class="pal-access acc-priv">Ingreso PRIVADO</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🏥 Salud &amp; Servicios</div>
+        </div>
+        <div class="pal-body">
+          <p>Plan de gas, hospitales descentralizados y pavimentación son políticas provinciales-municipales articuladas con el intendente aliado. El canal está abierto.</p>
+          <p><span class="pal-access acc-priv">Gestión Provincial</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🏘️ Nuevos Electores</div>
+        </div>
+        <div class="pal-body">
+          <p>+8.500 electores en dos años por boom inmobiliario. Familias jóvenes sin raíz política consolidada, que valoran servicios concretos. Ventana de oportunidad para construir vínculo electoral.</p>
+          <p><span class="pal-access acc-prot">Electorado Volátil</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS SUGERIDAS -->
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Sugeridas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Planta La Serenísima<span class="vis-tag tag-priv">PRIVADO</span></div>
+          <div class="vis-desc">Recorrida por la planta histórica. Ancla productiva del partido, empleo directo e indirecto de escala regional. Interlocutor con el sector lácteo bonaerense.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Yamaha Argentina<span class="vis-tag tag-priv">PRIVADO</span></div>
+          <div class="vis-desc">Centro logístico y de ensamble. Industria motovehicular con visibilidad nacional. Empleo calificado en un municipio de rápido crecimiento.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Hospital Odontológico / Oftalmológico descentralizado<span class="vis-tag tag-gest">GESTIÓN</span></div>
+          <div class="vis-desc">Cara visible de la política de salud del intendente aliado. Muestra el modelo de atención descentralizada que responde al crecimiento del partido.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Mercado de Abaratamiento (Feria Itinerante)<span class="vis-tag tag-com">COMUNITARIO</span></div>
+          <div class="vis-desc">Contacto directo con vecinos de menores ingresos. Política de impacto en costo de vida. Alta densidad de presencia territorial en barrios periféricos.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Barrios con extensión de red de gas<span class="vis-tag tag-gest">GESTIÓN</span></div>
+          <div class="vis-desc">Recorrida por barrios periféricos que pasaron de garrafa a gas de red. Mensaje concreto: la gestión llegó donde antes no llegaba. Territorio nuevo de votantes en formación.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">6</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Casa de la Justicia<span class="vis-tag tag-com">COMUNITARIO</span></div>
+          <div class="vis-desc">Espacio de justicia descentralizado. Muestra innovación institucional local: defensorías y mediación sin necesidad de ir a Mercedes. Impacto en vulnerabilidad social.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS -->
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>General Rodríguez es un distrito aliado con fortaleza peronista real pero bajo presión creciente.</strong> El PJ ganó con 54.4% en 2023 y sigue siendo primera fuerza en 2025 (43.1%), pero LLA creció casi 18 puntos en dos años — de tercera fuerza a segunda. El margen se comprime.</p>
+  <p>El activo diferencial del partido es su <strong>polo industrial alimenticio</strong> (La Serenísima, Marolio, Yamaha) y su <strong>crecimiento demográfico acelerado</strong>. Más de 8.500 nuevos electores en dos años, llegados por el boom inmobiliario, son un electorado sin raíz política consolidada — terreno fértil para quien se vincule primero con servicios concretos.</p>
+  <p>La gestión de Mauro García muestra precisamente esa lógica: salud descentralizada, gas en barrios periféricos, ferias de abaratamiento, escuelas donde se necesitan. <strong>La clave estratégica es capitalizar esa gestión desde la provincia</strong>, articulando los programas de García con presencia territorial propia que haga visible el vínculo provincia-municipio ante un electorado que todavía está decidiendo.</p>
+</div>
+
+</body>
+</html>
