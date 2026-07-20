@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Rojas — Narrativa Territorial</title>
+<style>
+:root{--primary:#0d3320;--accent:#1d6b3e;--light:#f0f7f2;--border:#3a9a60;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#0a1f12;font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#020d07 0%,#0d3320 40%,#1a5c35 75%,#1d6b3e 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'🌱';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.09}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-red{background:rgba(220,38,38,.3);border-color:rgba(248,113,113,.5);color:#fca5a5}
+.pill-green{background:rgba(21,128,61,.3);border-color:rgba(74,222,128,.5);color:#bbf7d0}
+.pill-warn{background:rgba(180,130,0,.3);border-color:rgba(250,204,21,.5);color:#fde68a}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#0d3320,#1d6b3e);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#0d3320;line-height:1.65;margin-bottom:12px;border-left:4px solid #1d6b3e;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#0d3320;border-color:#0d3320;color:#fff}
+.card-dark h4{color:#6ee7a0 !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#0d3320;margin-bottom:6px;text-transform:uppercase}
+.card p{font-size:.78rem;color:#374151}
+.num-big{font-size:2rem;font-weight:900;color:#6ee7a0;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f0f7f2;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.pj-v{color:#15803d;font-weight:800}
+.lla-v{color:#7c3aed;font-weight:800}
+.jxc-v{color:#d97706;font-weight:800}
+.close{background:linear-gradient(135deg,#0d3320,#1d6b3e);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#6ee7a0;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🛤️ Cluster Corredor Industrial Norte · 2ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">ROJAS</div>
+  <div class="cv-sub">El Polo Semillero que eligió al PJ provincial con 48.7% — el salto de 28 puntos que explica cómo el corredor norte vota diferente según la categoría</div>
+  <div class="cv-pills">
+    <span class="pill-red">🔴 Opositor — Bouvier (JxC)</span>
+    <span class="pill-green">✅ PJ gana provincial 2025: 48.7% vs LLA 42.0% — +626 votos</span>
+    <span class="pill-warn">⚠️ LLA 47.0% nac vs PJ 31.4% — voto cruzado extremo</span>
+    <span class="pill">🌱 Semilleras globales — zona núcleo</span>
+    <span class="pill">⚙️ Metalmecánica de precisión — industria urbana</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌱 Territorio: La semilla, el tornero y la fibra óptica al campo</div>
+  <div class="sec-body">
+    <div class="lead">Rojas produce semillas que se siembran en millones de hectáreas. No es una metáfora: las multinacionales de genética vegetal eligieron el norte bonaerense — y a Rojas en particular — para instalar sus plantas de procesamiento e investigación porque la zona núcleo tiene el suelo y el clima que hacen posible comparar variedades en condiciones representativas de la Argentina productiva. El técnico semillero de Rojas trabaja para una multinacional que vende sus productos en Brasil, en India, en Europa. Eso no es el campo argentino convencional — es I+D agroindustrial en el interior de la Provincia.</div>
+    <p>La economía de Rojas no termina en las semilleras. La ciudad tiene una industria metalmecánica activa: talleres de precisión, tornerías, fábricas de implementos agrícolas, empresas de pulverización y cosecha que dan servicio a toda la región norte. Ese trabajador urbano de Rojas es el tornero que mecaniza la pieza que el campo necesita para funcionar. Tiene empleo formal, sindicato y una sensibilidad al costo de los insumos y al tipo de cambio que el productor agropecuario no tiene.</p>
+    <p>La gestión de Bouvier (JxC) apostó a la infraestructura básica: saneamiento que superó el 85% de cobertura urbana, mantenimiento de los caminos rurales que conectan los campos con los silos, y "Rojas Conectada" — el programa que llevó fibra óptica a Rafael Obligado y Carabelas, los dos pueblos del partido que habían quedado del otro lado de la brecha digital. Esas son las obras que el vecino de Rojas siente: el medidor de agua, el camino transitado después de la lluvia, la pantalla que carga rápido en el pueblo.</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">+28 pts</span><span class="num-lbl">salto PJ entre 2023 (20.6%) y 2025 provincial (48.7%) — el mayor crecimiento proporcional del corredor norte</span></div>
+        <p style="margin-top:8px">El PJ no tiene base propia de 48.7% en Rojas — la construyó con el ex voto JxC que eligió PJ al votar la categoría provincial. Eso es el dato más importante: hay un electorado conservador y agropecuario que en 2025 prefirió PJ a LLA cuando se trataba de la Provincia.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">626</span><span class="num-lbl">votos de margen PJ sobre LLA en la provincial 2025 — cómodo, pero con LLA ganando la nacional por 2,035 votos</span></div>
+        <p style="margin-top:8px">El split entre provincial y nacional en Rojas es de 31 puntos para LLA (42% prov → 47% nac) y de 17 puntos para PJ (49% prov → 31% nac). El elector diferencia con precisión. Sostener esa diferenciación en 2027 es el objetivo del trabajo territorial.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: El voto que elige diferente según la categoría</div>
+  <div class="sec-body">
+    <div class="lead">En 2023, JxC dominó con 53.6% (8,136) sobre PJ 20.6% (3,131) y LLA 20.5% (3,111). Un electorado clásico del norte bonaerense: JxC como primera opción natural, PJ y LLA casi empatados en el resto. Dos años después, sin JxC como bloque, el voto se redistribuyó de manera sorprendente: en la provincial, el PJ capturó 48.7% (4,484) contra LLA 42.0% (3,858). En la nacional, LLA se disparó a 47.0% (6,153) vs PJ 31.4% (4,118). La misma persona votó diferente en las dos boletas.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Evolución electoral</h4>
+        <div class="data-row"><span>2023 JxC ✅ (Bouvier)</span><span class="jxc-v">53.6% (8,136)</span></div>
+        <div class="data-row"><span>2023 PJ</span><span class="pj-v">20.6% (3,131)</span></div>
+        <div class="data-row"><span>2023 LLA</span><span class="lla-v">20.5% (3,111)</span></div>
+        <div class="data-row"><span>2025 Prov PJ ✅</span><span class="pj-v">48.7% (4,484)</span></div>
+        <div class="data-row"><span>2025 Prov LLA ⚠️</span><span class="lla-v">42.0% (3,858)</span></div>
+        <div class="data-row"><span>2025 Nac LLA ⚠️</span><span class="lla-v">47.0% (6,153)</span></div>
+        <div class="data-row"><span>2025 Nac PJ</span><span class="pj-v">31.4% (4,118)</span></div>
+      </div>
+      <div class="card">
+        <h4>🔍 La anatomía del voto cruzado en Rojas</h4>
+        <p>El elector de Rojas tiene una lógica de voto que muchos analistas no esperan: elige JxC o LLA para la Nación, pero puede elegir PJ para la Provincia si el candidato y la agenda le resultan concretos y creíbles. El salto de 20.6% a 48.7% del PJ en la provincial no se explica con base peronista — se explica con electores del perfil JxC que decidieron que, para la categoría provincial, el PJ era la opción más razonable en 2025.</p>
+        <p>Ese comportamiento es reproducible en 2027 si la campaña provincial se mantiene anclada en agendas concretas: semilleros, caminos rurales, conectividad, saneamiento. Si la conversación sube al debate nacional, el voto migra a LLA. Rojas premia la política de gestión territorial y castiga la política ideológica.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>🌱 Los semilleros — el argumento de ciencia productiva</h4>
+        <p>Las multinacionales semilleras de Rojas son el argumento más potente de campaña: "la Provincia apoya la inversión en I+D agropecuario porque genera empleo técnico en el interior sin necesidad de irse a Buenos Aires". Una visita a las instalaciones semilleras — con agenda de política de innovación agro, crédito provincial a empresas de base tecnológica, articulación con el INTA — tiene el tipo de escena que habla al técnico semillero con título universitario que en 2025 eligió PJ provincial.</p>
+      </div>
+      <div class="card">
+        <h4>⚙️ La metalmecánica — el trabajador que necesita tipo de cambio y crédito</h4>
+        <p>El tornero y el mecánico de Rojas son el trabajador industrial del agro — fabrican las piezas que las cosechadoras necesitan. Su sensibilidad es al costo de los insumos, al crédito para maquinaria, a la política de sustitución de importaciones. Una visita a los talleres metalúrgicos con propuesta de crédito provincial para modernización tecnológica es exactamente el tipo de mensaje que aterriza en este perfil sin necesidad de narrativa ideológica.</p>
+      </div>
+      <div class="card">
+        <h4>📡 Rojas Conectada — modelo para el interior</h4>
+        <p>La fibra óptica que llegó a Rafael Obligado y Carabelas es el modelo que la Provincia puede escalar: "el interior bonaerense conectado no es el futuro — es lo que ya hicimos en Rojas y podemos replicar en cada pueblo del corredor norte". El argumento de conectividad rural como política de arraigo tiene llegada transversal: el joven que quiere quedarse en el pueblo pero necesita internet para trabajar, el productor que quiere monitorear sus lotes a distancia, la escuela que necesita acceso digital.</p>
+      </div>
+      <div class="card">
+        <h4>🚿 El saneamiento — la obra que se siente en casa</h4>
+        <p>85% de cobertura de red cloacal y agua potable en la zona urbana es el tipo de obra que el vecino de Rojas siente en su propia casa. La Provincia como socia del municipio en esa inversión — aunque la gestión es de Bouvier (JxC) — tiene el argumento: "lo que se hizo en Rojas con recursos provinciales es lo que vamos a completar en el 15% que falta y en cada municipio que todavía no llega a esa cobertura".</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>Rojas es el caso más sorprendente del corredor norte: un municipio con intendente JxC donde el PJ saltó de 20.6% en 2023 a 48.7% en la provincial 2025. Ese 48.7% no es base peronista — es ex voto JxC que eligió PJ cuando votó la categoría provincial. El elector de Rojas diferencia con precisión entre niveles de gobierno.</p>
+  <p>La visita tiene que ser de política productiva concreta: semilleros, metalmecánica, fibra óptica rural, saneamiento. Cada una de esas agendas tiene un interlocutor real en Rojas — el técnico semillero, el tornero, el vecino del pueblo sin internet, la familia con el medidor de agua nuevo. Si la campaña provincial mantiene ese foco territorial, el 48.7% de 2025 puede sostenerse o crecer en 2027.</p>
+  <p><strong>Mensaje recomendado:</strong> "Rojas le dijo a la Provincia que confía en el PJ para gestionar el territorio — y la Provincia tiene que estar a la altura de esa confianza. Semilleros, talleres, fibra óptica al campo: Rojas ya probó que el corredor norte puede crecer con política pública de calidad". El PJ que ganó la provincial en Rojas fue el PJ de gestión. Hay que serlo.</p>
+</div>
+
+</body>
+</html>
