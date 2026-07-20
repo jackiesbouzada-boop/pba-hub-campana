@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>San Andrés de Giles — Narrativa Territorial</title>
+<style>
+:root{--primary:#3d2e00;--accent:#7b5e00;--light:#f5f0e8;--border:#c9a84c;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#2e1a00;font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#0d0800 0%,#3d2e00 40%,#6b5000 75%,#7b5e00 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'🐖';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.09}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-blue{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.pill-warn{background:rgba(180,130,0,.3);border-color:rgba(250,204,21,.5);color:#fde68a}
+.pill-red{background:rgba(220,38,38,.3);border-color:rgba(248,113,113,.5);color:#fca5a5}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#3d2e00,#7b5e00);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#3d2e00;line-height:1.65;margin-bottom:12px;border-left:4px solid #7b5e00;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#3d2e00;border-color:#3d2e00;color:#fff}
+.card-dark h4{color:#fcd34d !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#3d2e00;margin-bottom:6px;text-transform:uppercase}
+.card p{font-size:.78rem;color:#374151}
+.num-big{font-size:2rem;font-weight:900;color:#fcd34d;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f5f0e8;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.pj-v{color:#15803d;font-weight:800}
+.lla-v{color:#7c3aed;font-weight:800}
+.jxc-v{color:#d97706;font-weight:800}
+.close{background:linear-gradient(135deg,#3d2e00,#7b5e00);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#fcd34d;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🌾 Cluster INTERIOR · 2ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">SAN ANDRÉS DE GILES</div>
+  <div class="cv-sub">El cerdo, el pollo y el plato — cómo la proteína y la gastronomía rural convirtieron a Giles en el interior que trabaja con 10,000 turistas por fin de semana</div>
+  <div class="cv-pills">
+    <span class="pill-blue">✅ Aliado — Gesualdi (UxP)</span>
+    <span class="pill-warn">⚠️ PJ 46.2% prov / LLA 42.4% prov — margen 469 votos</span>
+    <span class="pill-red">🔴 LLA 51.1% nac — zona crítica 2027</span>
+    <span class="pill">🐖 Frigorífico Rumbo — cadena porcino/avícola</span>
+    <span class="pill">🍽️ Azcuénaga-Cucullú — gastronomía rural icónica</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🐖 Territorio: La proteína del interior y el plato de campo que convoca multitudes</div>
+  <div class="sec-body">
+    <div class="lead">San Andrés de Giles produce lo que Argentina come. No con commodities de exportación — con cerdo, con pollo, con chacinados que van directo del Frigorífico Rumbo y de las granjas avícolas del partido a la mesa de millones de argentinos. Esa economía proteica es el motor laboral del municipio: trabajadores de la cadena porcina y avícola con empleo formal, presentismo, sindicato. Un perfil muy diferente al del productor agropecuario independiente que domina el imaginario del interior.</div>
+    <p>Azcuénaga y Cucullú son la cara visible de Giles para el que vive en Buenos Aires y busca un destino de fin de semana a 100km. Los polos gastronómicos rurales que se consolidaron en esas localidades tienen en la historia ferroviaria su excusa y en los chacinados artesanales su razón de ser: restaurantes de campo, ferias de artesanos, fábricas de embutidos con venta directa. Más de 10,000 visitantes por fin de semana es un número que pocos municipios del interior norte bonaerense pueden mostrar — y que Giles construyó con inversión municipal en accesos, promoción y servicios.</p>
+    <p>La gestión de Gesualdi tiene dos obras que cambiaron la vida cotidiana en Giles y que tienen sello provincial: la ampliación del Hospital San Andrés (con la nueva sala de terapia intensiva que permite que el municipio deje de derivar urgencias complejas a Luján) y la expansión de la red de gas natural al 85% de la planta urbana, obra realizada en conjunto con el Ministerio de Infraestructura provincial. Esas dos obras no son abstractas — se sienten en el vecino que calefacciona con gas por primera vez y en la familia que en una emergencia médica no tiene que recorrer 40km hasta Luján.</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">+10,000</span><span class="num-lbl">visitantes cada fin de semana en Azcuénaga y Cucullú — gastronomía rural que no tiene rival en la región</span></div>
+        <p style="margin-top:8px">La escena de Giles no es la pampa vacía: es el turista de Buenos Aires que compró un chorizo artesanal, almorzó en un restaurante de campo y se llevó embutidos para la semana. Eso es economía real, empleos directos y orgullo local.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">469</span><span class="num-lbl">votos de margen PJ sobre LLA en la provincial 2025 — el aliado más expuesto del norte bonaerense 2ª Sección</span></div>
+        <p style="margin-top:8px">46.2% (PJ) vs 42.4% (LLA) en la provincial. En la nacional, LLA ganó 51.1% vs PJ 35.1%. El split de 29 puntos en LLA entre categorías es la señal más preocupante. La próxima vez, ese margen puede invertirse.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: El aliado en el filo de la navaja</div>
+  <div class="sec-body">
+    <div class="lead">En 2023, el PJ ganó cómodamente con 47.4% (6,889) sobre JxC 29.4% (4,279) y LLA 21.7% (3,153). Dos años después, la provincial mostró un escenario completamente diferente: PJ 46.2% (5,778) vs LLA 42.4% (5,309) — 469 votos. En la nacional, LLA se disparó a 51.1% (7,093) vs PJ 35.1% (4,877). El ex voto de JxC migró masivamente a LLA entre 2023 y 2025.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Evolución electoral</h4>
+        <div class="data-row"><span>2023 PJ ✅</span><span class="pj-v">47.4% (6,889)</span></div>
+        <div class="data-row"><span>2023 JxC</span><span class="jxc-v">29.4% (4,279)</span></div>
+        <div class="data-row"><span>2023 LLA</span><span class="lla-v">21.7% (3,153)</span></div>
+        <div class="data-row"><span>2025 Prov PJ ⚠️</span><span class="pj-v">46.2% (5,778)</span></div>
+        <div class="data-row"><span>2025 Prov LLA 🔴</span><span class="lla-v">42.4% (5,309)</span></div>
+        <div class="data-row"><span>2025 Nac LLA 🔴</span><span class="lla-v">51.1% (7,093)</span></div>
+        <div class="data-row"><span>2025 Nac PJ</span><span class="pj-v">35.1% (4,877)</span></div>
+      </div>
+      <div class="card">
+        <h4>🔍 La trayectoria del voto rural sobre la Autovía 7</h4>
+        <p>Los 29.4% de JxC de 2023 (4,279 votos) casi desaparecieron como tal en 2025. Parte fue al PJ provincial (el resultado se mantuvo cerca del 47% inicial), pero la mayor parte migró a LLA — especialmente en la nacional, donde LLA llegó al 51.1%. El trabajador del frigorífico que en 2023 votaba PRO ahora vota LLA. El chacarero que votaba UCR ahora vota LLA. Ese movimiento no es ideológico — es de descontento con el costo de vida y el peso del Estado.</p>
+        <p>El PJ provincial de Giles se sostiene por la gestión visible de Gesualdi (gas, hospital, lotes) y por la identidad político-sindical del trabajador de la cadena porcina-avícola. Ese colchón es real pero frágil: si en 2027 la agenda económica nacional sigue dominando la conversación, los 469 votos pueden invertirse.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>🔥 El gas natural — la obra que se recuerda</h4>
+        <p>El 85% de la planta urbana con gas natural es una obra que Giles hizo con la Provincia. El candidato provincial que la nombra tiene la legitimidad de quien la financió. Para el vecino que vio llegar el medidor de gas a su casa, ese recuerdo es concreto y positivo. La Provincia como socia de las obras que cambian la vida cotidiana — no como burocracia lejana — es el mensaje que funciona en Giles.</p>
+      </div>
+      <div class="card">
+        <h4>🏥 El hospital — el argumento de soberanía sanitaria</h4>
+        <p>Que Giles deje de depender de Luján para las urgencias complejas es un argumento de autonomía local: "su distrito tiene hospital de verdad". La sala de terapia intensiva nueva es la inversión que el vecino siente cuando la necesita. Una visita al hospital con Gesualdi y el personal médico tiene la escena de salud concreta que el interior siempre agradece.</p>
+      </div>
+      <div class="card">
+        <h4>🍽️ Azcuénaga y Cucullú — la escena de prosperidad visible</h4>
+        <p>10,000 visitantes por fin de semana en los polos gastronómicos rurales son la demostración de que el interior puede prosperar con algo más que la soja. La visita a Azcuénaga o Cucullú tiene todo: paisaje, comida, artesanos, historia ferroviaria. Es el tipo de imagen de "interior vivo y dinámico" que contrasta con la narrativa de la decadencia rural. Y los empleos son reales: familias que viven de la gastronomía, no del Plan Social.</p>
+      </div>
+      <div class="card">
+        <h4>🏠 Los lotes sociales — el argumento del arraigo</h4>
+        <p>Más de 300 familias trabajadoras de Giles tienen un lote con servicios porque el municipio intervino en el mercado inmobiliario. No es un plan de vivienda federal abstracto — es el municipio comprando tierra y entregando lotes a valor social. La Provincia puede escalar ese modelo: "lo que hizo Giles, lo podemos hacer en todos los municipios del interior donde las familias jóvenes no pueden acceder al suelo". El arraigo como política pública territorial.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>San Andrés de Giles es municipio aliado (Gesualdi UxP) con 469 votos de margen en la provincial 2025. El PJ ganó la provincial por la gestión concreta y el vínculo sindical con el trabajador porcino-avícola. En la nacional, LLA arrasó con 51.1%. El riesgo de vuelco en 2027 es real.</p>
+  <p>Los activos de visita son claros: el gas natural (obra con la Provincia que se recuerda), el hospital ampliado (soberanía sanitaria), los polos gastronómicos de Azcuénaga y Cucullú (prosperidad visible), y los loteos sociales (arraigo de familias trabajadoras). Cuatro escenas, cuatro argumentos, un municipio que ya está de nuestro lado y al que hay que cuidar.</p>
+  <p><strong>Mensaje recomendado:</strong> "Giles tiene el cerdo, el pollo, el plato y el lote — y la Provincia que puso el gas en tu casa y la terapia intensiva en tu hospital". El trabajador de la cadena porcina que vota PJ en la provincial porque siente la gestión de Gesualdi tiene que seguir teniendo razones para hacerlo. La visita las construye.</p>
+</div>
+
+</body>
+</html>
