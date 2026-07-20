@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ficha de Campaña — GENERAL VIAMONTE (LOS TOLDOS)</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;min-height:100vh}
+  .page{max-width:960px;margin:0 auto;padding:20px}
+
+  .header{background:linear-gradient(135deg,#7b5e00 0%,#4a3800 100%);color:#fff;border-radius:14px 14px 0 0;padding:28px 32px 22px}
+  .header-top{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+  .cluster-badge{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:4px 14px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .muni-name{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;line-height:1.1}
+  .muni-sub{font-size:.93rem;opacity:.82;margin-top:4px}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .badge{padding:5px 14px;border-radius:20px;font-size:.78rem;font-weight:700;letter-spacing:.04em}
+  .badge-al{background:#2563eb;color:#fff}
+  .badge-warn{background:#d97706;color:#fff}
+  .badge-op{background:#dc2626;color:#fff}
+  .badge-crit{background:#7c3aed;color:#fff}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .card{background:#fff;padding:22px 24px;border:1px solid #e5e7eb}
+  .card:nth-child(1){border-radius:0;border-top:none;border-right:none}
+  .card:nth-child(2){border-radius:0;border-top:none}
+  .card.full{grid-column:1/-1;border-top:none;border-radius:0 0 14px 14px}
+  .card-title{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7b5e00;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #7b5e00}
+
+  .intendente-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#7b5e00,#4a3800);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+  .int-name{font-size:1.05rem;font-weight:700;color:#1a1a2e}
+  .int-partido{font-size:.8rem;color:#6b7280;margin-top:2px}
+  .int-meta{font-size:.78rem;color:#374151;margin-top:8px;line-height:1.5;background:#fff5f5;border-left:3px solid #dc2626;padding:8px 12px;border-radius:0 6px 6px 0}
+
+  .stat-big{text-align:center;padding:10px 0}
+  .stat-num{font-size:2rem;font-weight:800;color:#7b5e00;line-height:1}
+  .stat-lbl{font-size:.72rem;color:#6b7280;margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+  .stat-row{display:flex;gap:10px;margin-top:12px}
+  .stat-mini{flex:1;text-align:center;background:#f9fafb;border-radius:8px;padding:10px 6px}
+  .stat-mini .num{font-size:1.1rem;font-weight:700;color:#1a1a2e}
+  .stat-mini .lbl{font-size:.65rem;color:#9ca3af;margin-top:2px}
+
+  .elec-block{margin-bottom:16px}
+  .elec-year{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;margin-bottom:8px}
+  .bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .bar-label{font-size:.78rem;color:#374151;width:36px;text-align:right;font-weight:600;flex-shrink:0}
+  .bar-track{flex:1;height:22px;background:#f3f4f6;border-radius:4px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:6px}
+  .bar-fill span{font-size:.7rem;font-weight:700;color:#fff;white-space:nowrap}
+  .bar-pj{background:#1d4ed8}
+  .bar-jxc{background:#dc2626}
+  .bar-lla{background:#7c3aed}
+  .elec-note{font-size:.72rem;color:#9ca3af;font-style:italic;margin-top:4px}
+
+  .id-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .id-tag{background:#fef9ee;border:1px solid #d97706;border-radius:20px;padding:3px 11px;font-size:.73rem;color:#92400e;font-weight:600}
+  .id-text{font-size:.82rem;line-height:1.65;color:#374151}
+  .id-text p{margin-bottom:8px}
+
+  .prog-list{list-style:none}
+  .prog-list li{display:flex;gap:10px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #f3f4f6;align-items:flex-start}
+  .prog-list li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .prog-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+  .prog-name{font-size:.83rem;font-weight:700;color:#1a1a2e;margin-bottom:2px}
+  .prog-desc{font-size:.76rem;color:#6b7280;line-height:1.5}
+
+  .footer{background:#1a1a2e;color:#9ca3af;text-align:center;font-size:.72rem;padding:12px;border-radius:0 0 14px 14px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="header-top">
+      <span style="font-size:2rem">🧀</span>
+      <div>
+        <span class="cluster-badge">INTERIOR · 4ª Sección Electoral</span>
+        <div class="muni-name">GENERAL VIAMONTE (LOS TOLDOS)</div>
+        <div class="muni-sub">Franco Flexas · JxC opositor · Padrón 15.963</div>
+      </div>
+    </div>
+    <div class="badges">
+      <span class="badge badge-op">⚔️ JxC Opositor</span>
+      <span class="badge badge-warn">⚠️ LLA gana nac. por 323 votos</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">🏛️ Intendente</div>
+      <div class="intendente-row">
+        <div class="avatar">🧀</div>
+        <div>
+          <div class="int-name">Franco Flexas</div>
+          <div class="int-partido">Juntos por el Cambio · 4ª Sección Electoral</div>
+        </div>
+      </div>
+      <div class="int-meta">
+        JxC ganó 2023 con 50.2%. En 2025 el PJ domina la provincial (46.5% vs LLA 18.5%) pero LLA ganó la nacional por solo 323 votos (44.9% vs 41.9% PJ). Municipio con voto muy diferenciado según nivel de elección.
+      </div>
+
+      <div style="margin-top:20px">
+        <div class="card-title">📊 Padrón Electoral</div>
+        <div class="stat-big">
+          <div class="stat-num">15.963</div>
+          <div class="stat-lbl">electores habilitados 2025</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-mini">
+            <div class="num">11.971</div>
+            <div class="lbl">votos 2023</div>
+          </div>
+          <div class="stat-mini">
+            <div class="num">10.716</div>
+            <div class="lbl">votos nac. 2025</div>
+          </div>
+          <div class="stat-mini">
+            <div class="num">67.1%</div>
+            <div class="lbl">participación</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🗳️ Resultados Electorales</div>
+
+      <div class="elec-block">
+        <div class="elec-year">2023 — General Municipal</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#dc2626">JxC</span>
+          <div class="bar-track"><div class="bar-fill bar-jxc" style="width:90%"><span>50.2% (6.008)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:66%"><span>36.9% (4.417)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:23%"><span>12.9% (1.546)</span></div></div>
+        </div>
+        <div class="elec-note">Total: 11.971 · Flexas JxC electo intendente</div>
+      </div>
+
+      <div class="elec-block">
+        <div class="elec-year">2025 — Elección Provincial PBA</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:85%"><span>46.5% (4.716)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:34%"><span>18.5% (1.871)</span></div></div>
+        </div>
+        <div class="elec-note">PJ domina provincial por 28 pts · Total: 10.139</div>
+      </div>
+
+      <div class="elec-block">
+        <div class="elec-year">2025 — Elección Nacional</div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#7c3aed">LLA</span>
+          <div class="bar-track"><div class="bar-fill bar-lla" style="width:82%"><span>44.9% (4.815)</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color:#1d4ed8">PJ</span>
+          <div class="bar-track"><div class="bar-fill bar-pj" style="width:76%"><span>41.9% (4.492)</span></div></div>
+        </div>
+        <div class="elec-note">LLA gana Nacional por 323 votos · margen ínfimo · recuperable</div>
+      </div>
+    </div>
+
+    <div class="card" style="grid-column:1/-1;border-top:none;border-bottom:none">
+      <div class="card-title">🏙️ Identidad Territorial</div>
+      <div class="id-tags">
+        <span class="id-tag">Capital Nacional del Queso Gouda</span>
+        <span class="id-tag">Casa Museo Eva Perón — cuna de Evita</span>
+        <span class="id-tag">Monjes Benedictinos — herencia lechera</span>
+        <span class="id-tag">Comunidad Mapuche Coliqueo</span>
+        <span class="id-tag">Festival del Queso</span>
+        <span class="id-tag">Transporte universitario a Junín</span>
+      </div>
+      <div class="id-text">
+        <p>Los Toldos —cabecera del partido de General Viamonte— tiene dos identidades de peso nacional. La primera es histórica: <strong>aquí nació Eva María Duarte</strong>, en la casa que hoy es el Museo Provincial Casa Eva Perón (score 9.25 en el hub, primer lugar del cluster INTERIOR). La segunda es productiva: Los Toldos es la <strong>Capital Nacional del Queso Gouda</strong>, con una tradición quesera de raíz suizo-holandesa forjada por los monjes benedictinos que hace décadas impulsan una industria artesanal láctea de altísima calidad.</p>
+        <p>A esas dos identidades se suma la presencia de la <strong>comunidad mapuche de la tribu de Coliqueo</strong>, que aporta un valor cultural singular y una historia de integración con la ciudad. La base agrícola ganadera de la pampa húmeda sostiene la economía del distrito más allá del vector turístico y quesero.</p>
+        <p>La distancia a Junín convierte al <strong>transporte universitario gratuito</strong> en una política central del arraigo joven: 200+ estudiantes viajan a diario a cursar con combis y colectivos subsidiados por el municipio.</p>
+      </div>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">⚙️ Programas e Hitos de Gestión</div>
+      <ul class="prog-list">
+        <li>
+          <span class="prog-icon">🧀</span>
+          <div>
+            <div class="prog-name">Ruta del Queso Gouda — Programa de Apoyo Productor</div>
+            <div class="prog-desc">Empadronamiento de pequeños productores queseros, asistencia con habilitaciones SENASA y Bromatología, y organización de la logística de comercialización a través de ferias y el Festival del Queso. Sostiene el ingreso directo de decenas de familias productoras y posiciona la venta a nivel provincial.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🏛️</span>
+          <div>
+            <div class="prog-name">Puesta en Valor del Patrimonio Histórico</div>
+            <div class="prog-desc">Recuperación de edificios emblemáticos: el Museo Provincial Casa Eva Perón y la estación del ferrocarril. Se usan como anclas de desarrollo cultural comunitario, articulando turismo histórico, identidad local y economía de visita. Casa Evita es el lugar de mayor relevancia política del cluster INTERIOR.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🎓</span>
+          <div>
+            <div class="prog-name">Transporte Universitario Gratuito</div>
+            <div class="prog-desc">El municipio alquila y subsidia colectivos y combis para que más de 200 jóvenes de Los Toldos puedan viajar diariamente a Junín a cursar carreras universitarias. Inscripción en el municipio, viaje de ida y vuelta garantizado. Política de arraigo estudiantil de impacto directo.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🚉</span>
+          <div>
+            <div class="prog-name">Mercado de la Estación</div>
+            <div class="prog-desc">Los viejos galpones del ferrocarril reconvertidos en mercado fijo con ferias regulares. Quinteros, panaderos y artesanos locales venden sin pagar alquiler, con infraestructura municipal gratuita. Tracción de economía circular local durante fines de semana.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🏥</span>
+          <div>
+            <div class="prog-name">Modernización Hospital Eugenio Bargas</div>
+            <div class="prog-desc">Refuncionalización del único hospital del partido: remodelación de habitaciones, incorporación de oxígeno central y nueva aparatología diagnóstica. El objetivo es reducir las derivaciones constantes a Junín — cada derivación evitada es un costo social y familiar que se elimina.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">🛣️</span>
+          <div>
+            <div class="prog-name">Plan de Pavimentación — Anillos de Asfalto</div>
+            <div class="prog-desc">Fuerte ritmo de obra pública para cerrar anillos de asfalto y cordón cuneta en los barrios de la cabecera, junto con modernización de espacios públicos y plazas. Plan de impacto visible en la calidad urbana del casco central de Los Toldos.</div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-icon">♻️</span>
+          <div>
+            <div class="prog-name">Viamonte Sustentable — Residuos + Eco-Moto</div>
+            <div class="prog-desc">Planta de tratamiento de residuos sólidos con separación en origen y venta de materiales recuperados. Incorporación de vehículos eléctricos municipales (Eco-Moto) para tareas medioambientales, reduciendo contaminación sonora y emisiones. Modelo de economía circular municipal.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">GENERAL VIAMONTE (LOS TOLDOS) · INTERIOR · 4ª Sección Electoral · Padrón 15.963 · Ficha de Campaña 2025–2026</div>
+</div>
+</body>
+</html>
