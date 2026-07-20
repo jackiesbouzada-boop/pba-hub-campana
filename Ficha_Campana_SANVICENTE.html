@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>San Vicente — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#1a3a5c;--primary-dark:#0c2340;--accent:#2563eb;--accent-light:#60a5fa;--bg:#f1f5f9;--surface:#ffffff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0c2340 0%,#1a3a5c 55%,#1d4ed8 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2.2rem;font-weight:900;letter-spacing:-.01em;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:14px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#93c5fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTION */
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a3a5c,#1e4575);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;display:flex;align-items:center;gap:8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.6;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+
+/* BLOCKS */
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a3a5c;border-color:#1a3a5c;color:#fff}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#93c5fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:var(--accent);display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+
+/* INTENDENTE */
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a3a5c,#2563eb);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800;color:var(--text)}
+.int-info .int-meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .int-desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+
+/* GESTIÓN */
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#1e40af;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+
+/* ARCO ELECTORAL */
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.arc-pj{color:#1d4ed8}
+.arc-lla{color:#7c3aed}
+.arc-jxc{color:#d97706}
+.arc-fit{color:#dc2626}
+.arc-grey{color:#374151}
+
+/* SPLIT */
+.split-box{background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.split-title{font-size:.72rem;font-weight:800;color:#1e40af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.split-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid #dbeafe}
+.split-row:last-child{border-bottom:none}
+.split-lbl{font-size:.77rem;color:#374151}
+.split-val{font-size:.82rem;font-weight:800;color:#1d4ed8}
+
+/* ALERTS */
+.alert-box{border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-ok{background:#f0fdf4;border:1.5px solid #bbf7d0}
+.alert-ok .a-ttl{color:#15803d}
+.alert-warn{background:#fef2f2;border:1.5px solid #fecaca}
+.alert-warn .a-ttl{color:#b91c1c}
+.alert-info{background:#fffbeb;border:1.5px solid #fde68a}
+.alert-info .a-ttl{color:#92400e}
+.a-ttl{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.a-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+/* COLOR LOCAL */
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:6px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+
+/* PALANCAS */
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a3a5c,#1d4ed8);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px;background:#fff}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-body p:last-child{margin-bottom:0}
+.pal-access{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-gest{background:#dcfce7;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+
+/* PROGRAMAS */
+.prog-list{display:flex;flex-direction:column;gap:8px}
+.prog-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;gap:12px;align-items:flex-start}
+.prog-ico{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.prog-body h5{font-size:.78rem;font-weight:800;color:var(--primary);margin-bottom:3px}
+.prog-body p{font-size:.75rem;color:#374151;line-height:1.5}
+
+/* VISITAS */
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800;color:var(--text)}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.vis-tag{display:inline-block;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.tag-edu{background:#ede9fe;color:#6b21a8}
+.tag-obra{background:#fef3c7;color:#92400e}
+.tag-gest{background:#dcfce7;color:#15803d}
+.tag-com{background:#dbeafe;color:#1e40af}
+
+/* SÍNTESIS */
+.sint{background:linear-gradient(135deg,#0c2340,#1a3a5c);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#93c5fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}
+  .hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO &nbsp;|&nbsp; 3ª Sección Electoral</div>
+  <div class="h-name">SAN VICENTE</div>
+  <div class="h-sub">Partido de San Vicente · Buenos Aires · Cabeceras: San Vicente · Alejandro Korn</div>
+  <div><span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">73,914</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">98,215</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">660.8 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">66.6%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">22.8%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">+13.6 pts</span><span class="h-stat-l">LLA Nac &gt; Prov</span></div>
+  </div>
+</div>
+
+<!-- IDENTIDAD TERRITORIAL -->
+<div class="sec">
+  <div class="sec-hdr">🌆 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Boom Inmobiliario · Corredor Canning–San Vicente</h4>
+        <p>San Vicente protagoniza uno de los mayores crecimientos poblacionales del país. Lo que fue un pueblo rural tranquilo se transformó en la meca del desarrollo de barrios privados y clubes de campo del sur del conurbano. El corredor Canning–San Vicente concentra desarrollos de altísima gama que atrajeron familias de alto poder adquisitivo y generaron una industria de la construcción y servicios de gran escala. La doble calzada de la <strong>Ruta 58</strong> (finalizada en 2026) fue la obra que facilitó y aceleró esa transformación.</p>
+      </div>
+      <div class="blk">
+        <h4>Laguna · Historia · Universidad</h4>
+        <p>San Vicente conserva su identidad histórica de ciudad de descanso: la Laguna es el principal espacio recreativo del partido, rehabilitada en 2026 con nueva costanera, luminaria LED y senderos. El <strong>Museo Histórico Quinta 17 de Octubre</strong> le da una identidad política y cultural única en la Provincia. Y la inauguración de la <strong>Universidad Nacional de San Vicente (UNaV)</strong> en 2024 marcó el salto cualitativo más importante de la gestión actual: por primera vez el partido tiene educación universitaria propia.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">67%</span>
+        <span class="l">Voto PJ 2025 Provincial — el piso peronista más alto del sur del conurbano</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">UNaV</span>
+        <span class="l">Universidad Nacional inaugurada 2024 — primer ciclo de egresados en formación</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTENDENTE -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Nicolás Mantegazza</h3>
+        <div class="int-meta">Unión por la Patria &nbsp;·&nbsp; <span class="badge-pol badge-al-pol">ALIADO</span></div>
+        <div class="int-desc">Intendente de San Vicente. En 2023 obtuvo el <strong>67.2%</strong> de los votos — uno de los porcentajes más altos del conurbano bonaerense. Su marca de gestión es la ambición: una universidad propia, una ruta de doble calzada, una costanera rehabilitada, 500 cuadras de pavimento. Gestión de alto volumen en un partido que está creciendo a una velocidad inusual. Canal activo con la provincia en obras y desarrollo institucional.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">🎓 Universidad Nacional de San Vicente</div>
+        <div class="gest-txt">Inaugurada en 2024. Frena el desarraigo de jóvenes que debían viajar a La Plata o Lomas de Zamora. Carreras enfocadas en el desarrollo local y productivo del corredor sur bonaerense.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🛣️ Doble Calzada Ruta 58</div>
+        <div class="gest-txt">Finalización en 2026 del tramo Canning–San Vicente. La obra que transformó la conectividad del partido con el conurbano y con CABA, habilitando el crecimiento inmobiliario del corredor.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">💧 Puesta en Valor de la Laguna</div>
+        <div class="gest-txt">Plan de saneamiento y mejora de la costanera con nueva luminaria LED, mobiliario y senderos peatonales. El principal espacio recreativo del partido, rehabilitado para todo el año.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">⚽ Estadio "Ciudad de San Vicente"</div>
+        <div class="gest-txt">Nueva infraestructura deportiva para clubes locales y competencias. Apuesta a la cohesión social en un partido de crecimiento acelerado y fuerte demanda de espacios comunes.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">67.2%</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">18.0%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC</span><span class="arc-val arc-jxc">12.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">68,937</span></div>
+      </div>
+      <div class="arc-card arc-winner">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">66.6%</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">22.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">2.2%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">73,914</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">47.6%</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">36.4%</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">3.9%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">69,623</span></div>
+      </div>
+    </div>
+    <div class="split-box">
+      <div class="split-title">📊 El mapa electoral de San Vicente</div>
+      <div class="split-row"><span class="split-lbl">PJ Provincial: estable 67.2% (2023) → 66.6% (2025)</span><span class="split-val" style="color:#15803d">Base peronista blindada</span></div>
+      <div class="split-row"><span class="split-lbl">PJ Nacional 2025</span><span class="split-val tbl-warn">47.6% — cae 19 puntos vs Provincial</span></div>
+      <div class="split-row"><span class="split-lbl">LLA Nacional vs Provincial</span><span class="split-val tbl-bad">+13.6 pts (36.4% vs 22.8%)</span></div>
+      <div class="split-row"><span class="split-lbl">Crecimiento padrón 2023→2025 Prov</span><span class="split-val" style="color:#15803d">+4,977 electores (+7.2%)</span></div>
+    </div>
+    <div class="alert-box alert-ok">
+      <div class="a-ttl">✅ Piso peronista excepcional</div>
+      <div class="a-body">San Vicente tiene el caudal peronista más estable del análisis: 67.2% en 2023 y 66.6% en 2025 provincial, con variación de solo 0.6 puntos. Esta base no es circunstancial — es estructural, construida a lo largo de años de gestión cercana al vecino.</div>
+    </div>
+    <div class="alert-box alert-info">
+      <div class="a-ttl">💡 El split nacional: el electorado de los barrios cerrados</div>
+      <div class="a-body">La caída de 19 puntos entre la elección provincial y la nacional (67% → 48%) revela un fenómeno específico de San Vicente: los nuevos residentes de barrios privados que llegaron por el boom inmobiliario votan diferente en lo nacional. Son electores de alto poder adquisitivo que acompañan la gestión local del PJ pero responden al discurso nacional de LLA. Ese split es el termómetro del nuevo electorado del partido — y el campo de disputa hacia 2027.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COLOR LOCAL -->
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Economía &amp; Territorio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏘️</div>
+        <div class="cl-tipo">Inmobiliario / Construcción</div>
+        <div class="cl-nm">Corredor Canning–San Vicente</div>
+        <div class="cl-desc">Barrios privados y clubes de campo de alta gama sobre la Ruta 58. Uno de los desarrollos inmobiliarios más activos del sur del AMBA. Motor de la construcción local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación Superior</div>
+        <div class="cl-nm">Universidad Nacional de San Vicente (UNaV)</div>
+        <div class="cl-desc">Inaugurada en 2024. Primera universidad del partido. Carreras orientadas al desarrollo local. Retiene jóvenes que antes migraban a La Plata o Lomas de Zamora.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏛️</div>
+        <div class="cl-tipo">Historia / Patrimonio</div>
+        <div class="cl-nm">Quinta 17 de Octubre</div>
+        <div class="cl-desc">Museo histórico de relevancia política nacional. Identidad peronista de profunda raíz en el partido — más que en cualquier otro municipio del sur bonaerense.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🌊</div>
+        <div class="cl-tipo">Turismo / Recreación</div>
+        <div class="cl-nm">Laguna de San Vicente</div>
+        <div class="cl-desc">Principal espacio verde del partido, rehabilitado en 2026. Genera turismo de fin de semana desde el AMBA y cohesiona la vida social del casco histórico.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛣️</div>
+        <div class="cl-tipo">Infraestructura</div>
+        <div class="cl-nm">Doble Calzada Ruta 58</div>
+        <div class="cl-desc">Completada en 2026. La obra que desbloqueó el crecimiento del corredor sur. Reduce tiempos de viaje al AMBA y consolida a San Vicente como destino de residencia permanente.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏡</div>
+        <div class="cl-tipo">Social / Acceso</div>
+        <div class="cl-nm">Acceso al Suelo Urbano</div>
+        <div class="cl-desc">Entrega de lotes con servicios y viviendas en barrios como Papa Francisco y Empalme. Política de inclusión en un partido con fuerte segmentación entre barrios cerrados y barrios populares.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMAS -->
+<div class="sec">
+  <div class="sec-hdr">📋 Programas Municipales Destacados</div>
+  <div class="sec-body">
+    <div class="prog-list">
+      <div class="prog-item">
+        <div class="prog-ico">🏠</div>
+        <div class="prog-body">
+          <h5>Acceso al Suelo Urbano</h5>
+          <p>Entrega de lotes con servicios y viviendas en barrios Papa Francisco, Empalme, Villa Coll y San José. En un partido donde el boom inmobiliario es sinónimo de barrios privados de alta gama, esta política representa la inclusión de los sectores que quedan afuera del mercado.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🛣️</div>
+        <div class="prog-body">
+          <h5>Plan de Pavimentación Histórico</h5>
+          <p>Más de 500 cuadras de asfalto en Alejandro Korn y San Vicente, priorizando accesos a escuelas y centros de salud que históricamente eran de tierra. En un partido que crece hacia arriba (barrios privados) y hacia abajo (barrios populares), el pavimento es la política que llega a los que menos acceso tienen.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🗑️</div>
+        <div class="prog-body">
+          <h5>Gestión de Residuos · Reciclado</h5>
+          <p>Separación en origen y fortalecimiento de la cooperativa de reciclado local. Política ambiental que responde a la presión del crecimiento urbano sobre el ecosistema del partido. Integra a los trabajadores del reciclado en la cadena formal de gestión de residuos.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">📡</div>
+        <div class="prog-body">
+          <h5>Modernización del Centro de Operaciones Municipal</h5>
+          <p>Sistema de análisis predictivo de delitos integrado con refuerzo del patrullaje en Ruta 6 y Ruta 210. Seguridad como política de Estado en un partido que crece rápido y donde los accesos desde rutas nacionales son puntos de vulnerabilidad.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PALANCAS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Palancas de Impacto</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🎓 Universidad UNaV</div>
+        </div>
+        <div class="pal-body">
+          <p>Una universidad nacional propia es el activo de gestión más singular del partido. La UNaV es la palanca más directa sobre el electorado joven residente y sobre las familias que apostaron a quedarse en San Vicente.</p>
+          <p><span class="pal-access acc-gest">Gestión Provincial/Nac</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🛣️ Corredor Inmobiliario</div>
+        </div>
+        <div class="pal-body">
+          <p>El sector de barrios privados y desarrolladores inmobiliarios es el actor privado más relevante del partido. Tiene intereses concretos en infraestructura, seguridad vial y conectividad — interlocutor con capacidad de amplificar o bloquear mensajes.</p>
+          <p><span class="pal-access acc-priv">Ingreso PRIVADO</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🏛️ Quinta 17 de Octubre</div>
+        </div>
+        <div class="pal-body">
+          <p>El patrimonio histórico peronista más relevante del sur bonaerense. Espacio de construcción de identidad política con profundidad histórica. Atrae militancia y visitantes con perfil definido.</p>
+          <p><span class="pal-access acc-gest">Identidad Territorial</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS SUGERIDAS -->
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Sugeridas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Universidad Nacional de San Vicente (UNaV)<span class="vis-tag tag-edu">EDUCACIÓN</span></div>
+          <div class="vis-desc">El hito educativo histórico del partido. Visita a las instalaciones universitarias — contacto con estudiantes y docentes de la primera universidad propia de San Vicente.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Quinta 17 de Octubre — Museo Histórico<span class="vis-tag tag-com">PATRIMONIO</span></div>
+          <div class="vis-desc">Espacio de identidad política única en la Provincia. Alta carga simbólica y militancia con historia. Recorrida con el intendente aliado.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Laguna de San Vicente — Costanera Rehabilitada<span class="vis-tag tag-gest">GESTIÓN</span></div>
+          <div class="vis-desc">Obra visible de mejora del espacio público principal. Saneamiento y nueva costanera como símbolo de partido que cuida lo que tiene. Alta concurrencia de vecinos de todos los sectores.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Entrega de Lotes · Barrio Papa Francisco o Empalme<span class="vis-tag tag-obra">SOCIAL</span></div>
+          <div class="vis-desc">Política de acceso al suelo en un partido definido por el mercado inmobiliario de alta gama. Contacto con el sector popular que convive con el boom y que sustenta la base peronista del 67%.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Doble Calzada Ruta 58 — Tramo San Vicente<span class="vis-tag tag-obra">OBRA</span></div>
+          <div class="vis-desc">Recorrida sobre la obra que cambió la conectividad del partido. Mensaje concreto de infraestructura provincial que habilitó el crecimiento de San Vicente.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS -->
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>San Vicente es el distrito peronista más sólido del sur bonaerense</strong> — con 67% de voto PJ tanto en 2023 como en 2025 provincial, es una base que no se mueve. La gestión de Nicolás Mantegazza combina ambición (UNaV, Ruta 58) con política social concreta (lotes, pavimento, salud móvil), y el intendente tiene vínculo activo con la provincia.</p>
+  <p>El punto de atención es el split nacional: la caída de 67% a 48% en la elección presidencial revela que los nuevos residentes del corredor de barrios privados votan diferente en lo nacional. LLA llegó al 36% en la nacional en un municipio donde sacó solo 18% en 2023. Esos votos nuevos son de vecinos con alto poder adquisitivo que llegaron por el boom inmobiliario y responden a un discurso nacional diferente al que apoya la gestión local.</p>
+  <p><strong>La clave estratégica es doble:</strong> consolidar la base peronista histórica (que es extraordinariamente sólida) y construir un relato de gestión que también llegue al nuevo electorado del corredor — donde la UNaV, la Ruta 58 y la costanera hablan un idioma concreto que trasciende la diferencia de bolsillo.</p>
+</div>
+
+</body>
+</html>

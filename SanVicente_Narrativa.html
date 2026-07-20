@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>San Vicente — Narrativa Política 2026</title>
+<style>
+:root{--primary:#1a3a5c;--primary-dark:#0c2340;--accent:#2563eb;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:860px;margin:0 auto}
+
+/* COVER */
+.cover{background:linear-gradient(135deg,#0c2340 0%,#1a3a5c 55%,#1d4ed8 100%);color:#fff;padding:36px 36px 30px;border-radius:var(--radius);margin-bottom:16px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cv-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:8px}
+.cv-title{font-size:2.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:4px;line-height:1}
+.cv-sub{font-size:.9rem;opacity:.75;margin-bottom:20px}
+.cv-strip{display:flex;flex-wrap:wrap;gap:28px;border-top:1px solid rgba(255,255,255,.15);padding-top:18px}
+.cv-item{display:flex;flex-direction:column;gap:2px}
+.cv-val{font-size:1.1rem;font-weight:800;color:#93c5fd}
+.cv-lbl{font-size:.67rem;opacity:.65;text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTION */
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a3a5c,#1e4575);color:#fff;padding:11px 20px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;display:flex;align-items:center;gap:8px}
+.sec-body{padding:18px 20px;font-size:.84rem;color:#374151;line-height:1.7}
+.sec-body p{margin-bottom:12px}
+.sec-body p:last-child{margin-bottom:0}
+.sec-body strong{color:var(--primary)}
+
+/* HIGHLIGHT BOXES */
+.hbox{border-radius:8px;padding:14px 16px;margin:12px 0}
+.hbox-blue{background:#eff6ff;border-left:4px solid #2563eb}
+.hbox-green{background:#f0fdf4;border-left:4px solid #22c55e}
+.hbox-amber{background:#fffbeb;border-left:4px solid #f59e0b}
+.hbox-red{background:#fef2f2;border-left:4px solid #ef4444}
+.hbox-title{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.hbox-blue .hbox-title{color:#1d4ed8}
+.hbox-green .hbox-title{color:#15803d}
+.hbox-amber .hbox-title{color:#92400e}
+.hbox-red .hbox-title{color:#b91c1c}
+.hbox p{font-size:.81rem;line-height:1.6;color:#374151}
+
+/* TABLA ELECTORAL */
+.tabla{width:100%;border-collapse:collapse;margin:12px 0;font-size:.8rem}
+.tabla th{background:#1a3a5c;color:#fff;padding:8px 12px;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px}
+.tabla td{padding:8px 12px;border-bottom:1px solid var(--border);color:#374151}
+.tabla tr:last-child td{border-bottom:none}
+.tabla tr:nth-child(even){background:#f8fafc}
+.pj{font-weight:800;color:#1d4ed8}
+.lla{font-weight:800;color:#7c3aed}
+.jxc{font-weight:700;color:#d97706}
+.fit{font-weight:700;color:#dc2626}
+.delta-pos{color:#dc2626;font-weight:800}
+.delta-neg{color:#15803d;font-weight:800}
+
+/* GRID */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.stat-card{border:1.5px solid var(--border);border-radius:8px;padding:14px;text-align:center}
+.sc-num{font-size:1.8rem;font-weight:900;color:var(--accent);display:block}
+.sc-lbl{font-size:.72rem;color:var(--muted);margin-top:3px}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:10px;margin:10px 0}
+.tl-item{display:flex;gap:14px;align-items:flex-start}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px}
+.tl-year{font-size:.72rem;font-weight:800;color:var(--accent);white-space:nowrap;min-width:38px;margin-top:3px}
+.tl-body{font-size:.81rem;color:#374151;line-height:1.5}
+.tl-body strong{color:var(--primary)}
+
+/* CIERRE */
+.cierre{background:linear-gradient(135deg,#0c2340,#1a3a5c);border-radius:var(--radius);padding:24px 26px;color:#fff;margin-top:4px}
+.cierre h3{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:#93c5fd;margin-bottom:14px}
+.cierre p{font-size:.83rem;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:10px}
+.cierre p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec,.cover,.cierre{break-inside:avoid;box-shadow:none;border:1px solid #e2e8f0}
+  .cover,.cierre{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cv-label">🌆 Conurbano · 3ª Sección Electoral · Narrativa Política 2026</div>
+  <div class="cv-title">San Vicente</div>
+  <div class="cv-sub">Nicolás Mantegazza · UxP · Aliado · El partido que más creció en la Provincia</div>
+  <div class="cv-strip">
+    <div class="cv-item"><span class="cv-val">73,914</span><span class="cv-lbl">Padrón 2025 Prov</span></div>
+    <div class="cv-item"><span class="cv-val">98,215 hab</span><span class="cv-lbl">Habitantes</span></div>
+    <div class="cv-item"><span class="cv-val">66.6%</span><span class="cv-lbl">PJ — Elec. Provincial 2025</span></div>
+    <div class="cv-item"><span class="cv-val">47.6%</span><span class="cv-lbl">PJ — Elec. Nacional 2025</span></div>
+    <div class="cv-item"><span class="cv-val">UNaV (2024)</span><span class="cv-lbl">Universidad Nacional propia</span></div>
+  </div>
+</div>
+
+<!-- I. TERRITORIO -->
+<div class="sec">
+  <div class="sec-hdr">🌆 I. El partido que explotó — Territorio y Transformación</div>
+  <div class="sec-body">
+    <p>San Vicente fue, hasta hace veinte años, un pueblo de provincia tranquilo — laguna, historia peronista, quintas. El corredor Canning–San Vicente lo transformó en algo radicalmente diferente. El tendido de la Ruta 58, el crecimiento de los barrios privados del sur del AMBA y la presión del mercado inmobiliario convirtieron a San Vicente en uno de los municipios con mayor crecimiento poblacional del país. No es un crecimiento cualquiera: es el tipo de crecimiento que trae familias con alto poder adquisitivo, que eligen vivir en barrios cerrados de seguridad privada a 60 kilómetros del centro porteño.</p>
+    <p>El partido hoy tiene dos mundos que conviven. Por un lado, el San Vicente histórico: el casco urbano con calles de tierra que van al asfalto de a poco, los barrios populares de Alejandro Korn, el comercio local, la militancia peronista de toda la vida, los que viven de la economía municipal y los servicios. Por otro lado, el San Vicente nuevo: los developers que levantan complejos en la Ruta 58, las familias de professionals que se instalaron en el corredor sur, el turismo de fin de semana en la laguna, la demanda de conectividad y seguridad vial que crece más rápido que el Estado municipal puede responder.</p>
+    <div class="hbox hbox-blue">
+      <div class="hbox-title">El reto territorial de fondo</div>
+      <p>Un municipio que crece al ritmo de San Vicente enfrenta la versión más difícil del problema de gestión bonaerense: las demandas de infraestructura, servicios y espacio público superan constantemente la capacidad de provisión. La doble calzada de la Ruta 58 fue la respuesta de infraestructura de largo aliento. El Plan de Pavimentación fue la respuesta al San Vicente histórico. La UNaV fue la apuesta política más ambiciosa: apostar a que San Vicente sea un destino permanente, no solo de residencia sino también de formación.</p>
+    </div>
+    <p>Lo que define a San Vicente en el mapa bonaerense es ese doble ADN: territorio de alta demanda y base peronista extraordinariamente sólida. La combinación es inusual. Normalmente, el boom inmobiliario trae erosión del voto peronista. En San Vicente, hasta ahora, la base resiste.</p>
+  </div>
+</div>
+
+<!-- II. GESTIÓN -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ II. Mantegazza: gestión de alta ambición</div>
+  <div class="sec-body">
+    <p>Nicolás Mantegazza llegó al municipio con una agenda clara: transformar San Vicente de pueblo a ciudad. Esa ambición se tradujo en intervenciones de escala inusual para un partido de 98,000 habitantes: una universidad nacional, una doble calzada de ruta provincial, una costanera rehabilitada, un estadio nuevo y 500 cuadras de pavimento. No es la lista de gestión de un intendente que administra — es la lista de uno que quiere instalar a su partido en el mapa de largo plazo.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">2024</div>
+        <div class="tl-body"><strong>Inauguración de la UNaV</strong> — Universidad Nacional de San Vicente. El hito de gestión más diferenciador del partido. Primera universidad propia en la historia del municipio. Frena la migración de jóvenes hacia La Plata y Lomas de Zamora. Carreras enfocadas en desarrollo local y regional.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2025–26</div>
+        <div class="tl-body"><strong>Doble calzada Ruta 58</strong> — Finalización del tramo Canning–San Vicente. La obra que desbloqueó el corredor y formalizó la transformación inmobiliaria del partido. Reduce el tiempo de viaje al AMBA y consolida a San Vicente como residencia permanente para profesionales.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026</div>
+        <div class="tl-body"><strong>Rehabilitación de la Laguna</strong> — Nueva costanera con luminaria LED, mobiliario urbano y senderos peatonales. Recuperación del espacio verde central del partido para todos los sectores — el San Vicente histórico y el nuevo coexisten en ese espacio.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Continuo</div>
+        <div class="tl-body"><strong>500 cuadras de pavimento en Alejandro Korn y San Vicente</strong> — Plan de Pavimentación Histórico, con prioridad en accesos a escuelas y centros de salud. La política de gestión más cercana al vecino del barrio popular que vive en tierra.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Continuo</div>
+        <div class="tl-body"><strong>Acceso al Suelo Urbano</strong> — Entrega de lotes con servicios en Papa Francisco, Empalme, Villa Coll y San José. Inclusión habitacional en un partido donde el mercado expulsa hacia la periferia. Complemento social del boom inmobiliario.</div>
+      </div>
+    </div>
+    <div class="hbox hbox-green">
+      <div class="hbox-title">✅ Canal activo con Provincia</div>
+      <p>Mantegazza mantiene una relación de trabajo fluida con la administración provincial. La UNaV — que requirió gestión nacional y provincial — y la doble calzada Ruta 58 son indicadores de esa capacidad de articulación. San Vicente es un aliado que opera, no solo que acompaña.</p>
+    </div>
+  </div>
+</div>
+
+<!-- III. ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ III. El mapa electoral — La base blindada y el split nacional</div>
+  <div class="sec-body">
+    <p>San Vicente tiene la estructura electoral peronista más estable del sur bonaerense. En un ciclo donde la mayoría de los municipios del conurbano vieron caer el voto PJ entre el 5% y el 15%, San Vicente perdió apenas 0.6 puntos en la elección provincial: de 67.2% en 2023 a 66.6% en 2025. Eso no es estabilidad — es un piso de granito.</p>
+
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>Elección</th>
+          <th>PJ / UxP</th>
+          <th>LLA</th>
+          <th>JxC / Otros</th>
+          <th>Padrón</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2023 — Intendente</td>
+          <td class="pj">67.2% (32,067)</td>
+          <td class="lla">18.0% (8,605)</td>
+          <td class="jxc">12.8% (6,088)</td>
+          <td>68,937</td>
+        </tr>
+        <tr>
+          <td>2025 — Provincial</td>
+          <td class="pj">66.6% (28,827)</td>
+          <td class="lla">22.8% (9,850)</td>
+          <td class="fit">FIT 2.2%</td>
+          <td>73,914</td>
+        </tr>
+        <tr>
+          <td>2025 — Nacional</td>
+          <td class="pj">47.6% (20,560)</td>
+          <td class="lla">36.4% (15,719)</td>
+          <td class="fit">FIT 3.9%</td>
+          <td>69,623</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="two-col">
+      <div class="stat-card">
+        <span class="sc-num" style="color:#1d4ed8">66.6%</span>
+        <div class="sc-lbl">PJ en Provincial 2025<br>Prácticamente idéntico a 2023 (67.2%)</div>
+      </div>
+      <div class="stat-card">
+        <span class="sc-num" style="color:#dc2626">-19 pts</span>
+        <div class="sc-lbl">Caída PJ Provincial→Nacional<br>67% a 48% en la misma elección 2025</div>
+      </div>
+    </div>
+
+    <div class="hbox hbox-amber">
+      <div class="hbox-title">💡 El split del electorado nuevo</div>
+      <p>La diferencia de 19 puntos entre el voto PJ en la elección provincial (66.6%) y la nacional (47.6%) en 2025 no es ruido estadístico — es estructura. San Vicente incorporó en los últimos 10 años una masa de electores de alto poder adquisitivo que eligió la gestión local del PJ (porque paga el asfalto, la seguridad, la escuela) pero responde al discurso nacional de LLA en la boleta presidencial. Son votantes que distinguen entre "el intendente que hace la ruta" y "el proyecto de país". En el acumulado de todas las elecciones, LLA pasó de 18% en 2023 a 36% en la nacional 2025 — duplicó su caudal. Eso es el electorado de los barrios privados votando en la categoría que a ellos les importa más.</p>
+    </div>
+    <div class="hbox hbox-blue">
+      <div class="hbox-title">📊 El piso peronista: ¿qué lo sostiene?</div>
+      <p>La base del 67% en la elección provincial refleja el San Vicente histórico: barrios populares de Alejandro Korn y el casco urbano de San Vicente que mantienen lealtad electoral construida a lo largo de décadas. A ese núcleo duro se suma la gestión concreta de Mantegazza — pavimento, lotes, salud — que ancla a los sectores medios-bajos que crecieron con el partido. El nuevo electorado del corredor inmobiliario no movió ese piso; se sumó encima para las nacionales y luego se fue para LLA.</p>
+    </div>
+  </div>
+</div>
+
+<!-- IV. EJES ESTRATÉGICOS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 IV. Ejes Estratégicos para 2026–2027</div>
+  <div class="sec-body">
+    <p>San Vicente está en un momento singular: tiene la base peronista más sólida del sur, un intendente aliado con gestión activa y una transformación territorial en curso. El desafío estratégico es sostener esa base mientras se trabaja el electorado nuevo.</p>
+    <div class="hbox hbox-green">
+      <div class="hbox-title">✅ Lo que está bien: base sólida + gestión con identidad</div>
+      <p>La combinación de 66-67% de voto PJ provincial con un intendente que puede mostrar la UNaV, la Ruta 58 y 500 cuadras de pavimento como gestión propia es el perfil ideal de un municipio aliado. No hay zona gris en la lealtad política de San Vicente en la elección provincial.</p>
+    </div>
+    <div class="hbox hbox-amber">
+      <div class="hbox-title">⚠️ El campo de disputa: el electorado del corredor</div>
+      <p>Los votantes de LLA en la nacional 2025 (36%) son en su mayoría residentes del corredor de barrios privados que llegaron en la última década. Son electores que valoran la gestión local pero responden a un discurso nacional diferente. Para 2027, ese electorado es el terreno a trabajar — no para peronizarlos ideológicamente, sino para que evalúen la gestión provincial con la misma lógica pragmática con la que evalúan la gestión municipal.</p>
+    </div>
+    <div class="hbox hbox-blue">
+      <div class="hbox-title">🎓 La UNaV como palanca generacional</div>
+      <p>La Universidad Nacional de San Vicente es el activo más singular del partido. Su primera generación de estudiantes completa está en formación — familias que apostaron a quedarse en San Vicente por la UNaV son un nuevo núcleo de identificación con el proyecto local. La universidad es también el único activo de gestión que habla directamente al electorado joven del corredor inmobiliario, que es precisamente el que más se fue a LLA en 2025.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CIERRE -->
+<div class="cierre">
+  <h3>📌 Cierre Narrativo</h3>
+  <p>San Vicente no encaja en la narrativa habitual del conurbano en crisis. Es un partido que creció, que tiene una base peronista blindada, un intendente que hace obras y una apuesta institucional — la UNaV — que lo diferencia del resto. El 67% en la elección provincial no es un accidente: es el resultado de décadas de construcción política y años de gestión concreta.</p>
+  <p>El punto de atención real está en el split: el mismo electorado que vota 67% peronista en lo local vota 36% LLA en lo nacional. Eso no es traición — es pragmatismo. El electorado nuevo del corredor inmobiliario hace una lectura segmentada: confía en la gestión municipal del PJ pero tiene una visión del país diferente. Trabajar ese espacio no requiere un cambio de discurso sino mostrar que la gestión provincial tiene la misma calidad y la misma proximidad que la gestión municipal que ellos ya validan.</p>
+  <p><strong>San Vicente es el municipio donde el piso peronista tiene más potencial de ser también el techo.</strong> El corredor de barrios privados que hoy divide el voto en dos categorías puede ser el mismo que integra la narrativa en una sola si la gestión provincial se vuelve tan visible y concreta como la gestión de Mantegazza.</p>
+</div>
+
+</body>
+</html>
