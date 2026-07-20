@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Chacabuco — Narrativa Territorial</title>
+<style>
+:root{--primary:#2a1e00;--accent:#7b5e00;--light:#f5f2eb;--border:#d4c89a;--text:#2a2000;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:var(--text);font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#16100000 0%,#2a1e00 40%,#4a3800 75%,#7b5e00 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'🌽';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.08}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-warn{background:rgba(180,130,0,.35);border-color:rgba(250,204,21,.5);color:#fde68a}
+.pill-blue{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#2a1e00,#4a3800);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#2a1e00;line-height:1.65;margin-bottom:12px;border-left:4px solid #7b5e00;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#2a1e00;border-color:#2a1e00;color:#fff}
+.card-dark h4{color:#fde68a !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#2a1e00;margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px}
+.card p{font-size:.78rem}
+.num-big{font-size:2rem;font-weight:900;color:#fde68a;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #f5f2eb;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.pj-v{color:#15803d;font-weight:800}
+.lla-v{color:#7c3aed;font-weight:800}
+.alert-g{background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px;padding:12px 15px;margin-top:12px}
+.alert-g .ttl{color:#15803d;font-size:.7rem;font-weight:800;text-transform:uppercase;margin-bottom:5px}
+.alert-w{background:#fefce8;border:1.5px solid #fde68a;border-radius:8px;padding:12px 15px;margin-top:12px}
+.alert-w .ttl{color:#92400e;font-size:.7rem;font-weight:800;text-transform:uppercase;margin-bottom:5px}
+.alert-g p,.alert-w p{font-size:.79rem;color:#374151;margin-bottom:0}
+.timeline{list-style:none;padding-left:0;margin-top:10px}
+.timeline li{padding:9px 14px 9px 38px;position:relative;border-left:3px solid #4a3800;margin-bottom:4px;background:#faf8f0;border-radius:0 7px 7px 0;font-size:.8rem;color:#374151;line-height:1.5}
+.timeline li::before{content:attr(data-icon);position:absolute;left:-14px;top:8px;font-size:.95rem}
+.close{background:linear-gradient(135deg,#2a1e00,#4a3800);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#fde68a;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;border:1px solid #ddd;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🌾 Cluster INTERIOR · 4ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">CHACABUCO</div>
+  <div class="cv-sub">Capital del Maíz · Biotecnología de Semillas · Modernización Municipal</div>
+  <div class="cv-pills">
+    <span class="pill-blue">✅ Aliado UxP — Darío Golía</span>
+    <span class="pill-warn">⚠️ PJ 51% prov · LLA 43.8% nac — split electoral</span>
+    <span class="pill">🌽 Capital del Maíz PBA</span>
+    <span class="pill">🔬 Biotecnología semillera</span>
+    <span class="pill">📱 Mi Muni Azul — trámites digitales</span>
+    <span class="pill">👁️ Ojos en Alerta — 3,000 vecinos</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌽 Territorio: El grano y la ciencia en la pampa húmeda</div>
+  <div class="sec-body">
+    <div class="lead">Chacabuco tiene dos identidades superpuestas: la del campo productivo en escala industrial (maíz, soja, cuenca lechera) y la de la biotecnología semillera que le da valor agregado y diferenciación en la 4ª Sección. No es solo producción — es producción con ciencia.</div>
+    <p>La ciudad de Chacabuco —la cabecera del partido— concentra unos 52,000 habitantes en la llanura pampeana de la 4ª Sección. Es la ciudad más grande de ese corredor del INTERIOR que conecta Junín con Bragado, Pehuajó y Lincoln. Su escala la convierte en un nodo de servicios regional: salud, educación, comercio y administración pública para municipios más pequeños del entorno.</p>
+    <p>La identidad productiva del partido se construyó alrededor del maíz y, con los años, de la biotecnología aplicada a semillas. Empresas semilleras y laboratorios de mejoramiento genético operan en el partido, convirtiendo a Chacabuco en un eslabón del sistema agroalimentario argentino que va más allá de la producción primaria. La semilla certificada de Chacabuco llega a productores de todo el país y a mercados de exportación.</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">51.0%</span><span class="num-lbl">PJ en elección provincial 2025</span></div>
+        <p style="margin-top:8px">Mayoría absoluta en categoría local. El peronismo municipal tiene base genuina en Chacabuco — uno de los distritos más sólidos del INTERIOR.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">3,000</span><span class="num-lbl">Vecinos en la red "Ojos en Alerta"</span></div>
+        <p style="margin-top:8px">El mayor programa de participación ciudadana en seguridad del partido. Vecinos como activos de la red municipal de monitoreo y alerta temprana.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ Gestión Golía: El municipio que se digitalizó</div>
+  <div class="sec-body">
+    <div class="lead">Darío Golía apostó por una marca de gestión inusual en el INTERIOR bonaerense: la modernización digital del municipio como política pública. "Mi Muni Azul", el monitoreo inteligente y "Ojos en Alerta" son tres caras de la misma apuesta: el Estado municipal como plataforma de servicios.</div>
+    <ul class="timeline">
+      <li data-icon="📱">"Mi Muni Azul": plataforma de trámites municipales 100% online. El ciudadano puede gestionar habilitaciones, pagos de tasas, solicitudes de servicios y más sin concurrir físicamente a la municipalidad. Canal nuevo de relación entre el Estado y el vecino, especialmente para jóvenes.</li>
+      <li data-icon="📡">Monitoreo Inteligente: red de cámaras urbanas con centro de control municipal. Respuesta rápida ante emergencias de seguridad, tráfico y servicios. Infraestructura de datos en tiempo real para la gestión del territorio urbano.</li>
+      <li data-icon="👁️">"Ojos en Alerta": red de seguridad participativa con 3,000 vecinos registrados. Aplicación para reportar situaciones de riesgo directamente al centro de monitoreo. El municipio como red, no solo como institución.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: El split que hay que entender</div>
+  <div class="sec-body">
+    <div class="lead">Chacabuco ilustra con claridad el fenómeno del split electoral en el INTERIOR bonaerense: el mismo votante puede apoyar al peronismo local (51% provincial) y votar a LLA en categorías nacionales (43.8%). El PJ pierde la nacional por solo 402 votos.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Los números completos</h4>
+        <div class="data-row"><span>2023 PJ / UxP</span><span class="pj-v">48.7% (16,065)</span></div>
+        <div class="data-row"><span>2023 JxC</span><span>26.9% (8,863)</span></div>
+        <div class="data-row"><span>2023 LLA</span><span class="lla-v">24.4% (8,032)</span></div>
+        <div class="data-row"><span>2025 Prov PJ 🟢</span><span class="pj-v">51.0% (14,409)</span></div>
+        <div class="data-row"><span>2025 Prov LLA</span><span class="lla-v">22.2% (6,265)</span></div>
+        <div class="data-row"><span>2025 Nac LLA ⚠️</span><span class="lla-v">43.8% (12,895)</span></div>
+        <div class="data-row"><span>2025 Nac PJ</span><span class="pj-v">42.4% (12,493)</span></div>
+      </div>
+      <div class="card">
+        <h4>🔍 Análisis del split</h4>
+        <p>La diferencia entre el 51% provincial y el 42.4% nacional es de 8.6 puntos — unos 1,900 votantes que apoyan al peronismo municipal pero votan a LLA en categoría nacional.</p>
+        <p>Esta es la grieta electoral más relevante del distrito: no es que el PJ pierda localmente, sino que pierde la lectura nacional. LLA ganó la nacional por solo 402 votos (0.002% del padrón).</p>
+      </div>
+    </div>
+    <div class="alert-g">
+      <div class="ttl">🟢 El peronismo local es real y fuerte</div>
+      <p>El 51% provincial en 2025 —sobre el 48.7% de 2023— muestra que la gestión Golía construyó apoyo, no lo perdió. El PJ no está en retirada en Chacabuco; está consolidado en el plano local. Esa es la base desde la cual construir el argumento provincial.</p>
+    </div>
+    <div class="alert-w">
+      <div class="ttl">⚠️ El 8.6% de split es el desafío de campaña</div>
+      <p>Articular el relato peronista de lo local a lo provincial es el trabajo de campaña. El votante que apoya a Golía pero votó a LLA en nacional necesita un argumento para que sea coherente también en la categoría provincial. No alcanza con la gestión municipal — es necesario un relato más amplio que conecte.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>🌽 Campo y tecnología</h4>
+        <p>La visita a una empresa de biotecnología semillera conecta la imagen del candidato con la producción real del distrito. Mensaje: la provincia que invierte en ciencia para el campo bonaerense. Resonante en un municipio donde la semilla es negocio y identidad.</p>
+      </div>
+      <div class="card">
+        <h4>📱 El municipio digital como modelo</h4>
+        <p>"Mi Muni Azul" y "Ojos en Alerta" son programas mostrables. Presentarlos como ejemplo de lo que el peronismo puede hacer en el Estado — no solo gestión asistencialista sino modernización y eficiencia. Argumento para el votante que se fue a LLA por gestión, no por ideología.</p>
+      </div>
+      <div class="card">
+        <h4>🤝 Golía como ancla</h4>
+        <p>El intendente es el activo político más importante del partido. La visita del candidato provincial junto a Golía refuerza la coherencia del mensaje peronista y muestra que lo local y lo provincial van en la misma dirección — el argumento principal contra el split.</p>
+      </div>
+      <div class="card">
+        <h4>📍 Nodo regional</h4>
+        <p>Chacabuco como punto de partida para recorrida de la 4ª Sección: Bragado, Pehuajó, Lincoln. Un día de gira que parte de un distrito sólido y llega a los más disputados. Lógica territorial eficiente.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>Chacabuco es un activo territorial para el peronismo provincial: intendente aliado sólido, 51% en la categoría provincial, gestión modernizadora con marca propia. Es un distrito donde la base existe y puede crecer.</p>
+  <p>El único punto de alerta es el split nacional (8.6 puntos de diferencia entre el voto provincial y el nacional), pero con 402 votos de diferencia en la nacional, es un margen técnicamente recuperable con campaña activa.</p>
+  <p><strong>Mensaje recomendado:</strong> "El INTERIOR que produce y moderniza — Chacabuco lo demuestra". Peronismo como gestor eficiente, no solo como distribuidor. El candidato provincial en un distrito que muestra lo que el peronismo puede hacer cuando tiene a alguien que trabaja.</p>
+</div>
+
+</body>
+</html>
