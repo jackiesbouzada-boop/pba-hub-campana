@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>San Antonio de Areco — Narrativa Territorial</title>
+<style>
+:root{--primary:#0d3320;--accent:#1d6b3e;--light:#f0f7f2;--border:#3a9a60;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#0a1f12;font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#020d07 0%,#0d3320 40%,#1a5c35 75%,#1d6b3e 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'🐴';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.09}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-red{background:rgba(220,38,38,.3);border-color:rgba(248,113,113,.5);color:#fca5a5}
+.pill-purple{background:rgba(124,58,237,.3);border-color:rgba(167,139,250,.5);color:#ddd6fe}
+.pill-warn{background:rgba(180,130,0,.3);border-color:rgba(250,204,21,.5);color:#fde68a}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#0d3320,#1d6b3e);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#0d3320;line-height:1.65;margin-bottom:12px;border-left:4px solid #1d6b3e;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#0d3320;border-color:#0d3320;color:#fff}
+.card-dark h4{color:#6ee7a0 !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#0d3320;margin-bottom:6px;text-transform:uppercase}
+.card p{font-size:.78rem;color:#374151}
+.num-big{font-size:2rem;font-weight:900;color:#6ee7a0;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f0f7f2;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.pj-v{color:#15803d;font-weight:800}
+.lla-v{color:#7c3aed;font-weight:800}
+.jxc-v{color:#d97706;font-weight:800}
+.close{background:linear-gradient(135deg,#0d3320,#1d6b3e);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#6ee7a0;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🛤️ Cluster Corredor Industrial Norte · 2ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">SAN ANTONIO DE ARECO</div>
+  <div class="cv-sub">La Capital de la Tradición gaucha — donde el platero, el gaucho y la universidad comparten territorio con LLA 54% y el PJ más débil del corredor</div>
+  <div class="cv-pills">
+    <span class="pill-red">🔴 Opositor — Ratto (JxC)</span>
+    <span class="pill-purple">🟣 LLA ganó provincial 2025 (35.7% vs PJ 33.1%)</span>
+    <span class="pill-warn">⚠️ LLA 54.3% nac — el más alto del corredor norte</span>
+    <span class="pill">🐴 Capital Nacional de la Tradición — decreto</span>
+    <span class="pill">🏛️ UNSAdA — faro educativo regional</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🐴 Territorio: El gaucho, la plata y la universidad que nadie esperaba</div>
+  <div class="sec-body">
+    <div class="lead">San Antonio de Areco no necesita presentación cultural: es el único lugar de la provincia de Buenos Aires que tiene un decreto presidencial que lo declara "Capital Nacional de la Tradición". El gaucho de Areco no es una figura folclórica para turistas — es el punto de convergencia de una comunidad de artesanos plateros con técnica centenaria, de talabarteros que fabrican los aperos con los que se hacen los desfiles nacionales, y de una Fiesta de la Tradición que cada noviembre concentra más de 30,000 personas en el casco histórico colonial para ver rodeo, doma y desfile gaucho.</div>
+    <p>Ese Areco cultural y turístico — el que conocen en Buenos Aires, en Uruguay, en España — convive con otro Areco: el que siembra soja, que tiene grandes acopios sobre la Ruta 8, que engorda ganado con tecnología y que manda sus hijos a la UNSAdA. La Universidad Nacional de San Antonio de Areco es el activo provincial más concreto en el territorio: una institución que formó técnicos en gestión ambiental y agro para toda la región norte sin que los jóvenes tuvieran que migrar a Buenos Aires o Luján. Eso cambió la demografía de la ciudad: jóvenes con título universitario que se quedan y trabajan en Areco.</p>
+    <p>El Río Areco es el reverso de la postal: las inundaciones recurrentes golpearon el casco histórico en varias oportunidades. La obra de defensa — canales aliviadores, limpieza del cauce, ensanche de puentes — es la demanda más urgente y la que genera más consenso transversal. El PJ, JxC y LLA están de acuerdo en que el río hay que controlarlo. Esa es la agenda donde la Provincia puede entrar con legitimidad propia.</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">30,000</span><span class="num-lbl">turistas en un solo fin de semana de noviembre — Fiesta de la Tradición: el mayor evento cultural del corredor norte</span></div>
+        <p style="margin-top:8px">No es un festival de fin de semana — es la liquidez estacional más grande que tiene la economía de Areco. Hoteles, restaurantes, artesanos, la Pulpería La Blanqueada y el Parque Criollo: cada noviembre se llenan de un turismo que busca autenticidad gaucha y la encuentra solo aquí.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">54.3%</span><span class="num-lbl">LLA en la nacional 2025 — el porcentaje más alto de todo el corredor norte bonaerense 2ª Sección</span></div>
+        <p style="margin-top:8px">El PJ llegó al 28.7% en la nacional y al 33.1% en la provincial — y perdió la categoría provincial contra LLA (35.7%). Areco nunca fue territorio PJ fuerte: en 2023, el PJ solo obtuvo 36.9% con JxC en la intendencia. El piso es bajo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: El territorio más difícil del corredor</div>
+  <div class="sec-body">
+    <div class="lead">En 2023, JxC ganó con 47.2% (7,551) — Ratto obtuvo intendencia con amplio margen. El PJ solo llegó al 36.9% (5,896) y LLA apenas al 13.2% (2,111). Dos años después, el panorama se invirtió: en la provincial 2025, LLA desplazó al PJ de la primera posición con 35.7% (4,567) vs 33.1% (4,234) — 333 votos de diferencia. En la nacional, LLA voló a 54.3% (7,605) vs PJ 28.7% (4,022). El ex voto de JxC migró masivamente a LLA — Areco es el caso más extremo del corredor norte.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Evolución electoral</h4>
+        <div class="data-row"><span>2023 JxC ✅ (Ratto)</span><span class="jxc-v">47.2% (7,551)</span></div>
+        <div class="data-row"><span>2023 PJ</span><span class="pj-v">36.9% (5,896)</span></div>
+        <div class="data-row"><span>2023 LLA</span><span class="lla-v">13.2% (2,111)</span></div>
+        <div class="data-row"><span>2025 Prov LLA 🟣</span><span class="lla-v">35.7% (4,567)</span></div>
+        <div class="data-row"><span>2025 Prov PJ</span><span class="pj-v">33.1% (4,234)</span></div>
+        <div class="data-row"><span>2025 Nac LLA 🟣</span><span class="lla-v">54.3% (7,605)</span></div>
+        <div class="data-row"><span>2025 Nac PJ</span><span class="pj-v">28.7% (4,022)</span></div>
+      </div>
+      <div class="card">
+        <h4>🔍 El elector de Areco y LLA</h4>
+        <p>El elector de Areco es conservador, agropecuario y tradicionalista. Votó JxC porque JxC representaba la gestión ordenada y el campo. Cuando JxC se fragmentó y Milei capturó la narrativa anti-status quo, ese elector migró a LLA sin conflicto identitario. El gaucho de Areco y el votante de Milei comparten algo: desconfianza en el Estado y valoración de la autonomía. Eso hace a Areco un caso difícil para el PJ en 2027.</p>
+        <p>El techo PJ en Areco es de aproximadamente 36–37% — nunca superó ese nivel. Con LLA creciendo sobre el ex voto JxC, el PJ puede incluso retroceder más. La estrategia electoral en Areco no es ganar — es construir presencia y limitar la brecha.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos — cómo el PJ entra en el territorio más difícil del corredor</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>🏛️ La UNSAdA — el argumento de inversión concreta</h4>
+        <p>La Universidad Nacional de Areco es el único activo de inversión nacional/provincial visible y tangible en el territorio. Una visita a la UNSAdA con agenda académica — anuncio de nueva carrera, laboratorio, convenio de becas con la Provincia — es el tipo de escena que habla al joven y a la familia que eligieron quedarse en Areco a estudiar. No es un acto político partidario: es la Provincia como socia de la universidad. Ese argumento funciona incluso en electorado que no vota PJ.</p>
+      </div>
+      <div class="card">
+        <h4>🌊 El río — la agenda transversal</h4>
+        <p>La defensa hídrica del Río Areco es la única obra que genera consenso pleno en el municipio. El casco histórico colonial, el Museo Güiraldes, la Pulpería La Blanqueada — todo eso estuvo bajo amenaza de inundación. Un anuncio de financiamiento provincial para los canales aliviadores o el ensanche de puentes tiene legitimidad que va más allá de lo partidario: es proteger el patrimonio que todos los porteños conocen cuando visitan Areco. El PJ que "cuida Areco" tiene un argumento transversal fuerte.</p>
+      </div>
+      <div class="card">
+        <h4>🐴 La Fiesta de la Tradición — la escena icónica</h4>
+        <p>Más de 30,000 turistas en un fin de semana de noviembre. El Parque Criollo, la doma, el desfile gaucho, los artesanos plateros del casco histórico. Una visita a la Fiesta de la Tradición — o a los talleres de platería en cualquier momento del año — genera el tipo de contenido visual que multiplica el alcance en redes: el interior bonaerense auténtico, vivo, con identidad propia. La escena de Areco no tiene competencia en la provincia.</p>
+      </div>
+      <div class="card">
+        <h4>🏥 El hospital — la presencia concreta de todos los días</h4>
+        <p>El Hospital Emilio Zerboni atiende no solo a los vecinos de Areco sino a los accidentados de la Ruta 8 — una de las arterias del corredor norte con mayor tránsito pesado. Una visita al hospital con anuncio de equipo (tomógrafo, modernización de la guardia) tiene la triple ventaja de hablar a los trabajadores del sector salud, a los vecinos que usan el hospital y a los camioneros y transportistas que dependen de la guardia de emergencias. El hospital como argumento de presencia cotidiana del Estado.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>San Antonio de Areco es el municipio más difícil del corredor norte para el PJ: JxC intendente (Ratto), LLA ganó la provincial 2025 con 35.7%, y en la nacional LLA llegó al 54.3% — el porcentaje más alto del corredor. El PJ nunca superó el 37% aquí y no hay base municipal aliada que sostenga la estructura territorial.</p>
+  <p>La visita no construye votos directos — construye imagen y presencia. Areco es la capital cultural del interior bonaerense: el gaucho, la plata, el museo Güiraldes, la Fiesta de la Tradición. La escena que proyecta Areco hacia Buenos Aires y hacia el resto del país tiene un valor de comunicación que excede la aritmética electoral local. La UNSAdA y el río son los argumentos de gestión concreta; la Fiesta de la Tradición y los talleres de platería son la escena visual.</p>
+  <p><strong>Mensaje recomendado:</strong> "Areco es la identidad de Buenos Aires — y la Provincia cuida lo que Areco representa: su río, su universidad, su hospital y sus artesanos. La tradición no se muestra — se sostiene con obras concretas". El PJ que defiende el patrimonio y financia la universidad es el PJ que puede hablarle al elector de Areco sin antagonizar su identidad conservadora.</p>
+</div>
+
+</body>
+</html>
