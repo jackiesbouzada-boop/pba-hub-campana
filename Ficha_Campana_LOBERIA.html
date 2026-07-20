@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ficha de Campaña — LOBERÍA</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f8f4f0;color:#1a1a2e;min-height:100vh}
+.page{max-width:900px;margin:0 auto;padding:24px 20px}
+.hero{background:linear-gradient(135deg,#8b3a3a 0%,#5c1f1f 100%);border-radius:16px;padding:32px 36px 28px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
+.hero::after{content:'💡';position:absolute;right:28px;bottom:-8px;font-size:6.5rem;opacity:.12}
+.hcl{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.htitle{font-size:2.2rem;font-weight:900;letter-spacing:-.5px;line-height:1.05;margin-bottom:8px}
+.hsub{font-size:.88rem;opacity:.8;margin-bottom:16px;line-height:1.5;max-width:580px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{padding:4px 12px;border-radius:16px;font-size:.72rem;font-weight:800;letter-spacing:.04em}
+.badge-al{background:#1d6a9f;color:#fff}
+.badge-warn{background:#b45309;color:#fff}
+.badge-op{background:#991b1b;color:#fff}
+.badge-crit{background:#5b21b6;color:#fff}
+
+.card{background:#fff;border-radius:12px;padding:22px 26px;margin-bottom:14px;border-left:5px solid #8b3a3a}
+.card-title{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8b3a3a;margin-bottom:14px}
+
+.etable{width:100%;border-collapse:collapse;font-size:.82rem}
+.etable th{background:#8b3a3a;color:#fff;padding:8px 12px;text-align:left;font-weight:700;font-size:.72rem;letter-spacing:.05em}
+.etable td{padding:8px 12px;border-bottom:1px solid #f0ebe0;vertical-align:top}
+.etable tr:last-child td{border-bottom:none}
+.etable tr:nth-child(even){background:#fdf8f8}
+.pj{color:#1d4ed8;font-weight:700}
+.jxc{color:#dc2626;font-weight:700}
+.lla{color:#7c3aed;font-weight:700}
+.winner{font-weight:900}
+
+.iblock{margin-bottom:10px;padding:10px 14px;background:#fdf8f8;border-radius:8px;border-left:3px solid #8b3a3a}
+.iblock-title{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#8b3a3a;margin-bottom:4px}
+.iblock-text{font-size:.82rem;color:#374151;line-height:1.6}
+
+.prog-list{list-style:none}
+.prog-list li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f0ebe0;font-size:.82rem;align-items:flex-start;line-height:1.5}
+.prog-list li:last-child{border-bottom:none}
+.prog-icon{font-size:1.0rem;flex-shrink:0;margin-top:1px}
+.prog-name{font-weight:700;color:#1a1a2e}
+
+.metatable{width:100%;border-collapse:collapse;font-size:.8rem}
+.metatable td{padding:7px 12px;border-bottom:1px solid #f0ebe0}
+.metatable td:first-child{font-weight:700;color:#6b2020;width:38%}
+.metatable tr:last-child td{border-bottom:none}
+
+.footer{text-align:center;font-size:.68rem;color:#9a6060;margin-top:20px;padding-top:10px;border-top:1px solid #e8d0d0;letter-spacing:.05em}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hero">
+  <div class="hcl">🌿 SALADO · 5ª Sección Electoral</div>
+  <div class="htitle">LOBERÍA</div>
+  <div class="hsub">Cosecha fina del sudeste y acceso a Puerto Quequén — pero Lobería se reinventó con universidad propia, nodo tecnológico y presupuesto participativo. Barrena JxC opositor, PJ lidera la provincial con 38.4%</div>
+  <div class="badges">
+    <span class="badge badge-op">Barrena JxC opositor</span>
+    <span class="badge badge-warn">LLA 45.9% en nac. — PJ 37.6%</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">📊 Datos Electorales</div>
+  <table class="etable">
+    <tr>
+      <th>Elección</th><th>1° Partido</th><th>%</th><th>2° Partido</th><th>%</th><th>3° Partido</th><th>%</th><th>V. Positivos</th>
+    </tr>
+    <tr>
+      <td>2023 General</td>
+      <td class="jxc winner">JxC</td><td class="jxc winner">59.3%</td>
+      <td class="pj">PJ</td><td class="pj">40.7%</td>
+      <td>LLA</td><td>—</td>
+      <td>9,077</td>
+    </tr>
+    <tr>
+      <td>2025 Prov. PBA</td>
+      <td class="pj winner">PJ</td><td class="pj winner">38.4%</td>
+      <td class="lla">LLA</td><td class="lla">21.8%</td>
+      <td>—</td><td>—</td>
+      <td>8,460</td>
+    </tr>
+    <tr>
+      <td>2025 Nacional</td>
+      <td class="lla winner">LLA</td><td class="lla winner">45.9%</td>
+      <td class="pj">PJ</td><td class="pj">37.6%</td>
+      <td>—</td><td>—</td>
+      <td>8,847</td>
+    </tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">🏛️ Identidad Territorial</div>
+  <div class="iblock">
+    <div class="iblock-title">🌾 Potencia Agrícola del Sudeste — Cosecha Fina + Puerto Quequén</div>
+    <div class="iblock-text">Las tierras de Lobería están entre las mejores de la provincia para trigo, cebada y girasol. Su cercanía al Puerto de Quequén hace que su economía sea altamente eficiente: la producción de granos tiene salida directa al exterior con logística favorable.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">💡 Educación Tecnológica — CUdL + Lobería Innova</div>
+    <div class="iblock-text">Lobería apostó a la "educación como nuevo motor productivo". El Centro Universitario de Lobería (CUdL) ofrece carreras de agroinformática y gestión ambiental en convenio con la UNCPBA. El edificio "Lobería Innova" funciona como nodo tecnológico con laboratorios de impresión 3D y aulas de programación y robótica.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🌊 Arenas Verdes — Turismo de Naturaleza</div>
+    <div class="iblock-text">Sector costero con dunas y paisaje natural protegido, posicionado como alternativa de turismo sustentable frente a los grandes centros costeros. Desarrollo controlado que preserva el paisaje original de dunas.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🗳️ Presupuesto Participativo — Referente Zonal</div>
+    <div class="iblock-text">Lobería implementa el Presupuesto Participativo donde los ciudadanos proponen y votan obras. En 2025/2026 los proyectos ganadores incluyeron puesta en valor de plazas y estaciones solares para carga de dispositivos.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">⭐ Hitos de Gestión</div>
+  <div class="iblock">
+    <div class="iblock-title">🎓 Centro Universitario de Lobería (CUdL)</div>
+    <div class="iblock-text">El hito central de la gestión: funcionamiento pleno del CUdL con carreras de tecnología y producción agroindustrial en convenio con universidades nacionales (UNCPBA). Transforma a Lobería de municipio puramente agrícola a centro regional de formación superior.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🤖 Lobería Innova — Nodo Tecnológico</div>
+    <div class="iblock-text">Espacio con laboratorios de impresión 3D, aulas de programación web y robótica. Más de 300 vecinos formados anualmente en habilidades digitales para trabajo remoto y empleo calificado. Evita el desarraigo generando oportunidades locales.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🛣️ Pavimento por Administración</div>
+    <div class="iblock-text">Obras de asfalto realizadas con cuadrilla municipal propia y materiales propios, reduciendo costos y manteniendo ritmo constante de urbanización. En 2026 se completaron nuevos circuitos en barrios periféricos de la cabecera.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">💻 Gobierno Abierto Digital</div>
+    <div class="iblock-text">Digitalización total de expedientes municipales con trazabilidad absoluta del gasto público. Facilita trámites a distancia para vecinos de localidades rurales alejadas de la cabecera.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">🚀 Programas Destacados</div>
+  <ul class="prog-list">
+    <li>
+      <span class="prog-icon">🎓</span>
+      <span><span class="prog-name">CUdL — Agroinformática y Gestión Ambiental</span> — Carreras universitarias presenciales en convenio con la UNCPBA, orientadas a la producción agroindustrial y el medioambiente. Formación superior sin salir del partido.</span>
+    </li>
+    <li>
+      <span class="prog-icon">💡</span>
+      <span><span class="prog-name">Lobería Innova / Nodo Tecnológico</span> — Cursos cuatrimestrales gratuitos de robótica para niños, programación web y marketing digital. Laboratorio de impresión 3D. Más de 300 vecinos formados anualmente para trabajo remoto y empleo digital.</span>
+    </li>
+    <li>
+      <span class="prog-icon">🗳️</span>
+      <span><span class="prog-name">Presupuesto Participativo</span> — Los vecinos proponen y votan obras con fondos municipales asignados. Proyectos 2025/2026: plazas y estaciones solares de carga. Referente en participación ciudadana para la zona sudeste.</span>
+    </li>
+    <li>
+      <span class="prog-icon">💰</span>
+      <span><span class="prog-name">Lobería Emprende</span> — Microcréditos para herramientas y asistencia técnica (costos, ventas) para proyectos familiares de gastronomía, herrería y textil. Exige inscripción fiscal como condición de acceso.</span>
+    </li>
+    <li>
+      <span class="prog-icon">🌊</span>
+      <span><span class="prog-name">Turismo Sustentable Arenas Verdes</span> — Puesta en valor de la zona costera de dunas con enfoque de preservación del paisaje natural. Turismo de naturaleza como alternativa controlada frente a los grandes centros costeros de la región.</span>
+    </li>
+    <li>
+      <span class="prog-icon">♻️</span>
+      <span><span class="prog-name">Gestión de Residuos Urbanos</span> — Implementación obligatoria de contenedores para residuos de obra y bolsones para áridos para evitar obstrucción de desagües. Programa de limpieza urbana con impacto en la calidad del espacio público.</span>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-title">📋 Ficha Técnica</div>
+  <table class="metatable">
+    <tr><td>Partido</td><td>Lobería</td></tr>
+    <tr><td>Sección Electoral</td><td>5ª Sección Electoral</td></tr>
+    <tr><td>Intendente</td><td>Pablo Javier Barrena — Juntos por el Cambio</td></tr>
+    <tr><td>Padrón Electoral</td><td>14,947 electores</td></tr>
+    <tr><td>Cluster</td><td>SALADO</td></tr>
+    <tr><td>2023 — JxC</td><td>59.3% (5,382 votos) · gana · LLA sin presencia</td></tr>
+    <tr><td>2023 — PJ</td><td>40.7% (3,695 votos)</td></tr>
+    <tr><td>2025 PBA — PJ</td><td>38.4% (3,251 votos) · lidera</td></tr>
+    <tr><td>2025 PBA — LLA</td><td>21.8% (1,845 votos)</td></tr>
+    <tr><td>2025 Nac — LLA</td><td>45.9% (4,064 votos) · gana</td></tr>
+    <tr><td>2025 Nac — PJ</td><td>37.6% (3,331 votos)</td></tr>
+  </table>
+</div>
+
+<div class="footer">LOBERÍA · Padrón 14.947 · SALADO · 5ª Sección Electoral · Ficha Territorial 2025–2026</div>
+</div>
+</body>
+</html>
