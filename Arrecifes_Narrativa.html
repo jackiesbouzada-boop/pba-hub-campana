@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Arrecifes — Narrativa Territorial</title>
+<style>
+:root{--primary:#3d2e00;--accent:#7b5e00;--light:#f5f0e8;--border:#c9a84c;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#2e1a00;font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#0d0800 0%,#3d2e00 40%,#6b5000 75%,#7b5e00 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'🏁';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.09}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-red{background:rgba(220,38,38,.3);border-color:rgba(248,113,113,.5);color:#fca5a5}
+.pill-warn{background:rgba(180,130,0,.3);border-color:rgba(250,204,21,.5);color:#fde68a}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#3d2e00,#7b5e00);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#3d2e00;line-height:1.65;margin-bottom:12px;border-left:4px solid #7b5e00;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#3d2e00;border-color:#3d2e00;color:#fff}
+.card-dark h4{color:#fcd34d !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#3d2e00;margin-bottom:6px;text-transform:uppercase}
+.card p{font-size:.78rem;color:#374151}
+.num-big{font-size:2rem;font-weight:900;color:#fcd34d;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f5f0e8;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.pj-v{color:#15803d;font-weight:800}
+.lla-v{color:#7c3aed;font-weight:800}
+.jxc-v{color:#d97706;font-weight:800}
+.close{background:linear-gradient(135deg,#3d2e00,#7b5e00);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#fcd34d;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🌾 Cluster INTERIOR · 2ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">ARRECIFES</div>
+  <div class="cv-sub">Cuna de campeones con intendente opositor — donde el PJ gana la provincial sin municipio</div>
+  <div class="cv-pills">
+    <span class="pill-red">🔴 Opositor — Bouvier (JxC) — sin respaldo municipal</span>
+    <span class="pill-warn">⚠️ PJ 42.7% prov / LLA 47.5% nac — voto cruzado fuerte</span>
+    <span class="pill">🏁 Di Palma · Pairetti · Fontana — automovilismo histórico</span>
+    <span class="pill">🛣️ 1,200 km caminos rurales para la cosecha</span>
+    <span class="pill">🎓 CUA — universidad local sin éxodo juvenil</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏁 Territorio: La pampa que produce y los pilotos que ganaron desde chicos</div>
+  <div class="sec-body">
+    <div class="lead">Arrecifes tiene dos identidades que no convergen en ningún otro municipio del interior norte: la tierra fértil de la Pampa Húmeda con rindes entre los más altos de la provincia, y la "Cuna de Campeones" del automovilismo argentino. Di Palma, Pairetti, Fontana. Tres apellidos que pusieron a Arrecifes en los circuitos nacionales antes de que el municipio tuviera el tamaño para aparecer en los mapas electorales relevantes.</div>
+    <p>El partido tiene intendente JxC (Bouvier), lo que implica que cualquier acción provincial en Arrecifes se construye sin el respaldo automático del municipio. Sin embargo, el dato más relevante del 2025 es el que queda después de esa lectura inicial: el PJ obtuvo 42.7% en la categoría provincial. En territorio con intendente opositor. Eso es voto cruzado — vecinos que eligieron a Bouvier para la intendencia y al PJ para la Provincia. Ese segmento existe, es identificable, y es el que una campaña provincial puede activar sin necesitar la foto con el intendente.</p>
+    <p>El Centro Universitario Arrecifes (CUA) es el programa local más transformador en términos de retención territorial: carreras técnicas gratuitas con la UNSAdA en un municipio donde antes los jóvenes tenían que elegir entre quedarse sin estudiar o irse a Rosario. Es el tipo de programa que el PJ puede presentar como modelo provincial — no importa que lo haya construido un intendente JxC. El argumento es: "esto es lo que necesita el interior, y lo vamos a escalar".</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">1,200+</span><span class="num-lbl">km de caminos rurales operativos todo el año — la logística de la cosecha no espera</span></div>
+        <p style="margin-top:8px">El productor de Arrecifes sabe que sin caminos no hay cosecha. La red vial productiva que lleva los camiones a los puertos de Rosario y San Nicolás es la infraestructura invisible que hace posible el negocio agropecuario del norte bonaerense.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">42.7%</span><span class="num-lbl">PJ en la provincial 2025 — con intendente JxC — la base propia existe y es robusta</span></div>
+        <p style="margin-top:8px">El voto cruzado no es anecdótico: 42.7% en la provincial con intendente opositor activo significa que la identidad peronista del electorado resiste la influencia municipal. Esa base es el punto de partida de cualquier acción provincial en Arrecifes.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: Voto cruzado en tierra opositora</div>
+  <div class="sec-body">
+    <div class="lead">Sin datos de 2023 en el dataset, el cuadro 2025 es la referencia principal. Provincial: PJ 42.7% (7,124) vs LLA 27.4% (4,568) — el PJ gana cómodamente. Nacional: LLA 47.5% (8,392) vs PJ 37.0% (6,531) — LLA gana por 1,861 votos. El split entre categorías (15.5 puntos de diferencia en LLA entre nacional y provincial) es la señal más importante: el electorado separa el voto provincial del nacional con claridad.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Datos 2025</h4>
+        <div class="data-row"><span>2023 Bouvier (JxC)</span><span class="jxc-v">Ganó — sin desglose</span></div>
+        <div class="data-row"><span>2025 Prov PJ ✅</span><span class="pj-v">42.7% (7,124)</span></div>
+        <div class="data-row"><span>2025 Prov LLA</span><span class="lla-v">27.4% (4,568)</span></div>
+        <div class="data-row"><span>2025 Nac LLA 🔴</span><span class="lla-v">47.5% (8,392)</span></div>
+        <div class="data-row"><span>2025 Nac PJ</span><span class="pj-v">37.0% (6,531)</span></div>
+        <div class="data-row"><span>Split LLA prov→nac</span><span class="lla-v">+20.1 puntos</span></div>
+      </div>
+      <div class="card">
+        <h4>🔍 La lógica del voto cruzado</h4>
+        <p>Arrecifes vota a Bouvier (JxC) para la intendencia — probablemente por gestión local concreta y liderazgo territorial consolidado. Pero el mismo electorado no trasfiere esa confianza automáticamente a la categoría provincial: 42.7% para el PJ en la Provincial es evidencia de que hay un segmento que distingue "intendente del que confío" de "partido que me representa en la Provincia".</p>
+        <p>El salto de LLA del 27.4% en la provincial al 47.5% en la nacional reproduce el patrón del interior norte: el productor agropecuario y el comerciante mediano vota LLA en la nacional cuando la agenda es la economía nacional, pero mantiene su voto más local en la Provincia. El PJ provincial tiene que ser percibido como una cosa diferente al kirchnerismo nacional para mantener ese diferencial.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos — cómo construir en tierra opositora</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>🏁 La Cuna de Campeones — identidad que trasciende la política</h4>
+        <p>Di Palma, Pairetti, Fontana son orgullos locales que no pertenecen a ningún partido. Un evento o visita que vincule el automovilismo histórico con la economía local (los talleres de competición, los mecánicos, el turismo deportivo) tiene convocatoria transversal. La identidad territorial es el terreno donde el candidato provincial puede plantarse sin necesitar al intendente.</p>
+      </div>
+      <div class="card">
+        <h4>🛣️ La red vial rural — lo que la Provincia sí puede hacer</h4>
+        <p>El mantenimiento de 1,200 km de caminos rurales es clave para el productor de Arrecifes — y parte de ese mantenimiento depende de financiamiento provincial. Un candidato que se compromete con más inversión en red vial rural para garantizar la salida de la cosecha tiene un argumento que el productor que vota LLA en la nacional puede recibir positivamente: es un argumento de utilidad práctica, no de identidad política.</p>
+      </div>
+      <div class="card">
+        <h4>🎓 El CUA — el modelo que la Provincia puede escalar</h4>
+        <p>El Centro Universitario Arrecifes existe. El candidato provincial puede presentarlo como modelo de retención de talentos en el interior: "lo que hicieron en Arrecifes, lo vamos a hacer en todos los municipios donde los jóvenes hoy tienen que elegir entre estudiar lejos o no estudiar". El argumento no requiere elogiar a Bouvier — requiere apropiarse del modelo como visión provincial.</p>
+      </div>
+      <div class="card">
+        <h4>🏥 Salud — la única oferta del partido</h4>
+        <p>El Hospital Municipal San Francisca Romana es la única oferta hospitalaria del distrito. En un municipio con intendente opositor, cualquier inversión provincial en salud (equipamiento, formación, guardia reforzada) tiene impacto directo sobre los vecinos que no pueden resolver la salud fuera de Arrecifes. La salud es el terreno donde la Provincia puede actuar directamente sin pasar por el municipio.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>Arrecifes tiene intendente JxC (Bouvier), pero el PJ ganó el 42.7% de la provincial 2025 — con intendente activo en oposición. Esa base propia es robusta y demuestra que el electorado peronista de Arrecifes no desapareció. La nacional fue para LLA (47.5%) con el patrón típico del interior norte.</p>
+  <p>La estrategia provincial en Arrecifes pasa por tres ejes independientes del municipio: la identidad del automovilismo (convocatoria transversal), la red vial rural (argumento de utilidad práctica para el productor), y el CUA como modelo escalable (argumento para los jóvenes y sus familias). Ninguno requiere la foto con Bouvier.</p>
+  <p><strong>Mensaje recomendado:</strong> "La Pampa Húmeda que produce campeones en la pista y en el campo — y que necesita que la Provincia acompañe con caminos y universidad". Arrecifes tiene identidad propia. El PJ puede activar la base del 42.7% sin necesitar el municipio. La visita construye imagen, no alianza municipal.</p>
+</div>
+
+</body>
+</html>

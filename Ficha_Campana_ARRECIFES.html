@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ficha de Campaña — ARRECIFES</title>
+<style>
+:root{--cl:#7b5e00;--cl2:#5c4500;--cl3:#f5f0e8;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f9f7f2;color:#1a1a1a;font-size:13px;max-width:900px;margin:0 auto;padding:14px}
+.hdr{background:linear-gradient(135deg,#1a0e00 0%,#3d2e00 40%,#7b5e00 80%,#a07c00 100%);color:#fff;padding:28px 30px 22px;border-radius:var(--radius);margin-bottom:12px;position:relative;overflow:hidden}
+.hdr::before{content:'🏁';position:absolute;right:-10px;bottom:-18px;font-size:10rem;opacity:.1}
+.h-over{font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.6;margin-bottom:5px}
+.h-nm{font-size:2.4rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.85rem;opacity:.7;margin-bottom:14px}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-size:.68rem;font-weight:700;padding:3px 11px;border-radius:20px;border:1px solid transparent}
+.badge-warn{background:rgba(180,130,0,.25);border-color:rgba(250,204,21,.4);color:#fde68a}
+.badge-al{background:rgba(29,78,216,.25);border-color:rgba(59,130,246,.4);color:#93c5fd}
+.badge-op{background:rgba(220,38,38,.25);border-color:rgba(248,113,113,.4);color:#fca5a5}
+.badge-crit{background:rgba(109,40,217,.25);border-color:rgba(167,139,250,.4);color:#c4b5fd}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:#fff;border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.07);overflow:hidden}
+.c-hdr{background:var(--cl);color:#fff;padding:7px 14px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px}
+.c-hdr-dark{background:var(--cl2)}
+.c-body{padding:12px 14px}
+.kv{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #f0ebe0;font-size:.78rem}
+.kv:last-child{border-bottom:none}
+.kv-k{color:#6b7280}
+.kv-v{font-weight:700;color:#1a1a1a}
+.kv-pj{color:#15803d;font-weight:800}
+.kv-lla{color:#7c3aed;font-weight:800}
+.kv-jxc{color:#d97706;font-weight:800}
+.prog-list{list-style:none;padding:0}
+.prog-list li{padding:5px 0;border-bottom:1px solid #f0ebe0;font-size:.78rem;line-height:1.5}
+.prog-list li:last-child{border-bottom:none}
+.prog-list li::before{content:"▸ ";color:var(--cl);font-weight:700}
+.alert{background:#fef3c7;border:1.5px solid #f59e0b;border-radius:8px;padding:8px 12px;font-size:.75rem;color:#78350f;margin-top:8px}
+.alert-info{background:#eff6ff;border:1.5px solid #3b82f6;border-radius:8px;padding:8px 12px;font-size:.75rem;color:#1e3a5f;margin-top:8px}
+.alert strong{color:#92400e}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.stat{background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 2px 8px rgba(0,0,0,.07);text-align:center}
+.stat-n{font-size:1.6rem;font-weight:900;color:var(--cl);display:block}
+.stat-l{font-size:.63rem;color:#6b7280;text-transform:uppercase;margin-top:2px}
+.full{grid-column:1/-1}
+p{font-size:.8rem;color:#374151;line-height:1.6;margin-bottom:8px}
+p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.card{box-shadow:none;break-inside:avoid}.hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="h-over">🌾 Cluster INTERIOR · 2ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="h-nm">ARRECIFES</div>
+  <div class="h-sub">Cuna de Campeones — Di Palma · Pairetti · Fontana · Automovilismo histórico · Pampa Húmeda de alta productividad</div>
+  <div class="badges">
+    <span class="badge badge-op">🔴 Opositor — Juan Fernando Bouvier (JxC)</span>
+    <span class="badge badge-warn">⚠️ PJ 42.7% prov / LLA 47.5% nac — voto propio PJ fuerte</span>
+    <span class="badge">🏁 Cuna de Campeones — automovilismo nacional</span>
+    <span class="badge">🛣️ 1,200 km caminos rurales productivos</span>
+    <span class="badge">🎓 Centro Universitario Arrecifes (UNSAdA)</span>
+  </div>
+</div>
+
+<div class="stat-grid">
+  <div class="stat"><span class="stat-n">26,590</span><span class="stat-l">Padrón Electoral</span></div>
+  <div class="stat"><span class="stat-n">2ª</span><span class="stat-l">Sección Electoral</span></div>
+  <div class="stat"><span class="stat-n">1,244</span><span class="stat-l">km² superficie</span></div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="c-hdr">Intendente</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Nombre</span><span class="kv-v">Juan Fernando Bouvier</span></div>
+      <div class="kv"><span class="kv-k">Fuerza política</span><span class="kv-v">Juntos por el Cambio</span></div>
+      <div class="kv"><span class="kv-k">Vínculo</span><span class="kv-v">Opositor (JxC)</span></div>
+      <div class="kv"><span class="kv-k">Sección</span><span class="kv-v">2ª Sección Electoral</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">Identidad Territorial</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Marca territorial</span><span class="kv-v">Cuna de Campeones (Automovilismo)</span></div>
+      <div class="kv"><span class="kv-k">Pilotos históricos</span><span class="kv-v">Di Palma · Pairetti · Orly Fontana</span></div>
+      <div class="kv"><span class="kv-k">Motor económico</span><span class="kv-v">Pampa Húmeda — soja, trigo, maíz</span></div>
+      <div class="kv"><span class="kv-k">Red vial productiva</span><span class="kv-v">+1,200 km caminos rurales</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="card">
+    <div class="c-hdr">2023 General</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Resultado</span><span class="kv-v">Bouvier (JxC) ganó</span></div>
+      <div class="kv"><span class="kv-k">Datos disponibles</span><span class="kv-v">Sin desglose en dataset</span></div>
+      <div class="kv"><span class="kv-k">Contexto</span><span class="kv-v">LLA en crecimiento nacional</span></div>
+      <div class="kv"><span class="kv-k">Nota</span><span class="kv-v">Sin 2023 en ResultadosPBA</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">2025 — Elec. Provincial</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">PJ ✅</span><span class="kv-pj">42.7% (7,124)</span></div>
+      <div class="kv"><span class="kv-k">LLA</span><span class="kv-lla">27.4% (4,568)</span></div>
+      <div class="kv"><span class="kv-k">JxC</span><span class="kv-jxc">NaN — corrió separado</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">16,673</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">2025 — Elec. Nacional</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">LLA 🔴</span><span class="kv-lla">47.5% (8,392)</span></div>
+      <div class="kv"><span class="kv-k">PJ</span><span class="kv-pj">37.0% (6,531)</span></div>
+      <div class="kv"><span class="kv-k">Margen LLA</span><span class="kv-lla">+1,861 votos</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">17,668</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="alert-info">
+  <strong>📌 Lectura electoral:</strong> Arrecifes tiene intendente JxC (Bouvier). En 2025, la categoría provincial mostró un PJ sólido (42.7%) contra LLA (27.4%) — inusualmente bajo para LLA. En la nacional, LLA ganó con 47.5% vs PJ 37.0% (1,861 votos). No hay datos 2023 desagregados en el dataset para este municipio. El voto provincial al PJ (42.7%) en territorio de intendente JxC es un indicador de voto cruzado significativo — parte del electorado de Bouvier votó al PJ provincial.
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="c-hdr">Identidad Profunda</div>
+    <div class="c-body">
+      <p>Arrecifes es la "Cuna de Campeones" del automovilismo argentino. Tito Di Palma (campeón del Turismo Carretera), Carlos Pairetti (múltiple ganador del TC y Turismo Nacional) y Orly Fontana (TC2000 internacional) nacieron o se formaron aquí. El automovilismo dejó en Arrecifes una industria local de talleres de competición, chasistas y mecánicos de alto nivel que no existe en otros municipios de escala similar.</p>
+      <p>El partido se asienta en las tierras más fértiles de la Pampa Húmeda. Con rindes de soja, trigo y maíz entre los más altos del norte bonaerense, Arrecifes produce y necesita lograr que la producción llegue al puerto. Por eso la red vial rural es el programa presupuestario más sensible de la gestión local: más de 1,200 km de caminos rurales operativos 365 días al año para que los camiones de cosecha lleguen a Rosario y San Nicolás.</p>
+      <p>El Centro Universitario Arrecifes (CUA) es la apuesta anti-éxodo juvenil: carreras técnicas gratuitas en administración, agro e informática con convenios con la UNSAdA (Universidad Nacional de San Antonio de Areco), sin que los jóvenes tengan que migrar a Rosario o Buenos Aires.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr c-hdr-dark">Programas de Gestión</div>
+    <div class="c-body">
+      <ul class="prog-list">
+        <li><strong>Programa Salud Municipal</strong> — Hospital Municipal San Francisca Romana (única oferta hospitalaria del distrito) + centros de atención primaria reforzados en pediatría y clínica médica. Reduce la presión sobre el hospital central.</li>
+        <li><strong>Mantenimiento Red Vial Productiva</strong> — 1,200+ km de caminos rurales operativos año completo con motoniveladoras y tosca. Asegura la salida de camiones de cosecha hacia puertos de Rosario y San Nicolás sin depender de vialidad provincial.</li>
+        <li><strong>Mantenimiento Cuenca Río Arrecifes</strong> — Limpieza del cauce y gestión hídrica rural para proteger la zona productiva de inundaciones y garantizar el escurrimiento del agua cosecha.</li>
+        <li><strong>Centro Universitario Arrecifes (CUA)</strong> — Sede física + convenios con UNSAdA. Carreras técnicas gratuitas en administración, agro e informática localmente. Retención de jóvenes en el municipio.</li>
+      </ul>
+      <div class="alert" style="margin-top:10px">
+        <strong>⚠️ Contexto político:</strong> La gestión de los programas es del intendente Bouvier (JxC opositor). Las obras y programas descritos corresponden a la gestión municipal actual. El análisis estratégico provincial se construye sobre la base del electorado local, no de la gestión de Bouvier.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card full">
+  <div class="c-hdr">Lectura Estratégica</div>
+  <div class="c-body">
+    <p><strong>Escenario:</strong> Arrecifes tiene intendente JxC (Bouvier), lo que implica que la visita provincial en este territorio no tiene el respaldo automático del municipio. Sin embargo, el PJ obtuvo 42.7% en la categoría provincial de 2025 — un número sólido que indica una base propia de votantes que no siguen al intendente en su alineación JxC.</p>
+    <p><strong>Ángulo:</strong> La agenda provincial en Arrecifes puede construirse sobre tres ejes que trascienden el color político del intendente: la identidad del automovilismo (Cuna de Campeones — convocatoria de fans y familias que trasciende la política), la red vial rural (el productor agropecuario quiere caminos — y la Provincia puede financiar parte de ese mantenimiento), y la formación universitaria local (el CUA como modelo a escalar desde la Provincia).</p>
+    <p><strong>Cuidado:</strong> La visita debe construirse sin necesidad del intendente Bouvier activo. El argumento provincial puede ir directamente al productor agropecuario, al trabajador del automovilismo y al joven universitario. Esos tres públicos no tienen lealtad forzosa al color del municipio.</p>
+  </div>
+</div>
+
+</body>
+</html>
