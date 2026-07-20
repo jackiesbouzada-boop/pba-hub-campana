@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mercedes — Narrativa Estratégica 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Georgia,serif;background:#f5f0e8;color:#1a1a2e;font-size:14px;padding:0;max-width:860px;margin:0 auto}
+
+.cover{background:linear-gradient(160deg,#1e1400 0%,#3d2b00 45%,#7b5e00 100%);color:#fff;padding:52px 48px 44px;position:relative;overflow:hidden;min-height:280px}
+.cover::before{content:'';position:absolute;right:-80px;bottom:-80px;width:360px;height:360px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cover::after{content:'MERCEDES';position:absolute;right:40px;top:50%;transform:translateY(-50%);font-size:7rem;font-weight:900;opacity:.04;letter-spacing:-2px;pointer-events:none}
+.cv-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:10px}
+.cv-title{font-size:2.8rem;font-weight:900;letter-spacing:-.02em;line-height:.95;margin-bottom:8px}
+.cv-sub{font-size:1rem;opacity:.7;margin-bottom:20px;font-style:italic}
+.cv-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.cv-tag{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.3px}
+.cv-meta{display:flex;gap:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.15)}
+.cv-stat{display:flex;flex-direction:column}
+.cv-stat-v{font-size:1.2rem;font-weight:800;color:#f5c842}
+.cv-stat-l{font-size:.65rem;opacity:.65;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+
+.body{padding:32px 40px}
+
+.section{margin-bottom:32px}
+.section-title{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:#7b5e00;border-bottom:2px solid #e2d8c0;padding-bottom:8px;margin-bottom:18px}
+.section-title span{color:#3d2b00}
+
+.lead{font-size:1.08rem;line-height:1.75;color:#1a1a2e;margin-bottom:16px;font-weight:400}
+p{font-size:.88rem;line-height:1.75;color:#374151;margin-bottom:14px}
+p:last-child{margin-bottom:0}
+strong{color:#1a1a2e;font-weight:700}
+
+.pull-quote{border-left:4px solid #7b5e00;padding:16px 22px;background:#fdfaf2;border-radius:0 10px 10px 0;margin:18px 0;font-size:.92rem;line-height:1.7;color:#3d2b00;font-style:italic}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:16px 0}
+.col-box{background:#fff;border:1.5px solid #e2d8c0;border-radius:10px;padding:18px 20px}
+.col-box h4{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#7b5e00;margin-bottom:10px}
+.col-box p{font-size:.82rem;color:#374151;line-height:1.6;margin-bottom:0}
+
+.highlight-box{background:linear-gradient(135deg,#fdfaf2,#fff9e8);border:2px solid #c49a16;border-radius:10px;padding:20px 24px;margin:18px 0}
+.highlight-box .hb-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#92400e;margin-bottom:8px}
+.highlight-box p{font-size:.85rem;line-height:1.7;color:#1a1a2e;margin-bottom:0}
+
+.alert-strip{background:#fef9ef;border:1.5px solid #f5d77a;border-radius:8px;padding:14px 18px;margin:16px 0}
+.alert-strip .as-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#92400e;margin-bottom:6px}
+.alert-strip p{font-size:.82rem;color:#374151;margin-bottom:0;line-height:1.6}
+
+.data-row{display:flex;gap:0;border:1.5px solid #e2d8c0;border-radius:10px;overflow:hidden;margin:14px 0}
+.data-cell{flex:1;padding:14px 16px;text-align:center;border-right:1px solid #e2d8c0}
+.data-cell:last-child{border-right:none}
+.dc-v{font-size:1.3rem;font-weight:800;color:#3d2b00;display:block}
+.dc-l{font-size:.68rem;color:#6b5c3e;margin-top:3px;line-height:1.3}
+.dc-up{color:#1d4ed8}
+.dc-lla{color:#7c3aed}
+.dc-warn{color:#d97706}
+
+.ejes-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.eje{background:#fff;border:1.5px solid #e2d8c0;border-radius:10px;padding:16px 18px}
+.eje h4{font-size:.76rem;font-weight:800;color:#3d2b00;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.eje p{font-size:.8rem;color:#374151;line-height:1.6;margin-bottom:0}
+
+.cierre{background:linear-gradient(135deg,#1e1400,#3d2b00);border-radius:12px;padding:28px 32px;color:#fff;margin-top:28px}
+.cierre h3{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#f5c842;margin-bottom:14px}
+.cierre p{font-size:.88rem;color:rgba(255,255,255,.88);line-height:1.75;margin-bottom:12px}
+.cierre p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0}
+  .body{padding:20px 28px}
+  .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;min-height:220px}
+  .cierre{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .section{break-inside:avoid}
+  @page{size:A4 portrait;margin:8mm 10mm}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cv-label">🌾 Interior Pampeano · 1ª Sección Electoral</div>
+  <div class="cv-title">Mercedes</div>
+  <div class="cv-sub">Narrativa estratégica · Campaña 2026</div>
+  <div class="cv-tags">
+    <span class="cv-tag">✅ Aliado UxP — Juan Ustarroz</span>
+    <span class="cv-tag">⚠️ LLA 50% en Nacional 2025</span>
+    <span class="cv-tag">Capital Nacional Salame Quintero</span>
+    <span class="cv-tag">Tomás Jofre</span>
+    <span class="cv-tag">Ley 1000 Días — Origen Mercedes</span>
+    <span class="cv-tag">Cabecera Judicial</span>
+  </div>
+  <div class="cv-meta">
+    <div class="cv-stat"><span class="cv-stat-v">59,885</span><span class="cv-stat-l">Padrón 2025</span></div>
+    <div class="cv-stat"><span class="cv-stat-v">72,980</span><span class="cv-stat-l">Habitantes</span></div>
+    <div class="cv-stat"><span class="cv-stat-v">52.8%</span><span class="cv-stat-l">PJ 2023</span></div>
+    <div class="cv-stat"><span class="cv-stat-v">50.0%</span><span class="cv-stat-l">LLA Nac 2025</span></div>
+  </div>
+</div>
+
+<div class="body">
+
+<!-- TERRITORIO -->
+<div class="section">
+  <div class="section-title"><span>01</span> · El territorio y su carácter</div>
+  <p class="lead">Mercedes no es un municipio típico del interior bonaerense. Es, al mismo tiempo, una capital judicial, un destino gastronómico de proyección nacional, un polo tecnológico emergente y el partido que exportó un programa social a la Ley de la Nación. Esa combinación de funciones le da una identidad mucho más compleja que lo que su tamaño sugeriría.</p>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>🍖 Tomás Jofre — La mesa que pone en el mapa a Mercedes</h4>
+      <p>La localidad de Tomás Jofre es uno de los destinos gastronómicos más visitados de la provincia. Sus restaurantes de pasta artesanal e identidad italiana atraen viajeros desde el área metropolitana todos los fines de semana. El partido es además la Capital Nacional del Salame Quintero — un producto con identidad geográfica única. La gastronomía no es anécdota: es la primera imagen que la mayoría de los bonaerenses tiene de Mercedes.</p>
+    </div>
+    <div class="col-box">
+      <h4>⚖️ El peso judicial — Más institución que tamaño</h4>
+      <p>Mercedes es cabecera del Departamento Judicial homónimo, uno de los más importantes del interior provincial. Juzgados, fiscalías, defensorías y registros provinciales concentran empleo calificado y le dan al partido una gravitación institucional que excede ampliamente su demografía. Los operadores del sistema judicial de la zona — abogados, jueces, cuerpo forense — son actores de influencia real en la 1ª Sección.</p>
+    </div>
+  </div>
+  <p>Sobre esa base se construyó el Polo Tecnológico Mercedes: laboratorios de software y apoyo a PyMEs agroindustriales conviviendo bajo un mismo techo. Es una apuesta a la tecnificación del agro pampeano desde adentro — la idea de que Mercedes, ciudad de campo y de justicia, puede también ser ciudad de innovación.</p>
+</div>
+
+<!-- GESTIÓN USTARROZ -->
+<div class="section">
+  <div class="section-title"><span>02</span> · La gestión — El municipio que exportó una ley</div>
+  <p class="lead">Juan Ustarroz lleva años conduciendo Mercedes. Su gestión tiene marcas propias. Pero hay una en particular que ningún otro municipio del interior bonaerense puede replicar: el programa "Primeros 1000 Días" que Mercedes lanzó en 2017 se convirtió en el modelo directo de la Ley Nacional 27.611.</p>
+  <div class="highlight-box">
+    <div class="hb-label">🏆 El logro más singular de la gestión</div>
+    <p>El programa de apoyo a la mujer embarazada y al niño en sus primeros dos años de vida fue lanzado en Mercedes en mayo de 2017. UNICEF lo reconoció. Los legisladores que impulsaron la Ley 27.611 — conocida como "Ley de los 1000 Días" — lo citan como la inspiración directa del proyecto. Un municipio de 73.000 habitantes del interior bonaerense diseñó una política que luego fue Ley de la Nación. Eso no le pasó a casi ninguna ciudad de ese tamaño en Argentina.</p>
+  </div>
+  <p>El resto de la gestión también tiene coherencia: el Banco de Tierras municipal (compra macizos, los subdivide y los sortea entre vecinos sin propiedad a cuotas directas al municipio), el programa ProEba (aulas de apoyo en comedores y clubes de barrio), la red de CAPS articulada con el Hospital Dubarry, y la recuperación del Parque Independencia sobre el Río Luján. Son programas sociales de impacto directo, sin intermediarios, con el municipio como ejecutor real.</p>
+  <div class="pull-quote">"El programa de Mercedes fue el semillero. Cuando empezamos a escribir la ley, el modelo de los 1000 días de Ustarroz era el que teníamos sobre la mesa."</div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="section">
+  <div class="section-title"><span>03</span> · El mapa electoral — Tres momentos distintos</div>
+  <p class="lead">La historia electoral de Mercedes en 2023–2025 tiene tres capítulos muy diferentes. El primero habla de una base peronista sólida. El segundo muestra resistencia. El tercero enciende una luz amarilla.</p>
+  <div class="data-row">
+    <div class="data-cell">
+      <span class="dc-v dc-up">52.8%</span>
+      <span class="dc-l">PJ — Intendente 2023<br>Mayoría contundente</span>
+    </div>
+    <div class="data-cell">
+      <span class="dc-v dc-up">39.8%</span>
+      <span class="dc-l">PJ — Provincial 2025<br>Sigue primero</span>
+    </div>
+    <div class="data-cell">
+      <span class="dc-v dc-lla">50.0%</span>
+      <span class="dc-l">LLA — Nacional 2025<br>La mitad del padrón</span>
+    </div>
+    <div class="data-cell">
+      <span class="dc-v dc-warn">+15.4 pts</span>
+      <span class="dc-l">LLA prov→nac<br>El split más visible</span>
+    </div>
+  </div>
+  <p>En 2023 Ustarroz obtuvo 52.8% en la intendencia — una victoria aplastante que refleja una base peronista estable y un candidato bien arraigado. En la provincial de 2025, el PJ cayó al 39.8% pero todavía gana: LLA quedó en 34.6%. Esa diferencia de 5 puntos es el colchón provincial que el peronismo aún retiene.</p>
+  <div class="alert-strip">
+    <div class="as-label">⚠️ El salto nacional: de 21% a 50% en dos elecciones</div>
+    <p>LLA empezó en Mercedes con 21.3% en 2023. En la provincial 2025 subió a 34.6%. En la nacional 2025 llegó a 50.0%. El salto de 15 puntos entre la provincial y la nacional de un mismo año es el dato más relevante: el electorado blando que votó PJ o se abstuvo en la provincial se alineó con LLA en la categoría de mayor exposición al framing nacional. La base dura peronista aguanta; el margen flotante viaja.</p>
+  </div>
+  <p>El diagnóstico no es de crisis municipal — Ustarroz tiene terreno propio — sino de vulnerabilidad en las categorías que definen el mapa legislativo. Mercedes puede ser un partido aliado a nivel local y producir un resultado adverso a nivel provincial en las legislativas.</p>
+</div>
+
+<!-- EJES ESTRATÉGICOS -->
+<div class="section">
+  <div class="section-title"><span>04</span> · Ejes estratégicos — Por dónde entrar</div>
+  <div class="ejes-grid">
+    <div class="eje">
+      <h4>🍖 Gastronomía y turismo interior</h4>
+      <p>Tomás Jofre es la puerta de entrada con menor fricción política. Una recorrida gastronómica tiene cobertura positiva, conecta con productores locales y refuerza la narrativa de apoyo a las economías del interior. El salame quintero y la pasta artesanal son marcas genuinas, no construcciones.</p>
+    </div>
+    <div class="eje">
+      <h4>👶 Primeros 1000 Días — El argumento de la Ley</h4>
+      <p>El origen de la Ley 27.611 está en Mercedes. Una visita al programa o a los equipos que lo diseñaron conecta lo local con lo nacional de manera directa: es la demostración más concreta de que las políticas del interior bonaerense tienen escala para incidir en la agenda federal.</p>
+    </div>
+    <div class="eje">
+      <h4>💻 Polo Tecnológico — Economía del conocimiento</h4>
+      <p>El Polo Tec es la apuesta a la agenda de modernización productiva en una ciudad de campo. Conecta con PyMEs, con el sector agro-tecnológico y con una narrativa de futuro productivo que trasciende la discusión ideológica. Es un activo de gestión con proyección económica real.</p>
+    </div>
+    <div class="eje">
+      <h4>⚖️ Polo Judicial — Canal institucional</h4>
+      <p>La cabecera departamental judicial concentra actores de alta influencia: abogados, magistrados, colegios profesionales. El canal institucional más sólido de la zona — interlocutores con llegada real al entramado político y profesional de los partidos de la 1ª Sección occidental.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CIERRE -->
+<div class="cierre">
+  <h3>📌 La síntesis — Por qué Mercedes importa</h3>
+  <p>Mercedes no es un municipio para sumar por padrón. Es un municipio para sumar porque tiene una historia que contar: el partido que diseñó el modelo de los "Primeros 1000 Días" y lo vio convertirse en Ley Nacional. Eso no lo tiene nadie más en el interior bonaerense.</p>
+  <p>Juan Ustarroz es un aliado con raíces propias. Su gestión tiene contenido real y programas que se pueden mostrar — no solo votar. En un contexto donde LLA ya obtiene la mitad del voto en la categoría nacional, el argumento más efectivo no es la ideología sino la demostración: qué hace el Estado cuando gestiona bien, qué construyó Mercedes, qué escala tuvo.</p>
+  <p><strong>Tomás Jofre es el punto de partida.</strong> El Polo Tecnológico es el punto de llegada a la economía local. Los "Primeros 1000 Días" son el argumento de por qué la política local importa. Mercedes tiene los tres.</p>
+</div>
+
+</div>
+</body>
+</html>

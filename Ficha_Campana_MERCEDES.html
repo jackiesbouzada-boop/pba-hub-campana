@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mercedes — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#3d2b00;--primary-dark:#1e1400;--accent:#7b5e00;--accent-light:#c49a16;--bg:#f5f0e8;--surface:#ffffff;--border:#e2d8c0;--text:#1a1a2e;--muted:#6b5c3e;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+
+.hero{background:linear-gradient(135deg,#1e1400 0%,#3d2b00 55%,#7b5e00 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2.2rem;font-weight:900;letter-spacing:-.01em;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:14px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:4px}
+.badge-warn{display:inline-block;background:rgba(234,179,8,.25);color:#fde68a;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(234,179,8,.4);letter-spacing:.5px;margin-left:6px;margin-bottom:4px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:10px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#f5c842}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#3d2b00,#5c4200);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.6;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#3d2b00;border-color:#3d2b00;color:#fff}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#f5c842}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--accent);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:var(--accent);display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#3d2b00,#7b5e00);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800;color:var(--text)}
+.int-info .int-meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .int-desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#78350f;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-warn{background:#fef9ef;border-color:#f5d77a}
+.arc-alert{background:#fff8e8;border-color:#f5c842}
+.arc-neutral{background:#f8fafc;border-color:var(--border)}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f5f0e8}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.arc-pj{color:#1d4ed8}
+.arc-lla{color:#7c3aed}
+.arc-jxc{color:#d97706}
+.arc-fit{color:#dc2626}
+.arc-grey{color:#374151}
+.arc-lla-win{color:#7c3aed;background:#f3e8ff;padding:1px 5px;border-radius:4px}
+
+.alert-box{border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-red{background:#fef2f2;border:1.5px solid #fecaca}
+.alert-red .a-ttl{color:#b91c1c}
+.alert-warn{background:#fef9ef;border:1.5px solid #fde68a}
+.alert-warn .a-ttl{color:#92400e}
+.alert-info{background:#eff6ff;border:1.5px solid #bfdbfe}
+.alert-info .a-ttl{color:#1e40af}
+.a-ttl{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.a-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:6px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#3d2b00,#7b5e00);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px;background:#fff}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-body p:last-child{margin-bottom:0}
+.pal-access{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-gest{background:#dcfce7;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.acc-cult{background:#ede9fe;color:#6b21a8}
+
+.prog-list{display:flex;flex-direction:column;gap:8px}
+.prog-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;gap:12px;align-items:flex-start}
+.prog-ico{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.prog-body h5{font-size:.78rem;font-weight:800;color:var(--primary);margin-bottom:3px}
+.prog-body p{font-size:.75rem;color:#374151;line-height:1.5}
+.prog-highlight{border-color:#7b5e00;background:#fdfaf2}
+
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafaf5}
+.vis-num{background:var(--accent);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800;color:var(--text)}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.vis-tag{display:inline-block;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.tag-cult{background:#ede9fe;color:#6b21a8}
+.tag-obra{background:#fef3c7;color:#92400e}
+.tag-edu{background:#dbeafe;color:#1e40af}
+.tag-gast{background:#dcfce7;color:#15803d}
+.tag-ind{background:#fef9ef;color:#7b5e00}
+
+.sint{background:linear-gradient(135deg,#1e1400,#3d2b00);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#f5c842;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}
+  .hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="h-cluster">🌾 INTERIOR PAMPEANO &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">MERCEDES</div>
+  <div class="h-sub">Partido de Mercedes · Buenos Aires · Capital Nacional del Salame Quintero · Río Luján</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-warn">⚠️ LLA 50% EN NACIONAL 2025</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">59,885</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">72,980</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">1,049 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">52.8%</span><span class="h-stat-l">PJ 2023 Intendente</span></div>
+    <div class="h-stat"><span class="h-stat-v">39.8%</span><span class="h-stat-l">PJ 2025 Provincial</span></div>
+    <div class="h-stat"><span class="h-stat-v">50.0%</span><span class="h-stat-l">LLA 2025 Nacional</span></div>
+  </div>
+</div>
+
+<!-- IDENTIDAD -->
+<div class="sec">
+  <div class="sec-hdr">🌾 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Tomás Jofre · Capital Gastronómica de la Pampa</h4>
+        <p>La localidad de Tomás Jofre, dentro del partido de Mercedes, es uno de los destinos gastronómicos de mayor tradición en la provincia de Buenos Aires. Sus restaurantes de pasta y cocina italiana atraen visitantes desde toda la región metropolitana. El partido ostenta el título de <strong>Capital Nacional del Salame Quintero</strong> — un producto con identidad geográfica propia que convierte a Mercedes en referente de turismo culinario y cultura gastronómica. La combinación de gastronomía y campo pampeano crea una marca territorial única y positiva.</p>
+      </div>
+      <div class="blk">
+        <h4>Polo Judicial · Cabecera de Departamento</h4>
+        <p>Mercedes es <strong>cabecera del Departamento Judicial de Mercedes</strong>, uno de los centros institucionales de mayor peso de la provincia. Esto le da al partido una concentración inusual de organismos del Estado provincial — juzgados, fiscalías, defensorías, registros — que traccionan empleo público calificado y le dan a la ciudad un perfil institucional que excede ampliamente su tamaño demográfico. La ciudad tiene gravitación institucional sobre una franja amplia del interior bonaerense occidental.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">Ley 27.611</span>
+        <span class="l">Programa "Primeros 1000 Días" de Mercedes → inspiró la Ley Nacional (UNICEF)</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">Polo Tec.</span>
+        <span class="l">Centro de innovación: software + PyMEs agroindustriales en el interior</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTENDENTE -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Juan Ustarroz</h3>
+        <div class="int-meta">Unión por la Patria &nbsp;·&nbsp; <span class="badge-pol badge-al-pol">ALIADO</span></div>
+        <div class="int-desc">Intendente con larga trayectoria en Mercedes — una de las gestiones peronistas más consolidadas del interior bonaerense occidental. Ganó en 2023 con 52.8%, una mayoría sólida en un partido que históricamente responde al peronismo. Su gestión es conocida por programas de innovación social de impacto concreto: el programa "Primeros 1000 Días" de Mercedes (lanzado en 2017) fue reconocido por UNICEF y es señalado como la inspiración directa de la Ley Nacional 27.611. Desarrollo del Polo Tecnológico, banco de tierras y la red de CAPS son los otros ejes de una gestión con perfil social y productivo.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">👶 Primeros 1000 Días — Semillero de Ley Nacional</div>
+        <div class="gest-txt">Apoyo nutricional, sanitario y social a la mujer embarazada hasta los 2 años de edad del niño. Lanzado en 2017 bajo la gestión Ustarroz, UNICEF lo reconoció y es citado como la inspiración directa para la Ley Nacional 27.611 ("Ley de los 1000 Días"). Un municipio que exportó política pública al nivel nacional.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">💻 Polo Tecnológico Mercedes</div>
+        <div class="gest-txt">Centro de innovación con laboratorios de software y áreas de apoyo a PyMEs agroindustriales. Promueve la tecnificación del sector productivo local — conecta el agro pampeano con herramientas digitales y servicios tecnológicos. Único en su tipo en ese segmento del interior bonaerense.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🏠 Banco de Tierras Municipal</div>
+        <div class="gest-txt">Compra de macizos, subdivisión, gestión de servicios (agua y luz) y sorteo en registro público para vecinos sin propiedad. El adjudicatario paga cuotas accesibles directamente a la municipalidad. Política de acceso al suelo urbano sin intermediarios privados.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">📚 ProEba — Educación Barrial</div>
+        <div class="gest-txt">Programa para reducir la deserción y repitencia escolar. El municipio instala sedes de apoyo escolar en comedores, clubes y sociedades de fomento de barrios periféricos. Docentes pagados por el Estado local dan clases de apoyo en el contraturno escolar.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025 — Alerta amarilla en la nacional</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-neutral">
+        <div class="arc-year">2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP 🔵</span><span class="arc-val arc-pj">52.8% (22,616)</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC</span><span class="arc-val arc-jxc">25.9% (11,089)</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">21.3% (9,130)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">59,154</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP 🔵</span><span class="arc-val arc-pj">39.8% (14,784)</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">34.6% (12,866)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">2.6% (976)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">59,885</span></div>
+      </div>
+      <div class="arc-card arc-alert">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">LLA ⚠️</span><span class="arc-val arc-lla-win">50.0% (19,682)</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">35.3% (13,878)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">3.7% (1,465)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">58,761</span></div>
+      </div>
+    </div>
+    <div class="alert-box alert-warn">
+      <div class="a-ttl">⚠️ El split provincial–nacional: +15.4 puntos LLA</div>
+      <div class="a-body">Entre la elección provincial y la nacional de 2025, LLA saltó de 34.6% a 50.0% en Mercedes — un salto de 15.4 puntos. El PJ mantiene el terreno provincial (aún gana), pero la mitad del padrón votó a LLA en la categoría nacional. El fenómeno sugiere un electorado que separa el voto local (donde la gestión Ustarroz tiene valor) del voto nacional (donde la orientación de época pesa más). La base dura peronista resiste; el margen blando migra en las categorías de mayor exposición al framing nacional.</div>
+    </div>
+    <div class="alert-box alert-info">
+      <div class="a-ttl">📊 Trayectoria: PJ sólido en 2023, comprimido en 2025</div>
+      <div class="a-body">Ustarroz ganó la intendencia con 52.8% en 2023 — una de las victorias más contundentes del interior pampeano ese año. En 2025 provincial el PJ mantiene la ventaja (39.8% vs 34.6%), pero la caída de 13 puntos desde el 52.8% muestra que el umbral de la base dura en este partido es cercano al 35–40%. El desafío no es perder la gestión municipal — Ustarroz está bien posicionado — sino que el territorio vote LLA de manera masiva en las categorías que definen el mapa legislativo provincial.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COLOR LOCAL -->
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Economía &amp; Cultura</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🍖</div>
+        <div class="cl-tipo">Gastronomía / Turismo</div>
+        <div class="cl-nm">Tomás Jofre · Salame Quintero</div>
+        <div class="cl-desc">Tomás Jofre es uno de los destinos gastronómicos más visitados del interior bonaerense — pasta artesanal e identidad italiana. El partido es Capital Nacional del Salame Quintero. Turismo gastronómico como marca territorial positiva y motor de la economía local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⚖️</div>
+        <div class="cl-tipo">Institucional</div>
+        <div class="cl-nm">Polo Judicial — Cabecera Departamental</div>
+        <div class="cl-desc">Mercedes es sede del Departamento Judicial homónimo — juzgados, fiscalías y registros provinciales. Polo de empleo público calificado y referencia institucional para los partidos del interior bonaerense occidental.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">💻</div>
+        <div class="cl-tipo">Innovación</div>
+        <div class="cl-nm">Polo Tecnológico Mercedes</div>
+        <div class="cl-desc">Laboratorios de software y apoyo a PyMEs agroindustriales en un mismo centro. Una apuesta a la tecnificación del agro pampeano desde adentro — rara en ciudades de este tamaño en el interior bonaerense.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">👶</div>
+        <div class="cl-tipo">Política Social</div>
+        <div class="cl-nm">Primeros 1000 Días — Modelo Nacional</div>
+        <div class="cl-desc">El programa municipal (2017) fue reconocido por UNICEF y citado como semillero directo de la Ley Nacional 27.611. Mercedes es el municipio del interior que más claramente ha exportado un modelo de política social al nivel federal.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌾</div>
+        <div class="cl-tipo">Agropecuario</div>
+        <div class="cl-nm">Pampa Húmeda · Agro mixto</div>
+        <div class="cl-desc">La base productiva del partido combina ganadería, soja y producción lechera en el corredor Luján-Mercedes. El campo es el empleador real: el Polo Tecnológico y las cooperativas de servicios se construyen sobre esa base agraria.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏞️</div>
+        <div class="cl-tipo">Espacio Público</div>
+        <div class="cl-nm">Parque Independencia · Río Luján</div>
+        <div class="cl-desc">El Parque Municipal Independencia, sobre el Río Luján, fue recuperado y transformado en complejo deportivo y recreativo. Es el espacio verde urbano más significativo del partido y referencia de calidad de vida para la población urbana.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMAS -->
+<div class="sec">
+  <div class="sec-hdr">📋 Programas Municipales Destacados</div>
+  <div class="sec-body">
+    <div class="prog-list">
+      <div class="prog-item prog-highlight">
+        <div class="prog-ico">👶</div>
+        <div class="prog-body">
+          <h5>Primeros 1000 Días — El municipio que exportó una ley nacional</h5>
+          <p>Apoyo nutricional, sanitario y social a la mujer embarazada hasta los 2 años del niño. Lanzado en mayo de 2017 bajo la gestión Ustarroz, el programa fue reconocido por UNICEF y es citado como la inspiración directa para la Ley Nacional 27.611 ("Ley de los 1000 Días"). Es el ejemplo más claro de Mercedes como laboratorio de política pública que impacta a escala nacional.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">💻</div>
+        <div class="prog-body">
+          <h5>Polo Tecnológico Mercedes</h5>
+          <p>Centro de innovación con laboratorios de software y áreas de apoyo a PyMEs agroindustriales. Promueve la tecnificación del sector productivo local combinando capacidades digitales con las necesidades concretas del agro pampeano. Iniciativa inédita en una ciudad de ese tamaño en el interior bonaerense occidental.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🏠</div>
+        <div class="prog-body">
+          <h5>Banco de Tierras Municipal</h5>
+          <p>El municipio compra macizos de tierra, los subdivide, gestiona acceso a agua y luz, y sortea lotes en un registro público de vecinos sin propiedad. El adjudicatario paga en cuotas accesibles directamente al municipio. Política de acceso al suelo urbano sin intermediarios — uno de los programas de vivienda más directos del interior bonaerense.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">📚</div>
+        <div class="prog-body">
+          <h5>ProEba — Programa de Educación Barrial</h5>
+          <p>Reducción de la deserción y repitencia escolar mediante sedes de apoyo en comedores, clubes y sociedades de fomento de los barrios periféricos. Docentes capacitados y pagados por el Estado local dan clases de apoyo en el contraturno. Lleva la escuela donde el alumno está, en lugar de esperar que el alumno vaya a la escuela.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🏥</div>
+        <div class="prog-body">
+          <h5>Red CAPS · Hospital Dubarry</h5>
+          <p>Desarrollo de la red de Centros de Atención Primaria de Salud articulados con el Hospital Dubarry — de órbita provincial. El municipio actúa como bisagra entre la atención primaria local y el sistema de salud de mayor complejidad. Fortalecimiento del primer nivel como puerta de entrada al sistema.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🏞️</div>
+        <div class="prog-body">
+          <h5>Recupero del Parque Municipal Independencia</h5>
+          <p>Transformación del Parque Municipal Independencia (sobre el Río Luján) en un complejo deportivo y recreativo de acceso público. Es la obra de infraestructura urbana más visible de la gestión y la principal apuesta de espacio público para la calidad de vida de los vecinos del partido.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PALANCAS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Palancas de Impacto</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🍖 Tomás Jofre · Gastronomía</div>
+        </div>
+        <div class="pal-body">
+          <p>Uno de los destinos gastronómicos más conocidos de la provincia. Una visita a Tomás Jofre tiene visibilidad mediática positiva, conecta con el turismo interior y refuerza la narrativa de apoyo a las economías locales y la identidad cultural bonaerense.</p>
+          <p><span class="pal-access acc-cult">Gastronomía / Turismo</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">⚖️ Polo Judicial</div>
+        </div>
+        <div class="pal-body">
+          <p>La cabecera departamental judicial es el canal institucional más directo hacia los operadores del sistema de justicia de la zona: jueces, fiscales, defensores, colegios de abogados. Interlocutores de alta capacidad de influencia en la 1ª Sección.</p>
+          <p><span class="pal-access acc-prot">Institucional</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">💻 Polo Tecnológico</div>
+        </div>
+        <div class="pal-body">
+          <p>El sector tecnológico y las PyMEs agroindustriales son la base productiva emergente del partido. Canal de llegada con el perfil innovador de la economía local — empleadores privados y empresas jóvenes con interés en política de desarrollo productivo.</p>
+          <p><span class="pal-access acc-priv">Ingreso PRIVADO</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS -->
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Sugeridas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Tomás Jofre — Capital Gastronómica<span class="vis-tag tag-gast">GASTRONOMÍA</span></div>
+          <div class="vis-desc">Uno de los destinos gastronómicos más visitados del interior bonaerense. Una recorrida por sus restaurantes tiene alta visibilidad positiva y conecta con el turismo culinario que atrae visitantes de toda la región metropolitana.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Polo Tecnológico Mercedes<span class="vis-tag tag-ind">INNOVACIÓN</span></div>
+          <div class="vis-desc">Centro de innovación con laboratorios de software y apoyo a PyMEs agroindustriales. Mensaje de apuesta a la economía del conocimiento y la tecnificación del agro desde el interior bonaerense.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Parque Municipal Independencia · Río Luján<span class="vis-tag tag-obra">INFRAESTRUCTURA</span></div>
+          <div class="vis-desc">El espacio público recuperado sobre el Río Luján — la obra de infraestructura urbana más visible de la gestión. Mensaje de inversión en calidad de vida y espacio público para el vecino del interior.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Sede del "Primeros 1000 Días" o CAPS referente<span class="vis-tag tag-edu">POLÍTICA SOCIAL</span></div>
+          <div class="vis-desc">El programa que inspiró la Ley Nacional 27.611. Una visita al punto de origen del programa vincula lo concreto con la política nacional de primera infancia y refuerza la narrativa de que Mercedes exporta modelos al país.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS -->
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>Mercedes es un partido peronista sólido en lo local pero con señal de alerta en la nacional.</strong> Juan Ustarroz ganó con 52.8% en 2023 — una mayoría contundente. En 2025 provincial el PJ sigue primero (39.8% vs 34.6%), pero en la nacional LLA llegó al 50.0%: la mitad del padrón. El electorado blando se mueve con el framing nacional sin que eso afecte (todavía) el voto local.</p>
+  <p>El activo estratégico más potente de Mercedes es único en la provincia: es el municipio que <strong>exportó un programa social al nivel nacional</strong>. El "Primeros 1000 Días" de Ustarroz (2017) fue reconocido por UNICEF y citado como inspiración directa de la Ley 27.611. Ningún otro partido del interior bonaerense tiene una política local que haya tenido ese impacto legislativo. Es el mejor ejemplo de gestión con resultados concretos y escalables.</p>
+  <p><strong>El eje de llegada más efectivo es la gastronomía combinada con gestión:</strong> Tomás Jofre ofrece visibilidad positiva y conecta con el turismo interior. El Polo Judicial y el Polo Tecnológico cubren el canal institucional y el sector productivo emergente. En un territorio donde LLA ya es mayoría en la nacional, la narrativa de gestión concreta y política social de impacto comprobado es la herramienta más sólida disponible.</p>
+</div>
+
+</body>
+</html>
