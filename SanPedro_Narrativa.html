@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>San Pedro — Narrativa Estratégica 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Georgia,serif;background:#f0f5f1;color:#1a2e1e;font-size:14px;padding:0;max-width:860px;margin:0 auto}
+
+.cover{background:linear-gradient(160deg,#0d2b1a 0%,#1b4a30 45%,#1d6b3e 100%);color:#fff;padding:52px 48px 44px;position:relative;overflow:hidden;min-height:280px}
+.cover::before{content:'';position:absolute;right:-80px;bottom:-80px;width:360px;height:360px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cover::after{content:'SAN PEDRO';position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:5.5rem;font-weight:900;opacity:.04;letter-spacing:-2px;pointer-events:none}
+.cv-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;opacity:.6;margin-bottom:10px}
+.cv-title{font-size:2.8rem;font-weight:900;letter-spacing:-.02em;line-height:.95;margin-bottom:8px}
+.cv-sub{font-size:1rem;opacity:.7;margin-bottom:20px;font-style:italic}
+.cv-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.cv-tag{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.3px}
+.cv-meta{display:flex;gap:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.15)}
+.cv-stat{display:flex;flex-direction:column}
+.cv-stat-v{font-size:1.2rem;font-weight:800;color:#86efac}
+.cv-stat-l{font-size:.65rem;opacity:.65;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+
+.body{padding:32px 40px}
+
+.section{margin-bottom:32px}
+.section-title{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:#1d6b3e;border-bottom:2px solid #c8ddd0;padding-bottom:8px;margin-bottom:18px}
+.section-title span{color:#1b4a30}
+
+.lead{font-size:1.08rem;line-height:1.75;color:#1a2e1e;margin-bottom:16px;font-weight:400}
+p{font-size:.88rem;line-height:1.75;color:#374151;margin-bottom:14px}
+p:last-child{margin-bottom:0}
+strong{color:#1a2e1e;font-weight:700}
+
+.pull-quote{border-left:4px solid #1d6b3e;padding:16px 22px;background:#f0fbf4;border-radius:0 10px 10px 0;margin:18px 0;font-size:.92rem;line-height:1.7;color:#1b4a30;font-style:italic}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:16px 0}
+.col-box{background:#fff;border:1.5px solid #c8ddd0;border-radius:10px;padding:18px 20px}
+.col-box h4{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#1d6b3e;margin-bottom:10px}
+.col-box p{font-size:.82rem;color:#374151;line-height:1.6;margin-bottom:0}
+
+.highlight-box{background:linear-gradient(135deg,#fef2f2,#fff5f5);border:2px solid #fca5a5;border-radius:10px;padding:20px 24px;margin:18px 0}
+.highlight-box .hb-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#b91c1c;margin-bottom:8px}
+.highlight-box p{font-size:.85rem;line-height:1.7;color:#1a1a2e;margin-bottom:0}
+
+.alert-strip{background:#fef9ef;border:1.5px solid #f5d77a;border-radius:8px;padding:14px 18px;margin:16px 0}
+.alert-strip .as-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#92400e;margin-bottom:6px}
+.alert-strip p{font-size:.82rem;color:#374151;margin-bottom:0;line-height:1.6}
+
+.data-row{display:flex;gap:0;border:1.5px solid #c8ddd0;border-radius:10px;overflow:hidden;margin:14px 0}
+.data-cell{flex:1;padding:14px 16px;text-align:center;border-right:1px solid #c8ddd0}
+.data-cell:last-child{border-right:none}
+.dc-v{font-size:1.3rem;font-weight:800;color:#1b4a30;display:block}
+.dc-l{font-size:.68rem;color:#4a6b56;margin-top:3px;line-height:1.3}
+.dc-up{color:#1d4ed8}
+.dc-lla{color:#7c3aed}
+.dc-warn{color:#d97706}
+.dc-red{color:#b91c1c}
+
+.ejes-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.eje{background:#fff;border:1.5px solid #c8ddd0;border-radius:10px;padding:16px 18px}
+.eje h4{font-size:.76rem;font-weight:800;color:#1b4a30;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.eje p{font-size:.8rem;color:#374151;line-height:1.6;margin-bottom:0}
+
+.cierre{background:linear-gradient(135deg,#0d2b1a,#1b4a30);border-radius:12px;padding:28px 32px;color:#fff;margin-top:28px}
+.cierre h3{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#86efac;margin-bottom:14px}
+.cierre p{font-size:.88rem;color:rgba(255,255,255,.88);line-height:1.75;margin-bottom:12px}
+.cierre p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0}
+  .body{padding:20px 28px}
+  .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;min-height:220px}
+  .cierre{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .section{break-inside:avoid}
+  @page{size:A4 portrait;margin:8mm 10mm}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cv-label">🛤️ Corredor Industrial Norte · 2ª Sección Electoral</div>
+  <div class="cv-title">San Pedro</div>
+  <div class="cv-sub">Narrativa estratégica · Campaña 2026</div>
+  <div class="cv-tags">
+    <span class="cv-tag">✅ Aliado UxP — Cecilio Salazar</span>
+    <span class="cv-tag">🔴 LLA ganó provincial 2025 por 12 pts</span>
+    <span class="cv-tag">Capital de la Fruticultura</span>
+    <span class="cv-tag">Puerto Paraná · Vuelta de Obligado</span>
+    <span class="cv-tag">1er Mandarina a China</span>
+  </div>
+  <div class="cv-meta">
+    <div class="cv-stat"><span class="cv-stat-v">56,032</span><span class="cv-stat-l">Padrón 2025</span></div>
+    <div class="cv-stat"><span class="cv-stat-v">68,613</span><span class="cv-stat-l">Habitantes</span></div>
+    <div class="cv-stat"><span class="cv-stat-v">37.2%</span><span class="cv-stat-l">PJ 2023</span></div>
+    <div class="cv-stat"><span class="cv-stat-v">40.3%</span><span class="cv-stat-l">LLA Prov 2025</span></div>
+  </div>
+</div>
+
+<div class="body">
+
+<!-- TERRITORIO -->
+<div class="section">
+  <div class="section-title"><span>01</span> · El territorio — Fruta, río e historia</div>
+  <p class="lead">San Pedro tiene tres identidades superpuestas que raramente coexisten en un mismo partido: es el mayor productor frutal de la provincia, un destino turístico con barrancas al Paraná, y el sitio de una de las batallas más significativas de la historia argentina del siglo XIX. Esa combinación lo hace singular en el Corredor Norte.</p>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>🍑 La capital de la fruta bonaerense</h4>
+      <p>Duraznos, naranjas, viveros, arándanos, batata — San Pedro es el epicentro de la producción frutal de la provincia. La cosecha es el pulso del partido: miles de trabajadores temporales, cooperativas de empaque, camiones frigoríficos hacia los mercados. San Miguel S.A. abrió la puerta de China para la mandarina argentina desde este partido. El primer embarque de mandarina argentina a China salió de San Pedro en 2019 — un hito exportador que pone al partido en el mapa global de los cítricos.</p>
+    </div>
+    <div class="col-box">
+      <h4>⚓ El puerto y las barrancas</h4>
+      <p>El Puerto de San Pedro sobre el Paraná es la salida logística directa para la fruta y los granos. Las barrancas del río son el paisaje de identidad más reconocible del partido — el escenario del turismo de fin de semana, de las cabañas y los restaurantes con las famosas ensaimadas. Y en esa misma costa está Vuelta de Obligado: el sitio donde en 1845 las fuerzas argentinas resistieron la intervención de las escuadras inglesa y francesa en el Paraná. Historia, gastronomía y logística en el mismo río.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GESTIÓN SALAZAR -->
+<div class="section">
+  <div class="section-title"><span>02</span> · La gestión — Sostener lo que funciona</div>
+  <p class="lead">Cecilio Salazar ganó San Pedro en 2023 con 37.2% en una carrera de cuatro fuerzas reales. La gestión tiene un hilo conductor claro: sostener las dos economías del partido — la productiva (fruta, puerto) y la de servicios (turismo, salud rural) — sin las cuales el tejido social del partido se deteriora.</p>
+  <p>El dragado del puerto no es una obra glamorosa — es la obra que sostiene la exportación. Sin calado para buques de gran porte, la fruta de San Pedro tiene que ir en camión hasta los puertos de la zona, perdiendo competitividad. El mantenimiento de los centros de salud rurales en Gobernador Castro, Santa Lucía y otras delegaciones no genera titular — genera que 6.000 consultas mensuales de trabajadores rurales no colapsen la guardia del Hospital Emilio Ruffa.</p>
+  <div class="pull-quote">La política de San Pedro es la política de lo que no se ve: el dragado que permite exportar, la sala rural que evita el viaje de 50 km, la cooperativa de empaque que mejora el precio al productor.</div>
+  <p>El programa "San Pedro Productivo" agrega la dimensión del fomento: riego asistido, cooperativas de empaque con apoyo municipal, conexión del pequeño productor con los mercados de exportación. Es la diferencia entre que la cosecha rinda para el productor o solo para el intermediario.</p>
+</div>
+
+<!-- ELECTORAL -->
+<div class="section">
+  <div class="section-title"><span>03</span> · El mapa electoral — La señal más preocupante del Corredor</div>
+  <p class="lead">San Pedro es, en términos de desplazamiento electoral, uno de los casos más alarmantes de la provincia. LLA ganó la elección provincial 2025 por 12 puntos — y eso en un partido con intendente aliado y gestión activa.</p>
+  <div class="data-row">
+    <div class="data-cell">
+      <span class="dc-v dc-up">37.2%</span>
+      <span class="dc-l">PJ — Intendente 2023<br>Ganó con cuatro fuerzas</span>
+    </div>
+    <div class="data-cell">
+      <span class="dc-v dc-red">40.3%</span>
+      <span class="dc-l">LLA — Provincial 2025<br>Ganó por 12 puntos</span>
+    </div>
+    <div class="data-cell">
+      <span class="dc-v dc-red">48.2%</span>
+      <span class="dc-l">LLA — Nacional 2025<br>Casi mayoría absoluta</span>
+    </div>
+    <div class="data-cell">
+      <span class="dc-v dc-warn">-9 pts</span>
+      <span class="dc-l">PJ 2023→2025 prov<br>De 37.2% a 28.1%</span>
+    </div>
+  </div>
+  <div class="highlight-box">
+    <div class="hb-label">🔴 El diagnóstico más duro: 12 puntos de diferencia en la provincial</div>
+    <p>El PJ no solo perdió la elección provincial 2025 en San Pedro — la perdió por doce puntos (28.1% vs 40.3%). Es una de las diferencias más abultadas entre PJ y LLA en partidos con intendente peronista en toda la provincia. Además, el PJ perdió casi 10 puntos desde 2023 (de 37.2% a 28.1%) — lo que indica que no solo JxC migró a LLA, sino que una parte del voto que en 2023 fue al PJ también se movió.</p>
+  </div>
+  <div class="alert-strip">
+    <div class="as-label">⚠️ El voto rural: el electorado más difícil de recuperar</div>
+    <p>Los trabajadores rurales — temporales y de planta permanente — son una parte central del padrón de San Pedro. Históricamente son un electorado que valora la gestión concreta y el empleo. En 2025, ese electorado se alineó masivamente con LLA. La pregunta es si eso responde a una expectativa económica (mejoras de precios al productor, tipo de cambio, reducción de cargas) o a una redefinición política más profunda. La respuesta determina si hay posibilidad de recuperación o si el quiebre es estructural.</p>
+  </div>
+</div>
+
+<!-- EJES ESTRATÉGICOS -->
+<div class="section">
+  <div class="section-title"><span>04</span> · Ejes estratégicos — Por dónde construir</div>
+  <div class="ejes-grid">
+    <div class="eje">
+      <h4>🍑 Fruticultura y exportación</h4>
+      <p>El sector frutal es el actor económico más importante del partido. Productores, cooperativas, exportadoras — tienen intereses muy concretos en logística, tipo de cambio, acceso a mercados externos y acuerdos fitosanitarios. El canal de llegada más directo al tejido económico real de San Pedro.</p>
+    </div>
+    <div class="eje">
+      <h4>⚓ Puerto e hidrovía</h4>
+      <p>El Puerto de San Pedro y los sindicatos portuarios son el canal de llegada al trabajo organizado del Corredor Paraná. La hidrovía como política de Estado — soberanía fluvial, dragado, tarifas — es una agenda que conecta San Pedro con una narrativa de largo plazo sobre el desarrollo del norte bonaerense.</p>
+    </div>
+    <div class="eje">
+      <h4>⚔️ Vuelta de Obligado — Historia con resonancia</h4>
+      <p>El sitio histórico más potente del partido: resistencia frente a las potencias extranjeras en el Paraná. Una visita carga de sentido histórico y de soberanía cualquier agenda, y conecta con una narrativa que trasciende San Pedro hacia el noreste bonaerense.</p>
+    </div>
+    <div class="eje">
+      <h4>🏖️ Turismo y calidad de vida</h4>
+      <p>Las barrancas, las ensaimadas, el paseo costanero — son la imagen de San Pedro hacia afuera. Una recorrida en ese entorno tiene visibilidad positiva y conecta con el sector de servicios turísticos (hoteles, restaurantes, productores locales) que es el tercer pilar económico del partido.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CIERRE -->
+<div class="cierre">
+  <h3>📌 La síntesis — Un partido con historia y con señal de alarma</h3>
+  <p>San Pedro tiene todo para ser un distrito fértil: identidad clara, economía diversa, historia relevante, intendente aliado. Y al mismo tiempo es uno de los distritos donde el desplazamiento hacia LLA fue más pronunciado en 2025 — 12 puntos de diferencia en la provincial, casi la mitad del padrón en la nacional.</p>
+  <p>La narrativa que puede funcionar en San Pedro no es ideológica. Es productiva: el dragado que sostiene la exportación de fruta, el acuerdo fitosanitario que abre un mercado, la política de hidrovía que baja el costo logístico al productor. Son argumentos concretos que conectan la gestión provincial con los intereses de un partido cuya economía depende del agro exportador.</p>
+  <p><strong>Vuelta de Obligado es el punto de entrada más poderoso:</strong> soberanía fluvial, historia argentina, resistencia frente a la intervención extranjera. Es la narrativa que al mismo tiempo honra la identidad local y construye una idea de Estado con sentido histórico. En un partido donde el voto independiente y el rural están en disputa, ese tipo de argumento tiene capacidad de resonar donde los argumentos más coyunturales no llegan.</p>
+</div>
+
+</div>
+</body>
+</html>

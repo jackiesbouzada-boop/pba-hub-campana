@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>San Pedro — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#1b4a30;--primary-dark:#0d2b1a;--accent:#1d6b3e;--accent-light:#2d9b5a;--bg:#f0f5f1;--surface:#ffffff;--border:#c8ddd0;--text:#1a2e1e;--muted:#4a6b56;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+
+.hero{background:linear-gradient(135deg,#0d2b1a 0%,#1b4a30 55%,#1d6b3e 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2.2rem;font-weight:900;letter-spacing:-.01em;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:14px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:4px}
+.badge-crit{display:inline-block;background:rgba(220,38,38,.3);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.5);letter-spacing:.5px;margin-left:6px;margin-bottom:4px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:10px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#86efac}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1b4a30,#2d7a4a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.6;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1b4a30;border-color:#1b4a30;color:#fff}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#86efac}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--accent);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:var(--accent);display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1b4a30,#1d6b3e);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800;color:var(--text)}
+.int-info .int-meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .int-desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#15803d;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-danger{background:#fef2f2;border-color:#fca5a5}
+.arc-warn{background:#fef9ef;border-color:#f5d77a}
+.arc-neutral{background:#f8fafc;border-color:var(--border)}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f0f5f1}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.arc-pj{color:#1d4ed8}
+.arc-lla{color:#7c3aed}
+.arc-jxc{color:#d97706}
+.arc-fit{color:#dc2626}
+.arc-vec{color:#065f46}
+.arc-grey{color:#374151}
+.arc-lla-win{color:#7c3aed;background:#f3e8ff;padding:1px 5px;border-radius:4px}
+
+.alert-box{border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-red{background:#fef2f2;border:1.5px solid #fecaca}
+.alert-red .a-ttl{color:#b91c1c}
+.alert-warn{background:#fef9ef;border:1.5px solid #fde68a}
+.alert-warn .a-ttl{color:#92400e}
+.alert-info{background:#eff6ff;border:1.5px solid #bfdbfe}
+.alert-info .a-ttl{color:#1e40af}
+.a-ttl{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.a-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:6px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1b4a30,#1d6b3e);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px;background:#fff}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-body p:last-child{margin-bottom:0}
+.pal-access{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-gest{background:#dcfce7;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.acc-cult{background:#ede9fe;color:#6b21a8}
+
+.prog-list{display:flex;flex-direction:column;gap:8px}
+.prog-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;gap:12px;align-items:flex-start}
+.prog-ico{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.prog-body h5{font-size:.78rem;font-weight:800;color:var(--primary);margin-bottom:3px}
+.prog-body p{font-size:.75rem;color:#374151;line-height:1.5}
+
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#f8fbf9}
+.vis-num{background:var(--accent);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800;color:var(--text)}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.vis-tag{display:inline-block;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.tag-agro{background:#dcfce7;color:#15803d}
+.tag-obra{background:#fef3c7;color:#92400e}
+.tag-hist{background:#ede9fe;color:#6b21a8}
+.tag-gast{background:#d1fae5;color:#065f46}
+
+.sint{background:linear-gradient(135deg,#0d2b1a,#1b4a30);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#86efac;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}
+  .hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="h-cluster">🛤️ CORREDOR INDUSTRIAL NORTE &nbsp;|&nbsp; 2ª Sección Electoral</div>
+  <div class="h-name">SAN PEDRO</div>
+  <div class="h-sub">Partido de San Pedro · Buenos Aires · Capital Provincial de la Fruticultura y Viveros · Río Paraná</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-crit">🔴 DISTRITO CRÍTICO — LLA ganó provincial 2025 +12 pts</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">56,032</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">68,613</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">1,356 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">37.2%</span><span class="h-stat-l">PJ 2023 Intendente</span></div>
+    <div class="h-stat"><span class="h-stat-v">40.3%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">48.2%</span><span class="h-stat-l">LLA 2025 Nacional</span></div>
+  </div>
+</div>
+
+<!-- IDENTIDAD -->
+<div class="sec">
+  <div class="sec-hdr">🍑 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Capital de la Fruticultura · La cosecha que exporta Argentina</h4>
+        <p>San Pedro es la <strong>Capital Provincial de la Fruticultura y Viveros</strong> — el mayor productor bonaerense de duraznos, cítricos (naranjas) y plantas de vivero. Esta economía intensiva genera empleo masivo en temporada de cosecha y una cadena de comercialización y exportación que opera durante gran parte del año. San Miguel S.A., la empresa exportadora de cítricos de San Pedro, envió el primer embarque de mandarina argentina a China (2019) — una marca global con origen en este partido. Los viveros de plantas ornamentales y frutales abastecen a todo el mercado platense y metropolitano.</p>
+      </div>
+      <div class="blk">
+        <h4>Barrancas · Puerto · Vuelta de Obligado</h4>
+        <p>San Pedro tiene una identidad costera única en el Corredor Norte: sus <strong>barrancas sobre el Río Paraná</strong> son el paisaje más reconocible del partido. El turismo de fin de semana — cabañas, gastronomía, las famosas ensaimadas — atrae visitantes de toda la región. El Puerto de San Pedro es el punto de salida directo para la exportación frutal y granaria. Y la <strong>Vuelta de Obligado</strong> (1845), escenario de la batalla contra las escuadras anglo-francesas, es uno de los sitios históricos más relevantes del noreste bonaerense.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">1er Embarque</span>
+        <span class="l">Mandarina argentina a China — San Miguel S.A. desde San Pedro (2019)</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">6.000+</span>
+        <span class="l">Consultas mensuales absorbidas por la Red de Salud Rural — sin saturar el hospital</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTENDENTE -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Cecilio Salazar</h3>
+        <div class="int-meta">Unión por la Patria &nbsp;·&nbsp; <span class="badge-pol badge-al-pol">ALIADO</span></div>
+        <div class="int-desc">Intendente de San Pedro bajo bandera UxP, ganó en 2023 con 37.2% en una elección muy fragmentada (cuatro fuerzas superando el 5%). La diversidad del electorado local — trabajadores rurales, sector exportador, vecinos de cabañas turísticas, empleados del puerto — hace de San Pedro un partido de difícil síntesis electoral. Gestión orientada a la infraestructura portuaria, la red de salud rural y el fomento a la producción frutal para exportación. Enfrenta un terreno cada vez más desfavorable en términos de orientación general del voto.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">⚓ Reactivación y Dragado del Puerto</div>
+        <div class="gest-txt">El dragado y mantenimiento del Puerto de San Pedro permite el ingreso de buques de gran calado, facilitando la exportación directa de frutas y granos. La política logística más importante del partido — dinamiza el empleo sindical, aduanero y de servicios portuarios.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🏖️ Polo Turístico Costero · Barrancas</div>
+        <div class="gest-txt">Recuperación y mantenimiento del paseo costanero, las barrancas sobre el Paraná y el sitio histórico de Vuelta de Obligado. Infraestructura central para sostener la competitividad del turismo de fin de semana que posiciona a San Pedro como destino de la región norte.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🏥 Red de Centros de Salud Rurales</div>
+        <div class="gest-txt">Sostenimiento de médicos clínicos y bases de ambulancias en las delegaciones del interior profundo (Gobernador Castro, Santa Lucía y otras). Los centros absorben más de 6.000 consultas mensuales, descomprimiendo completamente la guardia del Hospital Subzonal Emilio Ruffa.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🍑 San Pedro Productivo</div>
+        <div class="gest-txt">Programa de fomento a la producción de batata y frutales con sistema de riego asistido y cooperativas de empaque con apoyo municipal para la exportación. Articulación entre pequeños productores y el mercado externo para mejorar el precio al productor.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025 — LLA ganó 12 puntos arriba en provincial</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-warn">
+        <div class="arc-year">2023 — Intendente (4 fuerzas)</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP 🔵</span><span class="arc-val arc-pj">37.2% (14,860)</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC</span><span class="arc-val arc-jxc">30.6% (12,226)</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">25.1% (10,032)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Vecinalismo</span><span class="arc-val arc-vec">5.7% (2,279)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">54,880</span></div>
+      </div>
+      <div class="arc-card arc-danger">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span class="arc-lbl">LLA 🔴</span><span class="arc-val arc-lla-win">40.3% (13,819)</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">28.1% (9,654)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">1.1% (390)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">56,032</span></div>
+      </div>
+      <div class="arc-card arc-danger">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">LLA 🔴</span><span class="arc-val arc-lla-win">48.2% (17,400)</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">32.9% (11,849)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">3.2% (1,155)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">55,462</span></div>
+      </div>
+    </div>
+    <div class="alert-box alert-red">
+      <div class="a-ttl">🔴 Alerta crítica: LLA ganó la provincial 2025 por 12 puntos</div>
+      <div class="a-body">En la elección provincial legislativa de 2025, LLA obtuvo 40.3% contra 28.1% del PJ — una ventaja de 12.2 puntos. Es una de las derrotas más abultadas del peronismo frente al espacio libertario en toda la provincia de Buenos Aires. El PJ perdió una cuota importante de su electorado incluso en las categorías provinciales, donde el valor de la gestión local debería haberse notado más. En la nacional, LLA llegó al 48.2%.</div>
+    </div>
+    <div class="alert-box alert-warn">
+      <div class="a-ttl">⚠️ El derrumbe desde 2023: de 37% a 28% en dos años</div>
+      <div class="a-body">En 2023, Salazar ganó la intendencia con 37.2% en un escenario de cuatro fuerzas. Pero la caída a 28.1% en la provincial 2025 es una señal muy preocupante: el peronismo perdió casi 10 puntos en dos años. Una parte de ese voto fue a LLA (que pasó del 25.1% al 40.3%), pero también hubo consolidación: JxC desapareció como fuerza separada y sus votantes migraron masivamente hacia LLA.</div>
+    </div>
+    <div class="alert-box alert-info">
+      <div class="a-ttl">📊 El voto rural frutal: trabajadores temporales y pequeños productores</div>
+      <div class="a-body">San Pedro tiene un electorado peculiar: trabajadores rurales de cosecha (muchos estacionales, con padrón en el partido), pequeños y medianos productores de fruta, empleados del puerto y de servicios turísticos. Es un perfil más diverso que el de un partido pampeano ganadero típico. El desplazamiento de este electorado hacia LLA en 2025 requiere entender qué expectativas económicas concretas predominan en cada segmento.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COLOR LOCAL -->
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Economía &amp; Cultura</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🍑</div>
+        <div class="cl-tipo">Fruticultura / Agro</div>
+        <div class="cl-nm">Duraznos · Cítricos · Viveros</div>
+        <div class="cl-desc">San Pedro produce la mayor parte de los duraznos, naranjas y plantas de vivero de la provincia. La cosecha es el momento económico del año — empleo temporal masivo y actividad que irradia a toda la economía local. San Miguel S.A. abrió el mercado chino para la mandarina argentina.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⚓</div>
+        <div class="cl-tipo">Logística / Exportación</div>
+        <div class="cl-nm">Puerto San Pedro · Río Paraná</div>
+        <div class="cl-desc">El puerto sobre el Paraná es la salida directa al comercio exterior para la fruta y los granos del partido y la región. Dragado permanente para admitir buques de gran calado — infraestructura clave para la competitividad exportadora del norte bonaerense.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏖️</div>
+        <div class="cl-tipo">Turismo / Gastronomía</div>
+        <div class="cl-nm">Barrancas · Ensaimadas · Cabañas</div>
+        <div class="cl-desc">Las barrancas del Paraná y la oferta de cabañas y gastronomía regional (las ensaimadas son marca propia) convierten a San Pedro en destino de turismo de fin de semana para viajeros de toda la región metropolitana norte. Economía turística relevante y sostenida.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">⚔️</div>
+        <div class="cl-tipo">Historia / Patrimonio</div>
+        <div class="cl-nm">Vuelta de Obligado · 1845</div>
+        <div class="cl-desc">El sitio histórico de la batalla de Vuelta de Obligado (1845) — la resistencia argentina frente a las escuadras anglo-francesas en el Paraná — es uno de los momentos fundacionales de la soberanía fluvial argentina. Patrimonio histórico de escala nacional ubicado en San Pedro.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🍊</div>
+        <div class="cl-tipo">Agroindustria / Exportación</div>
+        <div class="cl-nm">San Miguel S.A. — Cítricos al mundo</div>
+        <div class="cl-desc">La empresa exportadora de San Pedro envió el primer embarque de mandarina argentina a China en 2019 — abriendo un mercado de escala global para la citricultura bonaerense. Referencia del sector agroexportador del Corredor Norte con impacto en toda la cadena frutal.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌱</div>
+        <div class="cl-tipo">Producción</div>
+        <div class="cl-nm">Batata · Viveros · Arándanos</div>
+        <div class="cl-desc">Más allá de los cítricos y el durazno, San Pedro produce batata para el mercado interno, arándanos para exportación a Europa, y plantas de vivero que abastecen viveros y jardines de toda la región. Un perfil agropecuario diverso e intensivo en mano de obra.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMAS -->
+<div class="sec">
+  <div class="sec-hdr">📋 Programas Municipales Destacados</div>
+  <div class="sec-body">
+    <div class="prog-list">
+      <div class="prog-item">
+        <div class="prog-ico">⚓</div>
+        <div class="prog-body">
+          <h5>Reactivación y Dragado del Puerto</h5>
+          <p>Política logística central de la gestión: dragado y mantenimiento del Puerto de San Pedro para admitir buques de gran calado y sostener la exportación directa de frutas y granos. La obra portuaria dinamiza el empleo sindical, aduanero y de servicios — es la inversión de mayor retorno económico para la ciudad.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🏖️</div>
+        <div class="prog-body">
+          <h5>Puesta en Valor del Polo Turístico Costero</h5>
+          <p>Recuperación y mantenimiento del paseo costanero sobre el Paraná, las barrancas y el sitio histórico de Vuelta de Obligado. Son las infraestructuras centrales del turismo de fin de semana — sin ellas, la competitividad turística de San Pedro se deteriora. La inversión en el espacio costero es inversión directa en la economía de servicios local.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🏥</div>
+        <div class="prog-body">
+          <h5>Red de Centros de Salud Rurales</h5>
+          <p>Sostenimiento de médicos clínicos y bases de ambulancias en las delegaciones rurales del partido — Gobernador Castro, Santa Lucía y otras. Los centros absorben más de 6.000 consultas mensuales relacionadas con enfermedades respiratorias de invierno y accidentes de trabajo rural. Sin esta red, la guardia del Hospital Emilio Ruffa colapsa.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🍑</div>
+        <div class="prog-body">
+          <h5>Programa San Pedro Productivo</h5>
+          <p>Fomento a la producción de batata y frutales mediante sistemas de riego asistido y cooperativas de empaque con apoyo municipal. El objetivo es conectar al pequeño productor con los mercados de exportación mejorando la posición de negociación colectiva. Política productiva con impacto directo en el ingreso de los trabajadores rurales.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🏥</div>
+        <div class="prog-body">
+          <h5>Modernización del Sistema de Salud Local</h5>
+          <p>Fortalecimiento del Hospital Subzonal Emilio Ruffa y de la red de salas de primeros auxilios en localidades rurales. La política de salud en San Pedro es política para los trabajadores del campo: acceso a la atención básica en el lugar de trabajo y residencia, sin necesidad de trasladarse al casco urbano.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PALANCAS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Palancas de Impacto</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🍑 Sector Frutal</div>
+        </div>
+        <div class="pal-body">
+          <p>El sector frutícola — productores, exportadores, cooperativas de empaque — es el actor económico más relevante del partido. San Miguel S.A. y las cooperativas agrupan a los principales empleadores. Canal de llegada directo con intereses concretos en logística, riego y exportación.</p>
+          <p><span class="pal-access acc-priv">Ingreso PRIVADO</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">⚓ Puerto · Sindicato Portuario</div>
+        </div>
+        <div class="pal-body">
+          <p>El puerto y los sindicatos portuarios son un canal de llegada a trabajadores organizados con intereses directos en la hidrovía del Paraná y las políticas de infraestructura logística. Interlocutores con base electoral propia y visibilidad en el Corredor Norte.</p>
+          <p><span class="pal-access acc-gest">Institucional / Sindical</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">⚔️ Vuelta de Obligado</div>
+        </div>
+        <div class="pal-body">
+          <p>El sitio histórico de la Vuelta de Obligado es el canal de llegada con mayor impacto narrativo: soberanía fluvial, historia argentina, patrimonio de escala nacional. Una visita conecta con una narrativa de Estado que trasciende lo local y tiene resonancia en todo el noreste bonaerense.</p>
+          <p><span class="pal-access acc-cult">Histórico / Patrimonio</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS -->
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Sugeridas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Puerto de San Pedro · Hidrovía Paraná<span class="vis-tag tag-obra">LOGÍSTICA</span></div>
+          <div class="vis-desc">La infraestructura portuaria que sostiene la exportación frutal y granaria del partido. Mensaje de soberanía logística sobre la hidrovía y apuesta a la infraestructura como política de desarrollo productivo del Corredor Norte.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Sitio Histórico Vuelta de Obligado<span class="vis-tag tag-hist">HISTORIA</span></div>
+          <div class="vis-desc">El sitio donde Argentina resistió la intervención de las escuadras anglo-francesas en el Paraná (1845). Una de las referencias más potentes de soberanía fluvial y resistencia nacional. Visita con alta carga simbólica y narrativa histórica.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Cooperativa Frutihortícola · Chacra de producción<span class="vis-tag tag-agro">AGRO</span></div>
+          <div class="vis-desc">Visita al corazón de la economía de San Pedro: chacras de producción frutal, cosecha, cooperativas de empaque. Contacto directo con trabajadores y productores — la base real de la economía del partido, con empleo masivo y cadena exportadora.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Paseo Costanero · Barrancas del Paraná<span class="vis-tag tag-gast">TURISMO</span></div>
+          <div class="vis-desc">El espacio público más visible del partido — las barrancas sobre el río y el paseo gastronómico. Visibilidad mediática positiva que conecta con el turismo interior y la calidad de vida. Las ensaimadas son el sello local.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS -->
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>San Pedro es uno de los distritos más críticos del Corredor Industrial Norte.</strong> LLA ganó la elección provincial 2025 con 40.3% contra 28.1% del PJ — una brecha de 12 puntos que convierte a este partido en señal de alarma real para el peronismo. La intendencia está en manos de un aliado (Salazar), pero el terreno electoral general es adverso en todas las categorías.</p>
+  <p>La identidad de San Pedro es poderosa y genuina: la Capital Provincial de la Fruticultura, el primer embarque de mandarina argentina a China, el Puerto sobre el Paraná, la Vuelta de Obligado. Son activos que construyen una narrativa de territorio productivo, histórico y con proyección exportadora — una historia que el peronismo puede contar con credibilidad.</p>
+  <p><strong>La clave es la presencia directa en el sector frutal y portuario:</strong> son los actores económicos que más tienen que ganar o perder con las políticas de hidrovía, logística y exportación agraria. En un distrito donde LLA domina ampliamente, el argumento de la gestión concreta y la defensa de los intereses productivos locales es el terreno más propicio para recuperar espacios.</p>
+</div>
+
+</body>
+</html>
