@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Escobar — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.35);color:#bae6fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-right:6px;margin-bottom:6px}
+.badge-warn{display:inline-block;background:rgba(217,119,6,.3);color:#fcd34d;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(217,119,6,.5);letter-spacing:.5px;margin-bottom:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:8px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-w{font-size:1.15rem;font-weight:800;color:#fcd34d}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k h4{color:#bae6fd}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#3b82f6;display:block}
+.b-num .n-w{font-size:1.7rem;font-weight:900;color:#d97706;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-best{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-color:#86efac}
+.arc-warn{background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#fcd34d}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-red{color:#dc2626}.v-green{color:#059669}
+.warn-box{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.warn-ttl{font-size:.72rem;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.warn-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">ESCOBAR</div>
+  <div class="h-name2">Capital Nacional de la Flor · Innovación · Boom Inmobiliario Corredor Norte</div>
+  <div class="h-sub">Belén de Escobar · Garín · Matheu · Maquinista Savio · Open Door · Ingeniero Maschwitz</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Ariel Sujarchuk / UxP</span>
+    <span class="badge-warn">⚠️ ALARMA NACIONAL — LLA gana elección nac. 2025</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">219,154</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">256,268</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">277 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">60.1%</span><span class="h-stat-l">PJ 2025 PBA (dos partidos)</span></div>
+    <div class="h-stat"><span class="h-stat-v-w">47.8%</span><span class="h-stat-l">PJ 2025 NAC — LLA gana</span></div>
+    <div class="h-stat"><span class="h-stat-v">65,568</span><span class="h-stat-l">Votos PJ PBA 2025</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Capital Nacional de la Flor · Innovación y Tecnología</h4>
+        <p>Escobar produce el 65% de las flores de corte de Argentina y es el único polo florícola industrial del país. La identidad de "Capital Nacional de la Flor" es reconocida a nivel nacional. Pero Escobar en 2026 es también un polo de innovación y tecnología: el Polo FlyTech —emprendimientos de drones, agtech y tecnología rural— y los programas de formación en tecnología del municipio posicionan a Escobar como un municipio que transita de la flor al ecosistema tecnológico.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Boom Inmobiliario Premium · Corredor Puertos y MALBA</h4>
+        <p>Escobar vivió en los últimos 5 años uno de los booms inmobiliarios más intensos del norte del GBA. El corredor de la Panamericana norte concentra countries y barrios cerrados premium que atrajeron a familias de clase media-alta que migran del conurbano interior hacia el "verde" del norte. La llegada del MALBA a Garín (sede nueva del museo) y el desarrollo del corredor portuario del Río Luján son los dos íconos de ese posicionamiento premium de Escobar como destino residencial de alta gama.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">60.1%</span>
+        <span class="l">PJ en elección PBA 2025 (dos partidos vs. LLA). Ganó la disputa provincial.</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-w">52.2%</span>
+        <span class="l">LLA en elección nacional 2025. Señal de alarma en el mismo padrón del mismo año.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Contexto Político · Gestión Sujarchuk (UxP)</div>
+  <div class="sec-body">
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Intendente: Ariel Sujarchuk (UxP)</div>
+        <div class="gest-txt">Intendente consolidado de Escobar, referente del peronismo del corredor norte. Perfil de gestión con acento en innovación, tecnología y desarrollo económico local. Articulación con el sector florícola e inmobiliario que define la economía del municipio. Municipio aliado con amplio margen en la elección provincial de 2025.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hospital del Bicentenario (Garín)</div>
+        <div class="gest-txt">Creación de Unidades de Diagnóstico Precoz (UDP) que permiten detección temprana de enfermedades crónicas. El Hospital del Bicentenario en Garín es el hito de infraestructura sanitaria más relevante de la gestión, que atiende a la zona de mayor crecimiento del municipio.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Polo FlyTech</div>
+        <div class="gest-txt">Polo de desarrollo tecnológico con foco en drones, agtech y tecnología aplicada a la producción rural. Primer polo de este tipo en el GBA norte. Combina el perfil tecnológico con la identidad agropecuaria del corredor florícola de Escobar. El municipio como laboratorio de innovación para el corredor norte.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Mercado Concentrador Frutihorticola</div>
+        <div class="gest-txt">Mercado concentrador de frutas y verduras que fortalece la cadena de valor del sector productor del municipio. Política de apoyo al pequeño y mediano productor hortícola y florícola que es la columna vertebral de la economía rural de Escobar.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Productores florícolas e hortícolas (Escobar tradicional)</td><td>El núcleo histórico de Escobar. Familias productoras de flores de corte, hortalizas y plantas ornamentales. Identidad laboral fuerte, relación histórica con el peronismo a través del cooperativismo y la producción familiar. Asentados principalmente en Open Door y zonas rurales del municipio.</td><td class="tbl-num">~20%</td><td>Alto — base peronista histórica</td></tr>
+        <tr><td class="tbl-num">Nuevos residentes de barrios cerrados (Maschwitz, Garín)</td><td>Familias de clase media-alta que llegaron al corredor norte en los últimos 10 años. Voto más volátil: votaron JxC en su mayoría, y en 2025 muchos migraron a LLA. Es el segmento que explica la señal nacional de LLA en Escobar (52.2% nacionalmente).</td><td class="tbl-num">~30%</td><td>Bajo-moderado — variable</td></tr>
+        <tr><td class="tbl-num">Trabajadores del corredor (Belén de Escobar, Maquinista Savio)</td><td>Clase media-baja y trabajadores de los sectores de logística, construcción y servicios del corredor. Identidad peronista más consolidada. Sensibles a la política social y al empleo. Es la base electoral de Sujarchuk en el municipio.</td><td class="tbl-num">~35%</td><td>Alto ++ — base PJ real</td></tr>
+        <tr><td class="tbl-num">Estudiantes y jóvenes técnicos (FlyTech, ISTECH)</td><td>Segmento joven vinculado a los programas de formación tecnológica del municipio. Perfil más urbano y tecnológico. Abierto a mensajes de futuro, innovación y empleo. La apuesta de Sujarchuk al FlyTech apunta específicamente a este segmento.</td><td class="tbl-num">~15%</td><td>Moderado — conquista posible</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Infraestructura y Servicios — Programas de Gestión</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏥</div>
+        <div class="cl-tipo">Salud — Red diagnóstico</div>
+        <div class="cl-nm">UDP Movi + Red UDP</div>
+        <div class="cl-desc">Unidades de Diagnóstico Precoz Móviles que suman operativos de diagnóstico en los barrios del municipio. La red de UDP fue el hito de salud más visible de Sujarchuk: ecografías, laboratorio y cardiología accesible en el barrio sin pasar por el hospital central.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📚</div>
+        <div class="cl-tipo">Educación — tecnología</div>
+        <div class="cl-nm">Escobar Educa / FlyTech</div>
+        <div class="cl-desc">Cursos de formación gratuita en las instalaciones del Polo FlyTech: programación, operación de drones, inteligencia artificial aplicada y tecnología rural. La política educativa más innovadora del municipio y el argumento más fuerte para el segmento joven.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📱</div>
+        <div class="cl-tipo">Gestión digital — plataforma</div>
+        <div class="cl-nm">Escobar 360</div>
+        <div class="cl-desc">Plataforma que unifica todos los servicios municipales en un único punto de acceso digital. Turnos médicos, reclamos, trámites, pagos y información territorial accesibles desde el celular o desde tótems distribuidos en el municipio. Uno de los sistemas de atención ciudadana más avanzados del GBA norte.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">♻️</div>
+        <div class="cl-tipo">Medio ambiente</div>
+        <div class="cl-nm">Escobar Sostenible</div>
+        <div class="cl-desc">Tres ejes: recolección diferenciada de residuos, gestión del agua (cuencas del Luján) y energía renovable municipal. El municipio con mayor producción agrícola del GBA norte apostó a una política ambiental integral que reduce la huella del sector florícola e hortícola.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🔭</div>
+        <div class="cl-tipo">Seguridad</div>
+        <div class="cl-nm">Ojos en Alerta</div>
+        <div class="cl-desc">Sistema de cámaras con central de monitoreo 24hs. Escobar adoptó este sistema de vigilancia para el corredor sur del municipio y las zonas de mayor densidad comercial de Belén de Escobar. El sistema complementa las patrullas municipales en zonas de alta demanda.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌸</div>
+        <div class="cl-tipo">Producción — identidad</div>
+        <div class="cl-nm">Capital Nacional de la Flor</div>
+        <div class="cl-desc">El municipio promueve activamente la identidad florícola como polo de identidad y turismo. La Expo Flores de Escobar atrae cada año miles de visitantes de todo el GBA. La floricultura genera 8,000 puestos de trabajo directos y es el sector más identitario del municipio.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-best">
+        <div class="arc-year">General 2023 — Intendente (tres partidos)</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">54.1% (75,506)</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">26.8% (37,407)</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">19.1% (26,728)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">210,099</span></div>
+      </div>
+      <div class="arc-card arc-winner">
+        <div class="arc-year">Concejales Prov. 2025 ✅ PJ gana</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">60.1% dos-partidos</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">39.9% (43,563)</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC (residual)</span><span class="arc-val v-jxc">~0%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">219,154</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Nacional 2025 ⚠️ LLA gana</div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">52.2% (57,592)</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ</span><span class="arc-val v-pj">47.8% (52,849)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Brecha Prov/Nac PJ</span><span class="arc-val v-red">−12.3pp ⚠️</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">204,556</span></div>
+      </div>
+    </div>
+    <div class="warn-box">
+      <div class="warn-ttl">⚠️ SEÑAL NACIONAL: LLA GANA ESCOBAR EN LA ELECCIÓN FEDERAL 2025</div>
+      <div class="warn-txt">Escobar tiene dos resultados distintos en 2025: el PJ gana la elección provincial (60.1% dos-partidos) pero LLA gana la elección nacional (52.2% dos-partidos) el mismo año. Esa brecha de 12.3pp entre ambas elecciones indica que en Escobar hay un voto de gestión local (que premia a Sujarchuk) separado del voto de política económica nacional (que va a LLA). En 2027, si la gestión de Sujarchuk sigue siendo evaluada positivamente, el PJ puede retener el municipio en la elección de intendente. Pero el resultado nacional es una señal de que el voto LLA en el corredor norte es real y creciente.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Conocimiento del Territorio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🌸</div>
+        <div class="cl-tipo">Identidad productiva</div>
+        <div class="cl-nm">Expo Flores de Escobar</div>
+        <div class="cl-desc">La Expo Flores es el evento de mayor convocatoria del municipio. Se realiza cada primavera y atrae decenas de miles de visitantes de todo el GBA. El certamen de coronación de la Reina de las Flores y los concursos de arreglos florales son el alma de la identidad de Escobar. Para el candidato provincial, visitar Escobar durante la Expo Flores es la imagen más potente disponible en el corredor norte.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏛️</div>
+        <div class="cl-tipo">Cultura y patrimonio premium</div>
+        <div class="cl-nm">MALBA Garín</div>
+        <div class="cl-desc">El Museo de Arte Latinoamericano de Buenos Aires inauguró una sede en Garín que es el equipamiento cultural de mayor perfil del corredor norte del GBA. Su llegada a Escobar es un símbolo del posicionamiento premium del corredor y atrae a residentes de los barrios cerrados del norte que buscan calidad cultural sin volver a CABA. Para la narrativa de "cultura + innovación", el MALBA Garín es el activo más potente.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚁</div>
+        <div class="cl-tipo">Innovación tecnológica</div>
+        <div class="cl-nm">Polo FlyTech</div>
+        <div class="cl-desc">El Polo FlyTech es el primer polo tecnológico del GBA norte con foco en drones, tecnología rural y agtech. Es la apuesta de Sujarchuk por diversificar la economía de Escobar más allá de la floricultura. Los cursos gratuitos del programa "Escobar Educa/FlyTech" forman a jóvenes del municipio en competencias digitales que el mercado laboral del corredor norte demanda.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⛵</div>
+        <div class="cl-tipo">Recreación y naturaleza</div>
+        <div class="cl-nm">Río Luján y actividades náuticas</div>
+        <div class="cl-desc">El Río Luján atraviesa el municipio y genera una oferta de recreación náutica que complementa la identidad florícola. Clubes de remo, kayak y navegación a motor convocan a los residentes de los barrios cerrados los fines de semana. El corredor del Río Luján es también el eje de la política ambiental de Sujarchuk (cuencas + biodiversidad).</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏘️</div>
+        <div class="cl-tipo">Urbanismo — explosión inmobiliaria</div>
+        <div class="cl-nm">Ingeniero Maschwitz / Open Door</div>
+        <div class="cl-desc">Maschwitz es la localidad más dinámica del boom inmobiliario del corredor norte: countries, barrios cerrados y urbanizaciones privadas que llegaron en los últimos 10 años. Open Door conserva el perfil más tradicional con el campo psiquiátrico histórico convertido en patrimonio. La tensión entre el Escobar tradicional (flores y campo) y el nuevo (countries y MALBA) es la tensión política más interesante del municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌿</div>
+        <div class="cl-tipo">Identidad verde</div>
+        <div class="cl-nm">65% de las flores de Argentina</div>
+        <div class="cl-desc">Escobar produce el 65% de las flores de corte que se consumen en Argentina. Invernáculos, viveros y cultivos a cielo abierto cubren buena parte del territorio productivo del municipio. Esta economía agropecuaria intensiva genera identidad cultural y empleo directo para miles de familias del corredor, muchas de origen boliviano y paraguayo integradas en la producción florícola.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Provinciales</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — Prioritaria</div><div class="pal-ttl">Plan AySA — Cloaca y Agua en Maquinista Savio y Matheu</div></div>
+        <div class="pal-body">
+          <p>El crecimiento demográfico de Escobar superó la capacidad de infraestructura de los servicios básicos en las localidades de menor desarrollo del municipio. Maquinista Savio y Matheu tienen déficit cloacal y de agua potable relevante respecto al resto del municipio.</p>
+          <p>La inversión provincial a través de AySA o DIPSOH en extensión de red en esas localidades llega directamente a las familias de trabajadores que son la base electoral de Sujarchuk y que demandan infraestructura básica como prioridad número uno.</p>
+          <span class="pal-tag acc-prov">AySA / DIPSOH PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Reconocimiento del Polo FlyTech como Polo Tecnológico Provincial</div></div>
+        <div class="pal-body">
+          <p>El Polo FlyTech de Escobar es el primer polo de tecnología de drones del GBA norte. Un decreto o resolución provincial que lo declare "Polo Tecnológico Provincial" le da al programa de Sujarchuk un respaldo institucional que amplifica su visibilidad y posiciona a Escobar como referente de innovación del conurbano norte.</p>
+          <p>El anuncio del reconocimiento, hecho en el Polo FlyTech con presencia del candidato provincial, genera una imagen potente: innovación + jóvenes + corredor norte + peronismo de gestión. Es el activo de comunicación más moderno disponible en Escobar.</p>
+          <span class="pal-tag acc-prov">Ministerio de Producción PBA</span>
+          <span class="pal-tag acc-prov" style="margin-left:4px">Ministerio de Ciencia</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Conectividad Ferroviaria — Ramal Mitre a Escobar</div></div>
+        <div class="pal-body">
+          <p>El Ferrocarril Mitre Ramal Escobar es el servicio de transporte más utilizado por los trabajadores que viajan desde el municipio a CABA. Mejoras en frecuencia, renovación de coches y mejora de estaciones (Garín, Escobar) tienen impacto directo en la calidad de vida cotidiana de miles de trabajadores del municipio.</p>
+          <p>Un acuerdo AMBA para el ramal Escobar-Retiro, anunciado en la estación de Garín o Escobar, llega al trabajador del corredor que depende del tren todos los días. Es la política de transporte con mayor impacto visible en la base popular del municipio.</p>
+          <span class="pal-tag acc-nac">Trenes Argentinos</span>
+          <span class="pal-tag acc-prov" style="margin-left:4px">AMBA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>✅ Síntesis Ejecutiva — Escobar</h3>
+  <p><strong>Contexto:</strong> 219k padrón. Sujarchuk (UxP). PJ gana PBA 2025 (60.1% dos-partidos, 65,568 votos). Pero LLA gana la elección nacional del mismo año (52.2%, 57,592 votos). Brecha provincial/nacional de 12.3pp que indica un voto de gestión local que sostiene a Sujarchuk por encima de la tendencia libertaria del corredor norte.</p>
+  <p><strong>El dato clave:</strong> El PJ perdió ~10,000 votos en términos absolutos entre 2023 (75,506) y 2025 (65,568). Esos 10,000 votos, sumados a los 26,728 de JxC en 2023 que desaparecieron, explican que LLA creció solo 6,000 (de 37,407 a 43,563). La mayor parte del voto perdido fue a abstención u otras opciones. El PJ no perdió votos hacia LLA masivamente — pero sí los perdió en términos absolutos.</p>
+  <p><strong>Palancas provinciales:</strong> Infraestructura cloacal en Maquinista Savio y Matheu (base popular), reconocimiento del Polo FlyTech como Polo Tecnológico Provincial (jóvenes + innovación + imagen), conectividad ferroviaria Mitre a Escobar (trabajador popular del corredor).</p>
+  <p><strong>Objetivo:</strong> Sostener el municipio en 2027 con Sujarchuk y consolidar los 65k votos actuales. El riesgo es la brecha provincial/nacional: si en 2027 el candidato local no tiene la fuerza de Sujarchuk, el voto puede ir a LLA como en la elección nacional.</p>
+</div>
+
+</body>
+</html>

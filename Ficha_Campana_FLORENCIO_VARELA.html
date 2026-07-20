@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Florencio Varela — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}
+.ok-box{background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.ok-ttl{font-size:.72rem;font-weight:800;color:#15803d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.ok-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 3ª Sección Electoral</div>
+  <div class="h-name">FLORENCIO VARELA</div>
+  <div class="h-name2">Del Tomate a la Tecnología: El Sur Que Produce y Estudia</div>
+  <div class="h-sub">Florencio Varela Centro · Villa Santa Rosa · Villa San Luis · Don Orione · Bosques · Ing. Allan · El Pato</div>
+  <div><span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">370,008</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">496,433</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">189.5 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">56.1%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">23.8%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">−0.5 pp</span><span class="h-stat-l">PJ 2023→2025 estable</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Cinturón Frutihortícola del AMBA</h4>
+        <p>Florencio Varela posee el área rural y semirural más extensa del conurbano sur. Es uno de los principales productores de verduras de hoja, tomates, flores y hierbas aromáticas del Área Metropolitana de Buenos Aires, abasteciendo a los grandes mercados centrales. El cinturón frutihortícola define una identidad productiva única: miles de familias —muchas de origen boliviano y paraguayo— trabajan en chacras que alimentan al AMBA. El Mercado Activo del municipio conecta productores directamente con consumidores, cortocircuitando intermediarios.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>PITec — El Sur Tecnológico</h4>
+        <p>Para diversificar su economía y generar empleo de calidad, el municipio desarrolló el Parque Industrial y Tecnológico (PITec), que en 2026 alberga laboratorios farmacéuticos, empresas alimenticias, manufactureras y firmas tecnológicas. La UNAJ —Universidad Nacional Arturo Jauretche— funciona en simbiosis con el PITec, generando un triángulo productivo único en el GBA sur: campo, industria y universidad en el mismo municipio.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">2,619</span>
+        <span class="l">hab/km² — baja densidad: zona rural-periurbana extensa</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">PITec + UNAJ</span>
+        <span class="l">triángulo productivo campo-industria-universidad</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Andrés Watson</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2003</div>
+        <div class="desc">Una de las gestiones peronistas más largas y consolidadas del conurbano bonaerense. Watson gobierna Florencio Varela desde 2003 con reelecciones sucesivas y altísima adhesión territorial. Su gestión combina la atención a la base popular (salud, obra pública) con proyectos de transformación estructural (PITec, UNAJ). Figura respetada en la tercera sección, es un referente del peronismo bonaerense de largo aliento. En 2023 fue reelecto con amplia mayoría.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Producción</div>
+        <div class="gest-txt">PITec (Parque Industrial Tecnológico): gran hito de la gestión. En 2026 el parque alcanzó una masa crítica de empresas instaladas, con foco en laboratorios, alimenticias y tecnología. Cambió la imagen de Varela de dormitorio a ciudad productiva.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Seguridad</div>
+        <div class="gest-txt">Varela Segura y el Anillo Digital: expansión de la red de fibra óptica municipal para conectar más de 1,500 cámaras. Uno de los sistemas de videovigilancia más extensos del conurbano sur.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Educación</div>
+        <div class="gest-txt">UNAJ (Universidad Nacional Arturo Jauretche): Watson trabajó en simbiosis con la universidad para que sea el motor de formación profesional local y la bisagra entre educación superior y empleo en el PITec.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programa Destacado</div>
+        <div class="gest-txt">Talleres Anuales 2026: más de 145 disciplinas gratuitas que incluyen la icónica Escuela de Bandas de Rock, talleres de arte, gastronomía y oficios. Modelo de cultura accesible con impacto territorial en todos los barrios.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Electoral Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Productores Frutihortícolas</td><td>Familias de productores (muchas bolivianas y paraguayas) con chacras en el cinturón periurbano. Alta cohesión comunitaria y relación directa con el Estado municipal por habilitaciones, crédito y comercialización.</td><td class="tbl-num">~15%</td><td>Base leal +++</td></tr>
+        <tr><td class="tbl-num">Barrios Populares (Villa Santa Rosa, Ing. Allan)</td><td>Comunidades de alta NBI con demanda de infraestructura, salud y seguridad. Base peronista histórica fidelizada a través de la red territorial de Watson.</td><td class="tbl-num">~30%</td><td>Base sólida +++</td></tr>
+        <tr><td class="tbl-num">Comunidad Universitaria (UNAJ)</td><td>Estudiantes, docentes y familias vinculadas a la UNAJ. Primeras generaciones universitarias con alta sensibilidad a políticas de becas y acceso educativo.</td><td class="tbl-num">~12%</td><td>Potencial ++</td></tr>
+        <tr><td class="tbl-num">Trabajadores Industriales (PITec)</td><td>Empleados de las empresas del PITec. Empleo formal creciente con sindicalización incipiente. Base estructural del peronismo industrial.</td><td class="tbl-num">~13%</td><td>Potencial ++</td></tr>
+        <tr><td class="tbl-num">Clase Media Urbana y Comerciantes</td><td>Comerciantes del centro de Varela y empleados de servicios. Sensibles a la economía local y la seguridad. Voto moderado con menor volatilidad que en otros distritos.</td><td class="tbl-num">~20%</td><td>Moderado +</td></tr>
+        <tr><td class="tbl-num">Empleados Públicos</td><td>Empleados municipales y provinciales. Fidelidad relativamente alta. Articulados por gremios docentes y SUTEBA.</td><td class="tbl-num">~10%</td><td>Moderado ++</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~21%</td><td>Alta — zona periurbana extensa</td><td>Concentrado en Ingeniero Allan, Villa San Luis y zonas rurales periféricas</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~72%</td><td>Cobertura media</td><td>Zona rural sin red; AYSA en expansión hacia las localidades más alejadas</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~48%</td><td>Déficit alto</td><td>Municipio extenso con población dispersa; costosa la extensión en área rural</td></tr>
+        <tr><td class="tbl-num">Gas Natural</td><td class="tbl-num">~60%</td><td>Déficit medio</td><td>Zona rural con alta dependencia de garrafa; programa Hogar activo</td></tr>
+        <tr><td class="tbl-num">Pavimentación</td><td class="tbl-num">~40%</td><td>Déficit alto</td><td>Extenso municipio con muchas calles de tierra; zona rural con caminos de acceso a chacras sin asfaltar</td></tr>
+        <tr><td class="tbl-num">Conectividad Digital</td><td class="tbl-num">~62%</td><td>Media — en expansión</td><td>Fibra para el Anillo Digital de Seguridad; brecha digital en zona rural productiva</td></tr>
+        <tr><td class="tbl-num">Efectores de Salud</td><td>Hospital Modular (UPA) construido, Hospital Mi Pueblo (prov.), UNAJ Hospital de Prácticas, CAPS distribuidos en todo el municipio</td><td>Sistema en expansión</td><td>El Hospital Modular resolvió urgencias en zonas alejadas del centro</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">56.6% · 134,060</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~14.2% · 33,699</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~24.6% · 58,282</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">362,050</span></div>
+      </div>
+      <div class="arc-card arc-winner">
+        <div class="arc-year">Concejales Prov. 2025</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">56.1% · 115,411</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">23.8% · 49,035</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~20.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">370,008</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">Lectura Estratégica</div>
+        <div class="arc-row"><span class="arc-lbl">PJ estable</span><span class="arc-val v-pj">−0.5 pp — resistente</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA bajó</span><span class="arc-val v-lla">−0.8 pp — único caso</span></div>
+        <div class="arc-row"><span class="arc-lbl">Votos LLA abs.</span><span class="arc-val v-grey">58k→49k (−9k)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-pj">Bastión consolidado</span></div>
+      </div>
+    </div>
+    <div class="ok-box">
+      <div class="ok-ttl">✅ MEJOR PERFORMANCE DE LLA DEL GRUPO: LLA BAJA EN VARELA</div>
+      <div class="ok-txt">Florencio Varela es el único municipio del grupo donde LLA bajó tanto en porcentaje (24.6%→23.8%) como en votos absolutos (58,282→49,035). La combinación de alta lealtad de la base popular + productores frutihortícolas + comunidad universitaria UNAJ + PITec crea un ecosistema político excepcionalmente resistente al discurso de ruptura. La gestión Watson de largo aliento genera certeza y confianza en el electorado.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🌱</div>
+        <div class="cl-tipo">Identidad productiva</div>
+        <div class="cl-nm">Cinturón Frutihortícola</div>
+        <div class="cl-desc">Tomates, lechugas, flores y hierbas aromáticas que alimentan al AMBA. Miles de familias productoras que trabajan la tierra y venden en mercados centrales. Una identidad agraria única en el conurbano.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🔬</div>
+        <div class="cl-tipo">Innovación productiva</div>
+        <div class="cl-nm">PITec — Parque Industrial Tecnológico</div>
+        <div class="cl-desc">El proyecto de transformación económica más ambicioso del sur del GBA: laboratorios, alimenticias y tech en un mismo parque articulado con la universidad. La apuesta del municipio por el empleo de calidad.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación popular</div>
+        <div class="cl-nm">UNAJ — Arturo Jauretche</div>
+        <div class="cl-desc">La Universidad Nacional Arturo Jauretche es el símbolo más potente del proyecto educativo del municipio. Primeras generaciones universitarias que estudian sin emigrar. La UNAJ tiene hospital de prácticas y vínculos activos con el PITec.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎸</div>
+        <div class="cl-tipo">Cultura popular</div>
+        <div class="cl-nm">Escuela de Bandas de Rock</div>
+        <div class="cl-desc">Parte del programa de 145 talleres gratuitos. La Escuela de Bandas de Rock es el símbolo más singular: decenas de bandas juveniles formadas gratuitamente en el municipio. Una política cultural de alta adhesión en el electorado joven.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛡️</div>
+        <div class="cl-tipo">Seguridad digital</div>
+        <div class="cl-nm">Anillo Digital de Seguridad</div>
+        <div class="cl-desc">Más de 1,500 cámaras conectadas por fibra óptica municipal. Uno de los sistemas de videovigilancia más extensos del conurbano sur. Asociado directamente a la reducción de delitos en el corredor urbano central.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🥬</div>
+        <div class="cl-tipo">Comercialización popular</div>
+        <div class="cl-nm">Mercado Activo</div>
+        <div class="cl-desc">Red de comercialización que conecta directamente a los productores frutihortícolas con consumidores, eliminando intermediarios. Modelo de economía social que genera mayor ingreso al productor y precio más justo al comprador.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1</div><div class="pal-ttl">PITec 2.0 — Segunda Expansión</div></div>
+        <div class="pal-body">
+          <p>El PITec está en funcionamiento y tiene masa crítica. La segunda expansión — más lotes disponibles, infraestructura ampliada, mejora vial de acceso — puede triplicar la cantidad de empresas radicadas y los puestos de empleo formal. La inversión provincial en la infraestructura del parque tiene retorno en empleo local y en PBI municipal.</p>
+          <p>Articulación UNAJ-PITec: convenios de prácticas, pasantías y transferencia tecnológica entre la universidad y las empresas del parque.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">Inversión Privada</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Agua Rural y Caminos Productivos</div></div>
+        <div class="pal-body">
+          <p>Los productores frutihortícolas de la zona rural tienen dos demandas críticas: agua potable (muchos dependen de pozos con riesgo de contaminación) y caminos de tierra accesibles (las lluvias aíslan las chacras y arruinan la producción). La inversión provincial en agua rural y mejora de caminos productivos tiene doble retorno: productivo y electoral.</p>
+          <p>Mensaje: "la provincia invierte en el campo que alimenta a Buenos Aires".</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">AYSA Rural</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">UNAJ y Becas Provincia</div></div>
+        <div class="pal-body">
+          <p>La UNAJ es el proyecto educativo de mayor impacto en el municipio y la región. La ampliación de las Becas Provincia para estudiantes de primera generación que asisten a la UNAJ —con montos que permitan sostener la carrera— consolida un segmento de adhesión creciente y de alta visibilidad política: las familias cuyos hijos son los primeros universitarios.</p>
+          <p>La articulación del hospital de prácticas UNAJ con el sistema de salud provincial también es una palanca de impacto sanitario y político simultáneo.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📍 8. Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">PITec — Parque Industrial y Tecnológico</div>
+          <div class="vis-desc">Recorrido por empresas instaladas. Contacto con empleados y empleadores. Anuncio de segunda expansión, nuevas radicaciones o crédito provincial para PyMEs del parque. El PITec es la obra más emblemática de la transformación productiva del municipio.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">UNAJ — Campus Universitario</div>
+          <div class="vis-desc">Recorrido por el campus de la Universidad Nacional Arturo Jauretche. Anuncio de becas provincia, ampliación de carreras o inversión en infraestructura. Contacto con estudiantes de primera generación universitaria. Alta emotividad y visibilidad.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Zona de Chacras Frutihortícolas — El Pato o Km. 34</div>
+          <div class="vis-desc">Recorrido por las chacras productivas del cinturón hortícola. Contacto con productores, trabajadores rurales y familias migrantes. Anuncio de agua potable rural o mejora de caminos de acceso. Único en el conurbano bonaerense.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Escuela de Bandas de Rock — Centro Cultural Municipal</div>
+          <div class="vis-desc">Visita a ensayos de las bandas juveniles del programa de 145 talleres. Alta resonancia emocional y mediática. Muestra del alcance de la política cultural del municipio. Ideal para jóvenes del electorado y medios de comunicación.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Polideportivo La Patriada</div>
+          <div class="vis-desc">Visita al principal polideportivo municipal. Contacto con deportistas, entrenadores y vecinos. Anuncio de inversión en infraestructura deportiva provincial o ampliación del programa de deporte social. Alta presencia familiar y comunitaria.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🧠 Síntesis Ejecutiva</h3>
+  <p><strong>Florencio Varela es el bastión más sólido del conurbano sur.</strong> Con 56.1% para el PJ y siendo el único municipio del grupo donde LLA bajó tanto en porcentaje como en votos absolutos, Varela representa la mejor combinación de factores para el peronismo: gestión de largo aliento, diversidad productiva (campo + industria + universidad) y alta cohesión territorial.</p>
+  <p>Watson es un aliado de primerísima línea que no necesita ser rescatado ni monitoreado de cerca. Necesita ser reforzado con inversiones concretas en las áreas que él mismo identifica como prioritarias: el PITec 2.0, el agua rural y las becas UNAJ.</p>
+  <p>Florencio Varela puede y debe ser el modelo de lo que el peronismo bonaerense logra cuando tiene continuidad de gestión y proyecto de largo plazo. Comunicar ese éxito hacia afuera del municipio —como narrativa provincial— es también una oportunidad política de alcance mayor.</p>
+</div>
+
+</body>
+</html>

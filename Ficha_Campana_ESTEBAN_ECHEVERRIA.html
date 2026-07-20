@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Esteban Echeverría — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:6px}
+.badge-warn{display:inline-block;background:rgba(245,158,11,.25);color:#fcd34d;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(245,158,11,.4);letter-spacing:.5px;margin-bottom:12px;margin-left:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-w{font-size:1.15rem;font-weight:800;color:#fcd34d}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .n-w{font-size:1.7rem;font-weight:900;color:#f59e0b;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-warn{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:#fcd34d}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-green{color:#059669}.v-amber{color:#d97706}
+.warn-box{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.warn-ttl{font-size:.72rem;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.warn-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 3ª Sección Electoral</div>
+  <div class="h-name">ESTEBAN ECHEVERRÍA</div>
+  <div class="h-name2">El gigante logístico del sur: Ezeiza, Canning y el peronismo que está justo al límite del 50%</div>
+  <div class="h-sub">Monte Grande · El Jagüel · Canning · 9 de Abril · Luis Guillón · Tristán Suárez</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-warn">⚠️ ZONA DE RIESGO — PJ 48.2% por debajo del 50%</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">279,839</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">338,480</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">121.3 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v-w">48.2%</span><span class="h-stat-l">PJ 2025 — DEBAJO DEL 50% ⚠️</span></div>
+    <div class="h-stat"><span class="h-stat-v-w">−0.3 pp</span><span class="h-stat-l">Variación PJ 2023→25 — leve caída</span></div>
+    <div class="h-stat"><span class="h-stat-v">2,791</span><span class="h-stat-l">hab/km² — densidad media</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>El Gigante Logístico del Sur</h4>
+        <p>Esteban Echeverría es el nodo de conectividad y logística más importante del conurbano sur. La presencia del Aeropuerto Internacional de Ezeiza, la Autopista Riccheri y la Ruta 4 (Camino de Cintura) convierten al municipio en un hub de distribución de escala nacional. Empresas de logística, depósitos, cámaras frigoríficas, operadores aduaneros y proveedores aeroportuarios conviven en un territorio donde el movimiento de cargas es una industria en sí misma. Esta actividad genera empleo —conductores, operadores de depósito, técnicos, administrativos— con perfil de clase media trabajadora que es electoralmente volátil.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Polo Comercial de Monte Grande y Corredor Canning</h4>
+        <p>Monte Grande tiene una identidad comercial y gastronómica que lo convierte en centro de consumo de toda la región sur. El corredor de Canning, por su parte, es uno de los polos de barrios cerrados y countries de mayor crecimiento del GBA: un mercado inmobiliario premium que genera una población nueva de clase media-alta con perfil electoral distinto al del conurbano histórico. Esta dualidad —Monte Grande popular y Canning premium— define la fractura electoral del municipio: el peronismo es fuerte en el primero y débil en el segundo.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n-w">48.2%</span>
+        <span class="l">PJ 2025 — por debajo del 50%, primer año del período en esa situación. El peronismo pierde la mayoría absoluta.</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-w">27.2% LLA</span>
+        <span class="l">La Libertad Avanza con 44,282 votos — solo 33,137 menos que el PJ. El margen se achica.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Fernando Gray</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2003</div>
+        <div class="desc">Fernando Gray lleva más de veinte años al frente de Esteban Echeverría, siendo uno de los intendentes con mayor continuidad del conurbano sur. Con un perfil de gestor pragmático y relaciones tanto con el kirchnerismo como con sectores más moderados del PJ, Gray construyó un municipio con fuerte identidad logística y una gestión de obras públicas sostenida. En 2025, sin embargo, la situación electoral es la más delicada de su historia reciente: 48.2% de votos, por debajo de la mayoría absoluta, en un contexto donde LLA avanzó +4.7pp y el voto "anti-político" puede crecer si no se contesta con obra concreta.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Producción e Industria</div>
+        <div class="gest-txt">Programa de Promoción Industrial: exenciones de tasas municipales por hasta 10 años para empresas que se radiquen en el municipio y generen empleo local. El programa es una de las políticas de atracción de inversión más agresivas del conurbano sur: cero tasas por una década a cambio de trabajo formal.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Logística y Desarrollo</div>
+        <div class="gest-txt">Polo Logístico Canning: desarrollo ordenado de la zona de Canning integrando barrios cerrados con áreas de servicios logísticos y plataformas de distribución. El polo capitaliza la posición geográfica estratégica del municipio respecto de Ezeiza y la Riccheri para atraer empresas de distribución de escala regional.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Inundaciones</div>
+        <div class="gest-txt">Plan de Mitigación de Inundaciones: obras hidráulicas en las cuencas de los arroyos Ortega y El Pantano. Esteban Echeverría es uno de los municipios del conurbano sur más afectados por las inundaciones: la geografía baja de parte del territorio y la densificación urbana sin adecuada infraestructura de drenaje generan anegamientos recurrentes que el Plan de Mitigación busca resolver estructuralmente.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas Clave</div>
+        <div class="gest-txt">Mega Plan Cloacal (con AySA) | "Invertí en Esteban Echeverría": esquema agresivo de exención de tasas por 10 años con empleo comprometido | "Plan Aliviadores Cuenca Matanza": obras estructurales para 150k frentistas | Policlínico Santamarina (ampliación) | Pasos Bajo Nivel: túneles bajo vías del Tren Roca en Monte Grande.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Clase media de Monte Grande (trabajadores, comerciantes)</td><td>Trabajadores formales de la logística, el aeropuerto, el comercio y los servicios. El corazón histórico del voto grayista. Perfil moderado con experiencia de gestión pero creciente permeabilidad a LLA.</td><td class="tbl-num">~28%</td><td>Moderado — erosión ⚠️</td></tr>
+        <tr><td class="tbl-num">Clase media-alta (Canning, barrios cerrados)</td><td>Profesionales y empresarios de barrios cerrados y countries del corredor Canning. PBI per cápita alto. Históricamente voto JxC; en 2025 migró hacia LLA. El peronismo no tiene base real en este segmento.</td><td class="tbl-num">~18%</td><td>Muy bajo — LLA ↑</td></tr>
+        <tr><td class="tbl-num">Barrios populares (9 de Abril, Luis Guillón, Tristán Suárez)</td><td>Trabajadores informales, empleados en la construcción, servicios domésticos. Alta NBI en zonas periféricas. Base peronista histórica pero con déficit de infraestructura (inundaciones, cloaca) que genera insatisfacción.</td><td class="tbl-num">~27%</td><td>Base moderada — riesgo inundaciones</td></tr>
+        <tr><td class="tbl-num">Trabajadores de la logística y Ezeiza</td><td>Empleados de depósitos, transporte de cargas, operaciones aeroportuarias. Trabajo formal con salario medio. Gremios del transporte presentes. Perfil más volátil que el obrero industrial clásico.</td><td class="tbl-num">~15%</td><td>Moderado ++</td></tr>
+        <tr><td class="tbl-num">Empleados públicos y docentes</td><td>Base peronista estable. SUTEBA y gremios municipales con articulación activa. Voto consolidado.</td><td class="tbl-num">~12%</td><td>Base sólida +++</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Inundaciones</td><td>Plan de Mitigación activo</td><td>⚠️ Problema estructural — obras en curso</td><td>Las cuencas de los arroyos Ortega y El Pantano afectan a miles de familias. El Plan de Mitigación tiene avance pero los anegamientos persisten en zonas bajas.</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~68%</td><td>Déficit significativo — Mega Plan en marcha</td><td>El Mega Plan Cloacal con AySA es el proyecto de infraestructura sanitaria más importante en marcha. 32% sin cobertura en municipio de 338k habitantes es un déficit de escala.</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~82%</td><td>Media-alta</td><td>Mejor cobertura que cloaca; déficit puntual en áreas de crecimiento reciente del corredor Canning</td></tr>
+        <tr><td class="tbl-num">Conectividad vial</td><td>Pasos Bajo Nivel en ejecución</td><td>Histórico cuello de botella — mejorando</td><td>Los túneles bajo las vías del Tren Roca en Monte Grande eliminan los cierres de barrera que paralizaban la ciudad durante horas. Obra con alta visibilidad para el vecino.</td></tr>
+        <tr><td class="tbl-num">Salud</td><td>Policlínico Santamarina en ampliación</td><td>Capacidad en expansión</td><td>El Policlínico Santamarina es el principal centro de salud de alta complejidad del municipio. La ampliación en curso aumenta capacidad instalada de consultorios y guardia.</td></tr>
+        <tr><td class="tbl-num">Industria y logística</td><td>Parques industriales + Polo Logístico Canning</td><td>Activo — crecimiento sostenido</td><td>La actividad logística creció con la expansión del e-commerce post-pandemia; Esteban Echeverría se benefició por su posición estratégica respecto de Ezeiza.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">48.5%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~22.5%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~25.5%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">271,305</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Concejales Prov. 2025 ⚠️</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-amber">48.2% ↓</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">27.2% ↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~24.6%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">279,839</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Lectura Estratégica ⚠️</div>
+        <div class="arc-row"><span class="arc-lbl">PJ bajó</span><span class="arc-val v-amber">−0.3 pp ⚠️</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA avanza</span><span class="arc-val v-lla">+4.7 pp ↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">Debajo 50%</span><span class="arc-val v-amber">48.2% — límite</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-amber">RIESGO REAL</span></div>
+      </div>
+    </div>
+    <div class="warn-box">
+      <div class="warn-ttl">⚠️ ALERTA — PJ DEBAJO DEL 50%: ZONA DE RIESGO REAL EN LA TERCERA SECCIÓN</div>
+      <div class="warn-txt">Esteban Echeverría es el único municipio aliado del lote de 10 donde el PJ está por debajo del 50% en 2025: 48.2%, con una leve caída de −0.3pp respecto de 2023. LLA avanzó 4.7 puntos. Con JxC prácticamente desaparecida, los votos circulan directamente entre PJ y LLA. El corredor Canning —con su nueva clase media-alta de barrios cerrados— es el vector principal del avance libertario. Si esa tendencia continúa en 2027, el municipio puede pasar a ser un distrito competitivo donde el PJ no tiene garantizado el triunfo. Gray necesita obra concreta en el conurbano popular y un mensaje diferenciado para el corredor Canning.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">✈️</div>
+        <div class="cl-tipo">Hub logístico</div>
+        <div class="cl-nm">Ezeiza — el aeropuerto del sur</div>
+        <div class="cl-desc">El Aeropuerto Internacional de Ezeiza no solo es la puerta de entrada al país: es un motor económico para el municipio. Miles de empleos directos e indirectos, cadena de servicios aeroportuarios y un flujo de cargas que posiciona a Esteban Echeverría como el nodo de mayor actividad logística del conurbano sur.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏘️</div>
+        <div class="cl-tipo">Crecimiento urbano</div>
+        <div class="cl-nm">Canning — el boom inmobiliario</div>
+        <div class="cl-desc">Canning es uno de los polos de crecimiento de barrios cerrados y countries de mayor dinamismo del GBA. Ese crecimiento trajo una nueva clase media-alta con perfil político distinto al del conurbano histórico: profesionales, empresarios y trabajadores formales de alta calificación cuyo voto gravitó hacia JxC y ahora migra hacia LLA.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛣️</div>
+        <div class="cl-tipo">Conectividad estratégica</div>
+        <div class="cl-nm">Ruta 4 + Riccheri + Ezeiza</div>
+        <div class="cl-desc">La triple conectividad —Ruta 4 (Camino de Cintura), Autopista Riccheri y acceso a Ezeiza— convierte a Esteban Echeverría en el municipio logístico más estratégicamente ubicado del sur del GBA. Esa posición genera actividad económica pero también atrae al tipo de empresa y trabajador que no tiene el perfil sindical del conurbano industrial clásico.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌊</div>
+        <div class="cl-tipo">Desafío ambiental</div>
+        <div class="cl-nm">Arroyos Ortega y El Pantano</div>
+        <div class="cl-desc">Las cuencas de los arroyos Ortega y El Pantano son el problema ambiental más urgente del municipio: inundaciones recurrentes que afectan a miles de familias en 9 de Abril, Luis Guillón y Tristán Suárez. El Plan de Mitigación está en marcha pero las obras son de largo plazo. Las inundaciones son el argumento más concreto de la insatisfacción con la gestión.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🍽️</div>
+        <div class="cl-tipo">Gastronomía y comercio</div>
+        <div class="cl-nm">Monte Grande comercial</div>
+        <div class="cl-desc">Monte Grande es el centro comercial y gastronómico de la región sur, con una identidad propia que no depende exclusivamente del conurbano histórico. Restaurantes, comercios, servicios y el Policlínico Santamarina hacen de Monte Grande un polo de actividad que atrae a vecinos de municipios vecinos.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚇</div>
+        <div class="cl-tipo">Conectividad interna</div>
+        <div class="cl-nm">Pasos Bajo Nivel — Tren Roca</div>
+        <div class="cl-desc">Los túneles bajo las vías del Tren Roca en Monte Grande eliminan los cierres de barrera que durante décadas dividían la ciudad en dos. Los pasos bajo nivel son la obra de conectividad interna más visible de la gestión Gray: en ciudades atravesadas por el ferrocarril, resolver las barreras cambia la movilidad de toda la población.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1</div><div class="pal-ttl">Plan Aliviadores Cuenca Matanza — Obra Visible</div></div>
+        <div class="pal-body">
+          <p>El Plan Aliviadores de la Cuenca Matanza es la obra de infraestructura hídrica con mayor impacto en calidad de vida de los 150,000 frentistas afectados por las inundaciones recurrentes. La articulación con INA (Instituto Nacional del Agua), ACUMAR y el Ministerio de Infraestructura provincial para acelerar los trabajos de entubamiento masivo y construcción de aliviadores es la palanca con mayor retorno político a corto plazo.</p>
+          <p>La inundación es el argumento más potente contra la gestión de Gray. Resolverla —o mostrar avance real y visible— es la única respuesta efectiva. El anuncio de inicio de obra en barrios específicos de 9 de Abril y Luis Guillón tiene impacto directo en los vecinos afectados.</p>
+          <span class="pal-tag acc-prov">Min. Infraestructura</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">ACUMAR / INA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Mega Plan Cloacal — AySA acelera</div></div>
+        <div class="pal-body">
+          <p>El Mega Plan Cloacal con AySA está en marcha pero con 32% sin cobertura en un municipio de 338k habitantes, la velocidad de ejecución es crítica. La articulación provincial con AySA para priorizar a Esteban Echeverría en el cronograma de obras tiene dos efectos: reduce el déficit real de saneamiento y da a Gray un anuncio concreto para los barrios sin servicio.</p>
+          <p>La cloaca nueva en 9 de Abril o Luis Guillón es la política pública más directa para el segmento de barrios populares que está siendo erosionado por LLA. Sin cloaca, el argumento "el Estado no llega" tiene peso real.</p>
+          <span class="pal-tag acc-prov">DIPSOH</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">AySA / ENOHSA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Polo Logístico Ezeiza — Inversión Provincial</div></div>
+        <div class="pal-body">
+          <p>La posición estratégica de Esteban Echeverría respecto de Ezeiza y la Riccheri no está siendo capitalizada a nivel provincial. La creación de un polo logístico con participación del Ministerio de Producción —exenciones adicionales, infraestructura de conectividad, formación técnica para los trabajadores del sector— puede atraer nuevas empresas y generar empleo formal en el segmento que más está migrando hacia LLA.</p>
+          <p>El mensaje "la provincia invierte en la economía del aeropuerto" tiene tracción en Monte Grande y entre los trabajadores de la logística, que valoran la estabilidad del empleo formal por encima de la narrativa anti-Estado de LLA.</p>
+          <span class="pal-tag acc-prov">Min. Producción</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">BAPRO / FONDEP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📅 8. Agenda de Visita Sugerida</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Barrio afectado por inundaciones (9 de Abril o Luis Guillón)</div>
+          <div class="vis-desc">Presencia en barrio con historial de anegamiento. Anuncio de inicio o avance de obra del Plan Aliviadores. Foto con vecinos afectados. La inundación es el principal punto de vulnerabilidad política del municipio: resolverla o mostrar avance real cambia la conversación.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Zona logística de Ezeiza / empresa del Polo</div>
+          <div class="vis-desc">Visita a empresa de logística o depósito en la zona del aeropuerto. Anuncio de beneficios adicionales para empresas del polo con empleo comprometido. Mensaje: el Estado provincial apoya la economía del aeropuerto que genera trabajo formal.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Paso Bajo Nivel en Monte Grande</div>
+          <div class="vis-desc">Recorrida por uno de los pasos bajo nivel completados o en ejecución bajo las vías del Tren Roca. Obra de conectividad vial con impacto directo en la movilidad cotidiana de miles de vecinos. Foto con Gray, mensaje de continuidad de inversión en infraestructura.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Policlínico Santamarina — ampliación en curso</div>
+          <div class="vis-desc">Visita a la ampliación del Policlínico con médicos y vecinos. Anuncio de financiamiento provincial para equipamiento adicional. La salud pública de calidad es el argumento más concreto frente a la propuesta libertaria de privatización.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>Síntesis Ejecutiva</h3>
+  <p><strong>Prioridad:</strong> Alta por riesgo — 280k padrón, PJ en 48.2% (por debajo del 50%), LLA +4.7pp. Municipio aliado con intendente de 20 años que está en la primera señal de fragilidad electoral real. Si la tendencia continúa, en 2027 puede ser competitivo.</p>
+  <p><strong>Señal de riesgo:</strong> El 48.2% debajo del 50% en un municipio aliado con gestión larga y estable es la señal más preocupante del lote. El vector del avance libertario es claro: Canning (nueva clase media-alta de barrios cerrados) + sectores populares afectados por inundaciones. Los dos problemas tienen respuestas concretas: obra hídrica para los barrios y argumento económico para Canning.</p>
+  <p><strong>Oportunidad clave:</strong> Resolver o mostrar avance real en el Plan Aliviadores Cuenca Matanza. Las inundaciones son el problema más visible y más costoso políticamente de Gray. Cada obra de aliviador hidráulico que se inaugura en 9 de Abril o Luis Guillón es un argumento electoral concreto contra LLA.</p>
+  <p><strong>Mensaje a Gray:</strong> La tendencia electoral requiere atención antes de 2027. La provincia llega con obra hídrica y cloacal donde el municipio tiene déficit, y articula el polo logístico de Ezeiza como proyecto conjunto. El 48.2% necesita volver sobre el 50% con obra, no con discurso.</p>
+</div>
+
+</body>
+</html>

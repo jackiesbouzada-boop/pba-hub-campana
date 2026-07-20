@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Vicente López — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-alerta{display:inline-block;background:rgba(220,38,38,.3);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-r{font-size:1.15rem;font-weight:800;color:#fca5a5}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n-r{font-size:1.7rem;font-weight:900;color:#dc2626;display:block}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.badge-op{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px;background:#fee2e2;color:#991b1b}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#fee2e2;color:#991b1b;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-alert{background:linear-gradient(135deg,#fee2e2,#fecaca);border-color:#fca5a5}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-red{color:#dc2626}
+.alert-box{background:#fff1f2;border:1.5px solid #fca5a5;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#991b1b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#fca5a5;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">VICENTE LÓPEZ</div>
+  <div class="h-name2">Polo corporativo y tecnológico del norte metropolitano — territorio opositor consolidado</div>
+  <div class="h-sub">Florida · Munro · Villa Martelli · Olivos · La Lucila · Martínez · Vicente López cabecera</div>
+  <div>
+    <span class="badge-alerta">🔴 INTENDENTE OPOSITOR — Juntos por el Cambio</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">250,313</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">282,280</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">34.5 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v-r">28.6%</span><span class="h-stat-l">PJ 2025 — base baja</span></div>
+    <div class="h-stat"><span class="h-stat-v-r">55.4%</span><span class="h-stat-l">LLA 2025 — mayoría libertaria</span></div>
+    <div class="h-stat"><span class="h-stat-v">8,181</span><span class="h-stat-l">hab/km² — muy alta densidad</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Polo Corporativo y Tecnológico</h4>
+        <p>Vicente López concentra la mayor densidad de sedes corporativas, multinacionales y empresas de servicios del conurbano bonaerense. El corredor de Av. del Libertador y la Panamericana alberga oficinas de empresas de tecnología, finanzas, farmacéutica y consumo masivo. Es el GBA que más se parece al corredor norte de la Ciudad de Buenos Aires, con una economía de servicios de alto valor que diferencia al municipio del resto del conurbano. La presencia de parques tecnológicos e incubadoras sobre la Panamericana consolida esa identidad.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Residencial Premium — Zona Norte</h4>
+        <p>Olivos, La Lucila y Martínez tienen una identidad residencial de alta gama históricamente vinculada a la clase media-alta porteña que eligió el norte del GBA. La residencia presidencial de Olivos es el símbolo más reconocido del municipio a nivel nacional. Amplias residencias, colegios privados de excelencia, country clubs y acceso al río Luján conforman un perfil socioeconómico de los más altos del país. Con Néstor Grindetti (JxC) y ahora Soledad Martínez (JxC), el municipio nunca abandonó la centroderecha en sus últimas décadas.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n-r">28.6%</span>
+        <span class="l">PJ 2025 — la tercera base más baja de los municipios del conurbano norte; oposición estructural desde hace décadas</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-r">55.4%</span>
+        <span class="l">LLA 2025 — LLA obtuvo mayoría absoluta en un municipio que fue JxC durante décadas: recomposición del voto opositor</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🔴 2. Contexto Político · Territorio Opositor</div>
+  <div class="sec-body">
+    <div class="alert-box">
+      <div class="alert-ttl">🔴 MUNICIPIO CON INTENDENTE DE JUNTOS POR EL CAMBIO — TRATAMIENTO DIFERENCIAL</div>
+      <div class="alert-txt">Vicente López es gestionado por Soledad Martínez (JxC) y tiene una oposición política estructural al peronismo. El análisis de este municipio no es de gestión aliada sino de comprensión del territorio opositor: quiénes son sus votantes, cómo evolucionó la oposición, y qué puede hacer la política provincial en ese contexto.</div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Intendenta: Soledad Martínez (JxC)</div>
+        <div class="gest-txt">Intendenta desde 2015, reelegida en 2019 y 2023. Sucedió a Jorge Macri, quien fue candidato a jefe de Gobierno de CABA. Perfil moderado de centroderecha, gestión orientada a servicios urbanos de calidad. Históricamente alineada con la conducción nacional de JxC.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">JxC → LLA: La Recomposición Opositora</div>
+        <div class="gest-txt">En 2023, JxC tenía 86,444 votos (51.3%). En 2025, LLA obtuvo 82,842 votos (55.4%) con JxC prácticamente sin caudal propio. El voto opositor de Vicente López se recompuso en LLA. La pregunta relevante para la estrategia provincial es si el PJ puede crecer del 28.6% en este contexto o si hay un techo estructural.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas Municipales Clave (JxC)</div>
+        <div class="gest-txt">Plan Seguridad/Vigilancia Inteligente: anillo de cámaras con IA. Paseo de la Costa: recuperación costera del Río de la Plata. CUV (Ciudad Universitaria Vicente López): convenios con UBA, UTN, UNTREF. "Puntos Seguros" (tótems de seguridad). "ViloSmart" (IA en cámaras de vigilancia).</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">El PJ en Vicente López: perfil del votante</div>
+        <div class="gest-txt">El 28.6% del PJ en Vicente López corresponde principalmente a los barrios más populares del municipio: Florida Oeste, Munro, Villa Martelli. En esas zonas, el NBI es mayor y la demanda de servicios públicos es más alta. La apuesta provincial en Vicente López no es ganar el municipio sino consolidar y crecer en esa franja popular.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Clase alta y media-alta (Olivos, La Lucila, Martínez)</td><td>Propietarios de residencias de alta gama, ejecutivos de multinacionales, profesionales de servicios premium. PBI per cápita de los más altos del conurbano. Voto opositor estructural: JxC → LLA sin escala intermedia.</td><td class="tbl-num">~38%</td><td>Muy bajo — oposición dura</td></tr>
+        <tr><td class="tbl-num">Clase media empleada en servicios corporativos</td><td>Empleados de las multinacionales y empresas de servicios del corredor Libertador/Panamericana. Profesionales con ingresos medios-altos, sensibles a la carga impositiva. Perfil anti-estatista moderado.</td><td class="tbl-num">~28%</td><td>Bajo — inclinación libertaria</td></tr>
+        <tr><td class="tbl-num">Barrios populares (Florida Oeste, Munro, Villa Martelli)</td><td>Zonas con mayor NBI relativo del municipio (aunque bajo comparado con el conurbano sur). Familias de clase media-baja, empleados, comerciantes. El núcleo del voto PJ en el municipio. Demanda de servicios básicos y conectividad.</td><td class="tbl-num">~22%</td><td>Moderado ++ — base PJ real</td></tr>
+        <tr><td class="tbl-num">Estudiantes universitarios (CUV)</td><td>Convenios universitarios con UBA, UTN, UNTREF en el CUV. Estudiantes con perfil mixto: algunos populares que estudian en Vicente López por acceso, otros de clase media. Segmento permeable a propuestas de libertad e innovación (LLA).</td><td class="tbl-num">~12%</td><td>Variable — LLA tiene tracción</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~6%</td><td>Muy baja — uno de los mejores del GBA</td><td>Vicente López tiene el NBI más bajo del corredor norte. La demanda de servicios es de calidad, no de cobertura básica.</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~96%</td><td>Altísima — casi universal</td><td>Municipio urbano consolidado con cobertura prácticamente completa. El déficit remanente es puntual en zonas de Florida Oeste.</td></tr>
+        <tr><td class="tbl-num">Conectividad y Seguridad</td><td>Anillo IA activo / ViloSmart</td><td>Alta — innovación tecnológica</td><td>Vicente López tiene uno de los sistemas de vigilancia inteligente más avanzados del conurbano. Anillo de cámaras con IA, "Puntos Seguros" y patrullaje inteligente.</td></tr>
+        <tr><td class="tbl-num">Espacios Verdes / Costa</td><td>Paseo de la Costa activo</td><td>Alta calidad</td><td>El Paseo de la Costa sobre el Río de la Plata es el activo de espacio público más valioso del municipio. Reconocido como uno de los mejores costaneros del GBA.</td></tr>
+        <tr><td class="tbl-num">Educación Superior</td><td>CUV con 3 universidades</td><td>Activo</td><td>Ciudad Universitaria Vicente López: convenios con UBA, UTN y UNTREF. Oferta académica diversificada para residentes del corredor norte.</td></tr>
+        <tr><td class="tbl-num">Motor Económico</td><td>Corredor corporativo Libertador/Panam</td><td>Dinámico</td><td>Las multinacionales y empresas de tecnología del corredor generan empleo de alta calificación. El mayor PBI per cápita del conurbano bonaerense.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">26.0%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">51.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~20.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">250,388</span></div>
+      </div>
+      <div class="arc-card arc-alert">
+        <div class="arc-year">Concejales Prov. 2025 🔴</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">28.6% ↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">55.4% ↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Otros</span><span class="arc-val v-jxc">~16.0%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">250,313</span></div>
+      </div>
+      <div class="arc-card arc-alert">
+        <div class="arc-year">Lectura Estratégica 🔴</div>
+        <div class="arc-row"><span class="arc-lbl">PJ creció</span><span class="arc-val v-pj">+2.6 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA explotó</span><span class="arc-val v-lla">+35 pp ↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC colapsó</span><span class="arc-val v-jxc">→ LLA</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-red">TERRITORIO OPOSITOR</span></div>
+      </div>
+    </div>
+    <div class="alert-box">
+      <div class="alert-ttl">🔴 LLA MAYORÍA ABSOLUTA EN VICENTE LÓPEZ — EL PEOR RESULTADO DEL CORREDOR NORTE</div>
+      <div class="alert-txt">Vicente López tiene el resultado más adverso para el PJ de los municipios del lote: 28.6% PJ vs. 55.4% LLA. JxC tenía 51.3% en 2023 (86,444 votos). En 2025, LLA obtuvo 82,842 votos y el PJ subió 2.6pp pero desde una base baja. Este municipio no es recuperable en el corto plazo para el PJ. La estrategia provincial debe ser diferente: entender el territorio, identificar la franja popular (Florida Oeste, Munro), y trabajar en esa franja para mantener y ampliar el 28.6% hacia 35-40% en el largo plazo.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Conocimiento del Territorio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏢</div>
+        <div class="cl-tipo">Motor económico</div>
+        <div class="cl-nm">Corredor Libertador — Multinacionales</div>
+        <div class="cl-desc">Av. del Libertador y la Panamericana en Vicente López concentran sedes de multinacionales de tecnología (Microsoft, Google, IBM), farmacéutica, finanzas y consumo masivo. Es el corazón del empleo corporativo privado del conurbano norte. Sus empleados son el segmento más sensible al discurso anti-impuestos de LLA.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌊</div>
+        <div class="cl-tipo">Espacio público</div>
+        <div class="cl-nm">Paseo de la Costa</div>
+        <div class="cl-desc">El Paseo de la Costa es uno de los espacios públicos ribereños más valorados del GBA. Se extiende sobre la costa del Río de la Plata desde Vicente López hasta San Isidro, con ciclovías, parques, espacios deportivos y áreas de esparcimiento. Es el activo de calidad de vida más visible del municipio y el que más impacto tiene en la identidad "premium" del corredor norte.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏛️</div>
+        <div class="cl-tipo">Símbolo nacional</div>
+        <div class="cl-nm">Quinta de Olivos</div>
+        <div class="cl-desc">La Residencia Presidencial de Olivos es el símbolo más reconocido de Vicente López a nivel nacional. Su presencia en el municipio define una identidad de "cercanía al poder" que históricamente influyó en la percepción del vecino sobre la política. Hoy, en el contexto de LLA, esa cercanía tiene una lectura diferente.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación</div>
+        <div class="cl-nm">CUV — Ciudad Universitaria</div>
+        <div class="cl-desc">La Ciudad Universitaria Vicente López concentra extensiones de UBA, UTN y UNTREF. Es la apuesta más significativa de la gestión Martínez en términos de equipamiento urbano. Para estudiantes del corredor norte, el CUV reduce la necesidad de viajar a CABA para acceder a educación universitaria de calidad.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛡️</div>
+        <div class="cl-tipo">Seguridad</div>
+        <div class="cl-nm">ViloSmart y Puntos Seguros</div>
+        <div class="cl-desc">El sistema ViloSmart combina IA con cámaras de vigilancia para detección de delitos en tiempo real. Los "Puntos Seguros" son tótems físicos con botón de pánico y conexión directa a la central de seguridad. Son las políticas de seguridad más avanzadas del corredor norte y el argumento de gestión más fuerte de la intendenta Martínez.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏘️</div>
+        <div class="cl-tipo">Franja popular</div>
+        <div class="cl-nm">Florida Oeste, Munro, Villa Martelli</div>
+        <div class="cl-desc">Las zonas más populares del municipio, con mayor NBI relativo y mayor demanda de servicios públicos accesibles. Son el núcleo del voto PJ en Vicente López (28.6%) y el segmento con mayor potencial de crecimiento. La estrategia provincial en Vicente López pasa por consolidar y ampliar ese núcleo.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Provinciales en Territorio Opositor</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1</div><div class="pal-ttl">Inversión Provincial en Florida Oeste y Munro</div></div>
+        <div class="pal-body">
+          <p>Florida Oeste, Munro y Villa Martelli son las zonas donde el PJ tiene su base en Vicente López. La inversión provincial directa en esos barrios —obras de pavimentación, iluminación, plazas, CAPS— permite que la provincia llegue al vecino popular con obra concreta, independientemente de la gestión municipal de JxC.</p>
+          <p>El mensaje para ese electorado es claro: la provincia invierte donde el municipio no prioriza. Esa diferencia visible entre lo que llega de la provincia y lo que hace el municipio JxC es el argumento político más directo en territorio opositor.</p>
+          <span class="pal-tag acc-prov">Ministerio de Infraestructura PBA</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">ENOHSA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Polo Tecnológico — Articulación Provincial con Multinacionales</div></div>
+        <div class="pal-body">
+          <p>El corredor de multinacionales sobre Libertador/Panamericana no tiene articulación formal con el Estado provincial. Un acuerdo de la provincia con las empresas del corredor —para formación laboral, pasantías, empleo de jóvenes del conurbano, exenciones con compromisos de empleo— permite a la provincia tener presencia visible en el territorio económico más dinámico del corredor norte.</p>
+          <p>Ese tipo de acuerdo público-privado es un argumento que también llega al votante corporativo de Vicente López: el Estado provincial que entiende la economía de servicios y apoya la radicación de empresas.</p>
+          <span class="pal-tag acc-prov">Ministerio de Producción PBA</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">Cámaras tech / MadeTech</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Conectividad AMBA — Subte Sur / Ferroviaria</div></div>
+        <div class="pal-body">
+          <p>La conectividad entre Vicente López y CABA (Mitre, Belgrano) es fundamental para la vida cotidiana de los trabajadores populares del municipio. Un acuerdo AMBA para mejora de frecuencias del ramal Mitre y conectividad de Florida con CABA tiene impacto directo en la vida de los vecinos de Florida Oeste y Munro —el núcleo del voto PJ en el municipio.</p>
+          <p>La diferencia visible entre la provincia que mejora la conectividad de transporte y el municipio JxC que no tiene competencia en esa materia es otro argumento de presencia provincial en territorio opositor.</p>
+          <span class="pal-tag acc-prov">AMBA / Tren Mitre</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Trenes Argentinos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🔴 Síntesis Ejecutiva — Vicente López</h3>
+  <p><strong>Contexto:</strong> 250k padrón. Martínez (JxC) en tercer mandato. PJ 28.6% (+2.6pp). LLA 55.4% — mayoría absoluta. Vicente López es el territorio opositor más consolidado del lote: JxC durante décadas, ahora LLA con 55%. No es un municipio recuperable en el corto plazo.</p>
+  <p><strong>Lectura estratégica:</strong> El PJ subió 2.6pp (de 26.0% a 28.6%), lo que indica que hay una franja popular que votó PJ y que puede crecer. Esa franja está en Florida Oeste, Munro y Villa Martelli. El objetivo provincial en Vicente López no es ganar el municipio en 2027 sino: (1) consolidar y ampliar la base popular del PJ en esos barrios, y (2) tener presencia visible con obra provincial directa que diferencia la política provincial de la gestión municipal JxC.</p>
+  <p><strong>Palancas:</strong> Inversión directa en Florida Oeste/Munro independientemente del municipio, acuerdo provincial con el polo tecnológico del corredor Libertador/Panamericana, y mejora de conectividad ferroviaria AMBA para trabajadores populares del municipio.</p>
+</div>
+
+</body>
+</html>

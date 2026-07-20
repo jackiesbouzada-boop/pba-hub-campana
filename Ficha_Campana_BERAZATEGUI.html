@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Berazategui — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:6px}
+.badge-star{display:inline-block;background:rgba(16,185,129,.3);color:#6ee7b7;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(16,185,129,.5);letter-spacing:.5px;margin-bottom:12px;margin-left:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-g{font-size:1.15rem;font-weight:800;color:#6ee7b7}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .n-g{font-size:1.7rem;font-weight:900;color:#10b981;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-best{background:linear-gradient(135deg,#d1fae5,#a7f3d0);border-color:#6ee7b7}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-green{color:#059669}
+.star-box{background:#f0fdf4;border:1.5px solid #6ee7b7;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.star-ttl{font-size:.72rem;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.star-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 3ª Sección Electoral</div>
+  <div class="h-name">BERAZATEGUI</div>
+  <div class="h-name2">Capital Nacional del Vidrio: industria, parques y el conurbano que creció con el vidrio soplado</div>
+  <div class="h-sub">Berazategui · Guillermo Hudson · Pereyra · Juan María Gutiérrez · El Pato · Villa España</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-star">⭐ MEJOR TENDENCIA DEL LOTE +8.6pp</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">294,824</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">358,712</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">220.2 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v-g">64.3%</span><span class="h-stat-l">PJ 2025 — el más alto del lote ⭐</span></div>
+    <div class="h-stat"><span class="h-stat-v-g">+8.6 pp</span><span class="h-stat-l">Crecimiento PJ 2023→25 — 1° del lote</span></div>
+    <div class="h-stat"><span class="h-stat-v">1,629</span><span class="h-stat-l">hab/km² — densidad media</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Capital Nacional del Vidrio</h4>
+        <p>Berazategui es sinónimo de industria del vidrio en la Argentina. Cristalerías Rigolleau —fundada en 1906, una de las más antiguas y grandes del país— es el emblema de esa identidad. Alrededor de ella se desarrolló un ecosistema de proveedores, servicios y mano de obra especializada que convierte al municipio en el centro neurálgico de la producción vidriera nacional. La identidad obrera de Berazategui está profundamente ligada a esta industria: el "vidriero de Berazategui" es una figura del peronismo industrial del siglo XX.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Ciudad de los Parques Industriales</h4>
+        <p>Más allá del vidrio, Berazategui es uno de los municipios con mayor superficie de zonas industriales planificadas del conurbano sur. Múltiples parques industriales distribuidos en el territorio albergan empresas de sectores variados: alimentos, metalurgia, química, plásticos y manufactura diversa. Esta diversificación industrial —con base en el vidrio pero expandida— genera una estructura de empleo obrero estable que ancla el voto peronista en franjas amplias de la población económicamente activa.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n-g">64.3%</span>
+        <span class="l">PJ 2025 — porcentaje más alto del lote de 10 municipios prioritarios del conurbano</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-g">+8.6pp</span>
+        <span class="l">variación PJ 2023→2025 — primera posición en este lote, por encima de Malvinas (+8.1pp) y Avellaneda (+7.7pp)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Carlos Balor</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2015</div>
+        <div class="desc">Carlos Balor gobierna Berazategui desde 2015, con reelecciones en 2019 y 2023. Su perfil combina el peronismo industrial de base con una gestión orientada a servicios de salud, medio ambiente y economía popular. A diferencia de otros intendentes del conurbano con mayor visibilidad pública, Balor construyó poder desde la gestión territorial: centros de salud, reciclaje, veterinarias municipales y el desarrollo del Polo Emprendedores. El resultado de 2025 —64.3% con +8.6pp de crecimiento— es el mejor del lote de 10 municipios prioritarios y confirma un liderazgo político asentado en una relación concreta con los vecinos.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Producción e Industria</div>
+        <div class="gest-txt">Polo de Emprendedores Gutiérrez (Juan María Gutiérrez): incubadora municipal especializada en los rubros textil y gastronómico. Apunta a formalizar el emprendedurismo popular y conectar la economía informal con las redes de comercialización locales. Es el polo de innovación económica del municipio, en un distrito que históricamente se definió por la industria grande.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Espacios Verdes y Comunidad</div>
+        <div class="gest-txt">Parque de la Familia y los Animales: espacio recreativo de escala municipal enfocado en bienestar animal y recreación familiar. Complementa la oferta de espacios verdes en un municipio de baja densidad relativa (1,629 hab/km²) que tiene margen de desarrollo de espacio público en sus zonas más rurales hacia el este del territorio.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Salud Municipal</div>
+        <div class="gest-txt">Sistema de Salud Municipal: la mayor apuesta estructural de la gestión Balor es la red de centros de salud y clínicas municipales. Berazategui construyó capacidad instalada de atención primaria con múltiples CAPS distribuidos en el territorio, incluyendo la Clínica Veterinaria Municipal —primera de su tipo en la provincia, con quirófanos y sala de rayos— como extensión del concepto de salud al bienestar animal.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas de Gestión</div>
+        <div class="gest-txt">Berazategui Recicla: programa de economía circular con más de 40 Ecopuntos (centros de acopio y selección). Cooperativas de trabajo vinculadas al circuito. Clínica Veterinaria Municipal: castraciones, vacunación, rayos, cirugías. Primer servicio municipal de este tipo en la provincia de Buenos Aires.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Obreros industriales (vidrio, parques)</td><td>Trabajadores de Rigolleau y las industrias del parque industrial. Sindicatos de vidrieros, metalúrgicos (UOM), químicos. Identidad peronista estructural ligada al empleo industrial formal.</td><td class="tbl-num">~20%</td><td>Base sólida +++</td></tr>
+        <tr><td class="tbl-num">Barrios populares (Bera centro, Villa España)</td><td>Comunidades de clase obrera baja y sectores vulnerables. Alta demanda de salud, infraestructura y servicios. Base territorial del PJ fidelizada por los CAPS, el programa Berazategui Recicla y las cooperativas.</td><td class="tbl-num">~25%</td><td>Base leal +++</td></tr>
+        <tr><td class="tbl-num">Clase media (Hudson, El Pato)</td><td>Guillermo Hudson y zonas al este del municipio con crecimiento residencial. Clase media con mayor ingreso relativo, más permeable a otros partidos. Zona donde el PJ debe trabajar la diferencia.</td><td class="tbl-num">~18%</td><td>Moderado ++</td></tr>
+        <tr><td class="tbl-num">Emprendedores y comerciantes locales</td><td>Feriantes, comerciantes del mercado local, egresados del Polo Emprendedores. Economía informal en proceso de formalización. Perfil sensible a las políticas de apoyo al comercio y al emprendedurismo.</td><td class="tbl-num">~14%</td><td>Moderado ++</td></tr>
+        <tr><td class="tbl-num">Empleados públicos y docentes</td><td>Base peronista estable. SUTEBA y gremios municipales consolidan el voto en sectores urbanos. Articulación gremial importante para la movilización.</td><td class="tbl-num">~13%</td><td>Base estable +++</td></tr>
+        <tr><td class="tbl-num">Zona rural (Pereyra, El Pato)</td><td>Fracciones rurales del este del municipio. Población dispersa con menor densidad de servicios. El Parque Pereyra Iraola marca esta zona; población con perfil mixto y menor fidelidad partidaria.</td><td class="tbl-num">~10%</td><td>Variable +</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~17%</td><td>Media — en línea con tercera sección</td><td>Concentrado en Villa España y barrios periféricos de la ciudad cabecera; mejor situación en Hudson y El Pato</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~82%</td><td>Media-alta</td><td>Municipio de gran superficie con zonas rurales sin red; AySA presente en la ciudad cabecera</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~68%</td><td>Déficit en zonas periféricas</td><td>El tamaño del municipio (220 km²) genera brechas de cobertura en localidades alejadas del casco urbano</td></tr>
+        <tr><td class="tbl-num">Gas Natural</td><td class="tbl-num">~78%</td><td>Media — zonas rurales sin red</td><td>Localidades del este (Pereyra, El Pato) con menor cobertura de gas natural</td></tr>
+        <tr><td class="tbl-num">Salud</td><td>Red de CAPS municipales + Clínica Veterinaria</td><td>Atención primaria fuerte</td><td>La red de salud municipal es el principal activo de la gestión Balor. Clínica Veterinaria pionera en la provincia.</td></tr>
+        <tr><td class="tbl-num">Medio Ambiente</td><td>40+ Ecopuntos activos</td><td>Programa activo y con escala</td><td>Berazategui Recicla es uno de los programas de economía circular más desarrollados del conurbano sur. Cooperativas integradas al circuito.</td></tr>
+        <tr><td class="tbl-num">Industria</td><td>Múltiples parques industriales</td><td>Activos — capacidad subutilizada</td><td>Parques industriales con disponibilidad de lotes; oportunidad de radicación de nuevas empresas con apoyo provincial.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">55.7%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~17.4%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~22.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">287,479</span></div>
+      </div>
+      <div class="arc-card arc-best">
+        <div class="arc-year">Concejales Prov. 2025 ⭐</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-green">64.3% ↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">25.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~10.4%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">294,824</span></div>
+      </div>
+      <div class="arc-card arc-best">
+        <div class="arc-year">Lectura Estratégica ⭐</div>
+        <div class="arc-row"><span class="arc-lbl">PJ creció</span><span class="arc-val v-green">+8.6 pp ⭐</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA sube</span><span class="arc-val v-lla">+2.5 pp solo</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC colapsó</span><span class="arc-val v-jxc">→ voto PJ</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-green">BASTIÓN SÓLIDO</span></div>
+      </div>
+    </div>
+    <div class="star-box">
+      <div class="star-ttl">⭐ MEJOR TENDENCIA DEL LOTE — 64.3% PJ, +8.6pp: EL CONURBANO SUR QUE MÁS CRECIÓ</div>
+      <div class="star-txt">Berazategui encabeza el ranking de crecimiento de este lote de 10 municipios: +8.6pp supera a Malvinas Argentinas (+8.1pp) y a Avellaneda (+7.7pp). El mecanismo es claro: el colapso de JxC (que tenía 17.4% en 2023) canalizó votos hacia el PJ, mientras LLA subió apenas 2.5pp —la tercera cifra más baja del lote. La base industrial obrera (vidrio + parques), la red de salud municipal y la gestión de Balor generaron una adhesión que no tiene espacio para la propuesta libertaria. Con 64.3% y padrón de 295k, Berazategui es el bastión más sólido del conurbano sur en términos de crecimiento electoral.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🫙</div>
+        <div class="cl-tipo">Identidad industrial</div>
+        <div class="cl-nm">Rigolleau y el vidrio</div>
+        <div class="cl-desc">Cristalerías Rigolleau, fundada en 1906, es uno de los íconos industriales más antiguos del conurbano. Frascos, botellas, envases de vidrio: Berazategui es el origen de buena parte de la producción vidriera nacional. La identidad obrera del municipio está tejida alrededor de la chimenea de la fábrica.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌿</div>
+        <div class="cl-tipo">Reserva natural</div>
+        <div class="cl-nm">Parque Pereyra Iraola</div>
+        <div class="cl-desc">El Parque Pereyra Iraola, con más de 10,000 hectáreas, ocupa la mayor parte del este del municipio. Reserva de biosfera de la UNESCO, es el pulmón verde del conurbano sur y una identidad geográfica distintiva de Berazategui respecto del resto del GBA. Turismo de fin de semana y producción frutihortícola coexisten en su periferia.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">♻️</div>
+        <div class="cl-tipo">Innovación ambiental</div>
+        <div class="cl-nm">Berazategui Recicla</div>
+        <div class="cl-desc">40+ Ecopuntos distribuidos en el municipio, cooperativas de reciclaje integradas al circuito municipal y educación ambiental en escuelas. Es uno de los programas de economía circular más desarrollados del conurbano sur. El reciclaje como política pública sostenida con impacto real en el ingreso de cooperativas.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🐾</div>
+        <div class="cl-tipo">Innovación en salud</div>
+        <div class="cl-nm">Clínica Veterinaria Municipal</div>
+        <div class="cl-desc">Primera de su tipo en la provincia: quirófanos, sala de rayos, consultorios especializados y un programa de castraciones de escala (~1,000 por mes). La Clínica Veterinaria Municipal conecta la política de bienestar animal con el arraigo territorial: el vecino que lleva su mascota al municipio establece un vínculo concreto con el Estado local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🧵</div>
+        <div class="cl-tipo">Economía popular</div>
+        <div class="cl-nm">Polo Emprendedores Gutiérrez</div>
+        <div class="cl-desc">Incubadora municipal en Juan María Gutiérrez, especializada en textil y gastronomía. El polo apunta a la formalización del emprendedurismo popular en un municipio que tiene tradición industrial pero también un sector informal significativo. Emprendedores del municipio con acompañamiento técnico y comercial.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏭</div>
+        <div class="cl-tipo">Base económica</div>
+        <div class="cl-nm">Parques Industriales</div>
+        <div class="cl-desc">Múltiples parques industriales con empresas de sectores variados (alimentos, metalmecánica, química, plásticos) distribuidos en los 220 km² del municipio. Esta diversificación industrial genera empleo formal estable y una base tributaria que sostiene los servicios municipales.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1</div><div class="pal-ttl">Parques Industriales + Crédito Provincial</div></div>
+        <div class="pal-body">
+          <p>Berazategui tiene capacidad instalada de parques industriales con lotes disponibles. La articulación con el Ministerio de Producción provincial para radicación de nuevas empresas con créditos blandos y exenciones de ABL puede generar empleo industrial nuevo. La provincia puede designar a Berazategui como "polo industrial prioritario" del conurbano sur y acompañar con líneas de financiamiento específicas.</p>
+          <p>El vidrio como identidad: financiar la modernización de Rigolleau y las industrias vidrieras con crédito de BAPRO y FONDEP tiene impacto simbólico y real en el empleo de la rama histórica del municipio.</p>
+          <span class="pal-tag acc-prov">Ministerio de Producción</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">BAPRO / FONDEP</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Berazategui Recicla → Modelo Provincial</div></div>
+        <div class="pal-body">
+          <p>El programa Berazategui Recicla —40+ Ecopuntos, cooperativas integradas— es uno de los más desarrollados del GBA. La provincia puede escalar ese modelo con financiamiento provincial para replicarlo en otros municipios del conurbano, con Berazategui como municipio-piloto y Balor como referente del modelo.</p>
+          <p>Doble impacto: inversión real en economía circular + reconocimiento al modelo de gestión del intendente. El anuncio "Berazategui es el modelo provincial de reciclaje" tiene alcance comunicacional en un contexto de mayor sensibilidad ambiental.</p>
+          <span class="pal-tag acc-prov">OPDS Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">SAyDS Nación</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Expansión Cloacal + Agua en Zonas Rurales</div></div>
+        <div class="pal-body">
+          <p>Berazategui tiene 220 km² con déficit de cobertura cloacal y de agua en localidades del este (Pereyra, El Pato). La articulación con AySA y el ENOHSA para extender redes en estas zonas es una inversión en infraestructura básica con impacto electoral: la conexión a la red de cloacas es el tipo de obra que el vecino recuerda cuando vota.</p>
+          <p>La extensión de la red de gas en localidades sin cobertura suma en el mismo sentido: obra concreta, visible, de impacto directo en la calidad de vida.</p>
+          <span class="pal-tag acc-prov">DIPSOH / AySA</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">ENOHSA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📅 8. Agenda de Visita Sugerida</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Cristalerías Rigolleau / Parque Industrial</div>
+          <div class="vis-desc">Recorrida por la planta de vidrio más emblemática del municipio. Presencia con trabajadores y referentes sindicales. Mensaje: el Estado acompaña a la industria nacional. Oportunidad de anuncio de línea de crédito para modernización industrial.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Ecopunto Berazategui Recicla + Cooperativa</div>
+          <div class="vis-desc">Visita a uno de los 40+ Ecopuntos del programa de reciclaje. Foto con cooperativistas del circuito de residuos. Anuncio del programa como modelo provincial a replicar. Alta cobertura mediática en agenda ambiental.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Clínica Veterinaria Municipal</div>
+          <div class="vis-desc">Primera clínica veterinaria municipal de la provincia. Visita con veterinarios y vecinos. Mensaje de la "política pública que no se ve en los medios nacionales pero cambia la vida del barrio". Alto potencial en redes sociales (contenido visual con mascotas).</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Polo Emprendedores Gutiérrez</div>
+          <div class="vis-desc">Recorrida por la incubadora de textil y gastronomía. Mesas con emprendedores locales. Anuncio de ampliación del fondo provincial para emprendedores egresados del polo. Perfil joven y comunicable.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>Síntesis Ejecutiva</h3>
+  <p><strong>Prioridad:</strong> Alta — 295k padrón, mejor tendencia del lote (+8.6pp), PJ en 64.3%. Bastión del conurbano sur con base industrial obrera fortísima y gestión que tiene resultados concretos.</p>
+  <p><strong>Perfil electoral:</strong> Municipio que en 2025 consolidó al PJ como fuerza dominante absorbiendo el colapso de JxC. LLA solo creció 2.5pp —la dinámica más favorable del lote después de Florencio Varela. No hay señales de fragilidad electoral en el corto plazo.</p>
+  <p><strong>Oportunidad clave:</strong> Escalar Berazategui Recicla a modelo provincial y anunciar líneas de crédito para la industria del vidrio y los parques industriales. Doble mensaje: apoyo al empleo industrial histórico + innovación ambiental.</p>
+  <p><strong>Mensaje a Balor:</strong> El resultado de 2025 lo convierte en el intendente con mayor crecimiento electoral del lote de 10 municipios prioritarios. Eso es capital político que la provincia debe reconocer con inversiones concretas en parques industriales, reciclaje y expansión de servicios básicos en localidades del este.</p>
+</div>
+
+</body>
+</html>

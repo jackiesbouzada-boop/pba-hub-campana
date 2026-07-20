@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Malvinas Argentinas — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:6px}
+.badge-star{display:inline-block;background:rgba(16,185,129,.3);color:#6ee7b7;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(16,185,129,.5);letter-spacing:.5px;margin-bottom:12px;margin-left:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-g{font-size:1.15rem;font-weight:800;color:#6ee7b7}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .n-g{font-size:1.7rem;font-weight:900;color:#10b981;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-best{background:linear-gradient(135deg,#d1fae5,#a7f3d0);border-color:#6ee7b7}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-green{color:#059669}
+.star-box{background:#f0fdf4;border:1.5px solid #6ee7b7;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.star-ttl{font-size:.72rem;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.star-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">MALVINAS ARGENTINAS</div>
+  <div class="h-name2">El polo sanitario del noroeste: donde el hospital llega a tu barrio y el wifi es gratis en la plaza</div>
+  <div class="h-sub">Los Polvorines · Grand Bourg · Ing. Adolfo Sourdeaux · Pablo Nogués · Tortuguitas · La Lonja</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-star">⭐ +8.1pp — 2° tendencia del lote</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">298,548</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">350,674</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">62.9 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v-g">68.1%</span><span class="h-stat-l">PJ 2025 — alta adhesión ⭐</span></div>
+    <div class="h-stat"><span class="h-stat-v-g">+8.1 pp</span><span class="h-stat-l">Crecimiento PJ 2023→25</span></div>
+    <div class="h-stat"><span class="h-stat-v">5,575</span><span class="h-stat-l">hab/km² — alta densidad</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Polo Sanitario e Industria de la Salud</h4>
+        <p>Malvinas Argentinas construyó una identidad económica diferenciada dentro del conurbano noroeste: la salud como motor productivo. El Polo Sanitario del municipio concentra laboratorios, fabricantes de insumos médicos, distribuidoras farmacéuticas y prestadores de servicios de salud que generan empleo calificado y mueven una economía local centrada en el sector. Esta identidad no es solo discursiva: es infraestructura real que cambia la composición del mercado laboral local y atrae trabajadores con formación técnica y universitaria.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Parque Industrial Malvinas Argentinas</h4>
+        <p>Complementando el polo sanitario, el Parque Industrial del municipio alberga empresas de distintos rubros que diversifican la base económica. El parque ofrece servicios de infraestructura industrial —energía, vías de acceso, gestión de residuos— y funciona como ancla de empleo formal en un municipio densamente poblado (5,575 hab/km²) donde la demanda de trabajo es alta y constante. La combinación de industria de la salud + parque industrial diversificado posiciona a Malvinas Argentinas como un municipio con estructura económica más sofisticada que el promedio del GBA norte.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n-g">68.1%</span>
+        <span class="l">PJ 2025 — alta adhesión con 122,944 votos en concejales provinciales</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-g">+8.1pp</span>
+        <span class="l">variación PJ 2023→2025 — segunda posición del lote, por debajo de Berazategui (+8.6pp)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Leonardo Nardini</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2015</div>
+        <div class="desc">Leonardo Nardini lleva diez años al frente de Malvinas Argentinas, con reelecciones en 2019 y 2023. Su gestión se caracteriza por tres ejes que se refuerzan mutuamente: salud como política de Estado municipal (el Polo Sanitario, el programa "El hospital en tu barrio"), infraestructura permanente (la política de una cuadra de asfalto por día) y tecnología ciudadana (Malvinas Conectada, WiFi gratuito en plazas). El resultado de 68.1% en 2025 —con +8.1pp de crecimiento respecto de 2023— confirma que la gestión tiene un anclaje electoral sólido construido sobre servicios concretos y visibles.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Salud</div>
+        <div class="gest-txt">Polo Sanitario: concentración de empresas e instituciones del sector salud que convirtió a Malvinas Argentinas en referente provincial de la industria médica. Laboratorios, fabricantes de insumos y prestadores de servicios generan empleo calificado y estructuran la identidad económica del municipio.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Infraestructura</div>
+        <div class="gest-txt">Plan de Pavimentación Diaria: política de infraestructura sostenida que mantiene una cuadrilla activa ejecutando una cuadra de asfalto por día, todos los días hábiles. En un municipio densamente poblado con alta demanda de calles pavimentadas, este programa es visible, constante y tiene impacto directo en la calidad de vida de los vecinos que ven pavimentarse su cuadra.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Deporte y Cultura</div>
+        <div class="gest-txt">Red de Polideportivos Municipales: mini-clubes con piletas semiolímpicas, canchas de distintas disciplinas y playones techados. La red democratiza el acceso al deporte en barrios sin clubes privados o espacios recreativos. Cada polideportivo nuevo es un punto de contacto entre el Estado municipal y miles de familias.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas Destacados</div>
+        <div class="gest-txt">"El hospital en tu barrio": operativos itinerantes con carpas y camiones, 20 profesionales (pediatras, oftalmólogos, ginecólogos, odontólogos) que se instalan en distintos barrios. "Malvinas Conectada": WiFi gratuito en plazas principales, parques y centros comunitarios —conectividad como derecho público.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Trabajadores del sector salud (Polo Sanitario)</td><td>Empleados de laboratorios, fabricantes de insumos médicos y prestadores de salud. Trabajo calificado con ingreso medio-alto para el conurbano. Sensibles a las políticas de apoyo al sector. Base peronista moderada con mayor exigencia de gestión.</td><td class="tbl-num">~15%</td><td>Moderado-sólido ++</td></tr>
+        <tr><td class="tbl-num">Clase obrera y barrios populares (Grand Bourg, Los Polvorines)</td><td>Trabajadores de la construcción, el comercio y los servicios. Alta demanda de salud, infraestructura y seguridad. Base territorial del PJ fidelizada por los operativos móviles de salud y la pavimentación diaria.</td><td class="tbl-num">~30%</td><td>Base leal +++</td></tr>
+        <tr><td class="tbl-num">Clase media (Tortuguitas, Sourdeaux)</td><td>Localidades con mayor poder adquisitivo relativo, con barrios cerrados y propietarios. Perfil más permeable a opciones de centro-derecha. Zona donde Nardini ganó terreno gracias a los polideportivos y el WiFi.</td><td class="tbl-num">~20%</td><td>Moderado ++</td></tr>
+        <tr><td class="tbl-num">Emprendedores y comerciantes locales</td><td>Feriantes, comerciantes del mercado de Los Polvorines y Grand Bourg. Economía de servicios e informal. Sensibles a la estabilidad económica local y al apoyo del municipio.</td><td class="tbl-num">~16%</td><td>Variable +</td></tr>
+        <tr><td class="tbl-num">Empleados públicos, docentes y sector salud público</td><td>Gremios (SUTEBA, ATE, CICOP) con articulación política activa. Base peronista estable, movilizable en campaña.</td><td class="tbl-num">~14%</td><td>Base estable +++</td></tr>
+        <tr><td class="tbl-num">Adultos mayores</td><td>Vecinos mayores con alta demanda de servicios de salud y seguridad. Los operativos itinerantes "El hospital en tu barrio" tienen impacto directo en este segmento.</td><td class="tbl-num">~5%</td><td>Moderado-sólido ++</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~18%</td><td>Media — alta densidad urbana</td><td>Concentrado en Grand Bourg y Pablo Nogués; mejor situación en Tortuguitas y Sourdeaux</td></tr>
+        <tr><td class="tbl-num">Calles pavimentadas</td><td class="tbl-num">En progreso activo</td><td>Plan "1 cuadra/día" en ejecución</td><td>La política de pavimentación diaria es el hito de infraestructura más visible de la gestión Nardini. Déficit histórico importante pero con ritmo de ejecución sostenido.</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~83%</td><td>Media-alta</td><td>Municipio densamente urbanizado con buena cobertura en el casco central; rezagos en la periferia</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~72%</td><td>Déficit en zonas periféricas</td><td>Alta densidad genera alta demanda de saneamiento; rezago en barrios nuevos del norte del municipio</td></tr>
+        <tr><td class="tbl-num">Salud pública</td><td>Operativos itinerantes + CAPS municipales</td><td>Cobertura activa y descentralizada</td><td>"El hospital en tu barrio" cubre barrios alejados de los centros de salud fijos. 20 profesionales por operativo, cada semana en distintos barrios.</td></tr>
+        <tr><td class="tbl-num">Conectividad</td><td>WiFi gratuito en plazas y parques</td><td>Malvinas Conectada activo</td><td>Puntos de conectividad gratuita en los principales espacios públicos. Iniciativa diferenciadora en el conurbano noroeste.</td></tr>
+        <tr><td class="tbl-num">Deporte</td><td>Red de polideportivos en expansión</td><td>Activo — alta demanda satisfecha</td><td>Polideportivos con piletas semiolímpicas en distintas localidades. Alta frecuencia de uso, especialmente en verano.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">60.0%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~15.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~21.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">291,923</span></div>
+      </div>
+      <div class="arc-card arc-best">
+        <div class="arc-year">Concejales Prov. 2025 ⭐</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-green">68.1% ↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">22.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~9.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">298,548</span></div>
+      </div>
+      <div class="arc-card arc-best">
+        <div class="arc-year">Lectura Estratégica ⭐</div>
+        <div class="arc-row"><span class="arc-lbl">PJ creció</span><span class="arc-val v-green">+8.1 pp ⭐</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA sube</span><span class="arc-val v-lla">+1.0 pp solo</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC colapsó</span><span class="arc-val v-jxc">→ voto PJ</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-green">BASTIÓN SÓLIDO</span></div>
+      </div>
+    </div>
+    <div class="star-box">
+      <div class="star-ttl">⭐ 68.1% PJ — LLA CRECIÓ SOLO 1pp: EL BASTIÓN MÁS RESISTENTE DEL NOROESTE</div>
+      <div class="star-txt">El dato más sorprendente de Malvinas Argentinas en 2025 no es el 68.1% del PJ, sino que LLA creció apenas 1.0 punto porcentual (de ~21.8% a 22.8%). Es la cifra más baja de crecimiento libertario en todo el lote de 10 municipios. En un conurbano noroeste donde LLA tuvo avances de 15 a 25 puntos en municipios vecinos, Malvinas Argentinas fue la excepción. La densidad de la gestión municipal —salud itinerante, pavimentación diaria, polideportivos, WiFi— construyó una relación con el vecino que resulta muy difícil de erosionar con narrativas anti-Estado.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏥</div>
+        <div class="cl-tipo">Identidad productiva</div>
+        <div class="cl-nm">Polo Sanitario</div>
+        <div class="cl-desc">Laboratorios, fabricantes de insumos médicos y prestadores de servicios de salud que posicionan a Malvinas como referente provincial de la industria sanitaria. No solo salud como servicio: salud como motor económico y generador de empleo calificado.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚑</div>
+        <div class="cl-tipo">Salud itinerante</div>
+        <div class="cl-nm">El Hospital en tu Barrio</div>
+        <div class="cl-desc">Operativos con 20 profesionales en camiones y carpas que se instalan semanalmente en distintos barrios. Pediatría, oftalmología, ginecología, odontología: el Estado sale a buscar al vecino. Programa con impacto diferencial en adultos mayores y familias con niños pequeños.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛣️</div>
+        <div class="cl-tipo">Infraestructura constante</div>
+        <div class="cl-nm">Plan "1 cuadra por día"</div>
+        <div class="cl-desc">Una cuadra de asfalto, todos los días hábiles, durante todo el año. Política de pavimentación sostenida que hace visible la gestión en cada barrio. El vecino que ve pavimentarse su calle tiene una memoria concreta de qué hace el Estado municipal por él.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📡</div>
+        <div class="cl-tipo">Innovación digital</div>
+        <div class="cl-nm">Malvinas Conectada</div>
+        <div class="cl-desc">WiFi gratuito en plazas, parques y centros comunitarios. Conectividad como derecho público en un municipio de 350,000 habitantes. El vecino que se conecta desde la plaza al trabajo o a los trámites online experimenta al Estado como aliado, no como obstáculo.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏊</div>
+        <div class="cl-tipo">Deporte popular</div>
+        <div class="cl-nm">Red de Polideportivos</div>
+        <div class="cl-desc">Mini-clubes con piletas semiolímpicas, canchas y playones techados distribuidos en las distintas localidades. La red democratiza el acceso al deporte en barrios sin clubes privados. Cada polideportivo es un punto de vida comunitaria y de vínculo con el Estado local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏭</div>
+        <div class="cl-tipo">Base económica</div>
+        <div class="cl-nm">Parque Industrial</div>
+        <div class="cl-desc">Zona industrial planificada con empresas de distintos rubros. El parque industrial aporta empleo formal y diversificación económica en un municipio de alta densidad poblacional con fuerte demanda de trabajo. Complementa la identidad productiva del Polo Sanitario.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1</div><div class="pal-ttl">Polo Sanitario → Cluster Provincial de Salud</div></div>
+        <div class="pal-body">
+          <p>El Polo Sanitario de Malvinas Argentinas tiene escala suficiente para ser declarado "cluster provincial de la industria de la salud". La articulación del Ministerio de Producción provincial con el polo para atraer nuevas empresas del sector, financiar la modernización de las existentes y crear un programa de formación técnica en oficios de la salud tiene impacto económico real.</p>
+          <p>El anuncio de Malvinas Argentinas como "capital provincial de la industria de la salud" es un reconocimiento que Nardini puede capitalizar políticamente y que la provincia usa para mostrar articulación con el sector productivo del GBA norte.</p>
+          <span class="pal-tag acc-prov">Ministerio de Producción</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">INTI / CONICET</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Escalar "El Hospital en tu Barrio"</div></div>
+        <div class="pal-body">
+          <p>"El hospital en tu barrio" es el programa de salud itinerante más desarrollado del GBA norte. La provincia puede financiar su replicación en municipios que no tienen la capacidad instalada de Malvinas Argentinas, con Nardini como referente del modelo y Malvinas como municipio-piloto provincial.</p>
+          <p>La inversión en salud itinerante tiene el mayor ratio de impacto/costo de cualquier política de salud: llega a quienes no se acercan al sistema, resuelve problemas de diagnóstico temprano y construye adhesión al Estado.</p>
+          <span class="pal-tag acc-prov">Ministerio de Salud Prov.</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Completar Red Cloacal + AySA</div></div>
+        <div class="pal-body">
+          <p>Con 72% de cobertura cloacal y alta densidad (5,575 hab/km²), el déficit de saneamiento en Malvinas Argentinas es más costoso en términos de salud pública que en municipios de menor densidad. La articulación con AySA y el ENOHSA para completar las redes en los barrios periféricos del norte tiene impacto en NBI y en calidad de vida.</p>
+          <p>La infraestructura de saneamiento en alta densidad tiene la mayor externalidad positiva posible: reduce la carga sobre el sistema de salud, mejora el bienestar de las familias y se ve en la foto del vecino que finalmente tiene cloaca.</p>
+          <span class="pal-tag acc-prov">DIPSOH</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">AySA / ENOHSA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📅 8. Agenda de Visita Sugerida</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Operativo "El Hospital en tu Barrio"</div>
+          <div class="vis-desc">Presencia en un operativo itinerante de salud en algún barrio de Grand Bourg o Pablo Nogués. Médicos, vecinos, familias con niños. El Estado en movimiento. Alta carga comunicacional: foto viva del Estado que va al vecino, no al revés.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Polo Sanitario — Empresa del sector</div>
+          <div class="vis-desc">Visita a uno de los laboratorios o fabricantes de insumos médicos del polo. Mensaje: el Estado provincial apoya la industria de la salud que genera empleo calificado. Oportunidad de anuncio de líneas de crédito provincial para el sector.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Polideportivo Municipal con pileta</div>
+          <div class="vis-desc">Recorrida por uno de los polideportivos de la red. Presencia con vecinos y usuarios. El polideportivo con pileta semiolímpica en un barrio popular es uno de los activos de comunicación más potentes de la gestión peronista: deporte, comunidad y acceso igualitario en el mismo lugar.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Plaza con Malvinas Conectada (WiFi)</div>
+          <div class="vis-desc">Recorrida breve por una de las plazas con WiFi gratuito. Vecinos conectados desde el espacio público. Foto comunicacional simple pero poderosa: conectividad como derecho en el conurbano.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>Síntesis Ejecutiva</h3>
+  <p><strong>Prioridad:</strong> Alta — 298k padrón, PJ en 68.1%, LLA solo +1pp: el bastión más resistente del noroeste. Nardini tiene diez años de gestión territorial con resultados verificables y el resultado electoral lo confirma.</p>
+  <p><strong>Perfil electoral:</strong> El dato electoral más importante de Malvinas no es el porcentaje del PJ sino la mínima penetración de LLA (+1pp). En un conurbano norte donde el voto libertario subió 15-25 puntos, Malvinas fue la excepción. La explicación es la densidad de la gestión: el vecino que recibió el operativo de salud, que vio pavimentarse su cuadra y que usa el polideportivo no encuentra motivos para votar contra el Estado.</p>
+  <p><strong>Oportunidad clave:</strong> Declarar a Malvinas Argentinas como "cluster provincial de la industria de la salud" y escalar "El hospital en tu barrio" como modelo provincial. Doble impacto: reconocimiento político a Nardini + inversión real en el polo sanitario.</p>
+  <p><strong>Mensaje a Nardini:</strong> El menor crecimiento de LLA del lote de 10 municipios es el elogio más contundente que puede recibir un intendente peronista en 2025. Construyó un escudo contra el avance libertario hecho de gestión concreta. La provincia invierte ahí donde el Estado funcionó.</p>
+</div>
+
+</body>
+</html>

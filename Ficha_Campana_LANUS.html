@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lanús — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}
+.alert-box{background:#fef2f2;border:1.5px solid #fecaca;border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.ok-box{background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.ok-ttl{font-size:.72rem;font-weight:800;color:#15803d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.ok-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 3ª Sección Electoral</div>
+  <div class="h-name">LANÚS</div>
+  <div class="h-name2">Capital del Cuero, el Acero y la Nueva Gastronomía del Sur</div>
+  <div class="h-sub">Lanús Este · Lanús Oeste · Monte Chingolo · Valentín Alsina · Remedios de Escalada · Gerli · Villa Jardín</div>
+  <div><span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">403,721</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">461,267</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">50.2 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">49.4%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">32.2%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">+4.8 pp</span><span class="h-stat-l">Recuperación PJ 2023→25</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Capital del Cuero y la Metalúrgica</h4>
+        <p>Lanús tiene uno de los ADN industriales más arraigados del conurbano sur. Las curtiembres, la marroquinería y los talleres metalúrgicos llevan décadas definiendo la identidad económica del municipio. Aunque muchas fábricas grandes cerraron, el tejido de pequeñas y medianas industrias del cuero y el metal sigue siendo el núcleo productivo del distrito, densamente entrelazado con los barrios residenciales. Monte Chingolo y Valentín Alsina concentran la mayor parte de este perfil industrial-barrial.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>"Lanusita" — El Boom Gastronómico</h4>
+        <p>En los últimos años, el centro de Lanús experimentó una transformación radical. La zona conocida como "Lanusita" se convirtió en el polo gastronómico y de esparcimiento nocturno más importante de la zona sur del GBA. Restaurantes de cocina de autor, bares de cocteles, cervecerías artesanales y locales de diseño ocuparon un sector que antes era industrial. Este boom atrajo a consumidores de alto poder adquisitivo de toda la tercera sección y cambió la imagen del municipio hacia afuera.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">9,188</span>
+        <span class="l">hab/km² — uno de los municipios más densos de la PBA</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">50.2 km²</span>
+        <span class="l">superficie compacta — gestión de alta densidad</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Julián Álvarez</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2019</div>
+        <div class="desc">Figura joven y dinámica del peronismo bonaerense. Álvarez es considerado uno de los intendentes con perfil más tecnocrático y moderno de la tercera sección. Su gestión combina obras de infraestructura concretas (planta asfáltica, Plan de Pavimentación), salud territorial (Sábados de Salud, Red MAC) y una apuesta fuerte por el espacio público y la gastronomía como motor de identidad urbana. Reelecto en 2023, muestra habilidad para navegar distintos espacios del peronismo.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Seguridad</div>
+        <div class="gest-txt">Salto tecnológico en seguridad: nuevo Centro de Monitoreo con Central de última generación, red de cámaras de alta definición y sistema de reconocimiento de patentes. Una de las inversiones más importantes de la gestión en infraestructura de seguridad.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Obras</div>
+        <div class="gest-txt">Plan de Pavimentación 2026 con planta asfáltica municipal reactivada. El municipio aceleró dramáticamente el ritmo de pavimentación con planta propia, ejecutando cordón-cuneta y asfalto en decenas de cuadras históricamente sin pavimento.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Tránsito</div>
+        <div class="gest-txt">Red de Tránsito Pesado: corredor exclusivo para camiones que evita el deterioro acelerado de vías residenciales. Soluciona un problema histórico en un municipio de alta densidad y tránsito industrial intenso.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programa Destacado</div>
+        <div class="gest-txt">Polo Educativo Villa Jardín: transformación de un predio abandonado y marginal en un mega polo que incluye jardín de infantes, primaria, secundaria y talleres. Caso de referencia provincial en reconversión urbana con fin educativo.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Electoral Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Clase Obrera Industrial</td><td>Trabajadores de curtiembres, talleres metalúrgicos y químicas. Alta sindicalización histórica (UTICRA, UOM). Identidad peronista arraigada en décadas de sindicalismo del cuero.</td><td class="tbl-num">~22%</td><td>Base sólida +++</td></tr>
+        <tr><td class="tbl-num">Clase Media Comercial y de Servicios</td><td>Comerciantes del corredor Lanús-Remedios de Escalada, empleados bancarios y administrativos. Sensibles al espacio público, seguridad y economía.</td><td class="tbl-num">~25%</td><td>Recuperable ++</td></tr>
+        <tr><td class="tbl-num">Barrios Populares (Monte Chingolo, Val. Alsina)</td><td>Vecinos de alta densidad con demanda de salud, infraestructura y seguridad. Base electoral histórica del peronismo local.</td><td class="tbl-num">~28%</td><td>Leal +++</td></tr>
+        <tr><td class="tbl-num">Clases Medias "Lanusita"</td><td>Jóvenes profesionales y consumidores del polo gastronómico. Perfil más opositor pero sensible a la calidad urbana que la gestión Álvarez promueve.</td><td class="tbl-num">~12%</td><td>Disputado</td></tr>
+        <tr><td class="tbl-num">Empleados Públicos y Docentes</td><td>Empleados provinciales y municipales, docentes de los 60+ establecimientos educativos del municipio. Estables y movilizables.</td><td class="tbl-num">~13%</td><td>Moderado ++</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~14%</td><td>Media — mejor que promedio GBA sur</td><td>Concentrado en Villa Jardín, Monte Chingolo y Valentín Alsina</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~90%</td><td>Alta cobertura</td><td>Municipio compacto; AYSA cubre la mayor parte del distrito</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~72%</td><td>Cobertura media-alta</td><td>Déficit en Villa Diamante y zonas periféricas sur</td></tr>
+        <tr><td class="tbl-num">Gas Natural</td><td class="tbl-num">~82%</td><td>Cobertura alta</td><td>Municipio compacto con alta cobertura de red</td></tr>
+        <tr><td class="tbl-num">Pavimentación</td><td class="tbl-num">~62%</td><td>Déficit medio-bajo</td><td>Plan de Pavimentación activo con planta propia; aceleración en 2025-2026</td></tr>
+        <tr><td class="tbl-num">Conectividad Digital</td><td class="tbl-num">~80%</td><td>Alta cobertura</td><td>Alta densidad urbana favorece cobertura de fibra y 4G/5G</td></tr>
+        <tr><td class="tbl-num">Efectores de Salud</td><td>HIGA Evita (prov.) en Lanús Oeste, Red de Salas MAC, Sábados de Salud (territoriales)</td><td>Sistema denso</td><td>Alta demanda por densidad. Las Salas MAC son innovación en atención continua.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">44.6% · 126,006</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~34.7% · 98,206</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~16.4% · 46,423</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">404,246</span></div>
+      </div>
+      <div class="arc-card arc-winner">
+        <div class="arc-year">Concejales Prov. 2025</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">49.4% · 120,457</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">32.2% · 78,467</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~18.4%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">403,721</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">Análisis de Tendencia</div>
+        <div class="arc-row"><span class="arc-lbl">PJ 2023 → 2025</span><span class="arc-val v-pj">+4.8 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA creció</span><span class="arc-val v-lla">+15.8 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC → absorbida por LLA</span><span class="arc-val v-grey">−34.7% (desaparece)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón estable</span><span class="arc-val v-grey">403k ≈ 404k</span></div>
+      </div>
+    </div>
+    <div class="ok-box">
+      <div class="ok-ttl">✅ RECUPERACIÓN PJ — CASI 50%</div>
+      <div class="ok-txt">Lanús muestra una recuperación real del PJ: de 44.6% a 49.4% (+4.8 pp). La clave fue la absorción del voto JxC que se disolvió en 2025 — una parte fue a LLA pero otra volvió al PJ. Álvarez está a un paso de romper el 50%, lo que cambiaría la narrativa del municipio de "territorio disputado" a "bastión peronista".</div>
+    </div>
+    <div class="alert-box">
+      <div class="alert-ttl">⚠️ LLA CONCENTRA EL VOTO OPOSITOR: 32.2%</div>
+      <div class="alert-txt">LLA absorbe casi todo el voto no-PJ. Con 32.2%, es el competidor más sólido que Álvarez enfrentará en 2027 si la tendencia se mantiene. El voto JxC (que fue hasta 34.7%) migró casi completamente a LLA. El panorama opositor se simplificó: ahora todo está en un solo adversario.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🥩</div>
+        <div class="cl-tipo">Gastronomía y lifestyle</div>
+        <div class="cl-nm">"Lanusita" — El Polo Nocturno</div>
+        <div class="cl-desc">La transformación más visible del municipio en la última década. Un corredor de restaurantes de nivel, bares de autor y comercios de diseño que genera movimiento económico todos los fines de semana y atrajo consumidores de toda la zona sur.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">👟</div>
+        <div class="cl-tipo">Industria histórica</div>
+        <div class="cl-nm">Curtiembres y Marroquinería</div>
+        <div class="cl-desc">El ADN industrial del municipio. Lanús fue capital nacional del cuero con decenas de curtiembres y talleres de marroquinería que definieron generaciones de obreros. Una identidad industrial que define la memoria colectiva aunque muchas fábricas hayan cerrado.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⚽</div>
+        <div class="cl-tipo">Fútbol e identidad</div>
+        <div class="cl-nm">Club Atlético Lanús — "El Granate"</div>
+        <div class="cl-desc">El Granate tiene una hinchada apasionada y una historia rica en el fútbol argentino. Su estadio en el corazón del municipio genera un movimiento económico y social cada fecha de local. Campeón Copa Sudamericana 2013 y Copa Argentina.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏥</div>
+        <div class="cl-tipo">Innovación sanitaria</div>
+        <div class="cl-nm">Red de Salas MAC</div>
+        <div class="cl-desc">Las Salas de Medicina de Atención Continua (MAC) son una innovación en salud primaria: atienden sin turno previo, incluso fuera del horario habitual. Resolución de urgencias de baja complejidad que reduce la presión sobre las guardias hospitalarias.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Reconversión urbana</div>
+        <div class="cl-nm">Polo Educativo Villa Jardín</div>
+        <div class="cl-desc">Un predio marginal transformado en complejo educativo: jardín, primaria, secundaria y talleres. Caso de referencia en cómo el Estado puede reconvertir espacios degradados en activos comunitarios de alta valoración social.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛣️</div>
+        <div class="cl-tipo">Obra pública tangible</div>
+        <div class="cl-nm">Plan de Pavimentación</div>
+        <div class="cl-desc">El Plan con planta asfáltica propia es la obra más visible para los vecinos. Cuadras pavimentadas = familias que antes levantaban tierra al abrir la puerta y hoy tienen asfalto. Un hito que genera adhesión directa y medible.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1</div><div class="pal-ttl">Seguridad Integrada con la Provincia</div></div>
+        <div class="pal-body">
+          <p>El salto tecnológico en seguridad municipal (Centro de Monitoreo, cámaras, reconocimiento de patentes) es el activo más visible de la gestión. La integración de ese sistema con la red provincial de seguridad y la Policía Bonaerense maximiza el retorno: no solo más cámaras sino una red interoperable que detecta y responde.</p>
+          <p>La seguridad es el primer "dolor" electoral en un municipio de 9,188 hab/km². La inversión provincial en Lanús tiene retorno transversal en todos los segmentos.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Coordinación Nacional</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Revitalización Industrial del Cuero</div></div>
+        <div class="pal-body">
+          <p>La industria del cuero está en reconversión: algunas curtiembres cerraron pero el know-how industrial permanece. Un programa provincial de crédito y capacitación para la reconversión de las PyMEs del cuero hacia producción de mayor valor agregado (marroquinería de diseño, calzado) tiene potencial de generar empleo formal con identidad industrial local.</p>
+          <p>El mensaje es "Lanús sigue siendo capital del cuero, pero en el siglo XXI" — modernización sin abandono de la identidad.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">Reconversión Industrial</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Cloacas y Completamiento de Red</div></div>
+        <div class="pal-body">
+          <p>Con 72% de cobertura cloacal, Lanús tiene un déficit concentrado en Villa Diamante y el periférico sur. La inversión provincial (AYSA) para completar la red cloacal en las zonas faltantes complementa el Plan de Pavimentación municipal y consolida la mejora de calidad de vida que la gestión viene prometiendo.</p>
+          <p>El completamiento de la red cloacal en un municipio tan compacto y denso es técnicamente viable con inversión moderada y tiene impacto visible en toda la comunidad.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">AYSA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📍 8. Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Polo Educativo Villa Jardín</div>
+          <div class="vis-desc">Recorrido por el complejo educativo construido sobre el predio reconvertido. Alto impacto visual y emocional. Ideal para anuncios de ampliación, equipamiento educativo o extensión del modelo a otros predios del municipio.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">"Lanusita" — Recorrido Gastronómico Nocturno</div>
+          <div class="vis-desc">Visita al polo gastronómico del municipio. Contacto con emprendedores gastronómicos, comerciantes y consumidores de la zona. Mensaje de ciudad que crece y se transforma. Momento ideal: tarde-noche de fin de semana.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Sala MAC — Medicina de Atención Continua</div>
+          <div class="vis-desc">Visita a una de las Salas MAC como modelo de atención sanitaria innovador. Contacto con pacientes y profesionales de la salud. Anuncio posible: extensión del modelo MAC a otros municipios de la provincia como política pública provincial.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Monte Chingolo — Barrios con Plan de Pavimentación</div>
+          <div class="vis-desc">Recorrido por calles recién pavimentadas. Contacto con vecinos que vivían con tierra y hoy tienen asfalto. Alta resonancia emocional. Ideal para acompañar el anuncio de la próxima etapa del Plan de Pavimentación con financiamiento provincial.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Estadio de Club Atlético Lanús — "El Granate"</div>
+          <div class="vis-desc">Visita simbólica al corazón futbolero de Lanús. Contacto con dirigentes del club y representantes de la comunidad deportiva. Alta visibilidad mediática. Ideal para anunciar inversión en deportes comunitarios o infraestructura deportiva provincial.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🧠 Síntesis Ejecutiva</h3>
+  <p><strong>Lanús es uno de los distritos con mejor tendencia de todo el grupo prioritario: +4.8 pp para el PJ en dos años.</strong> El municipio más denso del conurbano sur muestra que la gestión Álvarez —moderna, concreta y con alta visibilidad— está funcionando políticamente. El PJ está a menos de 1 punto de superar el 50%, lo que lo convertiría en bastión consolidado.</p>
+  <p>El único riesgo relevante es LLA: con 32.2%, es el competidor más fuerte que enfrentará Álvarez en 2027. El voto JxC que fue casi 35% en 2023 se disolvió y fue mayoritariamente a LLA, no al PJ. Para romper esa barrera hace falta crecer en el segmento de clase media que hoy vota LLA.</p>
+  <p>La inversión provincial en Lanús tiene el mejor retorno marginal del grupo: cada punto de mejora en seguridad, pavimento o servicios se ve directamente en un municipio de altísima densidad donde los vecinos se entran de todo lo que pasa a la vuelta de la esquina.</p>
+</div>
+
+</body>
+</html>

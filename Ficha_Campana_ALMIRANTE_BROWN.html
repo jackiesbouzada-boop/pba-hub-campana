@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Almirante Brown — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-fit{color:#dc2626}.v-vec{color:#0369a1}.v-grey{color:#374151}
+.split-box{background:#dbeafe;border:1.5px solid #93c5fd;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.split-title{font-size:.72rem;font-weight:800;color:#1e40af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.split-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid #bfdbfe}
+.split-row:last-child{border-bottom:none}
+.split-lbl{font-size:.77rem;color:#374151}
+.split-val{font-size:.82rem;font-weight:800;color:#1d4ed8}
+.split-pos{color:#15803d}
+.split-neg{color:#b91c1c}
+.alert-box{background:#fef2f2;border:1.5px solid #fecaca;border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.ok-box{background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.ok-ttl{font-size:.72rem;font-weight:800;color:#15803d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.ok-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 3ª Sección Electoral</div>
+  <div class="h-name">ALMIRANTE BROWN</div>
+  <div class="h-name2">Polo Industrial, Cultural y Universitario del Sur</div>
+  <div class="h-sub">Adrogué · Burzaco · Longchamps · Claypole · Rafael Calzada · San José · Glew · Malvinas Argentinas</div>
+  <div><span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">491,268</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">584,827</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">129.3 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">54.2%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">28.4%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">+0.1 pp</span><span class="h-stat-l">PJ 2023→2025 estable</span></div>
+  </div>
+</div>
+
+<!-- SECCIÓN 1 -->
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Parque Industrial de Burzaco</h4>
+        <p>Uno de los sectores industriales planificados mixtos más grandes del país. Alberga más de 300 empresas metalúrgicas, químicas, alimenticias y logísticas, siendo motor clave de empleo y PBI para la tercera sección. El parque define la imagen de un municipio que produce, no solo que duerme. Su presencia genera un tipo de empleo obrero estable con fuerte sindicalización.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Ciudad de las Artes · Adrogué y Borges</h4>
+        <p>La cabecera del municipio, Adrogué, tiene una identidad cultural e histórica notable: arquitectura distinguida, circuito de turismo de cercanía y la conexión histórica con Jorge Luis Borges, quien vivió allí parte de su infancia. Esta identidad cultural convive con un circuito comercial vigoroso y con la Universidad Nacional Guillermo Brown (UNaB), inaugurada recientemente como hito educativo mayor.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">+300</span>
+        <span class="l">empresas en Parque Industrial Burzaco</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">4,524</span>
+        <span class="l">hab/km² — densidad media-alta</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 2 -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Mariano Cascallares</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2015</div>
+        <div class="desc">Una de las figuras más consolidadas del peronismo bonaerense. Gestión de larga data (desde 2015) con obras concretas y alta visibilidad territorial. Su sello es la articulación de lo municipal con lo universitario (UNaB) y la modernización del Estado local. Perfil tecnocrático y con discurso de modernidad. Político con proyección propia en la tercera sección y potencial nacional.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Conectividad</div>
+        <div class="gest-txt">Conectividad Bajo Nivel: en articulación con Estado Nacional y Provincial, se ejecutó el paso bajo nivel más importante del municipio, eliminando un cuello de botella histórico que generaba horas de tráfico y separaba barrios. Hito tangible para vecinos del corredor.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Universidad UNaB</div>
+        <div class="gest-txt">Universidad Nacional Guillermo Brown: el hito educativo más fuerte. El municipio lideró la construcción del campus propio en la Quinta Rocca (Adrogué), con facultades de Tecnología, Ciencias Económicas y más. Posiciona a Brown como destino universitario del sur del GBA.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Salud</div>
+        <div class="gest-txt">Hospitales de Diagnóstico Inmediato (HDI Burzaco y HDI Rafael Calzada): centros de atención ambulatoria de alta complejidad con diagnóstico rápido. Modelo de atención primaria de referencia en el conurbano sur.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programa Destacado</div>
+        <div class="gest-txt">Brown Previene: aplicación de seguridad utilizada por 60,000 vecinos, integrada a una red de 1,600 cámaras y patrullaje coordinado. Uno de los sistemas de seguridad comunitaria más adoptados del conurbano.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 3 -->
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead>
+        <tr><th>Segmento</th><th>Descripción</th><th>Peso Electoral Est.</th><th>Perfil PJ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tbl-num">Obrero Industrial</td>
+          <td>Trabajadores del Parque Industrial de Burzaco y metalúrgicas aledañas. Alta sindicalización (UOM, SMATA). Identidad peronista histórica.</td>
+          <td class="tbl-num">~22%</td>
+          <td>Base sólida +++</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Clase Media Adrogué</td>
+          <td>Profesionales, comerciantes y empleados del corredor Adrogué-Burzaco. Identidad cultural, sensibles a gestión educativa y espacios públicos de calidad.</td>
+          <td class="tbl-num">~18%</td>
+          <td>Recuperable ++</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Barrios Populares Periféricos</td>
+          <td>Comunidades de Claypole, Rafael Calzada y Glew con alta informalidad laboral. Demanda de infraestructura básica. Base electoral movilizable con presencia territorial.</td>
+          <td class="tbl-num">~25%</td>
+          <td>Leal, activa +++</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Comunidad Universitaria (UNaB)</td>
+          <td>Estudiantes, docentes y familias vinculadas a la nueva universidad. Segmento en formación, sensible a políticas de acceso educativo y becas.</td>
+          <td class="tbl-num">~10%</td>
+          <td>Potencial ++</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Empleados Públicos y Comerciantes</td>
+          <td>Empleados municipales, provinciales y comerciantes de los centros de Longchamps y Glew. Voto moderado, sensible a la economía local.</td>
+          <td class="tbl-num">~15%</td>
+          <td>Moderado +</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Clase Media Alta (Adrogué Centro)</td>
+          <td>Familias con historia en el municipio, profesionales, vinculados al turismo cultural de Adrogué. Perfil más opositor, pero permeable a gestión de calidad.</td>
+          <td class="tbl-num">~10%</td>
+          <td>Disputado</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECCIÓN 4 -->
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead>
+        <tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tbl-num">NBI</td>
+          <td class="tbl-num">~16%</td>
+          <td>Media — GBA sur</td>
+          <td>Concentrado en Claypole, Rafael Calzada y zonas periféricas del sur</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Agua Corriente</td>
+          <td class="tbl-num">~82%</td>
+          <td>Cobertura media-alta</td>
+          <td>Déficit en nuevos barrios periféricos; expansión AYSA en curso</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Red Cloacal</td>
+          <td class="tbl-num">~58%</td>
+          <td>Déficit importante</td>
+          <td>Deuda histórica en barrios más alejados de la cabecera</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Gas Natural</td>
+          <td class="tbl-num">~75%</td>
+          <td>Cobertura media</td>
+          <td>Programa Tigre Gas / extensión en periférico sur aún pendiente</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Pavimentación</td>
+          <td class="tbl-num">~52%</td>
+          <td>Déficit medio</td>
+          <td>Plan de cordon-cuneta activo; acceso vial al parque industrial priorizado</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Conectividad Digital</td>
+          <td class="tbl-num">~72%</td>
+          <td>En expansión</td>
+          <td>WiFi público en plazas y en campus UNaB; fibra en Adrogué centro</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Efectores de Salud</td>
+          <td>HDI Burzaco, HDI Rafael Calzada (municipales), Hospital de Alta Complejidad Adrogué (provincial), red CAPS</td>
+          <td>Sistema robusto</td>
+          <td>Los HDI son modelo de atención ambulatoria. Alta cobertura de primer nivel.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECCIÓN 5 -->
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">54.1% · 181,013</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~18.9% · 63,061</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~22.3% · 74,488</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">484,083</span></div>
+      </div>
+      <div class="arc-card arc-winner">
+        <div class="arc-year">Concejales Prov. 2025</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">54.2% · 162,821</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">28.4% · 85,267</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~17.4%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">491,268</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">Tendencia PJ 2023 → 2025</div>
+        <div class="arc-row"><span class="arc-lbl">PJ% 2023</span><span class="arc-val v-pj">54.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ% 2025</span><span class="arc-val v-pj">54.2%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Δ porcentual</span><span class="arc-val v-pj">+0.1 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">Nota</span><span class="arc-val v-grey">Estabilidad alta</span></div>
+      </div>
+    </div>
+    <div class="ok-box">
+      <div class="ok-ttl">✅ BASTIÓN CONSOLIDADO — ESTABILIDAD NOTABLE</div>
+      <div class="ok-txt">Almirante Brown mantiene con casi exacta precisión su porcentaje PJ entre 2023 y 2025 (54.1% → 54.2%). En un ciclo donde muchos distritos oscilaron varios puntos, esta estabilidad es señal de un electorado fidelizado y una gestión de alta permeabilidad territorial. Cascallares es uno de los intendentes con mayor adhesión real en la tercera sección.</div>
+    </div>
+    <div class="alert-box">
+      <div class="alert-ttl">⚠️ LLA SUBE EN TÉRMINOS ABSOLUTOS</div>
+      <div class="alert-txt">Aunque LLA bajó levemente en porcentaje (22.3% → 28.4% — inversión en padrón mayor), los votos absolutos suben de 74,488 a 85,267. La consolidación del voto LLA en el corredor Burzaco-Claypole-Glew debe monitorearse para 2027.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 6 -->
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏭</div>
+        <div class="cl-tipo">Motor económico</div>
+        <div class="cl-nm">Parque Industrial Burzaco</div>
+        <div class="cl-desc">Más de 300 empresas en uno de los parques planificados mixtos más grandes del país. Orgullo territorial para los obreros industriales del municipio y símbolo de la capacidad productiva del peronismo local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📚</div>
+        <div class="cl-tipo">Cultura e historia</div>
+        <div class="cl-nm">Adrogué y Jorge Luis Borges</div>
+        <div class="cl-desc">La cabecera del municipio tiene identidad cultural única. Borges vivió aquí parte de su infancia y lo mencionó en su obra. Circuito de turismo cultural con arquitectura de principios de siglo XX.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación superior</div>
+        <div class="cl-nm">Universidad Nacional Guillermo Brown</div>
+        <div class="cl-desc">La UNaB es el hito más importante de la gestión Cascallares. Primer campus universitario público del municipio, en la Quinta Rocca de Adrogué. Transforma la identidad del distrito: de ciudad dormitorio a ciudad universitaria.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📱</div>
+        <div class="cl-tipo">Innovación cívica</div>
+        <div class="cl-nm">Brown Previene (App)</div>
+        <div class="cl-desc">60,000 vecinos usan la app de seguridad del municipio, integrada a 1,600 cámaras. Caso de éxito en tecnología cívica que generó adopción masiva y se convirtió en marca identitaria de la gestión.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⚽</div>
+        <div class="cl-tipo">Deporte barrial</div>
+        <div class="cl-nm">San Jorge y los Clubes de Barrio</div>
+        <div class="cl-desc">Almirante Brown tiene una amplia red de clubes barriales que articulan vida social en Longchamps, Glew y Rafael Calzada. El deporte amateur es el tejido comunitario más activo del municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌳</div>
+        <div class="cl-tipo">Medio ambiente</div>
+        <div class="cl-nm">Brown Sustentable</div>
+        <div class="cl-desc">Programa ambiental integral con reciclado, educación ambiental y gestión de residuos. Articulación con Eco-Escuelas y cooperativas de reciclado. Imagen de municipio moderno y comprometido con el ambiente.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 7 -->
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 1</div>
+          <div class="pal-ttl">Universidad y Economía del Conocimiento</div>
+        </div>
+        <div class="pal-body">
+          <p>La UNaB es el hito más transformador del municipio. La ampliación de oferta de carreras, el financiamiento de becas provinciales y la creación de un polo tecnológico-productivo articulado con el campus universitario tiene potencial de consolidar un nuevo segmento electoral: jóvenes universitarios y familias con aspiración educativa.</p>
+          <p>Articulación con UNSAM (San Martín) y UNAJ (Varela) para crear corredor universitario del sur GBA.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Financiamiento Nacional</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 2</div>
+          <div class="pal-ttl">Parque Industrial y Empleo Formal</div>
+        </div>
+        <div class="pal-body">
+          <p>El Parque Industrial de Burzaco es la principal fuente de empleo formal del municipio. El fortalecimiento de las PyMEs radicadas, la ampliación de la capacidad instalada, el crédito productivo de la provincia y la mejora vial del corredor de acceso tienen retorno directo en los trabajadores del sector y sus familias.</p>
+          <p>Visibilidad política en el parque: la inauguración de nuevas empresas o expansiones con presencia provincial es de alto impacto en la base obrera.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">Inversión Privada</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 3</div>
+          <div class="pal-ttl">Infraestructura Cloacal y Cordón Periférico</div>
+        </div>
+        <div class="pal-body">
+          <p>Con sólo 58% de cobertura cloacal, los barrios de Claypole, Rafael Calzada y Glew tienen una deuda de infraestructura básica importante. La inversión provincial en red cloacal y cordón-cuneta en estos barrios tiene retorno electoral alto en el segmento de mayor fidelidad al PJ (barrios populares periféricos, ~25% del padrón).</p>
+          <p>El programa "Involucrados" (municipio + Justicia) también puede articularse con obras de infraestructura para mayor impacto comunitario.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">AYSA / MIyOP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 8 -->
+<div class="sec">
+  <div class="sec-hdr">📍 8. Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Campus UNaB — Quinta Rocca, Adrogué</div>
+          <div class="vis-desc">Recorrido por el campus universitario de la Universidad Nacional Guillermo Brown. Contacto con estudiantes, docentes y autoridades. Espacio para anuncios de becas provinciales, ampliación de oferta académica o inversión en infraestructura universitaria.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Parque Industrial de Burzaco</div>
+          <div class="vis-desc">Recorrido por empresas instaladas en el parque industrial. Reunión con empresarios y obreros del sector metalmecánico, químico y logístico. Ideal para anuncios de crédito productivo, mejoras viales o incentivos a la radicación industrial.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">HDI Burzaco — Hospital de Diagnóstico Inmediato</div>
+          <div class="vis-desc">Visita al modelo de atención ambulatoria de alta complejidad. Alta repercusión mediática por ser un modelo replicable. Permite anunciar extensión del modelo HDI a otros distritos de la provincia.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Barrios de Claypole o Rafael Calzada</div>
+          <div class="vis-desc">Visita territorial a los barrios periféricos con mayor déficit de infraestructura. Anuncio de obras de cloacas o pavimentación con alta resonancia en el segmento de economía popular. Coordinar con organizaciones barriales y referentes del territorio.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Centro Histórico de Adrogué</div>
+          <div class="vis-desc">Recorrido cultural por la arquitectura histórica y el circuito Borges en Adrogué. Muestra de la identidad cultural del municipio. Combinar con visita al Programa Brown Sustentable (reciclado y espacios verdes).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS -->
+<div class="sint">
+  <h3>🧠 Síntesis Ejecutiva</h3>
+  <p><strong>Almirante Brown es uno de los bastiones más estables del peronismo en la tercera sección.</strong> Con 584,827 habitantes y un PJ que no bajó del 54% en dos ciclos electorales consecutivos, el municipio ofrece una base de certeza política en un contexto de volatilidad general.</p>
+  <p>El diferencial de Brown respecto a otros distritos conurbanos es la combinación inusual de industria, cultura y universidad pública en un territorio compacto. La UNaB es el hito más moderno y transformador: posiciona al municipio como ciudad universitaria del sur y genera un nuevo segmento electoral de alta movilización.</p>
+  <p>Las deudas estructurales (cloacas al 58%, pavimentación incompleta en la periferia) son la principal oportunidad para la inversión provincial con retorno electoral. Cascallares es un aliado sofisticado y de larga trayectoria: la coordinación política con él requiere oferta concreta de obras y reconocimiento de su perfil propio.</p>
+</div>
+
+</body>
+</html>

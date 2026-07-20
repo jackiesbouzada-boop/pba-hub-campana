@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Junín — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.badge-alerta{display:inline-block;background:rgba(220,38,38,.35);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.5);letter-spacing:.5px;margin-right:6px;margin-bottom:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:8px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#fca5a5}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.alert-box{background:#fef2f2;border:1.5px solid #fca5a5;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#991b1b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k h4{color:#fca5a5}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n-r{font-size:1.7rem;font-weight:900;color:#dc2626;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#fee2e2;color:#991b1b;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#fef9f9}
+.tbl-num{font-weight:700;color:#991b1b}
+.arc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-alert{background:linear-gradient(135deg,#fef2f2,#fee2e2);border-color:#fca5a5}
+.arc-warn{background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#fcd34d}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-red{color:#dc2626}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#fca5a5;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌾 INTERIOR BONAERENSE &nbsp;|&nbsp; 4ª Sección Electoral</div>
+  <div class="h-name">JUNÍN</div>
+  <div class="h-name2">Cabecera de Sección · Pampa Noroeste · Agro · Conexión Evita — Los Toldos</div>
+  <div>
+    <span class="badge-alerta">❌ INTENDENTE OPOSITOR — Petrecca / JxC (PRO)</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">~90,000</span><span class="h-stat-l">Padrón estimado 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">~110,000</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">2,248 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">~55%</span><span class="h-stat-l">PJ 2025 Concejales est. (dos partidos)</span></div>
+    <div class="h-stat"><span class="h-stat-v">Petrecca</span><span class="h-stat-l">Intendente JxC desde 2011</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌾 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="alert-box">
+      <div class="alert-ttl">⚠️ MUNICIPIO CON INTENDENTE OPOSITOR (JxC)</div>
+      <div class="alert-txt">Juan Manuel Petrecca (PRO/JxC) conduce el ejecutivo municipal desde 2011. Es uno de los intendentes PRO más consolidados del interior bonaerense. En 2023 ganó con margen cómodo a pesar del contexto nacional adverso para JxC. Sin embargo, en la elección de concejales del PBA 2025, el PJ habría superado a las fuerzas opositoras. El análisis se centra en las palancas de acción provincial y en la base peronista del municipio, no en acciones desde el ejecutivo municipal.</div>
+    </div>
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Cabecera de la 4ª Sección · Hub del Noroeste Bonaerense</h4>
+        <p>Junín es la ciudad más importante del noroeste de la provincia de Buenos Aires. Como cabecera de sección, concentra servicios de salud de mayor complejidad (HIGA), educación superior, comercio y servicios para un amplio radio de municipios menores. Su rol de hub regional la convierte en punto de referencia para 15-20 municipios del noroeste bonaerense que dependen de sus servicios.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Pampa Productiva · Agricultura e Identidad Evitista</h4>
+        <p>El partido de Junín está en el corazón de la pampa húmeda noroeste: soja, maíz, girasol y ganadería definen la economía rural del partido. Pero Junín tiene también una conexión histórica única con Eva Perón: Evita vivió en Junín en su adolescencia antes de partir a Buenos Aires. Los Toldos (partido de General Viamonte, a pocos km de Junín) es su lugar de nacimiento. Junín reivindica esa conexión con la figura más popular del peronismo argentino.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 2. Perfil Demográfico · Segmentación</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Trabajadores urbanos y sindicatos</td><td>El sector de trabajadores urbanos (comercio, industria, servicios públicos) tiene una tradición gremial peronista que Petrecca no logró disolver. Los sindicatos del transporte, la salud y la educación son aliados naturales del PJ en Junín.</td><td class="tbl-num">~35%</td><td>Alto — base PJ</td></tr>
+        <tr><td class="tbl-num">Productores y empleados rurales</td><td>El sector agropecuario del partido: productores medianos y grandes de soja y ganadería (perfil más conservador, pueden votar JxC o LLA) y trabajadores rurales asalariados (más peronistas). El sector agropecuario es heterogéneo políticamente.</td><td class="tbl-num">~25%</td><td>Bajo-moderado — heterogéneo</td></tr>
+        <tr><td class="tbl-num">Clase media urbana (segmento Petrecca)</td><td>La base electoral de Petrecca: clase media urbana que valoró su gestión municipal (obra pública, modernización de servicios) y que en 2023 votó JxC a nivel municipal pero puede haber migrado a LLA en 2025. Este segmento es el más disputado.</td><td class="tbl-num">~30%</td><td>Bajo — en disputa con JxC/LLA</td></tr>
+        <tr><td class="tbl-num">Estudiantes universitarios y comunidad académica</td><td>Junín tiene extensiones universitarias de varias instituciones. La comunidad estudiantil es un segmento más volátil que puede ser conquistado con mensajes de futuro, becas y empleo calificado.</td><td class="tbl-num">~10%</td><td>Moderado — conquista posible</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 3. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-alert">
+        <div class="arc-year">General 2023 — Intendente — JxC ganó</div>
+        <div class="arc-row"><span class="arc-lbl">JxC (Petrecca) — Municipio</span><span class="arc-val v-jxc">~45% — GANÓ</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">~38% est.</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~17% est.</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón est.</span><span class="arc-val v-grey">~86,000</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Concejales Prov. 2025 — PJ habría ganado legislativo</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria (est.)</span><span class="arc-val v-pj">~55% dos-partidos</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA / JxC residual</span><span class="arc-val v-lla">~45%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Municipio</span><span class="arc-val v-red">Petrecca JxC aún intendente</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón est.</span><span class="arc-val v-grey">~90,000</span></div>
+      </div>
+    </div>
+    <p style="font-size:.79rem;color:#374151;margin-top:8px;font-style:italic">⚠️ Nota: datos exactos de Junín no disponibles en la base de resultados. Estimaciones basadas en tendencias de la 4ª Sección y el perfil histórico del municipio.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Territorio e Identidades Clave</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">⚕️</div>
+        <div class="cl-tipo">Salud regional</div>
+        <div class="cl-nm">HIGA de Junín — Hub Regional</div>
+        <div class="cl-desc">El Hospital Interzonal General de Agudos de Junín es el hospital de mayor complejidad del noroeste bonaerense. Atiende no solo a los habitantes del partido sino a pacientes de 15-20 municipios del radio regional. La inversión provincial en el HIGA de Junín llega al conjunto de la región, no solo al municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌸</div>
+        <div class="cl-tipo">Historia y patrimonio</div>
+        <div class="cl-nm">Conexión Evita — Los Toldos</div>
+        <div class="cl-desc">Eva Perón vivió en Junín en su adolescencia. Los Toldos (donde nació) está a menos de 60 km. Esta conexión con la figura icónica del peronismo argentino es un activo simbólico de primer orden para la narrativa peronista en el noroeste. El candidato provincial que visita Junín y reconoce esa historia conecta con un capital emocional que ninguna otra fuerza política puede reclamar.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚂</div>
+        <div class="cl-tipo">Conectividad</div>
+        <div class="cl-nm">Nodo ferroviario histórico</div>
+        <div class="cl-desc">Junín fue históricamente un nodo ferroviario importante del noroeste bonaerense. El deterioro de los ramales que conectan Junín con Buenos Aires y con los municipios del interior es una herida histórica del corredor noroeste. La recuperación o mejora de la conectividad ferroviaria es una demanda con fuerte carga simbólica en Junín.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌾</div>
+        <div class="cl-tipo">Producción agraria</div>
+        <div class="cl-nm">Pampa húmeda noroeste</div>
+        <div class="cl-desc">Soja, maíz, girasol y ganadería. El partido de Junín tiene una economía agropecuaria intensiva que sustenta a productores medianos y grandes. El servicio de extensión agropecuaria provincial (INTA, SENASA) es relevante para este sector. Los trabajadores rurales y pequeños productores son el segmento más permeable al mensaje peronista en el campo.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏭</div>
+        <div class="cl-tipo">Industria local</div>
+        <div class="cl-nm">Pymes industriales y agroservicio</div>
+        <div class="cl-desc">Junín tiene un pequeño tejido industrial local: talleres metalúrgicos, alimenticio y agroservicios. Las PyMEs del corredor noroeste enfrentan desafíos de financiamiento y mercado que el Estado provincial puede abordar con líneas de crédito y asistencia técnica del Ministerio de Producción.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación superior</div>
+        <div class="cl-nm">Extensiones universitarias</div>
+        <div class="cl-desc">Junín tiene extensiones de la Universidad Nacional del Noroeste de la Provincia de Buenos Aires (UNNOBA) y otras instituciones. La oferta de educación superior local es un activo de retención de jóvenes en el territorio — los que se van a estudiar a La Plata o Buenos Aires raramente vuelven.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 5. Tres Palancas Provinciales</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — Prioritaria</div><div class="pal-ttl">Inversión en HIGA Junín — Equipamiento y especialidades</div></div>
+        <div class="pal-body">
+          <p>El HIGA de Junín atiende a toda la región noroeste de la provincia. Una inversión provincial en equipamiento de alta complejidad (resonador, tomógrafo, sala de hemodinamia) o en la ampliación de especialidades disponibles llega no solo a los vecinos de Junín sino a los 15-20 municipios del radio regional.</p>
+          <p>El anuncio de inversión en el HIGA — hecho en el hospital, con presencia del director y pacientes — es la imagen más potente disponible en Junín. La salud es la palanca con mayor retorno político en la región noroeste donde los servicios de alta complejidad son escasos.</p>
+          <span class="pal-tag acc-prov">Ministerio de Salud PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Circuito Evita: señalización patrimonial y turismo histórico</div></div>
+        <div class="pal-body">
+          <p>La conexión de Junín y Los Toldos con Eva Perón es un activo histórico de primer orden que no tiene señalización patrimonial adecuada. Un programa provincial de "Circuito Evita" — señalética, placa en los lugares donde vivió, turismo histórico desde Buenos Aires — pone a Junín en el mapa del turismo histórico-político argentino.</p>
+          <p>El anuncio de este programa, hecho en Junín con presencia de referentes sindicales y peronistas regionales, conecta emocionalmente con el capital histórico del peronismo y reivindica una identidad que Petrecca (JxC) no puede disputar. Es una palanca simbólica de bajo costo y alto impacto emocional.</p>
+          <span class="pal-tag acc-prov">Ministerio de Cultura PBA</span>
+          <span class="pal-tag acc-prov" style="margin-left:4px">Turismo PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Créditos PyME para agroservicios y metalurgia del noroeste</div></div>
+        <div class="pal-body">
+          <p>Las PyMEs del sector de agroservicios (talleres de maquinaria agrícola, proveedores de insumos, transporte de granos) y metalurgia ligera de Junín tienen dificultades de acceso a financiamiento. Una línea de crédito blanda del Banco Provincia o el FO.NA.PE. con condiciones especiales para PyMEs del noroeste bonaerense llega directamente a los empleadores del partido.</p>
+          <p>El empresario PyME del corredor noroeste que recibe crédito del Estado provincial a tasa accesible genera empleo y reconoce la gestión que se lo facilitó. El anuncio en la Cámara de Comercio o en el Parque Industrial de Junín llega al sector productivo que Petrecca tiene como aliado pero que puede escuchar una oferta concreta.</p>
+          <span class="pal-tag acc-prov">Banco Provincia PBA</span>
+          <span class="pal-tag acc-prov" style="margin-left:4px">FO.NA.PE.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>❌ Síntesis Ejecutiva — Junín (Municipio Opositor)</h3>
+  <p><strong>Contexto:</strong> ~90k padrón, Petrecca (JxC) intendente desde 2011. Cabecera de la 4ª Sección Electoral del noroeste bonaerense. En 2025 la elección de concejales habría sido favorable al PJ, pero el ejecutivo sigue en manos de Petrecca. La estrategia provincial opera en paralelo al municipio: inversión directa sin depender de la intendencia.</p>
+  <p><strong>La apertura estratégica:</strong> Junín tiene la conexión histórica más potente del noroeste con el peronismo: Eva Perón vivió aquí. Esa identidad simbólica no puede ser disputada por ninguna otra fuerza política. El candidato provincial que reivindica esa historia en Junín activa una emoción colectiva que el discurso de gestión de Petrecca no puede igualar.</p>
+  <p><strong>Palancas:</strong> Inversión en el HIGA (salud regional sin pasar por la intendencia), Circuito Evita (identidad histórica peronista), créditos PyME para agroservicios (empleo y producción). Las tres palancas llegan directamente a la comunidad sin necesitar la intermediación del intendente opositor.</p>
+</div>
+
+</body>
+</html>

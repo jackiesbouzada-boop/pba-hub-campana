@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Avellaneda — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:6px}
+.badge-star{display:inline-block;background:rgba(16,185,129,.3);color:#6ee7b7;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(16,185,129,.5);letter-spacing:.5px;margin-bottom:12px;margin-left:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-g{font-size:1.15rem;font-weight:800;color:#6ee7b7}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .n-g{font-size:1.7rem;font-weight:900;color:#10b981;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-best{background:linear-gradient(135deg,#d1fae5,#a7f3d0);border-color:#6ee7b7}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-green{color:#059669}
+.star-box{background:#f0fdf4;border:1.5px solid #6ee7b7;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.star-ttl{font-size:.72rem;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.star-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 3ª Sección Electoral</div>
+  <div class="h-name">AVELLANEDA</div>
+  <div class="h-name2">Dock Sud, Racing, Independiente: la puerta sur de Buenos Aires con alma peronista</div>
+  <div class="h-sub">Avellaneda Centro · Dock Sud · Villa Domínico · Gerli · Crucecita · Piñeyro · Sarandi</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-star">⭐ MEJOR TENDENCIA DEL GRUPO +7.7pp</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">325,434</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">367,554</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">56.2 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v-g">64.4%</span><span class="h-stat-l">PJ 2025 — el más alto del grupo ⭐</span></div>
+    <div class="h-stat"><span class="h-stat-v-g">+7.7 pp</span><span class="h-stat-l">Crecimiento PJ 2023→25 ✅</span></div>
+    <div class="h-stat"><span class="h-stat-v">6,539</span><span class="h-stat-l">hab/km² — alta densidad</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Dock Sud — El Puerto Petroquímico</h4>
+        <p>Dock Sud alberga el polo petroquímico y logístico más importante del GBA sur: refinería, puertos, depósitos de combustibles, industrias químicas y terminales portuarias conviven en una franja costera de altísima densidad industrial. Este polo genera miles de puestos de trabajo directo e indirecto, con sindicatos fuertes (Petroquímica, UOM, portuarios) y un perfil obrero profundamente peronista. Dock Sud es también el símbolo de la tensión entre desarrollo industrial y medio ambiente: uno de los sitios con mayor pasivo ambiental del conurbano.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Capital Nacional del Fútbol</h4>
+        <p>Avellaneda alberga en apenas 56.2 km² a dos de los clubes de fútbol más importantes de la Argentina: Racing Club y Club Atlético Independiente. La "Doble Visera" (Estadio Presidente Perón de Racing) y el Estadio Libertadores de América (Independiente) son referentes nacionales e internacionales del fútbol. Este co-protagonismo futbolístico es identidad cultural profunda: el avellanedense se define como del "Rey de Copas" o del "Rojo", y esa identidad territorial tiene peso político y comunicacional enorme.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n-g">64.4%</span>
+        <span class="l">PJ 2025 — el porcentaje más alto del grupo de distritos prioritarios</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-g">+7.7pp</span>
+        <span class="l">la mejor variación PJ 2023→2025 de los 10 municipios del lote</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Jorge Ferraresi</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2009</div>
+        <div class="desc">Jorge Ferraresi es uno de los referentes peronistas más consolidados de la provincia de Buenos Aires. Intendente desde 2009 con reelecciones sucesivas, fue Ministro de Desarrollo Territorial y Hábitat de la Nación (2020-2021) y regresó a la intendencia. Su gestión combina industrialismo activo, política ambiental (Plan Bajo Carbono) y atención a la economía popular. El resultado electoral de 2025 —64.4% para el PJ— es el más alto del grupo de 10 municipios y confirma su posición como uno de los intendentes peronistas más fuertes del conurbano sur.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Medioambiente</div>
+        <div class="gest-txt">Plan Bajo Carbono: primera política municipal del GBA en planificación de transición energética y reducción de emisiones. Avellaneda con Dock Sud tiene pasivo ambiental enorme; el Plan Bajo Carbono es tanto política pública real como diferenciación política. Referente nacional en municipio industrializado que hace política ambiental.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Urbanismo</div>
+        <div class="gest-txt">Avellaneda 2030: plan de desarrollo urbano que incluye renovación de espacios públicos, construcción de vivienda y relocalización de asentamientos informales en zonas de riesgo ambiental. Articulación con el ex-Ministerio de Hábitat que Ferraresi condujo a nivel nacional.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Fútbol y Comunidad</div>
+        <div class="gest-txt">Capital Nacional del Fútbol: programa de subsidios y apoyo a los 120 clubes del partido (no solo Racing e Independiente). Infraestructura deportiva barrial, financiamiento a ligas amateur y preservación de la identidad futbolística del municipio.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas Destacados</div>
+        <div class="gest-txt">Red de 39 Jardines Maternales municipales: cobertura de primera infancia con 0-4 años. Fortalecer 2026: programa de apoyo a comercios y PyMEs locales. Microcréditos Productivos: financiamiento a emprendedores de economía popular. INCUBa: incubadora municipal de empresas.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Electoral Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Trabajadores de Dock Sud (Petroquímica, Portuarios)</td><td>Empleados de la refinería, las plantas petroquímicas, los depósitos y las terminales portuarias. Sindicatos fuertes (Petroquímica, portuarios, UOM). Base peronista estructural con memoria larga de conquistas laborales.</td><td class="tbl-num">~18%</td><td>Base sólida +++</td></tr>
+        <tr><td class="tbl-num">Clase Obrera Industrial</td><td>Trabajadores de las industrias de Gerli, Sarandi y Villa Domínico. Metalúrgicos, textiles, alimenticios. UOM y gremios industriales fuertes. Voto peronista histórico estructurado por el sindicato.</td><td class="tbl-num">~20%</td><td>Base sólida +++</td></tr>
+        <tr><td class="tbl-num">Barrios Populares (Crucecita, Piñeyro)</td><td>Comunidades de alta NBI con demanda de infraestructura, salud y seguridad. Base territorial fidelizada a través de la red política de Ferraresi y los programas de jardines maternales y economía popular.</td><td class="tbl-num">~22%</td><td>Base leal +++</td></tr>
+        <tr><td class="tbl-num">Clase Media Comerciante</td><td>Comerciantes y empleados del centro de Avellaneda. El Polo Comercial de Avellaneda (especialmente la zona de Once Avellaneda) es uno de los más importantes del GBA. Perfil moderado con mayor adhesión al PJ que el promedio por gestión de Ferraresi.</td><td class="tbl-num">~20%</td><td>Moderado ++</td></tr>
+        <tr><td class="tbl-num">Comunidad Futbolera y Clubes Barriales</td><td>Socios y fanáticos de Racing e Independiente más los 120 clubes de fútbol del partido. Segmento con alta identidad local que valora el apoyo del municipio a los clubes.</td><td class="tbl-num">~12%</td><td>Moderado ++</td></tr>
+        <tr><td class="tbl-num">Empleados Públicos y Docentes</td><td>Base peronista estable con articulación gremial fuerte. SUTEBA y gremios municipales consolidan el voto en este segmento.</td><td class="tbl-num">~8%</td><td>Base estable +++</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~16%</td><td>Media — zona industrial densa</td><td>Concentrado en asentamientos informales en zonas de riesgo ambiental (cercanía a Dock Sud)</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~88%</td><td>Alta — municipio consolidado</td><td>Rezagos en asentamientos informales; AYSA activo en expansión hacia sectores no cubiertos</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~79%</td><td>Buena — déficit puntual</td><td>Asentamientos informales y zonas de Dock Sud con problemas de efluentes industriales</td></tr>
+        <tr><td class="tbl-num">Gas Natural</td><td class="tbl-num">~84%</td><td>Alta cobertura</td><td>Municipio urbano consolidado con buena red; rezagos puntuales en asentamientos</td></tr>
+        <tr><td class="tbl-num">Medio Ambiente</td><td>Plan Bajo Carbono activo</td><td>Municipio con mayor pasivo ambiental del sur</td><td>Dock Sud es zona de riesgo ambiental histórico; el Plan Bajo Carbono es la respuesta política. Articulación con OPDS provincial necesaria.</td></tr>
+        <tr><td class="tbl-num">Primera Infancia</td><td>39 Jardines Maternales municipales</td><td>Cobertura alta — referente provincial</td><td>Red de 39 jardines municipales con 0-4 años. Modelo replicable a escala provincial.</td></tr>
+        <tr><td class="tbl-num">Deporte</td><td>120 clubes con subsidio municipal</td><td>Programa activo — Capital del Fútbol</td><td>Avellaneda tiene la mayor densidad de clubes de fútbol subsidiados del GBA sur</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">56.7%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~22.5%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~14.2%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">320,274</span></div>
+      </div>
+      <div class="arc-card arc-best">
+        <div class="arc-year">Concejales Prov. 2025 ⭐</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-green">64.4% ↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~17.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~17.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">325,434</span></div>
+      </div>
+      <div class="arc-card arc-best">
+        <div class="arc-year">Lectura Estratégica ⭐</div>
+        <div class="arc-row"><span class="arc-lbl">PJ creció</span><span class="arc-val v-green">+7.7 pp ⭐</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA sube poco</span><span class="arc-val v-lla">+3.6 pp solo</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ 64.4%</span><span class="arc-val v-green">el más alto del grupo</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-green">BASTIÓN ELITE</span></div>
+      </div>
+    </div>
+    <div class="star-box">
+      <div class="star-ttl">⭐ MEJOR TENDENCIA DEL GRUPO — 64.4% PJ, LA PERLA DEL CONURBANO SUR</div>
+      <div class="star-txt">Avellaneda es el caso más favorable del grupo de 10 municipios prioritarios: el PJ obtuvo 64.4% en 2025 (el más alto del lote) con una tendencia positiva de +7.7pp desde 2023. LLA sube solo 3.6pp —la segunda cifra más baja del grupo, apenas por encima de Florencio Varela. La combinación de base sindical industrial fortísima (Dock Sud + UOM), liderazgo de largo aliento de Ferraresi, y programas de primera infancia y economía popular bien construidos genera un bastión político de primer orden.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">⚽</div>
+        <div class="cl-tipo">Identidad nacional</div>
+        <div class="cl-nm">Racing e Independiente</div>
+        <div class="cl-desc">Dos gigantes del fútbol argentino en 56 km². La "Doble Visera" y el "Estadio Libertadores de América" son monumentos del fútbol nacional. La identidad avellanedense pasa por el fútbol como en pocas ciudades del país. Capital Nacional del Fútbol no es solo un título: es una realidad vivida.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⚗️</div>
+        <div class="cl-tipo">Polo industrial</div>
+        <div class="cl-nm">Dock Sud Petroquímico</div>
+        <div class="cl-desc">Refinería, plantas petroquímicas, depósitos de combustibles y terminales portuarias. El polo industrial más denso del sur del GBA. Fuente de miles de empleos obreros y sindicales. También el mayor desafío ambiental del municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛍️</div>
+        <div class="cl-tipo">Comercio popular</div>
+        <div class="cl-nm">Polo Comercial de Avellaneda</div>
+        <div class="cl-desc">La zona comercial de Avellaneda — textil, calzado y blanco — es uno de los mayores polos de comercio popular del GBA. Miles de comercios que mueven el consumo de toda la región sur. Tradición comercial popular con identidad propia y fuerte.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌱</div>
+        <div class="cl-tipo">Innovación ambiental</div>
+        <div class="cl-nm">Plan Bajo Carbono</div>
+        <div class="cl-desc">Primera política municipal del GBA en planificación climática y transición energética. Un municipio industrial que hace política ambiental: la paradoja más interesante de Avellaneda. Diferenciación política real frente a discursos que niegan el cambio climático.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">👶</div>
+        <div class="cl-tipo">Política social</div>
+        <div class="cl-nm">Red de 39 Jardines Maternales</div>
+        <div class="cl-desc">La mayor red de jardines maternales municipales del GBA sur. Cobertura de 0-4 años accesible a toda la población. Modelo que Ferraresi construyó durante 15 años de gestión. Referente nacional en política de primera infancia.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏙️</div>
+        <div class="cl-tipo">Proyecto urbano</div>
+        <div class="cl-nm">Avellaneda 2030</div>
+        <div class="cl-desc">Plan de desarrollo urbano con renovación de espacios públicos, vivienda nueva y relocalización de asentamientos en zonas de riesgo ambiental. La apuesta de largo plazo de Ferraresi: convertir a Avellaneda en una ciudad sustentable con base industrial.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1</div><div class="pal-ttl">Plan Bajo Carbono + OPDS Provincial</div></div>
+        <div class="pal-body">
+          <p>Avellaneda tiene el Plan Bajo Carbono más avanzado del GBA y el mayor pasivo ambiental (Dock Sud). La articulación del Plan Bajo Carbono municipal con el OPDS provincial —para remediar los pasivos, financiar el saneamiento del Riachuelo y apoyar la transición energética de las industrias— es la palanca con mayor impacto estructural.</p>
+          <p>Mensaje: "el Estado invierte en sanear lo que la industria dejó". Narrativa potente de responsabilidad ambiental del Estado.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">ACUMAR / COFEMA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Jardines Maternales: Escalar el Modelo</div></div>
+        <div class="pal-body">
+          <p>La red de 39 jardines maternales municipales de Avellaneda es el programa de primera infancia más ambicioso del GBA sur. La provincia puede escalar ese modelo a todos los municipios de la tercera sección con financiamiento provincial: Avellaneda aporta el know-how y el modelo; la provincia aporta la inversión para replicarlo.</p>
+          <p>El anuncio "modelo Avellaneda para todos los municipios" tiene impacto político en el sector de madres trabajadoras y familias con niños pequeños.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">INCUBa + Fondo Productivo Provincial</div></div>
+        <div class="pal-body">
+          <p>La incubadora municipal INCUBa tiene capacidad de escalar con recursos provinciales: más emprendedores incubados, crédito provincial para los proyectos que egresan del programa, y articulación con el polo comercial de Avellaneda para generar nuevos negocios formales.</p>
+          <p>El programa de microcréditos populares puede ampliarse con un fondo provincial que llegue a toda la tercera sección, con Avellaneda como sede de referencia.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">Bancos Prov.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📍 8. Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Dock Sud — Plan Bajo Carbono / Saneamiento</div>
+          <div class="vis-desc">Recorrido por la zona costera de Dock Sud con foco en el Plan Bajo Carbono y el saneamiento ambiental. Anuncio de articulación provincial con OPDS o cofinanciamiento de remediación. Narrativa potente: "sanear lo que la industria dejó". Ideal para medios nacionales.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Jardín Maternal Municipal — Red de 39</div>
+          <div class="vis-desc">Visita a uno de los 39 jardines maternales municipales. Anuncio de réplica del modelo a escala provincial con financiamiento. Contacto con madres, docentes y niños. Alta emotividad. El programa de primera infancia más potente del GBA sur.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Racing Club o Independiente — Capital del Fútbol</div>
+          <div class="vis-desc">Visita a uno de los estadios o a las instalaciones del programa de apoyo a clubes barriales. Anuncio de inversión provincial en infraestructura deportiva o amplificación del programa de subsidios a 120 clubes. Alta emotividad con enorme resonancia mediática y popular.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">INCUBa — Incubadora Municipal de Empresas</div>
+          <div class="vis-desc">Visita a la incubadora con emprendedores. Anuncio de fondo provincial de crédito para egresados de incubadoras. Contacto con jóvenes emprendedores de la economía popular. Narrativa de creación de empleo desde abajo.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Polo Comercial de Avellaneda</div>
+          <div class="vis-desc">Recorrido por la zona comercial textil y calzado de Avellaneda. Encuentro con comerciantes y trabajadores del polo. Anuncio de medidas de apoyo al comercio popular (crédito, capacitación, regularización). El comercio avellanedense es una identidad cultural y económica de peso.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🧠 Síntesis Ejecutiva</h3>
+  <p><strong>⭐ Avellaneda es la perla del grupo.</strong> Con 64.4% para el PJ en 2025 —el más alto de los 10 municipios prioritarios— y una tendencia positiva de 7.7 puntos, Avellaneda no necesita rescate. Necesita capitalización: inversión para profundizar lo que ya funciona (Plan Bajo Carbono, jardines maternales, INCUBa) y visibilidad para que el éxito de Ferraresi sea un argumento político de alcance provincial.</p>
+  <p>Ferraresi es un cuadro político de primera línea con trayectoria nacional (ex-Ministro), gestión sólida de 15 años y capacidad de articular sindicalismo industrial, economía popular y política ambiental en un mismo relato. La provincia debe aprovechar ese capital.</p>
+  <p>El único punto de atención en Avellaneda es Dock Sud: el mayor pasivo ambiental del municipio es también el mayor riesgo comunicacional si no se avanza en el saneamiento. El Plan Bajo Carbono es la respuesta correcta; la articulación con recursos provinciales y nacionales es lo que puede hacerlo realidad.</p>
+</div>
+
+</body>
+</html>

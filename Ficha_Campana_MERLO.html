@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Merlo — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}
+.split-box{background:#dbeafe;border:1.5px solid #93c5fd;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.split-title{font-size:.72rem;font-weight:800;color:#1e40af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.split-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid #bfdbfe}
+.split-row:last-child{border-bottom:none}
+.split-lbl{font-size:.77rem;color:#374151}
+.split-val{font-size:.82rem;font-weight:800;color:#1d4ed8}
+.split-pos{color:#15803d}
+.split-neg{color:#b91c1c}
+.alert-box{background:#fef2f2;border:1.5px solid #fecaca;border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.ok-box{background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.ok-ttl{font-size:.72rem;font-weight:800;color:#15803d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.ok-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">MERLO</div>
+  <div class="h-name2">Ciudad en Transición: Dormitorio, Comercio y Producción del Oeste</div>
+  <div class="h-sub">Merlo Centro · San Antonio de Padua · La Reja · Pontevedra · Mariano Acosta · Paso del Rey · Los Álamos</div>
+  <div><span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">464,736</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">582,486</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">174.1 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">44.2%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">29.2%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">+1.1 pp</span><span class="h-stat-l">PJ 2023→2025</span></div>
+  </div>
+</div>
+
+<!-- SECCIÓN 1 -->
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Economía Popular y Ciudad Dormitorio</h4>
+        <p>Merlo es uno de los municipios del oeste bonaerense que creció como ciudad dormitorio clásica: una gran masa de vecinos que trabajan en CABA o en el corredor del Acceso Oeste y vuelven a dormir a Merlo. Esta dinámica generó una economía local dominada por el comercio minorista, los servicios de proximidad y la economía informal. El grueso de la identidad económica del municipio pasa por el consumo de cercanía, los talleres mecánicos, los supermercados chinos y las cooperativas de economía popular.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Parque Industrial y Transición Productiva</h4>
+        <p>Luego de períodos de rezago industrial, Merlo apostó en los últimos años por la consolidación del Sector Industrial Planificado (SIP de Merlo), atrayendo empresas metalmecánicas, alimenticias y logísticas. Esta transición —de ciudad dormitorio a ciudad con vocación productiva— es el proyecto político más ambicioso de la gestión Menéndez y define la narrativa de modernización territorial del municipio dentro de la primera sección.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">3,346</span>
+        <span class="l">hab/km² — baja-media densidad (mayor área periurbana)</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">7</span>
+        <span class="l">localidades principales en el municipio</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 2 -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Gustavo Menéndez</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2007</div>
+        <div class="desc">Una de las figuras de mayor trayectoria del peronismo bonaerense occidental. Menéndez lleva casi dos décadas al frente de Merlo, con gestiones renovadas continuamente. Perfil territorial y pragmático, centrado en obras concretas y servicios básicos. Tiene una red de presencia muy extensa en todas las localidades del municipio. Su desafío actual es sostener la adhesión en un municipio donde LLA creció significativamente en el electorado joven e informal.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Salud</div>
+        <div class="gest-txt">Finalización del Hospital SAMIC de Mariano Acosta: aportó camas de terapia intensiva y servicios críticos a una localidad periférica con alta demanda insatisfecha. Hito de alta visibilidad en una zona alejada del centro.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Tránsito</div>
+        <div class="gest-txt">Autopista Presidente Perón: obra de órbita nacional con articulación municipal en el trazado e impacto directo en la conectividad del corredor oeste. Reduce sustantivamente los tiempos de traslado hacia CABA y el sur del GBA.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Obras</div>
+        <div class="gest-txt">Plan Hídrico Integral: ejecución de entubamientos y obras hidráulicas estructurales para controlar las inundaciones recurrentes en la cuenca del río Matanza-Riachuelo que afecta a varios barrios de Merlo.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programa Destacado</div>
+        <div class="gest-txt">Merlo Inclusivo: programa de inclusión de personas con discapacidad en el deporte municipal, articulado con la red de parques y polideportivos. Alta adhesión en familias con miembros con discapacidad —segmento transversal y fiel.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 3 -->
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead>
+        <tr><th>Segmento</th><th>Descripción</th><th>Peso Electoral Est.</th><th>Perfil PJ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tbl-num">Trabajadores de Ciudad Dormitorio</td>
+          <td>Obreros, empleados y comerciantes que trabajan en CABA o el corredor Oeste. Sensibles al tiempo de traslado, la seguridad y el costo de vida. Voto moderado.</td>
+          <td class="tbl-num">~28%</td>
+          <td>Moderado ++</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Economía Popular y Comercio Informal</td>
+          <td>Vendedores ambulantes, feriantes del Parque Industrial, cooperativistas. Alta informalidad laboral, movilizables a través de organizaciones territoriales.</td>
+          <td class="tbl-num">~22%</td>
+          <td>Base PJ +++</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Barrios Populares Periféricos</td>
+          <td>Comunidades de Mariano Acosta, Los Álamos y sectores de La Reja con alta NBI. Demanda de salud, infraestructura y seguridad. Base peronista fidelizada.</td>
+          <td class="tbl-num">~20%</td>
+          <td>Leal +++</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Clase Media San Antonio de Padua</td>
+          <td>Profesionales y empleados del corredor Padua-Paso del Rey. Urbanización de mayor calidad, demanda de espacios verdes y escuelas. Perfil volátil.</td>
+          <td class="tbl-num">~18%</td>
+          <td>Disputado</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Trabajadores Industriales (SIP)</td>
+          <td>Obreros del Sector Industrial Planificado de Merlo. Segmento en crecimiento con sindicalización incipiente. Ligados a políticas de empleo formal.</td>
+          <td class="tbl-num">~12%</td>
+          <td>Potencial ++</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECCIÓN 4 -->
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead>
+        <tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tbl-num">NBI</td>
+          <td class="tbl-num">~20%</td>
+          <td>Alta — mayor que promedio GBA</td>
+          <td>Concentrado en Mariano Acosta, Los Álamos y periférico La Reja</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Agua Corriente</td>
+          <td class="tbl-num">~78%</td>
+          <td>Cobertura media</td>
+          <td>Déficit en zonas rururbanas de Mariano Acosta; AYSA en expansión</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Red Cloacal</td>
+          <td class="tbl-num">~50%</td>
+          <td>Déficit alto</td>
+          <td>Municipio extenso con baja densidad en periférico — costoso de extender</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Gas Natural</td>
+          <td class="tbl-num">~68%</td>
+          <td>Cobertura media-baja</td>
+          <td>Amplio uso de garrafa en zonas nuevas; Programa Hogar activo</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Pavimentación</td>
+          <td class="tbl-num">~45%</td>
+          <td>Déficit importante</td>
+          <td>Municipio extenso con muchas calles de tierra; plan de cordón-cuneta activo</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Conectividad Digital</td>
+          <td class="tbl-num">~65%</td>
+          <td>Cobertura media</td>
+          <td>Fibra en zonas céntricas; conectividad rural muy baja en Mariano Acosta</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Efectores de Salud</td>
+          <td>Hospital SAMIC Mariano Acosta (prov.), Hospital Interzonal Lucio Meléndez (Adrogué — cercano), red de CAPS municipales</td>
+          <td>Sistema en expansión</td>
+          <td>El SAMIC Mariano Acosta resuelve una demanda histórica de la zona más alejada</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECCIÓN 5 -->
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">43.1% · 127,900</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~18.0% · 53,370</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~23.5% · 69,597</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">454,325</span></div>
+      </div>
+      <div class="arc-card arc-winner">
+        <div class="arc-year">Concejales Prov. 2025</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">44.2% · 113,009</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">29.2% · 74,752</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~26.6%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">464,736</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">Análisis de Tendencia</div>
+        <div class="arc-row"><span class="arc-lbl">PJ% 2023</span><span class="arc-val v-pj">43.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ% 2025</span><span class="arc-val v-pj">44.2%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Δ PJ</span><span class="arc-val v-pj">+1.1 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">Δ LLA</span><span class="arc-val v-lla">+5.7 pp</span></div>
+      </div>
+    </div>
+    <div class="alert-box">
+      <div class="alert-ttl">⚠️ DISTRITO COMPETITIVO — PJ POR DEBAJO DEL 50%</div>
+      <div class="alert-txt">Merlo es uno de los pocos distritos conurbanos donde el PJ no supera el 50% y donde LLA creció más de 5 puntos entre 2023 y 2025 (de ~23.5% a 29.2%). La recuperación es modesta (+1.1 pp) y LLA suma más votos absolutos en 2025 a pesar de la menor participación. Merlo requiere atención especial: no es un bastión, es un territorio competitivo.</div>
+    </div>
+    <div class="ok-box" style="margin-top:10px">
+      <div class="ok-ttl">✅ MENÉNDEZ SE SOSTIENE — INCUMBENCIA FUERTE</div>
+      <div class="ok-txt">A pesar del contexto adverso, Menéndez logró subir levemente el porcentaje PJ. Su larga incumbencia y red territorial densa operan como amortiguador. El riesgo no es perder el municipio sino seguir cediendo puntos a LLA en el electorado joven e informal.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 6 -->
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🚗</div>
+        <div class="cl-tipo">Conectividad estructural</div>
+        <div class="cl-nm">Autopista Presidente Perón</div>
+        <div class="cl-desc">La obra más transformadora del corredor oeste-sur del GBA. La autopista conecta Merlo con el sur del conurbano, reduce tiempos de traslado y abre nuevas oportunidades logísticas e industriales. Orgullo territorial de los vecinos que la esperaron décadas.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏥</div>
+        <div class="cl-tipo">Salud pública</div>
+        <div class="cl-nm">Hospital SAMIC Mariano Acosta</div>
+        <div class="cl-desc">El hospital público de alta complejidad más relevante de la zona oeste. Mariano Acosta —localidad alejada del centro— tuvo por décadas una deuda sanitaria crítica. El SAMIC la resolvió y es el hito de salud más valorado por los vecinos del sur del municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">♿</div>
+        <div class="cl-tipo">Inclusión social</div>
+        <div class="cl-nm">Merlo Inclusivo</div>
+        <div class="cl-desc">Programa de deporte inclusivo para personas con discapacidad que opera en la red de polideportivos y parques municipales. Alta valoración en familias que tienen miembros con discapacidad. Señal concreta de sensibilidad social de la gestión.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛍️</div>
+        <div class="cl-tipo">Economía social</div>
+        <div class="cl-nm">Mercados Municipales Fijos</div>
+        <div class="cl-desc">El municipio armó predios comerciales cerrados en Merlo Centro y Mariano Acosta para productores locales y emprendedores. Una forma de organizar la economía popular en espacios con infraestructura y visibilidad pública.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌊</div>
+        <div class="cl-tipo">Ambiente e infraestructura</div>
+        <div class="cl-nm">Plan Hídrico Anti-Inundaciones</div>
+        <div class="cl-desc">Merlo tiene una historia de inundaciones recurrentes asociadas a la cuenca del Matanza-Riachuelo. El Plan Hídrico es la respuesta más concreta a un problema que generaba pérdidas económicas y desplazamientos de vecinos de zonas bajas.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏘️</div>
+        <div class="cl-tipo">Identidad barrial</div>
+        <div class="cl-nm">San Antonio de Padua</div>
+        <div class="cl-desc">La localidad más próspera y de mayor tradición de clase media del municipio. San Antonio de Padua tiene identidad propia, comercio vigoroso y una historia ferroviaria que la une al corredor de Buenos Aires al Oeste.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 7 -->
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 1</div>
+          <div class="pal-ttl">Salud: Extensión de la Red Hospitalaria</div>
+        </div>
+        <div class="pal-body">
+          <p>El Hospital SAMIC de Mariano Acosta fue un hito, pero la demanda sanitaria del municipio más extenso de la primera sección sigue siendo alta. La ampliación de CAPS y UPA en localidades como La Reja, Pontevedra y Los Álamos tiene alto retorno electoral en los segmentos de mayor necesidad.</p>
+          <p>Articulación con el Ministerio de Salud provincial para un plan de fortalecimiento de efectores de primer nivel en zonas periféricas de Merlo.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 2</div>
+          <div class="pal-ttl">Infraestructura Hídrica y Cloacal</div>
+        </div>
+        <div class="pal-body">
+          <p>Con sólo 50% de cobertura cloacal y un historial de inundaciones, Merlo tiene dos deudas de infraestructura básica interrelacionadas. El Plan Hídrico Integral municipal requiere financiamiento provincial para escalar. La obra combinada (cordón-cuneta + entubamientos + red AYSA) es el mensaje más tangible en barrios populares.</p>
+          <p>El relato político: "resolvemos las inundaciones de una vez para siempre" tiene alto poder de movilización en comunidades que las padecieron durante décadas.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">AYSA/MIyOP</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 3</div>
+          <div class="pal-ttl">Parque Industrial y Empleo Formal</div>
+        </div>
+        <div class="pal-body">
+          <p>La transición de Merlo desde ciudad dormitorio hacia ciudad productiva es el proyecto político más ambicioso de la gestión actual. La consolidación del Sector Industrial Planificado —con nuevas empresas, infraestructura y crédito provincial— genera empleo formal en un municipio que lo necesita para sostener el consumo local y la adhesión de los trabajadores.</p>
+          <p>La visibilidad de anuncios de nuevas radicaciones industriales tiene alto impacto en el electorado de la clase media que busca empleo de calidad cerca de su hogar.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">Inversión Privada</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 8 -->
+<div class="sec">
+  <div class="sec-hdr">📍 8. Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Hospital SAMIC — Mariano Acosta</div>
+          <div class="vis-desc">Recorrido por el hospital de mayor complejidad de la zona periférica del municipio. Anuncio posible: ampliación de servicios, nuevos equipos o extensión del modelo SAMIC a otra localidad. Alta valoración emocional en una zona que esperó décadas el servicio.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Sector Industrial Planificado (SIP) de Merlo</div>
+          <div class="vis-desc">Recorrido por empresas instaladas en el parque industrial. Contacto con trabajadores y empleadores. Anuncio de crédito productivo provincial o nuevo esquema de incentivos a la radicación industrial. Mensaje: Merlo produce, no solo duerme.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Barrios Inundables — La Reja o Los Álamos</div>
+          <div class="vis-desc">Visita a zonas históricamente afectadas por inundaciones. Recorrido por obras del Plan Hídrico. Anuncio de nuevas etapas de entubamientos o inversión AYSA. Contacto directo con vecinos afectados — alta resonancia emocional y política.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Polideportivo Municipal — Merlo Centro</div>
+          <div class="vis-desc">Visita al programa Merlo Inclusivo en su ambiente natural. Contacto con deportistas con discapacidad, familias y coordinadores del programa. Foto de alto impacto emocional con perfil transversal — el deporte inclusivo es bien recibido por todo el espectro político.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">San Antonio de Padua — Recorrido Comercial</div>
+          <div class="vis-desc">Recorrido por el centro comercial de la localidad más próspera del municipio. Contacto con comerciantes, vecinos de clase media y jóvenes del corredor oeste. Espacio para mensajes sobre seguridad, crédito comercial y calidad urbana.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS -->
+<div class="sint">
+  <h3>🧠 Síntesis Ejecutiva</h3>
+  <p><strong>Merlo es un municipio en transición que requiere atención diferenciada.</strong> No es un bastión consolidado: con sólo 44.2% para el PJ y un LLA que creció hasta 29.2%, el margen es el más ajustado entre los diez distritos prioritarios de este análisis. La incumbencia de Menéndez (casi 20 años) es a la vez su mayor activo y su mayor riesgo.</p>
+  <p>La clave en Merlo es la inversión en infraestructura básica visible. Con NBI en ~20%, cobertura cloacal al 50% y calles de tierra en zonas periféricas, el municipio tiene una deuda estructural que el electorado más joven e informal atribuye directamente a la gestión peronista cuando no se resuelve. La inversión provincial en estos rubros es políticamente urgente.</p>
+  <p>El proyecto del Parque Industrial es la apuesta de futuro: si Merlo logra consolidarse como ciudad productiva —no solo dormitorio— cambia el mapa de su electorado estructuralmente.</p>
+</div>
+
+</body>
+</html>

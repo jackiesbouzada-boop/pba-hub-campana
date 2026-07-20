@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Morón — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:6px}
+.badge-warn{display:inline-block;background:rgba(245,158,11,.3);color:#fcd34d;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(245,158,11,.5);letter-spacing:.5px;margin-bottom:12px;margin-left:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-y{font-size:1.15rem;font-weight:800;color:#fcd34d}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .n-y{font-size:1.7rem;font-weight:900;color:#f59e0b;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-warn{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:#fcd34d}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-yellow{color:#b45309}
+.warn-box{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.warn-ttl{font-size:.72rem;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.warn-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">MORÓN</div>
+  <div class="h-name2">El corredor judicial del oeste: donde LLA casi empata al PJ y define el mapa de 2027</div>
+  <div class="h-sub">Morón Centro · Castelar · Haedo · El Palomar · Ituzaingó (limítrofe) · Villa Sarmiento</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-warn">⚠️ LLA CASI EMPATA — diferencia 1.4pp</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">296,279</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">331,183</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">55.1 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">44.0%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v-y">+0.2pp</span><span class="h-stat-l">PJ casi estable 2023→25</span></div>
+    <div class="h-stat"><span class="h-stat-v-y">42.6%</span><span class="h-stat-l">LLA 2025 ⚠️ muy cerca</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Polo Judicial y Financiero del Oeste</h4>
+        <p>Morón es el centro económico, judicial y de servicios del corredor oeste del GBA. La sede del Poder Judicial del Departamento de Morón —uno de los más grandes del país—, los estudios jurídicos, las compañías de seguros, los bancos y las firmas de servicios financieros dan a Morón una identidad de "ciudad de clase media profesional" que la diferencia de otros municipios del conurbano. Castelar y Haedo concentran los barrios más consolidados de este perfil.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Hospital Posadas y la Salud Nacional</h4>
+        <p>El Hospital Nacional Prof. Alejandro Posadas en El Palomar es el hospital de mayor complejidad del GBA oeste y uno de los más importantes de la Argentina. De jurisdicción nacional, el Posadas es referente en cirugías complejas, trasplantes y formación médica. Su presencia física en el partido define una identidad sanitaria especial: Morón tiene la mejor infraestructura hospitalaria del GBA oeste aunque no sea de su jurisdicción. La articulación municipio-Posadas es un activo político y sanitario clave.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n-y">1.4pp</span>
+        <span class="l">diferencia entre PJ (44%) y LLA (42.6%) en 2025 — el distrito más disputado del grupo</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">6,010</span>
+        <span class="l">hab/km² — alta densidad en municipio mayormente de clase media</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Lucas Ghi</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2019</div>
+        <div class="desc">Lucas Ghi fue elegido intendente en 2019 en un municipio que históricamente fue disputado —Morón tuvo intendentes radicales, cambiemistas y peronistas en los últimos 30 años. La gestión Ghi se caracteriza por la modernización administrativa, la inversión en infraestructura (cobertura cloacal y agua) y las políticas de seguridad ciudadana participativa (Ojos en Alerta). El resultado de 2025 —apenas 1.4pp sobre LLA— pone a Morón en la categoría de municipio en riesgo real para 2027.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Infraestructura</div>
+        <div class="gest-txt">100% cobertura cloacal y agua: objetivo explícito de la gestión Ghi. Morón tiene una de las mejores coberturas de servicios del GBA oeste. El plan de expansión de cloacas y agua a todas las viviendas es el hito de infraestructura más ambicioso del municipio.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Ambiente y Deporte</div>
+        <div class="gest-txt">Reserva Natural y Polideportivo Gorki Grana: renovación del espacio verde más importante de Morón con un polideportivo moderno. Combinación de política ambiental (reserva natural) y social (deporte accesible) en el mismo predio. Alta adhesión en vecinos de Morón Centro.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Industria y Empleo</div>
+        <div class="gest-txt">PITAM (Parque Industrial y Tecnológico Aeronáutico de Morón): desarrollo del Parque Industrial aprovechando la cercanía con el Aeropuerto El Palomar. Polo tecnológico y aeronáutico con potencial de generación de empleo de alta calificación.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas Destacados</div>
+        <div class="gest-txt">Ojos en Alerta: sistema de seguridad participativa vía WhatsApp, integrado con el municipio y la policía. Mercado de Productores (Av. Presidente Perón): feria de productores locales con precio justo. Alta visibilidad semanal y contacto directo con vecinos.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Electoral Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Clase Media Profesional (Castelar, Haedo)</td><td>Abogados, contadores, empleados de estudios jurídicos y financieros, docentes universitarios. Castelar es el barrio de clase media consolidada del partido. Históricamente volátil, en 2025 mostró alta migración a LLA. El segmento más difícil de retener para el PJ.</td><td class="tbl-num">~28%</td><td>En riesgo −−</td></tr>
+        <tr><td class="tbl-num">Empleados de Salud (Hospital Posadas y Red Pública)</td><td>Médicos, enfermeros, técnicos y personal administrativo del Posadas y de los CAPS municipales. Base peronista moderada con alta valoración del sistema de salud público. Voto sensible a cualquier amenaza de privatización o desfinanciamiento sanitario.</td><td class="tbl-num">~10%</td><td>Moderado ++</td></tr>
+        <tr><td class="tbl-num">Barrios Populares (Villa Sarmiento y periferia)</td><td>Trabajadores informales, familias con NBI, demanda de infraestructura básica. Base peronista histórica con menor volatilidad que la clase media. El PJ tiene aquí su núcleo más fiel pero es un segmento menor que en otros municipios del GBA.</td><td class="tbl-num">~18%</td><td>Base moderada ++</td></tr>
+        <tr><td class="tbl-num">Empleados Públicos y Docentes</td><td>Sector importante en Morón dado el peso del Poder Judicial del Departamento. Docentes de la UNM (Universidad Nacional de Morón) y del sistema provincial. Voto relativamente estable para el PJ con articulación gremial fuerte.</td><td class="tbl-num">~15%</td><td>Moderado ++</td></tr>
+        <tr><td class="tbl-num">Trabajadores del PITAM y la Industria Local</td><td>Empleados del parque industrial aeronáutico y de las industrias de servicios de El Palomar. Segmento creciente con perfil de empleo técnico especializado. Potencial de adhesión al PJ si el PITAM consolida empleo formal de calidad.</td><td class="tbl-num">~10%</td><td>Potencial +</td></tr>
+        <tr><td class="tbl-num">Comerciantes y Pequeños Empresarios</td><td>Red comercial del centro de Morón y Castelar. Muy sensibles a la economía local y al clima de negocios. Alta volatilidad: en 2025 muchos migraron a LLA. El programa Fortalecer y el Mercado de Productores son herramientas de trabajo sobre este segmento.</td><td class="tbl-num">~12%</td><td>En riesgo −</td></tr>
+        <tr><td class="tbl-num">Jóvenes Universitarios (UNM)</td><td>Estudiantes y jóvenes profesionales de la Universidad Nacional de Morón. Alta exposición al discurso libertario en redes y el ámbito universitario. Segmento con mayor volatilidad pero potencial de adhesión con políticas de becas y empleo joven.</td><td class="tbl-num">~7%</td><td>En riesgo −</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~9%</td><td>Baja — municipio de clase media</td><td>El menor NBI del grupo de 10 municipios. Municipio consolidado con alta formalidad económica</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~94%</td><td>Alta cobertura</td><td>En proceso de completar el 6% restante. Municipio con muy buena cobertura para el GBA</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~88%</td><td>Alta — objetivo 100%</td><td>El plan de 100% cloacal es uno de los objetivos explícitos de Ghi. El 12% restante está en ejecución.</td></tr>
+        <tr><td class="tbl-num">Gas Natural</td><td class="tbl-num">~91%</td><td>Alta cobertura</td><td>Municipio urbano maduro con excelente cobertura de gas</td></tr>
+        <tr><td class="tbl-num">Pavimentación</td><td class="tbl-num">~82%</td><td>Alta — en proceso</td><td>La mayoría de las calles pavimentadas; rezagos en algunas zonas periféricas del sur</td></tr>
+        <tr><td class="tbl-num">Salud</td><td>Hospital Posadas (nacional) + CAPS municipales</td><td>Alta complejidad — jurisdicción nacional</td><td>El Posadas es el hospital de mayor complejidad del GBA oeste. Articulación municipio-Posadas es estratégica pero compleja dada la jurisdicción nacional.</td></tr>
+        <tr><td class="tbl-num">Seguridad Digital</td><td>Ojos en Alerta — WhatsApp + cámaras</td><td>Sistema participativo activo</td><td>Programa de seguridad ciudadana de alto impacto comunicacional. Valorado por la clase media pero con cobertura desigual en barrios populares</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">43.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~30.4%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~19.0%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">294,201</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Concejales Prov. 2025 ⚠️</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">44.0%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-yellow">42.6% ⚠️</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~13.4%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">296,279</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Lectura Estratégica ⚠️</div>
+        <div class="arc-row"><span class="arc-lbl">PJ estable</span><span class="arc-val v-pj">+0.2 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA subió</span><span class="arc-val v-yellow">+23.6pp desde base!</span></div>
+        <div class="arc-row"><span class="arc-lbl">Diferencia</span><span class="arc-val v-yellow">44.0% vs 42.6%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-yellow">DISTRITO EN RIESGO</span></div>
+      </div>
+    </div>
+    <div class="warn-box">
+      <div class="warn-ttl">⚠️ ALERTA — LLA A 1.4pp DEL PJ: EL DISTRITO MÁS DISPUTADO DEL GRUPO PARA 2027</div>
+      <div class="warn-txt">En 2025, LLA obtuvo el 42.6% en Morón vs el 44.0% del PJ: solo 1.4 puntos de diferencia. El PJ se mantuvo casi igual (+0.2pp) pero LLA absorbió prácticamente todo el voto de JxC que colapsa. En 2023 la suma JxC+LLA era 49.4%; en 2025 solo LLA llega al 42.6%. Si en 2027 LLA mantiene su base más captura unos pocos votos más, puede superar al PJ. Morón es el municipio más sensible del grupo y requiere atención estratégica prioritaria antes de 2027.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">⚖️</div>
+        <div class="cl-tipo">Identidad institucional</div>
+        <div class="cl-nm">Polo Judicial del Oeste</div>
+        <div class="cl-desc">Morón alberga el Departamento Judicial con mayor actividad del GBA oeste. Los tribunales, los estudios jurídicos y las compañías de seguros dan a la ciudad central una identidad profesional que la distingue del conurbano promedio. Una identidad de "ciudad de servicios" con perfil de clase media.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏥</div>
+        <div class="cl-tipo">Salud de alta complejidad</div>
+        <div class="cl-nm">Hospital Nacional Posadas</div>
+        <div class="cl-desc">El hospital de mayor complejidad del GBA oeste tiene sede en El Palomar, dentro del partido de Morón. De jurisdicción nacional, el Posadas forma médicos especialistas y realiza cirugías complejas y trasplantes. Su presencia define la identidad sanitaria del partido.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌳</div>
+        <div class="cl-tipo">Ambiente y deporte</div>
+        <div class="cl-nm">Reserva Natural y Polideportivo Gorki</div>
+        <div class="cl-desc">La Reserva Natural de Morón y el Polideportivo Gorki Grana son el pulmón verde del municipio. La inversión de Ghi en renovar este espacio combinando reserva natural y deporte accesible es uno de los proyectos más valorados por la clase media de Morón Centro.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">✈️</div>
+        <div class="cl-tipo">Desarrollo productivo</div>
+        <div class="cl-nm">PITAM — Polo Aeronáutico</div>
+        <div class="cl-desc">El Parque Industrial y Tecnológico Aeronáutico aprovecha la infraestructura del Aeropuerto El Palomar para atraer industrias del sector tecnológico y aeronáutico. Es el proyecto de largo plazo más ambicioso de Ghi para diversificar la economía local hacia el empleo técnico calificado.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📱</div>
+        <div class="cl-tipo">Seguridad participativa</div>
+        <div class="cl-nm">Ojos en Alerta</div>
+        <div class="cl-desc">El programa de seguridad ciudadana por WhatsApp integrado con el municipio y la policía es el programa de mayor adhesión de la clase media de Morón. Permite reportar incidentes, seguir alertas en tiempo real y coordinar con patrullaje. Alto impacto en el segmento más sensible a la inseguridad.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🥬</div>
+        <div class="cl-tipo">Economía local</div>
+        <div class="cl-nm">Mercado de Productores</div>
+        <div class="cl-desc">La feria semanal de productores en la Av. Presidente Perón conecta directamente a productores locales con consumidores. Alta frecuencia (semanal) y visible adhesión de la clase media de Morón. Genera comunidad y contacto directo entre la gestión municipal y los vecinos más activos.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — URGENTE</div><div class="pal-ttl">Completar el 100% Cloacal y Agua</div></div>
+        <div class="pal-body">
+          <p>Morón tiene 88% de cobertura cloacal y 94% de agua. El 12% y el 6% restante son la deuda con los barrios que aún no tienen servicio. El cofinanciamiento provincial para terminar las redes —y el anuncio conjunto con Ghi— tiene impacto doble: sanitario (mejora la vida de miles de familias) y político (la provincia termina lo que el municipio no pudo solo).</p>
+          <p>Mensaje: "juntos llegamos al 100% en Morón". Medible, concreto y verificable.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">AYSA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Hospital Posadas: Articulación Prov-Nac</div></div>
+        <div class="pal-body">
+          <p>El Hospital Posadas es de jurisdicción nacional pero atiende a vecinos de Morón y toda la región. La provincia puede construir un vínculo formal con el Posadas: convenio de referencia/contrarreferencia con la red de salud provincial, ampliación del acceso para vecinos de Morón a las especialidades del hospital, y presencia en anuncios de inversión o equipamiento.</p>
+          <p>Hablar de la salud en Morón sin mencionar el Posadas es ignorar el activo más grande del partido.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Ministerio Salud Nac.</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">PITAM: Presencia en el Polo Aeronáutico</div></div>
+        <div class="pal-body">
+          <p>El PITAM es el proyecto de transformación económica más ambicioso de Ghi. La presencia provincial en el polo —crédito a empresas instaladas, convenio de formación profesional, conexión con el sistema educativo técnico— da velocidad y legitimidad al proyecto. En el contexto de Morón, donde la clase media busca empleo de calidad, el PITAM con apoyo provincial es una narrativa de futuro potente.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">Inversión Privada</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📍 8. Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Hospital Nacional Posadas — El Palomar</div>
+          <div class="vis-desc">Visita al Posadas con autoridades nacionales y/o el intendente Ghi. Anuncio de convenio provincia-Posadas o de equipamiento. La salud de alta complejidad como propuesta de futuro frente a cualquier opción de achique del Estado sanitario. Enorme impacto en todos los segmentos de Morón.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">PITAM — Parque Industrial Aeronáutico</div>
+          <div class="vis-desc">Visita al polo con empresarios y trabajadores del sector. Anuncio de crédito provincial o convenio de formación. Narrativa de "empleo de calidad en el GBA oeste". El PITAM es el proyecto que más habla a la clase media técnica y profesional de Morón.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Reserva Natural y Polideportivo Gorki Grana</div>
+          <div class="vis-desc">Recorrido por el espacio verde renovado. Anuncio de inversión provincial en ampliación o mantenimiento. Contacto con vecinos, deportistas y familias. El espacio más valorado por la clase media de Morón Centro y el mejor marco visual del partido para comunicación digital.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Mercado de Productores — Av. Presidente Perón</div>
+          <div class="vis-desc">Visita al mercado semanal de productores. Contacto directo con comerciantes, productores y vecinos de alta participación. Ideal para comunicar presencia provincial en el espacio más vivo y participativo de la gestión Ghi. Alta frecuencia semanal facilita el timing.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Obra de Cloacas o Agua — Barrio Periférico</div>
+          <div class="vis-desc">Visita a barrio con obra de red cloacal o agua en ejecución. Anuncio de cofinanciamiento del plan 100% de cobertura. El mensaje más tangible para los vecinos que aún no tienen servicio. Contraste directo con la narrativa del achique del Estado.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🧠 Síntesis Ejecutiva</h3>
+  <p><strong>⚠️ Morón es el municipio más disputado del grupo para 2027.</strong> Con solo 1.4pp de diferencia entre PJ (44%) y LLA (42.6%), el distrito está a un paso de cambiar de mano. El PJ se mantuvo casi igual (+0.2pp) pero LLA absorbió casi todo el voto de JxC (19% → 42.6%).</p>
+  <p>La clave de Morón es la clase media profesional de Castelar y Haedo: el electorado que en otros ciclos votó radical o cambiemista y que en 2025 se volcó masivamente a LLA. Este segmento no es peronista de base ni tiene la memoria sindical del obrero industrial. Lo que puede retenerlo —o recuperar parte— es demostrar eficiencia de gestión concreta: servicios funcionando, seguridad real, proyectos de empleo de calidad.</p>
+  <p>El Hospital Posadas, el PITAM y el 100% cloacal son exactamente ese tipo de argumentos. La provincia debe estar presente en Morón con frecuencia y con anuncios que demuestren que el Estado puede hacer bien lo que hace.</p>
+</div>
+
+</body>
+</html>

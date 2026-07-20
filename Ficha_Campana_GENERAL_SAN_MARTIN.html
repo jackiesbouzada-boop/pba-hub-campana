@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>General San Martín — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}
+.ok-box{background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.ok-ttl{font-size:.72rem;font-weight:800;color:#15803d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.ok-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">GENERAL SAN MARTÍN</div>
+  <div class="h-name2">Capital Nacional de la PyME: donde la industria y la ciencia se dan la mano</div>
+  <div class="h-sub">San Martín · Villa Lynch · Villa Maipú · Palermo · General San Martín Centro · Suárez · Las Flores</div>
+  <div><span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">435,909</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">450,518</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">56.5 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">52.3%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">+5.5 pp</span><span class="h-stat-l">Crecimiento PJ 2023→25</span></div>
+    <div class="h-stat"><span class="h-stat-v">7,974</span><span class="h-stat-l">hab/km² — muy alta densidad</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Capital Nacional de la PyME</h4>
+        <p>General San Martín ostenta el título de Capital Nacional de la PyME por la mayor concentración de pequeñas y medianas empresas industriales por km² del país. Metalúrgicas, plásticas, químicas, alimenticias y textiles conviven en un tejido productivo denso que se instaló a lo largo del siglo XX aprovechando la conexión ferroviaria y vial con el puerto y el centro. Esta herencia industrial de base peronista da identidad y estructura política al municipio: el trabajador fabril sanmartinense tiene historia y gremio.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>UNSAM + INTI: El Triángulo del Conocimiento</h4>
+        <p>La Universidad Nacional de San Martín (UNSAM) y el Instituto Nacional de Tecnología Industrial (INTI) —ambos instalados en el partido— generan un triángulo inédito: industria tradicional + universidad pública + organismo de ciencia del Estado. La UNSAM tiene uno de los mejores centros de investigación de la Argentina y sus egresados trabajan en el tejido industrial del municipio. Este triángulo es el activo más diferencial de San Martín frente a otros municipios industriales del conurbano.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">~10,000</span>
+        <span class="l">empresas PyME en el municipio — la mayor densidad PyME del país</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">UNSAM + INTI</span>
+        <span class="l">vínculo ciencia-industria más desarrollado del conurbano norte</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Fernando Moreira</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2011</div>
+        <div class="desc">Fernando Moreira es uno de los intendentes más consolidados y con mayor proyección provincial de la primera sección. Gobierna desde 2011 con reelecciones sucesivas y construyó una gestión reconocida en tres ejes: industrialismo activo (apoyo a las PyMEs), innovación pública (historia clínica digital, Cero Calles de Tierra) y articulación con la UNSAM. Es un cuadro político de primer nivel, con vocabulario técnico y llegada a sectores medios y universitarios que muchos intendentes del GBA no tienen.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Innovación</div>
+        <div class="gest-txt">Polo de Innovación productiva: articulación municipio-UNSAM-INTI para transferir tecnología a las PyMEs del municipio. Incubadora de empresas, convenios de asistencia técnica gratuita y programas de mejora de procesos. Uno de los proyectos más originales del conurbano.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Obra pública icónica</div>
+        <div class="gest-txt">Túnel Pedriel: obra de infraestructura de conectividad que resolvió un nodo de tráfico histórico en el partido. Impacto directo en la logística de las PyMEs y en la calidad de vida de los vecinos del corredor. Emblema de la gestión Moreira.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Salud digital</div>
+        <div class="gest-txt">Historia clínica digital: San Martín implementó uno de los primeros sistemas de historia clínica unificada y digital del conurbano. Permite que cualquier efector de salud acceda al historial del paciente. Referente provincial en modernización sanitaria.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas Destacados</div>
+        <div class="gest-txt">Cero Calles de Tierra: plan masivo de asfalto y mejorado. Buen Comienzo: programa de primera infancia y desarrollo temprano. Volve a la Escuela: reinserción educativa para jóvenes desescolarizados. Me Copa: deporte y contención en barrios vulnerables.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Electoral Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Trabajadores Industriales (PyMEs)</td><td>Obreros metalúrgicos, plásticos, textiles y alimenticios de las miles de PyMEs del partido. La UOM, la UOCRA y los gremios industriales son fuertes y tienen voto peronista histórico. Empleo formal con sindicalización alta.</td><td class="tbl-num">~25%</td><td>Base sólida +++</td></tr>
+        <tr><td class="tbl-num">Clase Media Urbana Profesional</td><td>Empleados calificados, docentes, técnicos y profesionales vinculados a la UNSAM o al sector de servicios. Perfil más volátil políticamente pero con adhesión creciente a la gestión Moreira por su modernidad y eficiencia.</td><td class="tbl-num">~22%</td><td>Moderado ++</td></tr>
+        <tr><td class="tbl-num">Comunidad Universitaria (UNSAM)</td><td>Estudiantes, docentes e investigadores de la UNSAM. Alta sensibilidad a políticas de ciencia, becas y libertades. Segmento que valora la articulación Municipio-UNSAM.</td><td class="tbl-num">~10%</td><td>Potencial ++</td></tr>
+        <tr><td class="tbl-num">Dueños de PyMEs y Comerciantes</td><td>Pequeños y medianos empresarios con fuerte identidad local. Históricamente volátiles entre PJ y centroderecha. Moreira los trabaja con políticas específicas: crédito, habilitaciones ágiles, polo de innovación.</td><td class="tbl-num">~15%</td><td>Moderado +</td></tr>
+        <tr><td class="tbl-num">Barrios Populares (Villa Lynch, Suárez)</td><td>Comunidades de alta NBI con demanda de vivienda, salud y seguridad. Base territorial peronista fidelizada a través de la red política de Moreira y los programas sociales municipales.</td><td class="tbl-num">~20%</td><td>Base leal +++</td></tr>
+        <tr><td class="tbl-num">Empleados Públicos y Docentes</td><td>Plantilla municipal extensa y cuerpo docente grande. Voto peronista estable articulado por SUTEBA y gremios municipales.</td><td class="tbl-num">~8%</td><td>Base estable ++</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~14%</td><td>Media — mejor que el GBA promedio</td><td>Municipio con alta industrialización y empleo formal; NBI concentrado en Villa Lynch y Suárez</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~91%</td><td>Alta cobertura</td><td>Municipio urbano denso con buena red; rezagos puntuales en la periferia sur</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~76%</td><td>Buena — déficit en zonas industriales antiguas</td><td>Algunas zonas industriales antiguas sin red cloacal adecuada para efluentes industriales</td></tr>
+        <tr><td class="tbl-num">Gas Natural</td><td class="tbl-num">~88%</td><td>Alta cobertura</td><td>Municipio consolidado; cobertura alta pero con artefactos obsoletos en viviendas precarias</td></tr>
+        <tr><td class="tbl-num">Pavimentación</td><td class="tbl-num">~72%</td><td>Media-alta — programa activo</td><td>El Plan Cero Calles de Tierra sigue activo. 28% restante es el objetivo explícito de la gestión</td></tr>
+        <tr><td class="tbl-num">Historia Clínica Digital</td><td class="tbl-num">100% efectores municipales</td><td>Referente provincial</td><td>Sistema implementado y en funcionamiento; potencial de integración con el sistema provincial</td></tr>
+        <tr><td class="tbl-num">Conectividad PyME</td><td class="tbl-num">Creciente</td><td>Programa de digitalización PyME</td><td>El Polo de Innovación UNSAM-INTI ofrece asistencia técnica en digitalización de procesos a PyMEs</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">46.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~24.5%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~21.4%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">397,029</span></div>
+      </div>
+      <div class="arc-card arc-winner">
+        <div class="arc-year">Concejales Prov. 2025</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">52.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~25.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~21.9%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">435,909</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">Lectura Estratégica</div>
+        <div class="arc-row"><span class="arc-lbl">PJ creció</span><span class="arc-val v-pj">+5.5 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA sube moderado</span><span class="arc-val v-lla">+4.4 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC colapsa</span><span class="arc-val v-grey">votos fragmentados</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-pj">Recuperación sólida</span></div>
+      </div>
+    </div>
+    <div class="ok-box">
+      <div class="ok-ttl">✅ RECUPERACIÓN CONSOLIDADA +5.5pp — PJ cruza la mayoría absoluta</div>
+      <div class="ok-txt">General San Martín pasó de 46.8% a 52.3% entre 2023 y 2025, superando el umbral del 50% por primera vez en mucho tiempo. El colapso de JxC benefició al PJ que capturó parte del voto moderado desencantado con la centroderecha. LLA sube solo moderadamente (+4.4pp) sin producir el salto dramático que vemos en otros municipios. La gestión Moreira —moderna, eficiente y con obras verificables— genera confianza suficiente para no volcarse al discurso rupturista.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏭</div>
+        <div class="cl-tipo">Identidad productiva</div>
+        <div class="cl-nm">Capital Nacional de la PyME</div>
+        <div class="cl-desc">El título no es solo marketing: es la descripción más fiel del partido. La cultura PyME sanmartinense —el dueño que trabaja junto a sus operarios, el taller que tiene tres generaciones de la misma familia— es la identidad más arraigada del municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🔬</div>
+        <div class="cl-tipo">Ciencia e innovación</div>
+        <div class="cl-nm">UNSAM — Ciencia del conurbano</div>
+        <div class="cl-desc">La Universidad Nacional de San Martín es una de las mejores universidades de investigación del país. Su campus y sus institutos de física, química y tecnología son referentes nacionales e internacionales. Una joya académica en el corazón del GBA norte.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🔧</div>
+        <div class="cl-tipo">Ciencia aplicada</div>
+        <div class="cl-nm">INTI — El Instituto del conurbano</div>
+        <div class="cl-desc">El Instituto Nacional de Tecnología Industrial tiene sede central en San Martín. Sus laboratorios realizan ensayos, certificaciones y asistencia técnica a miles de empresas. Es el vínculo más tangible entre el Estado y la PyME sanmartinense.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚗</div>
+        <div class="cl-tipo">Conectividad</div>
+        <div class="cl-nm">Túnel Pedriel</div>
+        <div class="cl-desc">El Túnel Pedriel resolvió uno de los nudos de tráfico más problemáticos del municipio. La obra se convirtió en símbolo de la gestión Moreira: visible, medible y valorada por todos los sanmartinenses que cruzaban ahí todos los días.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🩺</div>
+        <div class="cl-tipo">Modernización sanitaria</div>
+        <div class="cl-nm">Historia Clínica Digital</div>
+        <div class="cl-desc">El sistema unificado de historia clínica digital es el proyecto más innovador de salud del conurbano norte. Todo efector de salud municipal puede acceder al historial del paciente en tiempo real. Modelo replicable a nivel provincial.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏫</div>
+        <div class="cl-tipo">Inclusión educativa</div>
+        <div class="cl-nm">Volve a la Escuela</div>
+        <div class="cl-desc">El programa de reinserción educativa de jóvenes desescolarizados es referente provincial. Identificación activa de jóvenes fuera del sistema, acompañamiento personalizado y retención. La lucha contra la deserción escolar como política activa.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1</div><div class="pal-ttl">Escalar el Polo de Innovación PyME</div></div>
+        <div class="pal-body">
+          <p>La articulación UNSAM-INTI-Municipio es el activo más diferencial de San Martín y el proyecto que mejor encarna la alianza entre Estado, ciencia e industria. La provincia puede escalar ese modelo con financiamiento: más PyMEs asistidas, un fondo de transferencia tecnológica provincial, instalaciones ampliadas del polo.</p>
+          <p>El anuncio de "un polo de innovación PyME con financiamiento provincial" tiene impacto inmediato en el electorado empresario y trabajador industrial del partido.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">INTI Nacional</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Historia Clínica Digital Provincial</div></div>
+        <div class="pal-body">
+          <p>General San Martín tiene el sistema de historia clínica digital más avanzado del conurbano. La provincia puede escalar ese modelo a nivel PBA, con San Martín como sede piloto y Moreira como referente del proceso. Esto tiene doble impacto: sanitario (mejora la continuidad de atención) y político (visibiliza la innovación peronista).</p>
+          <p>El anuncio de la historia clínica digital unificada provincial usando el modelo sanmartinense es un hito de modernización del Estado con alta visibilidad mediática.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Completar Cero Calles de Tierra</div></div>
+        <div class="pal-body">
+          <p>San Martín tiene el 72% de sus calles pavimentadas. El 28% restante es el objetivo explícito de la gestión y una demanda concreta de los barrios populares. La provincia puede cofinanciar la aceleración del Plan Cero Calles de Tierra, que tiene impacto transversal: mejora vial para las PyMEs (logística) y mejora de vida para los vecinos (acceso al barrio).</p>
+          <p>El mensaje: "juntos terminamos de asfaltar San Martín de punta a punta".</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Cofinanciamiento Nac.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📍 8. Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">UNSAM — Campus Universitario</div>
+          <div class="vis-desc">Recorrido por el campus de la UNSAM con visita a alguno de sus institutos de investigación (física, química, tecnología). Anuncio de convenio provincia-UNSAM para transferencia tecnológica o becas. Alta visibilidad con perfil universitario y científico.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Polo de Innovación PyME — Sede INTI o Parque Industrial</div>
+          <div class="vis-desc">Recorrido con empresarios PyME locales. Anuncio de escalada del Polo de Innovación con crédito provincial o fondos de transferencia tecnológica. Contacto con dueños de PyME y sus trabajadores. Alto impacto en el electorado empresario moderado.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Hospital Regional San Martín — Historia Clínica Digital</div>
+          <div class="vis-desc">Visita al sistema de historia clínica digital municipal. Anuncio de réplica provincial del modelo. Contacto con personal de salud. Narrativa de modernización del Estado y eficiencia sanitaria. Referente provincial de innovación.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Villa Lynch o Barrio Suárez — Cero Calles de Tierra</div>
+          <div class="vis-desc">Visita a barrio con obras de pavimentación activas o recién inauguradas. Anuncio de cofinanciamiento provincial del plan. Contacto con vecinos. Visibilización de obra tangible. Mensaje dual: para PyMEs (logística) y para vecinos (calidad de vida).</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Programa Volve a la Escuela — Centro de reinserción educativa</div>
+          <div class="vis-desc">Encuentro con jóvenes y familias del programa de reinserción escolar. Alta emotividad. Anuncio de ampliación provincial del modelo. Narrativa de inclusión educativa y segunda oportunidad. Segmento clave: familias con jóvenes desescolarizados de 15 a 25 años.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🧠 Síntesis Ejecutiva</h3>
+  <p><strong>General San Martín es la historia de éxito del GBA norte.</strong> Con 52.3% para el PJ en 2025 —una recuperación de 5.5 puntos desde 2023— y la mayor concentración de PyMEs del país articuladas con una universidad de primer nivel, San Martín representa lo mejor que puede ofrecer el peronismo bonaerense en términos de gestión moderna y eficiente.</p>
+  <p>Moreira es un cuadro político excepcional: técnicamente sólido, políticamente sofisticado y con proyección provincial clara. La provincia debe tratarlo como un aliado estratégico de primer nivel, no solo como un intendente más de la primera sección.</p>
+  <p>Las tres palancas —Polo de Innovación PyME, Historia Clínica Digital Provincial y Cero Calles de Tierra— son inversiones concretas con retorno político alto y retorno sanitario/productivo igualmente alto. Hacer en San Martín es comunicar en todo el GBA norte.</p>
+</div>
+
+</body>
+</html>

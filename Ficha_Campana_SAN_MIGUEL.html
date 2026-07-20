@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>San Miguel — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-alerta{display:inline-block;background:rgba(220,38,38,.3);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-w{font-size:1.15rem;font-weight:800;color:#fcd34d}
+.h-stat-v-r{font-size:1.15rem;font-weight:800;color:#fca5a5}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n-r{font-size:1.7rem;font-weight:900;color:#dc2626;display:block}
+.b-num .n-w{font-size:1.7rem;font-weight:900;color:#d97706;display:block}
+.b-num .n-g{font-size:1.7rem;font-weight:900;color:#059669;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#fee2e2;color:#991b1b;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-warn{background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#fcd34d}
+.arc-alert{background:linear-gradient(135deg,#fee2e2,#fecaca);border-color:#fca5a5}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-red{color:#dc2626}.v-green{color:#059669}
+.alert-box{background:#fff1f2;border:1.5px solid #fca5a5;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#991b1b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.warn-box{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.warn-ttl{font-size:.72rem;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.warn-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#fca5a5;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">SAN MIGUEL</div>
+  <div class="h-name2">Gigante comercial del corredor norte: el municipio con el comportamiento electoral más atípico del lote</div>
+  <div class="h-sub">San Miguel cabecera · Bella Vista · Campo de Mayo · Muñiz · Santa María · Suncho Corral</div>
+  <div>
+    <span class="badge-alerta">🔴 INTENDENTE OPOSITOR — Juntos por el Cambio</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">268,517</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">328,835</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">82.8 km²</span><span class="h-stat-l">Superficie — grande</span></div>
+    <div class="h-stat"><span class="h-stat-v-w">32.7%</span><span class="h-stat-l">PJ 2025 PBA — sube 1.6pp</span></div>
+    <div class="h-stat"><span class="h-stat-v-w">19.2%</span><span class="h-stat-l">LLA 2025 PBA — mínima del lote</span></div>
+    <div class="h-stat"><span class="h-stat-v">3,972</span><span class="h-stat-l">hab/km² — densidad media</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Gigante Comercial del Corredor Noroeste</h4>
+        <p>San Miguel es uno de los municipios con mayor actividad comercial del corredor noroeste del GBA. Su centro comercial —la Av. Perón y sus alrededores— es un polo de atracción de toda la zona noroeste del GBA: compras, gastronomía, servicios y entretenimiento que captan demanda de Malvinas Argentinas, José C. Paz y partes de Moreno. La densidad comercial del centro de San Miguel es comparable a los grandes centros comerciales del primer cordón y es uno de los argumentos de identidad más fuertes del municipio.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Polo Gastronómico y Nocturno</h4>
+        <p>San Miguel tiene una concentración inusual de gastronomía y vida nocturna para un municipio del segundo cordón del GBA. La zona de bares, restaurantes y entretenimiento nocturno de San Miguel convoca a jóvenes de municipios vecinos los fines de semana. Es una identidad que el municipio ha cultivado conscientemente y que define a San Miguel como un polo de socialización del noroeste del GBA, a diferencia del perfil más residencial de sus vecinos.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n-w">32.7%</span>
+        <span class="l">PJ PBA 2025 — sube 1.6pp respecto de 2023 en municipio opositor</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-g">19.2%</span>
+        <span class="l">LLA PBA 2025 — la cuota libertaria más BAJA del lote de 10 municipios</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🔴 2. Contexto Político · Territorio Opositor con Dato Atípico</div>
+  <div class="sec-body">
+    <div class="alert-box">
+      <div class="alert-ttl">🔴 MUNICIPIO CON INTENDENTE DE JUNTOS POR EL CAMBIO — TRATAMIENTO DIFERENCIAL</div>
+      <div class="alert-txt">San Miguel es gestionado por Jaime Méndez (JxC). El PJ nunca gobernó San Miguel. Sin embargo, San Miguel presenta el dato electoral más atípico del lote: LLA solo llegó al 19.2% en las elecciones PBA de 2025, cuando en la elección nacional del mismo año llegó al 43.6%. La brecha de 24.4 puntos entre la elección nacional y la provincial en el mismo municipio es el fenómeno político más peculiar del corredor norte y requiere lectura específica.</div>
+    </div>
+    <div class="warn-box">
+      <div class="warn-ttl">⚠️ FENÓMENO ELECTORAL ATÍPICO — LEER CON CAUTELA</div>
+      <div class="warn-txt">En PBA 2025: PJ 32.7% / LLA 19.2% / JxC ~48.1%. En elección nacional 2025: PJ 38.6% / LLA 43.6%. La diferencia de comportamiento electoral entre la elección provincial y la nacional en el mismo municipio el mismo año es inusual y puede reflejar un efecto de boleta diferencial, candidatos locales o comportamiento de voto partido (split ticket) de escala excepcional. Los datos provinciales muestran a LLA muy contenida; los nacionales muestran a LLA casi en mayoría. Ambos son datos reales del mismo municipio en 2025.</div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Intendente: Jaime Méndez (JxC)</div>
+        <div class="gest-txt">Intendente consolidado de San Miguel, con varios mandatos y presencia institucional sólida. Perfil de centroderecha con acento en seguridad, modernización y desarrollo económico local. Impulsó los programas de seguridad que sirvieron como modelo para otros municipios del GBA.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">PJ sube 1.6pp en municipio opositor</div>
+        <div class="gest-txt">El PJ creció de 31.1% (2023) a 32.7% (2025) en San Miguel. En un municipio donde el PJ no gobierna y LLA debería absorber el voto opositor, el crecimiento del PJ es un dato que distingue a San Miguel del patrón de Vicente López y San Isidro donde el PJ cayó.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas Municipales Clave (JxC)</div>
+        <div class="gest-txt">"Ojos en Alerta" (pionero en San Miguel: sistema de cámaras conectadas a central de monitoreo, luego adoptado por más de 40 municipios de PBA). Hospital Santa María (obra de salud pública de referencia). "Integración del Oeste" (conectividad vial entre los sectores más postergados del municipio). "Camino de la Embarazada" (protocolo de atención materno-infantil reconocido por el Instituto Austral de Empresas de Navarra). "Presupuesto Participativo" (herramienta de participación ciudadana para definir obras barriales).</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">"Ojos en Alerta" — Exportado como modelo</div>
+        <div class="gest-txt">El sistema de cámaras municipales con central de monitoreo 24hs fue pionero en San Miguel y luego adoptado por más de 40 municipios del GBA. Su creación está vinculada a la figura de Juan José Espert, diputado provincial ligado a De la Torre, que impulsó el programa desde el inicio. Es el legado de gestión más reconocido de San Miguel fuera del municipio.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Clase media comercial (centro San Miguel)</td><td>Comerciantes, empleados del sector servicios y comercio. El corazón del polo comercial. Identidad económica de "el municipio que trabaja". Voto histórico JxC pero sensible a la dinámica económica nacional.</td><td class="tbl-num">~30%</td><td>Bajo-moderado — variable</td></tr>
+        <tr><td class="tbl-num">Clase media residencial (Bella Vista)</td><td>Bella Vista tiene perfil de barrio residencial de clase media-alta con mucho verde. Identidad diferente a San Miguel cabecera: más tranquila, más privada. Históricamente votante opositor.</td><td class="tbl-num">~20%</td><td>Muy bajo — oposición estable</td></tr>
+        <tr><td class="tbl-num">Barrios populares (Cuartel V, zonas oeste)</td><td>El oeste del municipio —Cuartel V y sectores limítrofes con Moreno y José C. Paz— tiene un perfil muy diferente al centro. Alta NBI, demanda de infraestructura básica, población joven. Es la base peronista real de San Miguel.</td><td class="tbl-num">~35%</td><td>Alto ++ — base PJ real</td></tr>
+        <tr><td class="tbl-num">Zona Campo de Mayo (militar/institucional)</td><td>La presencia del Campo de Mayo dentro del municipio (gran extensión de terreno militar) condiciona el desarrollo territorial pero tiene impacto electoral menor dado que la población residente en esa zona es acotada.</td><td class="tbl-num">~15%</td><td>Variado</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~18%</td><td>Alta variación interna</td><td>El NBI promedio es moderado pero con fuerte variación: Bella Vista y el centro tienen NBI muy baja; el oeste y Cuartel V tienen NBI alta. La brecha interna es significativa.</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~60%</td><td>Déficit significativo en el oeste</td><td>El déficit cloacal se concentra en los barrios populares del oeste. El programa "Integración del Oeste" apunta a mejorar la conectividad vial pero la infraestructura sanitaria es la demanda más crítica.</td></tr>
+        <tr><td class="tbl-num">Seguridad</td><td>"Ojos en Alerta" pionero</td><td>Referencia del GBA</td><td>San Miguel fue el primer municipio en implementar el sistema de cámaras municipales con central de monitoreo 24hs. El modelo fue luego adoptado por 40+ municipios. Esto posiciona a San Miguel como referente en seguridad municipal para el corredor noroeste.</td></tr>
+        <tr><td class="tbl-num">Salud</td><td>Hospital Santa María + CAPS</td><td>Por encima del promedio</td><td>El Hospital Santa María es una referencia de salud pública del corredor noroeste. El "Camino de la Embarazada" —protocolo de atención materno-infantil reconocido internacionalmente— es el programa de salud más visible de la gestión Méndez.</td></tr>
+        <tr><td class="tbl-num">Participación ciudadana</td><td>Presupuesto Participativo</td><td>Activo</td><td>San Miguel implementó Presupuesto Participativo como herramienta de definición de obras barriales. Es una política de participación ciudadana inusual en municipios JxC del GBA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">31.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~49.4%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~17.9%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">268,517</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Concejales Prov. 2025 ⚠️ ATÍPICO</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">32.7% ↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">19.2% — MUY BAJO</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~48.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">268,517</span></div>
+      </div>
+      <div class="arc-card arc-alert">
+        <div class="arc-year">Nacional 2025 🔴 DIFERENTE</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">38.6%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">43.6% ↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Otros</span><span class="arc-val v-jxc">~17.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Brecha LLA Prov./Nac.</span><span class="arc-val v-red">−24.4 pp ⚠️⚠️</span></div>
+      </div>
+    </div>
+    <div class="warn-box">
+      <div class="warn-ttl">⚠️ BRECHA PROVINCIAL/NACIONAL: 24.4pp — EL DATO MÁS ATÍPICO DEL LOTE</div>
+      <div class="warn-txt">San Miguel es el único municipio del lote donde la brecha entre el resultado provincial (LLA 19.2%) y el nacional (LLA 43.6%) es de más de 20 puntos. En el resto del lote, la diferencia entre elecciones provinciales y nacionales en el mismo año es de 3-6 puntos. En San Miguel es de 24.4pp. Esto puede deberse a un efecto de boleta diferencial masivo, a candidatos locales JxC que sostuvieron el voto provincial mientras LLA penetraba en la elección nacional, o a otras variables electorales específicas del municipio. La lectura estratégica debe considerar ambos escenarios.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Conocimiento del Territorio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">📹</div>
+        <div class="cl-tipo">Seguridad — modelo exportado</div>
+        <div class="cl-nm">Ojos en Alerta</div>
+        <div class="cl-desc">Sistema de cámaras municipales con central de monitoreo 24hs. Pionero en San Miguel, luego adoptado por 40+ municipios del GBA. Su creación está vinculada a Juan José Espert (diputado provincial ligado a De la Torre). Es el programa que más definió la reputación de gestión de San Miguel a nivel provincial y fue el primer sistema de monitoreo urbano de escala en el corredor noroeste.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏪</div>
+        <div class="cl-tipo">Economía — polo comercial</div>
+        <div class="cl-nm">Centro Comercial de San Miguel</div>
+        <div class="cl-desc">El centro comercial de San Miguel (Av. Perón y alrededores) es uno de los más activos del corredor noroeste y atrae demanda de municipios vecinos. La gastronomía nocturna y los comercios de escala media son la identidad económica más reconocible del municipio. San Miguel es el municipio "donde se sale" del noroeste del GBA.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🤱</div>
+        <div class="cl-tipo">Salud — reconocimiento internacional</div>
+        <div class="cl-nm">Camino de la Embarazada</div>
+        <div class="cl-desc">Protocolo de atención materno-infantil desarrollado en San Miguel y reconocido por el Instituto Austral de Empresas de Navarra (IAE). Uno de los pocos programas de salud pública municipal argentino con reconocimiento internacional. Contempla el seguimiento integral de la embarazada desde el primer control hasta el post-parto, con énfasis en las zonas de mayor vulnerabilidad del municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏥</div>
+        <div class="cl-tipo">Salud — infraestructura de referencia</div>
+        <div class="cl-nm">Hospital Santa María</div>
+        <div class="cl-desc">El Hospital Santa María es la referencia de salud pública de San Miguel y del corredor noroeste. Sirve como hospital de mediana complejidad para San Miguel y como primera referencia hospitalaria para municipios vecinos que no tienen hospital de esa escala. Es el hito de infraestructura pública más visible de la gestión municipal.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🗳️</div>
+        <div class="cl-tipo">Participación — inusual para JxC</div>
+        <div class="cl-nm">Presupuesto Participativo</div>
+        <div class="cl-desc">San Miguel implementó Presupuesto Participativo como mecanismo de definición de obras barriales con participación ciudadana directa. Es inusual encontrar esta herramienta en municipios JxC del GBA, donde la tendencia es a la gestión tecnocrática sin participación directa. El PP de San Miguel tiene una historia de más de una década y definió cientos de obras barriales en los barrios populares del municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌿</div>
+        <div class="cl-tipo">Urbanismo — barrio premium</div>
+        <div class="cl-nm">Bella Vista</div>
+        <div class="cl-desc">Bella Vista es la localidad de mayor nivel socioeconómico del municipio y tiene una identidad muy diferente a San Miguel cabecera. Con casas con jardín, verde abundante y un perfil residencial tranquilo, Bella Vista es el enclave de clase media-alta del municipio. Vota históricamente opositor y es socialmente distante de los barrios populares del oeste de San Miguel.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Provinciales en Territorio Opositor</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — Prioritaria</div><div class="pal-ttl">Infraestructura Cloacal en el Oeste — AySA / DIPSOH</div></div>
+        <div class="pal-body">
+          <p>El déficit cloacal en los barrios populares del oeste de San Miguel (Cuartel V y zonas limítrofes) es el problema de infraestructura más urgente y políticamente más relevante del municipio. El municipio JxC no prioriza el oeste en la misma medida que el centro y Bella Vista.</p>
+          <p>La provincia puede llegar con financiamiento directo de AySA o DIPSOH para extensión de red cloacal en el oeste. Esa obra, con identificación provincial clara, llega a la base más popular del municipio —los barrios donde el PJ tiene mayor caudal de voto— y diferencia la inversión provincial de la gestión municipal JxC.</p>
+          <span class="pal-tag acc-prov">AySA / DIPSOH</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Ministerio de Obras Públicas</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Reconocimiento del Polo Comercial — Apoyo al Comercio Popular</div></div>
+        <div class="pal-body">
+          <p>San Miguel es el centro comercial del corredor noroeste. El reconocimiento provincial del polo comercial de San Miguel como "polo de desarrollo económico provincial" activa el argumento de identidad más fuerte del municipio para la clase media comercial.</p>
+          <p>Instrumentos provinciales: créditos del banco provincia para pymes y comercios del polo, programa de capacitación de emprendedores, apoyo al polo gastronómico nocturno con marketing digital provincial. El pequeño y mediano comerciante del centro de San Miguel que recibe apoyo provincial es un votante alcanzable que no necesariamente vota PJ pero que puede ser sensible a la presencia provincial en su economía.</p>
+          <span class="pal-tag acc-prov">Banco Provincia</span>
+          <span class="pal-tag acc-prov" style="margin-left:4px">Ministerio de Producción PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Salud Materno-Infantil — Extensión del Modelo "Camino de la Embarazada"</div></div>
+        <div class="pal-body">
+          <p>El "Camino de la Embarazada" de San Miguel es un programa de salud materno-infantil con reconocimiento internacional que el municipio JxC desarrolló. La provincia puede reconocer ese programa como modelo y proponer su extensión a otros municipios de la provincia, co-financiando la expansión del protocolo en los CAPS de los barrios populares del oeste.</p>
+          <p>Ese reconocimiento no compite con el municipio sino que amplifica su programa. Pero la inversión provincial en los CAPS del oeste —donde el "Camino de la Embarazada" tiene menor alcance relativo— llega directamente a la base popular del municipio con la identificación de la provincia.</p>
+          <span class="pal-tag acc-prov">Ministerio de Salud PBA</span>
+          <span class="pal-tag acc-prov" style="margin-left:4px">IOMA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🔴 Síntesis Ejecutiva — San Miguel</h3>
+  <p><strong>Contexto:</strong> 268k padrón. Méndez (JxC). PJ 32.7% (+1.6pp PBA 2025). LLA 19.2% PBA — la más baja del lote. Pero la elección nacional del mismo año: LLA 43.6%. Esa brecha de 24.4pp entre lo provincial y lo nacional es el dato más atípico del lote y requiere lectura cuidadosa.</p>
+  <p><strong>La atipicidad:</strong> San Miguel es el único municipio donde el resultado provincial y el nacional difieren más de 20pp en el mismo año. El PJ subió 1.6pp en PBA pero tiene 38.6% en la elección nacional. LLA tuvo 19.2% en PBA pero 43.6% nacional. Esta brecha puede reflejar un efecto de candidatura local JxC que sostuvo el voto provincial, mientras LLA avanzó en la elección nacional sin ese freno. Si esa hipótesis es correcta, en 2027 la elección provincial podría parecerse más al resultado nacional de 2025 que al provincial.</p>
+  <p><strong>Palancas provinciales:</strong> Infraestructura cloacal en el oeste (la obra más urgente en la base popular del municipio), reconocimiento del polo comercial de San Miguel (identidad económica + apoyo al pyme), y co-financiamiento provincial del "Camino de la Embarazada" en los CAPS del oeste.</p>
+  <p><strong>Objetivo realista:</strong> Sostener el 32.7% en la elección provincial y apuntar al 35-38% a medida que la brecha provincial/nacional se normalice. San Miguel no es recuperable como intendencia en el corto plazo, pero con inversión en el oeste y el polo comercial, el PJ puede crecer a una franja más competitiva en concejales y mejorar su base para 2027.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Luján — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.35);color:#bae6fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-right:6px;margin-bottom:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:8px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k h4{color:#bae6fd}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#3b82f6;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-best{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-color:#86efac}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🏙️ CIUDADES BONAERENSES &nbsp;|&nbsp; 3ª Sección Electoral</div>
+  <div class="h-name">LUJÁN</div>
+  <div class="h-name2">Basílica Nacional · Santuario Mariano · UNLu · Corredor Productivo</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Boto / UxP</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">~108,000</span><span class="h-stat-l">Padrón estimado 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">~117,000</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">2,682 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">~57%</span><span class="h-stat-l">PJ 2025 PBA est. (dos partidos)</span></div>
+    <div class="h-stat"><span class="h-stat-v">4M+/año</span><span class="h-stat-l">Visitantes a la Basílica</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🕍 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Basílica Nacional · Santuario Mariano más visitado de Argentina</h4>
+        <p>La Basílica Nuestra Señora de Luján es el santuario mariano más importante de Argentina y uno de los más visitados de América Latina. Más de 4 millones de peregrinos llegan cada año a Luján, especialmente para las peregrinaciones de octubre (la Peregrinación de la Juventud) y otras fechas del calendario litúrgico. La Virgen de Luján es la patrona nacional de Argentina. Esta identidad religiosa le da a Luján una proyección nacional y un flujo de visitantes sin parangón en ningún otro municipio del interior bonaerense.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Universidad Nacional de Luján (UNLu) · Polo Académico del Oeste</h4>
+        <p>La Universidad Nacional de Luján es una institución pública de reconocida vocación de inclusión social que atiende a estudiantes de primera generación universitaria de todo el corredor oeste de la provincia. La UNLu tiene sedes en varios municipios y su sede central en Luján forma parte de la identidad urbana de la ciudad. La universidad es también el principal empleador de clase media-alta del municipio, junto con los servicios de turismo religioso y la producción agropecuaria del partido.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">4M+</span>
+        <span class="l">peregrinos anuales — la mayor afluencia religiosa de Argentina</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">UNLu</span>
+        <span class="l">Principal polo educativo del corredor oeste — sede central en Luján</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Contexto Político · Gestión Boto (UxP)</div>
+  <div class="sec-body">
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Intendente: Boto (UxP)</div>
+        <div class="gest-txt">Gestión peronista en un municipio con tradición de identidad religiosa y universitaria. El intendente articula con la Diócesis de Luján (una de las más influyentes del país por el santuario) y con la universidad, dos instituciones que tienen un peso enorme en la vida social del municipio. Municipio aliado con presencia electoral sólida en la elección provincial.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Gestión del Turismo Religioso</div>
+        <div class="gest-txt">El turismo religioso que genera la Basílica es el principal motor económico del municipio. El municipio administra la infraestructura peatonal, el acceso vehicular y los servicios para los millones de peregrinos que llegan cada año. La Peregrinación de la Juventud (primer sábado de octubre) convoca 800,000-1,200,000 personas y requiere coordinación de seguridad y logística a escala provincial y nacional.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Infraestructura y Conectividad</div>
+        <div class="gest-txt">Luján está sobre la Ruta Nacional 7 (eje que une Buenos Aires con Chile) y tiene acceso al Ferrocarril Sarmiento (ramal Luján-Once). La conectividad vial y ferroviaria es clave tanto para los trabajadores que viajan a CABA como para el flujo de peregrinos y turistas que visitan el santuario. La mejora del acceso ferroviario y vial es una demanda permanente del municipio.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Producción Agropecuaria</div>
+        <div class="gest-txt">El partido de Luján (2,682 km²) tiene una extensión rural importante con producción de soja, maíz, girasol y ganadería. El sector agropecuario coexiste con la ciudad turística y universitaria, generando una economía diversificada que se diferencia de los municipios monoactivos del interior. La agroindustria y los servicios rurales son el tercer pilar de la economía local.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Trabajadores urbanos y barrios populares</td><td>El núcleo urbano de Luján concentra trabajadores del comercio, servicios turísticos, construcción y la economía vinculada al santuario. Base electoral sólida del peronismo con demanda de obra pública, empleo y seguridad.</td><td class="tbl-num">~45%</td><td>Alto — base PJ</td></tr>
+        <tr><td class="tbl-num">Comunidad universitaria (UNLu)</td><td>Docentes, empleados no-docentes y estudiantes de la UNLu que residen en Luján. La comunidad universitaria tiene una cultura política activa y ha sido históricamente peronista-progresista. El padrón estudiantil que reside en Luján es relevante.</td><td class="tbl-num">~15%</td><td>Alto — cultura de izquierda peronista</td></tr>
+        <tr><td class="tbl-num">Trabajadores rurales y del sector agropecuario</td><td>Productores y empleados rurales del partido. El sector agropecuario tiene perfil más conservador (puede votar JxC o LLA) pero también tiene trabajadores asalariados rurales con identidad sindical peronista.</td><td class="tbl-num">~20%</td><td>Moderado — variable</td></tr>
+        <tr><td class="tbl-num">Comerciantes y servicios del turismo religioso</td><td>El sector comercial vinculado al turismo religioso (hotelería, gastronomía, artesanías religiosas, transporte) es uno de los sectores más dinámicos del municipio. Tienen un interés directo en la gestión municipal eficiente del turismo. Perfil político más pragmático.</td><td class="tbl-num">~20%</td><td>Moderado — gestión-dependiente</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Infraestructura y Programas</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">⛪</div>
+        <div class="cl-tipo">Identidad — turismo religioso</div>
+        <div class="cl-nm">Basílica y Peregrinación</div>
+        <div class="cl-desc">La gestión municipal del turismo religioso es el primer programa de facto del municipio. La logística de la Peregrinación de la Juventud (800k-1,2M de personas en 24hs) requiere coordinación con Provincia, Nación y Diócesis. El municipio que gestiona bien la peregrinación consolida su legitimidad ante el conjunto de la sociedad local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación — articulación</div>
+        <div class="cl-nm">UNLu — Polo educativo</div>
+        <div class="cl-desc">La Universidad Nacional de Luján tiene una política de ingreso irrestricto y acompañamiento a estudiantes de primera generación universitaria. El municipio puede articular con la UNLu programas de empleo universitario, tecnicaturas para jóvenes del partido y transferencia de conocimiento al sector productivo local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚉</div>
+        <div class="cl-tipo">Transporte</div>
+        <div class="cl-nm">Ferrocarril Sarmiento a Luján</div>
+        <div class="cl-desc">El ramal Luján del Ferrocarril Sarmiento une la ciudad con Once (CABA) con viaje de aproximadamente 2 horas. Es el medio de transporte de los trabajadores del partido que viajan diariamente a CABA. La frecuencia y calidad del servicio es una demanda histórica del municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏛️</div>
+        <div class="cl-tipo">Cultura y patrimonio</div>
+        <div class="cl-nm">Museos Enrique Udaondo</div>
+        <div class="cl-desc">El complejo de Museos Enrique Udaondo en Luján incluye el Museo Histórico Colonial y el Museo del Transporte, con la colección de automóviles históricos y la locomotora La Porteña. Es uno de los patrimonios museísticos más importantes del interior bonaerense y complementa la oferta turística del santuario.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌾</div>
+        <div class="cl-tipo">Producción rural</div>
+        <div class="cl-nm">Corredor productivo Ruta 7</div>
+        <div class="cl-desc">La Ruta Nacional 7 atraviesa el partido de Luján y conecta la producción agropecuaria local con los puertos del Gran Rosario. Luján forma parte del corredor productivo del oeste bonaerense junto con Mercedes y Suipacha. El municipio apoya con infraestructura rural y servicios a los productores del partido.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🔒</div>
+        <div class="cl-tipo">Seguridad</div>
+        <div class="cl-nm">Seguridad urbana y turística</div>
+        <div class="cl-desc">La gestión de seguridad en Luján tiene una dimensión específica: debe proteger a los millones de peregrinos que visitan el municipio, especialmente en las peregrinaciones masivas. El municipio coordina con la Policía Bonaerense y la Policía Federal un operativo especial para la peregrinación de octubre.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-best">
+        <div class="arc-year">General 2023 — Tendencia (datos estimados)</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">~52% est.</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~24% est.</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~24% est.</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón est.</span><span class="arc-val v-grey">~102,000</span></div>
+      </div>
+      <div class="arc-card arc-winner">
+        <div class="arc-year">Concejales Prov. 2025 ✅ PJ gana</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">~57% dos-partidos est.</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~43%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Referencia regional</span><span class="arc-val v-grey">3ª Sección PJ ganó</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón est.</span><span class="arc-val v-grey">~108,000</span></div>
+      </div>
+    </div>
+    <p style="font-size:.79rem;color:#374151;margin-top:8px;font-style:italic">⚠️ Nota: datos exactos de Luján no disponibles en la base de resultados. Los porcentajes son estimaciones basadas en tendencias de la 3ª Sección Electoral y el perfil político histórico del municipio.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 6. Tres Palancas Provinciales</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — Prioritaria</div><div class="pal-ttl">Mejora del Ferrocarril Sarmiento — Ramal Luján</div></div>
+        <div class="pal-body">
+          <p>El ramal Luján del Sarmiento es el servicio con menor frecuencia de todo el corredor oeste. Los trabajadores que viajan a CABA tardan 2 horas y tienen pocas opciones de horario. Mejoras concretas —más servicios, coches renovados, mejor estado de estaciones— tienen impacto directo en la vida cotidiana del trabajador popular de Luján.</p>
+          <p>Un anuncio de inversión en el ramal Luján, hecho en la Estación Luján, llega a los trabajadores del corredor oeste con un mensaje inmediato y tangible. Es la palanca con mayor efecto multiplicador en el voto urbano del municipio.</p>
+          <span class="pal-tag acc-nac">Trenes Argentinos</span>
+          <span class="pal-tag acc-prov" style="margin-left:4px">AMBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Convenio UNLu + Provincia para Tecnicaturas Productivas</div></div>
+        <div class="pal-body">
+          <p>La Universidad Nacional de Luján tiene capacidad instalada para dictar tecnicaturas en áreas productivas clave para el corredor oeste: agroalimentario, veterinaria, logística, informática aplicada. Un convenio provincial que financie el dictado de tecnicaturas gratuitas en las instalaciones de la UNLu llega directamente a los jóvenes del partido que no pueden viajar a La Plata o Buenos Aires para capacitarse.</p>
+          <p>El anuncio del convenio —hecho en el campus de la UNLu— asocia al candidato provincial con la institución más valorada del municipio por los sectores medios y populares. El sello UNLu tiene credibilidad de inclusión que ningun otro actor local puede dar.</p>
+          <span class="pal-tag acc-prov">Ministerio de Educación PBA</span>
+          <span class="pal-tag acc-prov" style="margin-left:4px">UNLu</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Plan de Infraestructura para la Peregrinación — Accesibilidad y Seguridad</div></div>
+        <div class="pal-body">
+          <p>La Peregrinación de la Juventud de Luján es el evento de mayor convocatoria masiva del interior bonaerense. La Provincia puede comprometerse a invertir en infraestructura de acceso (Autopista del Oeste, interconexión vial, sanitarios, hidratación) que mejore la experiencia de los peregrinos y la seguridad del evento.</p>
+          <p>Esta inversión tiene una ventaja excepcional: llega al 100% del país, porque la peregrinación es un evento con cobertura nacional. El candidato que aparece en Luján durante la peregrinación —o que anuncia obras para la peregrinación— tiene visibilidad provincial y nacional de alcance único.</p>
+          <span class="pal-tag acc-prov">Ministerio de Infraestructura PBA</span>
+          <span class="pal-tag acc-nac">Ministerio de Interior</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>✅ Síntesis Ejecutiva — Luján</h3>
+  <p><strong>Contexto:</strong> ~108k padrón, Boto (UxP), municipio aliado. La identidad dominante es la Basílica Nacional — el santuario mariano más visitado de Argentina con 4+ millones de peregrinos anuales. La UNLu (Universidad Nacional de Luján) es el segundo eje identitario: polo educativo del corredor oeste con vocación de inclusión social.</p>
+  <p><strong>El dato estratégico:</strong> Luján tiene una proyección nacional que ningún otro municipio de la 3ª Sección puede igualar. La Peregrinación de la Juventud (octubre) es el acto de mayor convocatoria del interior provincial. Cualquier presencia del candidato provincial en ese evento tiene alcance nacional inmediato.</p>
+  <p><strong>Palancas:</strong> Ferrocarril Sarmiento ramal Luján (trabajador popular), convenio UNLu tecnicaturas productivas (jóvenes), infraestructura para la peregrinación (visibilidad nacional). La palanca de mayor impacto estratégico es la tercera por su escala de visibilidad.</p>
+</div>
+
+</body>
+</html>

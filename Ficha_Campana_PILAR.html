@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Pilar — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:6px}
+.badge-star{display:inline-block;background:rgba(16,185,129,.3);color:#6ee7b7;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(16,185,129,.5);letter-spacing:.5px;margin-bottom:12px;margin-left:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-g{font-size:1.15rem;font-weight:800;color:#6ee7b7}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n-g{font-size:1.7rem;font-weight:900;color:#10b981;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-best{background:linear-gradient(135deg,#d1fae5,#a7f3d0);border-color:#6ee7b7}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-green{color:#059669}
+.star-box{background:#f0fdf4;border:1.5px solid #6ee7b7;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.star-ttl{font-size:.72rem;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.star-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#6ee7b7;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">PILAR</div>
+  <div class="h-name2">El corredor norte que crece: barrios cerrados, peronismo en ascenso y el municipio que sorprendió con +3.2pp</div>
+  <div class="h-sub">Pilar · Del Viso · Manuel Alberti · Maquinista Savio · Villa Rosa · Fátima · La Lonja · El Palmar</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-star">🟢 TENDENCIA POSITIVA — PJ +3.2pp</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">320,932</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v-g">60.7%</span><span class="h-stat-l">PJ 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v-g">+3.2 pp</span><span class="h-stat-l">Variación PJ 2023→25</span></div>
+    <div class="h-stat"><span class="h-stat-v">28.9%</span><span class="h-stat-l">LLA 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">320k+</span><span class="h-stat-l">Padrón creciente (+17k vs 2023)</span></div>
+    <div class="h-stat"><span class="h-stat-v">~350 km²</span><span class="h-stat-l">Superficie — municipio extenso</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>El Corredor Norte: Ruta 8 y Autopista del Oeste</h4>
+        <p>Pilar es el nodo del corredor norte-noroeste de la provincia de Buenos Aires. Su posición sobre la Ruta 8 y la Autopista del Oeste, a 60 km de CABA, lo convirtió en el principal destino del boom inmobiliario de barrios cerrados y countries del GBA norte desde la década del 90. Hoy concentra decenas de barrios cerrados (Nordelta-norte, Tortugas, Highland Park, Estancias del Pilar, entre otros) con una de las mayores concentraciones de clase media-alta del conurbano, pero al mismo tiempo tiene localidades periféricas con altos índices de NBI como Del Viso, Maquinista Savio y Villa Rosa.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Dualidad Territorial: Countries y Barrios Populares</h4>
+        <p>Pilar es el ejemplo más marcado de la dualidad del conurbano norte: uno de los municipios con mayor concentración de viviendas de alta gama (countries, barrios cerrados premium) y también con una franja de asentamientos y barrios populares de alta densidad, particularmente en Del Viso y Manuel Alberti. Esta dualidad genera una geografía electoral compleja: el PJ tiene su base en la franja popular, mientras LLA y la oposición histórica se consolidaron en los countries. La mayor sorpresa de 2025 fue que, a pesar de esa dualidad, el PJ creció +3.2pp hasta el 60.7%.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n-g">60.7%</span>
+        <span class="l">PJ 2025 — sólido, por encima del 60% en un municipio con alta proporción de barrios cerrados</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-g">+3.2pp</span>
+        <span class="l">crecimiento PJ 2023→2025 en un padrón que creció 17,000 electores en el mismo período</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Federico Achaval</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2019</div>
+        <div class="desc">Federico Achaval ganó Pilar en 2019 en una histórica victoria del peronismo en un municipio que históricamente fue manejado por el radicalismo y el PRO (Humberto Zorzín, luego Nicolás Ducoté). Reelegido en 2023, su gobierno apostó a la gestión de servicios y a la articulación entre la base popular del municipio (Del Viso, Manuel Alberti, Villa Rosa) y el corredor de barrios cerrados. El resultado de 2025 —60.7% con +3.2pp— es una señal positiva en un municipio donde la oposición está históricamente asentada. Achaval es un intendente joven con perfil de gestión moderno, alejado del peronismo territorial clásico.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Urbanización e Integración</div>
+        <div class="gest-txt">Programa de Urbanización de Barrios Populares: obras de pavimento, alumbrado, cordón cuneta y apertura de calles en barrios populares de Del Viso y Manuel Alberti. La integración urbana de las zonas más vulnerables del municipio es la apuesta más concreta de la gestión Achaval para cerrar la brecha territorial entre el Pilar de los countries y el Pilar popular.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Salud Municipal</div>
+        <div class="gest-txt">Expansión de la red de Centros de Atención Primaria de Salud (CAPS) en localidades periféricas: Manuel Alberti, Villa Rosa, Maquinista Savio. La apuesta es llevar salud primaria a las localidades más alejadas del centro de Pilar, donde la distancia al hospital cabecera es un obstáculo real para el acceso al sistema de salud.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Infraestructura Vial</div>
+        <div class="gest-txt">Plan de Pavimentación y Conectividad Vial en localidades periféricas: Villa Rosa, Fátima, La Lonja, El Palmar. El municipio extenso (~350 km²) tiene localidades con acceso vial precario que quedaron aisladas del desarrollo del corredor norte. El plan de pavimentación apunta a esas localidades con inversión específica.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas de Gestión</div>
+        <div class="gest-txt">Pilar Digital: conectividad y servicios municipales digitalizados. Economía Social: apoyo a cooperativas y emprendedores de la economía popular en Del Viso y Manuel Alberti. Seguridad Comunitaria: articulación con la Policía Bonaerense para patrullaje en el corredor de accesos. Mantenimiento de espacios verdes y plazas en todos los barrios.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Barrios populares (Del Viso, Manuel Alberti, Villa Rosa)</td><td>Base histórica del PJ. Familias obreras, empleados informales, alta demanda de infraestructura. Del Viso es el mayor concentrador de población popular del municipio. La obra pública es el argumento más efectivo en estas zonas.</td><td class="tbl-num">~35%</td><td>Base leal +++</td></tr>
+        <tr><td class="tbl-num">Empleados formales corredor Ruta 8</td><td>Trabajadores de parques industriales, logística y servicios del corredor norte. Empleos formales, demanda de conectividad y transporte. Perfil moderado que puede oscilar entre PJ y LLA según la coyuntura.</td><td class="tbl-num">~20%</td><td>Moderado ++</td></tr>
+        <tr><td class="tbl-num">Clase media-alta (countries y barrios cerrados)</td><td>Propietarios de barrios cerrados y countries. Ingresos altos, sensibles a la carga impositiva. Históricamente anti-peronistas. LLA es su destino electoral natural tras el colapso de JxC.</td><td class="tbl-num">~22%</td><td>Bajo — oposición estructural</td></tr>
+        <tr><td class="tbl-num">Localidades periféricas (Maquinista Savio, Fátima, La Lonja)</td><td>Comunidades pequeñas con alta demanda de infraestructura básica (agua, cloaca, vías de acceso). Históricamente desatendidas. La obra de pavimentación y el CAPS son los argumentos más directos.</td><td class="tbl-num">~13%</td><td>Sensible a gestión ++</td></tr>
+        <tr><td class="tbl-num">Nuevos residentes del corredor</td><td>Familias que migraron al corredor norte en los últimos años. Padrón creciente (+17k en 2 años). Perfil heterogéneo: algunos de clase media popular que buscan lote propio, otros de clase media-alta que buscan country. Son el segmento de mayor incertidumbre electoral.</td><td class="tbl-num">~10%</td><td>Variable</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~18%</td><td>Alta — concentrada en Del Viso</td><td>Brecha significativa entre el Pilar de los countries (NBI muy bajo) y el Pilar popular de Del Viso y Manuel Alberti (NBI alto)</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~55%</td><td>Déficit importante ⚠️</td><td>Un municipio extenso con crecimiento acelerado tiene una brecha cloacal significativa, especialmente en localidades periféricas y barrios de crecimiento reciente</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~72%</td><td>Media</td><td>Cobertura irregular por la extensión del municipio. Localidades como Maquinista Savio y El Palmar con déficit importante</td></tr>
+        <tr><td class="tbl-num">Gas Natural</td><td class="tbl-num">~65%</td><td>Media — déficit en periferia</td><td>Acceso desigual entre las zonas urbanas consolidadas y las localidades periféricas sin extensión de red</td></tr>
+        <tr><td class="tbl-num">Conectividad Vial</td><td>Plan activo</td><td>En progreso</td><td>El plan de pavimentación en localidades periféricas (La Lonja, El Palmar, Villa Rosa) es la respuesta a un problema histórico de accesibilidad en un municipio extenso</td></tr>
+        <tr><td class="tbl-num">Industria y Logística</td><td>Activo corredor Ruta 8</td><td>Dinámico</td><td>El Parque Industrial Pilar y los parques logísticos del corredor Ruta 8 generan empleo formal relevante. Es el motor económico más importante junto con el sector inmobiliario</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">57.5%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~17.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~22.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">303,901</span></div>
+      </div>
+      <div class="arc-card arc-best">
+        <div class="arc-year">Concejales Prov. 2025 🟢</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-green">60.7% ↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">28.9%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~10.4%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">320,932</span></div>
+      </div>
+      <div class="arc-card arc-best">
+        <div class="arc-year">Lectura Estratégica 🟢</div>
+        <div class="arc-row"><span class="arc-lbl">PJ creció</span><span class="arc-val v-green">+3.2 pp ↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA creció</span><span class="arc-val v-lla">+6.1 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón +17k</span><span class="arc-val v-green">→ PJ creció igual</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-green">POSICIÓN SÓLIDA</span></div>
+      </div>
+    </div>
+    <div class="star-box">
+      <div class="star-ttl">🟢 TENDENCIA POSITIVA — 60.7% CON +3.2pp EN UN MUNICIPIO QUE CRECE</div>
+      <div class="star-txt">Pilar tiene 320,932 electores en 2025, 17,000 más que en 2023. Que el PJ haya subido de 57.5% a 60.7% mientras el padrón crece significa que captó nuevos electores netos. LLA creció +6.1pp (de ~22.8% a 28.9%), pero partió de una base más baja que en otros municipios del corredor norte. Con 60.7%, el PJ está en posición sólida en Pilar, especialmente notable dado el contexto de fuerte avance libertario en el GBA norte (San Isidro, Vicente López, San Miguel).</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏘️</div>
+        <div class="cl-tipo">Identidad territorial</div>
+        <div class="cl-nm">El corredor de countries</div>
+        <div class="cl-desc">Pilar concentra decenas de barrios cerrados y countries que se desarrollaron desde los 90 sobre la Autopista del Oeste y la Ruta 8. Desde Tortugas hasta Highland Park, el municipio tiene una de las mayores concentraciones de clase media-alta del GBA. Esa identidad premium coexiste con un Pilar popular que tiene sus propias necesidades y su propia identidad peronista.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏭</div>
+        <div class="cl-tipo">Motor industrial</div>
+        <div class="cl-nm">Parque Industrial Pilar</div>
+        <div class="cl-desc">El Parque Industrial Pilar es uno de los más antiguos y grandes del conurbano norte. Concentra empresas de sectores variados (alimentación, química, logística, tecnología) y genera empleo formal para miles de trabajadores del municipio y de municipios vecinos. Es el motor económico industrial que convive con el corredor de barrios cerrados y los barrios populares.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏙️</div>
+        <div class="cl-tipo">Centro urbano</div>
+        <div class="cl-nm">Del Viso: el corazón popular</div>
+        <div class="cl-desc">Del Viso es la localidad más poblada del municipio y el centro del voto peronista. Con alta densidad, fuerte identidad de barrio y demanda histórica de infraestructura, Del Viso define el perfil popular de Pilar. La obra en Del Viso tiene impacto político directo en la base más fiel del PJ en el municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚂</div>
+        <div class="cl-tipo">Conectividad</div>
+        <div class="cl-nm">Tren a Pilar — Ferrocarril Urquiza/Norte</div>
+        <div class="cl-desc">El ramal ferroviario que conecta Pilar con CABA (vía Retiro, Ferrocarril Mitre/Norte) es la arteria de conectividad para los trabajadores del municipio que se trasladan diariamente a la Ciudad. La frecuencia y la calidad del servicio ferroviario es una demanda permanente del electorado popular de Del Viso y Manuel Alberti.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌾</div>
+        <div class="cl-tipo">Periferia rural</div>
+        <div class="cl-nm">Localidades del oeste</div>
+        <div class="cl-desc">Fátima, La Lonja, Villa Rosa y El Palmar son localidades de la periferia oeste del municipio con perfil semi-rural, menor densidad y acceso precario a servicios. Son las zonas más desatendidas históricamente y donde el plan de pavimentación y la extensión de CAPS tienen mayor impacto político, justamente porque el umbral de expectativa es más bajo.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📊</div>
+        <div class="cl-tipo">Dato electoral</div>
+        <div class="cl-nm">El padrón que más creció</div>
+        <div class="cl-desc">El padrón de Pilar creció 17,000 electores en dos años (de 303,901 en 2023 a 320,932 en 2025). Ese crecimiento acelerado refleja el dinamismo del corredor norte: nuevas familias, nuevos barrios, nuevos residentes. El PJ mantuvo y amplió su porcentaje a pesar del padrón creciente, lo que indica que capturó el voto de los nuevos electores.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1</div><div class="pal-ttl">Plan Cloacal y Agua — Del Viso y Localidades Periféricas</div></div>
+        <div class="pal-body">
+          <p>Con ~45% del municipio sin red cloacal y déficit de agua en las localidades periféricas, el Plan Maestro de Infraestructura Sanitaria es la palanca con mayor impacto en la base electoral peronista de Pilar. Del Viso y Manuel Alberti son las zonas prioritarias: alta densidad, alta NBI, alta adhesión al PJ, alta demanda de infraestructura básica.</p>
+          <p>Articulación AySA + ENOHSA para financiamiento provincial/nacional de la expansión de redes. La cloaca y el agua en Del Viso antes de 2027 son el argumento más poderoso de gestión peronista en el municipio con mayor padrón del corredor norte.</p>
+          <span class="pal-tag acc-prov">DIPSOH / AySA</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">ENOHSA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Parque Industrial Pilar — Polo Provincial de Inversión</div></div>
+        <div class="pal-body">
+          <p>El Parque Industrial Pilar es uno de los más grandes del conurbano norte. La provincia puede declararlo "Polo Provincial de Inversión Productiva" y articular líneas de crédito BAPRO, FONDEP y Ministerio de Producción para ampliación y modernización de las empresas radicadas.</p>
+          <p>Ese reconocimiento provincial tiene doble impacto: generación de empleo formal industrial en el municipio (argumento para la base popular) y argumento de inversión y desarrollo económico para el segmento de propietarios e inversores de los countries vecinos. El Parque Industrial como motor económico del corredor norte es el argumento de desarrollo que puede recortar la brecha con el voto anti-Estado de LLA.</p>
+          <span class="pal-tag acc-prov">Ministerio de Producción PBA</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">BAPRO / FONDEP</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Conectividad Ferroviaria — Acuerdo AMBA</div></div>
+        <div class="pal-body">
+          <p>El Ferrocarril Mitre-Norte es la arteria de conectividad de los trabajadores del corredor norte con CABA. Un acuerdo provincial con el AMBA (Autoridad de Transporte del Área Metropolitana) para mejora de frecuencias, renovación de material rodante y mantenimiento de estaciones tiene alto impacto en Del Viso y Manuel Alberti donde el uso del ferrocarril es masivo.</p>
+          <p>Anuncio conjunto provincial-nacional en la estación de Pilar o Del Viso. La conectividad ferroviaria es el servicio público que más impacta en la experiencia cotidiana del trabajador del corredor norte y el argumento de inversión más visible para un municipio de 320k electores.</p>
+          <span class="pal-tag acc-prov">AMBA / SUBE</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Trenes Argentinos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🟢 Síntesis Ejecutiva — Pilar</h3>
+  <p><strong>Contexto:</strong> 320k padrón (el que más creció del lote: +17k en 2 años). Achaval en segundo mandato. PJ 60.7% (+3.2pp). Municipio con la dualidad más pronunciada del corredor norte: countries premium y barrios populares de alta NBI en el mismo ejido.</p>
+  <p><strong>Fortaleza:</strong> El PJ creció +3.2pp mientras el padrón crecía 17,000 electores, lo que indica que captó nuevos residentes. Con 60.7% y LLA en 28.9%, el municipio tiene un margen cómodo. La base popular de Del Viso es sólida y el corredor industrial genera empleo formal que ancla el voto peronista.</p>
+  <p><strong>Riesgo:</strong> El crecimiento acelerado del municipio (barrios nuevos, nuevos residentes) incluye familias de clase media del corredor norte que históricamente no votaron peronismo. Si ese segmento crece más rápido que la base popular, el porcentaje de LLA puede aumentar en 2027. El déficit de infraestructura en las zonas de crecimiento reciente (cloaca, agua) es el vector más peligroso.</p>
+  <p><strong>Palancas clave:</strong> Plan Cloacal acelerado en Del Viso (base popular sólida), reconocimiento del Parque Industrial como polo provincial (empleo formal + argumento de desarrollo) y mejora del servicio ferroviario (conectividad cotidiana del trabajador del corredor). Con esas tres palancas, el PJ puede consolidar el 60% y reducir el riesgo de perder terreno en el padrón creciente.</p>
+</div>
+
+</body>
+</html>

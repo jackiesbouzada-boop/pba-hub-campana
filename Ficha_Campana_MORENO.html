@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Moreno — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}
+.alert-box{background:#fef2f2;border:1.5px solid #fecaca;border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.ok-box{background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.ok-ttl{font-size:.72rem;font-weight:800;color:#15803d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.ok-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">MORENO</div>
+  <div class="h-name2">Del Dormitorio a la Producción: El Oeste en Transformación</div>
+  <div class="h-sub">Moreno Centro · Francisco Álvarez · Trujui · Cuartel V · Moreno Norte · Villa Trujui</div>
+  <div><span class="badge-al">✅ INTENDENTA ALIADA — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">419,320</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">576,632</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">186.2 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">54.2%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">29.9%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">−3.3 pp</span><span class="h-stat-l">PJ 2023→2025 ⚠️</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Transición Industrial — El Oeste Que Produce</h4>
+        <p>Moreno fue durante décadas una clásica ciudad dormitorio del Acceso Oeste. En los últimos años, la gestión apostó a cambiar esa identidad aprovechando la conectividad de la Ruta Nacional 23 y el Acceso Oeste para atraer industrias. La creación y consolidación de Parques Industriales Municipales posicionó a Moreno como un polo productivo emergente del conurbano oeste, con empresas metalmecánicas, logísticas y alimenticias radicadas o en proceso de radicación.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Economía Popular y Movimientos Sociales</h4>
+        <p>Moreno tiene uno de los perfiles de economía popular más activos del conurbano oeste. Los movimientos sociales —en particular organizaciones como el CTEP y afines— tienen presencia territorial densa. La intendenta Mariel Fernández proviene de ese espacio y su llegada a la intendencia representó una apertura institucional hacia la economía social que se tradujo en programas de crédito, mercados populares y la integración de cartoneros al sistema municipal de residuos (GIRSU / Trébol).</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">3,097</span>
+        <span class="l">hab/km² — baja-media densidad (periurbano extenso)</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">1ª mujer</span>
+        <span class="l">intendenta en la historia de Moreno</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Mariel Fernández</h3>
+        <div class="meta">Intendenta · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2019</div>
+        <div class="desc">Primera intendenta de Moreno. Proviene de la economía popular y los movimientos sociales (CTEP). Su perfil es el de una dirigente territorial con fuerte inserción en barrios populares, cooperativas y organizaciones comunitarias. Reelecta en 2023. Su gestión prioriza la economía social, la municipalización de servicios y la generación de trabajo en el sector informal. Figura representativa del kirchnerismo popular del oeste bonaerense.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Obras</div>
+        <div class="gest-txt">Planta Asfáltica Municipal propia: hito administrativo más fuerte de la gestión. El montaje de una planta asfáltica propia permitió al municipio ejecutar pavimentación sin depender de contratistas externos, reduciendo costos y aumentando velocidad de obra.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Producción</div>
+        <div class="gest-txt">Parques Industriales Municipales: consolidación y creación de nuevos centros industriales. El municipio desarrolló infraestructura para atraer empresas al corredor Acceso Oeste-Ruta 23, generando empleo formal local y cambiando el perfil productivo del distrito.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Servicios Públicos</div>
+        <div class="gest-txt">GIRSU: municipalización del servicio de recolección de residuos con flota propia. Cierre de la dependencia del concesionario privado. El municipio recuperó el control del servicio y lo mejoró sustantivamente, integrando cooperativas de cartoneros (Trébol).</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programa Destacado</div>
+        <div class="gest-txt">IMDEL — Banco de Desarrollo Local: línea de crédito para emprendedores que están fuera del mercado formal. Apoya a microemprendedores de la economía popular con tasas accesibles y acompañamiento técnico.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Electoral Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Economía Popular Organizada</td><td>Cooperativistas, cartoneros, feriantes y trabajadores de organizaciones sociales. Núcleo de apoyo a Fernández. Alta movilización por estructura de movimientos.</td><td class="tbl-num">~20%</td><td>Base sólida +++</td></tr>
+        <tr><td class="tbl-num">Trabajador de Ciudad Dormitorio</td><td>Empleados que trabajan en CABA o el corredor del Acceso Oeste. Sensibles al transporte, la seguridad y el costo de vida. Voto moderado.</td><td class="tbl-num">~25%</td><td>Moderado ++</td></tr>
+        <tr><td class="tbl-num">Barrios Populares Periféricos</td><td>Cuartel V, Trujui y Francisco Álvarez: alta NBI, informalidad laboral, demanda de infraestructura básica. Base fidelizada con presencia territorial.</td><td class="tbl-num">~28%</td><td>Leal +++</td></tr>
+        <tr><td class="tbl-num">Clase Media Moreno Centro</td><td>Comerciantes y profesionales del centro urbano. Sensibles a la economía y la seguridad. Segmento más volátil que migró hacia LLA en 2025.</td><td class="tbl-num">~15%</td><td>Disputado</td></tr>
+        <tr><td class="tbl-num">Trabajadores Industriales (SIP)</td><td>Empleados de los Parques Industriales Municipales. Segmento creciente con sindicalización incipiente. Potencial base obrera clásica.</td><td class="tbl-num">~12%</td><td>Potencial ++</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~22%</td><td>Alta — mayor que promedio GBA</td><td>Muy concentrado en Cuartel V y zonas periféricas de Francisco Álvarez</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~73%</td><td>Cobertura media-baja</td><td>Déficit severo en Cuartel V; pozos y camiones cisterna en zonas sin red</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~45%</td><td>Déficit severo</td><td>Municipio extenso con grandes áreas sin red; deuda crítica de infraestructura</td></tr>
+        <tr><td class="tbl-num">Gas Natural</td><td class="tbl-num">~62%</td><td>Déficit importante</td><td>Alta dependencia de garrafa en periferia; extensión activa por Nación</td></tr>
+        <tr><td class="tbl-num">Pavimentación</td><td class="tbl-num">~42%</td><td>Déficit alto</td><td>Planta asfáltica propia acelera el plan; muchas calles de tierra en periférico</td></tr>
+        <tr><td class="tbl-num">Conectividad Digital</td><td class="tbl-num">~60%</td><td>Media-baja</td><td>Baja conectividad en Cuartel V; WiFi público en centros urbanos</td></tr>
+        <tr><td class="tbl-num">Efectores de Salud</td><td>Hospital Municipal de Moreno, Hospital Prof. Rodolfo Rossi (prov.), red de CAPS y UPA</td><td>Sistema bajo presión</td><td>Alta demanda por NBI elevado; el hospital municipal es el principal efector</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">57.5% · 151,586</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~13.9% · 36,588</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~24.5% · 64,552</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">404,871</span></div>
+      </div>
+      <div class="arc-card arc-winner">
+        <div class="arc-year">Concejales Prov. 2025</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">54.2% · 126,106</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">29.9% · 69,586</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~15.9%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">419,320</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">Tendencia Comparada</div>
+        <div class="arc-row"><span class="arc-lbl">PJ 2023 → 2025</span><span class="arc-val v-pj">−3.3 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA 2023 → 2025</span><span class="arc-val v-lla">+5.4 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">Votos PJ 2023</span><span class="arc-val v-grey">151,586</span></div>
+        <div class="arc-row"><span class="arc-lbl">Votos PJ 2025</span><span class="arc-val v-grey">126,106</span></div>
+      </div>
+    </div>
+    <div class="alert-box">
+      <div class="alert-ttl">⚠️ CAÍDA DE 3.3 PUNTOS Y −25,480 VOTOS ABSOLUTOS</div>
+      <div class="alert-txt">Moreno registra la mayor caída en votos absolutos del PJ entre los distritos analizados: −25,480 votos en 2 años. Aunque el PJ sigue en mayoría (54.2%), la caída combinada con el avance de LLA (+5.4 pp y +5,034 votos más) es una señal de alerta seria. El electorado de la economía popular —que debería ser la base más sólida de Fernández— está mostrando movimiento hacia opciones más rupturistas.</div>
+    </div>
+    <div class="ok-box" style="margin-top:10px">
+      <div class="ok-ttl">✅ LA MAYORÍA SE SOSTIENE — BASE ELECTORAL DENSA</div>
+      <div class="ok-txt">A pesar de la caída, Moreno sigue con mayoría PJ holgada (54.2%). La red territorial de los movimientos sociales sigue siendo el activo más potente del municipio. La clave es detener la sangría antes de 2027.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">♻️</div>
+        <div class="cl-tipo">Innovación social</div>
+        <div class="cl-nm">GIRSU / Trébol — Cartoneros Organizados</div>
+        <div class="cl-desc">La municipalización de la recolección de residuos con integración de cooperativas de cartoneros es el hito social más innovador del municipio. El programa Trébol formalizó a centenares de trabajadores informales con obra social y cobertura laboral.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌸</div>
+        <div class="cl-tipo">Espacio público</div>
+        <div class="cl-nm">Moreno Florece</div>
+        <div class="cl-desc">Política de embellecimiento y recuperación de espacios públicos con mano de obra de cooperativas. Plazas renovadas, murales comunitarios y parques recuperados. Cambio visible en el paisaje urbano que genera adhesión en vecinos de todo el espectro.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏭</div>
+        <div class="cl-tipo">Producción emergente</div>
+        <div class="cl-nm">Parques Industriales Municipales</div>
+        <div class="cl-desc">El proyecto más ambicioso del municipio: dejar de ser ciudad dormitorio. Los parques industriales en el corredor Acceso Oeste-Ruta 23 concentran empresas metalmecánicas, logísticas y alimenticias que generan empleo formal local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛤️</div>
+        <div class="cl-tipo">Conectividad</div>
+        <div class="cl-nm">Corredor Acceso Oeste</div>
+        <div class="cl-desc">Moreno vive sobre el Acceso Oeste, la arteria que conecta el GBA con el interior bonaerense y el litoral. Esta posición estratégica es la base de la vocación industrial del municipio y define la vida diaria de los vecinos que trabajan en CABA.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">💪</div>
+        <div class="cl-tipo">Movimiento social</div>
+        <div class="cl-nm">Cuartel V — Organización Popular</div>
+        <div class="cl-desc">Cuartel V es la zona más periférica del municipio y también la más organizada colectivamente. Las cooperativas de trabajo, los comedores y las organizaciones barriales tienen allí su mayor densidad. Es el territorio que le dio base política a Fernández.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏗️</div>
+        <div class="cl-tipo">Obra pública propia</div>
+        <div class="cl-nm">Planta Asfáltica Municipal</div>
+        <div class="cl-desc">El municipio montó su propia planta asfáltica para no depender de terceros. Símbolo de autonomía de gestión y eficiencia administrativa. La planta permitió acelerar el programa de pavimentación de calles de tierra en barrios populares.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1</div><div class="pal-ttl">Agua y Cloacas en Cuartel V</div></div>
+        <div class="pal-body">
+          <p>Cuartel V es la zona con mayor déficit de servicios del municipio: sin red de agua potable y sin cloacas en amplias áreas. Una inversión provincial en agua y cloacas en esta zona —la más organizada políticamente y la más leal al peronismo— detiene la sangría electoral y refuerza la base.</p>
+          <p>El mensaje: "la provincia llega donde la gestión local no pudo por falta de recursos nacionales" refuerza la narrativa sin debilitar a Fernández.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">AYSA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Economía Popular y IMDEL</div></div>
+        <div class="pal-body">
+          <p>El Banco de Desarrollo Local IMDEL y las cooperativas del GIRSU/Trébol son programas exitosos que pueden escalarse con financiamiento provincial. Ampliar el crédito productivo y formalizar más trabajadores informales —con obra social, cobertura laboral y capacitación— es la respuesta directa al vector LLA en el electorado de economía popular.</p>
+          <p>La articulación con el Ministerio de Desarrollo Social de la Provincia es la llave para escalar estos programas sin perder la identidad comunitaria que los hace funcionar.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-prot" style="margin-left:4px">Economía Social</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Parque Industrial y Empleo Formal</div></div>
+        <div class="pal-body">
+          <p>La transición de dormitorio a ciudad productiva requiere inversión en los Parques Industriales Municipales: infraestructura vial de acceso, energía, agua industrial y crédito para PyMEs que quieran radicarse. El empleo formal en Moreno es la variable que más impacta en la movilidad social del municipio y en la adhesión electoral de largo plazo.</p>
+          <p>Cada nueva empresa en el parque = nuevos puestos formales = nuevos votantes peronistas por empleo generado.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">Inversión Privada</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📍 8. Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Cuartel V — Barrios de Economía Popular</div>
+          <div class="vis-desc">Visita a la zona más organizada y con mayor densidad de movimientos sociales del municipio. Contacto con cooperativas, comedores y referentes comunitarios. Anuncio de inversión en agua o cloacas. Alta resonancia política en la base más fiel del peronismo morense.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">GIRSU / Planta de Trébol — Cooperativa de Cartoneros</div>
+          <div class="vis-desc">Visita al programa de integración de cartoneros al sistema municipal de residuos. Contacto directo con trabajadores formalizados. Alta resonancia mediática y emocional. Modelo exportable a otros municipios de la provincia.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Parques Industriales Municipales</div>
+          <div class="vis-desc">Recorrido por empresas radicadas. Anuncio de crédito provincial para PyMEs o nueva radicación. Mensaje central: Moreno produce, tiene futuro económico propio.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Planta Asfáltica Municipal</div>
+          <div class="vis-desc">Visita simbólica al activo de gestión más tangible de Fernández. Muestra de autonomía municipal y eficiencia. Ideal para anunciar convenio de ampliación con planta de la provincia o acuerdo de obra compartida.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Centro Cívico / IMDEL — Banco de Desarrollo Local</div>
+          <div class="vis-desc">Visita a emprendedores beneficiarios del crédito IMDEL. Contacto con microemprendedores de la economía popular que recibieron financiamiento. Anuncio de ampliación del fondo con financiamiento provincial.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🧠 Síntesis Ejecutiva</h3>
+  <p><strong>Moreno muestra la señal de alerta más clara del oeste bonaerense: −3.3 pp y −25,480 votos absolutos PJ en dos años.</strong> El electorado de la economía popular —la base histórica de Fernández— está moviéndose hacia opciones más rupturistas. El mensaje de cambio llega con fuerza a los barrios con mayor NBI y menor cobertura de servicios.</p>
+  <p>La respuesta no es retórica sino material: agua en Cuartel V, cloacas en el periférico, gas en Francisco Álvarez. Son tres obras que devuelven la confianza del electorado más afectado. Sin ellas, la caída puede continuar en 2027.</p>
+  <p>Fernández es una aliada sincera y con profundo arraigo territorial. Su perfil de movimientos sociales le da acceso a segmentos que ningún otro peronista puede movilizar en la zona. La provincia debe apoyarla con recursos concretos, no solo con discurso.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Hurlingham — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:6px}
+.badge-warn{display:inline-block;background:rgba(245,158,11,.3);color:#fcd34d;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(245,158,11,.5);letter-spacing:.5px;margin-bottom:12px;margin-left:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-w{font-size:1.15rem;font-weight:800;color:#fcd34d}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .n-w{font-size:1.7rem;font-weight:900;color:#f59e0b;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-warn{background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#fcd34d}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-warn{color:#b45309}
+.warn-box{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.warn-ttl{font-size:.72rem;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.warn-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#fcd34d;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">HURLINGHAM</div>
+  <div class="h-name2">La Cuna del Rock del oeste: salud mental, rock nacional y el conurbano que bajó 1.9pp</div>
+  <div class="h-sub">Hurlingham · William Morris · Villa Tesei · Palermo Chico · El Palomar</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-warn">⚠️ ZONA DE RIESGO — PJ 43.3% · LLA +10pp</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">170,790</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">185,641</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">35.8 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v-w">43.3%</span><span class="h-stat-l">PJ 2025 ⚠️ bajo 50%</span></div>
+    <div class="h-stat"><span class="h-stat-v-w">−1.9 pp</span><span class="h-stat-l">Variación PJ 2023→25</span></div>
+    <div class="h-stat"><span class="h-stat-v">5,184</span><span class="h-stat-l">hab/km² — densidad alta</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Cuna del Rock Nacional</h4>
+        <p>Hurlingham tiene una identidad cultural única en el conurbano bonaerense: de aquí surgieron algunas de las bandas más emblemáticas del rock argentino. Sumo —la banda liderada por Luca Prodan que redefinió el rock en castellano en los 80— y Divididos —el trío de Ricardo Mollo con raíces directas en William Morris— son el capital cultural más reconocible del municipio. Esta identidad rockera impregna a sectores juveniles y de clase media con un perfil cultural que va más allá de la política tradicional del GBA.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Municipio Compacto y Denso</h4>
+        <p>Hurlingham es uno de los municipios más pequeños del conurbano en superficie (35.8 km²) pero con alta densidad (5,184 hab/km²). Creado en 1995 como desmembramiento de Morón, tiene cuatro localidades principales: Hurlingham, William Morris, Villa Tesei y El Palomar. Su proximidad al aeropuerto militar de El Palomar y al corredor del tren del Oeste le da una posición estratégica en el corredor oeste. La compacidad territorial hace que la gestión municipal tenga impacto directo y visible.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n-w">43.3%</span>
+        <span class="l">PJ 2025 — por debajo del 50% en un municipio aliado de corredor oeste</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-w">−1.9pp</span>
+        <span class="l">variación PJ 2023→2025 — señal de alerta en primer mandato de Selci</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Damián Gabriel Selci</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2023</div>
+        <div class="desc">Damián Selci asumió en 2023 tras derrotar a Juan Zabaleta —quien se desempeñó como ministro nacional— en internas del peronismo. Es un intelectual y filósofo político de perfil poco convencional: autor de trabajos sobre teoría política, pensamiento latinoamericano y peronismo, con una comunicación más conceptual que territorial. Es su primer mandato como intendente. La caída de 1.9pp en las elecciones provinciales de 2025 —las primeras bajo su gestión completa— es la primera señal de alerta para evaluar el rendimiento de un liderazgo que aún está construyendo masa crítica territorial.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Salud</div>
+        <div class="gest-txt">Hospital de Diagnóstico Integral: nuevo establecimiento de salud articulado con PAMI para la atención de adultos mayores y la población general. Incorpora diagnóstico por imágenes, laboratorio y consultorios especializados. Es la obra de salud más significativa de la gestión Selci y el principal argumento de gestión en el corredor sanitario del municipio.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Medio Ambiente</div>
+        <div class="gest-txt">Reserva Natural Urbana y Espacio Público: recuperación de predios para la creación de una reserva natural dentro del ejido urbano. Apuesta a la calidad de vida y al espacio verde en un municipio de alta densidad donde el metro cuadrado de espacio público es escaso. Tiene impacto en el segmento de clase media que demanda calidad ambiental.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Salud Mental Juvenil</div>
+        <div class="gest-txt">Centro de Salud Mental Juvenil: sedes dedicadas exclusivamente a adolescentes, con equipos especializados en ansiedad, depresión y consumos problemáticos. Aborda una demanda crítica de la pospandemia. Es una política pública inédita en el conurbano oeste: ningún municipio vecino tiene una red municipal de salud mental juvenil de esta escala.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas de Gestión</div>
+        <div class="gest-txt">"Hurlingham te Cuida": operativos móviles de salud que llevan profesionales a los barrios. Mercado Municipal: alquiler sin costo de puestos para comerciantes locales. Centro de Día para Adultos Mayores: atención diurna para adultos mayores con actividades y acompañamiento. "Infancia sin Celular": kits recreativos, talleres de robótica y educación sobre pantallas.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Clase media empleada (William Morris, Villa Tesei)</td><td>Empleados formales en servicios, comercio y administración. Sensibles a la calidad de vida, la seguridad y los servicios públicos. Perfil permeable a LLA si el Estado falla en lo cotidiano.</td><td class="tbl-num">~28%</td><td>Moderado ++</td></tr>
+        <tr><td class="tbl-num">Barrios populares (zonas de NBI)</td><td>Hogares con menores ingresos, alta demanda de salud, infraestructura y empleo. El "Hurlingham te Cuida" y el Centro de Día apuntan a este segmento. Fidelización por proximidad de la gestión.</td><td class="tbl-num">~22%</td><td>Base leal +++</td></tr>
+        <tr><td class="tbl-num">Adultos mayores</td><td>Segmento con alta participación electoral. El Hospital de Diagnóstico con PAMI y el Centro de Día son las políticas más directas para este grupo. Sensibles a la salud y la seguridad social.</td><td class="tbl-num">~18%</td><td>Sensible a gestión ++</td></tr>
+        <tr><td class="tbl-num">Jóvenes y estudiantes (El Palomar)</td><td>Segmento con identidad cultural rock (herencia Sumo/Divididos), permeable a propuestas de libertad individual. Mayor exposición a la narrativa libertaria en redes. Fidelización por el Centro de Salud Mental Juvenil.</td><td class="tbl-num">~18%</td><td>Variable — riesgo LLA</td></tr>
+        <tr><td class="tbl-num">Comerciantes y cuentapropistas</td><td>Beneficiarios del Mercado Municipal (costo cero de puestos). Perfil sensible a impuestos y carga estatal. El argumento de LLA tiene tracción aquí si la propuesta municipal no compite.</td><td class="tbl-num">~14%</td><td>Moderado — riesgo</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~15%</td><td>Media — conurbano oeste</td><td>Menor que José C. Paz y Moreno; concentrado en barrios periféricos de William Morris</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~72%</td><td>Déficit en zonas de expansión</td><td>Cobertura media del corredor oeste; barrios de crecimiento reciente con déficit</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~88%</td><td>Alta</td><td>Alta cobertura por posición urbana consolidada; déficit puntual en asentamientos informales</td></tr>
+        <tr><td class="tbl-num">Gas Natural</td><td class="tbl-num">~82%</td><td>Alta</td><td>Municipio urbano consolidado con buena cobertura de red de gas</td></tr>
+        <tr><td class="tbl-num">Salud</td><td>Hospital Diagnóstico + PAMI + operativos móviles</td><td>En construcción</td><td>El nuevo hospital es la apuesta central. Los operativos móviles cubren la brecha mientras se consolida la infraestructura.</td></tr>
+        <tr><td class="tbl-num">Salud Mental</td><td>Centro Juvenil activo</td><td>Política innovadora</td><td>Única red municipal de salud mental juvenil del corredor oeste. Demanda pospandemia alta.</td></tr>
+        <tr><td class="tbl-num">Espacio Verde</td><td>Reserva Natural en desarrollo</td><td>En proceso</td><td>Alta densidad (5,184 hab/km²) genera demanda de espacios verdes. La reserva responde esa demanda de clase media.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">45.2%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~31.6%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~19.4%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">170,588</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Concejales Prov. 2025 ⚠️</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-warn">43.3% ↓</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">29.8% ↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~26.9%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">170,790</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Lectura Estratégica ⚠️</div>
+        <div class="arc-row"><span class="arc-lbl">PJ bajó</span><span class="arc-val v-warn">−1.9 pp ⚠️</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA subió</span><span class="arc-val v-lla">+10.4 pp ↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC colapsó</span><span class="arc-val v-jxc">→ LLA (no PJ)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-warn">ZONA DE RIESGO</span></div>
+      </div>
+    </div>
+    <div class="warn-box">
+      <div class="warn-ttl">⚠️ ALERTA — 43.3% PJ Y LLA +10.4pp: EL COLAPSO DE JxC FUE PARA LLA, NO PARA EL PJ</div>
+      <div class="warn-txt">En 2023, JxC tenía ~31.6% del voto en Hurlingham. En 2025, JxC casi desapareció. Ese voto no fue para el PJ (que bajó 1.9pp) sino mayoritariamente para LLA (+10.4pp) y otros. El mecanismo es el de la clase media del corredor oeste: votante de centroderecha que antes se contenía en JxC y que ahora migró a LLA. Con 43.3%, el PJ está 6.7pp por debajo del 50% en un municipio donde Selci está en su primer mandato. El riesgo de perder el municipio en 2027 si la tendencia continúa es real.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🎸</div>
+        <div class="cl-tipo">Identidad cultural</div>
+        <div class="cl-nm">Sumo y Divididos</div>
+        <div class="cl-desc">William Morris fue el hogar de Luca Prodan y el origen de Sumo, la banda que transformó el rock argentino en los 80. Ricardo Mollo de Divididos también tiene raíces en el municipio. Esa herencia rockera es la identidad cultural más fuerte de Hurlingham y conecta al municipio con generaciones de jóvenes que reconocen ese legado.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🧠</div>
+        <div class="cl-tipo">Innovación en salud</div>
+        <div class="cl-nm">Centro de Salud Mental Juvenil</div>
+        <div class="cl-desc">Red de sedes de atención de salud mental exclusivamente para adolescentes, con equipos especializados en ansiedad, depresión y consumos problemáticos. Es una política pionera en el conurbano oeste que aborda la crisis de salud mental pospandémica con recursos municipales propios.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏥</div>
+        <div class="cl-tipo">Articulación con PAMI</div>
+        <div class="cl-nm">Hospital de Diagnóstico Integral</div>
+        <div class="cl-desc">Nuevo hospital municipal articulado con PAMI para la atención de adultos mayores. La articulación con el PAMI es clave en un municipio donde los adultos mayores son un segmento electoral con alta participación. El acceso a diagnóstico por imágenes y laboratorio sin salir del municipio es el argumento más concreto de la gestión Selci.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌿</div>
+        <div class="cl-tipo">Espacio público</div>
+        <div class="cl-nm">Reserva Natural Urbana</div>
+        <div class="cl-desc">En un municipio de 5,184 hab/km², la creación de una reserva natural con predios recuperados para uso público es una política de calidad de vida de alto impacto. La demanda de espacio verde en el corredor oeste es alta y esta reserva responde directamente a la expectativa de la clase media de Hurlingham.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛒</div>
+        <div class="cl-tipo">Economía local</div>
+        <div class="cl-nm">Mercado Municipal</div>
+        <div class="cl-desc">Mercado municipal con puestos sin costo de alquiler para los puesteros. Es la política más directa de apoyo a la economía informal y al pequeño comercio local. El "cero costo" para el puesto es un argumento concreto de que el Estado municipal apoya al que trabaja, no al que recauda.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">👦</div>
+        <div class="cl-tipo">Salud preventiva</div>
+        <div class="cl-nm">Infancia sin Celular</div>
+        <div class="cl-desc">Programa de salud pública que promueve la desconexión digital en niños con kits recreativos, talleres de robótica y ciencia. Aborda el consumo problemático de pantallas en menores con una política de sustitución positiva, no de prohibición. Conexión directa con la crisis de salud mental juvenil que el Centro de Salud también atiende.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1</div><div class="pal-ttl">Hospital Diagnóstico → Financiamiento Provincial</div></div>
+        <div class="pal-body">
+          <p>El Hospital de Diagnóstico Integral es la obra de salud central de Selci. La provincia puede potenciarlo incorporándolo formalmente al circuito de derivaciones del sistema de salud provincial, con financiamiento IOMA y Ministerio de Salud. Eso convierte una obra municipal en un nodo provincial de salud con escala mayor.</p>
+          <p>Articulación con PAMI ampliada: nuevas prestaciones, turno único digital, especialidades que hoy van al CABA. Cada prestación nueva que resuelve en Hurlingham es un argumento concreto de que el Estado municipal + provincial funciona.</p>
+          <span class="pal-tag acc-prov">Ministerio de Salud PBA</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">PAMI Nacional</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Centro de Salud Mental → Modelo Provincial</div></div>
+        <div class="pal-body">
+          <p>El Centro de Salud Mental Juvenil de Hurlingham es una política sin equivalente en el conurbano oeste. La provincia puede escalarlo: financiar la replicación en municipios del corredor (Morón, Ituzaingó, Tres de Febrero) con Hurlingham como municipio-cabecera del programa.</p>
+          <p>La crisis de salud mental juvenil pospandémica es un tema de agenda con alto impacto en madres y padres del segmento de clase media. Una política provincial de salud mental que nace en Hurlingham le da visibilidad política a Selci y al municipio.</p>
+          <span class="pal-tag acc-prov">DeSA / Salud Mental PBA</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">CONICET / ANSES</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Infraestructura de Corredor + Cloacal</div></div>
+        <div class="pal-body">
+          <p>Con 43.3% y LLA creciendo, el argumento de infraestructura es fundamental. Plan cloacal acelerado en los barrios de mayor NBI con financiamiento AySA/ENOHSA: la cobertura del 72% deja aún ~28% de hogares sin red en un municipio denso donde esa obra es altamente visible.</p>
+          <p>Articulación con el AMBA para mejora del Tren del Oeste en El Palomar: la conectividad con CABA es clave para el votante de clase media del corredor. Un acuerdo de frecuencias y modernización de la estación tiene impacto electoral en el segmento más permeable a LLA.</p>
+          <span class="pal-tag acc-prov">DIPSOH / AySA</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">ENOHSA / AMBA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>⚠️ Síntesis Ejecutiva — Hurlingham</h3>
+  <p><strong>Contexto:</strong> 170k padrón. Selci en su primer mandato, primer intendente peronista que no viene de la estructura territorial tradicional. PJ 43.3% con -1.9pp y LLA +10.4pp. El colapso de JxC (~31.6% en 2023) derivó en LLA, no en PJ. Señal de alarma temprana en el corredor oeste.</p>
+  <p><strong>Riesgo principal:</strong> Si LLA mantiene su crecimiento y el PJ no recupera votos en el segmento de clase media y jóvenes, Hurlingham puede salir del campo peronista en 2027. Con 43.3% actual, el margen es estrecho.</p>
+  <p><strong>Activos de gestión:</strong> Hospital de Diagnóstico con PAMI, Centro de Salud Mental Juvenil (pionero en el corredor oeste), "Hurlingham te Cuida" (operativos móviles), Mercado Municipal (cero costo), Reserva Natural Urbana.</p>
+  <p><strong>Palanca clave:</strong> Integrar el Hospital al sistema provincial y escalar el Centro de Salud Mental como modelo provincial. El argumento de salud mental juvenil conecta directamente con el segmento de clase media y jóvenes que es el más vulnerable al avance de LLA.</p>
+</div>
+
+</body>
+</html>

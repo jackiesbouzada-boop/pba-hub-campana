@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>La Plata — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#0d0d2e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#0d0d2e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#0d0d2e;border-color:#0d0d2e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#0d0d2e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-fit{color:#dc2626}.v-vec{color:#0369a1}.v-grey{color:#374151}
+.split-box{background:#dbeafe;border:1.5px solid #93c5fd;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.split-title{font-size:.72rem;font-weight:800;color:#1e40af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.split-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid #bfdbfe}
+.split-row:last-child{border-bottom:none}
+.split-lbl{font-size:.77rem;color:#374151}
+.split-val{font-size:.82rem;font-weight:800;color:#1d4ed8}
+.split-pos{color:#15803d}
+.split-neg{color:#b91c1c}
+.alert-box{background:#fef2f2;border:1.5px solid #fecaca;border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.ok-box{background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.ok-ttl{font-size:.72rem;font-weight:800;color:#15803d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.ok-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#0d0d2e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#0d0d2e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 8ª Sección Electoral</div>
+  <div class="h-name">LA PLATA</div>
+  <div class="h-name2">Capital de la Provincia de Buenos Aires</div>
+  <div class="h-sub">Casco Urbano · Berisso · Ensenada · Cinturón Hortícola (Olmos, Abasto, Etcheverry)</div>
+  <div><span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">639,839</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">768,547</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">892.8 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">43.7%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">44.1%</span><span class="h-stat-l">LLA 2025 Nac</span></div>
+    <div class="h-stat"><span class="h-stat-v">+4.8 pts</span><span class="h-stat-l">PJ Prov &gt; Nac 2025</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Capital Provincial · UNLP · Empleo Público</h4>
+        <p>La Plata es la ciudad más importante de PBA después del Conurbano denso. Como capital provincial concentra la sede del Poder Ejecutivo, la Legislatura, los ministerios y decenas de organismos estatales — lo que la convierte en la ciudad con mayor densidad de <strong>empleados públicos provinciales</strong> de toda la Argentina fuera de CABA. La <strong>Universidad Nacional de La Plata (UNLP)</strong> aporta más de 100,000 estudiantes que alquilan, consumen y viven en la ciudad, más 10,000 docentes e investigadores. La economía platense es, en esencia, salario público y economía universitaria.</p>
+      </div>
+      <div class="blk">
+        <h4>El Mayor Cinturón Frutihortícola del País</h4>
+        <p>Fuera del casco urbano, en los partidos de Olmos, Abasto y Etcheverry, La Plata alberga el <strong>cinturón de producción bajo cubierta (invernaderos) más grande de Argentina</strong>. Es el principal proveedor nacional de tomates, morrones, verduras de hoja y lechuga que abastecen a todo el AMBA. La actividad la protagonizan familias productoras de <strong>origen boliviano y peruano</strong> — comunidades inmigrantes muy organizadas que viven en una realidad socioeconómica completamente distinta al casco urbano universitario.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">100k+</span>
+        <span class="l">Estudiantes activos en la UNLP — la mayor universidad pública de PBA</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">606</span>
+        <span class="l">Votos de diferencia con que Alak ganó la intendencia en 2023 — la elección más reñida de PBA</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Julio Alak</h3>
+        <div class="meta">Unión por la Patria &nbsp;·&nbsp; <span class="badge-pol badge-al-pol">ALIADO PJ</span></div>
+        <div class="desc">Intendente de La Plata desde diciembre 2023. Ex ministro de Justicia de la Nación (2011-2015), ex intendente de La Plata (2003-2007), periodista. Figura de larga trayectoria peronista en el distrito capital. Ganó en 2023 por apenas 606 votos sobre Garro (JxC) — la elección más reñida de toda PBA. La ciudad tiene una fuerte tradición universitaria y radical que hace de La Plata un campo siempre competitivo para el PJ. En 2025, el PJ mejoró su performance provincial (+5 pts respecto a 2023), lo que sugiere que la gestión Alak ganó aceptación en el padrón local.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Producción · Polo Tecnológico</div>
+        <div class="gest-txt">Creación del Polo Tecnológico (Av. 90 y 155) para PyMEs de base tecnológica articulado con la UNLP, y un Parque Logístico en Av. 90. Apuesta al conocimiento como motor productivo local.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Infraestructura Hídrica · Plan Mega Hidráulico</div>
+        <div class="gest-txt">Continuación del Plan Mega Hidráulico iniciado post-inundación de 2013 (89 muertos). Derivadores pluviales y canales aliviadores del Arroyo El Gato. La obra es el mandato político ineludible de La Plata desde esa tragedia.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Conectividad · Tren Universitario</div>
+        <div class="gest-txt">Extensión del Tren Universitario para unir las facultades de la UNLP con el Policlínico San Martín y el Hospital San Juan de Dios, beneficiando a miles de estudiantes y trabajadores diarios.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Innovación Educativa</div>
+        <div class="gest-txt">Plan "Escuelas Conectadas" para alcanzar cobertura total de internet de alta velocidad en todas las escuelas de gestión estatal del municipio durante 2026.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>% aprox.</th><th>Localización</th><th>Perfil de Voto</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Empleados públicos provinciales</strong> (ministerios, Legislatura, organismos)</td><td class="tbl-num">25%</td><td>Casco urbano, centro, macrocentro</td><td>Históricamente PJ sólido. Sensible a política salarial pública.</td></tr>
+        <tr><td><strong>Comunidad universitaria</strong> (UNLP: estudiantes, docentes, investigadores)</td><td class="tbl-num">20%</td><td>Ciudad nueva, alrededores de facultades</td><td>Alta volatilidad. PJ, FIT, UCR y LLA compiten. Argumento de educación pública y ciencia con fuerte resonancia.</td></tr>
+        <tr><td><strong>Clase media profesional y comerciante</strong></td><td class="tbl-num">22%</td><td>Casco urbano, diagonal 74, centros comerciales</td><td>Histórico bastión UCR/JxC. En 2023 migró parcialmente a LLA. Alta sensibilidad a gestión económica.</td></tr>
+        <tr><td><strong>Comunidad hortícola (productores inmigrantes)</strong></td><td class="tbl-num">8%</td><td>Olmos, Abasto, Etcheverry, Lisandro Olmos</td><td>Mixto. PJ con arraigo histórico vía sindicatos rurales. Comunidad boliviana/peruana muy organizada en asociaciones de productores.</td></tr>
+        <tr><td><strong>Sectores populares urbanos y periurbanos</strong></td><td class="tbl-num">18%</td><td>Los Hornos, Altos de San Lorenzo, Tolosa</td><td>PJ sólido. Base más estable y territorial del peronismo platense.</td></tr>
+        <tr><td><strong>Clase alta residencial</strong></td><td class="tbl-num">7%</td><td>City Bell, Villa Elisa, Gonnet</td><td>JxC histórico; parcialmente migró a LLA en 2023.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Valor</th><th>Ref. PBA</th><th>Observación</th></tr></thead>
+      <tbody>
+        <tr><td><strong>NBI</strong></td><td class="tbl-warn">~12%</td><td>~12%</td><td>En línea con la media provincial; la brecha entre el casco urbano (bajo NBI) y el cinturón hortícola periurbano (NBI elevado) es pronunciada</td></tr>
+        <tr><td><strong>Agua corriente</strong></td><td class="tbl-ok">~88%</td><td>~84%</td><td>Cobertura superior a la media; déficit concentrado en el cordón hortícola oeste (Olmos, Abasto) y asentamientos periféricos</td></tr>
+        <tr><td><strong>Red cloacal</strong></td><td class="tbl-warn">~71%</td><td>~68%</td><td>Levemente superior a la media; el Plan Mega Hidráulico post-2013 mejoró la infraestructura de desagüe pero la red cloacal tiene mora histórica en barrios populares</td></tr>
+        <tr><td><strong>Gas natural</strong></td><td class="tbl-ok">~78%</td><td>~65%</td><td>Alta cobertura en el casco urbano; el cinturón hortícola periurbano y barrios del extrarradio dependen de garrafa</td></tr>
+        <tr><td><strong>Pavimento</strong></td><td class="tbl-warn">~62%</td><td>~60%</td><td>Casco urbano y diagonales principales bien pavimentadas; déficit significativo en Los Hornos, Altos de San Lorenzo y el periurbano hortícola</td></tr>
+        <tr><td><strong>Conectividad</strong></td><td class="tbl-ok">~78%</td><td>~66%</td><td>Alta: impulsada por la densidad universitaria, el tejido de estudiantes y el Plan Escuelas Conectadas. Ciudad con alta cultura digital</td></tr>
+        <tr><td><strong>Efectores de salud</strong></td><td>HI San Martín + HI San Juan de Dios + 30+ CAPS</td><td>—</td><td>Dos hospitales de alta complejidad provinciales como cabecera. Red de CAPS municipal extensa pero con demanda que supera la oferta en el periurbano</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 Arco Electoral 2023 → 2025 · La Ciudad Más Reñida de PBA</div>
+  <div class="sec-body">
+    <div class="ok-box">
+      <div class="ok-ttl">✅ Tendencia PJ Positiva 2023→2025</div>
+      <div class="ok-txt">El PJ pasó de 38.3% (intendente 2023) a 43.7% (concejales prov. 2025) — un salto de +5.4 puntos en apenas dos años. Es una de las mejoras más marcadas en todo el Conurbano. La Plata va en la dirección correcta.</div>
+    </div>
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP (Alak)</span><span class="arc-val v-pj">38.3% <small style="font-weight:400;color:#64748b">(166,479)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Juntos x el Cambio</span><span class="arc-val v-jxc">38.2% <small style="font-weight:400;color:#64748b">(165,873)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">18.5% <small style="font-weight:400;color:#64748b">(80,442)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">624,845</span></div>
+        <div class="arc-row"><span class="arc-lbl" style="font-weight:800;color:#15803d">Margen de victoria</span><span class="arc-val" style="color:#15803d">606 votos</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Provincial</div>
+        <div class="arc-row"><span class="arc-lbl">PJ</span><span class="arc-val v-pj">43.7% <small style="font-weight:400;color:#64748b">(172,684)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">36.4% <small style="font-weight:400;color:#64748b">(143,670)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Total positivos</span><span class="arc-val v-grey">395,040</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">639,839</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">PJ</span><span class="arc-val v-pj">38.9% <small style="font-weight:400;color:#64748b">(153,163)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">44.1% <small style="font-weight:400;color:#64748b">(173,880)</small></span></div>
+        <div class="arc-row"><span class="arc-lbl">Total positivos</span><span class="arc-val v-grey">393,871</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">576,612</span></div>
+      </div>
+    </div>
+    <div class="split-box">
+      <div class="split-title">📐 Split Ticket 2025 — PJ Más Fuerte en la Boleta Provincial</div>
+      <div class="split-row"><span class="split-lbl">PJ Elección Provincial (concejales)</span><span class="split-val">43.7% (172,684 votos)</span></div>
+      <div class="split-row"><span class="split-lbl">PJ Elección Nacional (diputado)</span><span class="split-val">38.9% (153,163 votos)</span></div>
+      <div class="split-row"><span class="split-lbl">Diferencia (Prov − Nac)</span><span class="split-val split-pos">+4.8 pts · 19,521 votos más en la boleta provincial</span></div>
+      <div class="split-row"><span class="split-lbl" style="max-width:45%">Lectura estratégica</span><span class="split-lbl" style="max-width:55%;text-align:right;font-size:.74rem">La Plata es la capital provincial — sus votantes sienten más directamente la gestión del gobierno de la Provincia. El PJ gana 5 pts adicionales en la boleta provincial respecto a la nacional. Hay un efecto "capitalidad" que favorece al peronismo en La Plata cuando el eje es provincial.</span></div>
+    </div>
+    <div class="alert-box">
+      <div class="alert-ttl">⚠️ LLA Ganó la Nacional con 44.1% — Terreno a Recuperar</div>
+      <div class="alert-txt">En la boleta nacional 2025, LLA obtuvo 173,880 votos (44.1%) frente a 153,163 del PJ (38.9%). El padrón platense tiene un segmento de clase media profesional antikirchnerista que migró a LLA y aún no volvió al PJ en la boleta nacional. La diferencia Prov/Nac de LLA (36.4% vs 44.1%) muestra que esos votantes discriminan: eligen LLA en lo nacional pero están más abiertos a votar PJ en lo provincial.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Identidad Platense</div>
+  <div class="sec-body">
+    <p style="color:#64748b;font-size:.78rem;margin-bottom:14px;">La Plata tiene una identidad cultural profunda y orgullosamente propia, distinta al resto del Conurbano.</p>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación · Ciencia · Identidad</div>
+        <div class="cl-nm">La UNLP — La universidad que define la ciudad</div>
+        <div class="cl-desc">La Universidad Nacional de La Plata (fundada en 1905) es una de las tres más grandes de América Latina. Sus 10 facultades, el Museo de Ciencias Naturales (con el dinosaurio más completo del mundo), el Observatorio Astronómico y el Bosque Universitario son parte inseparable del ADN de la ciudad. Todo platense que no estudia en la UNLP tiene un familiar que sí lo hizo.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⚽</div>
+        <div class="cl-tipo">Deporte · Rivalidad · Pasión popular</div>
+        <div class="cl-nm">El Clásico Platense — Estudiantes vs. Gimnasia</div>
+        <div class="cl-desc">El clásico entre Estudiantes de La Plata y Club de Gimnasia y Esgrima La Plata es el derbi provincial más apasionado de PBA. Estudiantes tiene 4 Copas Intercontinentales (1968-1969-1970-2009) — más que cualquier club argentino excepto Independiente. Gimnasia es el club del pueblo, el más popular en los barrios. La rivalidad define barrios, familias y conversaciones durante toda la semana de clásico.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌿</div>
+        <div class="cl-tipo">Memoria colectiva · Tragedia</div>
+        <div class="cl-nm">La inundación de 2013</div>
+        <div class="cl-desc">El 2 de abril de 2013, una tormenta excepcional mató a 89 personas en La Plata en pocas horas. La tragedia marcó a una generación entera de platenses y convirtió la infraestructura hídrica en el primer mandato político local. Ningún político que llegue a La Plata puede ignorar el tema. El Plan Mega Hidráulico no es solo una obra pública: es deuda moral con las familias.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏛️</div>
+        <div class="cl-tipo">Arquitectura · Ciudad planificada</div>
+        <div class="cl-nm">La ciudad de las diagonales</div>
+        <div class="cl-desc">La Plata es la única ciudad capital de Argentina fundada como proyecto urbano planificado (1882). Su grilla de cuadras con diagonales cada 6 manzanas, la Plaza Moreno con la Catedral y la Casa de Gobierno enfrentadas, los 40 espacios verdes — son parte de una identidad urbana única. Los platenses tienen un orgullo genuino por su ciudad que los diferencia del resto del Conurbano.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🧄</div>
+        <div class="cl-tipo">Producción · Comunidad inmigrante</div>
+        <div class="cl-nm">Los invernaderos bolivianos</div>
+        <div class="cl-desc">La comunidad boliviana en el cinturón hortícola de La Plata es una de las más grandes de Argentina. Decenas de miles de familias producen bajo invernadero en condiciones de alta precariedad. Son el eslabón invisible que garantiza las verduras del AMBA. La Plata tiene ahí una comunidad con demandas concretas — regularización predial, seguro agrícola, acceso a crédito — que el PJ puede y debe articular.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎸</div>
+        <div class="cl-tipo">Cultura · Rock · Identidad urbana</div>
+        <div class="cl-nm">La Plata Rock</div>
+        <div class="cl-desc">La Plata tiene una escena de rock y música independiente que desde los 80 produce bandas y artistas que definen la cultura nacional. Rata Blanca, Peligrosos Gatos, Las Pelotas, Virus (una banda icónica que nació aquí) — la ciudad tiene una comunidad artística viva y orgullosa. El Estadio Ciudad y el Teatro Argentino son los dos grandes escenarios culturales que conectan con este electorado.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 1</div>
+          <div class="pal-ttl">UNLP · Ciencia y Educación Pública</div>
+        </div>
+        <div class="pal-body">
+          <p>La Universidad Nacional de La Plata es el activo más potente de la ciudad. Acceso directo como Nación — la UNLP es federal. Eje: <strong>universidad pública como motor de desarrollo, ciencia aplicada al territorio, CONICET La Plata como nexo entre investigación e industria local</strong>. La UNLP tiene el Museo de Ciencias Naturales, el Bosque Universitario y las 10 facultades como escenarios de máxima visibilidad. Audiencia clave: 10,000 docentes y no docentes + estudiantes organizados en centros de estudiantes.</p>
+          <span class="pal-tag acc-nac">🏛️ NACIONAL — Min. Educación / CONICET</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 2</div>
+          <div class="pal-ttl">Cinturón Hortícola · Comunidad Productora</div>
+        </div>
+        <div class="pal-body">
+          <p>Los productores hortícolas del periurbano son una comunidad organizada con demandas concretas y un vínculo histórico con el peronismo. Eje: <strong>regularización predial, seguro agrícola, acceso a crédito productivo, titularización de predios, dignificación del trabajo rural</strong>. Coordinar con la Unión de Trabajadores de la Tierra (UTT), el SENASA La Plata y las asociaciones de productores bolivianos de Olmos y Abasto. Audiencia: 30,000+ personas en el cordón hortícola.</p>
+          <span class="pal-tag acc-prov">🌿 PROVINCIAL — Min. Agroindustria / UTT</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 3</div>
+          <div class="pal-ttl">Plan Mega Hidráulico · La Deuda de 2013</div>
+        </div>
+        <div class="pal-body">
+          <p>La inundación de 2013 es la herida abierta de La Plata. El Plan Mega Hidráulico es una obra de múltiples actores (Nación, Provincia, Municipio) con financiamiento compartido. Eje: <strong>infraestructura que salva vidas, deuda histórica con las familias de las 89 víctimas, Estado presente en la prevención de catástrofes</strong>. La obra se puede mostrar físicamente — canales, derivadores, obras en ejecución. Es una palanca tanto emotiva como racional para el electorado platense.</p>
+          <span class="pal-tag acc-nac">🏛️ NACIONAL + PROVINCIAL — Min. Obras Públicas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">UNLP — Presidencia + Facultades estratégicas <span style="background:#dbeafe;color:#1e40af;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">NACIONAL</span></div>
+          <div class="vis-desc">Recorrida con el rector de la UNLP y referentes de facultades clave (Ciencias Exactas, Agronomía, Medicina). El Bosque Universitario y el Museo de Ciencias Naturales son escenarios de altísima visibilidad. Discurso: educación pública como política de Estado, ciencia al servicio del territorio.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Cinturón hortícola — Olmos / Abasto <span style="background:#f0fdf4;color:#15803d;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PROVINCIAL — UTT / productores</span></div>
+          <div class="vis-desc">Recorrida de invernaderos con la UTT (Unión de Trabajadores de la Tierra) y asociaciones de productores bolivianos. Discurso: trabajo rural, regularización predial, crédito productivo, dignificación del trabajador invisible. Mañana temprana — el ritmo del cinturón.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Obras del Plan Mega Hidráulico — Canal del Arroyo El Gato <span style="background:#dbeafe;color:#1e40af;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">NACIONAL + PROVINCIAL</span></div>
+          <div class="vis-desc">Recorrida por las obras hidráulicas activas — derivadores, canales aliviadores. Acompañado por Alak y técnicos de obras públicas. Discurso: deuda con las familias de 2013, Estado que previene catástrofes, infraestructura que salva vidas. Alto impacto emocional en platenses.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Polo Tecnológico La Plata (Av. 90 y 155) <span style="background:#f0fdf4;color:#15803d;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">PROVINCIAL — Alak + UNLP</span></div>
+          <div class="vis-desc">Recorrida por el Polo Tecnológico en construcción/operación, con PyMEs de base tecnológica instaladas y referentes del ecosistema tech platense. Discurso: economía del conocimiento que crece desde la ciudad universitaria, empleo calificado en el interior productivo.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Los Hornos / Altos de San Lorenzo — base popular territorial <span style="background:#f0fdf4;color:#15803d;font-size:.64rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px">MUNICIPAL — con Alak</span></div>
+          <div class="vis-desc">Recorrida de barrios populares con estructura del PJ local. Discurso: inversión en los que siempre estuvieron, presencia del Estado en los barrios que el municipio aliado acompaña. La base más estable del voto PJ platense está aquí.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🎯 Síntesis Ejecutiva</h3>
+  <p>La Plata es el municipio más importante de PBA fuera del Conurbano denso y, al mismo tiempo, el más complejo políticamente. Con 639,000 electores en padrón, es la segunda concentración electoral individual de la provincia. Julio Alak la ganó en 2023 por 606 votos — el margen más chico de cualquier intendente de un municipio grande en toda PBA.</p>
+  <p>El dato que más importa hacia adelante: en 2025, el PJ obtuvo 43.7% provincial frente a 38.3% que había sacado Alak en 2023 — una recuperación de +5.4 puntos. La Plata es la capital provincial y hay un efecto "capitalidad" que favorece al peronismo cuando el eje es provincial: +4.8 pts de ventaja PJ en la boleta provincial respecto a la nacional. El electorado platense discrimina — y cuando el voto es sobre la Provincia, el PJ tiene ventaja.</p>
+  <p>Los activos son claros: la UNLP, el cinturón hortícola con la comunidad boliviana organizada en la UTT, y las obras del Plan Mega Hidráulico (que son deuda moral post-2013). Ninguno de estos tres vectores requiere mediación del intendente — son accesos directos que la Provincia o la Nación pueden activar. Alak es aliado y suma, pero La Plata no depende de él para construir presencia.</p>
+</div>
+
+</body>
+</html>

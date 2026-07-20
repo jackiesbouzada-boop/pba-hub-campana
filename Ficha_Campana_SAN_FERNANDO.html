@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>San Fernando — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.35);color:#bae6fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-right:6px;margin-bottom:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:8px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k h4{color:#bae6fd}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#3b82f6;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-best{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-color:#86efac}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-green{color:#059669}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">SAN FERNANDO</div>
+  <div class="h-name2">Delta del Paraná · Náutica · Corredor Norte Costero · Andrés Andreotti</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Andrés Andreotti / UxP</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">140,991</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">178,643</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">895 km²</span><span class="h-stat-l">Superficie (incluye Delta)</span></div>
+    <div class="h-stat"><span class="h-stat-v">58.7%</span><span class="h-stat-l">PJ 2025 PBA (dos partidos)</span></div>
+    <div class="h-stat"><span class="h-stat-v">41,218</span><span class="h-stat-l">Votos PJ PBA 2025</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Delta del Paraná · Capital Náutica del GBA Norte</h4>
+        <p>San Fernando es la puerta de entrada al Delta bonaerense: miles de islas, ríos entrelazados y una cultura náutica que no tiene paralelo en el GBA. El Puerto Fluvial de San Fernando es el punto de salida para isleros, turistas y deportistas náuticos que acceden al Delta todos los fines de semana. La identidad isleña —con sus costumbres, sus embarcaciones y su modo de vida— es un activo cultural distintivo que pocos municipios del conurbano pueden exhibir.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Corredor Norte Costero · Polo de Servicios y Residencial</h4>
+        <p>La parte continental de San Fernando —el área urbana sobre la Ruta 197 y la Autopista del Tigre— concentra la mayor parte de la población del municipio y convive con el perfil náutico e isleño. San Fernando forma parte del corredor norte que une Tigre con Escobar: un eje de crecimiento residencial, servicios y logística que en los últimos años se consolidó como uno de los corredores de mayor dinámica del GBA. Andreotti gestiona esa tensión entre el San Fernando continental (servicios, trabajadores, barrios) y el San Fernando deltáico (islas, náutica, turismo).</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">58.7%</span>
+        <span class="l">PJ en elección PBA 2025 (dos partidos vs. LLA)</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">895 km²</span>
+        <span class="l">Superficie total — 80% corresponde a islas del Delta</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Contexto Político · Gestión Andreotti (UxP)</div>
+  <div class="sec-body">
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Intendente: Andrés Andreotti (UxP)</div>
+        <div class="gest-txt">Intendente de San Fernando con más de una década de gestión. Referente territorial del peronismo del norte del GBA. Perfil de gestión orientada a la infraestructura urbana y a la articulación entre el municipio continental y las islas del Delta. Municipio aliado con resultado sólido en la elección provincial de 2025.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Puerto Fluvial y Acceso al Delta</div>
+        <div class="gest-txt">El Puerto Fluvial de San Fernando es el punto de embarque más importante del GBA norte para acceso al Delta. La gestión municipal de la terminal fluvial, los servicios al islero y la infraestructura náutica son parte central de la identidad de la gestión de Andreotti. El Delta genera también trabajo en turismo, logística y servicios para los residentes del área continental.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Infraestructura Urbana Continental</div>
+        <div class="gest-txt">El San Fernando continental (Victoria, Virreyes, Boulogne, Villa Adelina) concentra el grueso de la población y demanda infraestructura urbana permanente: pavimento, agua, cloacas, iluminación y espacios verdes. La gestión de Andreotti balanceó la visibilidad que da el Delta con la entrega de obra pública en los barrios populares del municipio continental.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Sistema de Salud Municipal</div>
+        <div class="gest-txt">Red de centros de atención primaria de salud distribuidos tanto en el área continental como en las islas (con postas sanitarias en el Delta). La cobertura de salud para los isleros —que no tienen acceso terrestre— es uno de los compromisos más valorados por la comunidad isleña, que históricamente tuvo dificultades para acceder a servicios de salud básicos.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Isleros y trabajadores del Delta</td><td>Familias que viven y trabajan en las islas del Delta: fruticultura, pesca, turismo náutico y servicios. Identidad muy particular: autosuficientes, con vínculos históricos con el peronismo y con el Estado a través del municipio que les provee servicios básicos. El Estado provincial que llegó a las islas (posta médica, escuela) tiene base peronista histórica.</td><td class="tbl-num">~10%</td><td>Alto — identidad histórica</td></tr>
+        <tr><td class="tbl-num">Trabajadores del corredor norte (Victoria, Virreyes)</td><td>Clase media-baja y trabajadores de la industria y servicios del corredor norte. Base electoral principal del PJ en San Fernando: sindicatos, empleo industrial, familias con vínculo histórico al peronismo. Sensibles a políticas de empleo, seguridad y obra pública.</td><td class="tbl-num">~40%</td><td>Alto — base PJ sólida</td></tr>
+        <tr><td class="tbl-num">Clase media residencial (Boulogne, Villa Adelina)</td><td>Vecinos de perfil profesional y clase media consolidada en los barrios del sur del municipio (Boulogne, Villa Adelina) que hacen frontera con Vicente López y San Isidro. Voto más volátil: puede ir a JxC o LLA en función de la coyuntura económica. En 2025 dividido entre PJ provincial y LLA nacional.</td><td class="tbl-num">~35%</td><td>Moderado — en disputa</td></tr>
+        <tr><td class="tbl-num">Turistas y propietarios de fin de semana (Delta)</td><td>Propietarios de embarcaciones y casas de fin de semana en el Delta. Perfil de clase media-alta. No forman parte del padrón de San Fernando (votan en sus domicilios de residencia principal). Su impacto es económico: sustentan la industria náutica y gastronómica del Puerto Fluvial.</td><td class="tbl-num">—</td><td>Sin voto en San Fernando</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Infraestructura y Programas de Gestión</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">⛵</div>
+        <div class="cl-tipo">Delta — identidad territorial</div>
+        <div class="cl-nm">Puerto Fluvial San Fernando</div>
+        <div class="cl-desc">Terminal fluvial que opera las líneas de lanchas colectivas al Delta y marina náutica para embarcaciones privadas. El Puerto Fluvial es el corazón de la identidad de San Fernando: el punto donde convergen el islero, el turista y el residente. La gestión municipal de la terminal y los servicios portuarios es visible y valorada por la comunidad.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏥</div>
+        <div class="cl-tipo">Salud — islas y continente</div>
+        <div class="cl-nm">Postas Sanitarias en el Delta</div>
+        <div class="cl-desc">Red de postas sanitarias en las islas del Delta que proveen atención primaria a los isleros sin necesidad de cruzar a tierra firme. Las postas llegan en lancha, con médicos y enfermeros que realizan rondas periódicas. Es uno de los programas más valorados por la comunidad isleña que históricamente tuvo acceso muy limitado a salud.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏫</div>
+        <div class="cl-tipo">Educación — acceso</div>
+        <div class="cl-nm">Escuelas Isla y Red Continental</div>
+        <div class="cl-desc">San Fernando mantiene escuelas en las islas del Delta (escuelas de modalidad especial que atienden a los hijos de isleros) y una red de establecimientos educativos en el continente. La escuela en la isla es, para muchas familias isleras, el único servicio público que llega a su domicilio directamente.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🔭</div>
+        <div class="cl-tipo">Seguridad</div>
+        <div class="cl-nm">Monitoreo Urbano y Patrullaje</div>
+        <div class="cl-desc">Red de cámaras de monitoreo en el área continental del municipio y coordinación con la Policía Bonaerense para el patrullaje en las zonas de mayor demanda de seguridad. El monitoreo del Puerto Fluvial (que concentra movimiento de dinero y bienes náuticos) es parte del sistema de seguridad integral del municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌿</div>
+        <div class="cl-tipo">Ambiente — Delta</div>
+        <div class="cl-nm">Gestión Ambiental del Delta</div>
+        <div class="cl-desc">El Delta es un ecosistema sensible que requiere gestión activa para equilibrar el uso residencial, el turismo náutico y la preservación ambiental. San Fernando coordina con la Nación y la Provincia el control de quemas, el manejo de residuos en las islas y la protección de la biodiversidad del humedal. La quema de pastizales en el Delta es uno de los problemas ambientales más visibles del municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏘️</div>
+        <div class="cl-tipo">Urbano — barrios</div>
+        <div class="cl-nm">Obra Pública Continental</div>
+        <div class="cl-desc">Pavimentación, iluminación, desagüe y espacios verdes en los barrios populares del municipio continental. Victoria, Virreyes y las zonas de menor ingreso del partido concentran la demanda de obra pública básica. La gestión de Andreotti priorizó la entrega de obra visible en esos barrios como base de la legitimidad electoral.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-best">
+        <div class="arc-year">General 2023 — Tres partidos</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">~52% (est.)</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~26% (est.)</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~22% (est.)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">~134,000</span></div>
+      </div>
+      <div class="arc-card arc-winner">
+        <div class="arc-year">Concejales Prov. 2025 ✅ PJ gana</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">58.7% dos-partidos</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">41.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ votos absolutos</span><span class="arc-val v-pj">41,218</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">140,991</span></div>
+      </div>
+    </div>
+    <p style="font-size:.79rem;color:#374151;margin-top:10px">San Fernando es un municipio con mayoría peronista sólida en la elección provincial. La gestión de Andreotti consolidó una ventaja PJ de casi 18pp sobre LLA en la elección de concejales de 2025 — uno de los márgenes más amplios del corredor norte del GBA.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 6. Tres Palancas Provinciales</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — Prioritaria</div><div class="pal-ttl">Dragado y mantenimiento del Delta — canales y acceso fluvial</div></div>
+        <div class="pal-body">
+          <p>El Delta del Paraná requiere dragado periódico de los canales para mantener la navegabilidad. Cuando los canales se colmatan, las lanchas no pueden circular y los isleros quedan aislados. El dragado es una demanda permanente de la comunidad isleña y de los operadores náuticos.</p>
+          <p>Un convenio provincial-nacional de mantenimiento fluvial que garantice dragado periódico en los canales del Delta de San Fernando es la inversión con mayor impacto en la comunidad más fiel del municipio. Los isleros —alta fidelidad electoral al PJ— reconocen directamente al Estado que les garantiza el acceso a sus hogares.</p>
+          <span class="pal-tag acc-nac">Prefectura Naval · Hidrovía</span>
+          <span class="pal-tag acc-prov" style="margin-left:4px">OPDS PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Extensión de cloacas en Virreyes y Victoria</div></div>
+        <div class="pal-body">
+          <p>Los barrios de Virreyes y Victoria —los de mayor densidad popular del municipio continental— tienen déficit cloacal relevante. La extensión de red a través de AYSA o DIPSOH llega directamente a la base trabajadora del municipio: los sectores que votan PJ con mayor consistencia y que demandan infraestructura básica como prioridad.</p>
+          <p>Obra concreta en Virreyes y Victoria — con carteles de obra en el barrio — construye presencia provincial visible en los barrios que definen el resultado electoral de San Fernando. El trabajador que ve la cuadrilla en su calle conecta directamente con el Estado provincial que lo gobierna.</p>
+          <span class="pal-tag acc-prov">AySA / DIPSOH PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Tren Mitre Ramal Mitre Delta — mejora de frecuencia</div></div>
+        <div class="pal-body">
+          <p>El Ferrocarril Mitre ramal Delta une San Fernando con Retiro (CABA). Es el medio de transporte diario de miles de trabajadores del municipio continental que viajan a CABA. El ramal tiene frecuencias menores al ramal Escobar y los trabajadores perciben una diferencia de calidad.</p>
+          <p>Un anuncio de incremento de frecuencias o renovación de material rodante en el ramal Delta, hecho en la estación de San Fernando, llega directamente al trabajador popular que toma el tren todos los días. La imagen del candidato en la estación de trenes de San Fernando tiene alto impacto simbólico en el municipio.</p>
+          <span class="pal-tag acc-nac">Trenes Argentinos</span>
+          <span class="pal-tag acc-prov" style="margin-left:4px">AMBA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>✅ Síntesis Ejecutiva — San Fernando</h3>
+  <p><strong>Contexto:</strong> 140,991 padrón. Andreotti (UxP). PJ gana cómodamente la elección PBA 2025 con 58.7% dos-partidos (41,218 votos). Municipio con identidad única en el GBA norte: la puerta del Delta, con cultura náutica e isleña que lo diferencia de cualquier otro municipio del corredor.</p>
+  <p><strong>El dato clave:</strong> San Fernando combina un área continental con alta densidad peronista (Virreyes, Victoria) y un área del Delta con identidad isleña de alta fidelidad al Estado. La gestión de Andreotti construyó confianza en ambos sectores. El municipio no presenta señales de alarma electoral en 2025.</p>
+  <p><strong>Palancas provinciales:</strong> Dragado de canales del Delta (comunidad isleña fiel), extensión cloacal en Virreyes y Victoria (base popular), mejora del ramal Mitre Delta (trabajadores del continente). Las tres palancas llegan directamente a los sectores más comprometidos con el voto PJ del municipio.</p>
+  <p><strong>Objetivo:</strong> Consolidar los 41,000 votos de 2025 y proyectar crecimiento hacia la elección de intendente de 2027 a través de la articulación Andreotti-candidato provincial.</p>
+</div>
+
+</body>
+</html>

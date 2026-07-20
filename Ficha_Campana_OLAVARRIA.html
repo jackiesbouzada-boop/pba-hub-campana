@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Olavarría — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.35);color:#bae6fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-right:6px;margin-bottom:6px}
+.badge-warn{display:inline-block;background:rgba(217,119,6,.3);color:#fcd34d;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(217,119,6,.5);letter-spacing:.5px;margin-bottom:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:8px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-w{font-size:1.15rem;font-weight:800;color:#fcd34d}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k h4{color:#bae6fd}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#3b82f6;display:block}
+.b-num .n-w{font-size:1.7rem;font-weight:900;color:#d97706;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-best{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-color:#86efac}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-warn{background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#fcd34d}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-green{color:#059669}
+.warn-box{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.warn-ttl{font-size:.72rem;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.warn-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🏙️ CIUDADES BONAERENSES &nbsp;|&nbsp; 7ª Sección Electoral</div>
+  <div class="h-name">OLAVARRÍA</div>
+  <div class="h-name2">Cemento · UNICEN · Ciudad Serrana del Centro Bonaerense · Municipio Recuperado</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Wesner / UxP</span>
+    <span class="badge-warn">⚠️ MUNICIPIO RECIENTEMENTE RECUPERADO — JxC lo tuvo 12 años</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">~115,000</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">~95,000</span><span class="h-stat-l">Padrón estimado 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">7,715 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">~55%</span><span class="h-stat-l">PJ 2025 PBA est. (dos partidos)</span></div>
+    <div class="h-stat"><span class="h-stat-v-w">UNICEN</span><span class="h-stat-l">Sede central del Sistema Universitario Centro</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏙️ 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="warn-box">
+      <div class="warn-ttl">⚠️ OLAVARRÍA: MUNICIPIO RECUPERADO — CONSOLIDACIÓN CRÍTICA EN 2027</div>
+      <div class="warn-txt">Olavarría estuvo bajo gestión JxC (Ezequiel Galli) durante 12 años (2011-2023). Wesner (UxP) ganó la intendencia en 2023 en un resultado ajustado. Es el municipio más importante del centro-sur bonaerense recientemente recuperado para el peronismo. La consolidación de ese logro en 2027 es una prioridad estratégica de la 7ª Sección.</div>
+    </div>
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Loma Negra · Capital Nacional del Cemento</h4>
+        <p>La planta de Loma Negra en Olavarría es la mayor fábrica de cemento de Argentina. La industria del cemento —y su cadena de valor (canteras, transporte, servicios)— es el motor económico más importante del partido. Miles de trabajadores, directa e indirectamente vinculados a la industria, tienen identidad sindical y peronista. La planta Loma Negra es también el símbolo del modelo industrial-peronista de ciudad del interior bonaerense.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>UNICEN · Polo Universitario del Centro Bonaerense</h4>
+        <p>La Universidad Nacional del Centro de la Provincia de Buenos Aires (UNICEN) tiene en Olavarría una de sus sedes principales. La UNICEN es la institución universitaria más importante del centro bonaerense y uno de los empleadores de clase media más relevantes del municipio. La presencia universitaria le da a Olavarría un perfil intelectual y científico que pocas ciudades del interior provincial tienen.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">+1</span>
+        <span class="l">Municipio recuperado en 2023 (venía de 12 años de JxC/Galli). Wesner (UxP) intendente.</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">UNICEN</span>
+        <span class="l">Universidad Nacional del Centro — uno de los mayores empleadores del partido.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 2. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-best">
+        <div class="arc-year">General 2023 — PJ recupera intendencia</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria (Wesner)</span><span class="arc-val v-pj">~47% est. — GANÓ</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC (Galli o sucesor)</span><span class="arc-val v-jxc">~35% est.</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~18% est.</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón est.</span><span class="arc-val v-grey">~90,000</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Concejales PBA 2025 — Resultado ajustado</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria (est.)</span><span class="arc-val v-pj">~55% dos-partidos</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA / Oposición</span><span class="arc-val v-lla">~45% est.</span></div>
+        <div class="arc-row"><span class="arc-lbl">Municipio</span><span class="arc-val v-grey">Wesner UxP intendente</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón est.</span><span class="arc-val v-grey">~95,000</span></div>
+      </div>
+    </div>
+    <p style="font-size:.79rem;color:#374151;margin-top:8px;font-style:italic">⚠️ Nota: datos exactos no disponibles en la base. Estimaciones basadas en tendencias de la 7ª Sección y el perfil histórico del municipio.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 3. Identidades Clave y Programas</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏭</div>
+        <div class="cl-tipo">Industria estratégica</div>
+        <div class="cl-nm">Loma Negra — Mayor cementera de Argentina</div>
+        <div class="cl-desc">La planta de Loma Negra en Olavarría procesa piedra caliza de las Sierras del Tandil y produce el cemento que construye la Argentina. Miles de trabajadores directos e indirectos, con identidad sindical y peronista consolidada. La relación entre la gestión municipal y Loma Negra es uno de los ejes de la política económica local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación superior</div>
+        <div class="cl-nm">UNICEN Olavarría</div>
+        <div class="cl-desc">La Facultad de Ingeniería (FIO-UNICEN) en Olavarría es una de las facultades de ingeniería más reconocidas del interior bonaerense. Forma ingenieros civiles, industriales y químicos que trabajan en la industria del cemento, la construcción y la agroindustria. Es el polo universitario técnico más importante del centro-sur provincial.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⛰️</div>
+        <div class="cl-tipo">Naturaleza y serranías</div>
+        <div class="cl-nm">Sierras del Sistema Tandília</div>
+        <div class="cl-desc">El partido de Olavarría está en el corazón del Sistema Serrano de Tandilia. Las sierras le dan una identidad paisajística que combina con la actividad minera (canteras de piedra caliza) y el turismo rural. Los embalses y las áreas de recreación serrana son un activo de calidad de vida que diferencia a Olavarría del resto del interior bonaerense.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🤸</div>
+        <div class="cl-tipo">Deporte</div>
+        <div class="cl-nm">Ciudad del Vóley — Selección Nacional</div>
+        <div class="cl-desc">Olavarría tiene una tradición deportiva extraordinaria en vóley: es la ciudad con más títulos de liga en Argentina y es conocida como "la capital del vóley argentino". Los clubes locales (Lomas Vóley, UPCN) tienen relevancia nacional. El deporte como activo de identidad y calidad de vida es un eje de comunicación potente para el municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🔬</div>
+        <div class="cl-tipo">Investigación</div>
+        <div class="cl-nm">Centros de investigación UNICEN</div>
+        <div class="cl-desc">La UNICEN en Olavarría tiene centros de investigación en materiales, ingeniería y producción. La investigación aplicada al sector cementero y minero genera transferencia tecnológica que beneficia directamente a la industria local. El municipio tiene en la UNICEN un aliado estratégico para la innovación productiva.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛣️</div>
+        <div class="cl-tipo">Conectividad</div>
+        <div class="cl-nm">Ruta 3 y conectividad central</div>
+        <div class="cl-desc">Olavarría está sobre la Ruta Nacional 3 (eje Buenos Aires-Bahía Blanca-Patagonia) y la Ruta Provincial 226. La ciudad es el nodo de tránsito del corredor centro-sur bonaerense. La conectividad vial y la posibilidad de activar el ramal ferroviario del interior son demandas históricas del municipio.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 4. Tres Palancas Provinciales</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — Crítica para consolidación</div><div class="pal-ttl">Inversión en Hospital Sub-Zonal Olavarría — equipamiento y especialidades</div></div>
+        <div class="pal-body">
+          <p>El hospital de referencia de Olavarría es el eje de la política sanitaria provincial en el centro-sur bonaerense. Una inversión en equipamiento de alta complejidad o en ampliación de especialidades llega directamente a los trabajadores del partido que son la base de la nueva gestión Wesner.</p>
+          <p>Para un municipio recientemente recuperado, la visibilidad de la inversión provincial en salud es fundamental para consolidar la idea de que la gestión PJ provincial trabaja en Olavarría. Diferencia al Estado provincial de la gestión JxC anterior que no priorizo la ciudad.</p>
+          <span class="pal-tag acc-prov">Ministerio de Salud PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Convenio UNICEN-Provincia para polo tecnológico cementero</div></div>
+        <div class="pal-body">
+          <p>La UNICEN tiene capacidad de investigación en materiales y procesos cementeros que no tiene comparable en ninguna otra universidad del interior bonaerense. Un convenio provincia-UNICEN para desarrollo tecnológico aplicado a la industria del cemento y la construcción posiciona a Olavarría como polo de innovación industrial del centro bonaerense.</p>
+          <p>El anuncio en la Facultad de Ingeniería de la UNICEN, con presencia de investigadores y estudiantes, genera una imagen de modernización productiva que ningún otro actor del municipio puede disputar. Es la política de mayor impacto en el segmento universitario del municipio.</p>
+          <span class="pal-tag acc-prov">UNICEN · Min. Producción PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Infraestructura viaria Ruta 3 — Acceso norte y bypass urbano</div></div>
+        <div class="pal-body">
+          <p>El acceso norte de Olavarría desde la Ruta 3 y la circulación de camiones de carga de la industria cementera y minera generan congestión y deterioro vial en el área urbana del municipio. Una inversión provincial en la variante de la Ruta 3 (bypass) o en la reparación del acceso norte llega directamente a los trabajadores y camioneros que transitan el corredor todos los días.</p>
+          <p>La obra vial en el corredor de Olavarría beneficia también a los municipios del radio (Azul, Laprida, Tapalqué) que dependen de esa vía para la circulación de su producción. Tiene un alcance regional que supera al municipio.</p>
+          <span class="pal-tag acc-prov">DPV — Dirección de Vialidad PBA</span>
+          <span class="pal-tag acc-nac">Vialidad Nacional</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>✅ Síntesis Ejecutiva — Olavarría</h3>
+  <p><strong>Contexto:</strong> ~95k padrón, Wesner (UxP), municipio RECUPERADO en 2023 tras 12 años de JxC (Galli). Ciudad industrial del sistema serrano de Tandilia: la mayor cementera de Argentina (Loma Negra), la UNICEN como polo universitario técnico, y la tradición deportiva del vóley como identidad cultural. Centro de gravedad de la 7ª Sección Electoral.</p>
+  <p><strong>El desafío estratégico:</strong> Consolidar la recuperación. Wesner ganó ajustado en 2023. La gestión provincial debe ser visible en Olavarría para demostrar que el Estado PJ entrega más que el JxC anterior. Cada obra, cada inversión, cada presencia en el municipio contribuye a estabilizar un resultado que en 2027 puede ser reñido.</p>
+  <p><strong>Palancas:</strong> Hospital (salud visible, base popular), UNICEN-industria cementera (innovación, clase media técnica), Ruta 3-bypass (logística, camioneros, corredor regional). Las tres palancas llegan a segmentos distintos del electorado de Wesner y construyen presencia provincial en un municipio crítico.</p>
+</div>
+
+</body>
+</html>

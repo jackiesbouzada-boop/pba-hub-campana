@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ituzaingó — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:6px}
+.badge-warn{display:inline-block;background:rgba(245,158,11,.3);color:#fcd34d;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(245,158,11,.5);letter-spacing:.5px;margin-bottom:12px;margin-left:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-w{font-size:1.15rem;font-weight:800;color:#fcd34d}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .n-w{font-size:1.7rem;font-weight:900;color:#f59e0b;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-warn{background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#fcd34d}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-warn{color:#b45309}
+.warn-box{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.warn-ttl{font-size:.72rem;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.warn-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#fcd34d;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">ITUZAINGÓ</div>
+  <div class="h-name2">El Jardín del Oeste con la amenaza libertaria más fuerte del lote: LLA +17pp en el corredor de barrios cerrados</div>
+  <div class="h-sub">Ituzaingó · Padua · Paso del Rey · Parque Leloir · Mártires</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-warn">⚠️ ALERTA MÁXIMA — LLA +17pp · PJ 43.6%</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">156,035</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">180,232</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">38.1 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v-w">43.6%</span><span class="h-stat-l">PJ 2025 ⚠️ bajo 50%</span></div>
+    <div class="h-stat"><span class="h-stat-v-w">+17pp LLA</span><span class="h-stat-l">Mayor avance LLA del lote ⚠️</span></div>
+    <div class="h-stat"><span class="h-stat-v">4,732</span><span class="h-stat-l">hab/km² — densidad alta</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>El Jardín del Oeste</h4>
+        <p>Ituzaingó recibe su apodo —"El Jardín del Oeste"— por la densidad de arbolado urbano y la calidad ambiental de sus barrios residenciales. Es un municipio del corredor oeste con una combinación peculiar: barrios obreros populares en Padua y Paso del Rey, y un polo de barrios cerrados, countries y residencias premium en la zona de Parque Leloir. Esta dualidad define su geografía política: el PJ tiene base en la parte popular; LLA avanzó especialmente en la franja de clase media-alta del corredor verde.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Corredor Gastronómico y Parque Leloir</h4>
+        <p>La zona de Parque Leloir concentra una oferta gastronómica, hotelera y de servicios de alta gama inusual para el conurbano oeste. Restaurantes, bodegas, posadas y espacios de eventos en un entorno arbolado con casas y countries de clase media-alta. Ese corredor es el motor económico del municipio para el segmento de mayor ingreso, y también el área con mayor penetración del voto libertario. La tensión entre el Ituzaingó popular de Padua y el Ituzaingó premium de Leloir es la clave para entender el 43.6%.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n-w">43.6%</span>
+        <span class="l">PJ 2025 — municipio aliado con PJ por debajo del 50%; segundo mandato de Descalzo en riesgo</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-w">+17pp LLA</span>
+        <span class="l">mayor avance libertario del lote de 10 municipios — de ~19.5% a 36.5% entre 2023 y 2025</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Pablo Descalzo</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2019</div>
+        <div class="desc">Pablo Descalzo ganó en 2019 en un municipio donde el peronismo no era históricamente dominante. Reelegido en 2023, su gestión apostó a la innovación digital (fibra óptica, tótems, anillo digital), la economía circular y la seguridad escolar. Es un perfil de gestión municipalista moderno, con acento en la tecnología como argumento de Estado eficiente. Sin embargo, el avance de LLA de +17pp en las elecciones provinciales de 2025 —el mayor del lote de 10 municipios— indica que la narrativa de modernización tecnológica no está siendo suficiente como argumento electoral frente a la propuesta libertaria.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Salud</div>
+        <div class="gest-txt">Clínica Municipal para Adultos Mayores: establecimiento de salud municipal especializado en la atención de adultos mayores, con foco en atención integral y prevención. Complementa la oferta del sistema provincial en un segmento con alta demanda de servicios especializados.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Infraestructura</div>
+        <div class="gest-txt">Plan Maestro Cloacal con AySA: acuerdo con AySA para expandir la red cloacal en los barrios con mayor déficit del municipio. Obra de infraestructura fundamental en un municipio con significativo porcentaje de hogares sin conexión a la red cloacal, particularmente en Padua y Paso del Rey.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Conectividad Digital</div>
+        <div class="gest-txt">Anillo Digital e "Ituzaingó Digital": red de fibra óptica municipal + tótems 360° de información y wifi gratuito distribuidos en el municipio. Apuesta a la modernización digital como argumento de gestión eficiente y conectividad para todos los vecinos.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas de Gestión</div>
+        <div class="gest-txt">"En Ituzaingó se Separa": programa de reciclaje y separación en origen. Red de Corredores Escolares Seguros: botones antipánico y seguridad en el entorno de las escuelas. "Ituzaingó Innova": capacitación en IT y tecnología para vecinos. "Ituzaingó Digital": fibra óptica municipal y conectividad.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Clase media-alta (Parque Leloir, countries)</td><td>Propietarios de countries, barrios cerrados y residencias de alta gama. Empleados formales con ingresos altos, sensibles a la carga impositiva y al anti-Estado. Principal base de avance de LLA en el municipio.</td><td class="tbl-num">~22%</td><td>Bajo — riesgo máximo LLA</td></tr>
+        <tr><td class="tbl-num">Clase media empleada (Ituzaingó cabecera)</td><td>Empleados formales, profesionales, comerciantes. Demanda de seguridad, conectividad y servicios de calidad. Permeable a LLA si el Estado no cumple expectativas de servicio.</td><td class="tbl-num">~28%</td><td>Variable — riesgo LLA</td></tr>
+        <tr><td class="tbl-num">Barrios populares (Padua, Paso del Rey)</td><td>Familias obreras, empleados informales, alta demanda de infraestructura (cloaca, agua). Base histórica del PJ en el municipio. Sensibles a la obra pública visible.</td><td class="tbl-num">~25%</td><td>Base leal +++</td></tr>
+        <tr><td class="tbl-num">Adultos mayores</td><td>Alta participación electoral, demanda de salud especializada. La Clínica Municipal para Adultos Mayores es la política más directa para este segmento.</td><td class="tbl-num">~15%</td><td>Sensible a gestión ++</td></tr>
+        <tr><td class="tbl-num">Jóvenes y emprendedores tecnológicos</td><td>Beneficiarios de "Ituzaingó Innova" y la infraestructura digital. Perfil permeable a la narrativa de libertad y anti-burocracia de LLA, pero también sensible a la conectividad como bien público.</td><td class="tbl-num">~10%</td><td>Variable — riesgo</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~13%</td><td>Media-baja relativa al corredor</td><td>Municipio con perfil mixto: bajo NBI en la zona de Leloir, mayor en Padua y Paso del Rey</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~65%</td><td>Déficit significativo ⚠️</td><td>Plan Maestro AySA en ejecución. La brecha del 35% sin cobertura es el argumento de infraestructura más urgente y el mayor vector de avance de LLA en barrios populares.</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~85%</td><td>Alta</td><td>Buena cobertura en zona urbana consolidada; déficit en expansiones recientes</td></tr>
+        <tr><td class="tbl-num">Conectividad</td><td>Anillo Digital activo</td><td>Innovadora</td><td>Fibra óptica municipal + tótems 360°. Política diferencial respecto de municipios vecinos.</td></tr>
+        <tr><td class="tbl-num">Seguridad escolar</td><td>Corredores con botones antipánico</td><td>Activa</td><td>Red de Corredores Escolares Seguros: botones antipánico, presencia en accesos a escuelas. Conexión directa con demanda de familias.</td></tr>
+        <tr><td class="tbl-num">Reciclaje</td><td>Programa activo</td><td>En desarrollo</td><td>"En Ituzaingó se Separa": reciclaje y separación en origen. Conecta con perfil ambiental del municipio (El Jardín del Oeste).</td></tr>
+        <tr><td class="tbl-num">Salud Adultos Mayores</td><td>Clínica Municipal activa</td><td>Activa</td><td>Clínica especializada para adultos mayores. Oferta diferencial del corredor oeste.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">43.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~32.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~19.5%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">154,249</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Concejales Prov. 2025 ⚠️</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">43.6% ↔</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">36.5% ↑↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~19.9%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">156,035</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Lectura Estratégica ⚠️⚠️</div>
+        <div class="arc-row"><span class="arc-lbl">PJ estable</span><span class="arc-val v-pj">+0.5 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA explotó</span><span class="arc-val v-lla">+17 pp ↑↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC colapsó</span><span class="arc-val v-jxc">→ 100% a LLA</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-warn">ALERTA MÁXIMA</span></div>
+      </div>
+    </div>
+    <div class="warn-box">
+      <div class="warn-ttl">⚠️⚠️ ALERTA MÁXIMA — LLA +17pp: EL MAYOR SALTO LIBERTARIO DEL LOTE EN UN MUNICIPIO ALIADO</div>
+      <div class="warn-txt">Ituzaingó registra el mayor avance de LLA de los 10 municipios prioritarios del lote: de ~19.5% en 2023 a 36.5% en 2025 (+17pp). JxC tenía ~32.8% en 2023 y prácticamente desapareció. El PJ apenas subió 0.5pp (de 43.1% a 43.6%): no capturó nada del colapso de JxC. LLA absorbió casi todo el voto opositor. En la elección nacional 2025, LLA llegó a 40.3% y el PJ al 42.2%: la brecha se achica a menos de 2pp. Si la tendencia continúa, Ituzaingó puede ser el primer municipio del corredor oeste donde LLA supere al PJ.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🌳</div>
+        <div class="cl-tipo">Identidad ambiental</div>
+        <div class="cl-nm">El Jardín del Oeste</div>
+        <div class="cl-desc">El apodo de Ituzaingó refleja su identidad verde: arbolado urbano denso, espacios naturales y un perfil ambiental que lo distingue del conurbano industrial. El "Jardín" es la narrativa identitaria del municipio y el origen del programa "En Ituzaingó se Separa" (reciclaje).</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🍷</div>
+        <div class="cl-tipo">Gastronomía premium</div>
+        <div class="cl-nm">Corredor Parque Leloir</div>
+        <div class="cl-desc">La zona de Parque Leloir concentra una oferta gastronómica y hotelera de alta gama: restaurantes, bodegas, posadas y espacios de eventos. Es el motor económico del segmento de mayor ingreso del municipio y el área donde LLA tiene mayor penetración. Conviven en el mismo municipio con los barrios obreros de Padua.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📡</div>
+        <div class="cl-tipo">Innovación digital</div>
+        <div class="cl-nm">Anillo Digital e Ituzaingó Digital</div>
+        <div class="cl-desc">Red de fibra óptica municipal con tótems 360° de información y wifi gratuito. Es la apuesta más innovadora de la gestión Descalzo: un Estado municipal que provee conectividad como bien público, con infraestructura propia. Diferenciador del corredor oeste.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏫</div>
+        <div class="cl-tipo">Seguridad escolar</div>
+        <div class="cl-nm">Corredores Escolares Seguros</div>
+        <div class="cl-desc">Red de botones antipánico y presencia policial en el entorno de escuelas. El programa responde a la demanda de seguridad de las familias en el acceso a las instituciones educativas, uno de los temas con mayor traction en el corredor oeste donde el vecino de class media pone la seguridad como prioridad.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">👴</div>
+        <div class="cl-tipo">Salud especializada</div>
+        <div class="cl-nm">Clínica Municipal Adultos Mayores</div>
+        <div class="cl-desc">Clínica municipal especializada en la atención integral de adultos mayores. En un municipio con una proporción significativa de adultos mayores y sin hospital de alta complejidad propio, la clínica es el activo de salud más concreto de la gestión y el argumento más directo para el segmento con mayor participación electoral.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">💻</div>
+        <div class="cl-tipo">Capacitación tecnológica</div>
+        <div class="cl-nm">Ituzaingó Innova</div>
+        <div class="cl-desc">Programa de capacitación en tecnología e IT para vecinos del municipio. Apunta a un perfil de jóvenes y adultos que busca reconversión laboral hacia el sector tecnológico. Es el argumento más moderno de la gestión Descalzo: el Estado que prepara al vecino para los empleos del futuro.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — URGENTE</div><div class="pal-ttl">Aceleración Cloacal AySA — Padua y Paso del Rey</div></div>
+        <div class="pal-body">
+          <p>Con ~35% del municipio sin red cloacal y LLA avanzando exactamente en los barrios con mayor déficit, la aceleración del Plan Maestro Cloacal con AySA es la respuesta más urgente. Obra visible, concreta y de alto impacto en la experiencia directa del Estado. Los barrios de Padua y Paso del Rey son la base histórica del PJ: perderlos por déficit de infraestructura básica sería una derrota estratégica.</p>
+          <p>Articulación ENOHSA para fondos complementarios que aceleren el cronograma de obras. La cloaca en Padua antes de 2027 es el argumento más poderoso contra el discurso anti-Estado de LLA.</p>
+          <span class="pal-tag acc-prov">DIPSOH / AySA</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">ENOHSA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Anillo Digital → Acuerdo Provincial de Conectividad</div></div>
+        <div class="pal-body">
+          <p>El Anillo Digital de Ituzaingó es una política de conectividad innovadora. La provincia puede potenciarla con un acuerdo formal que convierta al municipio en polo provincial de conectividad del corredor oeste: financiamiento para expandir la fibra, más puntos wifi gratuitos y un acuerdo con el ENTE regulador para que el anillo municipal sea reconocido como infraestructura provincial.</p>
+          <p>Esa declaración provincial convierte la política de Descalzo en un argumento de mayor escala: el Estado provincial que invierte en conectividad. Para el votante de clase media que usa tecnología, es el argumento de gestión eficiente más directo.</p>
+          <span class="pal-tag acc-prov">Ministerio de Ciencia PBA</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">ENACOM</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Corredor Gastronómico Leloir — Identidad Provincial</div></div>
+        <div class="pal-body">
+          <p>El Corredor Gastronómico de Parque Leloir es un polo turístico y económico de la región metropolitana oeste que no tiene reconocimiento provincial. Declararlo "Corredor Gastronómico y Turístico de la Provincia" le da visibilidad regional, atrae inversión y ofrece un argumento concreto al votante de clase media-alta de Leloir que hoy mira a LLA.</p>
+          <p>Fondos de Turismo Provincial para señalética, folletería y posicionamiento digital del corredor. El Estado que apoya el emprendimiento privado de alto valor es el argumento peronista que puede llegar al segmento de Leloir.</p>
+          <span class="pal-tag acc-prov">Turismo PBA</span>
+          <span class="pal-tag acc-priv" style="margin-left:4px">Cámara Gastronómica</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>⚠️ Síntesis Ejecutiva — Ituzaingó</h3>
+  <p><strong>Contexto:</strong> 156k padrón. Descalzo en segundo mandato. PJ 43.6% (+0.5pp), LLA 36.5% (+17pp). El PJ apenas se mantuvo; LLA explota. En la elección nacional de 2025, la diferencia PJ-LLA cayó a menos de 2pp. Es el municipio con mayor avance libertario del lote de 10.</p>
+  <p><strong>Riesgo principal:</strong> Si la tendencia electoral de LLA +17pp se mantiene aunque sea parcialmente en 2027, Ituzaingó puede convertirse en el primer municipio del corredor oeste donde LLA supera al PJ. La dualidad entre el Ituzaingó popular de Padua y el premium de Leloir significa que el PJ necesita respuestas diferenciadas en ambas zonas.</p>
+  <p><strong>Respuesta urgente:</strong> Aceleración del Plan Cloacal AySA en Padua y Paso del Rey antes de 2027. Esa obra es la única respuesta concreta al avance libertario en los barrios populares. En la franja media-alta, el reconocimiento provincial del Anillo Digital y del Corredor Gastronómico de Leloir como políticas provinciales son los argumentos más directos.</p>
+  <p><strong>Palanca clave:</strong> Obra cloacal en Padua como política urgente provincial + reconocimiento del Corredor Gastronómico como polo turístico provincial. Dos públicos, dos argumentos, un municipio que necesita respuesta en ambos frentes antes del próximo ciclo electoral.</p>
+</div>
+
+</body>
+</html>

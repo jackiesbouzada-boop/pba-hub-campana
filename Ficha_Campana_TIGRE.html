@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tigre — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:6px}
+.badge-alerta{display:inline-block;background:rgba(239,68,68,.3);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(239,68,68,.5);letter-spacing:.5px;margin-bottom:12px;margin-left:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-r{font-size:1.15rem;font-weight:800;color:#fca5a5}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .n-r{font-size:1.7rem;font-weight:900;color:#ef4444;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-alert{background:linear-gradient(135deg,#fef2f2,#fee2e2);border-color:#fca5a5}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-red{color:#dc2626}
+.alert-box{background:#fef2f2;border:1.5px solid #fca5a5;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#dc2626;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">TIGRE</div>
+  <div class="h-name2">El Delta, Nordelta y Ford: un municipio con tres realidades que votan diferente</div>
+  <div class="h-sub">Tigre Centro · Don Torcuato · El Talar · General Pacheco · Rincón de Milberg · Nordelta · Benavídez</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-alerta">⚠️ ALERTA CRÍTICA — −15.7pp</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">363,425</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">446,949</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">393.9 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v-r">34.6%</span><span class="h-stat-l">PJ 2025 Prov ⚠️</span></div>
+    <div class="h-stat"><span class="h-stat-v-r">−15.7 pp</span><span class="h-stat-l">Caída PJ 2023→25 🔴</span></div>
+    <div class="h-stat"><span class="h-stat-v">1,134</span><span class="h-stat-l">hab/km² — baja densidad</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Nordelta y el Corredor Inmobiliario</h4>
+        <p>Nordelta es el barrio privado cerrado más grande de la Argentina y uno de los más grandes de América Latina. Con miles de viviendas, lagos artificiales, colegios y centros comerciales propios, Nordelta define el perfil socioeconómico de la franja que se extiende por Benavídez y Don Torcuato: clase media-alta y alta, con perfil de consumo y voto claramente volcados hacia opciones de centroderecha y libertarias. Este segmento creció demográficamente en los últimos 15 años y su peso electoral es creciente.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>El Delta y el Turismo</h4>
+        <p>El Delta del Tigre es uno de los destinos turísticos más visitados de la Argentina. Islas, ríos, restaurantes flotantes, cabañas y el Parque de la Costa definen una identidad turística única en el GBA. El Puerto de Frutos, las lanchas colectivas y los paseos por los canales son íconos nacionales. Este Tigre tiene una economía de servicios y turismo que genera empleo de calidad y orgullo local.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk blk-k">
+        <h4>Ford y Volkswagen: el polo automotriz</h4>
+        <p>La planta de Ford en General Pacheco es uno de los establecimientos industriales más importantes del país: produce camionetas F-Series y Ranger para Argentina y exporta a toda la región. Volkswagen también tiene presencia en el partido. El polo automotriz genera miles de puestos de trabajo directo e indirecto, con sindicalización alta (SMATA) y salarios de los más altos del conurbano norte.</p>
+      </div>
+      <div class="blk b-num">
+        <span class="n-r">−15.7</span>
+        <span class="l">pp caída PJ entre 2023 y 2025 — la más grave del grupo prioritario</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Julio Zamora</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2015</div>
+        <div class="desc">Julio Zamora es el intendente peronista de Tigre desde 2015, heredero del distrito que Sergio Massa construyó políticamente. La caída de 15.7 puntos entre 2023 y 2025 es la señal más preocupante del lote de distritos analizados y plantea una pregunta directa sobre el modelo de gestión y comunicación local. Zamora tiene una red territorial sólida pero enfrenta un electorado transformado sociodemográficamente por el crecimiento de Nordelta y el corredor inmobiliario, que vota cada vez más hacia la derecha.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Seguridad</div>
+        <div class="gest-txt">COT (Centro de Operaciones Tigre): sistema de monitoreo integrado con más de 1,000 cámaras, drones y patrullaje articulado. Referente provincial en seguridad tecnológica del conurbano. El COT fue durante años uno de los proyectos más publicitados del municipio.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Salud</div>
+        <div class="gest-txt">Hospital de Alta Complejidad de Tigre: establecimientos de salud con alta complejidad para toda la zona norte. Infraestructura de salud pública referente del partido, que atiende a toda la población incluyendo la de Nordelta y alrededores que no accede a salud privada.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Deporte y Cultura</div>
+        <div class="gest-txt">Red de 19 polideportivos distribuidos en todo el partido: obra social de alto impacto territorial que llegó a barrios que históricament carecían de infraestructura deportiva. Programa de orquestas infantiles y culturales en barrios populares.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas Destacados</div>
+        <div class="gest-txt">Tigre 100% Gas: expansión de la red de gas natural a todo el partido. Tigre Educa: programas de apoyo escolar y retención educativa. Para Verte Mejor: kit de anteojos gratis para vecinos. Mujeres Emprendedoras: microcrédito y capacitación para jefas de hogar.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Electoral Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Residentes de Barrios Privados (Nordelta, Benavídez)</td><td>Clase media-alta y alta en countries y barrios cerrados. Alta penetración de LLA. Crecimiento demográfico constante que aumenta su peso electoral. Voto muy difícil de recuperar para el PJ.</td><td class="tbl-num">~18%</td><td>Adverso −−−</td></tr>
+        <tr><td class="tbl-num">Trabajadores Automotrices (Ford/VW, SMATA)</td><td>Operarios sindicalizados de Ford y VW con salarios altos para el sector. El SMATA articula voto peronista con eficacia. Históricamente sólidos para el PJ, aunque el voto "industrialista" puede presionar si hay amenaza de cierre de plantas.</td><td class="tbl-num">~12%</td><td>Base moderada ++</td></tr>
+        <tr><td class="tbl-num">Barrios Populares (General Pacheco, El Talar, Rincón de Milberg)</td><td>Trabajadores informales y de clase baja con demanda de servicios básicos, salud y seguridad. Base peronista histórica con mayor lealtad al PJ pero afectada por la frustración con los servicios locales.</td><td class="tbl-num">~25%</td><td>Base moderada ++</td></tr>
+        <tr><td class="tbl-num">Clase Media de Don Torcuato y Tigre Centro</td><td>Comerciantes, empleados y profesionales del centro y las zonas consolidadas. Altamente volátiles. En 2025 migraron masivamente a LLA. Recuperación difícil sin mejoras tangibles en seguridad y servicios.</td><td class="tbl-num">~22%</td><td>En riesgo −−</td></tr>
+        <tr><td class="tbl-num">Turismo y Gastronomía del Delta</td><td>Trabajadores y pequeños empresarios del sector turístico del Delta. Identidad territorial fuerte y orgullo local. Segmento con potencial de adhesión si la provincia invierte en el desarrollo del Delta.</td><td class="tbl-num">~10%</td><td>Moderado +</td></tr>
+        <tr><td class="tbl-num">Empleados Públicos y Docentes</td><td>Base peronista relativamente estable pero menor que en otros municipios, dado el peso del sector privado automotriz y la clase media alta.</td><td class="tbl-num">~8%</td><td>Base estable ++</td></tr>
+        <tr><td class="tbl-num">Isleños y trabajadores del Delta</td><td>Población de las islas con necesidades muy específicas (acceso por agua, energía, conectividad) y fuerte identidad territorial. Segmento pequeño pero muy leal a quien resuelva sus problemas.</td><td class="tbl-num">~5%</td><td>Potencial +</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~12%</td><td>Baja-media — muy heterogénea</td><td>NBI muy concentrada en barrios populares del norte; Nordelta y zonas privadas con NBI prácticamente 0</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~82%</td><td>Alta en zona continental</td><td>Las islas del Delta no tienen red AYSA; acceso por cisterna o pozos. Programa provincial de agua en islas pendiente.</td></tr>
+        <tr><td class="tbl-num">Gas Natural</td><td class="tbl-num">~78%</td><td>En expansión activa</td><td>Tigre 100% Gas en ejecución; las islas sin gas de red por imposibilidad técnica (garrafa y energía alternativa)</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~62%</td><td>Déficit medio</td><td>Las zonas de countries tienen plantas propias; los barrios populares del norte tienen alto déficit</td></tr>
+        <tr><td class="tbl-num">Pavimentación</td><td class="tbl-num">~55%</td><td>Déficit medio</td><td>Municipio extenso (393 km²); muchos accesos a zonas rurales y semirurales sin asfaltar</td></tr>
+        <tr><td class="tbl-num">Seguridad / COT</td><td>+1,000 cámaras, drones</td><td>Sistema avanzado</td><td>El COT es uno de los sistemas de videovigilancia más desarrollados del GBA norte; percepción de inseguridad sigue siendo alta en barrios populares</td></tr>
+        <tr><td class="tbl-num">Salud</td><td>Hospital Alta Complejidad + 19 CAPS</td><td>Buena cobertura pública</td><td>Hospital de Alta Complejidad es referente de la zona norte; los barrios privados usan medicina prepaga</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">50.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~27.5%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~15.0%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">353,525</span></div>
+      </div>
+      <div class="arc-card arc-alert">
+        <div class="arc-year">Concejales Prov. 2025 ⚠️</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-red">34.6% ↓↓</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~37.8% ↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~27.6%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">363,425</span></div>
+      </div>
+      <div class="arc-card arc-alert">
+        <div class="arc-year">Lectura Estratégica</div>
+        <div class="arc-row"><span class="arc-lbl">PJ cayó</span><span class="arc-val v-red">−15.7 pp 🔴</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA subió</span><span class="arc-val v-lla">+22.8 pp 🚨</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA supera al PJ</span><span class="arc-val v-red">37.8% vs 34.6%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-red">PRIMER TÉRMINO</span></div>
+      </div>
+    </div>
+    <div class="alert-box">
+      <div class="alert-ttl">🚨 ALERTA CRÍTICA — LLA SUPERA AL PJ EN 2025: UN DISTRITO EN RIESGO REAL</div>
+      <div class="alert-txt">Tigre es el único municipio del lote prioritario donde LLA supera al PJ en las elecciones de 2025 (37.8% vs 34.6%). La caída de 15.7pp en el PJ entre 2023 y 2025 es la más dramática del grupo. La convergencia de dos factores explica el colapso: (1) el crecimiento demográfico del corredor Nordelta-Benavídez que aportó decenas de miles de nuevos votantes con perfil libertario, y (2) la migración del voto moderado de Don Torcuato y Tigre Centro que en 2023 votó al PJ y en 2025 se volcó masivamente a LLA. Si la tendencia no se revierte, Tigre puede perderse en 2027.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🚤</div>
+        <div class="cl-tipo">Icono nacional</div>
+        <div class="cl-nm">Delta del Tigre</div>
+        <div class="cl-desc">El Delta es el activo más valioso de Tigre y el más reconocible del país. Los ríos, las islas, los restaurantes flotantes y las cabañas generan turismo interno constante. El Puerto de Frutos es una institución con décadas de historia. El Delta es la cara de Tigre para el mundo.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏘️</div>
+        <div class="cl-tipo">Fenómeno urbano</div>
+        <div class="cl-nm">Nordelta — El gran barrio privado</div>
+        <div class="cl-desc">El mayor barrio cerrado del país. Ciudad dentro de la ciudad con gobierno propio de hecho. Nordelta y el corredor de countries que lo rodea concentran la mayor densidad de votantes de altos ingresos del GBA norte. Realidad que cambió la política local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚗</div>
+        <div class="cl-tipo">Industria automotriz</div>
+        <div class="cl-nm">Ford General Pacheco</div>
+        <div class="cl-desc">La planta de Ford en General Pacheco produce la Ranger y la F-Series para Argentina y el Cono Sur. Es uno de los establecimientos industriales más importantes del país. Los trabajadores de Ford son el corazón sindical del partido, articulados por el SMATA.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛡️</div>
+        <div class="cl-tipo">Innovación en seguridad</div>
+        <div class="cl-nm">Centro de Operaciones Tigre (COT)</div>
+        <div class="cl-desc">El COT fue durante años referente nacional en seguridad tecnológica del conurbano. Más de 1,000 cámaras, drones y sala de monitoreo integrada. Su eficacia es reconocida pero la percepción de inseguridad en barrios populares sigue siendo alta.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎺</div>
+        <div class="cl-tipo">Cultura popular</div>
+        <div class="cl-nm">Orquestas Infantiles</div>
+        <div class="cl-desc">El programa de orquestas infantiles en barrios populares de Tigre es uno de los más sustentados de la primera sección. Niños y jóvenes de barrios sin recursos que aprenden instrumentos orquestales gratuitamente. Alto impacto social y comunicacional.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏊</div>
+        <div class="cl-tipo">Infraestructura social</div>
+        <div class="cl-nm">Red de 19 Polideportivos</div>
+        <div class="cl-desc">La red de 19 polideportivos distribuidos en todo el partido es la obra social más extensa de la gestión Zamora. Infraestructura deportiva que llegó a barrios que antes carecían de cualquier espacio para el deporte. Alta adhesión comunitaria.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — URGENTE</div><div class="pal-ttl">Servicios Básicos en Barrios Populares</div></div>
+        <div class="pal-body">
+          <p>La caída del PJ no ocurrió en Nordelta —donde nunca fue fuerte— sino en los barrios populares y la clase media que se frustraron con los servicios. General Pacheco, El Talar, Rincón de Milberg: estas son las zonas donde el voto peronista se erosionó y donde la inversión en cloacas, pavimento y gas tiene mayor impacto.</p>
+          <p>Mensaje: "la provincia llega a los barrios que más lo necesitan". La velocidad de ejecución es tan importante como la obra misma.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Desarrollo del Delta: conectividad e inversión</div></div>
+        <div class="pal-body">
+          <p>El Delta es el activo más diferencial de Tigre. Una política provincial de desarrollo del Delta —acceso digital para isleños, energía alternativa para las islas, mejoras en infraestructura portuaria, apoyo al turismo sustentable— tiene impacto en la identidad local y en el sector turístico y gastronómico que da empleo a miles.</p>
+          <p>El anuncio en el Delta tiene el marco visual más potente del municipio: agua, naturaleza e islas. Ideal para comunicación.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Turismo Nacional</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Ford / SMATA: proteger el empleo automotriz</div></div>
+        <div class="pal-body">
+          <p>La planta de Ford en General Pacheco es el mayor empleador privado del partido. Cualquier amenaza a su continuidad o expansión es una amenaza política directa para el PJ en Tigre. La provincia debe construir un vínculo activo con la empresa y el sindicato SMATA: participar en anuncios de inversión, defender la producción nacional ante posibles importaciones, y ser parte visible del triángulo empresa-sindicato-Estado.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Ministerio Trabajo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📍 8. Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Planta Ford General Pacheco — SMATA</div>
+          <div class="vis-desc">Visita a la planta con dirigentes del SMATA. Anuncio de inversión, protección de empleo o apoyo a la producción nacional. Contacto con trabajadores automotrices. El mejor cuadro sindical del partido para construir adhesión en el electorado obrero.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Delta del Tigre — Puerto de Frutos o Rincón de Milberg</div>
+          <div class="vis-desc">Recorrido en lancha por el Delta. Anuncio de inversión en infraestructura del Delta (energía solar, conectividad) o plan de desarrollo turístico sustentable. El marco visual más potente del municipio. Alta repercusión mediática garantizada.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Barrio Popular General Pacheco — Obra de Servicios</div>
+          <div class="vis-desc">Visita a barrio con obra de cloacas, pavimento o gas en ejecución. Anuncio de inversión provincial. Contacto con vecinos. El mensaje más importante para recuperar votos en la base peronista que migró: "la provincia está acá, en tu barrio".</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Hospital de Alta Complejidad de Tigre</div>
+          <div class="vis-desc">Visita al hospital con anuncio de equipamiento o ampliación provincial. La infraestructura de salud pública es el argumento más sólido contra el discurso libertario de privatización de servicios. Contacto con personal de salud y pacientes.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Polideportivo o Programa Orquestas Infantiles — Barrio Popular</div>
+          <div class="vis-desc">Visita a un polideportivo de los 19 de la red municipal o a un ensayo de las orquestas infantiles. Alta emotividad y visibilidad. Muestra del alcance de la inversión social municipal. Ideal para comunicar hacia un electorado que valora la inclusión cultural.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🧠 Síntesis Ejecutiva</h3>
+  <p><strong>⚠️ Tigre es el caso más crítico del grupo.</strong> Con LLA superando al PJ en 2025 (37.8% vs 34.6%) y una caída de 15.7pp en dos años, el distrito está en riesgo real de perderse en 2027 si la tendencia no se revierte.</p>
+  <p>El diagnóstico tiene dos capas que requieren estrategias distintas. La capa demográfica —el crecimiento de Nordelta y el corredor de countries— no es recuperable en el corto plazo: esos votantes no vienen para el PJ. La capa política —la erosión en barrios populares y clase media de Don Torcuato— sí es recuperable con obras concretas y rápidas en los barrios que el PJ debe tener como base.</p>
+  <p>La provincia debe actuar en Tigre con urgencia y visibilidad: obras en barrios populares, presencia en el Delta y articulación con Ford/SMATA son las tres palancas para frenar la hemorragia electoral antes de 2027.</p>
+</div>
+
+</body>
+</html>

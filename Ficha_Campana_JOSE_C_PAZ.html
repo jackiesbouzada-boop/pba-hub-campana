@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>José C. Paz — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:6px}
+.badge-warn{display:inline-block;background:rgba(245,158,11,.25);color:#fcd34d;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(245,158,11,.4);letter-spacing:.5px;margin-bottom:12px;margin-left:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-w{font-size:1.15rem;font-weight:800;color:#fcd34d}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .n-w{font-size:1.7rem;font-weight:900;color:#f59e0b;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-warn{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:#fcd34d}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-green{color:#059669}.v-amber{color:#d97706}
+.warn-box{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.warn-ttl{font-size:.72rem;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.warn-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">JOSÉ C. PAZ</div>
+  <div class="h-name2">HEM, UNPAZ y la empresa municipal que construye lo que el privado no llega: la apuesta por la autonomía</div>
+  <div class="h-sub">José C. Paz Centro · El Tropezon · Cardales · Villa del Parque · Maquinista Savio (parte)</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-warn">⚠️ ESTABLE — LLA subió +6.1pp, atención</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">254,085</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">326,992</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">50.2 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">52.8%</span><span class="h-stat-l">PJ 2025 — sobre 50% ✅</span></div>
+    <div class="h-stat"><span class="h-stat-v-w">+0.1 pp</span><span class="h-stat-l">Crecimiento PJ 2023→25 — estable</span></div>
+    <div class="h-stat"><span class="h-stat-v">6,513</span><span class="h-stat-l">hab/km² — alta densidad</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Polo Universitario y Sanitario</h4>
+        <p>José C. Paz construyó en los últimos años una identidad anclada en dos instituciones que no se esperan en un municipio del GBA de alta pobreza relativa: la UNPAZ (Universidad Nacional de José C. Paz) con su nueva Facultad de Medicina, y la Red de Hospitales Especializados Municipales (HEM). Ambas convierten a José C. Paz en un polo de salud y educación superior que rompe con el estereotipo del municipio popular sin infraestructura de calidad. La combinación es potente: el municipio forma a sus propios médicos y los atiende en hospitales especializados.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Economía Popular y Comercio Minorista</h4>
+        <p>El mercado de trabajo de José C. Paz tiene una composición particular: alta proporción de economía popular, comercio minorista de barrio, feriantes y trabajadores de la construcción. El cuentapropismo y la informalidad conviven con empleos formales en salud, educación y administración pública. Esta estructura genera una base electoral sensible a las políticas de ingreso directo, microcrédito y formalización, pero también vulnerable a las narrativas de "baja de impuestos" que LLA esgrime hacia el sector informal.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">52.8%</span>
+        <span class="l">PJ 2025 — sobre el 50%, pero margen de solo 2.8pp sobre la barrera de mayoría absoluta</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-w">⚠️ LLA 27.9%</span>
+        <span class="l">LLA subió 6.1pp desde 2023 — el avance más importante del lote en municipio UxP</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Mario Ishii</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2003</div>
+        <div class="desc">Mario Ishii lleva más de veinte años al frente de José C. Paz, siendo uno de los intendentes peronistas con mayor continuidad de todo el conurbano. Su estilo de gestión es directo, de base y con presencia territorial permanente. Los hitos más importantes de su gestión reciente son la construcción del HEM —la Red de Hospitales Especializados Municipales— y la articulación con la UNPAZ para la creación de la Facultad de Medicina. La empresa municipal constructora con planta asfáltica propia es una innovación institucional notable: el municipio se da autonomía para ejecutar obra pública sin depender de licitaciones privadas ni de proveedores externos.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Salud: HEM</div>
+        <div class="gest-txt">Red de Hospitales Especializados Municipales (HEM): cuatro hospitales de especialidad bajo gestión municipal — Oncológico, Cardiovascular, Traumatológico y De la Mujer. Es el hito más extraordinario de la gestión Ishii: un municipio popular del GBA norte con cuatro hospitales especializados propios, algo que la mayoría de los municipios de clase media no tienen. La cobertura de patologías complejas a nivel local reduce la demanda sobre el sistema provincial.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Educación: UNPAZ Medicina</div>
+        <div class="gest-txt">UNPAZ — Facultad de Medicina: la Universidad Nacional de José C. Paz creó una facultad de medicina que forma profesionales en el propio municipio. La articulación entre la UNPAZ y el HEM genera un circuito virtuoso: la universidad forma médicos que se desempeñan en los hospitales municipales, y los hospitales son campo de práctica de los estudiantes. Modelo de autonomía sanitaria y educativa sin precedentes en el GBA norte.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Infraestructura Autónoma</div>
+        <div class="gest-txt">Empresa municipal constructora con planta asfáltica propia: Ishii creó una empresa pública municipal con capacidad de ejecutar obra civil —hormigonado, asfalto, cordón cuneta— sin depender de licitaciones privadas ni de tiempos de contratación externos. La planta asfáltica propia reduce los costos de pavimentación y permite avanzar a mayor ritmo y menor costo que con empresas privadas.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Contexto político</div>
+        <div class="gest-txt">Ishii construyó un liderazgo político de dos décadas que es el más longevo del conurbano norte. Su estilo territorial y su presencia directa en los barrios son su mayor activo. La estabilidad electoral del PJ en José C. Paz (52.8% en 2025 vs 52.7% en 2023) confirma que la base peronista se mantiene; el desafío es el avance de LLA (+6.1pp) en los segmentos de economía informal.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Trabajadores de salud y docentes (HEM + UNPAZ)</td><td>Médicos, enfermeros, auxiliares del HEM y docentes/no docentes de la UNPAZ. Empleo formal calificado generado por las instituciones de Ishii. Alta lealtad al PJ como creador de esas instituciones.</td><td class="tbl-num">~15%</td><td>Base sólida +++</td></tr>
+        <tr><td class="tbl-num">Economía popular y trabajadores informales</td><td>Feriantes, cuentapropistas, vendedores ambulantes, trabajadoras de casas particulares. Alta NBI, alta demanda de servicios del Estado. Segmento sensible a la narrativa anti-sistema de LLA; el avance libertario de +6.1pp se concentra aquí.</td><td class="tbl-num">~28%</td><td>Moderado — RIESGO ⚠️</td></tr>
+        <tr><td class="tbl-num">Clase obrera de barrios populares</td><td>Trabajadores de la construcción, el transporte y los servicios. Sindicatos de presencia moderada. Base peronista histórica pero con erosión frente a LLA en los sectores más afectados por la inflación.</td><td class="tbl-num">~25%</td><td>Base moderada ++</td></tr>
+        <tr><td class="tbl-num">Estudiantes universitarios (UNPAZ)</td><td>Primera generación universitaria en sus familias. La UNPAZ genera un vínculo directo con el Estado que financia su educación. Perfil con mayor sensibilidad al discurso libertario en lo cultural pero lealtad peronista por el acceso a la universidad.</td><td class="tbl-num">~10%</td><td>Variable — oportunidad</td></tr>
+        <tr><td class="tbl-num">Empleados públicos municipales y provinciales</td><td>Base peronista estable con fuerte dependencia institucional del PJ local. Gremios municipales activos.</td><td class="tbl-num">~12%</td><td>Base estable +++</td></tr>
+        <tr><td class="tbl-num">Comerciantes y PyME locales</td><td>Comercio minorista, pequeños talleres, mecánicas. Sensibles a los costos impositivos y a la inflación. Perfil con mayor permeabilidad a LLA en el segmento de "bajada de costos".</td><td class="tbl-num">~10%</td><td>Variable ⚠️</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~24%</td><td>Alta — uno de los más altos del lote</td><td>Concentrado en barrios periféricos del sur y este del municipio; fuerte correlación con informalidad laboral</td></tr>
+        <tr><td class="tbl-num">Agua Corriente</td><td class="tbl-num">~80%</td><td>Media — déficit en periferia</td><td>Municipio de alta densidad con zonas sin acceso a red; AySA con obras en progreso</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~65%</td><td>Déficit importante</td><td>Alta NBI correlacionada con baja cobertura de saneamiento; prioridad de inversión provincial</td></tr>
+        <tr><td class="tbl-num">Calles pavimentadas</td><td>En ejecución (empresa municipal)</td><td>Avance sostenido con planta asfáltica propia</td><td>La empresa municipal con planta asfáltica propia reduce costos y accelera ritmo de ejecución</td></tr>
+        <tr><td class="tbl-num">Salud especializada</td><td>4 hospitales HEM operativos</td><td>Cobertura excepcional para municipio de este perfil</td><td>Oncológico, Cardiovascular, Traumatológico y De la Mujer — capacidad de alta complejidad inusual en el GBA popular</td></tr>
+        <tr><td class="tbl-num">Educación superior</td><td>UNPAZ con Facultad de Medicina</td><td>Primera generación universitaria accede localmente</td><td>La UNPAZ genera movilidad social ascendente en un municipio de alta NBI; la Facultad de Medicina es el hito más reciente.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">52.7%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~17.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~24.0%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">248,911</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Concejales Prov. 2025 ⚠️</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">52.8% →</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">27.9% ↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~19.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">254,085</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Lectura Estratégica ⚠️</div>
+        <div class="arc-row"><span class="arc-lbl">PJ estable</span><span class="arc-val v-pj">+0.1 pp solo</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA avanza</span><span class="arc-val v-lla">+6.1 pp ⚠️</span></div>
+        <div class="arc-row"><span class="arc-lbl">Sobre 50%</span><span class="arc-val v-amber">52.8% — límite</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-amber">MONITOREO</span></div>
+      </div>
+    </div>
+    <div class="warn-box">
+      <div class="warn-ttl">⚠️ SEÑAL DE ATENCIÓN — PJ ESTABLE PERO LLA CRECIÓ +6.1pp: ECONOMÍA INFORMAL EN RIESGO</div>
+      <div class="warn-txt">José C. Paz mantiene el PJ sobre el 50% (52.8%), pero la estabilidad del resultado en +0.1pp esconde un dato preocupante: LLA avanzó 6.1 puntos porcentuales desde 2023. En un municipio donde la economía popular e informal tienen gran peso, la narrativa libertaria de "menos impuestos, menos Estado" encuentra eco en segmentos que no han sido alcanzados plenamente por la red de servicios municipales. Con JxC prácticamente desaparecida, los votos van directamente entre PJ y LLA. La tendencia +6.1pp de LLA es una señal que requiere atención de cara a 2027.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🏥</div>
+        <div class="cl-tipo">Hito único</div>
+        <div class="cl-nm">El HEM — 4 hospitales municipales</div>
+        <div class="cl-desc">Hospital Oncológico, Cardiovascular, Traumatológico y De la Mujer, todos bajo gestión municipal. Un logro excepcional: la mayoría de los municipios del conurbano no tienen ni un hospital propio de alta complejidad. José C. Paz tiene cuatro. El HEM es la política pública más ambiciosa del municipio y la que más claramente diferencia a Ishii de otros intendentes del GBA.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación popular</div>
+        <div class="cl-nm">UNPAZ — Facultad de Medicina</div>
+        <div class="cl-desc">La Universidad Nacional de José C. Paz tiene desde hace años una facultad de medicina que forma profesionales en el propio municipio. El circuito UNPAZ-HEM —universidad que forma médicos, HEM que los emplea— es la apuesta más sofisticada de autonomía institucional que tiene el municipio y uno de los pocos de su tipo en el conurbano.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏗️</div>
+        <div class="cl-tipo">Innovación institucional</div>
+        <div class="cl-nm">Empresa Municipal Constructora</div>
+        <div class="cl-desc">Una empresa municipal con planta asfáltica propia que ejecuta obra civil —hormigonado, pavimentación, cordón cuneta— sin depender de licitaciones privadas ni de plazos de contratación. El municipio se independizó del mercado para construir su propia infraestructura. Innovación de gestión pública que no tiene precedentes claros en el conurbano de similar escala.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌐</div>
+        <div class="cl-tipo">Primera generación</div>
+        <div class="cl-nm">Movilidad social por UNPAZ</div>
+        <div class="cl-desc">José C. Paz tiene uno de los índices de NBI más altos del lote (~24%). La UNPAZ es la herramienta más poderosa de movilidad social disponible en el municipio: hijos de trabajadores informales que estudian medicina, derecho y psicología a metros de su casa. Esa movilidad construye un vínculo generacional con el Estado que el peronismo debe capitalizar.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📍</div>
+        <div class="cl-tipo">Liderazgo longevo</div>
+        <div class="cl-nm">Mario Ishii — 20 años</div>
+        <div class="cl-desc">Ishii es el intendente con mayor continuidad del GBA norte. Su presencia territorial —directa, sin intermediarios— es su principal activo político. En un municipio de alta NBI, el intendente que "baja al barrio" tiene una ventaja competitiva que los opositores con menor enraizamiento no pueden igualar.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">♻️</div>
+        <div class="cl-tipo">Economía popular</div>
+        <div class="cl-nm">Feriantes y comercio de barrio</div>
+        <div class="cl-desc">La economía de José C. Paz tiene un componente fuerísimo de comercio popular: ferias, mercados barriales, vendedores ambulantes. Este segmento tiene una relación ambivalente con el Estado: es su principal sostén de ingresos vía programas sociales, pero también el que más resiente las cargas impositivas. LLA avanzó exactamente aquí.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1</div><div class="pal-ttl">HEM → Derivaciones y Financiamiento Provincial</div></div>
+        <div class="pal-body">
+          <p>El HEM funciona con recursos municipales propios. La articulación con el sistema provincial de salud para incorporar al HEM como nodo de derivación de alta complejidad del GBA norte —con financiamiento del PAMI, IOMA y el Ministerio de Salud provincial— tiene el doble efecto de aliviar la carga financiera del municipio y jerarquizar el sistema ante los vecinos.</p>
+          <p>Visita provincial al HEM: recorrida con presencia de medios en los cuatro hospitales. La foto del HEM —cuatro hospitales especializados en un municipio popular— es comunicacionalmente poderosa. Reconocimiento formal al modelo Ishii.</p>
+          <span class="pal-tag acc-prov">Min. Salud Prov.</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">PAMI / IOMA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">UNPAZ + Programa Provincial de Acceso Universitario</div></div>
+        <div class="pal-body">
+          <p>La UNPAZ ya tiene la facultad de medicina. La provincia puede articular con la universidad para crear un programa de becas provinciales para estudiantes de NBI del municipio (y de municipios vecinos): cobertura de materiales, transporte y manutención para que la primera generación universitaria llegue al título.</p>
+          <p>Anuncio en la UNPAZ: presencia en un acto de inicio de clases o graduación. El egresado de la UNPAZ de José C. Paz es el argumento más concreto posible de la movilidad social que el Estado provincial e Ishii construyeron juntos.</p>
+          <span class="pal-tag acc-prov">Min. Educación Prov.</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">CIN / UNPAZ</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Red Cloacal + Agua — Inversión de Emergencia</div></div>
+        <div class="pal-body">
+          <p>Con 24% de NBI y 65% de cobertura cloacal, José C. Paz tiene el déficit de saneamiento más urgente del lote. La articulación AySA + ENOHSA para expandir la red cloacal en barrios de alta NBI es la inversión con mayor impacto en calidad de vida y en salud pública (reducción de enfermedades de origen hídrico).</p>
+          <p>El déficit de infraestructura básica es uno de los factores que explica el avance de LLA en José C. Paz: el vecino sin cloaca tiene una experiencia concreta de "el Estado no llega". La obra de saneamiento deshace esa experiencia.</p>
+          <span class="pal-tag acc-prov">DIPSOH</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">AySA / ENOHSA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📅 8. Agenda de Visita Sugerida</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Hospital Oncológico del HEM</div>
+          <div class="vis-desc">Recorrida por el Hospital Oncológico. Médicos, pacientes (con acuerdo previo). Anuncio de incorporación del HEM al circuito provincial de derivaciones y financiamiento. La foto del hospital oncológico municipal en José C. Paz es políticamente irreductible: ningún discurso contra el Estado puede responder a eso.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">UNPAZ — Acto con estudiantes de Medicina</div>
+          <div class="vis-desc">Presencia en la Facultad de Medicina de la UNPAZ. Acto con estudiantes, anuncio de programa de becas provinciales. El estudiante de medicina de primera generación universitaria en José C. Paz es el argumento más sólido de movilidad social disponible.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Empresa Municipal Constructora — Planta Asfáltica</div>
+          <div class="vis-desc">Visita a la planta asfáltica municipal. Mensaje: el Estado que se da autonomía para construir más y a menor costo. La empresa municipal constructora es un concepto políticamente potente en el contexto de la narrativa libertaria: el Estado que hace bien lo que el privado haría más caro.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Barrio con déficit de cloaca — Anuncio de obra</div>
+          <div class="vis-desc">Presencia en un barrio de alta NBI con déficit de saneamiento. Anuncio de obra AySA/ENOHSA para expansión de red cloacal. Foto con vecinos. La obra de infraestructura básica es la política pública más directa para contestar el avance de LLA en los sectores más vulnerables del municipio.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>Síntesis Ejecutiva</h3>
+  <p><strong>Prioridad:</strong> Media-Alta — 254k padrón, PJ estable en 52.8%, LLA +6.1pp. El municipio está sobre el 50% pero la tendencia de LLA requiere atención. Ishii tiene la base más sólida del GBA norte en términos de infraestructura institucional (HEM + UNPAZ + empresa municipal), pero el segmento de economía informal está migrando.</p>
+  <p><strong>Señal de atención:</strong> LLA creció +6.1pp en un municipio aliado con intendente de 20 años de gestión. El vector de avance libertario es el sector informal: feriantes, cuentapropistas y trabajadores sin convenio que ven en LLA una salida al Estado que los cobra pero no los cubre adecuadamente. La respuesta correcta no es discursiva: es obra de infraestructura básica (cloaca, agua) y programas de formalización del empleo popular.</p>
+  <p><strong>Oportunidad clave:</strong> Articular el HEM con el sistema provincial de salud y anunciar becas universitarias en la UNPAZ. El HEM y la UNPAZ son los dos activos más comunicacionalmente potentes del municipio y requieren apoyo provincial para escalar.</p>
+  <p><strong>Mensaje a Ishii:</strong> Veinte años de gestión construyeron infraestructura sanitaria y educativa sin precedentes en el GBA norte. La provincia los reconoce con inversión en salud y educación. Y además llega con cloaca y agua a los barrios donde LLA avanzó: no con discurso, con caño.</p>
+</div>
+
+</body>
+</html>

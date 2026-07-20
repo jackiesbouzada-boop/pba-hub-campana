@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lomas de Zamora — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#4a6fa5;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a3e,#2c3e7a);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800}
+.int-info .meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#dbeafe;color:#1e40af;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-fit{color:#dc2626}.v-vec{color:#0369a1}.v-grey{color:#374151}
+.split-box{background:#dbeafe;border:1.5px solid #93c5fd;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.split-title{font-size:.72rem;font-weight:800;color:#1e40af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.split-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid #bfdbfe}
+.split-row:last-child{border-bottom:none}
+.split-lbl{font-size:.77rem;color:#374151}
+.split-val{font-size:.82rem;font-weight:800;color:#1d4ed8}
+.split-pos{color:#15803d}
+.split-neg{color:#b91c1c}
+.alert-box{background:#fef2f2;border:1.5px solid #fecaca;border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.ok-box{background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.ok-ttl{font-size:.72rem;font-weight:800;color:#15803d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.ok-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafafa}
+.vis-num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 3ª Sección Electoral</div>
+  <div class="h-name">LOMAS DE ZAMORA</div>
+  <div class="h-name2">Capital Comercial del Sur del Conurbano</div>
+  <div class="h-sub">Lomas Centro · Banfield · Temperley · Turdera · Ingeniero Budge · Villa Centenario</div>
+  <div><span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span></div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">585,956</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">690,480</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">88.7 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">56.4%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">27.7%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">+6.6 pp</span><span class="h-stat-l">Crecimiento PJ 2023→25</span></div>
+  </div>
+</div>
+
+<!-- SECCIÓN 1: IDENTIDAD TERRITORIAL -->
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>El Epicentro Comercial del Sur</h4>
+        <p>Lomas de Zamora es la capital comercial y gastronómica del conurbano sur. La zona de "Las Lomitas" —nucleada en la peatonal Laprida y sus alrededores en Temperley y Turdera— experimentó un boom inmobiliario premium que la convirtió en polo gastronómico de alto nivel, con restaurantes, bares y comercios que compiten de igual a igual con Palermo o San Isidro. La peatonal Laprida explota de consumo masivo durante los fines de semana.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>La Salada y la Matriz Industrial</h4>
+        <p>En su periferia sur, Lomas concentra la Feria La Salada —uno de los polos de indumentaria textil más grandes de Latinoamérica, con más de 30,000 puestos y movimiento de millones de pesos semanales— además de parques industriales con empresas químicas, metalúrgicas y logísticas. Este contraste define la bipolaridad social del municipio: consumo premium en el norte, economía popular e informal en el sur.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">7,784</span>
+        <span class="l">hab/km² — densidad muy alta</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">+30,000</span>
+        <span class="l">puestos en Feria La Salada</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 2: INTENDENTE -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ 2. Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Federico Otermín</h3>
+        <div class="meta">Intendente · <span class="badge-pol badge-al-pol">Unión por la Patria</span> · Desde 2019</div>
+        <div class="desc">Abogado y político bonaerense, fue presidente de la Honorable Cámara de Diputados de la Provincia de Buenos Aires (2015-2019). Llegó a la intendencia con fuerte apoyo del kirchnerismo. Su gestión combina obras de infraestructura urbana, fuerte impronta ambiental (reciclado, espacios verdes) y política de seguridad con tecnología. Reelecto en 2023 con sólido margen, consolida a Lomas como bastión peronista de la tercera sección.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Hito 1 — Seguridad</div>
+        <div class="gest-txt">Centro de Monitoreo Municipal de última generación con cámaras de alta definición, drones y sistema de reconocimiento de patentes. Uno de los sistemas más avanzados del conurbano sur.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 2 — Urbanismo</div>
+        <div class="gest-txt">Puesta en valor de centros comerciales: peatonalización temporaria y mejoras estéticas en los centros de Banfield, Temperley y Lomas Centro. Intervención clave en la consolidación de "Las Lomitas" como polo premium.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Hito 3 — Medio Ambiente</div>
+        <div class="gest-txt">Lomas Recicla: sistema integral de gestión de residuos con más de 50 estaciones de reciclado y programas de concientización en escuelas, empresas y organismos públicos.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programa Destacado</div>
+        <div class="gest-txt">Hospital Municipal de Mascotas: referente regional en veterinaria pública. Campañas masivas de castración y vacunación gratuita que generan alto impacto en vecinos con mascotas —segmento electoralmente activo.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 3: PERFIL DEMOGRÁFICO -->
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead>
+        <tr><th>Segmento</th><th>Descripción</th><th>Peso Electoral Est.</th><th>Perfil PJ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tbl-num">Clase Obrera Histórica</td>
+          <td>Trabajadores textiles, curtidores, transportistas y empleados de servicios. Identidad peronista arraigada en décadas de sindicatos y organizaciones barriales.</td>
+          <td class="tbl-num">~25%</td>
+          <td>Base sólida +++</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Clase Media Comercial</td>
+          <td>Comerciantes de Laprida y centros urbanos, empleados bancarios y administrativos del corredor GBA Sur. Sensibles a la economía, volátiles en 2021-2023.</td>
+          <td class="tbl-num">~20%</td>
+          <td>Recuperable ++</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Economía Popular</td>
+          <td>Feriantes de La Salada, trabajadores informales, cooperativistas de reciclado y economía social. Padrón concentrado en Budge y Villa Centenario. Muy movilizable.</td>
+          <td class="tbl-num">~22%</td>
+          <td>Leal, activa +++</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Sector Industrial</td>
+          <td>Obreros de parques industriales (metalmecánica, química, logística) con fuerte presencia sindical. Articulan con organizaciones gremiales del sur del GBA.</td>
+          <td class="tbl-num">~15%</td>
+          <td>Moderado ++</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Inmigrantes / Nuevos Vecinos</td>
+          <td>Comunidades bolivianas, paraguayas y peruanas ligadas al textil, la horticultura y la economía informal. Padrón creciente en zonas periféricas.</td>
+          <td class="tbl-num">~10%</td>
+          <td>Variable +</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Clases Medias Altas ("Lomitas")</td>
+          <td>Profesionales, gastronómicos, consumidores premium de Temperley y Turdera. Nuevo segmento ascendente que emigró de CABA o zonas más caras. Perfil opositor.</td>
+          <td class="tbl-num">~8%</td>
+          <td>Oposición ++</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECCIÓN 4: INDICADORES DE INFRAESTRUCTURA -->
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead>
+        <tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tbl-num">NBI (Necesidades Básicas Insatisfechas)</td>
+          <td class="tbl-num">~18%</td>
+          <td>Media-Alta para el GBA</td>
+          <td>Concentrado en Budge, Villa Centenario y zonas periféricas sur</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Agua Corriente</td>
+          <td class="tbl-num">~85%</td>
+          <td>Cobertura media-alta</td>
+          <td>Déficit en barrios irregulares del sur; AYSA cubre los núcleos urbanos</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Red Cloacal</td>
+          <td class="tbl-num">~62%</td>
+          <td>Déficit significativo</td>
+          <td>Principal deuda de infraestructura; inversión provincial prioritaria</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Gas Natural</td>
+          <td class="tbl-num">~78%</td>
+          <td>Cobertura aceptable</td>
+          <td>Zonas sin red cubiertas con garrafa; programa Hogar activo</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Pavimentación</td>
+          <td class="tbl-num">~55%</td>
+          <td>Déficit importante</td>
+          <td>Calles de tierra en periferia sur; planta asfáltica municipal activa</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Conectividad Digital</td>
+          <td class="tbl-num">~74%</td>
+          <td>En expansión</td>
+          <td>Fibra óptica en zonas céntricas; WiFi público en plazas y centros cívicos</td>
+        </tr>
+        <tr>
+          <td class="tbl-num">Efectores de Salud</td>
+          <td>Hospital Interzonal Narciso López (prov.), Hospital Materno-Infantil Ana Goitia (mun.), red de UPA y CAPS municipales</td>
+          <td>Sistema mixto</td>
+          <td>Demanda alta; refuerzo con programa "Lomas Aprende Salud" y jornadas territoriales</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SECCIÓN 5: ARCO ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">49.8% · 197,942</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">25.5% · 101,313</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">20.2% · 80,258</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">575,820</span></div>
+      </div>
+      <div class="arc-card arc-winner">
+        <div class="arc-year">Concejales Prov. 2025</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-pj">56.4% · 201,508</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">27.7% · 98,834</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">~15.9%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">585,956</span></div>
+      </div>
+      <div class="arc-card">
+        <div class="arc-year">Tendencia PJ 2023 → 2025</div>
+        <div class="arc-row"><span class="arc-lbl">Votos PJ 2023</span><span class="arc-val v-pj">197,942</span></div>
+        <div class="arc-row"><span class="arc-lbl">Votos PJ 2025</span><span class="arc-val v-pj">201,508</span></div>
+        <div class="arc-row"><span class="arc-lbl">Δ en %</span><span class="arc-val v-pj">+6.6 pp</span></div>
+        <div class="arc-row"><span class="arc-lbl">Δ en votos</span><span class="arc-val v-pj">+3,566</span></div>
+      </div>
+    </div>
+    <div class="ok-box">
+      <div class="ok-ttl">✅ TENDENCIA POSITIVA CONSOLIDADA</div>
+      <div class="ok-txt">Lomas de Zamora es uno de los distritos con mejor desempeño del PJ en el conurbano sur. El crecimiento de 49.8% → 56.4% en dos años muestra que la recuperación del voto popular es real y sostenida. La base de economía popular y el trabajo territorial de Otermín explican la solidez.</div>
+    </div>
+    <div class="alert-box">
+      <div class="alert-ttl">⚠️ ATENCIÓN: LA SALADA COMO VARIABLE</div>
+      <div class="alert-txt">La feria La Salada concentra un padrón difuso y de alta informalidad. La economía del sector textil-informal es sensible a las políticas nacionales de control de precios y habilitaciones. Un deterioro de las condiciones operativas de La Salada puede desestabilizar una parte del voto de economía popular.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 6: COLOR LOCAL -->
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Folklore del Municipio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">👗</div>
+        <div class="cl-tipo">Economía popular</div>
+        <div class="cl-nm">La Salada</div>
+        <div class="cl-desc">La feria textil más grande de Latinoamérica, con más de 30,000 puestos. Centro neurálgico de indumentaria informal que abastece a todo el país. Símbolo de la capacidad organizativa popular.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🍽️</div>
+        <div class="cl-tipo">Gastronomía premium</div>
+        <div class="cl-nm">Peatonal Laprida — "Las Lomitas"</div>
+        <div class="cl-desc">El corazón gastronómico del sur bonaerense. Restaurantes, bodegas y barras que atrajeron al consumidor de alta gama del AMBA. La transformación más visible del municipio en la última década.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⚽</div>
+        <div class="cl-tipo">Fútbol e identidad</div>
+        <div class="cl-nm">Banfield — "El Taladro"</div>
+        <div class="cl-desc">Club Atlético Banfield, histórico de Primera División con un arraigo barrial profundo en el corredor sur. Su estadio y entorno movilizan a vecinos de Banfield y Temperley en días de partido.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏭</div>
+        <div class="cl-tipo">Historia industrial</div>
+        <div class="cl-nm">Curtiembres y Metalúrgicas</div>
+        <div class="cl-desc">El ADN industrial del municipio. Las curtiembres de Budge y los talleres metalúrgicos de Lomas Sur representan generaciones de trabajo obrero y sindicalismo fuerte. Hoy en proceso de reconversión.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌿</div>
+        <div class="cl-tipo">Cultura ambiental</div>
+        <div class="cl-nm">Lomas Recicla</div>
+        <div class="cl-desc">El programa de reciclado municipal se convirtió en marca identitaria. Las Eco-Escuelas y los Puntos Verdes generaron conciencia ambiental en nuevas generaciones, imagen moderna de la gestión.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🐾</div>
+        <div class="cl-tipo">Innovación social</div>
+        <div class="cl-nm">Hospital Municipal de Mascotas</div>
+        <div class="cl-desc">Referente nacional en veterinaria pública y campañas de castración masiva. Conecta emocionalmente con un segmento amplio de la clase media con mascotas, generando adhesión orgánica a la gestión.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 7: PALANCAS ESTRATÉGICAS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Estratégicas</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 1</div>
+          <div class="pal-ttl">Economía Popular y La Salada</div>
+        </div>
+        <div class="pal-body">
+          <p>La Salada es el corazón económico informal de Lomas y uno de los mayores polos de empleo de la región. Un marco provincial que facilite la formalización progresiva, mejore las condiciones edilicias y amplíe el acceso a créditos productivos para feriantes y microemprendedores textiles tiene potencial de adhesión masiva en el electorado de economía popular.</p>
+          <p>Articulación con Mercado Lomas y el Eco Lomas para integrar cadenas de valor circulares.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-prot" style="margin-left:4px">Articulación Municipal</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 2</div>
+          <div class="pal-ttl">Seguridad Tecnológica e Integrada</div>
+        </div>
+        <div class="pal-body">
+          <p>El salto tecnológico en seguridad municipal (Centro de Monitoreo, cámaras, drones) es una política con fuerte apoyo transversal. La demanda de seguridad en zonas de alta densidad como Budge y Villa Centenario es el principal "dolor" electoral. La provincia puede ampliar la red de monitoreo y articular con la Policía Bonaerense para respuesta integrada.</p>
+          <p>La visibilidad de resultados concretos (reducción de delitos medibles) es condición sine qua non para capitalizar electoralmente.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Articulación Nacional</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Palanca 3</div>
+          <div class="pal-ttl">Infraestructura Urbana y Cloacas</div>
+        </div>
+        <div class="pal-body">
+          <p>La deuda más tangible de Lomas es la cloacal (sólo ~62% de cobertura). En un municipio de altísima densidad —7,784 hab/km²— la falta de red cloacal en zonas periféricas genera condiciones sanitarias críticas. Una obra de ampliación de la red AYSA, visible y atribuible a la gestión provincial, tiene retorno electoral directo en las zonas más afectadas.</p>
+          <p>Complementario: pavimentación de barrios sur con planta asfáltica municipal reactivada.</p>
+          <span class="pal-tag acc-prov">Acceso Provincial</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Infraestructura AYSA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 8: VISITAS RECOMENDADAS -->
+<div class="sec">
+  <div class="sec-hdr">📍 8. Visitas Recomendadas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Feria La Salada — Ingeniero Budge</div>
+          <div class="vis-desc">Recorrido por el polo textil más grande de Latinoamérica. Contacto directo con feriantes, cooperativistas y emprendedores de la economía popular. Visita de alto impacto mediático y simbólico. Coordinar con referentes del sector para evitar escenarios adversos.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Peatonal Laprida — Lomas Centro / "Las Lomitas"</div>
+          <div class="vis-desc">Recorrido gastronómico y comercial por el corazón de la transformación urbana del municipio. Contacto con comerciantes, gastronómicos y vecinos de clase media que valoran las mejoras urbanísticas. Momento ideal: mediodía de fin de semana.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Hospital Municipal de Mascotas</div>
+          <div class="vis-desc">Visita al programa de veterinaria pública y campañas de castración gratuita. Alta resonancia mediática y emocional. Conecta con propietarios de mascotas, segmento amplio y transversal que valora la política de bienestar animal como señal de sensibilidad social.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Centro de Monitoreo Municipal de Seguridad</div>
+          <div class="vis-desc">Visita al centro tecnológico de vigilancia con cámaras, drones y sistema de reconocimiento de patentes. Muestra concreta de inversión en seguridad inteligente. Genera confianza en segmentos que priorizan la seguridad como primera demanda.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">5</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Universidad Nacional de Lomas de Zamora (UNLZ)</div>
+          <div class="vis-desc">Campus universitario público con fuerte presencia en el territorio. Articulación con estudiantes, docentes y autoridades. Espacio para anunciar políticas de educación superior, becas y vinculación entre universidad, trabajo y sector productivo del sur del GBA.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS EJECUTIVA -->
+<div class="sint">
+  <h3>🧠 Síntesis Ejecutiva</h3>
+  <p><strong>Lomas de Zamora es uno de los activos electorales más sólidos del peronismo bonaerense.</strong> Con 690,480 habitantes, es el segundo municipio más poblado del conurbano sur, y su tendencia electoral 2023→2025 (+6.6 pp para el PJ) lo ubica entre los distritos de mejor performance de la tercera sección.</p>
+  <p>El municipio vive una dualidad productiva fascinante: la economía informal de La Salada convive con el boom inmobiliario premium de "Las Lomitas". Esta tensión es también una oportunidad: el PJ tiene llegada en ambos segmentos si articula políticas de economía popular con gestión urbana de calidad, como lo viene demostrando Otermín.</p>
+  <p>La deuda estructural más crítica es la cloacal (sólo 62% de cobertura en un municipio de altísima densidad). Una obra provincial visible en este rubro tiene retorno electoral directo. La seguridad tecnológica y el fortalecimiento de la economía de La Salada completan el trío de palancas de mayor impacto.</p>
+</div>
+
+</body>
+</html>

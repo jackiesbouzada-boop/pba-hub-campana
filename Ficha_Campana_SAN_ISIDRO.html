@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>San Isidro — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--accent:#4a6fa5;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.badge-alerta{display:inline-block;background:rgba(220,38,38,.3);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.5);letter-spacing:.5px;margin-bottom:12px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-v-r{font-size:1.15rem;font-weight:800;color:#fca5a5}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#bae6fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n-r{font-size:1.7rem;font-weight:900;color:#dc2626;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#2c3e7a;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#fee2e2;color:#991b1b;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#f8fafc}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-alert{background:linear-gradient(135deg,#fee2e2,#fecaca);border-color:#fca5a5}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#d97706}.v-grey{color:#374151}.v-red{color:#dc2626}
+.alert-box{background:#fff1f2;border:1.5px solid #fca5a5;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#991b1b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#fca5a5;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌆 CONURBANO BONAERENSE &nbsp;|&nbsp; 1ª Sección Electoral</div>
+  <div class="h-name">SAN ISIDRO</div>
+  <div class="h-name2">Casco histórico, náutica y servicios premium: el territorio más opositor del corredor norte</div>
+  <div class="h-sub">San Isidro cabecera · Beccar · Boulogne · Acassuso · Martínez · La Cava · Bajo San Isidro</div>
+  <div>
+    <span class="badge-alerta">🔴 INTENDENTE OPOSITOR — Juntos por el Cambio</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">291,011</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">297,282</span><span class="h-stat-l">Habitantes (CENSO 2022)</span></div>
+    <div class="h-stat"><span class="h-stat-v">52.4 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v-r">23.9%</span><span class="h-stat-l">PJ 2025 — mínimo histórico ⚠️</span></div>
+    <div class="h-stat"><span class="h-stat-v-r">48.8%</span><span class="h-stat-l">LLA 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">5,672</span><span class="h-stat-l">hab/km² — alta densidad</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌆 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Polo de Servicios y Consumo Premium</h4>
+        <p>San Isidro tiene uno de los PBI per cápita más altos del conurbano bonaerense. Su economía se basa en servicios de alta calificación (finanzas, salud privada, educación privada, comercio premium) y no en industria. El centro comercial de San Isidro, los hipermercados y shoppings, y la concentración de consultorios y clínicas privadas generan una economía de servicios que atrae demanda de municipios vecinos. El Hipódromo de San Isidro y el Club de Polo son íconos de esa identidad de clase media-alta.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Identidad Histórica, Náutica y Casco Colonial</h4>
+        <p>San Isidro conservó su casco histórico colonial con la Catedral, la Plaza Gral. Mitre y las casonas del siglo XIX que le dan una identidad patrimonial única en el conurbano norte. La costa del Río de la Plata concentra una alta densidad de clubes náuticos (San Isidro Yacht Club, Club Náutico Hacoaj, entre otros) y el acceso a barrios históricos como Acassuso y Beccar que conservan casas antiguas con jardín. La identidad de San Isidro es la de un "pueblo grande" con historia colonial, a diferencia del conurbano industrial.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n-r">23.9%</span>
+        <span class="l">PJ 2025 — cayó 2.9pp respecto de 2023; el peor resultado del corredor norte y uno de los más bajos de la provincia</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-r">48.8%</span>
+        <span class="l">LLA 2025 — casi mayoría absoluta en el territorio más opositor del corredor norte</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🔴 2. Contexto Político · Territorio Opositor</div>
+  <div class="sec-body">
+    <div class="alert-box">
+      <div class="alert-ttl">🔴 MUNICIPIO CON INTENDENTE DE JUNTOS POR EL CAMBIO — TRATAMIENTO DIFERENCIAL</div>
+      <div class="alert-txt">San Isidro es gestionado por Ramón Lanús (JxC) y tiene la base peronista más baja del lote de 10 municipios: 23.9%. Es el territorio opositor más consolidado: el radicalismo y el PRO gobiernan San Isidro desde hace décadas sin interrupciones. La estrategia provincial es diferente a la de los municipios aliados.</div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">Intendente: Ramón Lanús (JxC)</div>
+        <div class="gest-txt">Intendente desde 2023, sucesor de Gustavo Posse. Perfil de centroderecha moderado, con acento en seguridad, calidad urbana y servicios. Articula con la estructura de JxC del corredor norte.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">El PJ cayó 2.9pp — Fenómeno único</div>
+        <div class="gest-txt">Mientras en otros municipios el PJ creció o se mantuvo, en San Isidro bajó de 26.8% a 23.9%. Esa caída indica que incluso la base popular mínima del PJ en el municipio tuvo migración hacia LLA u otras opciones. La causa probable: La Cava y el Bajo San Isidro son los núcleos populares, y el avance de LLA también llegó allí.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">Programas Municipales Clave (JxC)</div>
+        <div class="gest-txt">"Cuidado Comunitario": patrullaje en duplas de inspector + policía municipal 24hs. "SI Salud": digitalización del sistema sanitario con app de turnos. "Urbanización La Cava": obras de apertura de pasillos, cloacas, LED y promotores de salud. Programa "Control San Isidro": Byrna devices y operativos de saturación en accesos.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">La Cava: el núcleo popular de San Isidro</div>
+        <div class="gest-txt">La Cava es el barrio popular más relevante de San Isidro: asentamiento histórico en el que viven miles de familias con alta NBI relativa en un municipio de NBI general muy baja. Es el núcleo del voto PJ en San Isidro y el lugar donde la inversión provincial tiene mayor impacto político diferencial.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📊 3. Perfil Demográfico · Segmentación Social</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Segmento</th><th>Descripción</th><th>Peso Est.</th><th>Perfil PJ</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">Clase alta y media-alta (San Isidro, Acassuso, Beccar histórico)</td><td>Propietarios de casas históricas, profesionales de servicios premium. Identidad de "San Isidro histórico". Voto opositor estructural de décadas. JxC → LLA sin fricción.</td><td class="tbl-num">~40%</td><td>Muy bajo — oposición dura</td></tr>
+        <tr><td class="tbl-num">Clase media empleada en servicios (Boulogne, Martínez)</td><td>Empleados del sector servicios, comerciantes, profesionales independientes. Sensibles a la seguridad y los servicios. Preferencia por centroderecha o LLA.</td><td class="tbl-num">~30%</td><td>Muy bajo</td></tr>
+        <tr><td class="tbl-num">Barrios populares (La Cava, Bajo San Isidro)</td><td>La Cava y el Bajo San Isidro son los núcleos populares del municipio. Familias con alta NBI relativa en un municipio de alto ingreso. El programa de Urbanización La Cava (JxC) tiene impacto pero también genera tensión con los residentes históricos del entorno.</td><td class="tbl-num">~18%</td><td>Moderado ++ — base PJ real</td></tr>
+        <tr><td class="tbl-num">Náutica y clubs de alto nivel</td><td>Socios de clubs náuticos e hipódromo. Segmento de alta identidad de clase con perfil opositor histórico. No es electorado alcanzable para el PJ.</td><td class="tbl-num">~12%</td><td>Muy bajo — oposición consolidada</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 4. Indicadores de Infraestructura y Servicios</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <thead><tr><th>Indicador</th><th>Cobertura Est.</th><th>Situación</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td class="tbl-num">NBI</td><td class="tbl-num">~8%</td><td>Muy baja — excepto La Cava</td><td>NBI general muy baja pero con alta concentración en el asentamiento La Cava y el Bajo San Isidro. La brecha interna es la más pronunciada del municipio.</td></tr>
+        <tr><td class="tbl-num">Red Cloacal</td><td class="tbl-num">~93%</td><td>Muy alta — déficit en La Cava</td><td>Cobertura casi universal en zonas urbanizadas; el déficit histórico es en La Cava donde el programa de urbanización JxC está avanzando con instalación cloacal.</td></tr>
+        <tr><td class="tbl-num">Seguridad</td><td>"Cuidado Comunitario" + Byrna</td><td>Alta inversión</td><td>Sistema de patrullaje doble (inspector + policía municipal) y dispositivos Byrna. Es el argumento más fuerte de la gestión Lanús para el electorado premium del municipio.</td></tr>
+        <tr><td class="tbl-num">Salud</td><td>SI Salud (app digital)</td><td>Digitalización en proceso</td><td>Turno digital para el sistema de salud municipal. Articulación con el sistema privado preponderante en el municipio.</td></tr>
+        <tr><td class="tbl-num">Costa y espacios públicos</td><td>Ribera activa + clubs náuticos</td><td>Alta calidad</td><td>La recuperación costera del Río de la Plata, con acceso público al parque ribereño junto a las instalaciones de clubs náuticos privados.</td></tr>
+        <tr><td class="tbl-num">Urbanización informal</td><td>La Cava — en proceso</td><td>Obra activa JxC</td><td>"Urbanización La Cava" incluye apertura de pasillos, cloacas LED y presencia de promotores de salud. Es la política social más visible de la gestión Lanús en el segmento popular.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 5. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-winner">
+        <div class="arc-year">General 2023 — Intendente</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">26.8%</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Cambiemos</span><span class="arc-val v-jxc">~58.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">~25.1%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">291,804</span></div>
+      </div>
+      <div class="arc-card arc-alert">
+        <div class="arc-year">Concejales Prov. 2025 🔴</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / Unión por la Patria</span><span class="arc-val v-red">23.9% ↓↓</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">48.8% ↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC / Otros</span><span class="arc-val v-jxc">~27.3%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">291,011</span></div>
+      </div>
+      <div class="arc-card arc-alert">
+        <div class="arc-year">Lectura Estratégica 🔴</div>
+        <div class="arc-row"><span class="arc-lbl">PJ cayó</span><span class="arc-val v-red">−2.9 pp ↓</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA explotó</span><span class="arc-val v-lla">+23.7 pp ↑↑</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC resiste</span><span class="arc-val v-jxc">~27% — split</span></div>
+        <div class="arc-row"><span class="arc-lbl">Resultado</span><span class="arc-val v-red">TERRITORIO MÁS OPOSITOR</span></div>
+      </div>
+    </div>
+    <div class="alert-box">
+      <div class="alert-ttl">🔴 PJ EN CAÍDA Y LLA A 48.8%: LA BASE PERONISTA TAMBIÉN SE EROSIONÓ</div>
+      <div class="alert-txt">San Isidro es el único municipio del lote donde el PJ cayó (−2.9pp, de 26.8% a 23.9%). Eso significa que incluso la base popular mínima del PJ —concentrada en La Cava y el Bajo San Isidro— tuvo migración. Con JxC resistiendo en ~27% (no colapsó tan abruptamente como en otros municipios) y LLA llegando a 48.8%, San Isidro tiene el escenario más adverso del lote. El 23.9% (40,475 votos) es el núcleo duro del voto popular peronista y el punto de partida para cualquier estrategia provincial en este territorio.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎨 6. Color Local · Conocimiento del Territorio</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">⛪</div>
+        <div class="cl-tipo">Patrimonio histórico</div>
+        <div class="cl-nm">Casco Histórico Colonial</div>
+        <div class="cl-desc">San Isidro conserva uno de los cascos históricos coloniales mejor preservados del conurbano: la Catedral, la Plaza Gral. Mitre, las casonas del siglo XIX y el Museo de Arte Tigre-San Isidro. Esta identidad patrimonial es única en el GBA y define la autoimagen del vecino de San Isidro como residente de un "pueblo con historia", diferente del conurbano.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⛵</div>
+        <div class="cl-tipo">Identidad náutica</div>
+        <div class="cl-nm">Clubes Náuticos del Río</div>
+        <div class="cl-desc">La costa de San Isidro concentra una alta densidad de clubes náuticos (San Isidro Yacht Club, Hacoaj, entre otros). La náutica define una parte de la identidad de clase media-alta del municipio y genera una economía de servicios relacionada (talleres, marinas, gastronomía) que atrae demanda regional.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏇</div>
+        <div class="cl-tipo">Polo y deporte</div>
+        <div class="cl-nm">Hipódromo de San Isidro</div>
+        <div class="cl-desc">El Hipódromo de San Isidro es uno de los más importantes del país. Su presencia en el municipio define una identidad de deporte y espectáculo de clase alta que complementa el perfil náutico y patrimonial. Los días de carrera movilizan miles de personas y generan actividad económica local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏘️</div>
+        <div class="cl-tipo">Barrio popular</div>
+        <div class="cl-nm">La Cava</div>
+        <div class="cl-desc">La Cava es el asentamiento más grande de San Isidro, histórico y densamente poblado. Es el núcleo del voto peronista en el municipio y el lugar de mayor NBI. El programa de urbanización municipal (JxC) está activo con obras de infraestructura básica, pero la tensión entre La Cava y los vecinos del entorno (histórico punto de conflicto territorial) define una de las tensiones políticas más complejas del municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🛡️</div>
+        <div class="cl-tipo">Seguridad</div>
+        <div class="cl-nm">Programa Control San Isidro</div>
+        <div class="cl-desc">Incorporación de agentes municipales con dispositivos Byrna (bala de goma y gas pimienta) y operativos de saturación en los accesos al municipio desde la Panamericana y el río. Es una de las políticas de seguridad más agresivas y controvertidas del corredor norte: el argumento más directo de Lanús para el votante que pone la seguridad como primera demanda.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌊</div>
+        <div class="cl-tipo">Recuperación costera</div>
+        <div class="cl-nm">Ribera Pública</div>
+        <div class="cl-desc">Programa de recuperación del espacio ribereño público frente al avance de desarrollos privados. El municipio apuesta a garantizar acceso público a la costa del Río de la Plata, con parque público de golf y espacios recreativos. Es la política ambiental más visible de la gestión Lanús para el segmento de clase media.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 7. Tres Palancas Provinciales en Territorio Opositor</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — Prioritaria</div><div class="pal-ttl">Urbanización La Cava — Apoyo Provincial Directo</div></div>
+        <div class="pal-body">
+          <p>La urbanización de La Cava es la política de integración social más importante de San Isidro. Aunque la inicia el municipio JxC, la provincia puede llegar con financiamiento complementario: AySA para las redes cloacales, ENOHSA para agua, Ministerio de Desarrollo Social para refuerzo de equipos de promotores de salud.</p>
+          <p>La presencia provincial en La Cava, con obras e inversión directa reconocibles como provinciales, es el argumento político más directo en el único núcleo popular del municipio. Las familias de La Cava que ven llegar inversión provincial son el electorado más alcanzable para revertir la caída de 2.9pp del PJ.</p>
+          <span class="pal-tag acc-prov">AySA / DIPSOH</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Ministerio Desarrollo Social</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Patrimonio Histórico — Declaración Provincial</div></div>
+        <div class="pal-body">
+          <p>El casco histórico de San Isidro y la identidad patrimonial del municipio pueden ser reconocidos formalmente por la provincia como "Patrimonio Cultural e Histórico de la Provincia de Buenos Aires". Esa declaración tiene impacto en el electorado de clase media-alta que valora la identidad histórica de su municipio.</p>
+          <p>Articulación con el Ministerio de Turismo provincial para promoción del casco histórico como destino turístico metropolitano. El turismo patrimonial y náutico de San Isidro puede posicionarse como "destino provincial prioritario", con inversión en señalética y plataformas digitales de promoción.</p>
+          <span class="pal-tag acc-prov">Ministerio de Turismo PBA</span>
+          <span class="pal-tag acc-prov" style="margin-left:4px">Cultura PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Conectividad AMBA — Ramal Mitre Zona Norte</div></div>
+        <div class="pal-body">
+          <p>El Ferrocarril Mitre que conecta San Isidro con CABA es el servicio de transporte más usado por los trabajadores populares del municipio. Un acuerdo AMBA para mejora de frecuencias, modernización de material rodante y mejora de las estaciones de Boulogne y Beccar tiene impacto directo en la experiencia del trabajador popular que viaja diariamente.</p>
+          <p>La diferencia entre la provincia que invierte en conectividad de transporte y el municipio JxC que no tiene competencia en esa materia es visible y política. El anuncio en la estación de Boulogne llega al electorado popular de San Isidro de manera directa.</p>
+          <span class="pal-tag acc-prov">AMBA / Tren Mitre</span>
+          <span class="pal-tag acc-nac" style="margin-left:4px">Trenes Argentinos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>🔴 Síntesis Ejecutiva — San Isidro</h3>
+  <p><strong>Contexto:</strong> 291k padrón. Lanús (JxC). PJ 23.9% (−2.9pp) — el resultado más bajo del lote. LLA 48.8%. JxC retiene ~27% (no colapsó tan abruptamente como en Vicente López). San Isidro es el municipio opositor más sólido del corredor norte: lleva décadas sin peronismo y el 23.9% es el mínimo histórico.</p>
+  <p><strong>La anomalía: el PJ cayó.</strong> Mientras en todos los demás municipios del lote el PJ creció o se mantuvo, en San Isidro bajó 2.9pp. La caída del PJ indica que incluso la base popular mínima del municipio (La Cava, Bajo San Isidro) tuvo migración. El 23.9% es el núcleo duro: 40,475 votos que representan la base peronista irreducible de San Isidro.</p>
+  <p><strong>Palancas provinciales:</strong> Inversión en urbanización de La Cava (apoyo provincial directo a la obra JxC con marca provincial), declaración del casco histórico como patrimonio provincial (reconocimiento a la identidad del municipio que llega a la clase media), y mejora de conectividad ferroviaria AMBA (servicio que impacta directamente en el trabajador popular de Boulogne y Beccar).</p>
+  <p><strong>Objetivo realista:</strong> Frenar la caída del PJ (23.9%) y estabilizar o recuperar ligeramente hacia 25-27% en 2027. Eso requiere presencia provincial visible en La Cava y en los barrios populares. No hay target de ganar San Isidro en el corto plazo.</p>
+</div>
+
+</body>
+</html>
