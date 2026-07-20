@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Coronel Rosales — Narrativa Territorial</title>
+<style>
+:root{--primary:#0d1f2e;--accent:#2e4057;--light:#f0f4f8;--border:#c8d4e0;--text:#1a2535;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:var(--text);font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#06101a 0%,#0d1f2e 45%,#1e3045 75%,#2e4057 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'⚓';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.06}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-red{background:rgba(185,28,28,.35);border-color:rgba(220,38,38,.5);color:#fca5a5}
+.pill-blue{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#0d1f2e,#1e3045);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#0d1f2e;line-height:1.65;margin-bottom:12px;border-left:4px solid #2e4057;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#0d1f2e;border-color:#0d1f2e;color:#fff}
+.card-dark h4{color:#fca5a5 !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#0d1f2e;margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px}
+.card p{font-size:.78rem}
+.num-big{font-size:2rem;font-weight:900;color:#fca5a5;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #f0f4f8;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.data-k{color:var(--text);font-weight:500}
+.data-v{font-weight:800;color:#0d1f2e}
+.lla-v{color:#7c3aed;font-weight:800}
+.pj-v{color:#1d4ed8;font-weight:800}
+.alert-r{background:#fef2f2;border:1.5px solid #fca5a5;border-radius:8px;padding:12px 15px;margin-top:12px}
+.alert-r .ttl{color:#991b1b;font-size:.7rem;font-weight:800;text-transform:uppercase;margin-bottom:5px}
+.alert-r p{font-size:.79rem;color:#374151;margin-bottom:0}
+.alert-i{background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:8px;padding:12px 15px;margin-top:12px}
+.alert-i .ttl{color:#1e40af;font-size:.7rem;font-weight:800;text-transform:uppercase;margin-bottom:5px}
+.timeline{list-style:none;padding-left:0;margin-top:10px}
+.timeline li{padding:9px 14px 9px 38px;position:relative;border-left:3px solid #1e3045;margin-bottom:4px;background:#f8fafc;border-radius:0 7px 7px 0;font-size:.8rem;color:#374151;line-height:1.5}
+.timeline li::before{content:attr(data-icon);position:absolute;left:-14px;top:8px;font-size:.95rem}
+.close{background:linear-gradient(135deg,#0d1f2e,#1e3045);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#fca5a5;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;border:1px solid #ddd;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🏔️ Cluster SUR · 6ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">CORONEL ROSALES</div>
+  <div class="cv-sub">Punta Alta · Base Naval Puerto Belgrano · Puerto Rosales · Pehuen Có</div>
+  <div class="cv-pills">
+    <span class="pill-blue">✅ Aliado UxP — Rodrigo Aristimuño</span>
+    <span class="pill-red">🔴 TERRENO HOSTIL — LLA 61.6% Nacional 2025</span>
+    <span class="pill">⚓ Mayor Base Naval de Argentina</span>
+    <span class="pill">🛢️ Puerto Rosales — Salida Vaca Muerta</span>
+    <span class="pill">$600M USD inversión portuaria</span>
+    <span class="pill">🦕 Pehuen Có — Huellas de dinosaurios</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">⚓ Territorio: Donde el Estado es azul marino y el petróleo es la frontera</div>
+  <div class="sec-body">
+    <div class="lead">Coronel Rosales tiene la particularidad de ser simultáneamente un enclave de soberanía estatal (la mayor base naval de Argentina) y el nodo portuario de salida del shale patagónico al mundo. Una combinación única en la Provincia de Buenos Aires.</div>
+    <p>La ciudad de Punta Alta —cabecera del partido— lleva décadas marcada por la presencia de la Base Naval Puerto Belgrano, el mayor complejo militar-naval de Argentina. Fundada en 1898, la base alberga astilleros, submarinos, flota de superficie y miles de efectivos activos, más las familias y el tejido de servicios y comercios que orbitan en torno a ella. La economía de Punta Alta nunca fue una economía de mercado puro: siempre tuvo un ancla estatal enorme.</p>
+    <p>Al mismo tiempo, Puerto Rosales —el puerto ubicado dentro del partido— es la terminal de salida hacia el océano de los productos petroquímicos del sur bonaerense. Y en los últimos años, con el auge de la producción de Vaca Muerta, el puerto ha cobrado una relevancia estratégica exponencial: es la puerta al mundo del shale argentino. La empresa Otamérica está invirtiendo más de <strong>600 millones de dólares</strong> para duplicar su capacidad — la mayor inversión privada en infraestructura portuaria del sur en décadas.</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">1898</span><span class="num-lbl">Año fundación Base Naval Puerto Belgrano</span></div>
+        <p style="margin-top:8px">La base naval más grande de Argentina en el partido. Miles de efectivos activos, civiles y familias. Una ciudad dentro del partido con dinámica propia.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">$600M</span><span class="num-lbl">USD — Inversión Otamérica en Puerto Rosales</span></div>
+        <p style="margin-top:8px">Para duplicar la capacidad del puerto. Coronel Rosales como nodo estratégico de la cadena de exportación del shale de Vaca Muerta.</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:10px">
+      <h4>🦕 Pehuen Có — La playa de los dinosaurios</h4>
+      <p>El balneario de Pehuen Có tiene una particularidad geológica única en Argentina: huellas de dinosaurios visibles en la playa durante la marea baja. La Reserva Natural Municipal de icnitas funciona como atractivo paleontológico y educativo, sumando una dimensión turística singular al sur bonaerense. El mismo partido tiene base naval, puerto estratégico y dinosaurios. Pocas localidades tienen esa densidad de activos.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ Gestión Aristimuño: El técnico portuario en el terreno más difícil del SUR</div>
+  <div class="sec-body">
+    <p><strong>Rodrigo Aristimuño (UxP)</strong> llegó a la intendencia con un perfil técnico inusual para la política municipal: fue presidente de la administración del Puerto Rosales. Ese background es su principal activo en un distrito donde la agenda productiva pesa más que la agenda social tradicional del peronismo. Su interlocución directa con Otamérica, con los operadores portuarios y con los actores del sector energético le da una credibilidad técnica que pocos intendentes de la región tienen.</p>
+    <ul class="timeline">
+      <li data-icon="🚢">Integración Puerto-Ciudad: articulación entre el municipio y el Puerto Rosales para que el crecimiento de la inversión Otamérica genere empleo local y servicios municipales concretos para trabajadores y familias del sector.</li>
+      <li data-icon="💧">Plan Hídrico Bahía Blanca–Coronel Rosales: el mayor hito de infraestructura del período. Dado que el partido comparte cuenca hídrica con Bahía Blanca, el plan requirió coordinación intermunicipal y con la provincia. Resuelve una deuda histórica de provisión de agua potable.</li>
+      <li data-icon="⚓">Acompañamiento de la expansión de Puerto Rosales ($600M USD, Otamérica): habilitaciones, infraestructura de acceso, servicios básicos. El municipio como facilitador de la mayor inversión privada en el partido en su historia.</li>
+      <li data-icon="🏅">Becas Deportivas: canal de llegada directa a familias jóvenes de la comunidad militar y civil. Programa de apoyo económico a deportistas destacados del partido.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: El peronismo en caída libre en territorio naval</div>
+  <div class="sec-body">
+    <div class="lead">Coronel Rosales registró en 2025 uno de los resultados más adversos para el peronismo en el SUR bonaerense. LLA obtuvo el 61.6% en la categoría nacional — el porcentaje más alto de LLA en el sur de la provincia.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Arco electoral completo</h4>
+        <div class="data-row"><span class="data-k">2023 — PJ / UxP</span><span class="pj-v">35.4%</span></div>
+        <div class="data-row"><span class="data-k">2023 — JxC</span><span class="data-v">30.1%</span></div>
+        <div class="data-row"><span class="data-k">2023 — LLA</span><span class="lla-v">29.3%</span></div>
+        <div class="data-row"><span class="data-k">2025 Prov — LLA 🔴</span><span class="lla-v">45.1%</span></div>
+        <div class="data-row"><span class="data-k">2025 Prov — PJ</span><span class="pj-v">22.6%</span></div>
+        <div class="data-row"><span class="data-k">2025 Nac — LLA 🔴🔴</span><span class="lla-v">61.6%</span></div>
+        <div class="data-row"><span class="data-k">2025 Nac — PJ</span><span class="pj-v">20.7%</span></div>
+      </div>
+      <div class="card">
+        <h4>📉 La caída del PJ entre 2023 y 2025</h4>
+        <p>En 2023, el PJ ganó la intendencia con 35.4% en un campo fragmentado: JxC (30.1%) y LLA (29.3%) se repartieron el resto. En 2025, el campo se reconfiguró radicalmente: LLA absorbió a los votantes de JxC y parte del peronismo.</p>
+        <p>Caída del PJ 2023→2025 prov.: <strong>−12.8 puntos.</strong> Caída 2023→2025 nac.: <strong>−14.7 puntos.</strong></p>
+      </div>
+    </div>
+    <div class="alert-r">
+      <div class="ttl">🔴 El factor Base Naval — la explicación más probable</div>
+      <p>Coronel Rosales tiene una fracción muy significativa de su población vinculada a la Base Naval (efectivos activos, suboficiales, oficiales, civiles y familias). Las comunidades militares en Argentina tuvieron históricamente una orientación de centro-derecha y en 2025 se alinearon masivamente con LLA. El resultado del 61.6% en la categoría nacional (vs. el promedio provincial de LLA mucho menor) sugiere que ese voto fue determinante. La agenda de "soberanía", "orden" y "reducción del Estado" de LLA resonó en una comunidad que se siente parte del Estado pero no necesariamente del peronismo.</p>
+    </div>
+    <div class="alert-i">
+      <div class="ttl">📊 Estrategia: presencia, no confrontación</div>
+      <p>Con un 22.6% provincial, el PJ no está en posición de buscar un resultado electoral inmediato en Coronel Rosales. La estrategia más sostenible es: presencia institucional (el intendente como referente), agenda productiva concreta (puerto, inversión, empleo), y construcción gradual de credibilidad. No es un distrito para ganar en 2025 — es un distrito para no perder más terreno.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos 2026</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>🚢 Puerto Rosales como argumento central</h4>
+        <p>La inversión de $600M USD de Otamérica y el rol del puerto como salida del shale de Vaca Muerta es el relato económico más potente del partido. El peronismo municipal como facilitador de la mayor inversión privada de la zona: empleos reales, obra concreta, futuro del partido.</p>
+      </div>
+      <div class="card">
+        <h4>⚓ Presencia en Base Naval</h4>
+        <p>Visita institucional a la Base Naval Puerto Belgrano — mensaje de respeto a las FFAA y compromiso con la soberanía marítima. Canal de llegada a miles de familias militares y civiles. Requiere coordinación con la Armada — no es visita rutinaria.</p>
+      </div>
+      <div class="card">
+        <h4>🦕 Pehuen Có — Turismo y ciencia</h4>
+        <p>Las huellas de dinosaurios son un activo comunicacional único. Visita en marea baja a las icnitas: mensaje de puesta en valor del patrimonio natural, turismo de conocimiento, identidad local. Alta cobertura mediática regional.</p>
+      </div>
+      <div class="card">
+        <h4>💧 Plan Hídrico como legado</h4>
+        <p>El Plan Hídrico Bahía Blanca–Coronel Rosales es el hito de infraestructura más concreto del período. Mostrar avance en obra es el argumento más directo de gestión hacia un electorado que valora resultados tangibles sobre discurso.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>Coronel Rosales es el distrito más difícil del SUR para el peronismo y uno de los más adversos de toda la provincia. El 61.6% de LLA en la categoría nacional lo pone en la categoría de territorio dominado por la nueva derecha. La presencia de la Base Naval es el factor estructural más relevante: esa comunidad no es peronista y en 2025 fue masivamente hacia LLA.</p>
+  <p>Sin embargo, la intendencia está en manos de Aristimuño (UxP), y eso es un activo operativo: tiene estructura, acceso y capacidad de gestión en el terreno. La agenda del puerto y la inversión de Otamérica es el único relato que puede apelar a un electorado que valora la economía productiva por encima de la política distributiva.</p>
+  <p><strong>Mensaje recomendado:</strong> "La provincia que invierte en el sur — en el puerto, en el agua, en la base". Sin confrontación, sin política de identidad. Solo obra concreta y gestión visible. El terreno no da para más, pero tampoco para menos.</p>
+</div>
+
+</body>
+</html>
