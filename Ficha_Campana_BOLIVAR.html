@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ficha de Campaña — Bolívar</title>
+<style>
+:root{--prim:#3a0000;--acc:#8b3a3a;--light:#f5eaea;--border:#d4a0a0;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#ede0e0;color:#2e0a0a;font-size:13px;max-width:900px;margin:0 auto;padding:14px}
+.fich-hero{background:linear-gradient(135deg,#0d0000 0%,#3a0000 45%,#6b1a1a 80%,#8b3a3a 100%);color:#fff;border-radius:var(--radius);padding:26px 28px 22px;margin-bottom:12px;position:relative;overflow:hidden}
+.fich-hero::before{content:'🏐';position:absolute;right:-10px;bottom:-18px;font-size:10rem;opacity:.09}
+.fh-over{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;opacity:.6;margin-bottom:5px}
+.fich-hero h1{font-size:2.2rem;font-weight:900;line-height:1;margin-bottom:3px;text-transform:uppercase}
+.fh-sub{font-size:.85rem;opacity:.72;margin-bottom:14px;font-style:italic}
+.fh-tags{display:flex;flex-wrap:wrap;gap:6px}
+.fh-tag{font-size:.66rem;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff}
+.badge-warn{background:rgba(180,130,0,.35);border-color:rgba(250,204,21,.5);color:#fde68a}
+.badge-al{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:12px 14px}
+.card-dark{background:var(--prim);border-color:var(--prim);color:#fff}
+.card-dark .c-lbl{color:rgba(255,255,255,.65)}
+.card-dark .c-val{color:#fff}
+.card-dark h4{color:#fca5a5}
+.c-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;color:#8b3a3a;letter-spacing:.5px;margin-bottom:3px}
+.c-val{font-size:1.5rem;font-weight:900;color:var(--prim);line-height:1}
+.c-note{font-size:.69rem;color:#666;margin-top:3px;line-height:1.4}
+.sec-hdr{background:var(--prim);color:#fff;border-radius:7px 7px 0 0;padding:8px 14px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 7px 7px;padding:14px;margin-bottom:10px}
+.prog-row{display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid #f5eaea}
+.prog-row:last-child{border-bottom:none}
+.prog-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+.prog-body h4{font-size:.72rem;font-weight:800;color:var(--prim);margin-bottom:2px;text-transform:uppercase}
+.prog-body p{font-size:.76rem;color:#374151;line-height:1.5}
+.elec-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #f5eaea;font-size:.76rem}
+.elec-row:last-child{border-bottom:none}
+.v-pj{color:#15803d;font-weight:800}
+.v-lla{color:#7c3aed;font-weight:800}
+.v-jxc{color:#d97706;font-weight:800}
+.bar-wrap{margin:6px 0}
+.bar-lbl{display:flex;justify-content:space-between;font-size:.66rem;margin-bottom:2px;color:#555}
+.bar{height:8px;border-radius:4px;background:#e5e7eb;overflow:hidden}
+.bar-fill-pj{height:100%;background:#16a34a;border-radius:4px}
+.bar-fill-lla{height:100%;background:#7c3aed;border-radius:4px}
+.bar-fill-jxc{height:100%;background:#d97706;border-radius:4px}
+.alert-box{background:#fff8e1;border:1.5px solid #f9a825;border-radius:7px;padding:10px 13px;margin-bottom:10px}
+.alert-box p{font-size:.76rem;color:#5a3e00;line-height:1.55}
+.alert-box strong{color:#3a2800}
+@media print{body{background:#fff;padding:0}.fich-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card-dark,.sec-hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:9mm 11mm}}
+</style>
+</head>
+<body>
+
+<div class="fich-hero">
+  <div class="fh-over">🌿 Cluster SALADO · 7ª Sección Electoral · PBA Analítica 2026</div>
+  <h1>Bolívar</h1>
+  <div class="fh-sub">Capital Nacional del Vóley · Agroganadera de vanguardia · Línea 132Kv · Centro Oncológico Regional</div>
+  <div class="fh-tags">
+    <span class="fh-tag badge-al">✅ Aliado — Eduardo "Bali" Bucca (UxP)</span>
+    <span class="fh-tag badge-warn">⚠️ PJ 37.9% prov / LLA 51.7% nac — 3,715 votos diferencia</span>
+    <span class="fh-tag">🏐 Capital Nacional del Vóley</span>
+    <span class="fh-tag">⚡ Soberanía Energética — Línea 132Kv</span>
+    <span class="fh-tag">🏥 Centro Oncológico Integral regional</span>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="card card-dark">
+    <div class="c-lbl">Padrón 2025</div>
+    <div class="c-val">31,766</div>
+    <div class="c-note">7ª Sección Electoral · 4,934.7 km² · Cuenca del Salado</div>
+  </div>
+  <div class="card card-dark">
+    <div class="c-lbl">PJ provincial 2025</div>
+    <div class="c-val">37.9%</div>
+    <div class="c-note">7,289 votos · LLA 21.6% (4,153) · PJ lidera prov</div>
+  </div>
+  <div class="card card-dark">
+    <div class="c-lbl">LLA nacional 2025</div>
+    <div class="c-val">51.7%</div>
+    <div class="c-note">10,329 votos · PJ 33.1% (6,614) · diferencia 3,715 votos</div>
+  </div>
+</div>
+
+<div class="sec-hdr">🏐 Identidad Territorial</div>
+<div class="sec-body">
+  <div class="grid2">
+    <div class="card">
+      <div class="c-lbl">Capital Nacional del Vóley</div>
+      <h4 style="font-size:.8rem;color:#3a0000;margin-bottom:5px">Club Ciudad de Bolívar — referencia nacional</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">Bolívar es la Capital Nacional del Vóley. El Club Ciudad de Bolívar acumuló campeonatos nacionales que posicionan a esta ciudad del interior bonaerense en el mapa del deporte nacional con una especialidad única. La Maratón Internacional Dino Hugo Tinelli completa el perfil deportivo del partido — dos eventos de alcance nacional que generan economía turística en el centro de la Provincia.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Potencia agroganadera</div>
+      <h4 style="font-size:.8rem;color:#3a0000;margin-bottom:5px">Cuenca del Salado — tecnología y cooperativas</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">Uno de los distritos más productivos de la Cuenca del Salado con alta adopción de tecnología agrícola: genética bovina de vanguardia, agricultura de precisión, y un sector cooperativo muy fuerte que empuja la economía local. No es solo campo tradicional — es campo tecnificado con cadena de valor local articulada por cooperativas.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Soberanía energética</div>
+      <h4 style="font-size:.8rem;color:#3a0000;margin-bottom:5px">Línea 132Kv — la obra más importante en décadas</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">La conexión a la red de extra alta tensión (132Kv) es la obra estructural más importante que tuvo Bolívar en décadas. Resolvió el límite histórico para radicación de industrias: sin esta línea, el Parque Industrial no podía crecer. Con ella, Bolívar puede atraer inversiones que antes necesitaban más energía de la que el distrito podía ofrecer.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Centro regional de salud</div>
+      <h4 style="font-size:.8rem;color:#3a0000;margin-bottom:5px">Centro Oncológico — hito de salud pública regional</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">El Centro Oncológico Integral del Hospital Municipal Dr. Miguel Capredoni es un hito regional: evita que pacientes del centro de la Provincia deban viajar cientos de kilómetros para tratamientos de alta complejidad. Un activo de salud pública que define a Bolívar como referencia regional y que el municipio construyó con política pública activa.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec-hdr">🗳️ Mapa Electoral</div>
+<div class="sec-body">
+  <div class="grid2">
+    <div class="card">
+      <div class="c-lbl">Evolución electoral</div>
+      <div class="elec-row"><span>2023 PJ — Bucca ✅</span><span class="v-pj">43.0% (9,998)</span></div>
+      <div class="elec-row"><span>2023 JxC</span><span class="v-jxc">41.5% (9,659)</span></div>
+      <div class="elec-row"><span>2023 LLA</span><span class="v-lla">13.6% (3,173)</span></div>
+      <div class="elec-row"><span>2025 Prov PJ ✅</span><span class="v-pj">37.9% (7,289)</span></div>
+      <div class="elec-row"><span>2025 Prov LLA</span><span class="v-lla">21.6% (4,153)</span></div>
+      <div class="elec-row"><span>2025 Nac LLA ⚠️</span><span class="v-lla">51.7% (10,329)</span></div>
+      <div class="elec-row"><span>2025 Nac PJ</span><span class="v-pj">33.1% (6,614)</span></div>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Distribución 2025 nacional</div>
+      <div class="bar-wrap">
+        <div class="bar-lbl"><span>LLA — 51.7%</span><span>10,329 votos</span></div>
+        <div class="bar"><div class="bar-fill-lla" style="width:51.7%"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-lbl"><span>PJ — 33.1%</span><span>6,614 votos</span></div>
+        <div class="bar"><div class="bar-fill-pj" style="width:33.1%"></div></div>
+      </div>
+      <div style="margin-top:10px">
+        <div class="c-lbl">Distribución 2025 provincial</div>
+        <div class="bar-wrap">
+          <div class="bar-lbl"><span>PJ — 37.9%</span><span>7,289 votos</span></div>
+          <div class="bar"><div class="bar-fill-pj" style="width:37.9%"></div></div>
+        </div>
+        <div class="bar-wrap">
+          <div class="bar-lbl"><span>LLA — 21.6%</span><span>4,153 votos</span></div>
+          <div class="bar"><div class="bar-fill-lla" style="width:21.6%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alert-box">
+    <p><strong>⚠️ Municipio aliado con brecha prov-nac significativa:</strong> Bucca ganó en 2023 con 43.0% sobre JxC (41.5%) y LLA (13.6%). En 2025, PJ sostiene la provincial (37.9%) pero LLA salta a 51.7% en la nacional — diferencia de 3,715 votos. El ex electorado de JxC (41.5% en 2023) migró masivamente a LLA en la categoría nacional. Bolívar es aliado peronista en la gestión local pero el electorado agroganadero voló a LLA en Diputados.</p>
+  </div>
+</div>
+
+<div class="sec-hdr">🎯 Programas Municipales</div>
+<div class="sec-body">
+  <div class="prog-row">
+    <div class="prog-icon">⚡</div>
+    <div class="prog-body">
+      <h4>Soberanía Energética — Línea de Alta Tensión 132Kv</h4>
+      <p>La conexión de Bolívar a la red de extra alta tensión fue la obra infraestructural más importante del partido en décadas. Resolvió el límite histórico al crecimiento del Parque Industrial: antes, ninguna empresa industrial de mediana escala podía radicarse porque la red local no tenía la capacidad de provisión necesaria. La Línea 132Kv abre el juego para la expansión industrial.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🏥</div>
+    <div class="prog-body">
+      <h4>Centro Oncológico Integral — Regional de Alta Complejidad</h4>
+      <p>El Centro Oncológico del Hospital Municipal Dr. Miguel Capredoni atiende pacientes del centro de la Provincia que antes debían viajar cientos de kilómetros para tratamientos. Es el activo de salud más diferencial del municipio: un hito de salud pública que convierte a Bolívar en referencia regional para oncología. La inversión tiene impacto medible en calidad de vida y economía familiar.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">💻</div>
+    <div class="prog-body">
+      <h4>Polo Tecnológico — Industria del Conocimiento en el Interior</h4>
+      <p>Espacio de coworking y capacitación en programación con becas municipales para jóvenes. La apuesta es crear una "industria del conocimiento" local que retenga talentos en el municipio y genere exportaciones de servicios digitales sin que los jóvenes tengan que migrar al AMBA. Un programa de economía digital en el centro productivo de la provincia.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">📱</div>
+    <div class="prog-body">
+      <h4>"Bolívar Digital" — Historia Clínica Unificada</h4>
+      <p>Implementación de historia clínica digital única integrada en todos los CAPS y el hospital. El vecino que arranca en atención primaria tiene su historia accesible cuando llega al hospital de alta complejidad — sin duplicar estudios, sin perder información. Un sistema de salud interconectado que reduce costos y mejora la atención en todo el territorio.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🏥</div>
+    <div class="prog-body">
+      <h4>"Prevención en el Interior" — Urdampilleta y Pirovano</h4>
+      <p>Financiamiento municipal para sostener médicos fijos y guardias 24hs en los hospitales menores de las delegaciones del interior (Urdampilleta, Pirovano). El sistema resuelve 1,500 consultas mensuales in situ — pediatría, estabilización de traumas — sin derivar todo a la cabecera. Salud donde vive la gente, no solo donde está el hospital grande.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">💰</div>
+    <div class="prog-body">
+      <h4>"Bolívar Emprende" — Microcréditos y Formalización</h4>
+      <p>Más de 40 proyectos anuales asistidos con microcréditos a tasa subsidiada y aportes no reembolsables para compra de herramientas y maquinaria. Gastronomía, textiles, carpinterías. La condición de la asistencia es la inscripción fiscal — el programa formaliza mientras financia. Un doble objetivo: desarrollo y blanqueo de la economía local.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
