@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Pehuajó — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#4a3800;--accent:#7b5e00;--bg:#f5f2eb;--surface:#fff;--border:#d4c89a;--text:#2a2000;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#2a1e00 0%,#4a3800 55%,#7b5e00 100%);color:#fff;padding:28px 32px 22px;border-radius:10px;margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'🌾';position:absolute;right:-10px;top:-10px;font-size:8rem;opacity:.1}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:5px}
+.h-name{font-size:2.1rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.8rem;opacity:.75;margin-bottom:12px}
+.badge{display:inline-block;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;margin-right:6px;margin-bottom:4px}
+.badge-al{background:rgba(29,78,216,.3);color:#93c5fd;border:1px solid rgba(59,130,246,.5)}
+.badge-warn{background:rgba(180,130,0,.3);color:#fde68a;border:1px solid rgba(250,204,21,.5)}
+.h-stats{display:flex;flex-wrap:wrap;gap:20px;margin-top:10px}
+.h-stat-v{font-size:1.1rem;font-weight:800;color:#fde68a;display:block}
+.h-stat-l{font-size:.67rem;opacity:.7;text-transform:uppercase}
+.sec{background:var(--surface);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#4a3800,#7b5e00);color:#fff;padding:9px 18px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:14px 18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:12px 14px}
+.blk-k{background:#4a3800;border-color:#4a3800}
+.blk-k h4{color:#fde68a}
+.blk-k p{color:rgba(255,255,255,.9) !important}
+.blk h4{font-size:.72rem;font-weight:800;color:var(--accent);margin-bottom:5px;text-transform:uppercase}
+.blk p,.sec-body p{font-size:.8rem;color:#374151;line-height:1.6;margin-bottom:7px}
+.blk p:last-child,.sec-body p:last-child{margin-bottom:0}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:10px}
+.arc-card{border-radius:8px;padding:11px 13px;border:1.5px solid var(--border)}
+.arc-ok{background:#f0fdf4;border-color:#bbf7d0}
+.arc-warn{background:#fefce8;border-color:#fde68a}
+.arc-neutral{background:#f8fafc}
+.arc-year{font-size:.66rem;font-weight:800;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
+.arc-row{display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid #f5f2eb;font-size:.75rem}
+.arc-row:last-child{border-bottom:none}
+.pj-win{color:#15803d;font-weight:800;background:#dcfce7;padding:1px 4px;border-radius:3px}
+.lla-win{color:#7c3aed;font-weight:800;background:#f3e8ff;padding:1px 4px;border-radius:3px}
+.pj{color:#1d4ed8;font-weight:700}
+.lla{color:#7c3aed;font-weight:700}
+.jxc{color:#d97706;font-weight:700}
+.grey{color:#374151;font-weight:600}
+.alert{border-radius:8px;padding:11px 14px;margin-top:9px}
+.alert-warn{background:#fefce8;border:1.5px solid #fde68a}.alert-warn .a-ttl{color:#78350f}
+.alert-ok{background:#f0fdf4;border:1.5px solid #bbf7d0}.alert-ok .a-ttl{color:#14532d}
+.a-ttl{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.a-body{font-size:.78rem;color:#374151;line-height:1.6}
+.sint{background:linear-gradient(135deg,#2a1e00,#4a3800);border-radius:10px;padding:18px 22px;color:#fff}
+.sint h3{font-size:.82rem;font-weight:800;text-transform:uppercase;color:#fde68a;margin-bottom:10px}
+.sint p{font-size:.81rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:7px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌾 INTERIOR &nbsp;|&nbsp; 4ª Sección Electoral</div>
+  <div class="h-name">PEHUAJÓ</div>
+  <div class="h-sub">Corazón de la pampa húmeda · Agro-ganadero · Cuenca lechera · 4,523 km²</div>
+  <div>
+    <span class="badge badge-al">✅ ALIADO — Pablo Zurro (UxP)</span>
+    <span class="badge badge-warn">⚠️ PJ 51.2% prov — LLA 47.4% nac (PJ cae 11 pts entre categorías)</span>
+  </div>
+  <div class="h-stats">
+    <div><span class="h-stat-v">36,856</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div><span class="h-stat-v">44,783</span><span class="h-stat-l">Habitantes</span></div>
+    <div><span class="h-stat-v">51.2%</span><span class="h-stat-l">PJ Prov 2025 ✅</span></div>
+    <div><span class="h-stat-v">28.3%</span><span class="h-stat-l">LLA Prov 2025</span></div>
+    <div><span class="h-stat-v">47.4%</span><span class="h-stat-l">LLA Nac 2025 ⚠️</span></div>
+    <div><span class="h-stat-v">4,523 km²</span><span class="h-stat-l">Superficie</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌾 Identidad Territorial — El corazón agropecuario del noroeste</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="blk blk-k">
+        <h4>Polo Agropecuario de Alta Productividad</h4>
+        <p>Pehuajó está en el corazón de la pampa húmeda bonaerense. Su motor es el campo: soja, maíz, ganadería bovina y una cuenca lechera fuerte. Los rindes agrícolas de la zona están entre los más altos de la provincia. La ciudad funciona como nodo de servicios para un hinterland rural de gran escala.</p>
+      </div>
+      <div class="blk">
+        <h4>⚙️ Industria y Servicios para el Agro</h4>
+        <p>El casco urbano refleja la riqueza del campo: talleres de maquinaria agrícola pesada, concesionarias de tractores, acopios y empresas de logística cerealera. El empleo local está directamente vinculado al ciclo agropecuario — siembra, cosecha, almacenamiento, transporte. Una economía que crece con el campo.</p>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:9px">
+      <div class="blk">
+        <h4>🏥 Reforma Integral del Hospital Municipal 2026</h4>
+        <p>Inauguración de la nueva Área de Pediatría y renovación total de la UTI. Objetivo: consolidar al Hospital Municipal de Pehuajó como el centro de referencia más importante del noroeste bonaerense. El municipio más importante de la subregión fortaleciendo su capacidad sanitaria — un argumento de descentralización de la salud provincial.</p>
+      </div>
+      <div class="blk">
+        <h4>🌿 Complejo Ambiental — Cierre del basural</h4>
+        <p>Cierre definitivo del basural a cielo abierto e inauguración de un Complejo Ambiental moderno para el tratamiento de residuos. El hito ambiental más importante de la gestión. Modelo de gestión de residuos que puede replicarse en otros municipios del noroeste de la 4ª Sección.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Pablo Zurro (UxP) — ALIADO</div>
+  <div class="sec-body">
+    <p><strong>Pablo Zurro (UxP)</strong> — Uno de los intendentes peronistas más conocidos del interior bonaerense. Reelecto múltiples veces, Zurro tiene una base territorial sólida en Pehuajó y una agenda de gestión progresista que incluye becas estudiantiles, cultura en los barrios, transporte sanitario gratuito y obra pública. En 2023 ganó con 48.9% y en 2025 la categoría provincial PJ subió al 51.2% — una de las pocas victorias ampliadas del peronismo en el interior.</p>
+    <p>La tensión más relevante en el partido es el split entre la categoría provincial (PJ 51.2%, LLA 28.3%) y la nacional (LLA 47.4%, PJ 40.2%) — una diferencia de 11 puntos en el voto peronista. El liderazgo de Zurro ancla el voto provincial, pero el electorado rural vota diferente en la categoría nacional.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025 — PJ sólido en prov, presión fuerte en nac</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-neutral">
+        <div class="arc-year">2023 — Intendente</div>
+        <div class="arc-row"><span>PJ / UxP 🔵</span><span class="pj-win">48.9% (13,195)</span></div>
+        <div class="arc-row"><span>JxC</span><span class="jxc">40.3%</span></div>
+        <div class="arc-row"><span>LLA</span><span class="lla">10.8%</span></div>
+        <div class="arc-row"><span>Padrón</span><span class="grey">36,224</span></div>
+      </div>
+      <div class="arc-card arc-ok">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span>PJ / UxP ✅</span><span class="pj-win">51.2% (11,617)</span></div>
+        <div class="arc-row"><span>LLA</span><span class="lla">28.3% (6,426)</span></div>
+        <div class="arc-row"><span>Ventaja PJ</span><span style="color:#14532d;font-weight:800">+22.9 pts</span></div>
+        <div class="arc-row"><span>Padrón</span><span class="grey">36,856</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span>LLA ⚠️</span><span class="lla-win">47.4% (11,637)</span></div>
+        <div class="arc-row"><span>PJ / UxP</span><span class="pj">40.2% (9,854)</span></div>
+        <div class="arc-row"><span>Padrón</span><span class="grey">36,459</span></div>
+      </div>
+    </div>
+    <div class="alert alert-ok">
+      <div class="a-ttl">✅ El mejor resultado provincial del PJ en el noroeste 4ª Sección — 51.2%</div>
+      <div class="a-body">En la categoría provincial, Pehuajó es el mejor resultado del PJ en la zona: 51.2% y una ventaja de 22.9 puntos sobre LLA (28.3%). El intendente activo es el factor explicativo más potente. Una dinámica peronista sólida en la provincia — en la que Zurro tiene incidencia directa.</div>
+    </div>
+    <div class="alert alert-warn">
+      <div class="a-ttl">⚠️ En la nacional, el PJ cae 11 puntos — LLA lidera con 47.4%</div>
+      <div class="a-body">El split de 11 puntos entre el voto provincial (51.2%) y el nacional (40.2%) es el dato más relevante para la estrategia. El electorado que votó PJ en la provincial votó LLA en la nacional — el voto a Zurro no se transfiere automáticamente al partido en otras categorías. El trabajo de base provincial es la clave para sostener el 51.2% en el próximo ciclo.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📋 Programas Municipales Destacados</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="blk">
+        <h4>🎓 Becas Estudiantiles 2026</h4>
+        <p>El municipio blindó el presupuesto de becas ante la crisis económica. Miles de jóvenes pehuajenses acceden a educación superior con apoyo municipal directo. El intendente definió esta política como "la base de la justicia social" del distrito. El capital humano como inversión estratégica del interior.</p>
+      </div>
+      <div class="blk">
+        <h4>🚌 Transporte Sanitario Gratuito</h4>
+        <p>Servicio de traslado gratuito para pacientes con destinos programados en hospitales de la Ciudad de Buenos Aires. Una política de equidad real: el pehuajense que necesita atención de alta complejidad no tiene que pagar el traslado. Programa que llega a las familias con menos recursos del partido.</p>
+      </div>
+      <div class="blk">
+        <h4>🏘️ Plan de Viviendas — Barrio Centenario</h4>
+        <p>Sorteo de 21 unidades de vivienda social y urbanización de nuevos lotes con servicios en el Barrio Centenario. Programa continuo de acceso a la vivienda con impacto directo en familias del partido. Canal de llegada al electorado de sectores medios-bajos que necesita tierra y construcción.</p>
+      </div>
+      <div class="blk">
+        <h4>🎨 Cultura en los Barrios</h4>
+        <p>Talleristas y profesores municipales desplegados en comisiones de fomento, clubes y pueblos del interior (Mones Cazón, Juan José Paso). Más de 1.000 alumnos anuales. Formación artística gratuita en el territorio — no solo en la ciudad cabecera. Un programa que llega a donde ningún candidato provincial llega normalmente.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📋 Palancas · Visita · Estrategia</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="blk">
+        <h4>🤝 Zurro como anfitrión central</h4>
+        <p>El intendente es el activo político más valioso de Pehuajó. Con 51.2% en la provincial, tiene la base más sólida del noroeste de la 4ª Sección. Aparecer junto a Zurro transmite legitimidad territorial y continuidad de proyecto. La visita sin Zurro pierde la mitad del impacto.</p>
+      </div>
+      <div class="blk">
+        <h4>🌾 Agenda agroproductiva del noroeste</h4>
+        <p>Visita a tambo, acopio o maquinaria agrícola. Mensaje de política provincial concreta para la cadena agropecuaria del noroeste: crédito, caminos rurales, precio justo. El electorado rural es el que más se mueve entre provincial y nacional — y el que más necesita una agenda específica.</p>
+      </div>
+      <div class="blk">
+        <h4>🏥 Hospital y transporte sanitario</h4>
+        <p>El nuevo hospital de Pehuajó como nodo de referencia del noroeste. Mensaje: descentralización de la salud provincial — no todo pasa por Mar del Plata o CABA. El transporte sanitario gratuito es el programa más emotivo para las familias más vulnerables del partido.</p>
+      </div>
+      <div class="blk">
+        <h4>📊 Consolidar el 51.2% — sembrar en el electorado rural</h4>
+        <p>El split prov/nac muestra que el electorado agrario diferencia entre candidatos y partido. La clave para la próxima categoría provincial es conectar el voto de Zurro con el candidato provincial — haciendo visible la continuidad del proyecto peronista más allá del intendente.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>Pehuajó es el municipio más sólido del PJ en el noroeste de la 4ª Sección.</strong> Con 51.2% en la provincial y 22.9 puntos de ventaja sobre LLA (28.3%), el partido tiene un piso peronista robusto. El desafío es el split entre provincial (51.2% PJ) y nacional (47.4% LLA) — 11 puntos que muestran que el voto a Zurro no se transfiere automáticamente al partido en otras categorías.</p>
+  <p>La agenda de gestión de Zurro — becas, transporte sanitario, hospital, vivienda, cultura — es amplia y llega a múltiples segmentos del electorado. La visita provincial debe capitalizar esa agenda y hacer visible la articulación Municipio-Provincia.</p>
+  <p><strong>Visita recomendada:</strong> Inauguración de la nueva Pediatría del Hospital Municipal o recorrida del Complejo Ambiental. Zurro como anfitrión activo. Mensaje: "El peronismo que gestiona desde la base — Pehuajó como modelo del interior bonaerense."</p>
+</div>
+
+</body>
+</html>
