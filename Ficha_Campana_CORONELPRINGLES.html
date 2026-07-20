@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ficha de Campaña — CORONEL PRINGLES</title>
+<style>
+:root{--cl:#2e4057;--cl2:#1a2535;--cl3:#f0f2f5;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f3f4f7;color:#1a1a1a;font-size:13px;max-width:900px;margin:0 auto;padding:14px}
+.hdr{background:linear-gradient(135deg,#060c14 0%,#1a2535 40%,#2e4057 80%,#3e546f 100%);color:#fff;padding:28px 30px 22px;border-radius:var(--radius);margin-bottom:12px;position:relative;overflow:hidden}
+.hdr::before{content:'🏛️';position:absolute;right:-10px;bottom:-18px;font-size:10rem;opacity:.1}
+.h-over{font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.6;margin-bottom:5px}
+.h-nm{font-size:2.4rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.85rem;opacity:.7;margin-bottom:14px}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-size:.68rem;font-weight:700;padding:3px 11px;border-radius:20px;border:1px solid transparent}
+.badge-crit{background:rgba(124,58,237,.25);border-color:rgba(167,139,250,.4);color:#ddd6fe}
+.badge-op{background:rgba(220,38,38,.25);border-color:rgba(248,113,113,.4);color:#fca5a5}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:#fff;border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.07);overflow:hidden}
+.c-hdr{background:var(--cl);color:#fff;padding:7px 14px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px}
+.c-hdr-dark{background:var(--cl2)}
+.c-body{padding:12px 14px}
+.kv{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #eef0f4;font-size:.78rem}
+.kv:last-child{border-bottom:none}
+.kv-k{color:#6b7280}
+.kv-v{font-weight:700;color:#1a1a1a}
+.kv-pj{color:#15803d;font-weight:800}
+.kv-lla{color:#7c3aed;font-weight:800}
+.kv-jxc{color:#d97706;font-weight:800}
+.prog-list{list-style:none;padding:0}
+.prog-list li{padding:5px 0;border-bottom:1px solid #eef0f4;font-size:.78rem;line-height:1.5}
+.prog-list li:last-child{border-bottom:none}
+.prog-list li::before{content:"▸ ";color:var(--cl);font-weight:700}
+.alert-crit{background:#f5f3ff;border:1.5px solid #7c3aed;border-radius:8px;padding:8px 12px;font-size:.75rem;color:#3b0764;margin-top:8px}
+.alert-crit strong{color:#7c3aed}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.stat{background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 2px 8px rgba(0,0,0,.07);text-align:center}
+.stat-n{font-size:1.6rem;font-weight:900;color:var(--cl);display:block}
+.stat-l{font-size:.63rem;color:#6b7280;text-transform:uppercase;margin-top:2px}
+.full{grid-column:1/-1}
+p{font-size:.8rem;color:#374151;line-height:1.6;margin-bottom:8px}
+p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.card{box-shadow:none;break-inside:avoid}.hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="h-over">🏔️ Cluster SUR · 6ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="h-nm">CORONEL PRINGLES</div>
+  <div class="h-sub">Patrimonio Salamone · Agroganadera Mixta · Pringles Emprende · 107 tasas eliminadas</div>
+  <div class="badges">
+    <span class="badge badge-op">🔴 Opositor — Lisandro Matzkin (JxC)</span>
+    <span class="badge badge-crit">🟣 LLA GANÓ provincial 2025 (48.0% vs PJ 26.9%) — bastión LLA sur profundo</span>
+    <span class="badge">🏛️ Obras Salamone — identidad arquitectónica única</span>
+    <span class="badge">🐄 Ganadería cría/invernada + cosecha fina/gruesa</span>
+  </div>
+</div>
+
+<div class="stat-grid">
+  <div class="stat"><span class="stat-n">20,651</span><span class="stat-l">Padrón Electoral</span></div>
+  <div class="stat"><span class="stat-n">6ª</span><span class="stat-l">Sección Electoral</span></div>
+  <div class="stat"><span class="stat-n">107</span><span class="stat-l">tasas municipales eliminadas 2026</span></div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="c-hdr">Intendente</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Nombre</span><span class="kv-v">Lisandro Matzkin</span></div>
+      <div class="kv"><span class="kv-k">Fuerza política</span><span class="kv-v">Juntos por el Cambio</span></div>
+      <div class="kv"><span class="kv-k">Vínculo</span><span class="kv-v">Opositor (JxC)</span></div>
+      <div class="kv"><span class="kv-k">Sección</span><span class="kv-v">6ª Sección Electoral</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">Identidad Territorial</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Patrimonio</span><span class="kv-v">Obras Salamone — Palacio, Matadero, Plaza Pringles</span></div>
+      <div class="kv"><span class="kv-k">Economía</span><span class="kv-v">Ganadería cría/invernada + cosecha fina/gruesa</span></div>
+      <div class="kv"><span class="kv-k">Localidades</span><span class="kv-v">Indio Rico — talleres culturales en barrios</span></div>
+      <div class="kv"><span class="kv-k">Emprendimiento</span><span class="kv-v">50 microemprendimientos/año — Pringles Emprende</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="card">
+    <div class="c-hdr">2023 General</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">JxC ✅ (Matzkin)</span><span class="kv-jxc">54.8% (7,720)</span></div>
+      <div class="kv"><span class="kv-k">LLA</span><span class="kv-lla">19.2% (2,709)</span></div>
+      <div class="kv"><span class="kv-k">PJ</span><span class="kv-pj">22.1% (3,110)</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">14,080</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">2025 — Elec. Provincial</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">LLA 🟣</span><span class="kv-lla">48.0% (5,476)</span></div>
+      <div class="kv"><span class="kv-k">PJ</span><span class="kv-pj">26.9% (3,067)</span></div>
+      <div class="kv"><span class="kv-k">FIT</span><span class="kv-v">7.1% (814)</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">11,404</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">2025 — Elec. Nacional</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">LLA 🟣</span><span class="kv-lla">55.7% (6,520)</span></div>
+      <div class="kv"><span class="kv-k">PJ</span><span class="kv-pj">26.1% (3,052)</span></div>
+      <div class="kv"><span class="kv-k">FIT</span><span class="kv-v">4.6% (543)</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">11,701</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="alert-crit">
+  <strong>🟣 Bastión LLA sur profundo:</strong> En 2023, JxC dominó con 54.8%. En 2025 provincial, LLA capturó casi todo ese voto: 48.0% (5,476) vs PJ apenas 26.9% (3,067). En la nacional, LLA llegó al 55.7%. El PJ no creció (22.1% → 26.9% — solo 4 puntos) mientras el ex voto JxC fue masivamente a LLA. Pringles es un municipio donde el PJ parte de una base estructural baja y LLA consolidó la mayoría. El objetivo aquí es visibilidad y contacto social, no victoria electoral.
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="c-hdr">Identidad Profunda</div>
+    <div class="c-body">
+      <p>Coronel Pringles tiene algo que ningún otro municipio del sur bonaerense puede ofrecer: las obras de Francisco Salamone. El Palacio Municipal, el Matadero y la Plaza Juan Pascual Pringles son monumentos del funcionalismo monumental que el arquitecto construyó para los municipios del interior bonaerense en la década del '30. Esas obras atraen estudiantes de arquitectura, fotógrafos y turistas de todo el país — y le dan a Pringles una identidad cultural que va más allá de la economía agropecuaria cotidiana.</p>
+      <p>La economía real de Pringles es agroganadera mixta: cría e invernada de ganado, cosecha fina (trigo, girasol) y gruesa (soja, maíz). El campo mueve la economía de lunes a viernes — el Salamone es el fin de semana y el orgullo local. Junto a la economía del campo, una incipiente base de microemprendimientos apoyada por el programa municipal "Pringles Emprende": subsidios y créditos a tasa cero para compra de maquinarias, con 50 emprendimientos anuales formalizados y vinculados a ferias céntricas.</p>
+      <p>La gestión Matzkin (JxC) apostó a infraestructura y reforma tributaria: pavimentación de accesos a barrios, saneamiento, gestión integral de residuos con separación en origen asistida (40% de reducción de residuos a disposición final), y la reforma tributaria 2026 que eliminó 107 tasas y derechos municipales — la más ambiciosa simplificación tributaria del sur bonaerense.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr c-hdr-dark">Programas de Gestión (JxC-Matzkin)</div>
+    <div class="c-body">
+      <ul class="prog-list">
+        <li><strong>Plan Hábitat "Barrio de las Colectividades"</strong> — Finalización de complejo habitacional con urbanización completa: asfalto, iluminación LED y recuperación de espacios verdes. Integración urbana de zonas que eran terrenos baldíos.</li>
+        <li><strong>Cierre de Anillos de Pavimentación</strong> — Plan de obra pública para eliminar calles de tierra en accesos a barrios. Mejora de integración urbana y seguridad vial con nueva iluminación LED.</li>
+        <li><strong>GIRSU — Separación en Origen Asistida</strong> — Planta de tratamiento RSU modelo en la región. Promotores ambientales en los barrios lograron reducir en un 40% el volumen de basura a disposición final.</li>
+        <li><strong>Pringles Emprende</strong> — Subsidios y créditos a tasa cero para compra de maquinarias. 50 microemprendimientos anuales formalizados, integrados a ferias céntricas de comercialización.</li>
+        <li><strong>Talleres Culturales en Barrios</strong> — 30+ cursos gratuitos en sociedades de fomento e Indio Rico. Más de 600 vecinos de todas las edades accediendo a formación cultural sin moverse del barrio.</li>
+        <li><strong>Atención Periférica y CAPS</strong> — Equipos de enfermería y médicos itinerantes: 1,200+ consultas/mes en salitas barriales. Seguimiento de embarazo y vacunación sin colapsar el centro de salud principal.</li>
+        <li><strong>Reforma Tributaria 2026</strong> — Eliminación de 107 tasas y derechos municipales. La simplificación tributaria más ambiciosa del sur bonaerense — reducción directa de carga sobre comercio y vecinos.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card full">
+  <div class="c-hdr">Lectura Estratégica</div>
+  <div class="c-body">
+    <p><strong>Territorio estructuralmente difícil:</strong> El PJ tiene un piso bajo en Pringles (22% en 2023) y no creció significativamente (26.9% en 2025 provincial). El ex voto de JxC (54.8% en 2023) migró masivamente a LLA. El electorado de Pringles es agropecuario, conservador y con baja afinidad histórica al PJ. En 2027, el techo PJ en este municipio probablemente no supere el 30% en categoría provincial.</p>
+    <p><strong>La apuesta de las Obras Salamone:</strong> El patrimonio arquitectónico de Salamone es el único activo de identidad provincial que puede anclarse en Pringles con legitimidad transversal. Una visita al Palacio Municipal o al Matadero Salamone — con agenda de patrimonio bonaerense, restauración, turismo cultural del sur — es la escena que permite presencia sin confrontación política. "El PJ que cuida el patrimonio del interior" es un argumento que el elector conservador de Pringles puede escuchar sin resistencia.</p>
+    <p><strong>Microemprendimientos como argumento económico:</strong> "Pringles Emprende" es exactamente el tipo de política municipal que el PJ puede escalar a nivel provincial: crédito a tasa cero para compra de maquinarias, formalización y circuitos de comercialización. Una propuesta de ampliar ese modelo — con fondos provinciales, más municipios, más emprendedores — tiene llegada transversal incluso en electorado no PJ.</p>
+    <p><strong>La reforma tributaria de Matzkin:</strong> La eliminación de 107 tasas en 2026 es una señal política que el electorado de Pringles valora — es JxC/LLA el que la implementó. El PJ provincial no puede competir en ese argumento; tiene que diferenciar con servicios y presencia social (CAPS, talleres, vivienda) que la gestión JxC no prioriza igual.</p>
+  </div>
+</div>
+
+</body>
+</html>
