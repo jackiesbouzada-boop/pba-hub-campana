@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Chascomús — Narrativa Territorial</title>
+<style>
+:root{--primary:#1a0000;--accent:#8b3a3a;--light:#f5eeee;--border:#d4a0a0;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#2a0000;font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#0d0000 0%,#1a0000 40%,#4a1a1a 75%,#8b3a3a 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'🏞️';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.09}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-blue{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.pill-warn{background:rgba(180,130,0,.3);border-color:rgba(250,204,21,.5);color:#fde68a}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a0000,#4a1a1a);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#1a0000;line-height:1.65;margin-bottom:12px;border-left:4px solid #8b3a3a;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#1a0000;border-color:#1a0000;color:#fff}
+.card-dark h4{color:#f5b8b8 !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#1a0000;margin-bottom:6px;text-transform:uppercase}
+.card p{font-size:.78rem;color:#374151}
+.num-big{font-size:2rem;font-weight:900;color:#f5b8b8;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f5eeee;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.pj-v{color:#15803d;font-weight:800}
+.lla-v{color:#7c3aed;font-weight:800}
+.jxc-v{color:#d97706;font-weight:800}
+.close{background:linear-gradient(135deg,#1a0000,#4a1a1a);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#f5b8b8;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🏞️ Cluster SALADO · 5ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">CHASCOMÚS</div>
+  <div class="cv-sub">Laguna y democracia · PJ gana provincial · LLA se lleva la nacional · El split más extremo del SALADO sur</div>
+  <div class="cv-pills">
+    <span class="pill-blue">✅ Aliado — Javier Gastón (UxP)</span>
+    <span class="pill-warn">⚠️ PJ 32.2% prov / LLA 50% nac — 18 pts de split</span>
+    <span class="pill">🏞️ Polo turístico Ruta 2</span>
+    <span class="pill">🧬 INTECH biotecnología</span>
+    <span class="pill">🗳️ Km 0 de la Democracia</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏞️ Territorio: La laguna, el laboratorio y la cuna de la democracia</div>
+  <div class="sec-body">
+    <div class="lead">Chascomús concentra en 3,159 km² tres identidades que raramente conviven: es un polo turístico de primer nivel (la laguna a 100 km del AMBA), un centro científico con el INTECH como ancla biotecnológica, y la ciudad que dio al país a Raúl Alfonsín — el primer presidente constitucional post dictadura. Tres activos que el intendente Javier Gastón usa activamente en la narrativa de gestión.</div>
+    <p>La laguna Chascomús es uno de los pocos destinos turísticos de cercanía al AMBA que funciona durante todo el año. No tiene la estacionalidad de la costa atlántica — el turismo de fin de semana es constante, y los recursos que genera se redistribuyen en la economía local de manera más equilibrada. Hoteles, restaurantes, pesca deportiva, deportes náuticos y eventos culturales generan actividad permanente.</p>
+    <p>El INTECH (Instituto Tecnológico de Chascomús) es un activo diferencial del municipio en el interior bonaerense. Investigación en biotecnología agropecuaria y genética coloca a Chascomús en un mapa de conocimiento que pocos municipios de su tamaño pueden mostrar. La combinación laguna + ciencia + campo define una identidad territorial compleja y dinámica.</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">+100 km</span><span class="num-lbl">Del AMBA — turismo de cercanía permanente durante todo el año</span></div>
+        <p style="margin-top:8px">La laguna genera flujo constante de turismo. No es la costa atlántica: es un destino que no para en invierno. Eso da estabilidad económica al partido que la costa no puede ofrecer.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">60 ton</span><span class="num-lbl">Reciclables por mes — Cooperativas locales con "Chascomús Separa"</span></div>
+        <p style="margin-top:8px">El programa de separación en origen procesa 60 toneladas mensuales. Las cooperativas de trabajo que operan la planta generan salarios estables. Es gestión ambiental con impacto social directo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: PJ gana la provincia, LLA arrasa la nacional</div>
+  <div class="sec-body">
+    <div class="lead">El caso Chascomús es paradójico: el PJ gana la elección provincial 2025 con 32.2% sobre LLA 22.2% — una ventaja de 9.9 puntos y 2,109 votos — pero en la categoría nacional del mismo año, LLA obtiene el 50.0% frente al 31.3% del PJ. El mismo electorado votó diferente en categorías del mismo día de elección. Eso no se explica solo por el candidato — habla de algo más profundo en la relación entre el electorado y las distintas esferas de gobierno.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Evolución electoral</h4>
+        <div class="data-row"><span>2023 PJ — Gastón</span><span class="pj-v">46.9% (11,984)</span></div>
+        <div class="data-row"><span>2023 JxC</span><span class="jxc-v">41.9% (10,705)</span></div>
+        <div class="data-row"><span>2023 LLA</span><span class="lla-v">11.2% (2,875)</span></div>
+        <div class="data-row"><span>2025 Prov PJ ✅</span><span class="pj-v">32.2% (6,821)</span></div>
+        <div class="data-row"><span>2025 Prov LLA</span><span class="lla-v">22.2% (4,712)</span></div>
+        <div class="data-row"><span>2025 Nac LLA ⚠️</span><span class="lla-v">50.0% (11,423)</span></div>
+        <div class="data-row"><span>2025 Nac PJ</span><span class="pj-v">31.3% (7,153)</span></div>
+      </div>
+      <div class="card">
+        <h4>🔍 La anatomía del split</h4>
+        <p>El PJ cayó de 46.9% (2023) a 31.3% (nac 2025) — 15.6 puntos en dos años. LLA pasó de 11.2% a 50.0% en la misma categoría nacional — un salto de 38.8 puntos. Pero en la provincial, LLA solo llegó al 22.2%. La diferencia entre 22.2% y 50.0% para LLA según categoría muestra que el electorado de Chascomús vota con criterios distintos según el nivel de gobierno. Es el split más marcado del SALADO sur.</p>
+        <p>El margen provincial: 6,821 PJ vs 4,712 LLA = 2,109 votos. Es un colchón recuperable pero estrecho ante el crecimiento que LLA viene mostrando.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>🏞️ La laguna como escena de campaña</h4>
+        <p>El parque de la laguna concentra el mayor flujo de turismo de fin de semana de la región. Los eventos municipales — ferias de artesanos, festivales culturales — atraen a más de 150 vendedores y miles de visitantes. La visita al parque de la laguna junto a Gastón es la imagen más potente disponible en Chascomús: naturaleza, gestión y turismo popular como argumento.</p>
+      </div>
+      <div class="card">
+        <h4>🗳️ Alfonsín como puente transversal</h4>
+        <p>El programa "Chascomús Km 0 de la Democracia" es un activo que trasciende la grieta. Alfonsín fue el presidente que recuperó la democracia — una figura que genera respeto incluso en electorados que hoy no votan PJ. Aparecer en Chascomús vinculado a esa memoria es construir un argumento de estabilidad institucional que resuena con el electorado que fue a LLA como crítica al sistema pero que valora la democracia como conquista irrenunciable.</p>
+      </div>
+      <div class="card">
+        <h4>🧬 INTECH — ciencia y futuro productivo</h4>
+        <p>El INTECH es el argumento más específico que Chascomús tiene para una agenda de futuro. Un municipio que combina biotecnología agropecuaria con economía turística es un modelo de desarrollo diferente al de los municipios de monocultivo. La candidatura provincial con una propuesta de expansión de la investigación aplicada al agro tiene en Chascomús una audiencia específica.</p>
+      </div>
+      <div class="card">
+        <h4>♻️ Cooperativas y economía popular</h4>
+        <p>El programa de reciclaje con cooperativas de trabajo es el modelo de economía social más concreto de la gestión Gastón. 60 toneladas por mes, salarios estables para trabajadores locales, gestión ambiental con impacto directo. Es el tipo de argumento que el electorado popular de Chascomús valora — el Estado que genera empleo donde el mercado no llega.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>Chascomús tiene al PJ en una posición ambivalente: gana la provincial por 2,109 votos pero pierde la nacional por 4,270. El split de 18 puntos entre categorías es el más pronunciado del SALADO sur. Gastón sostiene un voto propio que el partido no puede reproducir en la categoría nacional.</p>
+  <p>La estrategia debe anclar la visita en los tres activos más fuertes del municipio: la laguna como escena (turismo popular, ferias, artesanos), la democracia como valor histórico (Alfonsín, memoria, institucionalidad) y la ciencia como futuro (INTECH, biotecnología, desarrollo productivo). Ninguno de esos tres argumentos es divisivo — todos conectan con el electorado de Chascomús más allá de la pertenencia partidaria.</p>
+  <p><strong>Mensaje recomendado:</strong> "Chascomús construyó sobre laguna, ciencia y memoria — la gestión que se ve en el partido es la gestión que queremos para la Provincia". Gastón activo, laguna como escena, Alfonsín como anclaje histórico, INTECH como argumento de futuro.</p>
+</div>
+
+</body>
+</html>
