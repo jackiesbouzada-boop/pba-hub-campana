@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tres Arroyos — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#1e3045;--primary-dark:#0d1f2e;--accent:#2e4057;--accent-light:#3d5570;--bg:#f0f2f5;--surface:#ffffff;--border:#c8d4e0;--text:#1a2535;--muted:#4a5d75;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+
+.hero{background:linear-gradient(135deg,#0d1f2e 0%,#1e3045 55%,#2e4057 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2.2rem;font-weight:900;letter-spacing:-.01em;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:14px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:4px}
+.badge-ok{display:inline-block;background:rgba(21,128,61,.3);color:#86efac;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(21,128,61,.4);letter-spacing:.5px;margin-left:6px;margin-bottom:4px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:10px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#93c5fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1e3045,#2e4a6a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.6;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1e3045;border-color:#1e3045;color:#fff}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#93c5fd}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--accent);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:var(--accent);display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1e3045,#2e4057);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800;color:var(--text)}
+.int-info .int-meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .int-desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#1e3a5f;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-ok{background:#f0fdf4;border-color:#86efac}
+.arc-warn{background:#fef9ef;border-color:#f5d77a}
+.arc-neutral{background:#f8fafc;border-color:var(--border)}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f0f2f5}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.arc-pj{color:#1d4ed8}
+.arc-pj-win{color:#15803d;background:#dcfce7;padding:1px 5px;border-radius:4px}
+.arc-lla{color:#7c3aed}
+.arc-jxc{color:#d97706}
+.arc-fit{color:#dc2626}
+.arc-vec{color:#065f46}
+.arc-grey{color:#374151}
+.arc-lla-win{color:#7c3aed;background:#f3e8ff;padding:1px 5px;border-radius:4px}
+
+.alert-box{border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-green{background:#f0fdf4;border:1.5px solid #86efac}
+.alert-green .a-ttl{color:#15803d}
+.alert-warn{background:#fef9ef;border:1.5px solid #fde68a}
+.alert-warn .a-ttl{color:#92400e}
+.alert-info{background:#eff6ff;border:1.5px solid #bfdbfe}
+.alert-info .a-ttl{color:#1e40af}
+.a-ttl{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.a-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:6px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1e3045,#2e4057);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px;background:#fff}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-body p:last-child{margin-bottom:0}
+.pal-access{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-gest{background:#dcfce7;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.acc-inst{background:#dbeafe;color:#1e40af}
+
+.prog-list{display:flex;flex-direction:column;gap:8px}
+.prog-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;gap:12px;align-items:flex-start}
+.prog-ico{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.prog-body h5{font-size:.78rem;font-weight:800;color:var(--primary);margin-bottom:3px}
+.prog-body p{font-size:.75rem;color:#374151;line-height:1.5}
+
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#f8fafc}
+.vis-num{background:var(--accent);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800;color:var(--text)}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.vis-tag{display:inline-block;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.tag-agro{background:#dcfce7;color:#15803d}
+.tag-edu{background:#dbeafe;color:#1e40af}
+.tag-tur{background:#fef3c7;color:#92400e}
+.tag-ind{background:#f0f2f5;color:#1e3045}
+
+.sint{background:linear-gradient(135deg,#0d1f2e,#1e3045);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#93c5fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}
+  .hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="h-cluster">🏔️ SUR &nbsp;|&nbsp; 6ª Sección Electoral</div>
+  <div class="h-name">TRES ARROYOS</div>
+  <div class="h-sub">Partido de Tres Arroyos · Buenos Aires · Potencia Triguera Nacional · Balnearios Claromecó · Reta · Orense</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-ok">🟢 PJ GANA PROVINCIAL 2025 — 40.8% vs 23.1%</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">54,792</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">62,426</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">5,927 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">40.8%</span><span class="h-stat-l">PJ 2025 Prov ✅</span></div>
+    <div class="h-stat"><span class="h-stat-v">23.1%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">48.5%</span><span class="h-stat-l">LLA 2025 Nacional</span></div>
+  </div>
+</div>
+
+<!-- IDENTIDAD -->
+<div class="sec">
+  <div class="sec-hdr">🌾 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>La CATA · La cooperativa que pesa más que el municipio</h4>
+        <p>Tres Arroyos es sinónimo de trigo de alta calidad. Su economía gira en torno a los acopios, las cooperativas agrícolas y los molinos harineros que agregan valor en origen. La <strong>Cooperativa Agrícola de Tres Arroyos (CATA)</strong> tiene más de 100 años de historia y factura más por año que el presupuesto municipal completo. La CATA no es un actor del partido — en muchos sentidos, es la columna vertebral de la economía local. Entender Tres Arroyos pasa por entender la cooperativa.</p>
+      </div>
+      <div class="blk">
+        <h4>Claromecó · Reta · Orense — La triple costa atlántica</h4>
+        <p>Tres Arroyos tiene tres balnearios atlánticos que funcionan con lógicas distintas: Claromecó es el más desarrollado (cabañas, gastronomía, pesca del pejerrey y la corvina negra), Reta es el más exclusivo y de menor escala, y Orense tiene perfil familiar. Juntos forman una oferta turística de temporada que dinamiza la economía de servicios durante el verano y genera un flujo estival de concursos de pesca que posiciona a Tres Arroyos como destino en toda la franja costera sur. El municipio lanzó en 2026 el plan estratégico "Costa Tres Arroyos" para profesionalizar estos servicios.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">CATA</span>
+        <span class="l">Cooperativa con 100+ años que factura más que el presupuesto municipal</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">1.000+</span>
+        <span class="l">Alumnos activos en el CRESTA — carreras universitarias gratis en el interior</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTENDENTE -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Pablo Humberto Garate</h3>
+        <div class="int-meta">Unión por la Patria &nbsp;·&nbsp; <span class="badge-pol badge-al-pol">ALIADO</span></div>
+        <div class="int-desc">Intendente de Tres Arroyos, uno de los pocos del interior bonaerense que sostuvo al PJ como primera fuerza en las elecciones legislativas de 2025 (40.8% vs 23.1% de LLA). La gestión Garate tiene un perfil productivo marcado: el Parque Industrial PITA como nodo de valor agregado en origen, el CRESTA como apuesta educativa vinculada a la industria local, y la Fiesta Provincial del Trigo como plataforma de negocios agropecuarios. Una gestión anclada en la identidad triguera del partido con apertura hacia el turismo costero y el sector PyME.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">🏭 PITA · Parque Industrial Tres Arroyos</div>
+        <div class="gest-txt">Ampliación de la zona de servicios y nuevas inversiones en procesamiento de granos y maquinaria agrícola en 2026. El PITA se consolida como nodo logístico clave que agrega valor en origen a la producción triguera del distrito — conectando cooperativas, molinos y manufactura en un solo polo.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🎓 CRESTA · Carreras universitarias gratis</div>
+        <div class="gest-txt">El Centro Regional de Estudios Superiores paga convenios con UBA, UNLP y UPSO para dictar carreras de ingeniería, administración y sistemas en Tres Arroyos. Más de 1.000 alumnos activos, de manera gratuita, con pasantías directas en las fábricas alimenticias y agroindustriales locales. El municipio como bisagra entre la universidad y la empresa.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🏖️ Costa Tres Arroyos · Plan Turístico 2026</div>
+        <div class="gest-txt">Plan estratégico para profesionalizar los servicios turísticos en Claromecó, Reta y Orense. Mejora de accesos, agua potable en zonas de crecimiento reciente y conectividad digital en las villas balnearias. El turismo costero como segunda economía del partido.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🌾 Fiesta Provincial del Trigo</div>
+        <div class="gest-txt">Conversión de la Fiesta Provincial del Trigo en una plataforma de negocios internacionales para el sector agroindustrial, además de su atractivo cultural. Exportando el partido como marca global del trigo bonaerense de calidad.</div>
+      </div>
+    </div>
+    <div class="gest-grid" style="margin-top:10px">
+      <div class="gest-item">
+        <div class="gest-label">💰 FOMEPRO 2026</div>
+        <div class="gest-txt">Fondo municipal de apoyo financiero a PyMEs y emprendedores con condiciones favorables y fondos circulares. Mecanismo de acceso al crédito para el tejido empresarial local sin intermediación del sistema bancario tradicional.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🔧 Escuela Municipal de Oficios</div>
+        <div class="gest-txt">Cursos intensivos y gratuitos con maquinaria real. Certifica cientos de operarios por año y gestiona una bolsa de empleo que conecta al graduado directamente con los gerentes de recursos humanos de las industrias locales. La formación con salida laboral garantizada.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025 — Peronismo sólido en lo provincial, split radical en lo nacional</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-neutral">
+        <div class="arc-year">2023 — Intendente (4 fuerzas)</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP 🔵</span><span class="arc-val arc-pj">34.7% (13,045)</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC</span><span class="arc-val arc-jxc">26.8% (10,080)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Vecinalismo</span><span class="arc-val arc-vec">25.2% (9,500)</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">11.7% (4,397)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">54,124</span></div>
+      </div>
+      <div class="arc-card arc-ok">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP ✅</span><span class="arc-val arc-pj-win">40.8% (12,291)</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">23.1% (6,975)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">1.8% (546)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">54,792</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">LLA ⚠️</span><span class="arc-val arc-lla-win">48.5% (15,915)</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">35.0% (11,487)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">3.8% (1,240)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">53,807</span></div>
+      </div>
+    </div>
+    <div class="alert-box alert-green">
+      <div class="a-ttl">✅ Dato positivo: PJ gana provincial por 17 puntos</div>
+      <div class="a-body">En la elección provincial legislativa de 2025, el PJ obtuvo 40.8% contra 23.1% de LLA — una ventaja de 17.7 puntos. Es una de las victorias peronistas más holgadas en el interior bonaerense ese año. El vecinalismo local que en 2023 tenía el 25.2% y JxC que tenía el 26.8% ambos se diluyeron en la elección proporcional; y la mayor parte de ese voto fue al PJ, no a LLA. Tres Arroyos es un distrito donde el peronismo sabe construir mayorías en las categorías provinciales.</div>
+    </div>
+    <div class="alert-box alert-warn">
+      <div class="a-ttl">⚠️ El split extraordinario: LLA +25 puntos entre provincial y nacional</div>
+      <div class="a-body">En la misma jornada electoral de 2025, LLA pasó del 23.1% (provincial) al 48.5% (nacional) — un salto de 25.4 puntos en el mismo día. Es uno de los splits provinciales-nacionales más grandes de toda la provincia. Los votantes de Tres Arroyos están eligiendo deliberadamente una cosa para la categoría provincial y otra para la nacional. El peronismo retiene el voto local; LLA capta el voto de orientación nacional. Un fenómeno de "voto cruzado" de escala excepcional.</div>
+    </div>
+    <div class="alert-box alert-info">
+      <div class="a-ttl">📊 Lectura estratégica: el peronismo es la fuerza local, LLA la nacional</div>
+      <div class="a-body">En Tres Arroyos, el electorado tiene una clara distinción entre lo que le pide a la política local (gestión, infraestructura, cooperativas) y lo que le pide a la política nacional (economía, tipo de cambio, gasto). El PJ es la respuesta al primer conjunto; LLA es la respuesta al segundo. Eso hace de Tres Arroyos un partido donde el peronismo puede seguir ganando legislativas provinciales mientras enfrenta desafíos mayores en las categorías nacionales.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COLOR LOCAL -->
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Economía &amp; Cultura</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🌾</div>
+        <div class="cl-tipo">Agroindustria</div>
+        <div class="cl-nm">Trigo · Cooperativa CATA</div>
+        <div class="cl-desc">Tres Arroyos es la capital del trigo bonaerense. La CATA (100 años de historia) factura más que el presupuesto municipal. Los molinos harineros agregan valor en origen — harina de alta calidad con destino a exportación y al mercado interno.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏖️</div>
+        <div class="cl-tipo">Turismo</div>
+        <div class="cl-nm">Claromecó · Reta · Orense</div>
+        <div class="cl-desc">Tres balnearios atlánticos con perfiles diferenciados. Claromecó con pesca del pejerrey y la corvina negra, Reta exclusivo y tranquilo, Orense familiar. Juntos generan una economía de turismo costero de temporada relevante para el partido.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏭</div>
+        <div class="cl-tipo">Industria</div>
+        <div class="cl-nm">PITA · Parque Industrial</div>
+        <div class="cl-desc">El Parque Industrial Tres Arroyos concentra procesamiento de granos, maquinaria agrícola y servicios logísticos. En 2026 se ampliaron las zonas de servicios — el PITA como nodo de valor agregado en origen para la producción triguera.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación</div>
+        <div class="cl-nm">CRESTA — Universidad en el interior</div>
+        <div class="cl-desc">Convenios con UBA, UNLP y UPSO para carreras universitarias gratuitas en el interior sur bonaerense. El CRESTA tiene 1.000+ alumnos cursando ingeniería, administración y sistemas, con pasantías directas en la industria local.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌾</div>
+        <div class="cl-tipo">Eventos</div>
+        <div class="cl-nm">Fiesta Provincial del Trigo</div>
+        <div class="cl-desc">Evento anual que posiciona a Tres Arroyos como la capital bonaerense del trigo y convoca a productores, acopiadores y operadores del sector a nivel nacional e internacional. Plataforma de negocios agroindustriales con identidad cultural propia.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🔧</div>
+        <div class="cl-tipo">Formación</div>
+        <div class="cl-nm">Escuela Municipal de Oficios</div>
+        <div class="cl-desc">Formación técnica con maquinaria real, certifica cientos de operarios por año. La bolsa de empleo conecta directamente al graduado con gerentes de RRHH de las industrias locales. Un modelo de formación con inserción laboral directa.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMAS -->
+<div class="sec">
+  <div class="sec-hdr">📋 Programas Municipales Destacados</div>
+  <div class="sec-body">
+    <div class="prog-list">
+      <div class="prog-item">
+        <div class="prog-ico">🏭</div>
+        <div class="prog-body">
+          <h5>PITA — Parque Industrial Tres Arroyos</h5>
+          <p>El PITA se consolida en 2026 como nodo logístico clave del sur bonaerense: procesamiento de granos, fabricación de maquinaria agrícola y servicios especializados. La ampliación de la zona de servicios atrae nuevas inversiones que agregan valor en origen a la producción triguera del distrito, reduciendo la dependencia del transporte a grandes centros urbanos.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🎓</div>
+        <div class="prog-body">
+          <h5>CRESTA — Centro Regional de Estudios Superiores</h5>
+          <p>El municipio paga convenios con UBA, UNLP y UPSO para que docentes universitarios dicten carreras en Tres Arroyos. Más de 1.000 alumnos activos cursando ingeniería, administración y sistemas de manera totalmente gratuita. Las pasantías cruzan directamente con las fábricas alimenticias y agroindustriales locales — formación con inserción garantizada en el mercado laboral local.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🏖️</div>
+        <div class="prog-body">
+          <h5>Plan Estratégico "Costa Tres Arroyos"</h5>
+          <p>Lanzado en 2026, busca profesionalizar los servicios turísticos en Claromecó, Reta y Orense. Mejora de accesos, provisión de agua potable en zonas de crecimiento y conectividad digital en las villas balnearias. Convierte el turismo costero de temporada en una economía más sostenida y competitiva.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🌾</div>
+        <div class="prog-body">
+          <h5>Fiesta Provincial del Trigo — Plataforma de Negocios</h5>
+          <p>Más allá de la dimensión cultural, la Fiesta del Trigo se convierte en plataforma de negocios internacionales para el sector agroindustrial: rondas de negocios, exhibiciones de maquinaria, presencia de exportadores y operadores del mercado de granos. Tres Arroyos como marca global del trigo bonaerense.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">💰</div>
+        <div class="prog-body">
+          <h5>FOMEPRO 2026 · Escuela Municipal de Oficios</h5>
+          <p>El FOMEPRO es el fondo de crédito municipal para PyMEs y emprendedores — fondos circulares a condiciones favorables. La Escuela de Oficios certifica operarios técnicos con maquinaria real y los conecta directamente con los empleadores locales. Dos programas de la misma política: financiamiento para los que crean trabajo y formación para los que lo buscan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PALANCAS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Palancas de Impacto</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🌾 CATA · Cooperativa</div>
+        </div>
+        <div class="pal-body">
+          <p>La CATA es el actor económico más importante del partido — con 100 años de historia y una facturación superior al presupuesto municipal. Es el canal de llegada al corazón productivo de Tres Arroyos: productores, acopiadores y empleados de la cooperativa como interlocutores centrales.</p>
+          <p><span class="pal-access acc-priv">Cooperativa / Privado</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🏭 PITA · Industria Local</div>
+        </div>
+        <div class="pal-body">
+          <p>El Parque Industrial concentra a los empleadores manufactureros del partido. Canal de llegada al sector industrial con intereses concretos en logística, infraestructura energética y acceso a mercados de exportación — la agenda productiva del sur bonaerense.</p>
+          <p><span class="pal-access acc-priv">Ingreso PRIVADO</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🎓 CRESTA · Universidad</div>
+        </div>
+        <div class="pal-body">
+          <p>El CRESTA es la demostración más visible de que el Estado puede llevar la universidad al interior. Canal de llegada con estudiantes y familias con expectativas concretas en educación y empleo — y con las empresas locales que reciben las pasantías.</p>
+          <p><span class="pal-access acc-inst">Educativo / Institucional</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS -->
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Sugeridas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">CATA — Cooperativa Agrícola de Tres Arroyos<span class="vis-tag tag-agro">COOPERATIVA</span></div>
+          <div class="vis-desc">100 años de historia, mayor facturación que el municipio. La visita al actor económico más importante del sur bonaerense — el corazón del modelo cooperativo triguero que el peronismo defiende como política de desarrollo productivo.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">CRESTA — Clases universitarias en el interior<span class="vis-tag tag-edu">EDUCACIÓN</span></div>
+          <div class="vis-desc">El centro donde la universidad va al estudiante, y no al revés. Visita durante una jornada de clases — mensaje concreto de inversión en educación gratuita y en oportunidades reales para los jóvenes del interior bonaerense profundo.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Fiesta Provincial del Trigo · PITA<span class="vis-tag tag-agro">AGROINDUSTRIA</span></div>
+          <div class="vis-desc">La fiesta que es plataforma de negocios y el parque industrial que procesa lo que el campo produce. Dos visitas que cuentan la misma historia: Tres Arroyos agrega valor en origen, no solo exporta granos a granel.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Claromecó — Balneario y pesca del pejerrey<span class="vis-tag tag-tur">TURISMO</span></div>
+          <div class="vis-desc">El balneario más conocido del partido con paisaje único y tradición pesquera. Visibilidad positiva en un entorno de turismo interior y calidad de vida — el lado de la identidad de Tres Arroyos que trasciende el trigo y llega al ciudadano de la región.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS -->
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>Tres Arroyos es el distrito del interior sur donde el peronismo está más sólido.</strong> En las legislativas provinciales de 2025, el PJ ganó con 40.8% contra 23.1% de LLA — 17 puntos de diferencia, una de las victorias más claras del interior bonaerense ese año. El intendente Garate tiene gestión concreta y proyectos que mostrar: el CRESTA, el PITA, la CATA, el plan turístico costero.</p>
+  <p>El dato más singular del partido es el split provincial-nacional: en el mismo día de 2025, LLA pasó de 23.1% a 48.5% entre la categoría provincial y la nacional. Los votantes de Tres Arroyos están haciendo una distinción muy clara entre qué esperan del Estado provincial (gestión local, infraestructura, cooperativas) y qué esperan del Estado nacional (economía, inflación, tipo de cambio). El peronismo gana el primer debate; LLA gana el segundo.</p>
+  <p><strong>La CATA es el punto de entrada más estratégico:</strong> una cooperativa centenaria con facturación superior al municipio es el actor más influyente del partido y el símbolo más poderoso del modelo productivo cooperativo que el peronismo defiende. En un distrito donde el PJ sigue siendo primera fuerza en lo provincial, consolidar ese terreno con argumentos de gestión concreta es la prioridad.</p>
+</div>
+
+</body>
+</html>

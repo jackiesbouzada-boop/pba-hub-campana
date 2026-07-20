@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tres Arroyos — Narrativa Territorial 2026</title>
+<style>
+:root{--sur-dark:#0d1f2e;--sur-mid:#1e3045;--sur-light:#2e4057;--sur-accent:#3d5570;--text:#1a2535;--muted:#4a5d75;--bg:#f0f2f5;--surface:#ffffff;--border:#c8d4e0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14.5px;max-width:860px;margin:0 auto;padding:0}
+
+.cover{background:linear-gradient(160deg,#0d1f2e 0%,#1e3045 50%,#2e4057 100%);min-height:220px;padding:40px 40px 36px;color:#fff;position:relative;overflow:hidden}
+.cover::before{content:'🌾';position:absolute;right:40px;top:30px;font-size:7rem;opacity:.1}
+.cv-cluster{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.6);margin-bottom:10px}
+.cv-title{font-size:2.8rem;font-weight:900;letter-spacing:-.02em;line-height:.95;margin-bottom:8px;color:#fff}
+.cv-sub{font-size:1rem;color:rgba(255,255,255,.7);font-weight:400;margin-bottom:18px}
+.cv-chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:5px 14px;border-radius:20px;font-size:.72rem;font-weight:800;letter-spacing:.5px;display:inline-flex;align-items:center;gap:5px}
+.chip-al{background:rgba(29,78,216,.3);color:#93c5fd;border:1px solid rgba(29,78,216,.4)}
+.chip-ok{background:rgba(21,128,61,.3);color:#86efac;border:1px solid rgba(21,128,61,.35)}
+.chip-warn{background:rgba(234,179,8,.25);color:#fde68a;border:1px solid rgba(234,179,8,.3)}
+
+.sec{background:var(--surface);border-bottom:1px solid var(--border);padding:32px 40px}
+.sec:last-child{border-bottom:none}
+.sec-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin-bottom:6px}
+.sec-title{font-size:1.45rem;font-weight:900;color:var(--sur-dark);line-height:1.1;margin-bottom:18px}
+.sec p{font-size:.88rem;color:#374151;line-height:1.75;margin-bottom:14px}
+.sec p:last-child{margin-bottom:0}
+.sec strong{color:var(--sur-dark);font-weight:800}
+
+.pull-quote{border-left:4px solid var(--sur-light);background:#f0f4f8;padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0;font-style:italic;color:#1e3045;font-size:.9rem;line-height:1.6;font-weight:600}
+
+.data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.d-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px;text-align:center}
+.d-card.ok{border-color:#86efac;background:#f0fdf4}
+.d-card.warn{border-color:#fde68a;background:#fef9ef}
+.d-card.neutral{border-color:var(--border);background:#f8fafc}
+.d-val{font-size:1.4rem;font-weight:900;display:block;margin-bottom:4px}
+.d-card.ok .d-val{color:#15803d}
+.d-card.warn .d-val{color:#92400e}
+.d-card.neutral .d-val{color:var(--sur-dark)}
+.d-lbl{font-size:.67rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+
+.timeline{display:flex;flex-direction:column;gap:0;margin:18px 0}
+.tl-item{display:flex;gap:20px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border)}
+.tl-item:last-child{border-bottom:none}
+.tl-year{width:60px;flex-shrink:0;font-size:.75rem;font-weight:900;color:#fff;background:var(--sur-mid);border-radius:6px;padding:5px 8px;text-align:center}
+.tl-content h4{font-size:.83rem;font-weight:800;color:var(--sur-dark);margin-bottom:6px}
+.tl-content p{font-size:.8rem;color:#374151;line-height:1.6;margin-bottom:0}
+.tl-result{display:inline-block;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.res-ok{background:#dcfce7;color:#15803d}
+.res-warn{background:#fef3c7;color:#92400e}
+.res-mixed{background:#eff6ff;color:#1e40af}
+
+.prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.prog{border:1.5px solid var(--border);border-radius:8px;padding:14px 16px}
+.prog h4{font-size:.78rem;font-weight:800;color:var(--sur-dark);margin-bottom:6px}
+.prog p{font-size:.77rem;color:#374151;line-height:1.55}
+
+.close-box{background:linear-gradient(135deg,#0d1f2e,#1e3045);border-radius:8px;padding:24px 26px;color:#fff;margin-top:18px}
+.close-box h4{font-size:.9rem;font-weight:800;color:#93c5fd;margin-bottom:12px}
+.close-box p{font-size:.83rem;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:10px}
+.close-box p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;font-size:12px}
+  .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .close-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sec{break-inside:avoid}
+  @page{size:A4;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cv-cluster">🏔️ SUR · 6ª Sección Electoral · Buenos Aires</div>
+  <div class="cv-title">TRES<br>ARROYOS</div>
+  <div class="cv-sub">Narrativa Territorial 2026 — El trigo, el mar y la universidad del interior</div>
+  <div class="cv-chips">
+    <span class="chip chip-al">✅ Aliado UxP · Pablo Garate</span>
+    <span class="chip chip-ok">🟢 PJ gana provincial 2025 +17 pts</span>
+    <span class="chip chip-warn">⚠️ LLA 48.5% nacional en misma jornada</span>
+  </div>
+</div>
+
+<!-- SECCIÓN 1: EL TERRITORIO -->
+<div class="sec">
+  <div class="sec-label">01 — Territorio</div>
+  <div class="sec-title">La potencia triguera del sur bonaerense</div>
+
+  <p>Tres Arroyos es uno de los partidos más extensos del sur bonaerense — 5.927 km² que van del pampa triguera profunda a la costa atlántica. Esa geografía dual es también una identidad económica dual: el campo que produce trigo de alta calidad y el mar que atrae turistas de la región. Pocos partidos en la provincia tienen dos economías tan distintas y complementarias en su territorio.</p>
+
+  <p>La economía del trigo es la principal. Tres Arroyos se autodefine como <strong>Potencia Triguera Nacional</strong> — no es un eslogan sino una realidad objetiva. El partido concentra una cadena completa: el productor en el campo, el acopiador en el galpón, el molino harinero que produce con destino a exportación y al mercado interno. El valor agregado no sale del partido — se procesa localmente y eso le da una base económica más robusta que la de los distritos que solo exportan granos en bruto.</p>
+
+  <div class="pull-quote">"La Cooperativa Agrícola de Tres Arroyos (CATA) tiene más de 100 años de historia y factura por año más de lo que vale el presupuesto municipal completo. En Tres Arroyos, el actor económico más poderoso no es una empresa privada ni el Estado — es la cooperativa de sus productores."</div>
+
+  <p>La CATA es el caso más llamativo de poder cooperativo en el sur bonaerense. Una cooperativa centenaria que factura más que el municipio no es solo un dato económico — es un dato político. Cualquier interlocución con el partido pasa inevitablemente por los socios, los directivos y los empleados de la CATA. Entender Tres Arroyos es entender la cooperativa.</p>
+
+  <p>La costa atlántica tiene otra lógica. <strong>Claromecó, Reta y Orense</strong> son tres balnearios con perfil diferenciado: Claromecó el más desarrollado, con gastronomía, alojamiento y pesca del pejerrey y la corvina negra; Reta exclusivo y tranquilo; Orense más familiar y de menor escala. Juntos generan una economía de turismo de temporada que dinamiza los servicios y posiciona a Tres Arroyos como destino costero del interior sur bonaerense.</p>
+</div>
+
+<!-- SECCIÓN 2: LA GESTIÓN -->
+<div class="sec">
+  <div class="sec-label">02 — Gestión</div>
+  <div class="sec-title">El intendente que apuesta por la universidad en el campo</div>
+
+  <p>Pablo Humberto Garate tiene una gestión con perfil productivo y educativo. No es la gestión de la obra visible (aunque el PITA y el plan costero tienen componentes físicos concretos), sino la gestión de la institución que resuelve un problema estructural. El CRESTA es el mejor ejemplo de esa lógica.</p>
+
+  <p>El <strong>Centro Regional de Estudios Superiores (CRESTA)</strong> paga convenios con la UBA, la UNLP y la UPSO para que docentes universitarios viajen a Tres Arroyos y dicten carreras de ingeniería, administración y sistemas. Más de 1.000 alumnos activos. Todo gratuito. Las pasantías se articulan directamente con las fábricas alimenticias y agroindustriales locales. El resultado: un joven de Tres Arroyos puede cursar una carrera universitaria de calidad sin mudarse a Buenos Aires o a Bahía Blanca, y cuando se gradúa, hay industria local que lo espera. Es el modelo de educación como política de arraigo al territorio.</p>
+
+  <div class="prog-grid">
+    <div class="prog">
+      <h4>🏭 PITA — Parque Industrial</h4>
+      <p>El PITA se amplió en 2026 con nuevas zonas de servicios. Concentra procesamiento de granos, fabricación de maquinaria agrícola y logística especializada. Nodo de valor agregado en origen para la producción triguera — reduce la dependencia de grandes centros urbanos.</p>
+    </div>
+    <div class="prog">
+      <h4>🎓 CRESTA — Universidad local</h4>
+      <p>Convenios con UBA, UNLP y UPSO. 1.000+ alumnos. Carreras de ingeniería, administración y sistemas. Gratuito. Pasantías directas en la industria local. El municipio como bisagra entre la universidad y la empresa del interior bonaerense.</p>
+    </div>
+    <div class="prog">
+      <h4>🏖️ Costa Tres Arroyos</h4>
+      <p>Plan estratégico 2026 para Claromecó, Reta y Orense. Mejora de accesos, agua potable en zonas de crecimiento y conectividad digital en las villas balnearias. El turismo costero como segunda economía del partido, más profesionalizada.</p>
+    </div>
+    <div class="prog">
+      <h4>🔧 Escuela de Oficios · FOMEPRO</h4>
+      <p>La Escuela Municipal de Oficios forma con maquinaria real y conecta directamente con los empleadores. El FOMEPRO 2026 es el fondo de crédito municipal para PyMEs. Dos instrumentos de la misma política: financiar los que crean trabajo y formar los que lo buscan.</p>
+    </div>
+  </div>
+
+  <p>La <strong>Fiesta Provincial del Trigo</strong> es otro gesto de la misma filosofía de gestión: convertir un evento cultural en una plataforma de negocios internacionales para el sector agroindustrial. Rondas de negocios, exhibiciones de maquinaria, operadores del mercado de granos. Tres Arroyos exportando su identidad como la capital bonaerense del trigo.</p>
+</div>
+
+<!-- SECCIÓN 3: MAPA ELECTORAL -->
+<div class="sec">
+  <div class="sec-label">03 — Mapa Electoral</div>
+  <div class="sec-title">El split más grande del sur bonaerense: 25 puntos en la misma jornada</div>
+
+  <p>El dato electoral más relevante de Tres Arroyos en 2025 no es lo que pasó en la elección provincial — es la brecha entre lo que pasó en la provincial y lo que pasó en la nacional el mismo día.</p>
+
+  <div class="data-grid">
+    <div class="d-card ok">
+      <span class="d-val">40.8%</span>
+      <span class="d-lbl">PJ 2025 Provincial — 1° lugar con 17 pts de ventaja</span>
+    </div>
+    <div class="d-card warn">
+      <span class="d-val">48.5%</span>
+      <span class="d-lbl">LLA 2025 Nacional — Primera fuerza con 13 pts sobre PJ</span>
+    </div>
+    <div class="d-card neutral">
+      <span class="d-val">+25 pts</span>
+      <span class="d-lbl">Split LLA entre provincial y nacional — el mismo día</span>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">2023</div>
+      <div class="tl-content">
+        <div class="tl-result res-ok">PJ GANA INTENDENCIA</div>
+        <h4>Fragmentación alta — PJ con 34.7% sobre 4 fuerzas</h4>
+        <p>PJ 34.7% (13.045 votos), JxC 26.8%, vecinalismo 25.2%, LLA 11.7%. Una victoria peronista sobre un escenario muy fragmentado — JxC, el vecinalismo local y LLA casi empatan entre los tres con 63% del voto. En ese escenario, el 34.7% alcanza para ganar la intendencia. LLA arranca en Tres Arroyos con solo el 11.7% — el distrito parece tranquilo para el peronismo.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2025<br>Prov</div>
+      <div class="tl-content">
+        <div class="tl-result res-ok">PJ GANA CON AMPLITUD</div>
+        <h4>PJ al 40.8% — LLA queda en 23.1% provincial</h4>
+        <p>En la categoría provincial legislativa, el PJ sube de 34.7% a 40.8% — seis puntos más que en 2023. JxC y el vecinalismo se disuelven como fuerzas autónomas y una parte importante de su voto fue al PJ, no a LLA. Tres Arroyos es uno de los mejores resultados peronistas en el interior bonaerense en 2025 para categorías provinciales. El PJ gana por 17.7 puntos. Es un distrito donde el peronismo sigue siendo primera fuerza clara en la política local.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2025<br>Nac</div>
+      <div class="tl-content">
+        <div class="tl-result res-warn">LLA GANA NACIONAL</div>
+        <h4>LLA salta a 48.5% — PJ cae a 35.0%</h4>
+        <p>En la misma jornada electoral, en la categoría nacional de diputados, LLA pasa de 23.1% (provincial) a 48.5% — una diferencia de 25.4 puntos en el mismo día. El PJ pasa de 40.8% a 35.0%. Los electores de Tres Arroyos están eligiendo deliberadamente una cosa diferente para la categoría nacional. No es desinformación, no es confusión — es una decisión política consciente de voto cruzado. El split más notable del sur bonaerense en 2025.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-quote">"Los votantes de Tres Arroyos tienen una respuesta peronista para la política local y una respuesta libertaria para la política nacional. Son dos preguntas distintas con dos respuestas distintas — y el electorado lo sabe perfectamente."</div>
+
+  <p>La lectura de fondo es que en Tres Arroyos hay un electorado que distingue entre dos tipos de demandas. Para la gestión cotidiana — las cooperativas, el parque industrial, el CRESTA, el transporte — el PJ es la respuesta. Para la macro — inflación, tipo de cambio, gasto público — LLA es la respuesta. Son planos distintos y el voto cruzado los refleja con precisión. El peronismo puede seguir ganando lo local mientras LLA gana lo nacional.</p>
+</div>
+
+<!-- SECCIÓN 4: EJES ESTRATÉGICOS -->
+<div class="sec">
+  <div class="sec-label">04 — Ejes Estratégicos</div>
+  <div class="sec-title">Tres entradas concretas al partido</div>
+
+  <p>La fortaleza de Tres Arroyos para el peronismo provincial es que el distrito todavía está ganado a nivel local. El piso electoral provincial es sólido. La tarea no es recuperar terreno perdido sino consolidar lo que ya está y construir el relato que conecta la gestión local con la agenda provincial.</p>
+
+  <p><strong>La CATA como palanca política.</strong> Llegar a Tres Arroyos sin pasar por la cooperativa es llegar a medias. La CATA tiene 100 años de presencia en el partido, una estructura de socios que cubre toda la geografía productiva y una capacidad de convocatoria que ningún partido político tiene. Es la institución que más convoca en el partido. Hablar con los directivos de la CATA, aparecer en su estructura, defender el cooperativismo como modelo — es la entrada más eficiente al corazón productivo del distrito.</p>
+
+  <p><strong>El CRESTA como demostración de lo que hace el Estado provincial.</strong> 1.000 jóvenes cursando universidad gratis en el interior bonaerense, con pasantías en la industria local. Es el ejemplo más concreto de por qué la política provincial importa. El CRESTA no existe sin el municipio que paga los convenios y sin el Estado que respalde ese modelo. Es el argumento más fácil de defender frente a un electorado que tiene hijos, sobrinos o vecinos cursando ahí.</p>
+
+  <p><strong>La Fiesta del Trigo y el PITA como escaparate productivo.</strong> La fiesta que es plataforma de negocios y el parque industrial que agrega valor en origen narran juntos la misma historia: Tres Arroyos no solo produce, procesa y exporta. El trigo bonaerense de calidad tiene nombre: Tres Arroyos. Ese posicionamiento como capital productiva del sur bonaerense es activo político y también activo económico.</p>
+
+  <div class="close-box">
+    <h4>📌 Tres Arroyos en síntesis</h4>
+    <p>Es el partido del sur donde el peronismo está más cómodo. La victoria provincial de 2025 por 17 puntos es un resultado de primer nivel en el interior bonaerense. La gestión Garate tiene proyectos con nombre y resultado — el CRESTA, el PITA, la CATA, el plan costero.</p>
+    <p>El único punto de tensión es el split de 25 puntos entre provincial y nacional en la misma jornada: una parte del electorado de Tres Arroyos tiene una preferencia peronista para lo local y una preferencia libertaria para lo nacional. Esa tensión no amenaza la gestión local a corto plazo — pero es la señal que el peronismo tiene que leer con atención de cara al ciclo electoral siguiente.</p>
+    <p>La estrategia es sencilla: consolidar el piso de apoyo local — la CATA, el CRESTA, el sector productivo — mientras se construye un argumento provincial concreto que conecte la gestión de Garate con el proyecto político más amplio. Tres Arroyos es un partido ganado; hay que mantenerlo.</p>
+  </div>
+</div>
+
+</body>
+</html>
