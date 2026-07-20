@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Baradero — Narrativa Territorial</title>
+<style>
+:root{--primary:#0d3a1e;--accent:#1d6b3e;--light:#e8f5ee;--border:#7ec8a0;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#0d2e17;font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#001a0d 0%,#0d3a1e 40%,#155c30 75%,#1d6b3e 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'🏭';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.09}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-blue{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.pill-warn{background:rgba(180,130,0,.3);border-color:rgba(250,204,21,.5);color:#fde68a}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#0d3a1e,#1d6b3e);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#0d3a1e;line-height:1.65;margin-bottom:12px;border-left:4px solid #1d6b3e;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#0d3a1e;border-color:#0d3a1e;color:#fff}
+.card-dark h4{color:#a7f3c0 !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#0d3a1e;margin-bottom:6px;text-transform:uppercase}
+.card p{font-size:.78rem;color:#374151}
+.num-big{font-size:2rem;font-weight:900;color:#a7f3c0;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #e8f5ee;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.pj-v{color:#15803d;font-weight:800}
+.lla-v{color:#7c3aed;font-weight:800}
+.jxc-v{color:#d97706;font-weight:800}
+.close{background:linear-gradient(135deg,#0d3a1e,#1d6b3e);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#a7f3c0;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🏭 Cluster CORREDOR INDUSTRIAL NORTE · 2ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">BARADERO</div>
+  <div class="cv-sub">La ciudad más antigua de PBA · Ruta 9 · Toyota · Puerto · 291 votos de margen</div>
+  <div class="cv-pills">
+    <span class="pill-blue">✅ Aliado — Esteban Sanzio (UxP)</span>
+    <span class="pill-warn">⚠️ 291 votos de margen en la nacional 2025</span>
+    <span class="pill">🏭 Polo logístico e industrial Ruta 9</span>
+    <span class="pill">🏛️ Ciudad más antigua de PBA — herencia suiza</span>
+    <span class="pill">🌊 Costanera — Río Baradero</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ Territorio: la más antigua y la más industrial</div>
+  <div class="sec-body">
+    <div class="lead">Baradero tiene una paradoja territorial que define todo: es la ciudad más antigua de la Provincia de Buenos Aires y al mismo tiempo un nodo logístico e industrial de primer nivel en el corredor Ruta 9. La herencia suiza del siglo XIX convive con las terminales portuarias privadas y el polo automotriz. No es una identidad que se eligió — es una que se fue acumulando sobre el eje fluvial-caminero más productivo del país.</div>
+    <p>El corredor Ruta 9 entre Buenos Aires y Rosario es la columna vertebral industrial del país. Zárate tiene las plantas de papel y aluminio. Campana tiene la refinería. San Nicolás tiene el acero. Baradero ocupa el espacio del medio: logística, autopartes, proveedores de primer y segundo nivel de Toyota, y la cadena alimenticia de BRF (Brasil Foods). Las terminales portuarias sobre el Paraná le dan acceso directo a exportaciones sin pasar por el Puerto de Buenos Aires.</p>
+    <p>Al mismo tiempo, el Río Baradero — tributario del Paraná que atraviesa el partido — es la postal turística del municipio. La obra de costanera que transformó kilómetros de ribera en espacio público es el proyecto de gestión más visible y más fotografiado de la administración Sanzio. Baradero Rock y los festivales de folklore son las excusas culturales que convierten a la ciudad en destino de escapada del AMBA en cualquier estación del año.</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">1ª</span><span class="num-lbl">Ciudad más antigua de la Provincia de Buenos Aires</span></div>
+        <p style="margin-top:8px">Un título histórico que le da identidad patrimonial y turística diferencial. La herencia suiza — arquitectura, gastronomía — es el sello que distingue a Baradero de los otros municipios del corredor industrial norte.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">291</span><span class="num-lbl">Votos de diferencia en la categoría nacional 2025</span></div>
+        <p style="margin-top:8px">El margen más angosto de toda la trayectoria reciente del PJ en Baradero. En 2023 Sanzio ganó por 37 puntos. En 2025 la distancia cayó a 1.4 puntos. La señal es clara: el electorado del corredor industrial se está moviendo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: El derrumbe del margen</div>
+  <div class="sec-body">
+    <div class="lead">La historia electoral de Baradero es un cuento de dos momentos. En 2023, Esteban Sanzio aplastó la elección con 55.7% — ventaja de 37 puntos sobre LLA (18.7%) en un municipio donde el peronismo tiene raíces profundas en el sector industrial y en la tradición sindical del corredor fluvial. En 2025, en la categoría nacional, el escenario cambió radicalmente: 42.5% PJ vs 41.1% LLA. 291 votos sobre 20,712 emitidos. Una elección resuelta por el 1.4%.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Evolución electoral</h4>
+        <div class="data-row"><span>2023 PJ — Sanzio</span><span class="pj-v">55.7% (12,618)</span></div>
+        <div class="data-row"><span>2023 JxC</span><span class="jxc-v">16.7% (3,779)</span></div>
+        <div class="data-row"><span>2023 LLA</span><span class="lla-v">18.7% (4,232)</span></div>
+        <div class="data-row"><span>2025 Nac PJ ✅</span><span class="pj-v">42.5% (8,806)</span></div>
+        <div class="data-row"><span>2025 Nac LLA ⚠️</span><span class="lla-v">41.1% (8,515)</span></div>
+      </div>
+      <div class="card">
+        <h4>🔍 ¿Por qué se cayó el margen?</h4>
+        <p>El electorado técnico y joven del corredor industrial — mecánicos, logísticos, empleados de autopartes — se movió hacia LLA en la categoría nacional. No es un fenómeno exclusivo de Baradero: ocurre en todo el corredor Zárate-Campana-San Nicolás. El trabajador industrial no es necesariamente peronista por identidad; es pragmático por salario.</p>
+        <p>Lo que sostuvo al PJ en los 291 votos de ventaja fue la base sindical más tradicional (los trabajadores de mayor antigüedad) y el electorado rural del interior del partido. Sin Sanzio como nombre en la boleta, el piso peronista en la nacional es exactamente eso: un piso, no un techo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>🔧 "Baradero Industrial" — el argumento para el trabajador joven</h4>
+        <p>El programa de formación técnica en alianza con Toyota, BRF y las plantas del corredor es el argumento más directo para el segmento que más se movió hacia LLA. Un técnico en autopartes que sabe que su empleo depende de una política provincial e industrial tiene un vínculo con el Estado que el discurso de la motosierra no puede cortar fácilmente. Visibilizar esa cadena de formación-empleo-empresa es la política.</p>
+      </div>
+      <div class="card">
+        <h4>🏥 Hospital que resuelve — el Estado presente en Ruta 9</h4>
+        <p>La reducción del 40% en traslados del Hospital Lino Piñeiro es un dato concreto con impacto directo en familias del partido. En un municipio sobre Ruta 9 con alta accidentalidad, la imagen del hospital que resuelve traumas in situ — sin derivar a San Nicolás o Zárate — es el tipo de gestión visible que genera adhesión transversal. Una visita al hospital con Sanzio refuerza ese mensaje.</p>
+      </div>
+      <div class="card">
+        <h4>🌊 Costanera y Festival — la identidad que no vende LLA</h4>
+        <p>La costanera del Río Baradero es el activo más inmediatamente fotogénico del partido. La combinación de obra de infraestructura (luminarias, asfalto, acceso al río) y programación cultural (Baradero Rock, Folklore) generó un espacio de identidad local que no tiene argumento fácil desde la oposición. Es peronismo concreto: transformar el borde del río en espacio público para todos.</p>
+      </div>
+      <div class="card">
+        <h4>🏛️ Ciudad más antigua — la historia como argumento de presente</h4>
+        <p>La identidad histórica de Baradero — la más antigua de la Provincia, la herencia suiza, el patrimonio cultural — es el diferenciador que separa a este partido de cualquier otro municipio del corredor industrial. Una visita con recorrida histórica por el casco fundacional tiene potencia simbólica: la provincia que honra sus orígenes mientras construye su industria de exportación.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>Baradero es el municipio del corredor industrial donde el PJ todavía gana la categoría nacional — por 291 votos. Eso lo convierte en el distrito donde el trabajo territorial tiene mayor retorno marginal: cada votante recuperado en el segmento técnico-industrial es un voto que en 2027 puede ser la diferencia.</p>
+  <p>Sanzio es un aliado con capacidad de movilización y gestión demostrada. La costanera, el hospital y el polo industrial son tres ejes de visita con imagen diferencial: río, salud y trabajo. El mensaje para el electorado del corredor no puede ser solo identitario — tiene que ser concreto: formación técnica, empleo calificado, hospital que funciona.</p>
+  <p><strong>Mensaje recomendado:</strong> "El corredor que produce, forma y cuida — industria con identidad". Sanzio activo, Hospital Lino Piñeiro como obra visible, costanera como espacio de ciudad construido por la gestión. Baradero no se pierde con discurso provincial: se gana con gestión local y vínculo con el sector industrial que LLA no puede ofrecer.</p>
+</div>
+
+</body>
+</html>

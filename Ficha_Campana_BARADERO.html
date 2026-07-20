@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ficha de Campaña — Baradero</title>
+<style>
+:root{--prim:#0d3a1e;--acc:#1d6b3e;--light:#e8f5ee;--border:#7ec8a0;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#d8eee1;color:#0d2e17;font-size:13px;max-width:900px;margin:0 auto;padding:14px}
+.fich-hero{background:linear-gradient(135deg,#001a0d 0%,#0d3a1e 45%,#155c30 80%,#1d6b3e 100%);color:#fff;border-radius:var(--radius);padding:26px 28px 22px;margin-bottom:12px;position:relative;overflow:hidden}
+.fich-hero::before{content:'🏭';position:absolute;right:-10px;bottom:-18px;font-size:10rem;opacity:.09}
+.fh-over{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;opacity:.6;margin-bottom:5px}
+.fich-hero h1{font-size:2.2rem;font-weight:900;line-height:1;margin-bottom:3px;text-transform:uppercase}
+.fh-sub{font-size:.85rem;opacity:.72;margin-bottom:14px;font-style:italic}
+.fh-tags{display:flex;flex-wrap:wrap;gap:6px}
+.fh-tag{font-size:.66rem;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff}
+.badge-warn{background:rgba(180,130,0,.35);border-color:rgba(250,204,21,.5);color:#fde68a}
+.badge-al{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:12px 14px}
+.card-dark{background:var(--prim);border-color:var(--prim);color:#fff}
+.card-dark .c-lbl{color:rgba(255,255,255,.65)}
+.card-dark .c-val{color:#fff}
+.card-dark h4{color:#a7f3c0}
+.c-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;color:#1d6b3e;letter-spacing:.5px;margin-bottom:3px}
+.c-val{font-size:1.5rem;font-weight:900;color:var(--prim);line-height:1}
+.c-note{font-size:.69rem;color:#666;margin-top:3px;line-height:1.4}
+.sec-hdr{background:var(--prim);color:#fff;border-radius:7px 7px 0 0;padding:8px 14px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 7px 7px;padding:14px;margin-bottom:10px}
+.prog-row{display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid #e8f5ee}
+.prog-row:last-child{border-bottom:none}
+.prog-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+.prog-body h4{font-size:.72rem;font-weight:800;color:var(--prim);margin-bottom:2px;text-transform:uppercase}
+.prog-body p{font-size:.76rem;color:#374151;line-height:1.5}
+.elec-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #e8f5ee;font-size:.76rem}
+.elec-row:last-child{border-bottom:none}
+.v-pj{color:#15803d;font-weight:800}
+.v-lla{color:#7c3aed;font-weight:800}
+.v-jxc{color:#d97706;font-weight:800}
+.bar-wrap{margin:6px 0}
+.bar-lbl{display:flex;justify-content:space-between;font-size:.66rem;margin-bottom:2px;color:#555}
+.bar{height:8px;border-radius:4px;background:#e5e7eb;overflow:hidden}
+.bar-fill-pj{height:100%;background:#16a34a;border-radius:4px}
+.bar-fill-lla{height:100%;background:#7c3aed;border-radius:4px}
+.bar-fill-jxc{height:100%;background:#d97706;border-radius:4px}
+.alert-box{background:#fff8e1;border:1.5px solid #f9a825;border-radius:7px;padding:10px 13px;margin-bottom:10px}
+.alert-box p{font-size:.76rem;color:#5a3e00;line-height:1.55}
+.alert-box strong{color:#3a2800}
+@media print{body{background:#fff;padding:0}.fich-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card-dark,.sec-hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:9mm 11mm}}
+</style>
+</head>
+<body>
+
+<div class="fich-hero">
+  <div class="fh-over">🏭 Cluster CORREDOR INDUSTRIAL NORTE · 2ª Sección Electoral · PBA Analítica 2026</div>
+  <h1>Baradero</h1>
+  <div class="fh-sub">Ciudad más antigua de PBA · Polo logístico Ruta 9 · Toyota-BRF · Puerto fluvial · Costanera del Río Baradero</div>
+  <div class="fh-tags">
+    <span class="fh-tag badge-al">✅ Aliado — Esteban Sanzio (UxP)</span>
+    <span class="fh-tag badge-warn">⚠️ PJ 42.5% nac / LLA 41.1% — solo 291 votos diferencia</span>
+    <span class="fh-tag">🏭 Polo automotriz / Autopartes</span>
+    <span class="fh-tag">🚢 Terminales portuarias Ruta 9</span>
+    <span class="fh-tag">🏛️ Ciudad más antigua de PBA · Herencia suiza</span>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="card card-dark">
+    <div class="c-lbl">Padrón 2025</div>
+    <div class="c-val">32,274</div>
+    <div class="c-note">2ª Sección Electoral · 1,529.7 km²</div>
+  </div>
+  <div class="card card-dark">
+    <div class="c-lbl">PJ 2023 — Sanzio</div>
+    <div class="c-val">55.7%</div>
+    <div class="c-note">12,618 votos · mayoría clara sobre LLA 18.7% y JxC 16.7%</div>
+  </div>
+  <div class="card card-dark">
+    <div class="c-lbl">Margen nacional 2025</div>
+    <div class="c-val">291</div>
+    <div class="c-note">votos · PJ 42.5% (8,806) vs LLA 41.1% (8,515)</div>
+  </div>
+</div>
+
+<div class="sec-hdr">🏭 Identidad Territorial</div>
+<div class="sec-body">
+  <div class="grid2">
+    <div class="card">
+      <div class="c-lbl">Polo industrial estratégico</div>
+      <h4 style="font-size:.8rem;color:#0d3a1e;margin-bottom:5px">Ruta 9 — corredor Buenos Aires–Rosario</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">La ubicación de Baradero sobre Ruta 9, entre Zárate y San Nicolás, lo posiciona en el corazón del corredor industrial más denso de la Provincia. Toyota, BRF y proveedores de autopartes tienen presencia directa o en radio de 30km. Un ecosistema industrial que demanda técnicos especializados, logística y servicios de alto valor. Las terminales portuarias privadas sobre el Paraná completan el perfil exportador.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Ciudad más antigua</div>
+      <h4 style="font-size:.8rem;color:#0d3a1e;margin-bottom:5px">Identidad histórica y herencia suiza</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">Baradero es la ciudad más antigua de la Provincia de Buenos Aires. La influencia de la inmigración suiza del siglo XIX dejó una identidad cultural singular — arquitectura, gastronomía, tradiciones que se celebran en el Festival de Música Popular, uno de los más importantes del norte bonaerense. Un activo patrimonial que convive con la modernidad industrial del partido.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Costanera del Río Baradero</div>
+      <h4 style="font-size:.8rem;color:#0d3a1e;margin-bottom:5px">Turismo de río y escapadas del AMBA</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">La costanera del Río Baradero es el motor turístico del partido — kilómetros de espacio público recuperado con luminarias LED, asfalto y paradores. El turismo de río y campo genera una ocupación hotelera estable y atrae miles de visitantes del AMBA cada fin de semana. Baradero Rock y los festivales de folklore consolidan el calendario turístico anual.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Economía agroalimentaria</div>
+      <h4 style="font-size:.8rem;color:#0d3a1e;margin-bottom:5px">"Mercado Raíz" — circuito corto</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">El municipio tiene una base de producción agroalimentaria local — huertas, productores de cercanía — que el "Mercado Raíz" organiza en circuito corto: el productor gana más y el vecino paga menos. Una política de economía social que conecta el interior productivo del partido con el consumidor urbano sin intermediación.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec-hdr">🗳️ Mapa Electoral</div>
+<div class="sec-body">
+  <div class="grid2">
+    <div class="card">
+      <div class="c-lbl">Evolución electoral</div>
+      <div class="elec-row"><span>2023 PJ — Sanzio ✅</span><span class="v-pj">55.7% (12,618)</span></div>
+      <div class="elec-row"><span>2023 JxC</span><span class="v-jxc">16.7% (3,779)</span></div>
+      <div class="elec-row"><span>2023 LLA</span><span class="v-lla">18.7% (4,232)</span></div>
+      <div class="elec-row"><span>2025 Nac PJ ⚠️</span><span class="v-pj">42.5% (8,806)</span></div>
+      <div class="elec-row"><span>2025 Nac LLA</span><span class="v-lla">41.1% (8,515)</span></div>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Distribución 2025 nacional</div>
+      <div class="bar-wrap">
+        <div class="bar-lbl"><span>PJ — 42.5%</span><span>8,806 votos</span></div>
+        <div class="bar"><div class="bar-fill-pj" style="width:42.5%"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-lbl"><span>LLA — 41.1%</span><span>8,515 votos</span></div>
+        <div class="bar"><div class="bar-fill-lla" style="width:41.1%"></div></div>
+      </div>
+      <div style="margin-top:10px;font-size:.76rem;color:#374151">
+        <strong style="color:#0d3a1e">Margen:</strong> 291 votos sobre total de 20,712. El PJ resiste en el corredor industrial pero el avance de LLA en el electorado técnico y joven es la señal de alerta. En 2023 el PJ ganó por 37 puntos; en 2025 nac la brecha cayó a 1.4 puntos.
+      </div>
+    </div>
+  </div>
+  <div class="alert-box">
+    <p><strong>⚠️ Caída de 36 puntos en 2 años:</strong> Sanzio ganó en 2023 con 55.7% (ventaja de 37 pts sobre LLA). En la categoría nacional 2025, el margen se desplomó a 291 votos (1.4 pts). El electorado del corredor industrial — trabajadores jóvenes de autopartes y logística — es el segmento más móvil y el que explica el avance de LLA. Territorio que el PJ todavía gana, pero que necesita trabajo activo para no perder.</p>
+  </div>
+</div>
+
+<div class="sec-hdr">🎯 Programas Municipales</div>
+<div class="sec-body">
+  <div class="prog-row">
+    <div class="prog-icon">🏭</div>
+    <div class="prog-body">
+      <h4>Polo Logístico e Industrial — Parque Industrial Planificado</h4>
+      <p>Ampliación de infraestructura y servicios en el Parque Industrial de Baradero para facilitar la radicación de empresas logísticas y manufactureras sobre Ruta 9. Con Toyota y BRF en el entorno, la cadena de proveedores necesita espacio físico y conectividad. Las terminales portuarias privadas completan la vocación exportadora del partido.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🏥</div>
+    <div class="prog-body">
+      <h4>"Hospital de Puertas Abiertas" — Modernización del Lino Piñeiro</h4>
+      <p>Nueva guardia, shock room y renovación completa de internación en el Hospital Municipal "Dr. Lino Piñeiro". El resultado: -40% en traslados a San Nicolás o Zárate. En un partido sobre Ruta 9 con alta accidentalidad de tránsito, un hospital que resuelve traumas in situ es una política de salud pública con impacto directo. El hospital también llegó a zonas rurales con salud itinerante.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🌊</div>
+    <div class="prog-body">
+      <h4>Transformación de la Costanera — Río Baradero</h4>
+      <p>Obra de defensa hídrica y embellecimiento de kilómetros de costanera sobre el Río Baradero: luminarias LED, asfalto, paradores, acceso público al río. El resultado fue la consolidación del turismo de río como motor económico del partido, con ocupación hotelera estable y posicionamiento como destino cultural (Baradero Rock, Folklore).</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🔧</div>
+    <div class="prog-body">
+      <h4>"Baradero Industrial" — Formación Técnica Especializada</h4>
+      <p>Programa de formación de técnicos en el sector automotriz y alimenticio, en alianza con las plantas instaladas en el corredor (Toyota, BRF y proveedores de autopartes). El municipio actúa como nexo entre la demanda de las empresas y la oferta educativa local, generando empleo calificado para jóvenes del partido sin necesidad de migrar al AMBA.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🌿</div>
+    <div class="prog-body">
+      <h4>"Mercado Raíz" — Economía Agroecológica Local</h4>
+      <p>Feria de circuito corto que elimina intermediarios entre productores locales y consumidores: el productor recibe más por su trabajo, el vecino paga menos por alimentos frescos y de cercanía. Un modelo de economía social que tiene lógica tanto económica como política — visibiliza la producción local y genera identidad territorial alrededor de la alimentación.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
