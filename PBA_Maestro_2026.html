@@ -139,9 +139,15 @@ body{font-family:"Segoe UI",system-ui,Arial,sans-serif;background:var(--bg);colo
 .adj-row:nth-child(even){background:#f8fafc}
 .up{color:#15803d;font-weight:700}.down{color:#dc2626;font-weight:700}
 
+/* ── FICHAS HERO ── */
+.fich-hero{background:linear-gradient(130deg,#0f2944 0%,#1a1a4e 50%,#1a3a5c 100%);color:#fff;padding:2.2rem 2.5rem;display:flex;gap:2rem;flex-wrap:wrap;align-items:center}
+.fh-left{flex:1;min-width:260px}
+.fh-tag{font-size:.68rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--acc);margin-bottom:.5rem}
+.fich-hero h2{font-size:1.5rem;font-weight:800;margin-bottom:.4rem;color:#fff;border-bottom:2px solid rgba(255,255,255,.25);padding-bottom:.4rem}
+.fich-hero p{font-size:.85rem;color:rgba(255,255,255,.82);max-width:560px}
+.fh-right{display:flex;gap:1rem;flex-wrap:wrap}
 /* ── FICHAS ── */
-.fichas-sec{padding:24px 28px}
-.fichas-sec h2{font-size:1.1rem;font-weight:800;color:var(--dark);margin-bottom:4px}
+.fichas-sec{padding:16px 28px 24px}
 .fichas-sec p{font-size:.82rem;color:#64748b;margin-bottom:20px}
 .fichas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .fc{background:#fff;border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.08);overflow:hidden}
@@ -2758,14 +2764,26 @@ h2 + p, h2 + div, h3 + p, h3 + div { page-break-before: avoid; break-before: avo
 </div>
 
 <div id="s-fich" class="tsec">
+  <div class="fich-hero">
+    <div class="fh-left">
+      <div class="fh-tag">FICHAS MUNICIPALES</div>
+      <h2>56 Municipios con Ficha Estructurada + Narrativa</h2>
+      <p>Cada municipio incluye su ficha estructurada (datos, padrón, contexto electoral) y su ficha narrativa (relato estratégico). Usá el buscador o filtrá por cluster territorial.</p>
+    </div>
+    <div class="fh-right">
+      <div class="rh-stat"><span class="rs-n">56</span><span class="rs-l">📋 Fichas activas</span></div>
+      <div class="rh-stat"><span class="rs-n">7</span><span class="rs-l">🗺️ Clusters</span></div>
+      <div class="rh-stat"><span class="rs-n">135</span><span class="rs-l">🎯 Objetivo final</span></div>
+    </div>
+  </div>
   <div class="fichas-sec">
-    <h2>📋 Fichas Municipales</h2>
-    <p>Cada municipio incluye su ficha estructurada (datos, indicadores, contexto electoral) y su ficha narrativa (relato estratégico para recorrida).</p>
     <div class="fc-search-bar">
       <input class="fc-search-inp" id="fc-inp" type="text" placeholder="🔍 Buscar municipio..." oninput="fcFilter()">
       <button class="fc-filter-btn active" onclick="fcCluster(this,'ALL')">Todos</button>
       <button class="fc-filter-btn" onclick="fcCluster(this,'CIUDADES')">🏙️ Ciudades</button>
       <button class="fc-filter-btn" onclick="fcCluster(this,'CONURBANO')">🌆 Conurbano</button>
+      <button class="fc-filter-btn" onclick="fcCluster(this,'Corredor')">🛤️ Corredor</button>
+      <button class="fc-filter-btn" onclick="fcCluster(this,'COSTERO')">🌊 Costero</button>
       <button class="fc-filter-btn" onclick="fcCluster(this,'SALADO')">🌿 Salado</button>
       <button class="fc-filter-btn" onclick="fcCluster(this,'INTERIOR')">🌾 Interior</button>
       <button class="fc-filter-btn" onclick="fcCluster(this,'SUR')">🏔️ Sur</button>
