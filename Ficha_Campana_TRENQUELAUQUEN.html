@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Trenque Lauquén — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#4a3800;--accent:#7b5e00;--bg:#f5f2eb;--surface:#fff;--border:#d4c89a;--text:#2a2000;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#2a1e00 0%,#4a3800 55%,#7b5e00 100%);color:#fff;padding:28px 32px 22px;border-radius:10px;margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'🌊';position:absolute;right:-10px;top:-10px;font-size:8rem;opacity:.1}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:5px}
+.h-name{font-size:2.1rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.8rem;opacity:.75;margin-bottom:12px}
+.badge{display:inline-block;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;margin-right:6px;margin-bottom:4px}
+.badge-op{background:rgba(185,28,28,.3);color:#fca5a5;border:1px solid rgba(185,28,28,.5)}
+.badge-crit{background:rgba(109,40,217,.3);color:#ddd6fe;border:1px solid rgba(109,40,217,.5)}
+.h-stats{display:flex;flex-wrap:wrap;gap:20px;margin-top:10px}
+.h-stat-v{font-size:1.1rem;font-weight:800;color:#fde68a;display:block}
+.h-stat-l{font-size:.67rem;opacity:.7;text-transform:uppercase}
+.sec{background:var(--surface);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#4a3800,#7b5e00);color:#fff;padding:9px 18px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:14px 18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:12px 14px}
+.blk-k{background:#4a3800;border-color:#4a3800}
+.blk-k h4{color:#fde68a}
+.blk-k p{color:rgba(255,255,255,.9) !important}
+.blk h4{font-size:.72rem;font-weight:800;color:var(--accent);margin-bottom:5px;text-transform:uppercase}
+.blk p,.sec-body p{font-size:.8rem;color:#374151;line-height:1.6;margin-bottom:7px}
+.blk p:last-child,.sec-body p:last-child{margin-bottom:0}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:10px}
+.arc-card{border-radius:8px;padding:11px 13px;border:1.5px solid var(--border)}
+.arc-danger{background:#faf5ff;border-color:#ddd6fe}
+.arc-neutral{background:#f8fafc}
+.arc-year{font-size:.66rem;font-weight:800;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
+.arc-row{display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid #f5f2eb;font-size:.75rem}
+.arc-row:last-child{border-bottom:none}
+.lla-win{color:#7c3aed;font-weight:800;background:#f3e8ff;padding:1px 4px;border-radius:3px}
+.jxc-win{color:#d97706;font-weight:800;background:#fef3c7;padding:1px 4px;border-radius:3px}
+.pj{color:#1d4ed8;font-weight:700}
+.lla{color:#7c3aed;font-weight:700}
+.jxc{color:#d97706;font-weight:700}
+.grey{color:#374151;font-weight:600}
+.alert{border-radius:8px;padding:11px 14px;margin-top:9px}
+.alert-red{background:#fef2f2;border:1.5px solid #fca5a5}.alert-red .a-ttl{color:#991b1b}
+.alert-info{background:#eff6ff;border:1.5px solid #bfdbfe}.alert-info .a-ttl{color:#1e40af}
+.a-ttl{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.a-body{font-size:.78rem;color:#374151;line-height:1.6}
+.prog-list{display:flex;flex-direction:column;gap:7px}
+.prog-item{border:1.5px solid var(--border);border-radius:7px;padding:9px 13px;display:flex;gap:10px}
+.prog-ico{font-size:1.2rem;flex-shrink:0}
+.prog-body h5{font-size:.76rem;font-weight:800;color:var(--primary);margin-bottom:3px}
+.prog-body p{font-size:.74rem;color:#374151;line-height:1.5;margin-bottom:0}
+.sint{background:linear-gradient(135deg,#2a1e00,#4a3800);border-radius:10px;padding:18px 22px;color:#fff}
+.sint h3{font-size:.82rem;font-weight:800;text-transform:uppercase;color:#fde68a;margin-bottom:10px}
+.sint p{font-size:.81rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:7px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;border:1px solid #ddd;break-inside:avoid}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌾 INTERIOR &nbsp;|&nbsp; 4ª Sección Electoral</div>
+  <div class="h-name">TRENQUE LAUQUÉN</div>
+  <div class="h-sub">Laguna Circular · Capital Lechera · 5,498 km² de pampa húmeda</div>
+  <div>
+    <span class="badge badge-op">🔴 OPOSITOR — Francisco Recoulat (JxC/PRO)</span>
+    <span class="badge badge-crit">🟣 LLA GANÓ PROVINCIAL 2025 — 32.4% vs PJ 31.3% (1.1 pts)</span>
+  </div>
+  <div class="h-stats">
+    <div><span class="h-stat-v">42,731</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div><span class="h-stat-v">49,499</span><span class="h-stat-l">Habitantes</span></div>
+    <div><span class="h-stat-v">31.3%</span><span class="h-stat-l">PJ Prov 2025</span></div>
+    <div><span class="h-stat-v">32.4%</span><span class="h-stat-l">LLA Prov 2025 🟣</span></div>
+    <div><span class="h-stat-v">54.0%</span><span class="h-stat-l">LLA Nac 2025 🔴</span></div>
+    <div><span class="h-stat-v">5,498 km²</span><span class="h-stat-l">Superficie</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌊 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="blk blk-k">
+        <h4>La laguna circular que da nombre a todo</h4>
+        <p>"Trenque Lauquén" significa "laguna redonda" en mapudungún. La laguna del mismo nombre, en el centro del partido, es el corazón geográfico e identitario de la ciudad. Espejo de agua, parques, deportes náuticos. La laguna es el símbolo del partido y su principal atractivo turístico.</p>
+      </div>
+      <div class="blk">
+        <h4>🥛 Capital Provincial de la Producción Lechera</h4>
+        <p>Trenque Lauquén es reconocida como la Capital Provincial de la Producción Lechera. El partido concentra una de las densidades más altas de tambos y usinas lácteas de la 4ª Sección. La cadena láctea es el principal motor económico del partido: producción, industrialización, distribución.</p>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:9px">
+      <div class="blk">
+        <h4>🌿 PROLIM — Polo Ambiental Innovador</h4>
+        <p>El Polo de Reciclado, Logística Industrial y Medioambiente (PROLIM) es uno de los proyectos de gestión ambiental más avanzados del INTERIOR bonaerense. Relleno sanitario, separación de residuos y plantas de reciclado en un único complejo — modelo para la región.</p>
+      </div>
+      <div class="blk">
+        <h4>🛤️ TL 2030 — Plan urbano de largo plazo</h4>
+        <p>Plan estratégico de desarrollo urbano que proyecta el partido hasta 2030. Incluye ordenamiento territorial, infraestructura de caminos rurales, conectividad y planificación de servicios. Uno de los pocos municipios del INTERIOR con plan de desarrollo formalizado.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Francisco Recoulat (JxC/PRO) — OPOSITOR</div>
+  <div class="sec-body">
+    <p><strong>Francisco Recoulat (JxC/PRO)</strong> — Intendente opositor, reelecto en 2023 con el 50.6% de los votos. Trenque Lauquén es históricamente un bastión del radicalismo bonaerense dentro de la coalición JxC. Recoulat tiene alta adhesión local y gestión consolidada. El PJ tiene base estructural del 27-31% pero no ha gobernado el partido en muchos años.</p>
+    <div class="prog-list">
+      <div class="prog-item">
+        <div class="prog-ico">♻️</div>
+        <div class="prog-body"><h5>PROLIM — Polo Ambiental Regional</h5><p>El polo de reciclado y gestión ambiental es el hito de gestión más visible de Recoulat. Funciona como modelo regional y da a TL una identidad de "municipio verde" inusual para el INTERIOR.</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">💧</div>
+        <div class="prog-body"><h5>Gestión del Agua — Infraestructura hídrica</h5><p>Ampliación de la red de agua potable y saneamiento, cloacas y mantenimiento de la laguna. Dado el rol central de la laguna en la identidad del partido, la gestión del agua tiene alto simbolismo político.</p></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🛤️</div>
+        <div class="prog-body"><h5>Caminos Rurales — La red que conecta los tambos</h5><p>Programa de mantenimiento y mejora de caminos rurales. Con la densidad de tambos del partido, la conectividad vial rural es crítica para la competitividad de la cadena láctea. Un programa concreto que llega al productor.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025 — Territorio hostil: LLA ganó provincial por 225 votos</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-neutral">
+        <div class="arc-year">2023 — Intendente</div>
+        <div class="arc-row"><span>JxC 🟠</span><span class="jxc-win">50.6% (13,904)</span></div>
+        <div class="arc-row"><span>PJ / UxP</span><span class="pj">27.4% (7,526)</span></div>
+        <div class="arc-row"><span>LLA</span><span class="lla">22.1% (6,074)</span></div>
+        <div class="arc-row"><span>Padrón</span><span class="grey">41,915</span></div>
+      </div>
+      <div class="arc-card arc-danger">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span>LLA 🟣</span><span class="lla-win">32.4% (6,959)</span></div>
+        <div class="arc-row"><span>PJ / UxP</span><span class="pj">31.3% (6,734)</span></div>
+        <div class="arc-row"><span>Resto</span><span class="grey">36.3% (otros)</span></div>
+        <div class="arc-row"><span>Padrón</span><span class="grey">42,731</span></div>
+      </div>
+      <div class="arc-card arc-danger">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span>LLA 🔴</span><span class="lla-win">54.0% (13,792)</span></div>
+        <div class="arc-row"><span>PJ / UxP</span><span class="pj">28.8% (7,341)</span></div>
+        <div class="arc-row"><span>FIT</span><span class="grey">2.8% (708)</span></div>
+        <div class="arc-row"><span>Padrón</span><span class="grey">42,206</span></div>
+      </div>
+    </div>
+    <div class="alert alert-red">
+      <div class="a-ttl">🟣 LLA ganó provincial por 225 votos — territorio en disputa total</div>
+      <div class="a-body">En la categoría provincial 2025, LLA (32.4%) superó al PJ (31.3%) por solo 225 votos sobre 42,731 electores. Un margen de 0.5% — técnicamente, la elección más reñida de la 4ª Sección en esa categoría. El distrito está en una competencia de tres fuerzas (JxC en la intendencia, LLA y PJ en lo provincial) que hace difícil la predicción de escenarios. En la nacional, LLA se despegó al 54% — el electorado diferencia claramente entre lo local (JxC) y lo nacional (LLA).</div>
+    </div>
+    <div class="alert alert-info">
+      <div class="a-ttl">📊 Contexto: Intendente JxC con base histórica sólida</div>
+      <div class="a-body">Trenque Lauquén tiene una historia de voto a la UCR/JxC que antecede a Recoulat. En 2023, Recoulat ganó con el 50.6% — una mayoría clara. El PJ tiene base del 27-31% que no logró superar en ninguna elección reciente. El partido es difícil pero no imposible: si JxC se fractura o se aleja de LLA, el PJ tiene espacio para crecer.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📋 Palancas · Visita · Estrategia</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="blk">
+        <h4>🥛 Palanca — Cadena Láctea</h4>
+        <p>Visita a usina láctea o tambo de referencia del partido. Mensaje: política provincial para la cadena láctea (precio de la leche, crédito rural, infraestructura de frío). El electorado rural del partido valora la agenda productiva concreta sobre la discursiva.</p>
+      </div>
+      <div class="blk">
+        <h4>🌊 Palanca — La Laguna</h4>
+        <p>La laguna es el corazón identitario de TL. Visita al parque laguna con mensaje de turismo, medioambiente y calidad de vida. Imagen positiva — sin carga política. Alta visibilidad en redes y medios locales.</p>
+      </div>
+      <div class="blk">
+        <h4>📊 Estrategia: Distrito de observación</div>
+        <p>Con el intendente opositor consolidado y LLA ganando la provincial por 225 votos, el distrito no tiene escenario peronista de victoria en el corto plazo. Objetivo: mantener el 31-33% provincial, consolidar la base para 2027, y mostrar presencia en el electorado rural lácteo.</p>
+      </div>
+      <div class="blk">
+        <h4>♻️ Palanca — PROLIM</h4>
+        <p>El polo ambiental de TL es un programa exitoso del intendente opositor. Reconocer lo bueno de la gestión local (sin regalar legitimidad) y hablar de lo que el nivel provincial puede sumar: financiamiento de infraestructura ambiental regional. Agenda transversal.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>Trenque Lauquén es un distrito difícil para el peronismo con múltiples capas de complejidad.</strong> El intendente JxC tiene base histórica sólida (50.6% en 2023). LLA ganó la provincial por apenas 225 votos — el margen más estrecho de la 4ª Sección. El PJ tiene base estable del 31% que no logró superar en los últimos ciclos.</p>
+  <p>La identidad productiva del partido (cadena láctea, PROLIM, laguna) es accesible para cualquier fuerza política — el PJ tiene que articular esa agenda mejor que lo que hizo en 2025.</p>
+  <p><strong>Presencia recomendada:</strong> Visita con referentes del sector lácteo + recorrida por la laguna. Mensaje productivo y ambiental. No confrontar con el intendente — diferenciarse en la agenda provincial.</p>
+</div>
+
+</body>
+</html>
