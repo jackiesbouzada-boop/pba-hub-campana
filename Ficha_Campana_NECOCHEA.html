@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Necochea — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.badge-neutral{display:inline-block;background:rgba(148,163,184,.25);color:#e2e8f0;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(148,163,184,.4);letter-spacing:.5px;margin-right:6px;margin-bottom:6px}
+.badge-warn{display:inline-block;background:rgba(217,119,6,.3);color:#fcd34d;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(217,119,6,.5);letter-spacing:.5px;margin-bottom:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:8px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#e2e8f0}
+.h-stat-v-w{font-size:1.15rem;font-weight:800;color:#fcd34d}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.neutral-box{background:#f8fafc;border:1.5px solid #94a3b8;border-radius:8px;padding:12px 14px;margin-bottom:12px}
+.neutral-ttl{font-size:.72rem;font-weight:800;color:#334155;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.neutral-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.warn-box{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.warn-ttl{font-size:.72rem;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.warn-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k h4{color:#bae6fd}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#0077b6;display:block}
+.b-num .n-w{font-size:1.7rem;font-weight:900;color:#d97706;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-neutral{background:#f8fafc;border-color:#94a3b8}
+.arc-warn{background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#fcd34d}
+.arc-alarm{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border-color:#c4b5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-vec{color:#0077b6}.v-grey{color:#374151}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#e2e8f0;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌊 COSTERO &nbsp;|&nbsp; 5ª Sección Electoral</div>
+  <div class="h-name">NECOCHEA</div>
+  <div class="h-name2">Puerto Quequén · Costa Atlántica · Vecinalismo · Exportación Granelera</div>
+  <div>
+    <span class="badge-neutral">⚪ INTENDENTE VECINALISTA — Arturo Rojas (no PJ / no JxC)</span>
+    <span class="badge-warn">⚠️ LLA DOMINA voto provincial 2025 (60.9% LLA dos-partidos)</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">~89,000</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">39.1%</span><span class="h-stat-l">PJ dos-partidos PBA 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v-w">Puerto Quequén</span><span class="h-stat-l">Uno de los mayores puertos graneleros de Argentina</span></div>
+    <div class="h-stat"><span class="h-stat-v">5ª Sección</span><span class="h-stat-l">Costa Atlántica Sur</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌊 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="neutral-box">
+      <div class="neutral-ttl">⚪ VECINALISMO — Arturo Rojas — Intendente independiente (no PJ / no JxC)</div>
+      <div class="neutral-txt">Rojas ganó la intendencia con una fuerza vecinal que no se identifica con el peronismo ni con JxC. Este perfil requiere un tratamiento diferente: no es un intendente opositor (no hay que confrontarlo) ni un aliado (no hay agenda común automática). La acción provincial en Necochea debe ser neutral en términos de disputa municipal y apuntar directamente a la comunidad.</div>
+    </div>
+    <div class="warn-box">
+      <div class="warn-ttl">⚠️ ALERTA ELECTORAL — LLA domina el voto provincial 2025</div>
+      <div class="warn-txt">En 2025 PBA concejales, LLA obtuvo 15,043 votos vs PJ 9,663 (39.1% PJ dos-partidos). En nacional, LLA dominó aun más con 27,301 vs PJ 15,541. Necochea es un municipio donde el peronismo está en minoría en el voto supramunicipal. Requiere estrategia activa para recuperar terreno.</div>
+    </div>
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Puerto Quequén — Gigante Logístico Nacional</h4>
+        <p>El Puerto Quequén (Necochea) es uno de los puertos graneleros de aguas profundas más importantes de Argentina. Exporta millones de toneladas de soja, maíz y girasol por año. Es el puerto más austral del corredor cerealero del sur bonaerense. La economía portuaria —camioneros, acopiadores, operadores marítimos, talleres navales— es el motor económico dominante del municipio.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Costa Atlántica Sur — Turismo y Naturaleza</h4>
+        <p>Las playas de Necochea son de las más amplias de la costa atlántica argentina. El Parque Miguel Lillo, con su extenso bosque costero, da una identidad turístico-natural que diferencia a Necochea de otras ciudades costeras. El turismo estival (kitesurf, deportes de playa, naturaleza) mueve una economía de servicios significativa en la temporada.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 2. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-neutral">
+        <div class="arc-year">General 2023 — Rojas Vecinalismo gana</div>
+        <div class="arc-row"><span class="arc-lbl">Rojas (Vecinalismo)</span><span class="arc-val v-vec">GANÓ (mayoría)</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">8,681 (est. 2do lugar)</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">7,724</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC</span><span class="arc-val v-grey">7,258</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">88,264</span></div>
+      </div>
+      <div class="arc-card arc-warn">
+        <div class="arc-year">Concejales PBA 2025 — LLA adelante</div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">15,043 (60.9%) 🚨</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">9,663 (39.1%)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">1,215</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">88,911</span></div>
+      </div>
+      <div class="arc-card arc-alarm">
+        <div class="arc-year">Nacional 2025 — LLA domina</div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">27,301 (63.7%)</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">15,541 (36.3%)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">2,006</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">87,139</span></div>
+      </div>
+    </div>
+    <table class="tbl">
+      <tr><th>Elección</th><th>PJ Votos</th><th>LLA Votos</th><th>PJ dos-partidos</th></tr>
+      <tr><td>2023 Intendente</td><td class="tbl-num v-pj">7,724</td><td class="tbl-num v-lla">8,681</td><td class="tbl-num">Est. 3er lugar — Rojas gana</td></tr>
+      <tr><td>2025 PBA Concejales</td><td class="tbl-num v-pj">9,663</td><td class="tbl-num v-lla">15,043</td><td class="tbl-num" style="color:#dc2626">39.1% PJ ⚠️</td></tr>
+      <tr><td>2025 Nacional</td><td class="tbl-num v-pj">15,541</td><td class="tbl-num v-lla">27,301</td><td class="tbl-num" style="color:#dc2626">36.3% PJ ⚠️</td></tr>
+    </table>
+    <p style="font-size:.79rem;margin-top:8px;color:#374151">⚠️ <strong>Nota 2023:</strong> La suma PJ+JxC+LLA no cubre el total de votos — Rojas (Vecinalismo) obtuvo el resto y ganó la intendencia. Datos exactos de Rojas no disponibles en la base.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 3. Identidades Clave y Programas</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">⚓</div>
+        <div class="cl-tipo">Logística estratégica</div>
+        <div class="cl-nm">Puerto Quequén — Calado y ampliación 2026</div>
+        <div class="cl-desc">El hito de 2026 para el Puerto Quequén es la profundización del calado para permitir la entrada de buques de mayor porte. Esto reduce los costos de exportación del agro bonaerense y posiciona a Quequén como el puerto de referencia del sur provincial. El anuncio de obras de calado es la política con mayor impacto en Necochea.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌾</div>
+        <div class="cl-tipo">Agroindustria</div>
+        <div class="cl-nm">Corredor Cerealero del Sur</div>
+        <div class="cl-desc">Puerto Quequén es el punto de salida del grano del sur bonaerense (Azul, Tandil, Olavarría, Necochea, Tres Arroyos). Camioneros, acopiadores y operadores graneleros dependen del puerto para toda su actividad. La política portuaria provincial impacta directamente en miles de trabajadores del corredor.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏖️</div>
+        <div class="cl-tipo">Turismo</div>
+        <div class="cl-nm">Costa Sur — Playas amplias y Parque Lillo</div>
+        <div class="cl-desc">Necochea tiene las playas más amplias de la costa atlántica. El Parque Miguel Lillo (bosque costero) es una reserva natural única en toda la costa bonaerense. El turismo de naturaleza y deportes de viento (kitesurf, windsurf) atrae un perfil de visitante con mayor capacidad de gasto que el turismo masivo de otras costas.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🔧</div>
+        <div class="cl-tipo">Conectividad portuaria</div>
+        <div class="cl-nm">Accesos viales al puerto — Integración Puerto-Ciudad</div>
+        <div class="cl-desc">El tránsito de camiones desde y hacia el Puerto Quequén genera impacto en las zonas residenciales. El municipio ejecutó pavimentación pesada en vías de acceso portuario. La provincia puede ampliar esa inversión con accesos secundarios y variante de tránsito pesado, reduciendo el impacto en los barrios.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">💻</div>
+        <div class="cl-tipo">Economía del conocimiento</div>
+        <div class="cl-nm">Polo Tecnológico Necochea (en desarrollo)</div>
+        <div class="cl-desc">El municipio promueve la instalación de empresas de software con beneficios impositivos a cambio de contratación de egresados locales. Es un polo incipiente — con apoyo provincial (programa de economía del conocimiento, acceso a créditos blandos para startups) puede acelerarse significativamente.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">♻️</div>
+        <div class="cl-tipo">Medio ambiente</div>
+        <div class="cl-nm">Planta de Separación y Reciclado</div>
+        <div class="cl-desc">El municipio puso en marcha la Planta de Separación y Reciclado bajo un enfoque de economía circular. Es una política de gestión ambiental que la provincia puede acompañar con equipamiento y asistencia técnica, construyendo agenda de sustentabilidad que trasciende la política municipal.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 4. Tres Palancas Provinciales</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — Estratégica para el corredor sur</div><div class="pal-ttl">Puerto Quequén — Obras de profundización de calado y accesos viales</div></div>
+        <div class="pal-body">
+          <p>La profundización del calado de Puerto Quequén es la obra provincial de mayor impacto en Necochea y en todo el corredor cerealero del sur bonaerense. Habilitar buques de mayor tonelaje reduce los costos de exportación del agro — lo que beneficia a productores, camioneros y operadores portuarios de 10+ municipios.</p>
+          <p>El anuncio de la obra (con presencia de camioneros, acopiadores y operarios portuarios) posiciona al candidato provincial como el que levanta la demanda histórica del sur bonaerense. El intendente Rojas puede acompañar o no — la obra es provincial y el beneficio llega independientemente.</p>
+          <span class="pal-tag acc-prov">Min. Infraestructura PBA · OPDS</span>
+          <span class="pal-tag acc-nac">Secretaría de Puertos Nación</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Hospital Sub-Zonal Necochea — Fortalecimiento de especialidades</div></div>
+        <div class="pal-body">
+          <p>El hospital de Necochea atiende a pacientes de San Cayetano, Lobería, Tres Arroyos y municipios del sur de la 5ª Sección. Una inversión provincial en especialidades (cardiología, oncología, neonatología) llega directamente a la base popular del municipio — el segmento que más depende del hospital público y que en 2025 votó masivamente a LLA.</p>
+          <p>La salud pública es la política que más impacto tiene en el segmento popular de Necochea. Es la diferencia más palpable entre el Estado que invierte y el Estado que no invierte en el municipio.</p>
+          <span class="pal-tag acc-prov">Ministerio de Salud PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Créditos PyME para agroservicios y logística portuaria</div></div>
+        <div class="pal-body">
+          <p>La economía de Necochea tiene una capa de PyMEs de agroservicios (talleres, repuestos, logística, almacenaje, transporte refrigerado) que orbita alrededor del puerto. Un programa provincial de crédito blando para PyMEs del sector agrologístico llega exactamente a ese segmento — dueños de pequeñas empresas que no son grandes exportadores pero sí son parte de la cadena portuaria.</p>
+          <p>Este segmento tiene perfil político independiente (no peronista por default, no libertario ideológico). El candidato provincial que llega con un instrumento de financiamiento concreto puede construir un vínculo que los referentes ideológicos no pueden ofrecer.</p>
+          <span class="pal-tag acc-prov">BAPRO · Min. Producción PBA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>⚪ Síntesis Ejecutiva — Necochea (Vecinalismo Neutral)</h3>
+  <p><strong>Contexto:</strong> ~89k padrón, Arturo Rojas (Vecinalismo) intendente — no PJ, no JxC. Puerto Quequén como motor económico del corredor cerealero sur bonaerense. LLA domina el voto provincial 2025 (60.9% LLA dos-partidos) — Necochea es un municipio donde el peronismo provincial está en minoría y necesita estrategia activa de recuperación.</p>
+  <p><strong>Tratamiento político:</strong> No confrontar con Rojas (no es opositor del partido), no asumir alianza automática (es vecinalista independiente). La acción provincial debe llegar directamente a la comunidad sin buscar intermediación del intendente. Puerto Quequén y el hospital son las dos palancas de mayor tracción sobre el electorado popular y trabajador del municipio.</p>
+  <p><strong>El objetivo:</strong> Recuperar terreno en un municipio donde el voto provincial peronista cayó a 39%. El Puerto Quequén (demanda histórica de toda la región) y el hospital (demanda popular directa) son los dos argumentos más potentes disponibles para construir presencia provincial en Necochea.</p>
+</div>
+
+</body>
+</html>

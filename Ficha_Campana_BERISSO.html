@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Berisso — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.35);color:#bae6fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-right:6px;margin-bottom:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:8px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.warn-box{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.warn-ttl{font-size:.72rem;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.warn-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k h4{color:#bae6fd}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#3b82f6;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-best{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-color:#86efac}
+.arc-winner{background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-color:#93c5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-grey{color:#374151}.v-green{color:#059669}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#bae6fd;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🏙️ CIUDADES BONAERENSES &nbsp;|&nbsp; 3ª Sección Electoral &nbsp;|&nbsp; Área La Plata</div>
+  <div class="h-name">BERISSO</div>
+  <div class="h-name2">Capital Provincial del Inmigrante · YPF-Puerto La Plata · Cagliardi UxP · Bastión Peronista</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Cagliardi / UxP</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">~89,000</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">60.2%</span><span class="h-stat-l">PJ dos-partidos PBA 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">54.4%</span><span class="h-stat-l">PJ dos-partidos NACIONAL 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">🎭</span><span class="h-stat-l">Fiesta Provincial del Inmigrante — evento turístico anual</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏙️ 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="warn-box">
+      <div class="warn-ttl">⚠️ NOTA: DATOS 2023 ANÓMALOS — SE USA SOLO 2025</div>
+      <div class="warn-txt">La base registra LLA=119,546 votos en Berisso en 2023, pero el padrón es 86,887. Este dato excede el universo posible y es un error de registro. El análisis electoral se basa exclusivamente en los datos de 2025 (PBA y Nacional), que son consistentes y confiables.</div>
+    </div>
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Capital Provincial del Inmigrante</h4>
+        <p>Berisso tiene una identidad cultural construida sobre las corrientes migratorias que llegaron a trabajar en los antiguos frigoríficos (Swift, Armour). Lituanos, ucranianos, polacos, búlgaros, griegos, italianos y decenas de otras colectividades dieron a Berisso una diversidad cultural única en la PBA. La Fiesta Provincial del Inmigrante (declarada de interés provincial) es el evento que sintetiza esa identidad y atrae miles de visitantes cada año.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Polo Portuario e Industrial — YPF y TecPlata</h4>
+        <p>Berisso comparte con Ensenada el Puerto La Plata y aloja parte de las operaciones industriales del polo petroquímico. La Destilería La Plata de YPF, las terminales portuarias y la industria asociada son la columna vertebral económica del municipio. La Terminal TecPlata (contenedores) en el Puerto La Plata genera tráfico y empleo en el área. La identidad sindical-portuaria-petrolera es el vínculo más fuerte entre Berisso y el peronismo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 2. Arco Electoral 2025 (datos confiables)</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-best">
+        <div class="arc-year">Concejales PBA 2025 — PJ sólido</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">25,936 (60.2%) ✅</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">17,152 (39.8%)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">5,540</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ dos-partidos</span><span class="arc-val v-green">60.2% ✅</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">88,947</span></div>
+      </div>
+      <div class="arc-card arc-winner">
+        <div class="arc-year">Nacional 2025 — PJ gana también</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">25,666 (54.4%) ✅</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">21,538 (45.6%)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">3,398</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ dos-partidos</span><span class="arc-val v-green">54.4% ✅</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">83,222</span></div>
+      </div>
+    </div>
+    <p style="font-size:.79rem;color:#374151">🔵 <strong>Lectura:</strong> Berisso es uno de los pocos municipios del interior bonaerense donde el PJ gana TANTO en voto provincial como en voto nacional. La identidad peronista-sindical-frigorífica resiste el avance de LLA. Cagliardi (UxP) tiene una base consolidada. El municipio es un bastión de retención.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 3. Identidades Clave y Programas</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">🌍</div>
+        <div class="cl-tipo">Identidad cultural</div>
+        <div class="cl-nm">Capital del Inmigrante + Fiesta Provincial</div>
+        <div class="cl-desc">La Fiesta Provincial del Inmigrante es el evento más importante de Berisso. Decenas de colectividades muestran sus gastronomías, danzas y tradiciones. El Programa "Turismo Identitario" del municipio pone en valor la calle Nueva York y las fiestas del Vino de la Costa. La provincia puede amplificar esa identidad con promoción nacional.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⛽</div>
+        <div class="cl-tipo">Industria estratégica</div>
+        <div class="cl-nm">YPF — Destilería La Plata</div>
+        <div class="cl-desc">La Destilería La Plata de YPF es el empleador industrial más importante del polo La Plata-Berisso-Ensenada. Miles de trabajadores sindicalizados (SUPE — Sindicato Unido Petroleros del Estado) dependen de la refinería. La identidad sindical petrolera es la columna del peronismo berissense.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⚓</div>
+        <div class="cl-tipo">Puerto e industria</div>
+        <div class="cl-nm">TecPlata — Terminal de Contenedores</div>
+        <div class="cl-desc">La Terminal TecPlata en el Puerto La Plata es una terminal de contenedores que genera empleo portuario y tráfico logístico en Berisso. Las obras de acceso vial para el tráfico pesado son la demanda más urgente del área portuaria. La provincia puede financiar esas obras directamente.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🍷</div>
+        <div class="cl-tipo">Identidad local</div>
+        <div class="cl-nm">Vino de la Costa y Mercado de la Ribera</div>
+        <div class="cl-desc">El Vino de la Costa de Berisso es una producción artesanal única: una uva adaptada al clima ribereño que produce un vino de sabor y aroma particulares. El Mercado de la Ribera (50+ productores locales) y las Fiestas del Vino son activos de economía social directamente vinculados a la base popular del municipio.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏥</div>
+        <div class="cl-tipo">Salud primaria</div>
+        <div class="cl-nm">Red de 42 CAPS — 60% de resolución local</div>
+        <div class="cl-desc">Berisso tiene 42 Centros de Atención Primaria que resuelven localmente el 60% de la demanda clínica diaria. Es un modelo de atención primaria que la provincia puede acompañar con equipamiento, insumos y extensión horaria. El fortalecimiento de los CAPS llega directamente a los vecinos de los barrios.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏘️</div>
+        <div class="cl-tipo">Ordenamiento urbano</div>
+        <div class="cl-nm">Plan de Ordenamiento Urbano 2026</div>
+        <div class="cl-desc">El municipio aprobó un nuevo código de zonificación en 2026 para regular el crecimiento de la ciudad y atraer inversiones industriales. Un acompañamiento provincial para infraestructura básica (cloacas, pavimento, iluminación) en las zonas de expansión industrial es la política de mayor impacto en el desarrollo económico local.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 4. Tres Palancas Provinciales</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — Base industrial</div><div class="pal-ttl">Accesos viales TecPlata — Infraestructura para tráfico pesado portuario</div></div>
+        <div class="pal-body">
+          <p>Las obras de acceso vial para el tráfico pesado de la Terminal TecPlata son la obra de mayor impacto económico en el área portuaria de Berisso. Camioneros, operadores de contenedores y trabajadores portuarios son el segmento sindical más conectado con el peronismo berissense.</p>
+          <p>El anuncio de la obra en el Puerto La Plata, con presencia del SUPE y de los sindicatos de camioneros, construye la imagen de un Estado provincial que invierte en la infraestructura que sostiene el trabajo portuario-industrial de Berisso y Ensenada.</p>
+          <span class="pal-tag acc-prov">Min. Infraestructura PBA · DPV</span>
+          <span class="pal-tag acc-nac">Puerto La Plata</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Ampliación del programa Mercado de la Ribera — Apoyo a productores del Vino de la Costa</div></div>
+        <div class="pal-body">
+          <p>El Mercado de la Ribera y el Vino de la Costa son el activo de economía social más visible de Berisso. Un programa provincial que apoye la certificación, el marketing y la distribución del Vino de la Costa llega a los 200+ pequeños productores del municipio que no tienen escala para llegar solos al mercado provincial.</p>
+          <p>La identidad cultural del inmigrante y el Vino de la Costa son las dos marcas de Berisso que ninguna otra ciudad puede replicar. Un programa provincial que las amplifique construye presencia con costo muy bajo y retorno simbólico y económico alto para la comunidad.</p>
+          <span class="pal-tag acc-prov">Min. Producción PBA · Min. Turismo PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">CAPS — Fortalecimiento de red de atención primaria con equipamiento provincial</div></div>
+        <div class="pal-body">
+          <p>La red de 42 CAPS de Berisso ya resuelve el 60% de la demanda clínica local. Con equipamiento provincial (ecógrafos, electrocardiógrafos, insumos de Plan Remediar), la red puede llegar al 70-80% de resolución local, reduciendo la carga sobre el hospital y mejorando la experiencia de salud del vecino popular.</p>
+          <p>En Berisso, donde el peronismo ya tiene mayoría sólida, fortalecer la salud primaria consolida la lealtad de la base y la diferencia de gestión frente a administraciones anteriores que no priorizaron la red de CAPS.</p>
+          <span class="pal-tag acc-prov">Ministerio de Salud PBA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>✅ Síntesis Ejecutiva — Berisso</h3>
+  <p><strong>Contexto:</strong> ~89k padrón, Cagliardi (UxP) aliado. Uno de los pocos municipios del interior bonaerense donde el PJ gana tanto en voto provincial (60.2%) como en voto nacional (54.4%). La identidad sindical-portuaria-petrolera y la Capital del Inmigrante son las dos marcas que anclan el peronismo en Berisso. Nota: datos 2023 anómalos — análisis basado en 2025.</p>
+  <p><strong>Fortaleza estratégica:</strong> Berisso es un municipio de retención, no de conquista. La tarea es consolidar y ampliar la mayoría ya existente. El SUPE (SINTEP), los sindicatos portuarios y las colectividades de inmigrantes son los tres actores de tracción comunitaria más importantes para la campaña provincial.</p>
+  <p><strong>Palancas:</strong> Infraestructura portuaria TecPlata (base sindical industrial), Vino de la Costa / Mercado de la Ribera (economía social, pequeños productores), CAPS fortalecimiento (salud primaria barrial). Las tres palancas llegan directamente a la base peronista más fiel de Berisso.</p>
+</div>
+
+</body>
+</html>

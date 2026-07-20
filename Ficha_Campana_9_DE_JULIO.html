@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>9 de Julio — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.badge-alerta{display:inline-block;background:rgba(220,38,38,.3);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.5);letter-spacing:.5px;margin-right:6px;margin-bottom:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:8px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#fca5a5}
+.h-stat-v-b{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.alert-box{background:#fef2f2;border:1.5px solid #fca5a5;border-radius:8px;padding:12px 14px;margin-bottom:12px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#991b1b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.warn-box{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.warn-ttl{font-size:.72rem;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.warn-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k h4{color:#bae6fd}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#ef4444;display:block}
+.b-num .n-b{font-size:1.7rem;font-weight:900;color:#3b82f6;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#fee2e2;color:#991b1b;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#fca5a5;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🌾 INTERIOR BONAERENSE &nbsp;|&nbsp; 4ª Sección Electoral</div>
+  <div class="h-name">9 DE JULIO</div>
+  <div class="h-name2">Maquinaria Agrícola · Autódromo Turismo Carretera · Gentile JxC · Polo Metalmecánico</div>
+  <div>
+    <span class="badge-alerta">❌ INTENDENTE OPOSITORA — María José Gentile / JxC</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">~55,000</span><span class="h-stat-l">Habitantes (est.)</span></div>
+    <div class="h-stat"><span class="h-stat-v">~45,000</span><span class="h-stat-l">Padrón estimado 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v-b">Polo MAQ</span><span class="h-stat-l">Silos, acoplados, sembradoras, repuestos agrícolas</span></div>
+    <div class="h-stat"><span class="h-stat-v-b">TC</span><span class="h-stat-l">Autódromo Ciudad de 9 de Julio — Turismo Carretera</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🌾 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="alert-box">
+      <div class="alert-ttl">❌ OPOSITORA — María José Gentile (JxC) — Intendente municipal</div>
+      <div class="alert-txt">Gentile es intendenta de JxC. La acción provincial en 9 de Julio debe llegar directamente a la comunidad sin intermediación de la intendencia. El HIGA regional, los programas de crédito para PyMEs del polo metalmecánico y los sindicatos docentes y estatales son los canales de acción provincial que no dependen de la intendenta.</div>
+    </div>
+    <div class="warn-box">
+      <div class="warn-ttl">⚠️ SIN DATOS ELECTORALES EN BASE — ESTIMACIONES</div>
+      <div class="warn-txt">No hay datos electorales de 9 de Julio en la base disponible. Las estimaciones de voto se basan en el perfil histórico de la 4ª Sección y el conocimiento del municipio. Se recomienda levantar datos actualizados antes de la campaña.</div>
+    </div>
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Polo Metalmecánico y Maquinaria Agrícola</h4>
+        <p>9 de Julio es uno de los distritos líderes en la fabricación de maquinaria agrícola de Argentina. Concentra fábricas de silos bolt, acoplados, sembradoras, implementos y repuestos que abastecen a productores de toda la región. El perfil industrial-metalmecánico da a 9 de Julio una identidad obrero-industrial en el interior bonaerense que pocas ciudades de ese tamaño pueden exhibir. La base sindical metalmecánica (SMATA, UOM) es una de las pocas cuñas del peronismo en un municipio con intendenta opositora.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>Autódromo Ciudad de 9 de Julio — Turismo Carretera</h4>
+        <p>El Autódromo Ciudad de 9 de Julio es una de las plazas históricas del Turismo Carretera (TC) y el Turismo Nacional. Las fechas de TC en 9 de Julio atraen decenas de miles de visitantes y dinamizan la economía de servicios de la ciudad durante los fines de semana de carrera. La identidad "fierrera" es un activo cultural transversal que trasciende la grieta política y convoca a toda la comunidad.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">JxC</span>
+        <span class="l">Gentile opositora. Acción provincial directa sin intermediación municipal es la clave estratégica.</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-b">UOM</span>
+        <span class="l">Sindicatos metalmecánicos activos. Principal vínculo entre el peronismo provincial y la base trabajadora de 9 de Julio.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 2. Perfil Electoral (datos estimados)</div>
+  <div class="sec-body">
+    <table class="tbl">
+      <tr><th>Segmento</th><th>Perfil estimado</th><th>Observación estratégica</th></tr>
+      <tr><td>Voto local (intendente)</td><td class="tbl-num" style="color:#991b1b">JxC (Gentile) — incumbente</td><td>Reelección probable si no hay candidato peronista fuerte local</td></tr>
+      <tr><td>Voto provincial (legislativa)</td><td class="tbl-num">~40-45% PJ est.</td><td>Brecha posible entre voto local y voto provincial PJ</td></tr>
+      <tr><td>Voto sindical (UOM, SMATA)</td><td class="tbl-num v-pj">Base peronista</td><td>Sindicatos metalmecánicos, canal de acción provincial directa</td></tr>
+      <tr><td>Voto agroproductivo</td><td class="tbl-num">Dividido JxC/LLA/PJ</td><td>Crédito PyME maquinaria puede recuperar segmento</td></tr>
+    </table>
+    <p style="font-size:.79rem;margin-top:8px;color:#374151">⚠️ Sin datos exactos disponibles. Estimaciones basadas en perfil histórico de la 4ª Sección. Se recomienda levantar datos actualizados de concejales 2025 cuando estén disponibles.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 3. Identidades Clave y Programas</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">⚙️</div>
+        <div class="cl-tipo">Industria — Maquinaria</div>
+        <div class="cl-nm">Polo de Maquinaria Agrícola</div>
+        <div class="cl-desc">Fábricas de silos bolt, acoplados, sembradoras, repuestos e implementos agrícolas. Exportan a toda la región pampeana. La cadena de valor incluye talleres metalúrgicos, proveedores de acero y logística. El polo metalmecánico genera trabajo calificado con fuerte presencia sindical.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏎️</div>
+        <div class="cl-tipo">Deporte y turismo</div>
+        <div class="cl-nm">Autódromo Ciudad de 9 de Julio</div>
+        <div class="cl-desc">Sede histórica de Turismo Carretera y Turismo Nacional. Las fechas de TC atraen 30,000-50,000 visitantes por evento. El turismo del automovilismo dinamiza la hotelería, la gastronomía y el comercio de la ciudad durante los fines de semana de carrera.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏗️</div>
+        <div class="cl-tipo">Infraestructura</div>
+        <div class="cl-nm">Red de Cloacas y Agua Potable</div>
+        <div class="cl-desc">El municipio ejecutó ampliación de cloacas y recambio de agua potable en Ciudad Nueva — una demanda histórica del distrito. La inversión en infraestructura básica es la política más requerida por los vecinos de los barrios periféricos, donde está la base popular del peronismo.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌳</div>
+        <div class="cl-tipo">Medio ambiente</div>
+        <div class="cl-nm">Gestión Integral de Residuos (GIRSU)</div>
+        <div class="cl-desc">El municipio cerró el basural a cielo abierto y transicionó hacia una planta de separación en origen. Es un programa que impacta directamente en la calidad de vida de los barrios y que la provincia puede acompañar con equipamiento técnico y asistencia.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🚜</div>
+        <div class="cl-tipo">Agroindustria</div>
+        <div class="cl-nm">Corredor Pampeano Central</div>
+        <div class="cl-desc">9 de Julio está en el corazón de la pampa húmeda — zona de alta producción de soja, maíz y girasol. Los productores agropecuarios y contratistas son un segmento con demanda de financiamiento, seguro agrícola y servicios técnicos que el Estado provincial puede ofrecer sin pasar por la intendencia.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏥</div>
+        <div class="cl-tipo">Salud</div>
+        <div class="cl-nm">Red Descentralizada de Salud</div>
+        <div class="cl-desc">El municipio opera con una red descentralizada de efectores que articula guardia, diagnóstico y especialidades. El HIGA de 9 de Julio tiene alcance regional en la 4ª Sección. Una inversión provincial en equipamiento de alta complejidad llega directamente a la base popular del partido.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 4. Tres Palancas Provinciales</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — Industrial y sindical</div><div class="pal-ttl">Crédito BAPRO para PyMEs del Polo Metalmecánico — Maquinaria agrícola e implementos</div></div>
+        <div class="pal-body">
+          <p>Las PyMEs del polo metalmecánico de 9 de Julio (silos bolt, acoplados, repuestos) necesitan financiamiento para capital de trabajo, maquinaria y expansión. Un programa de crédito blando del BAPRO orientado específicamente al sector metalmecánico-agroindustrial llega exactamente al dueño de taller que es parte de la cadena de maquinaria agrícola.</p>
+          <p>Este segmento no es automáticamente peronista — es pragmático. El candidato provincial que llega con un instrumento de financiamiento concreto y sin ideología puede construir un vínculo que trasciende el voto local a Gentile. El crédito PyME es una política que la intendenta opositora no puede replicar.</p>
+          <span class="pal-tag acc-prov">BAPRO · Min. Producción PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">HIGA 9 de Julio — Equipamiento de alta complejidad para alcance regional</div></div>
+        <div class="pal-body">
+          <p>El Hospital Interzonal de 9 de Julio tiene alcance regional en la 4ª Sección. Una inversión provincial en equipamiento de diagnóstico de alta complejidad (resonancia magnética, tomógrafo, laboratorio actualizado) llega al segmento popular del partido — y a los pacientes de municipios vecinos que se derivan a 9 de Julio para atención especializada.</p>
+          <p>En un municipio con intendenta opositora, el hospital es la palanca de mayor impacto en la percepción del Estado provincial. El vecino que recibe atención de calidad en el HIGA asocia esa experiencia con la gestión que invirtió — no con la gestión que no invirtió.</p>
+          <span class="pal-tag acc-prov">Ministerio de Salud PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Autódromo Ciudad de 9 de Julio — Fecha provincial del Turismo Carretera como política turística</div></div>
+        <div class="pal-body">
+          <p>El Turismo Carretera en 9 de Julio es un evento de alcance nacional que atrae decenas de miles de visitantes. Un programa provincial de apoyo al turismo del automovilismo (infraestructura del autódromo, señalética, circuito gastronómico de la ciudad) tiene un impacto visible y transversal que llega a todos los segmentos de la economía local.</p>
+          <p>El automovilismo es un activo de identidad que trasciende la política — el "fierrero" de 9 de Julio no pregunta si el candidato es peronista o no cuando ve que el Estado invirtió en el autódromo que lo enorgullece. Es una política de identidad de bajo costo y alto retorno emocional.</p>
+          <span class="pal-tag acc-prov">Min. Turismo PBA · Min. Producción PBA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>❌ Síntesis Ejecutiva — 9 de Julio (Opositora: Gentile JxC)</h3>
+  <p><strong>Contexto:</strong> ~45k padrón (est.), María José Gentile (JxC) intendenta opositora. Sin datos electorales exactos en base. Polo metalmecánico y de maquinaria agrícola (silos, acoplados, sembradoras) como motor económico. Autódromo Ciudad de 9 de Julio como activo de identidad y turismo. 4ª Sección Electoral.</p>
+  <p><strong>Estrategia provincial:</strong> No pasar por Gentile. Las tres palancas (crédito PyME metalmecánico, HIGA equipamiento, apoyo al autódromo) llegan directamente a la comunidad sin necesitar la intermediación de la intendenta. Los sindicatos metalmecánicos (UOM, SMATA) son el canal de tracción sindical más importante para la campaña provincial en 9 de Julio.</p>
+  <p><strong>Prioridad:</strong> Levantar datos electorales reales de concejales 2025 antes de la campaña activa para calibrar el tamaño real del voto peronista provincial en el municipio. Sin datos, la estrategia es orientativa.</p>
+</div>
+
+</body>
+</html>
