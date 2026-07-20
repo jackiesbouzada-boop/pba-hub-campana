@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tandil — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#2c3e7a;--bg:#f1f5f9;--surface:#fff;--border:#e2e8f0;--text:#1a1a2e;--muted:#64748b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a1a3e 0%,#1a1a4e 40%,#2c3e7a 75%,#4a6fa5 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px}
+.h-name2{font-size:1rem;font-weight:600;opacity:.8;margin-bottom:10px}
+.badge-alerta{display:inline-block;background:rgba(220,38,38,.3);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.5);letter-spacing:.5px;margin-right:6px;margin-bottom:6px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:8px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#fca5a5}
+.h-stat-v-b{font-size:1.15rem;font-weight:800;color:#bae6fd}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.65;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+.alert-box{background:#fef2f2;border:1.5px solid #fca5a5;border-radius:8px;padding:12px 14px;margin-bottom:12px}
+.alert-ttl{font-size:.72rem;font-weight:800;color:#991b1b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.alert-txt{font-size:.79rem;color:#374151;line-height:1.6}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#1a1a3e;border-color:#1a1a3e}
+.blk-k h4{color:#bae6fd}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--primary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:#ef4444;display:block}
+.b-num .n-b{font-size:1.7rem;font-weight:900;color:#3b82f6;display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl th{background:#fee2e2;color:#991b1b;font-weight:700;padding:7px 10px;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.4px}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#374151;vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl-num{font-weight:700;color:#2c3e7a}
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-opp{background:linear-gradient(135deg,#fef2f2,#fee2e2);border-color:#fca5a5}
+.arc-neutral{background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#fcd34d}
+.arc-alarm{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border-color:#c4b5fd}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f1f5f9}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.v-pj{color:#1d4ed8}.v-lla{color:#7c3aed}.v-jxc{color:#991b1b}.v-grey{color:#374151}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:5px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-tag{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-prov{background:#f0fdf4;color:#15803d}
+.acc-nac{background:#dbeafe;color:#1e40af}
+.sint{background:linear-gradient(135deg,#1a1a3e,#2c3e7a);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#fca5a5;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0;font-size:12px}.sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}.hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 portrait;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="h-cluster">🏙️ CIUDADES BONAERENSES &nbsp;|&nbsp; 5ª Sección Electoral</div>
+  <div class="h-name">TANDIL</div>
+  <div class="h-name2">Silicon Valley Bonaerense · UNICEN · Salame DOC · Sierras · Lunghi JxC desde 2003</div>
+  <div>
+    <span class="badge-alerta">❌ INTENDENTE OPOSITOR — Lunghi / JxC-PRO (desde 2003)</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">~120,000</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">50.5%</span><span class="h-stat-l">PJ dos-partidos PBA 2025 (¡empate técnico!)</span></div>
+    <div class="h-stat"><span class="h-stat-v-b">+50</span><span class="h-stat-l">Empresas de software en polo tecnológico</span></div>
+    <div class="h-stat"><span class="h-stat-v-b">UNICEN</span><span class="h-stat-l">Sede central — 30,000 estudiantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">2003</span><span class="h-stat-l">Lunghi intendente sin interrupción</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏙️ 1. Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="alert-box">
+      <div class="alert-ttl">❌ OPOSITOR — Miguel Ángel Lunghi (PRO/JxC) — Intendente desde 2003</div>
+      <div class="alert-txt">Lunghi tiene más de 20 años en la intendencia. Es uno de los intendentes con mayor continuidad en toda la Provincia de Buenos Aires. La acción provincial en Tandil no pasa por la intendencia: debe llegar directamente a la UNICEN, al polo tecnológico, al hospital y a los vecinos. En elecciones de concejales provinciales 2025, PJ y LLA empataron (50.5% PJ). Hay voto provincial peronista —hay que activarlo.</div>
+    </div>
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Silicon Valley Bonaerense — Polo Tecnológico</h4>
+        <p>Tandil tiene más de 50 empresas de software, incluyendo unicornios (como Mercado Libre que tiene desarrollo allí) y 2,000+ programadores. Es el polo tecnológico más importante del interior bonaerense. La UNICEN-UNICEN (especialmente la Facultad de Ciencias Exactas, con su carrera de Ingeniería en Sistemas) es el proveedor de talento. El polo tecnológico exporta servicios al mundo —hay trabajo remoto, sueldos en dólares, y una clase media técnica de perfil muy diferente al resto del interior.</p>
+      </div>
+      <div class="blk blk-k">
+        <h4>UNICEN — Sede Central Tandil</h4>
+        <p>La Universidad Nacional del Centro de la Provincia de Buenos Aires tiene su sede central en Tandil. Con 30,000 estudiantes entre Tandil y Olavarría, la UNICEN es el mayor empleador y motor cultural de la ciudad. La Facultad de Ciencias Exactas (UNICEN Tandil) tiene rankings de reconocimiento internacional en sistemas y computación. La presencia universitaria define el perfil etario, cultural y económico de la ciudad.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:12px">
+      <div class="blk b-num">
+        <span class="n">+20 años</span>
+        <span class="l">Lunghi en la intendencia. Opositor sólido pero el voto provincial en 2025 estuvo partido 50/50.</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n-b">DOC</span>
+        <span class="l">Denominación de Origen Controlada: Salame de Tandil y Queso Banquete — únicos productos del interior bonaerense con sello de origen internacional.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📈 2. Arco Electoral 2023 → 2025</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-opp">
+        <div class="arc-year">General 2023 — Intendente &amp; Concejales</div>
+        <div class="arc-row"><span class="arc-lbl">JxC (Lunghi — reelección)</span><span class="arc-val v-jxc">35,551 (43.9%) 🏆</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">24,577 (30.4%)</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">18,630 (23.0%)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">2,140 (2.6%)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">116,941</span></div>
+      </div>
+      <div class="arc-card arc-neutral">
+        <div class="arc-year">Concejales PBA 2025 — EMPATE TÉCNICO</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">24,773 (35.2%) 🔵</span></div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">24,251 (34.5%) 🟣</span></div>
+        <div class="arc-row"><span class="arc-lbl">Brecha PJ-LLA</span><span class="arc-val v-pj">+522 votos</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ dos-partidos</span><span class="arc-val v-pj">50.5%</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">119,911</span></div>
+      </div>
+      <div class="arc-card arc-alarm">
+        <div class="arc-year">Nacional 2025 — LLA domina</div>
+        <div class="arc-row"><span class="arc-lbl">La Libertad Avanza</span><span class="arc-val v-lla">40,132 (52.8%) 🚨</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / U. por la Patria</span><span class="arc-val v-pj">21,961 (28.9%)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Otros</span><span class="arc-val v-grey">3,150 (4.1%)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val v-grey">117,504</span></div>
+      </div>
+    </div>
+    <table class="tbl">
+      <tr><th>Elección</th><th>PJ %</th><th>LLA/JxC %</th><th>Lectura estratégica</th></tr>
+      <tr><td>2023 Intendente</td><td class="tbl-num v-pj">30.4%</td><td class="tbl-num v-jxc">43.9% (JxC)</td><td>Lunghi gana cómodamente en 3 partidos</td></tr>
+      <tr><td>2025 PBA Concejales</td><td class="tbl-num v-pj">35.2% (+5pp)</td><td class="tbl-num v-lla">34.5% (LLA)</td><td><strong>Empate técnico en voto provincial</strong></td></tr>
+      <tr><td>2025 Nacional</td><td class="tbl-num v-pj">28.9%</td><td class="tbl-num v-lla">52.8% (LLA)</td><td>LLA domina en elección nacional</td></tr>
+    </table>
+    <p style="font-size:.79rem;margin-top:8px;color:#374151">⚡ <strong>Lectura clave:</strong> El voto local va a Lunghi (JxC). El voto provincial se divide PJ/LLA en empate técnico. El voto nacional va a LLA. Hay un electorado provincial peronista de ~35% que se puede activar con presencia y gestión visible — es el electorado objetivo en Tandil.</p>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏗️ 3. Identidades Clave y Programas</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">💻</div>
+        <div class="cl-tipo">Tecnología — Polo</div>
+        <div class="cl-nm">Distrito Tecnológico Tandil</div>
+        <div class="cl-desc">50+ empresas de software, 2,000+ programadores, exportación de servicios al mundo. La UNICEN Exactas alimenta el polo con egresados. Hay trabajo remoto con sueldos en dólares — un perfil económico sin precedentes en el interior bonaerense.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación superior</div>
+        <div class="cl-nm">UNICEN Exactas — Sede Central</div>
+        <div class="cl-desc">La Facultad de Ciencias Exactas (UNICEN Tandil) es la usina de talento del polo tecnológico. Ingeniería en Sistemas, Licenciatura en Sistemas, Matemática. Rankings de reconocimiento internacional en computing. 30,000 estudiantes entre Tandil y Olavarría.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🥩</div>
+        <div class="cl-tipo">Agroindustria</div>
+        <div class="cl-nm">Salame DOC + Queso Banquete</div>
+        <div class="cl-desc">Denominación de Origen Controlada: el Salame de Tandil es el único producto cárnico argentino con certificación de origen internacional. El Queso Banquete nació en la Escuela Agraria N°1. Andamiaje de turismo gastronómico y exportación premium.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">⛰️</div>
+        <div class="cl-tipo">Turismo premium</div>
+        <div class="cl-nm">Sierras del Tandil</div>
+        <div class="cl-desc">Las sierras de Tandil atraen turismo de alto nivel adquisitivo: cabañas, trekking, mountain biking, turismo de convenciones. El Parque Bicentenario y el entorno del Dique del Fuerte son los principales puntos de atracción. Turismo que no disputa con el peronismo.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🏥</div>
+        <div class="cl-tipo">Salud regional</div>
+        <div class="cl-nm">Hospital Ramón Santamarina</div>
+        <div class="cl-desc">El hospital de referencia de Tandil es el eje sanitario de la 5ª Sección sur. Atiende a pacientes de Azul, Rauch, Benito Juárez y otros municipios del sur bonaerense. Es el punto de inversión provincial con mayor alcance regional.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🧬</div>
+        <div class="cl-tipo">Investigación aplicada</div>
+        <div class="cl-nm">UNICEN Biotecnología Aplicada</div>
+        <div class="cl-desc">La UNICEN tiene proyectos de biotecnología aplicada al agro y nuevas carreras vinculadas a la economía del conocimiento. El vínculo entre la investigación universitaria y el sector productivo regional (agro, tecnología) es uno de los diferenciadores de Tandil.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 4. Tres Palancas Provinciales</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 1 — Segmento tecnológico</div><div class="pal-ttl">Programa Provincial de Economía del Conocimiento — Certificaciones y formación acelerada</div></div>
+        <div class="pal-body">
+          <p>El polo tecnológico de Tandil demanda talento que la UNICEN no puede cubrir sola. Un programa provincial de formación acelerada en programación, ciberseguridad y gestión TIC —articulado con la UNICEN y las empresas del polo— llega al segmento más dinámico de la economía local sin necesitar la mediación de Lunghi.</p>
+          <p>El anuncio en el campus de la UNICEN o en una de las empresas del polo posiciona al candidato como el que entiende la economía del siglo XXI — no solo el candidato del interior bonaerense "clásico". Ese perfil diferenciado puede movilizar el voto de jóvenes y profesionales que en 2025 se dividieron entre PJ y LLA.</p>
+          <span class="pal-tag acc-prov">UNICEN · Min. Producción PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 2</div><div class="pal-ttl">Hospital Santamarina — Equipamiento de alta complejidad regional</div></div>
+        <div class="pal-body">
+          <p>El Hospital Ramón Santamarina es el hospital de referencia del sur de la 5ª Sección. Una inversión provincial en equipamiento de alta complejidad o ampliación de especialidades llega directamente a la población que Lunghi no prioriza: el sector popular y trabajador de Tandil que no accede a la salud privada.</p>
+          <p>El alcance del hospital va más allá de Tandil: pacientes de Azul, Rauch, Benito Juárez y municipios del sur bonaerense llegan al Santamarina. Una inversión provincial aquí tiene impacto en toda la región sur de la 5ª Sección, alcanzando municipios aliados como Rauch y Ayacucho.</p>
+          <span class="pal-tag acc-prov">Ministerio de Salud PBA</span>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr"><div class="pal-n">Palanca 3</div><div class="pal-ttl">Sello de Origen y Turismo Gastronómico — Ampliación DOC a circuito provincial</div></div>
+        <div class="pal-body">
+          <p>El Salame de Tandil y el Queso Banquete tienen Denominación de Origen Controlada — son los únicos productos del interior bonaerense con ese sello. Un programa provincial que amplíe el circuito gastronómico (señalética, marca provincial, ferias regionales, exportación) capitaliza una identidad que Tandil ya construyó y que el Estado provincial puede apalancar.</p>
+          <p>El anuncio de incorporación del circuito gastronómico tandilense a la oferta turística provincial es un gesto de valorización de la identidad local que ningún intendente puede oponerse — y que llega emocionalmente a los productores, comerciantes y vecinos que viven de esa industria.</p>
+          <span class="pal-tag acc-prov">Min. Producción PBA · Min. Turismo PBA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sint">
+  <h3>❌ Síntesis Ejecutiva — Tandil (Opositor: Lunghi JxC desde 2003)</h3>
+  <p><strong>Contexto:</strong> ~120k padrón, Lunghi (JxC/PRO) intendente ininterrumpido desde 2003. JxC gana la intendencia cómodamente (43.9% en 2023 sobre tres partidos). Pero en la elección provincial 2025, PJ y LLA empataron al 50.5% PJ — hay electorado provincial peronista que se puede activar. Silicon Valley bonaerense: polo tecnológico de 50+ empresas, UNICEN como sede central, Salame DOC como identidad gastronómica de alcance internacional.</p>
+  <p><strong>El dato clave:</strong> Tandil vota diferente en cada tipo de elección. Local → Lunghi. Provincial → 50/50 PJ/LLA. Nacional → LLA domina. El objetivo no es disputar la intendencia sino consolidar el voto provincial y mostrar que el Estado PJ llegó a Tandil sin pasar por Lunghi. La acción provincial debe ser visible y llegar directamente a la comunidad.</p>
+  <p><strong>Palancas:</strong> Economía del Conocimiento/UNICEN (segmento tech y universitario), Hospital Santamarina (base popular, alcance regional), DOC Gastronómica (productores y comerciantes de identidad local). Las tres palancas llegan sin necesitar la intermediación del intendente opositor.</p>
+</div>
+
+</body>
+</html>
