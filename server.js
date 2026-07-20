@@ -218,6 +218,9 @@ app.get('/PBA_Maestro_2026.html', (req, res) => {
     const isAdmin = ADMIN_USER && req.session.username === ADMIN_USER;
     const username = req.session.username || '';
     html = html.replace('<body>', `<body data-admin="${isAdmin}" data-user="${username}">`);
+    res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '0');
     res.type('html').send(html);
   } catch (e) {
     res.status(500).send('Error al cargar el hub');
