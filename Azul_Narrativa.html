@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Azul — Narrativa Política 2026</title>
+<style>
+:root{--primary:#3d2b00;--accent:#7b5e00;--bg:#f5f0e8;--surface:#fff;--border:#e2d8c0;--text:#1a1a2e;--muted:#6b5c3e;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:860px;margin:0 auto}
+
+.cover{background:linear-gradient(135deg,#1e1400 0%,#3d2b00 55%,#7b5e00 100%);color:#fff;padding:36px 36px 30px;border-radius:var(--radius);margin-bottom:16px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cv-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:8px}
+.cv-title{font-size:2.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:4px;line-height:1}
+.cv-sub{font-size:.9rem;opacity:.75;margin-bottom:20px}
+.cv-strip{display:flex;flex-wrap:wrap;gap:28px;border-top:1px solid rgba(255,255,255,.15);padding-top:18px}
+.cv-item{display:flex;flex-direction:column;gap:2px}
+.cv-val{font-size:1.1rem;font-weight:800;color:#f5c842}
+.cv-lbl{font-size:.67rem;opacity:.65;text-transform:uppercase;letter-spacing:.5px}
+
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#3d2b00,#5c4200);color:#fff;padding:11px 20px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:18px 20px;font-size:.84rem;color:#374151;line-height:1.7}
+.sec-body p{margin-bottom:12px}
+.sec-body p:last-child{margin-bottom:0}
+.sec-body strong{color:var(--primary)}
+
+.hbox{border-radius:8px;padding:14px 16px;margin:12px 0}
+.hbox-gold{background:#fef9ef;border-left:4px solid #f5c842}
+.hbox-red{background:#fef2f2;border-left:4px solid #ef4444}
+.hbox-blue{background:#eff6ff;border-left:4px solid #2563eb}
+.hbox-green{background:#f0fdf4;border-left:4px solid #22c55e}
+.hbox-title{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.hbox-gold .hbox-title{color:#78350f}
+.hbox-red .hbox-title{color:#b91c1c}
+.hbox-blue .hbox-title{color:#1d4ed8}
+.hbox-green .hbox-title{color:#15803d}
+.hbox p{font-size:.81rem;line-height:1.6;color:#374151}
+
+.tabla{width:100%;border-collapse:collapse;margin:12px 0;font-size:.8rem}
+.tabla th{background:#3d2b00;color:#fff;padding:8px 12px;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px}
+.tabla td{padding:8px 12px;border-bottom:1px solid var(--border);color:#374151}
+.tabla tr:last-child td{border-bottom:none}
+.tabla tr:nth-child(even){background:#faf7f0}
+.pj{font-weight:800;color:#1d4ed8}
+.lla{font-weight:800;color:#7c3aed}
+.lla-win{font-weight:800;color:#7c3aed;background:#f3e8ff;padding:1px 4px;border-radius:3px}
+.jxc{font-weight:700;color:#d97706}
+.fit{font-weight:700;color:#dc2626}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.stat-card{border:1.5px solid var(--border);border-radius:8px;padding:14px;text-align:center;background:#faf7f0}
+.sc-num{font-size:1.8rem;font-weight:900;color:var(--accent);display:block}
+.sc-lbl{font-size:.72rem;color:var(--muted);margin-top:3px}
+
+.cierre{background:linear-gradient(135deg,#1e1400,#3d2b00);border-radius:var(--radius);padding:24px 26px;color:#fff;margin-top:4px}
+.cierre h3{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:#f5c842;margin-bottom:14px}
+.cierre p{font-size:.83rem;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:10px}
+.cierre p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec,.cover,.cierre{break-inside:avoid;box-shadow:none;border:1px solid #e2e8f0}
+  .cover,.cierre{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-label">🌾 Interior Pampeano · 7ª Sección Electoral · Narrativa Política 2026</div>
+  <div class="cv-title">Azul</div>
+  <div class="cv-sub">Nelson Sombra · UxP · Aliado · Ciudad Cervantina — el distrito más competitivo del interior</div>
+  <div class="cv-strip">
+    <div class="cv-item"><span class="cv-val">60,070</span><span class="cv-lbl">Padrón 2025</span></div>
+    <div class="cv-item"><span class="cv-val">75,905 hab</span><span class="cv-lbl">Habitantes</span></div>
+    <div class="cv-item"><span class="cv-val">34.3%</span><span class="cv-lbl">PJ 2023 — 3-way tie</span></div>
+    <div class="cv-item"><span class="cv-val">35.5%</span><span class="cv-lbl">LLA gana Prov 2025</span></div>
+    <div class="cv-item"><span class="cv-val">48.7%</span><span class="cv-lbl">LLA Nacional 2025</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">📖 I. La ciudad que el mapa no describe bien</div>
+  <div class="sec-body">
+    <p>Azul es una de esas ciudades del interior bonaerense que desde afuera parece un municipio más de la pampa — campo, frigoríficos, ciudad de servicios de tamaño medio. Pero tiene algo que ninguna otra ciudad de Sudamérica tiene: el título de <strong>Ciudad Cervantina</strong> otorgado por el Centro UNESCO. La colección privada de libros del Quijote más grande del mundo fuera de España vive en Azul, en la Casa Ronco. El Festival Cervantino lleva décadas construyendo una identidad cultural de alcance nacional en una ciudad de 75.000 habitantes en el interior bonaerense.</p>
+    <p>Esa identidad cultural no es decorativa — es económica. El turismo cultural genera ocupación hotelera, consumo en comercios locales y una imagen positiva que el municipio usa para diferenciarse en la región. Azul no compite con Olavarría por ser industrial ni con Tandil por ser turística de sierra — tiene su propia categoría.</p>
+    <div class="hbox hbox-gold">
+      <div class="hbox-title">La ciudad de los tres activos singulares</div>
+      <p>Azul tiene tres activos que no comparte con ningún otro municipio del interior bonaerense: el título cervantino (único en Sudamérica), la UNCPBA con Agronomía y Derecho (polo universitario del sur), y la Presa La Isidora (obra hidráulica histórica que resolvió el problema de inundaciones más antiguo del partido). Esa combinación le da a Azul una narrativa de gestión y política cultural que va mucho más allá de lo que su padrón de 60k sugiere.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🏛️ II. Sombra: primera gestión en terreno difícil</div>
+  <div class="sec-body">
+    <p>Nelson Sombra llegó a la intendencia en 2023 en las condiciones más difíciles posibles: en una elección de 3 vías donde ningún espacio superó el 35%. Ganó con 34.3% — el PJ retuvo el municipio por la dispersión del voto opositor entre JxC y LLA. Esa fragilidad de origen marcó la gestión desde el inicio.</p>
+    <p>Sombra apostó por la obra visible y de impacto concreto. La Presa La Isidora es el ejemplo más claro: una obra de infraestructura hidráulica que resuelve el problema de inundaciones del Arroyo Azul que los azuleños venían sufriendo durante décadas. Es una obra que tiene firma local y provincial, que se ve, que se siente, y que nadie puede discutir. En un municipio donde el terreno electoral es hostil, la gestión concreta es el único capital político sólido.</p>
+    <div class="hbox hbox-blue">
+      <div class="hbox-title">💡 El parque industrial: apuesta productiva en clave electoral</div>
+      <p>La regularización de parcelas y la mejora eléctrica del parque industrial generaron nuevas radicaciones de empresas. No es la revolución productiva, pero es empleo concreto y presencia municipal en el sector privado más relevante del partido. En un municipio donde LLA captura más del 35% del voto provincial, el empleo privado es el campo de disputa real.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ III. El mapa electoral más competitivo del interior</div>
+  <div class="sec-body">
+    <p>Azul 2023–2025 es la historia de un municipio donde ninguna fuerza tiene control claro del electorado — y donde LLA avanza con rapidez inusitada.</p>
+
+    <table class="tabla">
+      <thead>
+        <tr><th>Elección</th><th>PJ / UxP</th><th>LLA</th><th>JxC</th><th>FIT</th><th>Padrón</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2023 — Intendente</td><td class="pj">34.3% (13,922)</td><td class="lla">31.3% (12,697)</td><td class="jxc">32.4% (13,141)</td><td class="fit">2.1%</td><td>59,569</td></tr>
+        <tr><td>2025 — Provincial</td><td class="pj">35.0% (11,798)</td><td class="lla-win">35.5% (11,938) 🔴</td><td>—</td><td class="fit">2.5%</td><td>60,070</td></tr>
+        <tr><td>2025 — Nacional</td><td class="pj">33.0% (12,026)</td><td class="lla-win">48.7% (17,735) 🔴</td><td>—</td><td class="fit">3.9%</td><td>59,165</td></tr>
+      </tbody>
+    </table>
+
+    <div class="two-col">
+      <div class="stat-card">
+        <span class="sc-num" style="color:#dc2626">+17.4 pts</span>
+        <div class="sc-lbl">LLA entre 2023 (31.3%) y nacional 2025 (48.7%)<br>El crecimiento más rápido del interior bonaerense</div>
+      </div>
+      <div class="stat-card">
+        <span class="sc-num" style="color:#7c3aed">+0.5 pts</span>
+        <div class="sc-lbl">Diferencia LLA vs PJ en provincial 2025<br>El margen más ajustado de toda la Provincia</div>
+      </div>
+    </div>
+
+    <div class="hbox hbox-red">
+      <div class="hbox-title">🔴 2025: LLA ganó la elección provincial en Azul</div>
+      <p>Con 35.5% vs 35.0%, LLA superó al PJ en la elección legislativa provincial 2025 en Azul. La diferencia es de 140 votos. Es uno de los pocos municipios del interior bonaerense donde el peronismo fue superado en una categoría provincial. El movimiento de votos ex-JxC hacia LLA (JxC tomó el 32.4% en 2023, y en 2025 sin JxC en la boleta provincial ese voto migró principalmente a LLA) explica el fenómeno.</p>
+    </div>
+    <div class="hbox hbox-red">
+      <div class="hbox-title">🔴 Nacional 2025: LLA al 48.7% — casi mayoría absoluta</div>
+      <p>En la elección nacional 2025, LLA llegó al 48.7% en Azul — prácticamente mayoría absoluta en un partido donde ganó la intendencia con el 34%. Es el dato más alarmante del mapa: el mismo electorado que eligió a Sombra (PJ) como intendente en 2023 votó abrumadoramente a LLA en la categoría nacional dos años después. Esto no refleja un rechazo al intendente local — refleja un voto nacional que opera con su propia lógica.</p>
+    </div>
+    <div class="hbox hbox-gold">
+      <div class="hbox-title">💡 La clave del triple empate de 2023</div>
+      <p>La victoria del PJ en 2023 fue posible gracias a la fragmentación: el voto no-peronista estaba dividido al 50/50 entre JxC (32.4%) y LLA (31.3%). Si esos 25.838 votos hubieran ido todos a LLA, Azul tendría un intendente libertario hoy. En 2025, con JxC desaparecida en la boleta provincial, esa unificación se produjo parcialmente — y LLA superó al PJ.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 IV. Ejes Estratégicos 2026–2027</div>
+  <div class="sec-body">
+    <div class="hbox hbox-red">
+      <div class="hbox-title">🔴 El riesgo real: Azul puede perderse en 2027</div>
+      <p>Con LLA al 48.7% en la nacional y al 35.5% en la provincial, el PJ está gobernando por la mínima diferencia en un municipio donde el viento sopla en contra. En 2027, con una sola boleta de intendente (no fragmentación JxC/LLA), el escenario más probable es una elección muy competitiva donde LLA va con todo. Azul es un distrito a no dar por sentado.</p>
+    </div>
+    <div class="hbox hbox-blue">
+      <div class="hbox-title">📍 El canal de llegada: la identidad, no la política</div>
+      <p>En Azul, el canal político directo (intendente aliado) existe pero es frágil. Los canales de mayor impacto y menor riesgo político son la identidad cultural (Festival Cervantino, Casa Ronco) y la educación (UNCPBA). Son temas donde el acuerdo es transversal — el 48% que votó LLA también valora la cultura y la universidad local. La presencia en esos espacios construye legitimidad sin activar el conflicto político.</p>
+    </div>
+    <div class="hbox hbox-green">
+      <div class="hbox-title">✅ La gestión concreta como escudo</div>
+      <p>La Presa La Isidora, el parque industrial y la UNCPBA son los activos de gestión que Sombra puede mostrar. En un municipio con electorado tan volátil, la obra visible es el mejor argumento. Acompañar y reforzar esos logros desde la provincia es la estrategia de defensa del territorio más efectiva.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cierre">
+  <h3>📌 Cierre Narrativo</h3>
+  <p>Azul es la paradoja perfecta del interior bonaerense: un municipio con intendente aliado, gestión concreta y una identidad cultural única en el continente — pero donde LLA ganó la elección provincial y llegó al 48.7% en la nacional. El PJ gobierna desde 2023 gracias a un accidente histórico (el triple empate) que en 2025 ya no existe.</p>
+  <p>La Ciudad Cervantina, la UNCPBA y la Presa La Isidora son los tres activos que definen a Azul en el mapa provincial. Son también los tres argumentos más sólidos para justificar la presencia y el apoyo provincial — porque trascienden la fragmentación política y hablan a un electorado que más allá de su orientación nacional valora la cultura, la educación y la obra pública concreta.</p>
+  <p><strong>Azul es un municipio para defender activamente, no para dar por garantizado.</strong> El territorio está en disputa real, el intendente aliado gobierna con margen mínimo, y LLA tiene viento de cola en la categoría nacional. La estrategia pasa por hacer visible la gestión concreta y por construir una presencia en los espacios culturales y universitarios que tiene mayor transversalidad política.</p>
+</div>
+
+</body>
+</html>

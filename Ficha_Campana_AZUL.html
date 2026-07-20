@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Azul — Ficha de Campaña 2026</title>
+<style>
+:root{--primary:#3d2b00;--primary-dark:#1e1400;--accent:#7b5e00;--accent-light:#c49a16;--bg:#f5f0e8;--surface:#ffffff;--border:#e2d8c0;--text:#1a1a2e;--muted:#6b5c3e;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:16px;max-width:900px;margin:0 auto}
+
+.hero{background:linear-gradient(135deg,#1e1400 0%,#3d2b00 55%,#7b5e00 100%);color:#fff;padding:28px 32px 24px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04)}
+.h-cluster{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.7;margin-bottom:6px}
+.h-name{font-size:2.2rem;font-weight:900;letter-spacing:-.01em;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.82rem;opacity:.75;margin-bottom:14px}
+.badge-al{display:inline-block;background:rgba(29,78,216,.3);color:#93c5fd;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(29,78,216,.5);letter-spacing:.5px;margin-bottom:4px}
+.badge-crit{display:inline-block;background:rgba(220,38,38,.3);color:#fca5a5;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.5);letter-spacing:.5px;margin-left:6px;margin-bottom:4px}
+.h-stats{display:flex;flex-wrap:wrap;gap:22px;margin-top:10px}
+.h-stat{display:flex;flex-direction:column}
+.h-stat-v{font-size:1.15rem;font-weight:800;color:#f5c842}
+.h-stat-l{font-size:.68rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+
+.sec{background:var(--surface);border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:14px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#3d2b00,#5c4200);color:#fff;padding:10px 18px;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{padding:16px 18px}
+.sec-body p{color:#374151;font-size:.83rem;line-height:1.6;margin-bottom:8px}
+.sec-body p:last-child{margin-bottom:0}
+
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blk{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.blk-k{background:#3d2b00;border-color:#3d2b00;color:#fff}
+.blk-k p{color:rgba(255,255,255,.92) !important}
+.blk-k h4{color:#f5c842}
+.blk h4{font-size:.74rem;font-weight:800;color:var(--accent);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.blk p{font-size:.8rem;color:#374151;line-height:1.55}
+.b-num{text-align:center;padding:10px 8px}
+.b-num .n{font-size:1.7rem;font-weight:900;color:var(--accent);display:block}
+.b-num .l{font-size:.7rem;color:var(--muted)}
+
+.int-box{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.int-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#3d2b00,#7b5e00);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.int-info h3{font-size:.95rem;font-weight:800;color:var(--text)}
+.int-info .int-meta{font-size:.77rem;color:var(--muted);margin-top:2px}
+.int-info .int-desc{font-size:.77rem;color:#374151;margin-top:6px;line-height:1.5}
+.badge-pol{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.67rem;font-weight:800;letter-spacing:.5px}
+.badge-al-pol{background:#dbeafe;color:#1e40af}
+
+.gest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gest-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px}
+.gest-label{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#78350f;margin-bottom:4px}
+.gest-txt{font-size:.77rem;color:#374151;line-height:1.5}
+
+.arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.arc-card{border-radius:8px;padding:12px 14px;border:1.5px solid var(--border)}
+.arc-danger{background:#fef2f2;border-color:#fca5a5}
+.arc-warn{background:#fef9ef;border-color:#f5d77a}
+.arc-neutral{background:#f8fafc;border-color:var(--border)}
+.arc-year{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:8px}
+.arc-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f5f0e8}
+.arc-row:last-child{border-bottom:none}
+.arc-lbl{font-size:.75rem;color:#374151}
+.arc-val{font-size:.82rem;font-weight:800}
+.arc-pj{color:#1d4ed8}
+.arc-lla{color:#7c3aed}
+.arc-jxc{color:#d97706}
+.arc-fit{color:#dc2626}
+.arc-grey{color:#374151}
+.arc-lla-win{color:#7c3aed;background:#f3e8ff;padding:1px 5px;border-radius:4px}
+
+.alert-box{border-radius:8px;padding:12px 14px;margin-top:10px}
+.alert-red{background:#fef2f2;border:1.5px solid #fecaca}
+.alert-red .a-ttl{color:#b91c1c}
+.alert-warn{background:#fef9ef;border:1.5px solid #fde68a}
+.alert-warn .a-ttl{color:#92400e}
+.alert-info{background:#eff6ff;border:1.5px solid #bfdbfe}
+.alert-info .a-ttl{color:#1e40af}
+.a-ttl{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.a-body{font-size:.79rem;color:#374151;line-height:1.6}
+
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.cl-card{border:1.5px solid var(--border);border-radius:8px;padding:13px 14px}
+.cl-icon{font-size:1.5rem;margin-bottom:6px}
+.cl-tipo{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:3px}
+.cl-nm{font-size:.82rem;font-weight:800;color:var(--primary);margin-bottom:5px}
+.cl-desc{font-size:.76rem;color:#475569;line-height:1.5}
+
+.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pal{border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.pal-hdr{background:linear-gradient(135deg,#3d2b00,#7b5e00);color:#fff;padding:10px 13px}
+.pal-n{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.pal-ttl{font-size:.88rem;font-weight:800;margin-top:2px}
+.pal-body{padding:12px 13px;background:#fff}
+.pal-body p{font-size:.77rem;color:#374151;line-height:1.5;margin-bottom:8px}
+.pal-body p:last-child{margin-bottom:0}
+.pal-access{display:inline-block;font-size:.67rem;font-weight:800;padding:3px 9px;border-radius:12px}
+.acc-priv{background:#fef3c7;color:#92400e}
+.acc-gest{background:#dcfce7;color:#15803d}
+.acc-prot{background:#f3e8ff;color:#6b21a8}
+.acc-cult{background:#ede9fe;color:#6b21a8}
+
+.prog-list{display:flex;flex-direction:column;gap:8px}
+.prog-item{border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;gap:12px;align-items:flex-start}
+.prog-ico{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.prog-body h5{font-size:.78rem;font-weight:800;color:var(--primary);margin-bottom:3px}
+.prog-body p{font-size:.75rem;color:#374151;line-height:1.5}
+
+.vis-list{display:flex;flex-direction:column;gap:8px}
+.vis-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:#fafaf5}
+.vis-num{background:var(--accent);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.vis-body{flex:1}
+.vis-ttl{font-size:.8rem;font-weight:800;color:var(--text)}
+.vis-desc{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.vis-tag{display:inline-block;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.tag-cult{background:#ede9fe;color:#6b21a8}
+.tag-obra{background:#fef3c7;color:#92400e}
+.tag-edu{background:#dbeafe;color:#1e40af}
+.tag-ind{background:#dcfce7;color:#15803d}
+
+.sint{background:linear-gradient(135deg,#1e1400,#3d2b00);border-radius:var(--radius);padding:20px 22px;color:#fff}
+.sint h3{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#f5c842;margin-bottom:12px}
+.sint p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.sint p:last-child{margin-bottom:0}
+
+@media print{
+  body{background:#fff;padding:0;font-size:12px}
+  .sec{box-shadow:none;border:1px solid #e2e8f0;break-inside:avoid !important}
+  .hero,.sint{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4 portrait;margin:10mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="h-cluster">🌾 INTERIOR PAMPEANO &nbsp;|&nbsp; 7ª Sección Electoral</div>
+  <div class="h-name">AZUL</div>
+  <div class="h-sub">Partido de Azul · Buenos Aires · Ciudad Cervantina de Argentina · Arroyo Azul</div>
+  <div>
+    <span class="badge-al">✅ INTENDENTE ALIADO — Unión por la Patria</span>
+    <span class="badge-crit">🔴 DISTRITO CRÍTICO — LLA supera PJ en 2025</span>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><span class="h-stat-v">60,070</span><span class="h-stat-l">Padrón 2025</span></div>
+    <div class="h-stat"><span class="h-stat-v">75,905</span><span class="h-stat-l">Habitantes</span></div>
+    <div class="h-stat"><span class="h-stat-v">6,538 km²</span><span class="h-stat-l">Superficie</span></div>
+    <div class="h-stat"><span class="h-stat-v">35.5%</span><span class="h-stat-l">LLA 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">35.0%</span><span class="h-stat-l">PJ 2025 Prov</span></div>
+    <div class="h-stat"><span class="h-stat-v">48.7%</span><span class="h-stat-l">LLA 2025 Nacional</span></div>
+  </div>
+</div>
+
+<!-- IDENTIDAD -->
+<div class="sec">
+  <div class="sec-hdr">🌾 Identidad Territorial</div>
+  <div class="sec-body">
+    <div class="blk-grid">
+      <div class="blk blk-k">
+        <h4>Ciudad Cervantina · Única en Sudamérica</h4>
+        <p>Azul ostenta el título de <strong>Ciudad Cervantina de Argentina</strong> — única en Sudamérica con este reconocimiento otorgado por el Centro UNESCO. Alberga la colección privada más grande del Quijote fuera de España (Casa Ronco). El Festival Cervantino es el evento cultural de mayor impacto del interior bonaerense y define la identidad del partido hacia afuera: cultura, turismo, evento de escala. Una marca única e irrepetible que diferencia a Azul de cualquier otra ciudad de la región.</p>
+      </div>
+      <div class="blk">
+        <h4>Agroindustria · Frigoríficos · Universidad</h4>
+        <p>Más allá de la cultura, Azul tiene una base productiva sólida: frigoríficos e industria cárnica, molinos harineros y servicios para el agro. El parque industrial fue relanzado en la gestión actual con nuevas radicaciones. Y la presencia de la <strong>UNCPBA</strong> (Universidad Nacional del Centro) con sus facultades de Agronomía y Derecho convierte a Azul en polo universitario regional — retiene jóvenes y atrae estudiantes de los partidos vecinos. La combinación de cultura, industria y universidad es el perfil más diversificado del interior bonaerense en ese rango de población.</p>
+      </div>
+    </div>
+    <div class="blk-grid" style="margin-top:10px">
+      <div class="blk b-num">
+        <span class="n">Único</span>
+        <span class="l">Ciudad Cervantina de Sudamérica — título UNESCO exclusivo</span>
+      </div>
+      <div class="blk b-num">
+        <span class="n">UNCPBA</span>
+        <span class="l">Agronomía y Derecho — polo universitario regional de la 7ª Sección</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTENDENTE -->
+<div class="sec">
+  <div class="sec-hdr">🏛️ Intendente · Contexto Político</div>
+  <div class="sec-body">
+    <div class="int-box">
+      <div class="int-avatar">🏛️</div>
+      <div class="int-info">
+        <h3>Nelson Sombra</h3>
+        <div class="int-meta">Unión por la Patria &nbsp;·&nbsp; <span class="badge-pol badge-al-pol">ALIADO</span></div>
+        <div class="int-desc">Primera gestión como intendente de Azul. Ganó en 2023 en una elección de 3 vías extremadamente reñida — PJ 34.3%, JxC 32.4%, LLA 31.3% — con apenas 2 puntos de diferencia. Enfrenta un terreno electoral adverso: en las legislativas de 2025, LLA lo superó por medio punto en la elección provincial y llegó al 48.7% en la nacional. Gestión orientada a la infraestructura hidráulica, el parque industrial y el posicionamiento de Azul como polo cultural y universitario regional.</div>
+      </div>
+    </div>
+    <div class="gest-grid">
+      <div class="gest-item">
+        <div class="gest-label">💧 Cuenca del Arroyo Azul · Presa La Isidora</div>
+        <div class="gest-txt">Obras de limpieza, dragado y la Presa La Isidora — obra histórica de infraestructura hidráulica para regular el caudal del Arroyo Azul y eliminar las inundaciones que golpeaban el casco urbano. La obra más visible de la gestión.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🏭 Recuperación del Parque Industrial</div>
+        <div class="gest-txt">Regularización de parcelas y mejora de la infraestructura eléctrica. Nuevas radicaciones de empresas de logística y servicios agroindustriales. El parque industrial como motor económico del partido.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🎓 Polo Universitario Regional</div>
+        <div class="gest-txt">Apoyo a la presencia de la UNCPBA en Azul (Agronomía y Derecho). Retención de jóvenes de la región que de otro modo migrarían a Tandil o La Plata. Azul como destino universitario del interior sur.</div>
+      </div>
+      <div class="gest-item">
+        <div class="gest-label">🎭 Plan Turístico Cervantino</div>
+        <div class="gest-txt">Aprovechamiento de la marca "Ciudad Cervantina" para generar un calendario de eventos anual. El Festival Cervantino como traccionador de ocupación hotelera y consumo en comercios locales. Política cultural con impacto económico directo.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTORAL -->
+<div class="sec">
+  <div class="sec-hdr">🗳️ Arco Electoral 2023–2025 — Zona de disputa extrema</div>
+  <div class="sec-body">
+    <div class="arc-grid">
+      <div class="arc-card arc-warn">
+        <div class="arc-year">2023 — Intendente (3-way tie)</div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">34.3% (13,922)</span></div>
+        <div class="arc-row"><span class="arc-lbl">JxC</span><span class="arc-val arc-jxc">32.4% (13,141)</span></div>
+        <div class="arc-row"><span class="arc-lbl">LLA</span><span class="arc-val arc-lla">31.3% (12,697)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">2.1% (836)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">59,569</span></div>
+      </div>
+      <div class="arc-card arc-danger">
+        <div class="arc-year">2025 — Elección PBA</div>
+        <div class="arc-row"><span class="arc-lbl">LLA 🔴</span><span class="arc-val arc-lla-win">35.5% (11,938)</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">35.0% (11,798)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">2.5% (844)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">60,070</span></div>
+      </div>
+      <div class="arc-card arc-danger">
+        <div class="arc-year">2025 — Elección Nacional</div>
+        <div class="arc-row"><span class="arc-lbl">LLA 🔴</span><span class="arc-val arc-lla-win">48.7% (17,735)</span></div>
+        <div class="arc-row"><span class="arc-lbl">PJ / UxP</span><span class="arc-val arc-pj">33.0% (12,026)</span></div>
+        <div class="arc-row"><span class="arc-lbl">FIT</span><span class="arc-val arc-fit">3.9% (1,411)</span></div>
+        <div class="arc-row"><span class="arc-lbl">Padrón</span><span class="arc-val arc-grey">59,165</span></div>
+      </div>
+    </div>
+    <div class="alert-box alert-red">
+      <div class="a-ttl">🔴 Alerta crítica: LLA ganó la elección provincial 2025</div>
+      <div class="a-body">En la elección provincial legislativa de 2025, LLA superó al PJ por medio punto (35.5% vs 35.0%). Es uno de los poquísimos municipios del interior bonaerense donde el espacio libertario derrotó al peronismo en una categoría provincial. En la nacional 2025, LLA llegó al 48.7% — prácticamente mayoría absoluta. El territorio es sumamente hostil en términos de orientación electoral general.</div>
+    </div>
+    <div class="alert-box alert-warn">
+      <div class="a-ttl">⚠️ La hazaña de 2023: ganar con 34% en 3 vías</div>
+      <div class="a-body">La victoria de Sombra en 2023 fue producto de la fragmentación: PJ 34.3%, JxC 32.4%, LLA 31.3% — apenas 1,225 votos separaron al primero del tercero. Con sistema de pluralidad simple, el PJ ganó el ejecutivo municipal. Pero esa victoria no refleja una base sólida — es la fragmentación del voto opositor la que permitió al PJ retener la intendencia.</div>
+    </div>
+    <div class="alert-box alert-info">
+      <div class="a-ttl">📊 PJ: estable en lo provincial, cede en lo nacional</div>
+      <div class="a-body">El PJ se mantiene relativamente estable entre 2023 (34.3%) y 2025 provincial (35.0%) — incluso sube levemente. Pero en la nacional cae a 33.0%. El problema no es que el PJ esté perdiendo sus votos duros: es que LLA llegó desde 31% (2023) hasta 48.7% (nacional 2025), incorporando votantes que antes eran JxC y parte del electorado independiente.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COLOR LOCAL -->
+<div class="sec">
+  <div class="sec-hdr">🎨 Color Local · Economía &amp; Cultura</div>
+  <div class="sec-body">
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">📖</div>
+        <div class="cl-tipo">Cultura / Turismo</div>
+        <div class="cl-nm">Ciudad Cervantina · Festival del Quijote</div>
+        <div class="cl-desc">Única ciudad cervantina de Sudamérica. La Casa Ronco alberga la mayor colección del Quijote fuera de España. El Festival Cervantino atrae visitantes de todo el país y genera economía de turismo cultural.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🥩</div>
+        <div class="cl-tipo">Industria</div>
+        <div class="cl-nm">Frigoríficos · Industria Cárnica</div>
+        <div class="cl-desc">La industria cárnica es el motor industrial del partido — frigoríficos y procesadoras de carne con empleo de escala y cadenas de valor hacia el campo. Complementado por molinos harineros y agroindustria.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🎓</div>
+        <div class="cl-tipo">Educación Superior</div>
+        <div class="cl-nm">UNCPBA — Agronomía y Derecho</div>
+        <div class="cl-desc">La Universidad Nacional del Centro en Azul tiene facultades estratégicas para la región: Agronomía (para el agro pampeano circundante) y Derecho. Polo educativo que retiene estudiantes de toda la 7ª Sección.</div>
+      </div>
+    </div>
+    <div class="cl-grid">
+      <div class="cl-card">
+        <div class="cl-icon">💧</div>
+        <div class="cl-tipo">Infraestructura</div>
+        <div class="cl-nm">Presa La Isidora · Arroyo Azul</div>
+        <div class="cl-desc">Obra hidráulica histórica para el control de inundaciones del casco urbano. El Arroyo Azul era el principal problema de infraestructura del partido — la presa es la respuesta de largo plazo.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">🌾</div>
+        <div class="cl-tipo">Agropecuario</div>
+        <div class="cl-nm">Pampa Húmeda · Ganadería · Soja</div>
+        <div class="cl-desc">El campo es la base económica del partido. Ganadería extensiva y agricultura sojera generan la demanda de servicios, maquinaria y logística que el parque industrial y el sector de servicios proveen.</div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-icon">📱</div>
+        <div class="cl-tipo">Gobierno Digital</div>
+        <div class="cl-nm">Azul Digital y Transparente</div>
+        <div class="cl-desc">Unificación de la base de datos municipal para que el vecino pueda realizar el 100% de sus reclamos y pagos de tasas de forma digital. Modernización de la atención ciudadana.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMAS -->
+<div class="sec">
+  <div class="sec-hdr">📋 Programas Municipales Destacados</div>
+  <div class="sec-body">
+    <div class="prog-list">
+      <div class="prog-item">
+        <div class="prog-ico">💧</div>
+        <div class="prog-body">
+          <h5>Gestión de Cuenca del Arroyo Azul · Presa La Isidora</h5>
+          <p>Obras de limpieza y dragado preventivo del arroyo y construcción de la Presa La Isidora — obra de infraestructura histórica de la gestión local y provincial para regular el caudal y eliminar las inundaciones que golpeaban el casco urbano de Azul. La obra visible más importante de la gestión Sombra.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🏭</div>
+        <div class="prog-body">
+          <h5>Recuperación del Parque Industrial</h5>
+          <p>Regularización de parcelas, mejora de infraestructura eléctrica y atracción de nuevas radicaciones de empresas de logística y servicios agroindustriales. Política de desarrollo productivo que reactiva el parque industrial con herramientas municipales propias.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🎓</div>
+        <div class="prog-body">
+          <h5>Polo Universitario Regional (UNCPBA)</h5>
+          <p>Apoyo a la presencia de la Universidad Nacional del Centro — facultades de Agronomía y Derecho — como ancla del polo universitario regional. Becas, acompañamiento y cercanía institucional para que estudiar en Azul sea una opción real para toda la región.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">🎭</div>
+        <div class="prog-body">
+          <h5>Plan de Desarrollo Turístico · Marca Cervantina</h5>
+          <p>Aprovechamiento de la marca "Azul, Ciudad Cervantina" para generar un calendario de eventos culturales que traccione la economía local. El Festival Cervantino como el evento ancla — con impacto directo en hotelería, gastronomía y comercio durante toda la temporada.</p>
+        </div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-ico">♻️</div>
+        <div class="prog-body">
+          <h5>Gestión Ambiental · Separación en Origen</h5>
+          <p>Programa de separación de residuos en origen, recolección diferenciada, planta de tratamiento, cuadrillas y educación ambiental. Política de saneamiento y calidad ambiental en barrios y localidades del partido. Apoyo en parques, reservas y predios municipales de uso comunitario.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PALANCAS -->
+<div class="sec">
+  <div class="sec-hdr">🎯 Palancas de Impacto</div>
+  <div class="sec-body">
+    <div class="pal-grid">
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">📖 Marca Cervantina</div>
+        </div>
+        <div class="pal-body">
+          <p>El Festival Cervantino y la Casa Ronco son los únicos activos culturales de esta escala en todo el interior bonaerense. Son puertas de entrada con visibilidad nacional y una narrativa positiva desconectada del conflicto político local.</p>
+          <p><span class="pal-access acc-cult">Cultural / Turismo</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🎓 UNCPBA — Agronomía</div>
+        </div>
+        <div class="pal-body">
+          <p>La facultad de Agronomía es el nexo natural entre la política provincial y el sector agropecuario regional. Investigación, extensión y formación técnica con llegada directa al campo de la 7ª Sección.</p>
+          <p><span class="pal-access acc-gest">Educación / Agro</span></p>
+        </div>
+      </div>
+      <div class="pal">
+        <div class="pal-hdr">
+          <div class="pal-n">Acceso</div>
+          <div class="pal-ttl">🏭 Frigoríficos · Agroindustria</div>
+        </div>
+        <div class="pal-body">
+          <p>La industria frigorífica y los servicios al agro son los empleadores más grandes del partido. Tienen intereses concretos en infraestructura vial, energía y acceso a mercados — canal de llegada directo al sector productivo.</p>
+          <p><span class="pal-access acc-priv">Ingreso PRIVADO</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VISITAS -->
+<div class="sec">
+  <div class="sec-hdr">📍 Visitas Sugeridas</div>
+  <div class="sec-body">
+    <div class="vis-list">
+      <div class="vis-item">
+        <div class="vis-num">1</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Casa Ronco · Colección Cervantina<span class="vis-tag tag-cult">CULTURA</span></div>
+          <div class="vis-desc">La mayor colección del Quijote fuera de España. Visita a la identidad cultural más singular del interior bonaerense. Potencia la narrativa de apoyo a la cultura como política pública de largo plazo.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">2</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Presa La Isidora · Obra Hidráulica<span class="vis-tag tag-obra">INFRAESTRUCTURA</span></div>
+          <div class="vis-desc">La obra más importante de la gestión Sombra — y una obra de escala provincial. Recorrida de la presa de regulación del Arroyo Azul. Mensaje de inversión pública en infraestructura crítica para el interior.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">3</div>
+        <div class="vis-body">
+          <div class="vis-ttl">UNCPBA — Facultades de Agronomía y Derecho<span class="vis-tag tag-edu">EDUCACIÓN</span></div>
+          <div class="vis-desc">Polo universitario del interior sur bonaerense. Contacto con autoridades académicas y estudiantes — mensaje de inversión en educación superior regional que retiene talentos locales.</div>
+        </div>
+      </div>
+      <div class="vis-item">
+        <div class="vis-num">4</div>
+        <div class="vis-body">
+          <div class="vis-ttl">Parque Industrial · Frigoríficos y Agroindustria<span class="vis-tag tag-ind">INDUSTRIA</span></div>
+          <div class="vis-desc">El motor económico del partido. Visita a frigoríficos o empresas radicadas en el parque industrial — contacto con empleadores que representan la mayor masa de empleo privado de Azul.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SÍNTESIS -->
+<div class="sint">
+  <h3>📌 Síntesis Estratégica</h3>
+  <p><strong>Azul es el municipio más competitivo del interior bonaerense y uno de los más críticos del mapa provincial.</strong> El PJ ganó la intendencia en 2023 con apenas 34.3% en una elección de 3 vías — una victoria técnica sobre una base que no supera el tercio del padrón. En 2025, LLA superó al PJ en la provincial (35.5% vs 35.0%) y llegó al 48.7% en la nacional. El intendente Sombra es aliado, pero gobierna en terreno adverso.</p>
+  <p>Lo que hace especial a Azul en la narrativa es la combinación única de atributos: la única Ciudad Cervantina de Sudamérica, una universidad nacional con Agronomía y Derecho, industria frigorífica relevante y una obra hidráulica histórica (Presa La Isidora). Son activos que construyen una imagen positiva del partido que trasciende el conflicto político.</p>
+  <p><strong>La clave estratégica es la presencia concreta, no la política:</strong> el Festival Cervantino, la UNCPBA y la obra de la presa son los ejes de llegada con mayor legitimidad. En un distrito donde LLA casi obtiene mayoría en la nacional, el discurso de gestión concreta y el reconocimiento de la identidad cultural local son la apuesta más efectiva para mantener al partido como referencia.</p>
+</div>
+
+</body>
+</html>
