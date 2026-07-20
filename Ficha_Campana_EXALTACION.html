@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ficha de Campaña — Exaltación de la Cruz</title>
+<style>
+:root{--prim:#2a1e00;--acc:#7b5e00;--light:#f5f2eb;--border:#d4c89a;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0ece0;color:#2a1e00;font-size:13px;max-width:900px;margin:0 auto;padding:14px}
+.fich-hero{background:linear-gradient(135deg,#0d0800 0%,#2a1e00 45%,#4a3800 80%,#7b5e00 100%);color:#fff;border-radius:var(--radius);padding:26px 28px 22px;margin-bottom:12px;position:relative;overflow:hidden}
+.fich-hero::before{content:'🐎';position:absolute;right:-10px;bottom:-18px;font-size:10rem;opacity:.09}
+.fh-over{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;opacity:.6;margin-bottom:5px}
+.fich-hero h1{font-size:2rem;font-weight:900;line-height:1;margin-bottom:3px;text-transform:uppercase}
+.fh-sub{font-size:.85rem;opacity:.72;margin-bottom:14px;font-style:italic}
+.fh-tags{display:flex;flex-wrap:wrap;gap:6px}
+.fh-tag{font-size:.66rem;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff}
+.badge-warn{background:rgba(180,130,0,.35);border-color:rgba(250,204,21,.5);color:#fde68a}
+.badge-al{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:12px 14px}
+.card-dark{background:var(--prim);border-color:var(--prim);color:#fff}
+.card-dark .c-lbl{color:rgba(255,255,255,.65)}
+.card-dark .c-val{color:#fff}
+.card-dark h4{color:#fde68a}
+.c-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;color:#7b5e00;letter-spacing:.5px;margin-bottom:3px}
+.c-val{font-size:1.5rem;font-weight:900;color:var(--prim);line-height:1}
+.c-note{font-size:.69rem;color:#666;margin-top:3px;line-height:1.4}
+.sec-hdr{background:var(--prim);color:#fff;border-radius:7px 7px 0 0;padding:8px 14px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 7px 7px;padding:14px;margin-bottom:10px}
+.prog-row{display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid #f5f2eb}
+.prog-row:last-child{border-bottom:none}
+.prog-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+.prog-body h4{font-size:.72rem;font-weight:800;color:var(--prim);margin-bottom:2px;text-transform:uppercase}
+.prog-body p{font-size:.76rem;color:#374151;line-height:1.5}
+.elec-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #f5f2eb;font-size:.76rem}
+.elec-row:last-child{border-bottom:none}
+.v-pj{color:#15803d;font-weight:800}
+.v-lla{color:#7c3aed;font-weight:800}
+.v-jxc{color:#d97706;font-weight:800}
+.bar-wrap{margin:6px 0}
+.bar-lbl{display:flex;justify-content:space-between;font-size:.66rem;margin-bottom:2px;color:#555}
+.bar{height:8px;border-radius:4px;background:#e5e7eb;overflow:hidden}
+.bar-fill-pj{height:100%;background:#16a34a;border-radius:4px}
+.bar-fill-lla{height:100%;background:#7c3aed;border-radius:4px}
+.bar-fill-jxc{height:100%;background:#d97706;border-radius:4px}
+.alert-box{background:#fff8e1;border:1.5px solid #f9a825;border-radius:7px;padding:10px 13px;margin-bottom:10px}
+.alert-box p{font-size:.76rem;color:#5a3e00;line-height:1.55}
+.alert-box strong{color:#3a2800}
+@media print{body{background:#fff;padding:0}.fich-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card-dark,.sec-hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:9mm 11mm}}
+</style>
+</head>
+<body>
+
+<div class="fich-hero">
+  <div class="fh-over">🌾 Cluster INTERIOR · 2ª Sección Electoral · PBA Analítica 2026</div>
+  <h1>Exaltación de la Cruz</h1>
+  <div class="fh-sub">Capilla del Señor · Primer Pueblo Histórico PBA · Industria Equina · Polo · Ruta 8</div>
+  <div class="fh-tags">
+    <span class="fh-tag badge-al">✅ Aliado — Diego Nanni (UxP)</span>
+    <span class="fh-tag badge-warn">⚠️ PJ 42.2% prov / LLA 50.3% nac — split 8 pts</span>
+    <span class="fh-tag">🐎 Haras y polo — Industria equina</span>
+    <span class="fh-tag">🏛️ Capilla del Señor — Pueblo Histórico</span>
+    <span class="fh-tag">🛣️ Corredor Ruta 8 — derrame industrial Pilar</span>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="card card-dark">
+    <div class="c-lbl">Padrón 2025</div>
+    <div class="c-val">36,500</div>
+    <div class="c-note">2ª Sección Electoral · 636.5 km²</div>
+  </div>
+  <div class="card card-dark">
+    <div class="c-lbl">PJ provincial 2025</div>
+    <div class="c-val">42.2%</div>
+    <div class="c-note">8,705 votos · gana por 1,310 sobre LLA</div>
+  </div>
+  <div class="card card-dark">
+    <div class="c-lbl">LLA nacional 2025</div>
+    <div class="c-val">50.3%</div>
+    <div class="c-note">11,142 votos · 17 pts sobre PJ (33.3%)</div>
+  </div>
+</div>
+
+<div class="sec-hdr">🏛️ Identidad Territorial</div>
+<div class="sec-body">
+  <div class="grid2">
+    <div class="card">
+      <div class="c-lbl">Identidad histórica</div>
+      <h4 style="font-size:.8rem;color:#2a1e00;margin-bottom:5px">Capilla del Señor — Primer Pueblo Histórico de PBA</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">Capilla del Señor es el primer pueblo declarado Histórico por la Provincia de Buenos Aires. Eso le da a Exaltación una identidad patrimonial única: casco colonial, estancias, pulperías restauradas y gastronomía de campo que atraen turismo de cercanía desde el AMBA los fines de semana. Un patrimonio que el municipio cuida activamente.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Industria equina</div>
+      <h4 style="font-size:.8rem;color:#2a1e00;margin-bottom:5px">Haras de pura sangre y clubes de polo</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">El distrito concentra haras de cría de caballos de pura sangre y clubes de polo de primer nivel. Es una economía equina de alto valor agregado que genera empleo rural calificado — mozos de cuadra, veterinarios, entrenadores. Un perfil productivo diferencial difícil de replicar en otros municipios.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Corredor Ruta 8</div>
+      <h4 style="font-size:.8rem;color:#2a1e00;margin-bottom:5px">Derrame industrial desde Pilar</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">El límite con Pilar sobre Ruta 8 está generando un proceso de radicación de parques industriales logísticos y pymes. Parada Robles y El Remanso dejaron de ser "casas de fin de semana" para tener población estable permanente. Un corredor en transformación que el municipio está acompañando con infraestructura.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Los Cardales</div>
+      <h4 style="font-size:.8rem;color:#2a1e00;margin-bottom:5px">Turismo de campo y segunda residencia</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">Los Cardales es el tercer eje territorial del partido — turismo de campo, restaurantes de estancia, casas de campo. El nuevo Hospital Modular de Los Cardales responde a la demanda de servicios de salud de una población creciente que antes debía ir a Capilla o al AMBA para atenderse.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec-hdr">🗳️ Mapa Electoral</div>
+<div class="sec-body">
+  <div class="grid2">
+    <div class="card">
+      <div class="c-lbl">Evolución electoral</div>
+      <div class="elec-row"><span>2023 PJ — Nanni ✅</span><span class="v-pj">47.2% (11,082)</span></div>
+      <div class="elec-row"><span>2023 JxC</span><span class="v-jxc">32.0% (7,505)</span></div>
+      <div class="elec-row"><span>2023 LLA</span><span class="v-lla">20.8% (4,885)</span></div>
+      <div class="elec-row"><span>2025 Prov PJ ✅</span><span class="v-pj">42.2% (8,705)</span></div>
+      <div class="elec-row"><span>2025 Prov LLA</span><span class="v-lla">35.9% (7,395)</span></div>
+      <div class="elec-row"><span>2025 Nac LLA ⚠️</span><span class="v-lla">50.3% (11,142)</span></div>
+      <div class="elec-row"><span>2025 Nac PJ</span><span class="v-pj">33.3% (7,374)</span></div>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Distribución 2025 provincial</div>
+      <div class="bar-wrap">
+        <div class="bar-lbl"><span>PJ — 42.2%</span><span>8,705 votos</span></div>
+        <div class="bar"><div class="bar-fill-pj" style="width:42.2%"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-lbl"><span>LLA — 35.9%</span><span>7,395 votos</span></div>
+        <div class="bar"><div class="bar-fill-lla" style="width:35.9%"></div></div>
+      </div>
+      <div style="margin-top:10px">
+        <div class="c-lbl">Distribución 2025 nacional</div>
+        <div class="bar-wrap">
+          <div class="bar-lbl"><span>LLA — 50.3%</span><span>11,142 votos</span></div>
+          <div class="bar"><div class="bar-fill-lla" style="width:50.3%"></div></div>
+        </div>
+        <div class="bar-wrap">
+          <div class="bar-lbl"><span>PJ — 33.3%</span><span>7,374 votos</span></div>
+          <div class="bar"><div class="bar-fill-pj" style="width:33.3%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alert-box">
+    <p><strong>⚠️ Split prov-nac:</strong> El PJ gana la provincial por 1,310 votos (42.2% vs 35.9%) pero LLA gana la nacional por 3,768 votos (50.3% vs 33.3%). El electorado de Exaltación separa sus preferencias según el nivel de gobierno. El PJ cayó de 47.2% (2023 intendencia) a 33.3% (2025 nacional). LLA pasó del 20.8% al 50.3% en la misma categoría.</p>
+  </div>
+</div>
+
+<div class="sec-hdr">🎯 Programas Municipales</div>
+<div class="sec-body">
+  <div class="prog-row">
+    <div class="prog-icon">🏥</div>
+    <div class="prog-body">
+      <h4>Hospital Modular Los Cardales</h4>
+      <p>Hospital modular de emergencia que se consolidó como efector de salud permanente, descomprimiendo el Hospital Municipal San José de Capilla del Señor. El HM San José fue ampliado en capacidad de camas y opera como centro de referencia para urgencias provenientes de Rutas 8 y 6. Dos hospitales coordinados para un territorio en crecimiento.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">👶</div>
+    <div class="prog-body">
+      <h4>Programa CDIs — Primera Infancia Municipal</h4>
+      <p>Edificios modelo con cupos para niños de 45 días a 4 años. El municipio provee docentes, psicomotricistas y el Servicio Alimentario. Una política de primera infancia que llega donde los jardines estatales no alcanzan, especialmente en las localidades de crecimiento rápido como Parada Robles y Los Cardales.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🏛️</div>
+    <div class="prog-body">
+      <h4>Preservación del Casco Histórico</h4>
+      <p>Política estricta de ordenamiento urbano en Capilla del Señor: regulación de fachadas, cartelería y prohibición de megaconstrucciones en el centro histórico. La preservación del patrimonio sostiene el ecosistema gastronómico, hotelero y de pulperías que genera empleo local y atrae turismo. El patrimonio como política económica.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🛣️</div>
+    <div class="prog-body">
+      <h4>Infraestructura Parada Robles — Corredor Ruta 8</h4>
+      <p>Pavimento, luminarias y ordenamiento urbano en el corredor Parada Robles / El Remanso sobre Ruta 8. Una zona en transformación que dejó de ser exclusivamente de segunda residencia para tener familias permanentes. El municipio acompañó ese crecimiento con servicios urbanos concretos.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🐎</div>
+    <div class="prog-body">
+      <h4>Industria Equina y Polo</h4>
+      <p>El distrito es uno de los principales polos de haras de pura sangre y polo del país. La actividad equina genera empleo rural calificado (veterinaria, entrenamiento, cría) y posiciona al municipio en un nicho económico de alto valor. Un sello territorial que distingue a Exaltación en el mapa productivo bonaerense.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
