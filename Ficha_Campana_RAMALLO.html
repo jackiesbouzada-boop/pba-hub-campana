@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ficha de Campaña — Ramallo</title>
+<style>
+:root{--prim:#0d3a1e;--acc:#1d6b3e;--light:#e8f5ee;--border:#7ec8a0;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#d8eee1;color:#0d2e17;font-size:13px;max-width:900px;margin:0 auto;padding:14px}
+.fich-hero{background:linear-gradient(135deg,#001a0d 0%,#0d3a1e 45%,#155c30 80%,#1d6b3e 100%);color:#fff;border-radius:var(--radius);padding:26px 28px 22px;margin-bottom:12px;position:relative;overflow:hidden}
+.fich-hero::before{content:'⚓';position:absolute;right:-10px;bottom:-18px;font-size:10rem;opacity:.09}
+.fh-over{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;opacity:.6;margin-bottom:5px}
+.fich-hero h1{font-size:2.2rem;font-weight:900;line-height:1;margin-bottom:3px;text-transform:uppercase}
+.fh-sub{font-size:.85rem;opacity:.72;margin-bottom:14px;font-style:italic}
+.fh-tags{display:flex;flex-wrap:wrap;gap:6px}
+.fh-tag{font-size:.66rem;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff}
+.badge-warn{background:rgba(180,130,0,.35);border-color:rgba(250,204,21,.5);color:#fde68a}
+.badge-al{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:12px 14px}
+.card-dark{background:var(--prim);border-color:var(--prim);color:#fff}
+.card-dark .c-lbl{color:rgba(255,255,255,.65)}
+.card-dark .c-val{color:#fff}
+.card-dark h4{color:#a7f3c0}
+.c-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;color:#1d6b3e;letter-spacing:.5px;margin-bottom:3px}
+.c-val{font-size:1.5rem;font-weight:900;color:var(--prim);line-height:1}
+.c-note{font-size:.69rem;color:#666;margin-top:3px;line-height:1.4}
+.sec-hdr{background:var(--prim);color:#fff;border-radius:7px 7px 0 0;padding:8px 14px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 7px 7px;padding:14px;margin-bottom:10px}
+.prog-row{display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid #e8f5ee}
+.prog-row:last-child{border-bottom:none}
+.prog-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+.prog-body h4{font-size:.72rem;font-weight:800;color:var(--prim);margin-bottom:2px;text-transform:uppercase}
+.prog-body p{font-size:.76rem;color:#374151;line-height:1.5}
+.elec-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #e8f5ee;font-size:.76rem}
+.elec-row:last-child{border-bottom:none}
+.v-pj{color:#15803d;font-weight:800}
+.v-lla{color:#7c3aed;font-weight:800}
+.v-jxc{color:#d97706;font-weight:800}
+.bar-wrap{margin:6px 0}
+.bar-lbl{display:flex;justify-content:space-between;font-size:.66rem;margin-bottom:2px;color:#555}
+.bar{height:8px;border-radius:4px;background:#e5e7eb;overflow:hidden}
+.bar-fill-pj{height:100%;background:#16a34a;border-radius:4px}
+.bar-fill-lla{height:100%;background:#7c3aed;border-radius:4px}
+.bar-fill-jxc{height:100%;background:#d97706;border-radius:4px}
+.alert-box{background:#fff8e1;border:1.5px solid #f9a825;border-radius:7px;padding:10px 13px;margin-bottom:10px}
+.alert-box p{font-size:.76rem;color:#5a3e00;line-height:1.55}
+.alert-box strong{color:#3a2800}
+@media print{body{background:#fff;padding:0}.fich-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card-dark,.sec-hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:9mm 11mm}}
+</style>
+</head>
+<body>
+
+<div class="fich-hero">
+  <div class="fh-over">🏭 Cluster CORREDOR INDUSTRIAL NORTE · 2ª Sección Electoral · PBA Analítica 2026</div>
+  <h1>Ramallo</h1>
+  <div class="fh-sub">Ternium · Puerto Bunge · Hidrovía · Balneario del norte bonaerense · Centro Universitario Ramallo</div>
+  <div class="fh-tags">
+    <span class="fh-tag badge-al">✅ Aliado — Mauro Poletti (UxP)</span>
+    <span class="fh-tag badge-warn">⚠️ PJ 39.6% prov / LLA 43.1% nac — 857 votos diferencia</span>
+    <span class="fh-tag">⚓ Puerto Bunge · Hidrovía Paraná</span>
+    <span class="fh-tag">🏭 Ternium · Parque Industrial Comirsa</span>
+    <span class="fh-tag">🏖️ Balneario de río · Costa norte bonaerense</span>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="card card-dark">
+    <div class="c-lbl">Padrón 2025</div>
+    <div class="c-val">31,964</div>
+    <div class="c-note">2ª Sección Electoral · 1,047.6 km² · Corredor Ruta 9</div>
+  </div>
+  <div class="card card-dark">
+    <div class="c-lbl">PJ 2023 — Poletti ✅</div>
+    <div class="c-val">43.4%</div>
+    <div class="c-note">10,396 votos · JxC 36.2% · LLA 10.7% · municipio recuperado</div>
+  </div>
+  <div class="card card-dark">
+    <div class="c-lbl">Margen nacional 2025</div>
+    <div class="c-val">857</div>
+    <div class="c-note">votos · LLA 43.1% (9,042) vs PJ 39.0% (8,185) — LLA gana nac</div>
+  </div>
+</div>
+
+<div class="sec-hdr">⚓ Identidad Territorial</div>
+<div class="sec-body">
+  <div class="grid2">
+    <div class="card">
+      <div class="c-lbl">Enclave exportador</div>
+      <h4 style="font-size:.8rem;color:#0d3a1e;margin-bottom:5px">Puerto Bunge + Hidrovía — millones de toneladas</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">Ramallo es un enclave exportador estratégico sobre la Hidrovía Paraná-Paraguay. Los puertos privados (liderados por Bunge) despachan millones de toneladas de granos hacia el mundo. El municipio concentra en pocos kilómetros de ribera una de las mayores infraestructuras logísticas de exportación de PBA.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Siderurgia</div>
+      <h4 style="font-size:.8rem;color:#0d3a1e;margin-bottom:5px">Ternium — derrame industrial desde San Nicolás</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">La planta de Ternium, ubicada en el límite con San Nicolás, tiene derrame económico directo en Ramallo: proveedores de insumos, servicios de mantenimiento, trabajadores residentes. El Parque Industrial Comirsa (en consorcio con San Nicolás y la Provincia) amplía ese ecosistema con empresas de servicios para la siderurgia y la agroindustria.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Turismo de río</div>
+      <h4 style="font-size:.8rem;color:#0d3a1e;margin-bottom:5px">Balneario norte bonaerense — 10,000 turistas/fin de semana</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">La extensa costa de arena sobre el Río Paraná convirtió a Ramallo en el balneario por excelencia del norte bonaerense. Deportes náuticos, pesca deportiva y descanso de río atraen a más de 10,000 turistas por fin de semana en temporada. Una economía turística estacional que coexiste con el polo industrial exportador del municipio.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Formación técnica</div>
+      <h4 style="font-size:.8rem;color:#0d3a1e;margin-bottom:5px">Centro Universitario Ramallo — 500 alumnos en fábrica</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">El Centro Universitario Ramallo es una sede propia de tres pisos con más de 500 alumnos regulares en tecnicaturas de mantenimiento industrial y logística. El modelo es directo: las pasantías se hacen en las propias plantas siderúrgicas y cerealeras del partido. Los egresados entran a trabajar. Formación sin intermediarios.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec-hdr">🗳️ Mapa Electoral</div>
+<div class="sec-body">
+  <div class="grid2">
+    <div class="card">
+      <div class="c-lbl">Evolución electoral</div>
+      <div class="elec-row"><span>2023 PJ — Poletti ✅</span><span class="v-pj">43.4% (10,396)</span></div>
+      <div class="elec-row"><span>2023 JxC</span><span class="v-jxc">36.2% (8,676)</span></div>
+      <div class="elec-row"><span>2023 LLA</span><span class="v-lla">10.7% (2,561)</span></div>
+      <div class="elec-row"><span>2025 Prov PJ ✅</span><span class="v-pj">39.6% (8,322)</span></div>
+      <div class="elec-row"><span>2025 Prov LLA</span><span class="v-lla">10.5% (2,199)</span></div>
+      <div class="elec-row"><span>2025 Nac LLA ⚠️</span><span class="v-lla">43.1% (9,042)</span></div>
+      <div class="elec-row"><span>2025 Nac PJ</span><span class="v-pj">39.0% (8,185)</span></div>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Distribución 2025 nacional</div>
+      <div class="bar-wrap">
+        <div class="bar-lbl"><span>LLA — 43.1%</span><span>9,042 votos</span></div>
+        <div class="bar"><div class="bar-fill-lla" style="width:43.1%"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-lbl"><span>PJ — 39.0%</span><span>8,185 votos</span></div>
+        <div class="bar"><div class="bar-fill-pj" style="width:39.0%"></div></div>
+      </div>
+      <div style="margin-top:10px">
+        <div class="c-lbl">Distribución 2025 provincial</div>
+        <div class="bar-wrap">
+          <div class="bar-lbl"><span>PJ — 39.6%</span><span>8,322 votos</span></div>
+          <div class="bar"><div class="bar-fill-pj" style="width:39.6%"></div></div>
+        </div>
+        <div class="bar-wrap">
+          <div class="bar-lbl"><span>LLA — 10.5%</span><span>2,199 votos</span></div>
+          <div class="bar"><div class="bar-fill-lla" style="width:10.5%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alert-box">
+    <p><strong>⚠️ Split extremo prov-nac:</strong> En la provincial PJ gana con 39.6% y LLA obtiene solo 10.5%. Pero en la nacional LLA llega al 43.1% y supera al PJ (39.0%) por 857 votos. El electorado del corredor industrial separa categorías: la identidad municipal sigue siendo peronista (Poletti ganó en 2023 con 43.4%), pero el voto nacional muestra la movilidad del electorado técnico-industrial. El split es de 33 puntos entre 10.5% prov y 43.1% nac — el más alto de la región.</p>
+  </div>
+</div>
+
+<div class="sec-hdr">🎯 Programas Municipales</div>
+<div class="sec-body">
+  <div class="prog-row">
+    <div class="prog-icon">🏭</div>
+    <div class="prog-body">
+      <h4>Parque Industrial Comirsa — Consorcio Regional San Nicolás–Ramallo</h4>
+      <p>Ampliación del Parque Industrial Comirsa en consorcio con San Nicolás y la Provincia para facilitar la radicación de empresas de servicios para la siderurgia y la agroindustria. El modelo de gestión es regional: los dos municipios del corredor siderúrgico coordinan su política industrial para maximizar la atracción de inversiones de la cadena de valor de Ternium y los puertos.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">⚓</div>
+    <div class="prog-body">
+      <h4>Paseo del Río y Costanera — 10,000 Turistas/Fin de Semana</h4>
+      <p>Recuperación integral de barrancas sobre el Paraná: paradores licitados, pavimentación de accesos, infraestructura náutica pública. El resultado en temporada: más de 10,000 turistas por fin de semana. La costanera de Ramallo es el activo turístico más visible del partido y el que genera mayor impacto en el electorado local — obra que se ve y se usa.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🎓</div>
+    <div class="prog-body">
+      <h4>Centro Universitario Ramallo — Tecnicaturas con Pasantía Garantizada</h4>
+      <p>Sede universitaria propia (edificio de 3 pisos) con más de 500 alumnos regulares en tecnicaturas de mantenimiento industrial, logística y carreras vinculadas al sector exportador. El distintivo del programa: las pasantías se realizan directamente en las plantas de Ternium, Bunge y proveedores del parque industrial. Egresados que entran a trabajar el día que reciben el título.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🎓</div>
+    <div class="prog-body">
+      <h4>Becas CUR — Sin Deserción por Razones Económicas</h4>
+      <p>Becas municipales para alumnos del Centro Universitario Ramallo que enfrentan riesgo de abandonar por razones económicas. El municipio sostiene la formación hasta el egreso — la inversión no se pierde a mitad de camino. Una política de retención que tiene lógica doble: social (el alumno no abandona) e industrial (las plantas tienen la dotación técnica que necesitan).</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🔒</div>
+    <div class="prog-body">
+      <h4>"Ramallo Seguro" — Anillo Digital de Monitoreo</h4>
+      <p>Implementación de un anillo digital con lectura de patentes en los tres accesos principales (Ruta 9, Ruta 51 y camino de la costa). En un municipio con alto tráfico de camiones de carga y turistas, la lectura automática de patentes tiene impacto directo en la tasa de robo de vehículos y en la sensación de seguridad de la población residente.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

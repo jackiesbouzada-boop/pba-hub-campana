@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ramallo — Narrativa Territorial</title>
+<style>
+:root{--primary:#0d3a1e;--accent:#1d6b3e;--light:#e8f5ee;--border:#7ec8a0;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#0d2e17;font-size:14px;max-width:860px;margin:0 auto;padding:16px}
+.cover{background:linear-gradient(160deg,#001a0d 0%,#0d3a1e 40%,#155c30 75%,#1d6b3e 100%);color:#fff;padding:38px 36px 32px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden}
+.cover::before{content:'⚓';position:absolute;right:-15px;bottom:-20px;font-size:12rem;opacity:.09}
+.cv-over{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.65;margin-bottom:7px}
+.cv-title{font-size:2.5rem;font-weight:900;line-height:1.05;margin-bottom:4px}
+.cv-sub{font-size:.95rem;opacity:.75;margin-bottom:16px;font-style:italic}
+.cv-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px}
+.pill-blue{background:rgba(29,78,216,.3);border-color:rgba(59,130,246,.5);color:#93c5fd}
+.pill-warn{background:rgba(180,130,0,.3);border-color:rgba(250,204,21,.5);color:#fde68a}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden}
+.sec-hdr{background:linear-gradient(90deg,#0d3a1e,#1d6b3e);color:#fff;padding:10px 20px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.9px}
+.sec-body{padding:18px 22px}
+.lead{font-size:.95rem;font-weight:600;color:#0d3a1e;line-height:1.65;margin-bottom:12px;border-left:4px solid #1d6b3e;padding-left:14px}
+p{font-size:.82rem;color:#374151;line-height:1.65;margin-bottom:10px}
+p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}
+.card{border:1.5px solid var(--border);border-radius:8px;padding:13px 15px}
+.card-dark{background:#0d3a1e;border-color:#0d3a1e;color:#fff}
+.card-dark h4{color:#a7f3c0 !important}
+.card-dark p{color:rgba(255,255,255,.88) !important}
+.card h4{font-size:.73rem;font-weight:800;color:#0d3a1e;margin-bottom:6px;text-transform:uppercase}
+.card p{font-size:.78rem;color:#374151}
+.num-big{font-size:2rem;font-weight:900;color:#a7f3c0;display:block}
+.num-lbl{font-size:.66rem;text-transform:uppercase;opacity:.75}
+.data-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #e8f5ee;font-size:.79rem}
+.data-row:last-child{border-bottom:none}
+.pj-v{color:#15803d;font-weight:800}
+.lla-v{color:#7c3aed;font-weight:800}
+.jxc-v{color:#d97706;font-weight:800}
+.close{background:linear-gradient(135deg,#0d3a1e,#1d6b3e);border-radius:var(--radius);padding:20px 24px;color:#fff;margin-top:14px}
+.close h3{font-size:.8rem;font-weight:800;text-transform:uppercase;color:#a7f3c0;letter-spacing:.6px;margin-bottom:10px}
+.close p{font-size:.82rem;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:8px}
+.close p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.sec{box-shadow:none;break-inside:avoid}.cover,.close{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cv-over">🏭 Cluster CORREDOR INDUSTRIAL NORTE · 2ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="cv-title">RAMALLO</div>
+  <div class="cv-sub">Puerto Bunge · Ternium · Hidrovía · Balneario del Paraná · 857 votos de margen</div>
+  <div class="cv-pills">
+    <span class="pill-blue">✅ Aliado — Mauro Poletti (UxP)</span>
+    <span class="pill-warn">⚠️ LLA gana nac por 857 votos (43.1% vs 39.0%)</span>
+    <span class="pill">⚓ Puerto Bunge · Hidrovía exportadora</span>
+    <span class="pill">🏭 Ternium · Comirsa · Siderurgia</span>
+    <span class="pill">🏖️ Balneario norte bonaerense</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">⚓ Territorio: El municipio que exporta y veranea al mismo tiempo</div>
+  <div class="sec-body">
+    <div class="lead">Ramallo tiene una dualidad que define su identidad territorial con una claridad poco común: de lunes a viernes es uno de los enclaves exportadores más activos de la Hidrovía bonaerense, con los silos y terminales de Bunge despachando millones de toneladas de granos hacia el mundo, y el derrame económico de Ternium llegando desde San Nicolás. El fin de semana se convierte en el balneario de arena más concurrido del norte bonaerense, con 10,000 turistas disfrutando de la costa del Paraná. Dos economías en el mismo partido. Dos identidades que coexisten y se refuerzan.</div>
+    <p>La Hidrovía Paraná-Paraguay es la infraestructura que da sentido productivo a Ramallo. Puerto Bunge opera en el municipio como la salida natural de los granos de la pampa norte — soja, maíz, girasol que vienen de los campos de Buenos Aires, Santa Fe y Entre Ríos y encuentran en la terminal portuaria de Ramallo el punto de exportación. Ese flujo de carga genera empleo portuario directo, servicios logísticos, transporte y mantenimiento.</p>
+    <p>Ternium agrega la dimensión siderúrgica. La planta está técnicamente en San Nicolás, pero el límite entre municipios no es el límite del derrame económico: los trabajadores viven en Ramallo, los proveedores tienen plantas en Ramallo, y el Parque Industrial Comirsa — gestionado en consorcio con San Nicolás y la Provincia — atrae empresas de servicio para la cadena siderúrgica. Ramallo se beneficia de estar al lado del acero sin cargar con los pasivos ambientales que el acero genera.</p>
+    <div class="grid2">
+      <div class="card card-dark">
+        <div><span class="num-big">500+</span><span class="num-lbl">Alumnos en el Centro Universitario Ramallo — pasantías en planta</span></div>
+        <p style="margin-top:8px">El CUR es la apuesta más estratégica de la gestión Poletti: formación técnica con inserción laboral garantizada en el mismo corredor industrial donde se estudia. No es universidad genérica — es universidad para la industria local.</p>
+      </div>
+      <div class="card card-dark">
+        <div><span class="num-big">33</span><span class="num-lbl">Puntos de split entre LLA prov (10.5%) y LLA nac (43.1%)</span></div>
+        <p style="margin-top:8px">El split más extremo del corredor. El electorado de Ramallo separa con nitidez el voto local (donde Poletti/PJ gana cómodo) del voto nacional (donde LLA se impone). Esa separación es la señal más importante de 2025.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🗳️ Mapa Electoral: El split más extremo del corredor</div>
+  <div class="sec-body">
+    <div class="lead">En 2023, Poletti ganó con 43.4% en un escenario de tres fuerzas (JxC 36.2%, LLA 10.7%). En 2025, el cuadro provincial mostró estabilidad del PJ (39.6%) con LLA todavía marginal (10.5%) en la categoría provincial. Pero en la categoría nacional LLA llegó al 43.1% — superando al PJ (39.0%) por 857 votos. El split de 33 puntos entre LLA provincial y nacional es el más alto de todo el corredor industrial norte.</div>
+    <div class="grid2">
+      <div class="card">
+        <h4>📊 Evolución electoral</h4>
+        <div class="data-row"><span>2023 PJ — Poletti</span><span class="pj-v">43.4% (10,396)</span></div>
+        <div class="data-row"><span>2023 JxC</span><span class="jxc-v">36.2% (8,676)</span></div>
+        <div class="data-row"><span>2023 LLA</span><span class="lla-v">10.7% (2,561)</span></div>
+        <div class="data-row"><span>2025 Prov PJ ✅</span><span class="pj-v">39.6% (8,322)</span></div>
+        <div class="data-row"><span>2025 Prov LLA</span><span class="lla-v">10.5% (2,199)</span></div>
+        <div class="data-row"><span>2025 Nac LLA ⚠️</span><span class="lla-v">43.1% (9,042)</span></div>
+        <div class="data-row"><span>2025 Nac PJ</span><span class="pj-v">39.0% (8,185)</span></div>
+      </div>
+      <div class="card">
+        <h4>🔍 ¿Qué explica el split de 33 puntos?</h4>
+        <p>El electorado de Ramallo divide su voto según el nivel de gobierno con una lógica coherente: confía en Poletti localmente (gestión concreta, obras visibles) pero no trasfiere esa confianza a la categoría nacional donde LLA capturó el enojo con el Estado. El segmento clave es el trabajador técnico del corredor industrial: vota peronismo en el municipio y LLA en la nación.</p>
+        <p>El ex electorado de JxC (36.2% en 2023) migró masivamente a LLA en 2025. Esos casi 8,700 votos de JxC se redistribuyeron: una parte hacia LLA en la nacional (que creció de 10.7% a 43.1%), otra parte se abstuvo. El PJ de Poletti resistió mejor que el promedio del corredor.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hdr">🎯 Ejes Estratégicos</div>
+  <div class="sec-body">
+    <div class="grid2">
+      <div class="card">
+        <h4>⚓ Puerto y costanera — imagen de ciudad que funciona</h4>
+        <p>La costanera del Río Paraná es la obra más visible para el electorado local — 10,000 turistas por fin de semana validan la gestión con sus cuerpos. Una visita a la costanera con Poletti tiene imagen fuerte: el intendente que recuperó el río para el vecino. El argumento para la campaña es concreto: la ribera es gestión peronista.</p>
+      </div>
+      <div class="card">
+        <h4>🎓 CUR — el modelo de formación que LLA no puede ofrecer</h4>
+        <p>El Centro Universitario Ramallo con pasantías en planta es el argumento más difícil de replicar para LLA: requiere coordinación entre municipio, universidad y empresas industriales — exactamente el tipo de articulación que el Estado hace y el mercado solo no organiza. Para el trabajador joven del corredor, el CUR es la ruta más directa al empleo calificado. Ese vínculo es el que puede recuperar votantes.</p>
+      </div>
+      <div class="card">
+        <h4>🏭 Parque Industrial Comirsa — gestión regional como modelo</h4>
+        <p>El consorcio entre Ramallo, San Nicolás y la Provincia para el Parque Comirsa es el ejemplo más claro de gestión interjurisdiccional eficiente. Un municipio solo no puede sostener un parque industrial de esa escala — necesita asociarse. El candidato provincial que visita Comirsa puede presentar ese modelo como el estándar de coordinación que la Provincia debe escalar para todo el corredor.</p>
+      </div>
+      <div class="card">
+        <h4>🔒 "Ramallo Seguro" — el anillo digital como argumento transversal</h4>
+        <p>La lectura de patentes en los tres accesos del partido es un programa de seguridad que tiene adhesión transversal — el electorado de LLA también quiere seguridad. Un municipio donde el Estado invirtió en tecnología de seguridad antes de que lo pidieran como reforma del Estado es un argumento que cruza las fronteras del voto.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="close">
+  <h3>📌 Lectura final</h3>
+  <p>Ramallo es el municipio del corredor industrial norte donde el split entre voto local y nacional es más extremo: 33 puntos de diferencia entre LLA provincial (10.5%) y LLA nacional (43.1%). Poletti ganó en 2023 con 43.4% y se sostuvo en la provincial 2025 con 39.6%. La gestión local resistió. El voto nacional se fue.</p>
+  <p>El argumento provincial en Ramallo tiene que ser de gestión concreta e industrial: el Centro Universitario Ramallo como modelo de formación-empleo, Comirsa como parque industrial coordinado con la Provincia, y la costanera como obra de calidad de vida. Esa combinación habla al segmento técnico-industrial que en 2025 votó LLA en la nacional pero que tiene vínculos reales con el Estado a través del empleo y la formación.</p>
+  <p><strong>Mensaje recomendado:</strong> "El corredor que forma, exporta y cuida su río". Poletti activo, CUR como obra de futuro, costanera como obra de presente, Comirsa como modelo regional. Ramallo no se pierde con discurso — se sostiene con gestión visible en el corredor más competitivo de la Provincia.</p>
+</div>
+
+</body>
+</html>
