@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ficha de Campaña — SALTO</title>
+<style>
+:root{--cl:#7b5e00;--cl2:#5c4500;--cl3:#f5f0e8;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f9f7f2;color:#1a1a1a;font-size:13px;max-width:900px;margin:0 auto;padding:14px}
+.hdr{background:linear-gradient(135deg,#1a0e00 0%,#3d2e00 40%,#7b5e00 80%,#a07c00 100%);color:#fff;padding:28px 30px 22px;border-radius:var(--radius);margin-bottom:12px;position:relative;overflow:hidden}
+.hdr::before{content:'🌱';position:absolute;right:-10px;bottom:-18px;font-size:10rem;opacity:.1}
+.h-over{font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.6;margin-bottom:5px}
+.h-nm{font-size:2.4rem;font-weight:900;line-height:1;margin-bottom:4px}
+.h-sub{font-size:.85rem;opacity:.7;margin-bottom:14px}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-size:.68rem;font-weight:700;padding:3px 11px;border-radius:20px;border:1px solid transparent}
+.badge-warn{background:rgba(180,130,0,.25);border-color:rgba(250,204,21,.4);color:#fde68a}
+.badge-al{background:rgba(29,78,216,.25);border-color:rgba(59,130,246,.4);color:#93c5fd}
+.badge-op{background:rgba(220,38,38,.25);border-color:rgba(248,113,113,.4);color:#fca5a5}
+.badge-crit{background:rgba(109,40,217,.25);border-color:rgba(167,139,250,.4);color:#c4b5fd}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:#fff;border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.07);overflow:hidden}
+.c-hdr{background:var(--cl);color:#fff;padding:7px 14px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px}
+.c-hdr-dark{background:var(--cl2)}
+.c-body{padding:12px 14px}
+.kv{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #f0ebe0;font-size:.78rem}
+.kv:last-child{border-bottom:none}
+.kv-k{color:#6b7280}
+.kv-v{font-weight:700;color:#1a1a1a}
+.kv-pj{color:#15803d;font-weight:800}
+.kv-lla{color:#7c3aed;font-weight:800}
+.kv-jxc{color:#d97706;font-weight:800}
+.prog-list{list-style:none;padding:0}
+.prog-list li{padding:5px 0;border-bottom:1px solid #f0ebe0;font-size:.78rem;line-height:1.5}
+.prog-list li:last-child{border-bottom:none}
+.prog-list li::before{content:"▸ ";color:var(--cl);font-weight:700}
+.alert{background:#fffbeb;border:1.5px solid #f59e0b;border-radius:8px;padding:8px 12px;font-size:.75rem;color:#78350f;margin-top:8px}
+.alert strong{color:#92400e}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.stat{background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 2px 8px rgba(0,0,0,.07);text-align:center}
+.stat-n{font-size:1.6rem;font-weight:900;color:var(--cl);display:block}
+.stat-l{font-size:.63rem;color:#6b7280;text-transform:uppercase;margin-top:2px}
+.full{grid-column:1/-1}
+p{font-size:.8rem;color:#374151;line-height:1.6;margin-bottom:8px}
+p:last-child{margin-bottom:0}
+@media print{body{background:#fff;padding:0}.card{box-shadow:none;break-inside:avoid}.hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:10mm 12mm}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="h-over">🌾 Cluster INTERIOR · 2ª Sección Electoral · PBA Analítica 2026</div>
+  <div class="h-nm">SALTO</div>
+  <div class="h-sub">Capital Provincial de la Semilla · Agroindustria lider · Defensa Hídrica · Balneario del Río</div>
+  <div class="badges">
+    <span class="badge badge-al">✅ Aliado — Ricardo Alessandro (UxP)</span>
+    <span class="badge badge-warn">⚠️ PJ 45.7% prov / LLA 50.5% nac</span>
+    <span class="badge">🌱 Capital de la Semilla</span>
+    <span class="badge">💧 Defensa Hídrica 10,000 frentistas</span>
+    <span class="badge">🎓 Salto Educa — universidad local</span>
+  </div>
+</div>
+
+<div class="stat-grid">
+  <div class="stat"><span class="stat-n">31,406</span><span class="stat-l">Padrón Electoral</span></div>
+  <div class="stat"><span class="stat-n">2ª</span><span class="stat-l">Sección Electoral</span></div>
+  <div class="stat"><span class="stat-n">1,611</span><span class="stat-l">km² superficie</span></div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="c-hdr">Intendente</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Nombre</span><span class="kv-v">Ricardo Alessandro</span></div>
+      <div class="kv"><span class="kv-k">Fuerza política</span><span class="kv-v">Unión por la Patria</span></div>
+      <div class="kv"><span class="kv-k">Vínculo</span><span class="kv-v">Aliado (UxP)</span></div>
+      <div class="kv"><span class="kv-k">Sección</span><span class="kv-v">2ª Sección Electoral</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">Identidad Territorial</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">Título</span><span class="kv-v">Capital Provincial de la Semilla</span></div>
+      <div class="kv"><span class="kv-k">Motor económico</span><span class="kv-v">Semilleras mundiales + Agroindustria</span></div>
+      <div class="kv"><span class="kv-k">Activo turístico</span><span class="kv-v">Balneario Cascadas del Río Salto</span></div>
+      <div class="kv"><span class="kv-k">PBI per cápita</span><span class="kv-v">Entre los más altos de PBA</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="card">
+    <div class="c-hdr">2023 General</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">PJ (Alessandro)</span><span class="kv-pj">52.8% (11,102)</span></div>
+      <div class="kv"><span class="kv-k">LLA</span><span class="kv-lla">24.2% (5,081)</span></div>
+      <div class="kv"><span class="kv-k">JxC</span><span class="kv-jxc">23.0% (4,846)</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">21,029</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">2025 — Elec. Provincial</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">PJ ✅</span><span class="kv-pj">45.7% (8,183)</span></div>
+      <div class="kv"><span class="kv-k">LLA</span><span class="kv-lla">30.9% (5,522)</span></div>
+      <div class="kv"><span class="kv-k">JxC</span><span class="kv-jxc">NaN — corrió separado</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">17,887</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr">2025 — Elec. Nacional</div>
+    <div class="c-body">
+      <div class="kv"><span class="kv-k">LLA 🔴</span><span class="kv-lla">50.5% (10,215)</span></div>
+      <div class="kv"><span class="kv-k">PJ</span><span class="kv-pj">35.4% (7,147)</span></div>
+      <div class="kv"><span class="kv-k">Margen LLA</span><span class="kv-lla">+3,068 votos</span></div>
+      <div class="kv"><span class="kv-k">Total positivos</span><span class="kv-v">20,218</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="alert">
+  <strong>⚠️ Lectura electoral:</strong> Salto es municipio aliado con trayectoria peronista sólida (52.8% en 2023). La provincial 2025 resistió con PJ 45.7% vs LLA 30.9%. En la nacional, LLA alcanzó 50.5% con 3,068 votos de ventaja. El split prov-nac (15 puntos) revela que el electorado confía en la gestión local de Alessandro pero trasfiere su voto a LLA en la categoría nacional. El ex voto de JxC (23.0% en 2023) migró mayoritariamente a LLA en la nacional. En 2025 JxC corrió como UCR y PRO por separado — los datos provinciales no lo consolidan.
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="c-hdr">Identidad Profunda</div>
+    <div class="c-body">
+      <p>Salto es la capital de la semilla porque concentra los principales laboratorios y empresas semilleras mundiales de la Argentina: Monsanto/Bayer, Corteva (Pioneer/Dow), BASF, Syngenta operan en el municipio o lo tienen como hub de investigación y distribución. La zona núcleo sojera del norte bonaerense usa Salto como punto de referencia para la cadena de insumos agrícolas.</p>
+      <p>Además de la semillería, Salto tiene Georgalos (chocolate y confitería de escala nacional), La Anónima y frigoríficos como Metrive. El resultado es un PBI per cápita que está entre los más altos de la provincia de Buenos Aires — no por el tamaño de la población sino por la densidad industrial y agroindustrial.</p>
+      <p>El Balneario Municipal sobre las cascadas del Río Salto es el contrapunto turístico: miles de visitantes por fin de semana durante el verano, con economía local de gastronomía, comercio y servicios que se activa estacionalmente.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="c-hdr c-hdr-dark">Programas de Gestión</div>
+    <div class="c-body">
+      <ul class="prog-list">
+        <li><strong>Defensa Hídrica del Río Salto</strong> — Red de mega canales aliviadores, sumideros y estaciones de bombeo de alto caudal. Protege a más de 10,000 frentistas de las zonas bajas. Obra estructural post-inundación 2015 que devastó la ciudad.</li>
+        <li><strong>Renovación Hospital Juan D. Perón</strong> — Nuevas áreas de terapia intensiva y pediatría de vanguardia, aparatología de diagnóstico. Capacidad reforzada para +15,000 consultas anuales extras durante picos de cosecha.</li>
+        <li><strong>Puesta en Valor del Balneario Municipal</strong> — Mantenimiento y modernización de piletas, sanitarios y parrillas en el predio de las cascadas. Impulsa ventas directas en el comercio local durante la temporada estival.</li>
+        <li><strong>Programa Infraestructura Urbana & Luminarias</strong> — Ordenamiento de accesos, conexiones y servicios básicos en barrios y localidades periféricas que venían quedando rezagados.</li>
+        <li><strong>Salto Educa</strong> — Convenios con universidades nacionales para dictar carreras de ingeniería agronómica e industrial in situ, evitando el éxodo de jóvenes hacia las ciudades universitarias.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card full">
+  <div class="c-hdr">Lectura Estratégica</div>
+  <div class="c-body">
+    <p><strong>Fortaleza:</strong> Alessandro (UxP) tiene gestión concreta y narrativa potente: la Defensa Hídrica que protegió a Salto de repetir la catástrofe de 2015 es un argumento de vida o muerte, no de política ordinaria. La "Capital de la Semilla" posiciona al municipio como hub agroindustrial de vanguardia — argumento de orgullo local que cruza simpatías políticas.</p>
+    <p><strong>Tensión:</strong> El electorado de Salto tiene perfil rural-agroindustrial con alta penetración de la agenda LLA (desregulación, apertura de mercados, reducción del Estado). En 2025, ese segmento votó LLA en la nacional mientras mantuvo a Alessandro en lo local — el split de 15 puntos entre ambas categorías es la señal más clara de esa dualidad.</p>
+    <p><strong>Ángulo provincial:</strong> La Defensa Hídrica requirió coordinación Provincia-Municipio. Una visita que ponga en valor la obra hídrica como "lo que el Estado provincial y municipal hicieron juntos para que Salto no vuelva a inundarse" tiene resonancia concreta en los 10,000 frentistas protegidos. Salto Educa también tiene ángulo provincial si se presentan las carreras como modelo de retención de talentos en el interior.</p>
+  </div>
+</div>
+
+</body>
+</html>
