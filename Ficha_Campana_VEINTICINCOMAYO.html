@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ficha de Campaña — 25 de Mayo</title>
+<style>
+:root{--prim:#2a1e00;--acc:#7b5e00;--light:#f5f2eb;--border:#d4c89a;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0ece0;color:#2a1e00;font-size:13px;max-width:900px;margin:0 auto;padding:14px}
+.fich-hero{background:linear-gradient(135deg,#0d0800 0%,#2a1e00 45%,#4a3800 80%,#7b5e00 100%);color:#fff;border-radius:var(--radius);padding:26px 28px 22px;margin-bottom:12px;position:relative;overflow:hidden}
+.fich-hero::before{content:'🎭';position:absolute;right:-10px;bottom:-18px;font-size:10rem;opacity:.09}
+.fh-over{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;opacity:.6;margin-bottom:5px}
+.fich-hero h1{font-size:2.2rem;font-weight:900;line-height:1;margin-bottom:3px;text-transform:uppercase}
+.fh-sub{font-size:.85rem;opacity:.72;margin-bottom:14px;font-style:italic}
+.fh-tags{display:flex;flex-wrap:wrap;gap:6px}
+.fh-tag{font-size:.66rem;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff}
+.badge-op{background:rgba(180,30,30,.4);border-color:rgba(220,60,60,.5);color:#fca5a5}
+.badge-crit{background:rgba(100,0,150,.4);border-color:rgba(160,80,220,.5);color:#d8b4fe}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:12px 14px}
+.card-dark{background:var(--prim);border-color:var(--prim);color:#fff}
+.card-dark .c-lbl{color:rgba(255,255,255,.65)}
+.card-dark .c-val{color:#fff}
+.card-dark h4{color:#fde68a}
+.c-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;color:#7b5e00;letter-spacing:.5px;margin-bottom:3px}
+.c-val{font-size:1.5rem;font-weight:900;color:var(--prim);line-height:1}
+.c-note{font-size:.69rem;color:#666;margin-top:3px;line-height:1.4}
+.sec-hdr{background:var(--prim);color:#fff;border-radius:7px 7px 0 0;padding:8px 14px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.sec-body{background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 7px 7px;padding:14px;margin-bottom:10px}
+.prog-row{display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid #f5f2eb}
+.prog-row:last-child{border-bottom:none}
+.prog-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+.prog-body h4{font-size:.72rem;font-weight:800;color:var(--prim);margin-bottom:2px;text-transform:uppercase}
+.prog-body p{font-size:.76rem;color:#374151;line-height:1.5}
+.elec-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #f5f2eb;font-size:.76rem}
+.elec-row:last-child{border-bottom:none}
+.v-pj{color:#15803d;font-weight:800}
+.v-lla{color:#7c3aed;font-weight:800}
+.v-jxc{color:#d97706;font-weight:800}
+.bar-wrap{margin:6px 0}
+.bar-lbl{display:flex;justify-content:space-between;font-size:.66rem;margin-bottom:2px;color:#555}
+.bar{height:8px;border-radius:4px;background:#e5e7eb;overflow:hidden}
+.bar-fill-pj{height:100%;background:#16a34a;border-radius:4px}
+.bar-fill-lla{height:100%;background:#7c3aed;border-radius:4px}
+.bar-fill-jxc{height:100%;background:#d97706;border-radius:4px}
+.alert-box{background:#fff8e1;border:1.5px solid #f9a825;border-radius:7px;padding:10px 13px;margin-bottom:10px}
+.alert-box p{font-size:.76rem;color:#5a3e00;line-height:1.55}
+.alert-box strong{color:#3a2800}
+@media print{body{background:#fff;padding:0}.fich-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card-dark,.sec-hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4;margin:9mm 11mm}}
+</style>
+</head>
+<body>
+
+<div class="fich-hero">
+  <div class="fh-over">🌾 Cluster INTERIOR · 7ª Sección Electoral · PBA Analítica 2026</div>
+  <h1>25 de Mayo</h1>
+  <div class="fh-sub">Capital Provincial del Carnaval · Epicentro agroganadero · Ruta 205 · Parque Laguna Mulitas</div>
+  <div class="fh-tags">
+    <span class="fh-tag badge-op">🔴 Opositor — Ramiro Egüen (JxC)</span>
+    <span class="fh-tag badge-crit">⚠️ LLA 50.8% nac — 3,878 votos sobre PJ</span>
+    <span class="fh-tag">🎭 Capital Provincial del Carnaval</span>
+    <span class="fh-tag">🐄 Ganadería bovina · Soja · Trigo</span>
+    <span class="fh-tag">🎓 Centro Regional Universitario</span>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="card card-dark">
+    <div class="c-lbl">Padrón 2025</div>
+    <div class="c-val">32,095</div>
+    <div class="c-note">7ª Sección Electoral · Interior pampeano · Ruta 205</div>
+  </div>
+  <div class="card card-dark">
+    <div class="c-lbl">PJ provincial 2025</div>
+    <div class="c-val">36.9%</div>
+    <div class="c-note">7,018 votos · LLA solo 14.2% prov (JxC no corre unificado)</div>
+  </div>
+  <div class="card card-dark">
+    <div class="c-lbl">LLA nacional 2025</div>
+    <div class="c-val">50.8%</div>
+    <div class="c-note">10,225 votos · PJ 31.6% (6,347) — diferencia 3,878 votos</div>
+  </div>
+</div>
+
+<div class="sec-hdr">🎭 Identidad Territorial</div>
+<div class="sec-body">
+  <div class="grid2">
+    <div class="card">
+      <div class="c-lbl">Capital del Carnaval</div>
+      <h4 style="font-size:.8rem;color:#2a1e00;margin-bottom:5px">El corsódromo más importante de la Provincia</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">25 de Mayo es la Capital Provincial del Carnaval. El corsódromo del Parque Laguna Mulitas genera una economía turística estacional de gran escala: ingresos genuinos para clubes, bomberos e instituciones locales que organizan las comparsas. Un modelo cultural único en el interior bonaerense que posiciona al partido en el mapa turístico provincial de manera diferencial.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Epicentro agroganadero</div>
+      <h4 style="font-size:.8rem;color:#2a1e00;margin-bottom:5px">Soja, trigo, maíz, girasol y ganadería bovina</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">Uno de los distritos más extensos de la Provincia con una economía netamente agropecuaria. La producción de granos (soja, trigo, maíz, girasol) y la ganadería bovina definen el perfil productivo. La enorme extensión del partido hace de la vialidad rural una política de Estado permanente — sin red de caminos, no hay cosecha.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Interior profundo</div>
+      <h4 style="font-size:.8rem;color:#2a1e00;margin-bottom:5px">Norberto de la Riestra · Pedernales · Localidades menores</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">La extensión del partido implica una dualidad: la ciudad cabecera (25 de Mayo) con sus servicios y el corsódromo, y el interior profundo donde localidades como Norberto de la Riestra y Pedernales dependen de la red vial rural para su conectividad básica. La infraestructura de caminos no es una obra — es la condición de existencia del campo.</p>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Acceso universitario</div>
+      <h4 style="font-size:.8rem;color:#2a1e00;margin-bottom:5px">Centro Regional Universitario — retención de jóvenes</h4>
+      <p style="font-size:.76rem;color:#374151;line-height:1.55">El Centro Regional Universitario (CRU) acerca carreras terciarias y universitarias al distrito, evitando el desarraigo de jóvenes que sin esa oferta local deben migrar a La Plata, Tandil o Buenos Aires. Una política clave para mantener población joven en el interior y sostener la trama social del municipio.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec-hdr">🗳️ Mapa Electoral</div>
+<div class="sec-body">
+  <div class="grid2">
+    <div class="card">
+      <div class="c-lbl">Evolución electoral</div>
+      <div class="elec-row"><span>Intendente actual</span><span class="v-jxc">Egüen (JxC opositor)</span></div>
+      <div class="elec-row"><span>2025 Prov PJ</span><span class="v-pj">36.9% (7,018)</span></div>
+      <div class="elec-row"><span>2025 Prov LLA</span><span class="v-lla">14.2% (2,701)</span></div>
+      <div class="elec-row"><span>2025 Nac LLA 🔴</span><span class="v-lla">50.8% (10,225)</span></div>
+      <div class="elec-row"><span>2025 Nac PJ</span><span class="v-pj">31.6% (6,347)</span></div>
+    </div>
+    <div class="card">
+      <div class="c-lbl">Distribución 2025 nacional</div>
+      <div class="bar-wrap">
+        <div class="bar-lbl"><span>LLA — 50.8%</span><span>10,225 votos</span></div>
+        <div class="bar"><div class="bar-fill-lla" style="width:50.8%"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-lbl"><span>PJ — 31.6%</span><span>6,347 votos</span></div>
+        <div class="bar"><div class="bar-fill-pj" style="width:31.6%"></div></div>
+      </div>
+      <div style="margin-top:10px;font-size:.76rem;color:#374151">
+        <strong style="color:#2a1e00">Nota prov 2025:</strong> JxC corrió en listas separadas (UCR/PRO) en 2025 — por eso el total de LLA+PJ no suma 100%. Los votos de UCR y PRO completaron el resto. PJ lideró entre los tres bloques en la provincial con 36.9% pero sin mayoría.
+      </div>
+    </div>
+  </div>
+  <div class="alert-box">
+    <p><strong>🔴 Municipio opositor con fuerte presencia de LLA:</strong> 25 de Mayo tiene intendente de JxC (Egüen) y LLA dominó la categoría nacional 2025 con 50.8% (3,878 votos sobre PJ). El electorado del interior agroganadero migró masivamente hacia LLA en la categoría nacional. El PJ lidera la provincial (36.9%) pero en un escenario de fragmentación sin mayoría. Territorio de alta volatilidad.</p>
+  </div>
+</div>
+
+<div class="sec-hdr">🎯 Programas Municipales</div>
+<div class="sec-body">
+  <div class="prog-row">
+    <div class="prog-icon">🎭</div>
+    <div class="prog-body">
+      <h4>Carnaval — Capital Provincial · Parque Laguna Mulitas</h4>
+      <p>El corsódromo del Parque Laguna Mulitas es la principal atracción turística del partido y la más importante de la provincia para esta expresión cultural. El municipio organiza y sostiene el corsódromo; las ganancias de gastronomía y cantinas van íntegramente a instituciones locales — clubes, bomberos, escuelas. Una economía cultural de alto impacto concentrado en la temporada de carnaval.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🛣️</div>
+    <div class="prog-body">
+      <h4>Infraestructura Vial Rural — Conectividad del Campo Profundo</h4>
+      <p>En un partido de enorme extensión, el mantenimiento de la red de caminos rurales es una política de Estado permanente. Sin esa red, la producción agropecuaria no llega al mercado, las familias del interior profundo quedan aisladas y localidades como Norberto de la Riestra y Pedernales pierden servicios básicos. La vialidad rural es economía, no infraestructura.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🏥</div>
+    <div class="prog-body">
+      <h4>Hospital Unzué — Reequipamiento y Salud Descentralizada</h4>
+      <p>Adquisición de tomógrafo y renovación de flota de ambulancias de alta complejidad para el Hospital Unzué, efector central del partido. El programa "Salud Descentralizada" complementa el hospital con sedes sanitarias distribuidas por el distrito para resolver cerca lo que antes requería derivación a municipios más grandes. Salud presente en el territorio extenso.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">🎓</div>
+    <div class="prog-body">
+      <h4>Programa Centro Universitario Regional — Educación Sin Desarraigo</h4>
+      <p>Acercar carreras universitarias al partido eliminando la barrera de la distancia: centros universitarios en instalaciones municipales, cursada local, acompañamiento para alumnos que no tienen medios para vivir en otra ciudad. La alternativa es el desarraigo — jóvenes que migran y no vuelven. El CRU retiene población joven y capital humano en el interior.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">💡</div>
+    <div class="prog-body">
+      <h4>"25 Emprende" + "Transparencia 24"</h4>
+      <p>Microcréditos a tasa subsidiada con asistencia técnica para emprendedores locales ("25 Emprende") y publicación en tiempo real de los gastos de gestión municipal ("Transparencia 24"). Una combinación de política de desarrollo local y reconstrucción de confianza institucional — relevante en un municipio donde el electorado se movió masivamente hacia LLA en la categoría nacional.</p>
+    </div>
+  </div>
+  <div class="prog-row">
+    <div class="prog-icon">♻️</div>
+    <div class="prog-body">
+      <h4>"25 Recicla" — Economía Circular Municipal</h4>
+      <p>Puntos Verdes y recolección diferenciada cuyo material se clasifica en planta municipal operada por trabajadores locales. El reciclaje reduce costos de enterramiento y genera empleo en economía social. Una política ambiental con argumento económico directo para el contribuyente que ve bajar la tarifa de residuos.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
