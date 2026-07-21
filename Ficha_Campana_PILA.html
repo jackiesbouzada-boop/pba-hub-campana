@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ficha de Campaña — PILA</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f0e8;color:#1a1a2e;min-height:100vh}
+.page{max-width:900px;margin:0 auto;padding:24px 20px}
+.hero{background:linear-gradient(135deg,#8b3a3a 0%,#5a1a1a 100%);border-radius:16px;padding:32px 36px 28px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
+.hero::after{content:'🐄';position:absolute;right:28px;bottom:-8px;font-size:6.5rem;opacity:.12}
+.hcl{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.htitle{font-size:2.2rem;font-weight:900;letter-spacing:-.5px;line-height:1.05;margin-bottom:8px}
+.hsub{font-size:.88rem;opacity:.8;margin-bottom:16px;line-height:1.5;max-width:580px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{padding:4px 12px;border-radius:16px;font-size:.72rem;font-weight:800;letter-spacing:.04em}
+.badge-al{background:#1d6a9f;color:#fff}
+.badge-strong{background:#15803d;color:#fff}
+
+.card{background:#fff;border-radius:12px;padding:22px 26px;margin-bottom:14px;border-left:5px solid #8b3a3a}
+.card-title{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8b3a3a;margin-bottom:14px}
+
+.etable{width:100%;border-collapse:collapse;font-size:.82rem}
+.etable th{background:#8b3a3a;color:#fff;padding:8px 12px;text-align:left;font-weight:700;font-size:.72rem;letter-spacing:.05em}
+.etable td{padding:8px 12px;border-bottom:1px solid #f0e5e5;vertical-align:top}
+.etable tr:last-child td{border-bottom:none}
+.etable tr:nth-child(even){background:#fdf8f8}
+.pj{color:#1d4ed8;font-weight:700}
+.jxc{color:#dc2626;font-weight:700}
+.lla{color:#7c3aed;font-weight:700}
+.winner{font-weight:900}
+
+.iblock{margin-bottom:10px;padding:10px 14px;background:#fdf8f8;border-radius:8px;border-left:3px solid #8b3a3a}
+.iblock-title{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#8b3a3a;margin-bottom:4px}
+.iblock-text{font-size:.82rem;color:#374151;line-height:1.6}
+
+.prog-list{list-style:none}
+.prog-list li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f0e5e5;font-size:.82rem;align-items:flex-start;line-height:1.5}
+.prog-list li:last-child{border-bottom:none}
+.prog-icon{font-size:1.0rem;flex-shrink:0;margin-top:1px}
+.prog-name{font-weight:700;color:#1a1a2e}
+
+.metatable{width:100%;border-collapse:collapse;font-size:.8rem}
+.metatable td{padding:7px 12px;border-bottom:1px solid #f0e5e5}
+.metatable td:first-child{font-weight:700;color:#6b2020;width:38%}
+.metatable tr:last-child td{border-bottom:none}
+
+.info-box{margin-top:10px;padding:10px 14px;background:#f0fdf4;border-radius:6px;font-size:.78rem;color:#14532d;border-left:3px solid #15803d}
+
+.footer{text-align:center;font-size:.68rem;color:#c09090;margin-top:20px;padding-top:10px;border-top:1px solid #f0e0e0;letter-spacing:.05em}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hero">
+  <div class="hcl">🌿 SALADO · 5ª Sección Electoral</div>
+  <div class="htitle">PILA</div>
+  <div class="hsub">Corazón ganadero de la Cuenca del Salado: Walker UxP aliado, 100% ganadería, único municipio con HCD 100% oficialismo. PJ dominante: 67.6% en 2023, 56.2% en 2025 PBA, 46.4% nac (vs LLA 41.7%) — PJ gana ambas elecciones 2025</div>
+  <div class="badges">
+    <span class="badge badge-al">Walker UxP aliado</span>
+    <span class="badge badge-strong">PJ gana prov + nac 2025 ✔</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">📊 Datos Electorales</div>
+  <table class="etable">
+    <tr>
+      <th>Elección</th><th>1° Partido</th><th>%</th><th>2° Partido</th><th>%</th><th>3° Partido</th><th>%</th><th>V. Positivos</th>
+    </tr>
+    <tr>
+      <td>2023 General</td>
+      <td class="pj winner">PJ</td><td class="pj winner">67.6%</td>
+      <td class="jxc">JxC</td><td class="jxc">32.4%</td>
+      <td style="color:#6b7280">LLA</td><td style="color:#6b7280">—</td>
+      <td>2,456</td>
+    </tr>
+    <tr>
+      <td>2025 Prov. PBA</td>
+      <td class="pj winner">PJ</td><td class="pj winner">56.2%</td>
+      <td class="lla">LLA</td><td class="lla">18.7%</td>
+      <td colspan="2" style="color:#6b7280;font-size:.78rem">~25.1% JxC/otros (concejales)</td>
+      <td>2,497</td>
+    </tr>
+    <tr>
+      <td>2025 Nacional</td>
+      <td class="pj winner">PJ</td><td class="pj winner">46.4%</td>
+      <td class="lla">LLA</td><td class="lla">41.7%</td>
+      <td>—</td><td>—</td>
+      <td>2,153</td>
+    </tr>
+  </table>
+  <div class="info-box">✔ Pila es uno de los pocos municipios del SALADO donde el PJ ganó tanto la elección provincial 2025 (56.2%) como la nacional (46.4% vs LLA 41.7%). Diferencia nacional: 100 votos (999 vs 899). Alerta: LLA creció a 41.7% en la nacional — la tendencia merece atención.</div>
+</div>
+
+<div class="card">
+  <div class="card-title">🏛️ Identidad Territorial</div>
+  <div class="iblock">
+    <div class="iblock-title">🐄 100% Ganadería — Corazón de la Cuenca del Salado</div>
+    <div class="iblock-text">Pila es campo abierto e inundable: sus tierras no soportan agricultura intensiva. La economía del partido está 100% atada a la producción de terneros — cría y recría bovina extensiva sobre pastizales naturales inundables. La hacienda define el ritmo de vida del municipio: los remates feria son los eventos más concurridos del año y la Sociedad Rural es el actor institucional más relevante del partido. No hay otro producto, no hay otra industria: Pila es ganadería pura de la Cuenca del Salado.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🏛️ Único Municipio con HCD 100% Oficialismo</div>
+    <div class="iblock-text">Pila tiene el HCD (Concejo Deliberante) con el 100% de sus bancas en manos del oficialismo peronista — una condición única en la provincia de Buenos Aires. Eso refleja la fortaleza estructural del PJ local y la debilidad histórica de la oposición. La concentración de poder político también implica una responsabilidad de gestión mayor: no hay oposición que fiscalice, y los resultados son responsabilidad directa del peronismo en su totalidad.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🏞️ Laguna Camarón Grande — Potencial Turístico Emergente</div>
+    <div class="iblock-text">La Laguna Camarón Grande y la Laguna Cacique son los activos naturales más importantes de Pila para el desarrollo del turismo de naturaleza y pesca deportiva. En abril de 2026, el municipio firmó un convenio con la Provincia para impulsar el desarrollo turístico sustentable de esos espejos de agua. Es la primera política de diversificación económica que Pila emprende más allá de la ganadería — una apuesta por un futuro más diverso que el presente.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">⭐ Hitos de Gestión — Walker UxP</div>
+  <div class="iblock">
+    <div class="iblock-title">🏞️ Convenio Provincial — Laguna Camarón Grande (2026)</div>
+    <div class="iblock-text">La firma del convenio estratégico con la Provincia para el desarrollo turístico de la Laguna Camarón Grande es el hito más importante de 2026 en Pila. El objetivo es dotarla de infraestructura sustentable para turismo de naturaleza y pesca deportiva, integrando la producción ganadera local con el cuidado ambiental. Es también el primer caso de obra provincial en Pila con nombre y objetivo concreto.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">☀️ Energía Limpia — Escuela N°9 Hinojales (Parajes Rurales)</div>
+    <div class="iblock-text">La instalación de paneles solares y conectividad en la Escuela N°9 de Hinojales convirtió a ese establecimiento rural en un modelo autosustentable. La gestión Walker busca replicar el modelo en otros parajes rurales del partido. En un municipio donde los parajes rurales tienen décadas de aislamiento, la conectividad solar es la política más visible de modernización.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🛣️ Conectividad Vial — Ruta 41</div>
+    <div class="iblock-text">La repavimentación y mejora de la Ruta 41 es la obra logística más importante de Pila: rompe el aislamiento del casco urbano y facilita la salida de la producción ganadera hacia la Ruta 2. Sin esa conectividad, la producción local pierde competitividad y el municipio queda aislado en la Cuenca del Salado.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🏥 Rondas Médicas Rurales — 100 Familias/Mes</div>
+    <div class="iblock-text">Los equipos itinerantes de salud que bajan semanalmente a los CAPS rurales de Pila atienden más de 100 familias rurales mensuales. Prevención materno-infantil, entrega de medicación crónica y certificados: es la política sanitaria de mayor impacto en los parajes más aislados del partido.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">🚀 Programas Relevantes</div>
+  <ul class="prog-list">
+    <li>
+      <span class="prog-icon">🏞️</span>
+      <span><span class="prog-name">Laguna Camarón Grande — Infraestructura Turística Sustentable</span> — El convenio provincial firmado en 2026 necesita materialización concreta: accesos, muelle, servicios básicos, habilitación de operadores turísticos. La Provincia tiene el compromiso institucional firmado — el siguiente paso es la ejecución de obra con nombre, monto y fecha. Ese es el tipo de inversión que convierte a Pila en un destino de turismo de naturaleza en la Cuenca del Salado y diferencia a la gestión Walker de todas las anteriores.</span>
+    </li>
+    <li>
+      <span class="prog-icon">☀️</span>
+      <span><span class="prog-name">Solar Rural — Conectividad en Parajes Aislados</span> — El modelo de la Escuela N°9 de Hinojales puede replicarse en los demás establecimientos rurales de Pila y en los de los municipios vecinos del SALADO. Un programa provincial de energía solar para parajes rurales aislados en la Cuenca del Salado tiene a Pila como caso piloto exitoso y como argumento de eficiencia de política pública provincial.</span>
+    </li>
+    <li>
+      <span class="prog-icon">🐄</span>
+      <span><span class="prog-name">Programa Cuenca del Salado — Ganadería Regenerativa</span> — Los programas provinciales de asistencia técnica y financiamiento para ganadería adaptada en campos inundables tienen en Pila uno de sus receptores más naturales. Un municipio 100% ganadero, con HCD 100% oficialista, es el mejor vitrina posible para demostrar que la política provincial agropecuaria llega al campo más profundo de la Cuenca del Salado.</span>
+    </li>
+    <li>
+      <span class="prog-icon">💊</span>
+      <span><span class="prog-name">Rondas Médicas Rurales — Expansión y Equipamiento</span> — El programa de rondas médicas de Pila cubre >100 familias mensuales pero con recursos acotados. La inversión provincial en vehículos equipados para las rondas, botiquines rurales y conectividad para teleconsulta puede multiplicar el alcance sin aumentar proporcionalmente el costo. Es el tipo de política de salud rural que tiene alto impacto y bajo costo para la Provincia.</span>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-title">📋 Ficha Técnica</div>
+  <table class="metatable">
+    <tr><td>Partido</td><td>Pila</td></tr>
+    <tr><td>Sección Electoral</td><td>5ª Sección Electoral</td></tr>
+    <tr><td>Intendente</td><td>Sebastián Walker — Unión por la Patria</td></tr>
+    <tr><td>Padrón Electoral</td><td>3,724 electores</td></tr>
+    <tr><td>Cluster</td><td>SALADO</td></tr>
+    <tr><td>2023 — PJ</td><td>67.6% (1,661 votos) · gana · LLA sin lista</td></tr>
+    <tr><td>2023 — JxC</td><td>32.4% (795 votos)</td></tr>
+    <tr><td>2025 PBA — PJ</td><td>56.2% (1,403 votos) · gana</td></tr>
+    <tr><td>2025 PBA — LLA</td><td>18.7% (468 votos)</td></tr>
+    <tr><td>2025 Nac — PJ</td><td>46.4% (999 votos) · gana por 100 votos</td></tr>
+    <tr><td>2025 Nac — LLA</td><td>41.7% (899 votos)</td></tr>
+    <tr><td>Nota institucional</td><td>Único municipio PBA con HCD 100% oficialismo peronista</td></tr>
+    <tr><td>Identidad</td><td>100% Ganadería Cuenca del Salado · Laguna Camarón Grande · Solar rural · Rondas médicas rurales</td></tr>
+  </table>
+</div>
+
+<div class="footer">PILA · Padrón 3.724 · SALADO · 5ª Sección Electoral · Ficha Territorial 2025–2026</div>
+</div>
+</body>
+</html>
