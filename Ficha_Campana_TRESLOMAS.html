@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ficha de Campaña — TRES LOMAS</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e;min-height:100vh}
+.page{max-width:900px;margin:0 auto;padding:24px 20px}
+.hero{background:linear-gradient(135deg,#2e4057 0%,#1a2535 100%);border-radius:16px;padding:32px 36px 28px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
+.hero::after{content:'🌾';position:absolute;right:28px;bottom:-8px;font-size:6.5rem;opacity:.12}
+.hcl{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.htitle{font-size:2.2rem;font-weight:900;letter-spacing:-.5px;line-height:1.05;margin-bottom:8px}
+.hsub{font-size:.88rem;opacity:.8;margin-bottom:16px;line-height:1.5;max-width:580px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{padding:4px 12px;border-radius:16px;font-size:.72rem;font-weight:800;letter-spacing:.04em}
+.badge-al{background:#1d6a9f;color:#fff}
+.badge-warn{background:#b45309;color:#fff}
+
+.card{background:#fff;border-radius:12px;padding:22px 26px;margin-bottom:14px;border-left:5px solid #2e4057}
+.card-title{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#2e4057;margin-bottom:14px}
+
+.etable{width:100%;border-collapse:collapse;font-size:.82rem}
+.etable th{background:#2e4057;color:#fff;padding:8px 12px;text-align:left;font-weight:700;font-size:.72rem;letter-spacing:.05em}
+.etable td{padding:8px 12px;border-bottom:1px solid #e8ecf0;vertical-align:top}
+.etable tr:last-child td{border-bottom:none}
+.etable tr:nth-child(even){background:#f6f8fa}
+.pj{color:#1d4ed8;font-weight:700}
+.jxc{color:#dc2626;font-weight:700}
+.lla{color:#7c3aed;font-weight:700}
+.winner{font-weight:900}
+
+.iblock{margin-bottom:10px;padding:10px 14px;background:#f6f8fa;border-radius:8px;border-left:3px solid #2e4057}
+.iblock-title{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#2e4057;margin-bottom:4px}
+.iblock-text{font-size:.82rem;color:#374151;line-height:1.6}
+
+.prog-list{list-style:none}
+.prog-list li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #e8ecf0;font-size:.82rem;align-items:flex-start;line-height:1.5}
+.prog-list li:last-child{border-bottom:none}
+.prog-icon{font-size:1.0rem;flex-shrink:0;margin-top:1px}
+.prog-name{font-weight:700;color:#1a1a2e}
+
+.metatable{width:100%;border-collapse:collapse;font-size:.8rem}
+.metatable td{padding:7px 12px;border-bottom:1px solid #e8ecf0}
+.metatable td:first-child{font-weight:700;color:#1a2e44;width:38%}
+.metatable tr:last-child td{border-bottom:none}
+
+.footer{text-align:center;font-size:.68rem;color:#8090a0;margin-top:20px;padding-top:10px;border-top:1px solid #d0d8e0;letter-spacing:.05em}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hero">
+  <div class="hcl">🏔️ SUR · 6ª Sección Electoral</div>
+  <div class="htitle">TRES LOMAS</div>
+  <div class="hsub">Pampa bonaerense suroeste: cereales y ganadería en la 6ª Sección — Spinolo Sayago UxP aliado. PJ lidera la provincial (42.1%); LLA gana la nacional 2025 con 48.6%</div>
+  <div class="badges">
+    <span class="badge badge-al">Spinolo Sayago UxP aliado</span>
+    <span class="badge badge-warn">LLA 48.6% nac ⚠️</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">📊 Datos Electorales</div>
+  <table class="etable">
+    <tr>
+      <th>Elección</th><th>1° Partido</th><th>%</th><th>2° Partido</th><th>%</th><th>3° Partido</th><th>%</th><th>V. Positivos</th>
+    </tr>
+    <tr>
+      <td>2023 General</td>
+      <td class="jxc winner">JxC</td><td class="jxc winner">52.6%</td>
+      <td class="pj">PJ</td><td class="pj">47.4%</td>
+      <td style="color:#6b7280">LLA</td><td style="color:#6b7280">—</td>
+      <td>4,981</td>
+    </tr>
+    <tr>
+      <td>2025 Prov. PBA</td>
+      <td class="pj winner">PJ</td><td class="pj winner">42.1%</td>
+      <td class="lla">LLA</td><td class="lla">19.6%</td>
+      <td colspan="2" style="color:#6b7280;font-size:.78rem">~38.3% JxC/otros (concejales)</td>
+      <td>4,275</td>
+    </tr>
+    <tr>
+      <td>2025 Nacional</td>
+      <td class="lla winner">LLA</td><td class="lla winner">48.6%</td>
+      <td class="pj">PJ</td><td class="pj">39.2%</td>
+      <td>—</td><td>—</td>
+      <td>4,135</td>
+    </tr>
+  </table>
+  <div style="margin-top:10px;padding:8px 12px;background:#f6f8fa;border-radius:6px;font-size:.76rem;color:#1a2e44">
+    📌 El intendente UxP coexiste con un electorado que votó JxC en 2023 y migró a LLA en la nacional 2025. En la provincial el PJ lidera con 42.1% gracias a la gestión local; en la nacional LLA alcanza el 48.6%.
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">🏛️ Identidad Territorial</div>
+  <div class="iblock">
+    <div class="iblock-title">🌾 Agricultura Bonaerense del Suroeste</div>
+    <div class="iblock-text">Tres Lomas es un municipio agropecuario del suroeste bonaerense, en la 6ª Sección Electoral, con producción de cereales (trigo, cebada), girasol y ganadería bovina de cría y engorde. La economía del partido es típica del interior pampeano suroeste: producción primaria con acopio cooperativo, contratistas rurales y una red de servicios concentrada en la cabecera. La Sociedad Rural local organiza el calendario social y económico del partido.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🤝 Cooperativa y Tejido Institucional Rural</div>
+    <div class="iblock-text">La cooperativa agropecuaria de Tres Lomas es el articulador económico más importante del partido. El acopio de granos, el servicio de maquinaria agrícola y la provisión de insumos para el campo concentran la actividad económica del sector productor. El municipio tiene también una modesta industria de servicios al agro que diversifica la economía local más allá de la producción primaria.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🏘️ Tres Lomas — Cabecera Compacta del Suroeste</div>
+    <div class="iblock-text">La localidad de Tres Lomas es la cabecera del partido y concentra la mayor parte de la población y los servicios. La localidad tiene hospital municipal, escuelas primarias y secundarias, y una red comercial orientada a los servicios rurales. La cercanía relativa a Trenque Lauquen le da acceso a servicios de mayor complejidad sin necesidad de trasladarse a grandes centros urbanos.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">⭐ Hitos de Gestión — Spinolo Sayago UxP</div>
+  <div class="iblock">
+    <div class="iblock-title">🏆 PJ Lidera la Provincial 2025 en un Municipio JxC 2023</div>
+    <div class="iblock-text">El resultado más notable de la gestión Spinolo Sayago es que el PJ lidera la provincial 2025 con 42.1% en un municipio donde JxC había ganado el 52.6% en 2023. Eso indica que el intendente peronista tiene arraigo local propio que supera al humor político anti-peronista de su electorado en las categorías legislativas. La diferenciación entre la gestión municipal y el partido a nivel macro es lo que permite ese resultado.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🛣️ Infraestructura Local y Servicios Básicos</div>
+    <div class="iblock-text">La gestión municipal en Tres Lomas prioriza los servicios básicos del interior pampeano: mantenimiento vial, recolección de residuos, agua potable y hospital. En un municipio de este tamaño, la calidad de los servicios cotidianos es el principal argumento electoral y el que determina si la gestión "llega" al vecino. Spinolo Sayago construyó su base electoral en la calidad de esa gestión visible.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">🚀 Programas Relevantes</div>
+  <ul class="prog-list">
+    <li>
+      <span class="prog-icon">🌾</span>
+      <span><span class="prog-name">Apoyo a la Producción Agropecuaria Local</span> — Los programas provinciales de asistencia técnica, financiamiento para cooperativas y apoyo a productores medianos tienen en Tres Lomas un receptor activo. La articulación entre la Provincia y la cooperativa agropecuaria local para programas de capital de trabajo, seguro agropecuario y asistencia ante fenómenos climáticos es el tipo de política que más impacto tiene en el electorado productivo del municipio.</span>
+    </li>
+    <li>
+      <span class="prog-icon">🏥</span>
+      <span><span class="prog-name">Hospital Municipal — Equipamiento y Derivaciones</span> — El hospital local cubre una zona de influencia amplia en el suroeste de la 6ª Sección. El equipamiento provincial para guardia, diagnóstico y teleconsulta mejora la calidad de atención y reduce la necesidad de derivaciones costosas. La inversión provincial en el hospital de Tres Lomas tiene retorno directo en el vecino más alejado de centros de salud de mayor complejidad.</span>
+    </li>
+    <li>
+      <span class="prog-icon">🛣️</span>
+      <span><span class="prog-name">Caminos Rurales — Conectividad del Sector Productivo</span> — La red de caminos rurales en la 6ª Sección es la demanda más constante del sector agropecuario. Tres Lomas, como todos los municipios de su perfil, tiene una red extensa de caminos no pavimentados que se deterioran con las lluvias. La inversión provincial en consolidación y mejora de caminos rurales tiene retorno inmediato en productividad y en percepción positiva de la Provincia.</span>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-title">📋 Ficha Técnica</div>
+  <table class="metatable">
+    <tr><td>Partido</td><td>Tres Lomas</td></tr>
+    <tr><td>Sección Electoral</td><td>6ª Sección Electoral</td></tr>
+    <tr><td>Intendente</td><td>Luciano O. Spinolo Sayago — Unión por la Patria</td></tr>
+    <tr><td>Padrón Electoral</td><td>7,024 electores</td></tr>
+    <tr><td>Cluster</td><td>SUR</td></tr>
+    <tr><td>2023 — JxC</td><td>52.6% (2,619 votos) · gana</td></tr>
+    <tr><td>2023 — PJ</td><td>47.4% (2,362 votos)</td></tr>
+    <tr><td>2023 — LLA</td><td>Sin lista propia</td></tr>
+    <tr><td>2025 PBA — PJ</td><td>42.1% (1,799 votos) · primera fuerza</td></tr>
+    <tr><td>2025 PBA — LLA</td><td>19.6% (837 votos)</td></tr>
+    <tr><td>2025 Nac — LLA</td><td>48.6% (2,009 votos) · gana</td></tr>
+    <tr><td>2025 Nac — PJ</td><td>39.2% (1,622 votos)</td></tr>
+    <tr><td>Identidad</td><td>Cereales · Girasol · Ganadería · Pampa suroeste · UxP aliado en contexto JxC</td></tr>
+  </table>
+</div>
+
+<div class="footer">TRES LOMAS · Padrón 7.024 · SUR · 6ª Sección Electoral · Ficha Territorial 2025–2026</div>
+</div>
+</body>
+</html>
