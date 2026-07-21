@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ficha de Campaña — MAIPÚ</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f5eeee;color:#1a1a2e;min-height:100vh}
+.page{max-width:900px;margin:0 auto;padding:24px 20px}
+.hero{background:linear-gradient(135deg,#8b3a3a 0%,#5a1e1e 100%);border-radius:16px;padding:32px 36px 28px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
+.hero::after{content:'🎭';position:absolute;right:28px;bottom:-8px;font-size:6.5rem;opacity:.12}
+.hcl{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.htitle{font-size:2.2rem;font-weight:900;letter-spacing:-.5px;line-height:1.05;margin-bottom:8px}
+.hsub{font-size:.88rem;opacity:.8;margin-bottom:16px;line-height:1.5;max-width:580px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{padding:4px 12px;border-radius:16px;font-size:.72rem;font-weight:800;letter-spacing:.04em}
+.badge-op{background:#991b1b;color:#fff}
+.badge-warn{background:#b45309;color:#fff}
+.badge-crit{background:#5b21b6;color:#fff}
+
+.card{background:#fff;border-radius:12px;padding:22px 26px;margin-bottom:14px;border-left:5px solid #8b3a3a}
+.card-title{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8b3a3a;margin-bottom:14px}
+
+.etable{width:100%;border-collapse:collapse;font-size:.82rem}
+.etable th{background:#8b3a3a;color:#fff;padding:8px 12px;text-align:left;font-weight:700;font-size:.72rem;letter-spacing:.05em}
+.etable td{padding:8px 12px;border-bottom:1px solid #f0ebe0;vertical-align:top}
+.etable tr:last-child td{border-bottom:none}
+.etable tr:nth-child(even){background:#fdf5f5}
+.pj{color:#1d4ed8;font-weight:700}
+.jxc{color:#dc2626;font-weight:700}
+.lla{color:#7c3aed;font-weight:700}
+.winner{font-weight:900}
+
+.iblock{margin-bottom:10px;padding:10px 14px;background:#fdf5f5;border-radius:8px;border-left:3px solid #8b3a3a}
+.iblock-title{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#8b3a3a;margin-bottom:4px}
+.iblock-text{font-size:.82rem;color:#374151;line-height:1.6}
+
+.alert-block{margin-bottom:14px;padding:12px 16px;background:#fff7ed;border-radius:8px;border-left:4px solid #b45309;font-size:.83rem;color:#374151;line-height:1.6}
+.alert-title{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#b45309;margin-bottom:6px}
+
+.prog-list{list-style:none}
+.prog-list li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f0ebe0;font-size:.82rem;align-items:flex-start;line-height:1.5}
+.prog-list li:last-child{border-bottom:none}
+.prog-icon{font-size:1.0rem;flex-shrink:0;margin-top:1px}
+.prog-name{font-weight:700;color:#1a1a2e}
+
+.metatable{width:100%;border-collapse:collapse;font-size:.8rem}
+.metatable td{padding:7px 12px;border-bottom:1px solid #f0ebe0}
+.metatable td:first-child{font-weight:700;color:#6b1a1a;width:38%}
+.metatable tr:last-child td{border-bottom:none}
+
+.footer{text-align:center;font-size:.68rem;color:#b07070;margin-top:20px;padding-top:10px;border-top:1px solid #e5cfcf;letter-spacing:.05em}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hero">
+  <div class="hcl">🌿 SALADO · 5ª Sección Electoral</div>
+  <div class="htitle">MAIPÚ</div>
+  <div class="hsub">Cuenca del Salado, ganadería bovina extensiva y Fiesta Nacional del Carnaval de la Amistad — Rappallini JxC (licencia judicial) / Otermín interina. LLA 46.4% en nacional, crisis institucional activa</div>
+  <div class="badges">
+    <span class="badge badge-op">Otermin/Rappallini JxC</span>
+    <span class="badge badge-warn">LLA 46.4% nac. ⚠️</span>
+    <span class="badge badge-crit">Crisis institucional 🔴</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="alert-title">⚠️ Emergencia Institucional — Situación Judicial Activa (Abril 2026)</div>
+  <div class="alert-block">
+    El intendente electo <strong>Matías Rappallini (JxC)</strong> está en licencia por procesamiento judicial vinculado a causas electorales de años anteriores. <strong>Lorena Otermín (JxC)</strong> ejerce como intendenta interina. La situación está judicializada con el HCD, imposibilitando el funcionamiento normal del municipio. La crisis institucional es el dato político dominante del distrito en 2026.
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">📊 Datos Electorales</div>
+  <table class="etable">
+    <tr>
+      <th>Elección</th><th>1° Partido</th><th>%</th><th>2° Partido</th><th>%</th><th>3° Partido</th><th>%</th><th>V. Positivos</th>
+    </tr>
+    <tr>
+      <td>2023 General</td>
+      <td class="jxc winner">JxC</td><td class="jxc winner">47.4%</td>
+      <td class="pj">PJ</td><td class="pj">34.8%</td>
+      <td class="lla">LLA</td><td class="lla">17.8%</td>
+      <td>8,130</td>
+    </tr>
+    <tr>
+      <td>2025 Prov. PBA</td>
+      <td colspan="2" style="color:#6b7280;font-size:.78rem">Voto muy fragmentado · ~40% PJ · 38.7% otros</td>
+      <td class="lla">LLA</td><td class="lla">21.2%</td>
+      <td colspan="2" style="color:#9ca3af;font-size:.75rem">Dato PJ anomalía en fuente</td>
+      <td>6,885</td>
+    </tr>
+    <tr>
+      <td>2025 Nacional</td>
+      <td class="lla winner">LLA</td><td class="lla winner">46.4%</td>
+      <td class="pj">PJ</td><td class="pj">33.4%</td>
+      <td>—</td><td>—</td>
+      <td>5,847</td>
+    </tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">🏛️ Identidad Territorial</div>
+  <div class="iblock">
+    <div class="iblock-title">🐂 Motor de la Ganadería de Cría — Pampa Deprimida</div>
+    <div class="iblock-text">Maipú está en la pampa deprimida (Cuenca del Salado), con tierras no aptas para la agricultura intensiva. Su matriz productiva es 100% ganadera bovina extensiva. El ritmo del pueblo lo marcan los precios de la invernada y la feria ganadera. Los frigoríficos, corrales de engorde y las empresas de veterinaria y sanidad animal son el corazón del empleo privado local. No hay soja: hay hacienda.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🎭 Fiesta Nacional del Carnaval de la Amistad — Marca Cultural del Distrito</div>
+    <div class="iblock-text">La Fiesta Nacional del Carnaval de la Amistad es el evento definitorio de Maipú. Un carnaval que rompe la monotonía del año y tracciona turismo regional durante varios días de febrero, movilizando la hotelería, gastronomía, clubes locales y el comercio minorista. Es la marca con la que Maipú se posiciona en la agenda cultural bonaerense: cada habitante se identifica con el Carnaval y lo defiende como activo de identidad colectiva.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🌿 Cuenca del Salado — Paisaje y Producción</div>
+    <div class="iblock-text">La geografía deprimida del Salado condiciona todo en Maipú: las inundaciones estacionales, el tipo de ganadería posible (cría extensiva en vez de tambo o feedlot intensivo), la conectividad de las estancias, y la relación con las localidades del interior. El partido convive con la amenaza hídrica permanente y adapta su infraestructura vial y productiva en consecuencia.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">⭐ Hitos de Gestión</div>
+  <div class="iblock">
+    <div class="iblock-title">🔌 Extensión de Redes de Gas y Cloacas</div>
+    <div class="iblock-text">Ejecución de obras de infraestructura básica para alcanzar cobertura ampliada en barrios periféricos: extensión de red de gas natural y de cloacas. Las mejoras en saneamiento impactan directamente en los indicadores de salud ambiental del distrito y reducen el gasto sanitario municipal de largo plazo.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🎭 Apoyo a la Fiesta Nacional del Carnaval</div>
+    <div class="iblock-text">El municipio sostiene el Carnaval de la Amistad como hito cultural y económico, financiando infraestructura, logística y seguridad del evento. El Carnaval genera un movimiento económico durante varios días de febrero que ningún otro evento local puede igualar, y posiciona a Maipú en la agenda turística regional con penetración en partidos vecinos y en el Conurbano.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🏛️ Crisis Institucional — Judicialización activa (2026)</div>
+    <div class="iblock-text">El procesamiento de Rappallini y la actuación de Otermín como interina con el HCD bloqueado representa el principal desafío de gestión del municipio en 2026. La imposibilidad de funcionamiento normal paraliza obra pública, licitaciones y aprobación presupuestaria. La crisis es de origen político-judicial y no tiene resolución clara en el corto plazo.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">🚀 Programas Destacados</div>
+  <ul class="prog-list">
+    <li>
+      <span class="prog-icon">🎓</span>
+      <span><span class="prog-name">Becas Terciarias y Universitarias</span> — A través de Desarrollo Social, el municipio estableció un padrón de estudiantes que acreditan necesidad económica. Les transfiere un subsidio mensual y directo para cubrir gastos de apuntes, comida o parte del alquiler, beneficiando a más de 100 estudiantes locales. Es la política más relevante del municipio en términos de movilidad social y arraigo de jóvenes que de otra forma emigrarían sin retorno.</span>
+    </li>
+    <li>
+      <span class="prog-icon">🎭</span>
+      <span><span class="prog-name">Carnaval de la Amistad — Apoyo Municipal</span> — El municipio invierte en el fortalecimiento del Carnaval como motor económico y cultural. La Fiesta Nacional genera rotación de hotelería, gastronomía y comercio durante los fines de semana de febrero y visibiliza a Maipú en la prensa regional y provincial con un perfil de municipio con identidad propia fuerte.</span>
+    </li>
+    <li>
+      <span class="prog-icon">🐂</span>
+      <span><span class="prog-name">Apoyo al Sector Ganadero Local</span> — Articulación con INTA y cámara ganadera local para asistencia técnica en sanidad animal, acceso a crédito y gestión de riesgos hídricos. La economía de Maipú es monoproductiva en ganadería, por lo que la asistencia técnica al sector primario impacta directamente en el empleo y el ingreso de toda la cadena de valor local.</span>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-title">📋 Ficha Técnica</div>
+  <table class="metatable">
+    <tr><td>Partido</td><td>Maipú</td></tr>
+    <tr><td>Sección Electoral</td><td>5ª Sección Electoral</td></tr>
+    <tr><td>Intendente</td><td>Lorena Otermín (interina) / Matías Rappallini (licencia judicial) — JxC</td></tr>
+    <tr><td>Padrón Electoral</td><td>10,312 electores</td></tr>
+    <tr><td>Cluster</td><td>SALADO</td></tr>
+    <tr><td>2023 — JxC</td><td>47.4% (3,854 votos) · gana</td></tr>
+    <tr><td>2023 — PJ</td><td>34.8% (2,830 votos)</td></tr>
+    <tr><td>2023 — LLA</td><td>17.8% (1,446 votos)</td></tr>
+    <tr><td>2025 PBA — LLA</td><td>21.2% (1,459 votos) · voto fragmentado</td></tr>
+    <tr><td>2025 Nac — LLA</td><td>46.4% (2,714 votos) · gana</td></tr>
+    <tr><td>2025 Nac — PJ</td><td>33.4% (1,952 votos)</td></tr>
+    <tr><td>Situación política</td><td>Crisis institucional activa — intendente en licencia judicial, HCD bloqueado</td></tr>
+  </table>
+</div>
+
+<div class="footer">MAIPÚ · Padrón 10.312 · SALADO · 5ª Sección Electoral · Ficha Territorial 2025–2026</div>
+</div>
+</body>
+</html>
