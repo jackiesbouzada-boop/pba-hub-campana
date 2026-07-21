@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ficha de Campaña — PÚAN</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a1a2e;min-height:100vh}
+.page{max-width:900px;margin:0 auto;padding:24px 20px}
+.hero{background:linear-gradient(135deg,#2e4057 0%,#1a2535 100%);border-radius:16px;padding:32px 36px 28px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
+.hero::after{content:'🍺';position:absolute;right:28px;bottom:-8px;font-size:6.5rem;opacity:.12}
+.hcl{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.htitle{font-size:2.2rem;font-weight:900;letter-spacing:-.5px;line-height:1.05;margin-bottom:8px}
+.hsub{font-size:.88rem;opacity:.8;margin-bottom:16px;line-height:1.5;max-width:580px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{padding:4px 12px;border-radius:16px;font-size:.72rem;font-weight:800;letter-spacing:.04em}
+.badge-al{background:#1d6a9f;color:#fff}
+.badge-warn{background:#b45309;color:#fff}
+.badge-op{background:#991b1b;color:#fff}
+.badge-crit{background:#5b21b6;color:#fff}
+
+.card{background:#fff;border-radius:12px;padding:22px 26px;margin-bottom:14px;border-left:5px solid #2e4057}
+.card-title{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#2e4057;margin-bottom:14px}
+
+.etable{width:100%;border-collapse:collapse;font-size:.82rem}
+.etable th{background:#2e4057;color:#fff;padding:8px 12px;text-align:left;font-weight:700;font-size:.72rem;letter-spacing:.05em}
+.etable td{padding:8px 12px;border-bottom:1px solid #e8edf3;vertical-align:top}
+.etable tr:last-child td{border-bottom:none}
+.etable tr:nth-child(even){background:#f4f7fa}
+.pj{color:#1d4ed8;font-weight:700}
+.jxc{color:#dc2626;font-weight:700}
+.lla{color:#7c3aed;font-weight:700}
+.winner{font-weight:900}
+
+.iblock{margin-bottom:10px;padding:10px 14px;background:#f4f7fa;border-radius:8px;border-left:3px solid #2e4057}
+.iblock-title{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#2e4057;margin-bottom:4px}
+.iblock-text{font-size:.82rem;color:#374151;line-height:1.6}
+
+.prog-list{list-style:none}
+.prog-list li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #e8edf3;font-size:.82rem;align-items:flex-start;line-height:1.5}
+.prog-list li:last-child{border-bottom:none}
+.prog-icon{font-size:1.0rem;flex-shrink:0;margin-top:1px}
+.prog-name{font-weight:700;color:#1a1a2e}
+
+.metatable{width:100%;border-collapse:collapse;font-size:.8rem}
+.metatable td{padding:7px 12px;border-bottom:1px solid #e8edf3}
+.metatable td:first-child{font-weight:700;color:#1e3a5f;width:38%}
+.metatable tr:last-child td{border-bottom:none}
+
+.footer{text-align:center;font-size:.68rem;color:#7a9ab8;margin-top:20px;padding-top:10px;border-top:1px solid #c8d8e8;letter-spacing:.05em}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hero">
+  <div class="hcl">🏔️ SUR · 6ª Sección Electoral</div>
+  <div class="htitle">PÚAN</div>
+  <div class="hsub">Capital Nacional de la Cebada Cervecera, Maltería Pampa y la Laguna — Reyes JxC opositor. LLA gana la provincial con 42.4% y la nacional con 58.3%. PJ 17.8% en provincial</div>
+  <div class="badges">
+    <span class="badge badge-op">Reyes JxC opositor</span>
+    <span class="badge badge-crit">LLA gana provincial 42.4%</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">📊 Datos Electorales</div>
+  <table class="etable">
+    <tr>
+      <th>Elección</th><th>1° Partido</th><th>%</th><th>2° Partido</th><th>%</th><th>3° Partido</th><th>%</th><th>V. Positivos</th>
+    </tr>
+    <tr>
+      <td>2023 General</td>
+      <td class="jxc winner">JxC</td><td class="jxc winner">45.4%</td>
+      <td class="pj">PJ</td><td class="pj">27.7%</td>
+      <td class="lla">LLA</td><td class="lla">26.9%</td>
+      <td>9,949</td>
+    </tr>
+    <tr>
+      <td>2025 Prov. PBA</td>
+      <td class="lla winner">LLA</td><td class="lla winner">42.4%</td>
+      <td class="pj">PJ</td><td class="pj">17.8%</td>
+      <td>—</td><td>—</td>
+      <td>8,128</td>
+    </tr>
+    <tr>
+      <td>2025 Nacional</td>
+      <td class="lla winner">LLA</td><td class="lla winner">58.3%</td>
+      <td class="pj">PJ</td><td class="pj">21.5%</td>
+      <td>—</td><td>—</td>
+      <td>8,539</td>
+    </tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">🏛️ Identidad Territorial</div>
+  <div class="iblock">
+    <div class="iblock-title">🍺 Capital Nacional de la Cebada Cervecera — Maltería Pampa</div>
+    <div class="iblock-text">Púan es la Capital Nacional de la Cebada Cervecera, con suelos de excelencia para el cultivo de cosecha fina. La Fiesta Nacional de la Cebada Cervecera (enero) es uno de los eventos agroproductivos más importantes de la provincia. La Maltería Pampa, una de las más grandes de la región, transforma la cebada en malta, aportando valor industrial al cereal local.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🌊 Laguna de Púan — Motor Turístico del Suroeste</div>
+    <div class="iblock-text">La Laguna de Púan con su balneario e isla es el principal polo turístico del partido. Genera flujo de visitantes desde Bahía Blanca y La Pampa como escapada de naturaleza y recreación en una zona con pocos competidores turísticos directos.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🐄 Agroganadería de Transición — Suroeste Bonaerense</div>
+    <div class="iblock-text">Al estar en la transición entre la pampa húmeda y la estepa de La Pampa, el municipio combina producción cerealera (cebada, trigo) con ganadería bovina, con ciclos climáticos más variables y exposición a sequías frecuentes que condicionan la economía del productor.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🏘️ Darregueira — La Localidad Más Poblada del Partido</div>
+    <div class="iblock-text">Darregueira supera en población a la cabecera Púan y tiene dinámica propia. Las obras de gas natural, asfalto y el Hospital Municipal de Darregueira son prioridades políticas esenciales para sostener el equilibrio territorial del partido.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">⭐ Hitos de Gestión</div>
+  <div class="iblock">
+    <div class="iblock-title">📊 Ordenamiento Fiscal Municipal</div>
+    <div class="iblock-text">Estabilización de la deuda municipal y cumplimiento estricto del cronograma de pagos salariales como prioridad de la nueva gestión. Implementación de sistema de auditoría interna y control de gastos para optimizar la inversión en todos los pueblos del partido.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🌊 Mejora Infraestructura Laguna de Púan</div>
+    <div class="iblock-text">Inversión en el balneario e isla de la laguna para consolidar el flujo turístico como fuente de ingreso genuina para el comercio local. Posicionamiento de Púan como destino de escapada para la región de influencia Bahía Blanca–La Pampa.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🛣️ Consejo Vial — Caminos Rurales con Maquinaria Propia</div>
+    <div class="iblock-text">Articulación con productores para el mantenimiento preventivo de la red vial rural. Priorización de reparación de maquinaria propia para sostener la transitabilidad de caminos en un partido cuyos ingresos dependen de poder sacar la cosecha.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🏘️ Integración del Interior — Darregueira, Villa Iris, Bordenave</div>
+    <div class="iblock-text">Fortalecimiento de delegaciones municipales en localidades interiores con mayor capacidad operativa de respuesta. Gas natural, asfalto y Hospital Municipal de Darregueira como inversiones clave en el polo más poblado del partido.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">🚀 Programas Destacados</div>
+  <ul class="prog-list">
+    <li>
+      <span class="prog-icon">🍺</span>
+      <span><span class="prog-name">Fiesta Nacional de la Cebada Cervecera</span> — Consolidación del evento anual de enero como vidriera del sector productivo y dinamizador del comercio local. Convoca productores, malteros y público regional; posiciona a Púan en el mapa agroindustrial nacional.</span>
+    </li>
+    <li>
+      <span class="prog-icon">🤝</span>
+      <span><span class="prog-name">Apoyo al Sector Cooperativo</span> — Fomento de las cooperativas agrícolas locales que sostienen la economía del partido. Gestiones ante organismos provinciales y nacionales para créditos y mejoras tecnológicas aplicadas al productor cooperado.</span>
+    </li>
+    <li>
+      <span class="prog-icon">🏛️</span>
+      <span><span class="prog-name">Descentralización Administrativa</span> — Delegaciones reforzadas en Darregueira, Villa Iris y Bordenave con mayor capacidad de respuesta operativa. Cada localidad accede a trámites y servicios sin necesidad de trasladarse a la cabecera.</span>
+    </li>
+    <li>
+      <span class="prog-icon">⚙️</span>
+      <span><span class="prog-name">Mantenimiento Vial con Maquinaria Municipal</span> — El municipio mantiene flota propia de maquinaria para el mantenimiento de caminos rurales. Priorización del acceso a chacras y campos en períodos críticos (siembra y cosecha) para no cortar la cadena productiva.</span>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-title">📋 Ficha Técnica</div>
+  <table class="metatable">
+    <tr><td>Partido</td><td>Púan</td></tr>
+    <tr><td>Cabecera</td><td>Púan</td></tr>
+    <tr><td>Localidades</td><td>Darregueira (más poblada), Villa Iris, Bordenave</td></tr>
+    <tr><td>Sección Electoral</td><td>6ª Sección Electoral</td></tr>
+    <tr><td>Intendente</td><td>Diego Alejandro Reyes — Juntos por el Cambio</td></tr>
+    <tr><td>Padrón Electoral</td><td>14,321 electores</td></tr>
+    <tr><td>Cluster</td><td>SUR</td></tr>
+    <tr><td>2023 — JxC</td><td>45.4% (4,521 votos) · gana</td></tr>
+    <tr><td>2023 — PJ</td><td>27.7% (2,753 votos)</td></tr>
+    <tr><td>2023 — LLA</td><td>26.9% (2,675 votos)</td></tr>
+    <tr><td>2025 PBA — LLA</td><td>42.4% (3,444 votos) · GANA provincial</td></tr>
+    <tr><td>2025 PBA — PJ</td><td>17.8% (1,450 votos)</td></tr>
+    <tr><td>2025 Nac — LLA</td><td>58.3% (4,974 votos) · gana</td></tr>
+    <tr><td>2025 Nac — PJ</td><td>21.5% (1,840 votos)</td></tr>
+  </table>
+</div>
+
+<div class="footer">PÚAN · Padrón 14.321 · SUR · 6ª Sección Electoral · Ficha Territorial 2025–2026</div>
+</div>
+</body>
+</html>
