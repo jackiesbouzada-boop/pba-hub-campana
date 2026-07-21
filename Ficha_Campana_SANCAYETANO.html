@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ficha de Campaña — SAN CAYETANO</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f0e8;color:#1a1a2e;min-height:100vh}
+.page{max-width:900px;margin:0 auto;padding:24px 20px}
+.hero{background:linear-gradient(135deg,#8b3a3a 0%,#5a1a1a 100%);border-radius:16px;padding:32px 36px 28px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
+.hero::after{content:'🐄';position:absolute;right:28px;bottom:-8px;font-size:6.5rem;opacity:.12}
+.hcl{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.htitle{font-size:2.2rem;font-weight:900;letter-spacing:-.5px;line-height:1.05;margin-bottom:8px}
+.hsub{font-size:.88rem;opacity:.8;margin-bottom:16px;line-height:1.5;max-width:580px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{padding:4px 12px;border-radius:16px;font-size:.72rem;font-weight:800;letter-spacing:.04em}
+.badge-op{background:#991b1b;color:#fff}
+.badge-warn{background:#b45309;color:#fff}
+
+.card{background:#fff;border-radius:12px;padding:22px 26px;margin-bottom:14px;border-left:5px solid #8b3a3a}
+.card-title{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8b3a3a;margin-bottom:14px}
+
+.etable{width:100%;border-collapse:collapse;font-size:.82rem}
+.etable th{background:#8b3a3a;color:#fff;padding:8px 12px;text-align:left;font-weight:700;font-size:.72rem;letter-spacing:.05em}
+.etable td{padding:8px 12px;border-bottom:1px solid #f0e5e5;vertical-align:top}
+.etable tr:last-child td{border-bottom:none}
+.etable tr:nth-child(even){background:#fdf8f8}
+.pj{color:#1d4ed8;font-weight:700}
+.jxc{color:#dc2626;font-weight:700}
+.lla{color:#7c3aed;font-weight:700}
+.winner{font-weight:900}
+
+.iblock{margin-bottom:10px;padding:10px 14px;background:#fdf8f8;border-radius:8px;border-left:3px solid #8b3a3a}
+.iblock-title{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#8b3a3a;margin-bottom:4px}
+.iblock-text{font-size:.82rem;color:#374151;line-height:1.6}
+
+.prog-list{list-style:none}
+.prog-list li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f0e5e5;font-size:.82rem;align-items:flex-start;line-height:1.5}
+.prog-list li:last-child{border-bottom:none}
+.prog-icon{font-size:1.0rem;flex-shrink:0;margin-top:1px}
+.prog-name{font-weight:700;color:#1a1a2e}
+
+.metatable{width:100%;border-collapse:collapse;font-size:.8rem}
+.metatable td{padding:7px 12px;border-bottom:1px solid #f0e5e5}
+.metatable td:first-child{font-weight:700;color:#6b2020;width:38%}
+.metatable tr:last-child td{border-bottom:none}
+
+.footer{text-align:center;font-size:.68rem;color:#c09090;margin-top:20px;padding-top:10px;border-top:1px solid #f0e0e0;letter-spacing:.05em}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hero">
+  <div class="hcl">🌿 SALADO · 5ª Sección Electoral</div>
+  <div class="htitle">SAN CAYETANO</div>
+  <div class="hsub">Interior sur: ganadería y cereales en la cuenca costera — Gargaglione JxC opositor (19 años). JxC dominó 2023 con 57.7%; en 2025 ese voto migró a LLA (55.6% nac). PJ en minoría estructural</div>
+  <div class="badges">
+    <span class="badge badge-op">Gargaglione JxC opositor · 19 años</span>
+    <span class="badge badge-warn">LLA 55.6% nac ⚠️</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">📊 Datos Electorales</div>
+  <table class="etable">
+    <tr>
+      <th>Elección</th><th>1° Partido</th><th>%</th><th>2° Partido</th><th>%</th><th>3° Partido</th><th>%</th><th>V. Positivos</th>
+    </tr>
+    <tr>
+      <td>2023 General</td>
+      <td class="jxc winner">JxC</td><td class="jxc winner">57.7%</td>
+      <td class="lla">LLA</td><td class="lla">18.2%</td>
+      <td class="pj">PJ</td><td class="pj">24.1%</td>
+      <td>5,405</td>
+    </tr>
+    <tr>
+      <td>2025 Prov. PBA</td>
+      <td class="jxc winner">JxC/otros</td><td class="jxc winner">~57.8%</td>
+      <td class="pj">PJ</td><td class="pj">23.3%</td>
+      <td class="lla">LLA</td><td class="lla">18.9%</td>
+      <td>4,529</td>
+    </tr>
+    <tr>
+      <td>2025 Nacional</td>
+      <td class="lla winner">LLA</td><td class="lla winner">55.6%</td>
+      <td class="pj">PJ</td><td class="pj">28.4%</td>
+      <td>—</td><td>—</td>
+      <td>4,320</td>
+    </tr>
+  </table>
+  <div style="margin-top:10px;padding:8px 12px;background:#fdf8f8;border-radius:6px;font-size:.76rem;color:#6b2020">
+    📌 2025 PBA: elección de concejales con alta retención JxC (~57.8% entre listas locales). En la nacional, ese mismo voto JxC se fue a LLA (55.6%). El PJ tiene un techo estructural del 28% en este municipio.
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">🏛️ Identidad Territorial</div>
+  <div class="iblock">
+    <div class="iblock-title">🐄 Ganadería y Cereales del Interior Sur</div>
+    <div class="iblock-text">San Cayetano es un municipio del interior sur bonaerense con economía predominantemente agropecuaria: ganadería bovina de cría y engorde, cultivos de cereales y oleaginosas. El partido está en la zona de transición entre la Cuenca del Salado y el litoral atlántico sur, con características edafológicas y productivas propias del interior profundo. La Sociedad Rural local es el actor institucional más relevante del sector privado.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">🏘️ San Cayetano — Cabecera Rural Compacta</div>
+    <div class="iblock-text">La localidad de San Cayetano es una cabecera rural compacta con los servicios básicos del interior bonaerense. A diferencia de los municipios SALADO más grandes, San Cayetano tiene una población más concentrada en la cabecera y un menor porcentaje de habitantes dispersos en el campo. Esta concentración urbana facilita la prestación de servicios pero también hace que el humor político urbano tenga más peso que en otros municipios de perfil similar.</div>
+  </div>
+  <div class="iblock">
+    <div class="iblock-title">⚡ 19 Años de Gargaglione — Bastión JxC del Sur</div>
+    <div class="iblock-text">Miguel Ángel Gargaglione lleva 19 años como intendente de San Cayetano, lo que lo convierte en uno de los intendentes con mayor continuidad del cluster SALADO. Esa trayectoria construyó una red institucional y política sólida que explica la retención de voto JxC en la 2025 PBA incluso cuando el voto nacional ya se fue a LLA. La continuidad de gestión en San Cayetano es el factor que más dificulta la expansión del PJ en este municipio.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">🚀 Líneas de Presencia Institucional</div>
+  <ul class="prog-list">
+    <li>
+      <span class="prog-icon">🏥</span>
+      <span><span class="prog-name">Hospital — Presencia Provincial Directa</span> — En municipios con intendente opositor, la relación directa entre la Provincia y el hospital municipal es el canal más estratégico de presencia territorial. Los programas de equipamiento hospitalario provincial llegan directamente al vecino sin pasar por el intendente, y construyen una imagen de gestión provincial activa independientemente del color político del municipio.</span>
+    </li>
+    <li>
+      <span class="prog-icon">🌾</span>
+      <span><span class="prog-name">Cooperativa Agropecuaria — Canal Productivo Independiente</span> — La relación entre la Provincia y la cooperativa agropecuaria de San Cayetano puede desarrollarse en paralelo a la gestión municipal sin depender de la voluntad política de Gargaglione. Los programas de financiamiento provincial para cooperativas llegan a los productores directamente y construyen una base de agradecimiento al PJ provincial independiente del voto al intendente.</span>
+    </li>
+    <li>
+      <span class="prog-icon">🏫</span>
+      <span><span class="prog-name">Escuelas — Inversión Provincial Visible</span> — Los programas de infraestructura escolar provincial tienen implementación directa sin intermediación municipal. Una escuela renovada o equipada con fondos provinciales en San Cayetano es un argumento concreto para el PJ bonaerense en un municipio donde el intendente es opositor y la gestión directa no es posible.</span>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-title">📋 Ficha Técnica</div>
+  <table class="metatable">
+    <tr><td>Partido</td><td>San Cayetano</td></tr>
+    <tr><td>Sección Electoral</td><td>5ª Sección Electoral</td></tr>
+    <tr><td>Intendente</td><td>Miguel Ángel Gargaglione — Juntos por el Cambio (19 años)</td></tr>
+    <tr><td>Padrón Electoral</td><td>7,496 electores</td></tr>
+    <tr><td>Cluster</td><td>SALADO</td></tr>
+    <tr><td>2023 — JxC</td><td>57.7% (3,117 votos) · gana amplio</td></tr>
+    <tr><td>2023 — PJ</td><td>24.1% (1,304 votos)</td></tr>
+    <tr><td>2023 — LLA</td><td>18.2% (984 votos)</td></tr>
+    <tr><td>2025 PBA — JxC/otros</td><td>~57.8% · JxC retiene en concejales</td></tr>
+    <tr><td>2025 PBA — PJ</td><td>23.3% (1,055 votos)</td></tr>
+    <tr><td>2025 PBA — LLA</td><td>18.9% (858 votos)</td></tr>
+    <tr><td>2025 Nac — LLA</td><td>55.6% (2,402 votos) · gana</td></tr>
+    <tr><td>2025 Nac — PJ</td><td>28.4% (1,226 votos)</td></tr>
+    <tr><td>Identidad</td><td>Ganadería · Cereales · Interior sur · Bastión JxC histórico · Gargaglione 19 años</td></tr>
+  </table>
+</div>
+
+<div class="footer">SAN CAYETANO · Padrón 7.496 · SALADO · 5ª Sección Electoral · Ficha Territorial 2025–2026</div>
+</div>
+</body>
+</html>
