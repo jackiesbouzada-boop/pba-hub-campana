@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Resumen Ejecutivo Estratégico — Provincia de Buenos Aires 2026</title>
+<title>Hoja de Ruta Electoral PBA 2026–2027 · Análisis Estratégico</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',Arial,sans-serif;background:#f4f1ec;color:#1a1a2e;line-height:1.6}
 
-/* ── HERO ── */
 .hero{background:linear-gradient(135deg,#0d1b3e 0%,#1a1a2e 60%,#0d2a4a 100%);color:#fff;padding:56px 48px 44px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1' height='1' x='30' y='30' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E");opacity:.4}
 .hero-label{font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#c9a84c;margin-bottom:14px}
@@ -19,24 +18,33 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f4f1ec;color:#1a1a2e;li
 .stat-n{font-size:2rem;font-weight:900;color:#c9a84c;display:block;line-height:1}
 .stat-l{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;opacity:.7;margin-top:4px;display:block}
 
-/* ── CONTENT ── */
 .page{max-width:1040px;margin:0 auto;padding:40px 24px}
 .sec{background:#fff;border-radius:14px;padding:32px 36px;margin-bottom:24px;border-left:5px solid #0d1b3e}
 .sec-title{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#0d1b3e;margin-bottom:18px;display:flex;align-items:center;gap:8px}
 .sec-title::after{content:'';flex:1;height:1px;background:#e5e0d8}
 
-/* ── HALLAZGOS ── */
+/* SÍNTESIS */
+.sintesis-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.s-bloque{background:#f8f6f1;border-radius:10px;padding:20px 22px}
+.s-bloque.gold{background:#0d1b3e;color:#fff}
+.s-bloque.gold .s-label{color:#c9a84c}
+.s-bloque.gold .s-body{color:rgba(255,255,255,.85)}
+.s-label{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#c9a84c;margin-bottom:8px}
+.s-head{font-size:.88rem;font-weight:800;color:#1a1a2e;margin-bottom:6px;line-height:1.3}
+.s-bloque.gold .s-head{color:#fff}
+.s-body{font-size:.78rem;color:#4b5563;line-height:1.6}
+
+/* HALLAZGOS */
 .findings{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .finding{background:#f8f6f1;border-radius:10px;padding:18px 20px;border-left:4px solid #c9a84c}
 .finding-n{font-size:1.5rem;font-weight:900;color:#c9a84c;line-height:1;margin-bottom:6px}
 .finding-title{font-size:.85rem;font-weight:800;color:#1a1a2e;margin-bottom:6px}
 .finding-text{font-size:.8rem;color:#4b5563;line-height:1.6}
-.finding.alert{border-left-color:#b91c1c}
-.finding.alert .finding-n{color:#b91c1c}
-.finding.green{border-left-color:#15803d}
-.finding.green .finding-n{color:#15803d}
+.finding.alert{border-left-color:#b91c1c}.finding.alert .finding-n{color:#b91c1c}
+.finding.green{border-left-color:#15803d}.finding.green .finding-n{color:#15803d}
+.finding.blue{border-left-color:#1a3a5c}.finding.blue .finding-n{color:#1a3a5c}
 
-/* ── CLUSTERS ── */
+/* CLUSTERS */
 .clusters{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .cl-card{border-radius:10px;padding:16px 18px;color:#fff;position:relative;overflow:hidden}
 .cl-card::after{content:attr(data-emoji);position:absolute;right:10px;bottom:-6px;font-size:3.5rem;opacity:.15}
@@ -46,9 +54,31 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f4f1ec;color:#1a1a2e;li
 .cl-line{font-size:.76rem;opacity:.9;line-height:1.4;margin-bottom:8px}
 .cl-action{font-size:.7rem;background:rgba(255,255,255,.15);border-radius:4px;padding:4px 8px;display:inline-block;font-weight:700;letter-spacing:.04em}
 
-/* ── MUNICIPIOS CRÍTICOS ── */
+/* ALIANZAS */
+.alianzas-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.al-col{border-radius:10px;padding:18px 20px}
+.al-col.natural{background:#dcfce7;border-left:4px solid #15803d}
+.al-col.cond{background:#fef3c7;border-left:4px solid #92400e}
+.al-col.neutro{background:#f3f4f6;border-left:4px solid #6b7280}
+.al-col-title{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;display:block}
+.al-col.natural .al-col-title{color:#15803d}
+.al-col.cond .al-col-title{color:#92400e}
+.al-col.neutro .al-col-title{color:#4b5563}
+.al-item{font-size:.78rem;padding:5px 0;border-bottom:1px dashed rgba(0,0,0,.12);line-height:1.4;color:#1a1a2e}
+.al-item:last-child{border-bottom:none}
+.al-item strong{display:block;font-size:.72rem;font-weight:800}
+.al-nota{font-size:.73rem;margin-top:10px;font-style:italic;color:#6b7280;padding-top:8px;border-top:1px solid rgba(0,0,0,.1)}
+
+/* PALANCAS */
+.palancas{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.palanca{background:#f8f6f1;border-radius:10px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.palanca-icon{font-size:1.8rem;flex-shrink:0;margin-top:2px}
+.palanca-title{font-size:.83rem;font-weight:800;color:#1a1a2e;margin-bottom:5px}
+.palanca-text{font-size:.77rem;color:#4b5563;line-height:1.5}
+.palanca-nota{margin-top:6px;font-size:.7rem;font-weight:700;color:#15803d;background:#dcfce7;padding:3px 8px;border-radius:4px;display:inline-block}
+
+/* MUNICIPIOS */
 .crit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.crit-col{}
 .crit-col-title{font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:6px;margin-bottom:12px;display:inline-block}
 .crit-col-title.hold{background:#dcfce7;color:#15803d}
 .crit-col-title.battle{background:#fef3c7;color:#92400e}
@@ -58,51 +88,40 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f4f1ec;color:#1a1a2e;li
 .muni-n{font-weight:800;color:#1a1a2e}
 .muni-detail{color:#6b7280;font-size:.73rem;line-height:1.4;margin-top:2px}
 .muni-badge{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.al-tag{display:inline-block;font-size:.6rem;font-weight:700;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
+.al-tag.a{background:#dcfce7;color:#15803d}
+.al-tag.b{background:#fef3c7;color:#92400e}
+.al-tag.c{background:#fee2e2;color:#991b1b}
 
-/* ── PALANCAS ── */
-.palancas{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.palanca{background:#f8f6f1;border-radius:10px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
-.palanca-icon{font-size:1.8rem;flex-shrink:0;margin-top:2px}
-.palanca-title{font-size:.83rem;font-weight:800;color:#1a1a2e;margin-bottom:5px}
-.palanca-text{font-size:.77rem;color:#4b5563;line-height:1.5}
-.palanca-clusters{margin-top:6px;display:flex;gap:4px;flex-wrap:wrap}
-.pcl{font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:.05em}
+/* HOJA DE RUTA */
+.ruta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ruta-col{background:#f8f6f1;border-radius:10px;padding:16px 18px;border-top:3px solid #0d1b3e}
+.ruta-q{font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#c9a84c;margin-bottom:6px}
+.ruta-title{font-size:.82rem;font-weight:800;color:#1a1a2e;margin-bottom:8px}
+.ruta-items{font-size:.74rem;color:#4b5563;line-height:1.6}
+.ruta-items li{margin-left:12px;margin-bottom:3px}
 
-/* ── PRÓXIMOS PASOS ── */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.step{background:#f8f6f1;border-radius:10px;padding:18px 20px}
-.step-n{font-size:2rem;font-weight:900;color:#0d1b3e;opacity:.2;line-height:1;margin-bottom:8px}
-.step-title{font-size:.83rem;font-weight:800;color:#1a1a2e;margin-bottom:6px}
-.step-text{font-size:.76rem;color:#4b5563;line-height:1.5}
-.step-tag{display:inline-block;margin-top:8px;font-size:.62rem;font-weight:700;background:#1a1a2e;color:#fff;padding:3px 9px;border-radius:10px;letter-spacing:.06em}
-
-/* ── ALERTA BOX ── */
+/* SEÑALES */
 .alert-box{background:#fef2f2;border-left:4px solid #b91c1c;border-radius:8px;padding:14px 18px;font-size:.8rem;color:#7f1d1d;margin-top:16px;line-height:1.6}
 .alert-box strong{display:block;margin-bottom:4px;font-size:.82rem}
-
-/* ── QUOTE ── */
 .insight{background:#0d1b3e;color:#fff;border-radius:10px;padding:20px 24px;margin-top:16px;font-size:.88rem;line-height:1.6;font-style:italic;opacity:.92}
 .insight strong{color:#c9a84c;font-style:normal}
-
-/* ── FOOTER ── */
 .footer{text-align:center;font-size:.67rem;color:#b0a898;padding:24px 0 32px;letter-spacing:.08em;text-transform:uppercase}
 
 @media print{
   body{background:#fff}
   .hero{print-color-adjust:exact;-webkit-print-color-adjust:exact}
   .sec{break-inside:avoid;margin-bottom:16px;padding:20px 24px}
-  .findings,.clusters,.crit-grid,.palancas,.steps{break-inside:avoid}
   .page{padding:16px 0}
 }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-label">Análisis Estratégico Territorial · Confidencial</div>
-  <div class="hero-title">Provincia de Buenos Aires<br>Hoja de Ruta 2026–2027</div>
-  <div class="hero-sub">Diagnóstico completo del territorio bonaerense: mapa político-electoral, clusters estratégicos y palancas de acción por municipio.</div>
+  <div class="hero-label">Análisis Estratégico Territorial · Confidencial · Mesa Decisora</div>
+  <div class="hero-title">Provincia de Buenos Aires<br>Hoja de Ruta Electoral 2026–2027</div>
+  <div class="hero-sub">134 municipios analizados. 7 clusters territoriales. Estrategia de candidatura, mapa de alianzas con intendentes y priorización electoral.</div>
   <div class="hero-stats">
     <div class="stat"><span class="stat-n">134</span><span class="stat-l">Municipios analizados</span></div>
     <div class="stat"><span class="stat-n">7</span><span class="stat-l">Clusters territoriales</span></div>
@@ -113,329 +132,352 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f4f1ec;color:#1a1a2e;li
 
 <div class="page">
 
-<!-- SECCIÓN 1: HALLAZGOS -->
+<!-- ── SÍNTESIS EJECUTIVA ── -->
+<div class="sec" style="border-left-color:#c9a84c;background:#fdfaf4">
+  <div class="sec-title" style="color:#92400e">📌 Síntesis ejecutiva — tres cosas que la mesa debe tener claras</div>
+  <div class="sintesis-grid">
+    <div class="s-bloque gold">
+      <div class="s-label">El espacio existe</div>
+      <div class="s-head">Hay electorado peronista disponible que ningún candidato actual está capturando</div>
+      <div class="s-body">LLA creció 35 puntos en dos años entre un electorado que no es ideológicamente libertario: son votantes que buscaron salida del ciclo anterior y no encontraron alternativa creíble dentro del Peronismo. Ese electorado es recuperable. La pregunta es quién lo recupera.</div>
+    </div>
+    <div class="s-bloque">
+      <div class="s-label">La ventaja diferencial</div>
+      <div class="s-head">Quien viene de gestionar municipio tiene el argumento que los candidatos nacionales no pueden copiar</div>
+      <div class="s-body">En una elección donde el votante desconfía de promesas, mostrar gestión ejecutiva propia en dos mandatos es un activo escaso. Quien viene de ser intendente no defiende la gestión de otro: defiende la suya. Y ningún candidato que venga del Congreso o de la burocracia nacional puede replicar eso en 12 meses de campaña.</div>
+    </div>
+    <div class="s-bloque">
+      <div class="s-label">El trabajo de 2026</div>
+      <div class="s-head">La elección se gana o se pierde en 2026, no en 2027</div>
+      <div class="s-body">El mapa de 134 municipios revela que los intendentes son la estructura real del territorio. El candidato que primero construya una red de intendentes — con acuerdos concretos, no declaraciones — tiene 12 meses de ventaja sobre quien llegue tarde a esa conversación. 2026 es el año de la construcción. 2027 es la cosecha.</div>
+    </div>
+  </div>
+  <div class="insight" style="margin-top:16px">
+    <strong>La lectura central:</strong> El territorio bonaerense tiene una brecha electoral entre el resultado provincial y el nacional de 8 a 15 puntos en favor del Peronismo. Esa brecha no la generó ninguna estructura nacional ni ningún candidato provincial: la generaron los intendentes que sostuvieron la identidad local mientras el contexto nacional se deterioraba. Un candidato que venga del mundo municipal puede reclamar esa brecha como propia. Ningún candidato que venga de arriba puede hacerlo.
+  </div>
+</div>
+
+<!-- ── MAPA POLÍTICO ── -->
 <div class="sec">
-  <div class="sec-title">📊 Lo que nos dice el mapa — 5 hallazgos que cambian la estrategia</div>
+  <div class="sec-title">📊 El mapa — 6 datos que definen la estrategia</div>
   <div class="findings">
 
-    <div class="finding green">
+    <div class="finding blue">
       <div class="finding-n">+8 a +15 pts</div>
-      <div class="finding-title">La Provincia diferencia — y los electores lo premian</div>
-      <div class="finding-text">En prácticamente todos los municipios analizados, el resultado provincial (2025 PBA) supera al nacional (2025 NAC) en 8 a 15 puntos porcentuales para el PJ. Esa brecha no es accidental: es el efecto directo de la gestión provincial visible en el territorio. Donde hay UPA, camino o residencia estudiantil, la diferencia crece.</div>
+      <div class="finding-title">La brecha es de los intendentes, no de la cúpula</div>
+      <div class="finding-text">En prácticamente todos los municipios analizados, el resultado peronista provincial 2025 supera al nacional entre 8 y 15 puntos. Esa brecha no la explicó ningún programa de gobierno provincial: la explicaron los intendentes que gestionaron localmente y retuvieron votantes que el Peronismo nacional perdió. Un candidato que venga de ese mundo <em>es parte de esa brecha</em> — no está por encima de ella.</div>
     </div>
 
     <div class="finding alert">
       <div class="finding-n">JxC → LLA</div>
-      <div class="finding-title">El oponente real ya no es JxC — es LLA</div>
-      <div class="finding-text">La transferencia fue masiva y en una sola dirección. Los municipios donde JxC tenía 45-55% en 2023 ahora tienen LLA en 45-55% en 2025. JxC prácticamente desapareció como fuerza competidora en el interior y en las ciudades medianas. El mapa de adversarios se redibujó por completo en dos años.</div>
+      <div class="finding-title">El electorado anti-K no es ideológicamente libertario</div>
+      <div class="finding-text">La transferencia fue masiva: los municipios donde JxC tenía 45–55% en 2023 ahora tienen LLA en 45–55% en 2025. JxC prácticamente desapareció del interior y las ciudades medianas. Pero ese electorado no eligió LLA por convicción: eligió LLA por descarte. Si aparece una alternativa peronista creíble y diferenciada, ese votante tiene destino.</div>
     </div>
 
     <div class="finding green">
       <div class="finding-n">29 muni.</div>
-      <div class="finding-title">El CONURBANO sigue siendo el bastión — y hay que defenderlo</div>
-      <div class="finding-text">Los 29 municipios del CONURBANO (La Matanza, Lomas, Florencio Varela, Almirante Brown, Moreno y el resto) mantienen márgenes de 55–72% en elecciones provinciales. Son el núcleo del padrón. Si el CONURBANO se mantiene sólido, la Provincia se gana; si se fisura, no hay interior que compense.</div>
+      <div class="finding-title">El CONURBANO aguanta — y sus intendentes son la estructura</div>
+      <div class="finding-text">Los 29 municipios del CONURBANO mantienen márgenes de 55–72% en elecciones provinciales. Son el núcleo del padrón. Los intendentes del CONURBANO controlan la maquinaria real: listas, movilización, fiscales, estructura de base. Quien tenga su apoyo — aunque sea silencioso — tiene la elección más estructurada.</div>
     </div>
 
     <div class="finding alert">
       <div class="finding-n">+35 pts</div>
-      <div class="finding-title">LLA creció 35 puntos promedio en dos años — la tendencia no cedió</div>
-      <div class="finding-text">En 2023, LLA promedió 5–12% en municipios del interior y la periferia. En 2025 nacional, promedió 40–55% en los mismos municipios. El crecimiento fue uniforme a través de todos los clusters. El dato clave: donde LLA ya ganó en 2025, el margen se amplió entre la elección provincial y la nacional.</div>
+      <div class="finding-title">LLA creció sin estructura local — y eso es su debilidad</div>
+      <div class="finding-text">LLA pasó de 5–12% a 40–55% en el interior bonaerense entre 2023 y 2025 sin intendente en casi ningún municipio, sin estructura territorial, sin referente local. El voto LLA en el interior es voto de bronca aérea, no de implantación territorial. Ese tipo de voto es el más volátil cuando aparece una alternativa concreta.</div>
     </div>
 
     <div class="finding">
       <div class="finding-n">62 votos</div>
-      <div class="finding-title">Los municipios pequeños se deciden en decenas de votos</div>
-      <div class="finding-text">Tordillo: LLA ganó la nacional 2025 por 62 votos. General Guido: PJ ganó por 72 votos. Pila: PJ ganó por 100 votos. En municipios con padrón de 2.000–5.000 electores, cada intervención provincial concreta —un camino, una sala de salud, una beca— puede cambiar el resultado. Son 21 municipios en el SALADO solo.</div>
+      <div class="finding-title">Los municipios chicos se definen en decenas de votos</div>
+      <div class="finding-text">Tordillo: LLA ganó la nacional 2025 por 62 votos. General Guido: PJ ganó por 72 votos. En los 21 municipios del SALADO con padrón menor a 10.000, el resultado 2027 está abierto. Una visita provincial con acuerdo previo con el intendente local puede mover el resultado sin necesitar campaña masiva.</div>
     </div>
 
     <div class="finding">
       <div class="finding-n">9 ciudades</div>
-      <div class="finding-title">Las ciudades medianas son el campo de batalla electoral más sensible</div>
-      <div class="finding-text">Mar del Plata, Bahía Blanca, San Nicolás, Tandil, La Plata, Olavarría, Junín, Pergamino y Luján concentran ~2,5 millones de electores. 6 de las 9 tienen intendente JxC. LLA fue fuerte en todas en 2025. Quien se imponga en CIUDADES en 2027 define la diferencia de margen provincial.</div>
+      <div class="finding-title">Las ciudades medianas son donde el candidato K no puede ganar</div>
+      <div class="finding-text">Mar del Plata, Bahía Blanca, San Nicolás, Tandil, La Plata, Olavarría, Junín, Pergamino y Luján concentran ~2,5M de electores. LLA fue fuerte en todas en 2025. 6 de 9 tienen intendente JxC. Estos electores buscan alternativa: el peronismo que se presente como "otra cosa" tiene ventana que el peronismo que carga la gestión reciente no tiene.</div>
     </div>
 
   </div>
+</div>
 
-  <div class="insight">
-    <strong>Lectura de fondo:</strong> La elección 2027 no se define en el interior profundo ni en el CONURBANO sólido — esos ya están dados. Se define en tres zonas grises: las ciudades medianas (CIUDADES), el interior comercial (INTERIOR norte y corredor), y los municipios pequeños aliados donde los márgenes son de dos dígitos de votos. En esas tres zonas está concentrado el 70% del trabajo que falta.
+<!-- ── LA VENTANA ── -->
+<div class="sec" style="border-left-color:#15803d">
+  <div class="sec-title" style="color:#15803d">🪟 La ventana — por qué hay espacio para una candidatura nueva</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:.82rem;color:#374151;line-height:1.7">
+    <div>
+      <p style="margin-bottom:12px"><strong style="color:#1a1a2e;font-size:.85rem">El candidato del ciclo anterior arrastra su propia historia.</strong> El Peronismo que gobernó la Provincia desde 2019 entra a 2027 defendiendo gestión. Eso significa defender decisiones, defender contextos, defender alianzas que parte del electorado rechazó en 2023 y 2025. Un candidato de ese ciclo tiene techo en las ciudades medianas y en el interior donde el voto anti-establishment fue masivo.</p>
+      <p><strong style="color:#1a1a2e;font-size:.85rem">LLA no tiene estructura para sostener un resultado provincial.</strong> Su crecimiento en 2025 fue aéreo: sin intendentes, sin estructura de base, sin maquinaria de movilización. En elecciones provinciales, donde el volumen de votos es enorme y la logística importa, esa debilidad se amplifica. El candidato peronista que llegue con red territorial tiene ventaja estructural sobre LLA en 2027.</p>
+    </div>
+    <div>
+      <p style="margin-bottom:12px"><strong style="color:#1a1a2e;font-size:.85rem">El candidato que viene de gobernar municipio tiene el argumento diferenciador.</strong> No defiende lo que otros hicieron a nivel provincial: defiende lo que construyó en su propio territorio. Dos mandatos de gestión ejecutiva municipal es el currículum más difícil de atacar políticamente: es concreto, es verificable, tiene nombre y apellido en cada obra.</p>
+      <p><strong style="color:#1a1a2e;font-size:.85rem">Los intendentes bonaerenses necesitan ordenar su 2027.</strong> Muchos de ellos están en su último mandato, o tienen sucesores que quieren proyectar, o tienen tensión con la estructura partidaria actual. Hay intendentes que buscan candidato — no al revés. El que llegue primero con una propuesta clara y con credibilidad de gestión tiene la mejor posición para construir esa red.</p>
+    </div>
   </div>
 </div>
 
-<!-- SECCIÓN 2: CLUSTERS -->
+<!-- ── CLUSTERS ── -->
 <div class="sec">
-  <div class="sec-title">🗺️ Estrategia por cluster — una línea por cada uno</div>
+  <div class="sec-title">🗺️ Estrategia por cluster — qué hace el candidato en cada territorio</div>
   <div class="clusters">
 
     <div class="cl-card" data-emoji="🌆" style="background:#3b1a60">
-      <div class="cl-name">🌆 CONURBANO</div>
-      <div class="cl-count">29 <span>municipios</span></div>
-      <div class="cl-line">Base electoral inamovible. La Matanza, Lomas, Quilmes, Brown, Varela. PJ gana con 55–72% provincial. LLA presente pero no dominante.</div>
-      <div class="cl-action">CONSOLIDAR · No perder un punto</div>
+      <div class="cl-name">🌆 CONURBANO · 29 municipios</div>
+      <div class="cl-count">Base <span>— no se la puede pelear</span></div>
+      <div class="cl-line">Los intendentes del CONURBANO son K en su mayoría. No van a volcarse públicamente, pero tampoco van a activar estructura en contra si el candidato les ofrece respeto a su autonomía y les da credibilidad de ganar. El objetivo no es tenerlos en el palco: es que no pongan obstáculos.</div>
+      <div class="cl-action">TÁCTICA · Acuerdos silenciosos, no declaraciones</div>
     </div>
 
     <div class="cl-card" data-emoji="🏙️" style="background:#1a3a5c">
-      <div class="cl-name">🏙️ CIUDADES</div>
-      <div class="cl-count">9 <span>municipios · ~2,5M electores</span></div>
-      <div class="cl-line">El campo de batalla principal. 6 con intendente JxC. LLA arrasó en todas en 2025 nacional. Programas provinciales con nombre visible son la única palanca.</div>
-      <div class="cl-action">PENETRAR · Presencia provincial directa</div>
+      <div class="cl-name">🏙️ CIUDADES · 9 municipios · ~2,5M electores</div>
+      <div class="cl-count">Ventana <span>— el Peronismo K no puede ganar acá</span></div>
+      <div class="cl-line">Mar del Plata, Bahía Blanca, Tandil, San Nicolás: el electorado de estas ciudades votó JxC en 2023, LLA en 2025. Está disponible para un peronismo que no cargue las derrotas anteriores. El candidato que se presente como alternativa — no como continuidad — tiene una ventana real. Con intendente JxC, el trabajo es territorial directo.</div>
+      <div class="cl-action">OFENSIVA · Presencia propia, sin intermediario político</div>
     </div>
 
     <div class="cl-card" data-emoji="🛤️" style="background:#1d4a28">
-      <div class="cl-name">🛤️ CORREDOR</div>
-      <div class="cl-count">11 <span>municipios</span></div>
-      <div class="cl-line">Norte industrial sobre el Paraná. Zárate, Campana, Ramallo, San Pedro. Trabajador industrial como electorado clave. PJ creciendo en concejales 2025.</div>
-      <div class="cl-action">RECUPERAR · Empleo + industria local</div>
+      <div class="cl-name">🛤️ CORREDOR · 11 municipios</div>
+      <div class="cl-count">Home turf <span>— territorio del candidato</span></div>
+      <div class="cl-line">El Corredor norte (Zárate, Campana, San Pedro, Ramallo, Pilar y adyacentes) es el territorio de origen de la candidatura. Los intendentes son pares. El argumento industrial-laboral es el más potente y el candidato lo puede sostener con gestión propia. Primer territorio en consolidar.</div>
+      <div class="cl-action">CONSOLIDAR PRIMERO · Base de la candidatura</div>
     </div>
 
     <div class="cl-card" data-emoji="🌾" style="background:#5c4700">
-      <div class="cl-name">🌾 INTERIOR</div>
-      <div class="cl-count">37 <span>municipios · el más volátil</span></div>
-      <div class="cl-line">46% de sus municipios en disputa o con avance LLA significativo. JxC dominaba, LLA tomó ese electorado. Discurso productivo + caminos = el único acceso.</div>
-      <div class="cl-action">DISPUTAR · Hablarle al productor</div>
+      <div class="cl-name">🌾 INTERIOR · 37 municipios · el más volátil</div>
+      <div class="cl-count">Disputable <span>— con argumento productivo propio</span></div>
+      <div class="cl-line">El interior votó JxC, luego LLA. El electorado productivo (campo, agroindustria, comercio local) desconfía de cualquier candidato que defienda lo que los afectó. El candidato que llegue con propuesta concreta sobre infraestructura y cadena de valor — sin defender decisiones ajenas — puede recuperar terreno que el Peronismo nacional no puede.</div>
+      <div class="cl-action">DISPUTAR · Hablar de producción, no de política</div>
     </div>
 
     <div class="cl-card" data-emoji="🌿" style="background:#6b2a2a">
-      <div class="cl-name">🌿 SALADO</div>
-      <div class="cl-count">21 <span>municipios · aliados en tensión</span></div>
-      <div class="cl-line">Mayoría UxP aliada pero con LLA creciendo de 5% a 40% en dos años. Municipios de 2.000–15.000 electores donde cada voto es recuperable con intervención directa.</div>
-      <div class="cl-action">PROTEGER · Micro-intervenciones con nombre</div>
+      <div class="cl-name">🌿 SALADO · 21 municipios · aliados disponibles</div>
+      <div class="cl-count">Aliados <span>— buscan candidato que los proteja</span></div>
+      <div class="cl-line">La mayoría UxP del SALADO tiene intendentes que se sienten solos frente a LLA creciente. Necesitan apoyo, visibilidad y un candidato provincial que los legitime sin obligarlos a elegir entre facciones internas. Son los aliados más naturales y los más alcanzables: quieren ser encontrados.</div>
+      <div class="cl-action">ACTIVAR · Son los primeros en firmar</div>
     </div>
 
     <div class="cl-card" data-emoji="🌊" style="background:#005a8a">
-      <div class="cl-name">🌊 COSTERO</div>
-      <div class="cl-count">7 <span>municipios</span></div>
-      <div class="cl-line">Economía de temporada (La Costa, Pinamar, Villa Gesell). Electorado estacional. Identidad turística fuerte. Baja LLA relativa. Infraestructura y seguridad son las palancas.</div>
-      <div class="cl-action">ACTIVAR · Temporada + infraestructura</div>
+      <div class="cl-name">🌊 COSTERO · 7 municipios</div>
+      <div class="cl-count">Accesible <span>— turismo como argumento universal</span></div>
+      <div class="cl-line">La Costa, Pinamar, Villa Gesell, Mar Chiquita. El argumento de temporada, infraestructura y seguridad en la costa es políticamente neutral — no carga ninguna facción. El candidato que llegue con propuesta concreta para la economía costera puede capturar intendentes que no quieren elegir bando.</div>
+      <div class="cl-action">NEUTRALIZAR · Propuesta de política específica</div>
     </div>
 
     <div class="cl-card" data-emoji="🏔️" style="background:#22303f">
-      <div class="cl-name">🏔️ SUR</div>
-      <div class="cl-count">20 <span>municipios</span></div>
-      <div class="cl-line">Bahía Blanca como ancla (JxC, muy competitivo). Villarino, Patagones, Carmen de Patagones al sur profundo. Distancia y aislamiento son el reclamo permanente.</div>
-      <div class="cl-action">CONECTAR · Presencia en el sur profundo</div>
+      <div class="cl-name">🏔️ SUR · 20 municipios</div>
+      <div class="cl-count">Por conquistar <span>— llegar antes que el rival</span></div>
+      <div class="cl-line">Bahía Blanca como ancla (JxC, muy competitiva). Sur profundo: Villarino, Patagones, Carmen de Patagones. El candidato que llegue al sur con presencia física antes que el candidato del ciclo anterior tiene ventaja de novedad. Son territorios que históricamente se movilizan cuando "alguien los visita." La distancia es el obstáculo — y también la oportunidad.</div>
+      <div class="cl-action">PRESENCIA FÍSICA PROPIA · Llegar primero</div>
     </div>
 
   </div>
 </div>
 
-<!-- SECCIÓN 3: MUNICIPIOS CRÍTICOS -->
-<div class="sec">
-  <div class="sec-title">🎯 Los municipios que definen el resultado</div>
-  <div class="crit-grid">
+<!-- ── MAPA DE ALIANZAS ── -->
+<div class="sec" style="border-left-color:#15803d">
+  <div class="sec-title">🤝 Mapa de alianzas con intendentes — tres tipos, tres estrategias</div>
+  <div class="alianzas-grid">
 
-    <div class="crit-col">
-      <div class="crit-col-title hold">✅ Bastiones — No ceder</div>
-      <div class="muni-item">
-        <div class="muni-badge">🌆</div>
-        <div><div class="muni-n">La Matanza</div><div class="muni-detail">~1,2M electores · UxP · 68% PJ provincial 2025. Si La Matanza cede 5 puntos, la Provincia se pone en riesgo.</div></div>
-      </div>
-      <div class="muni-item">
-        <div class="muni-badge">🌆</div>
-        <div><div class="muni-n">Lomas de Zamora</div><div class="muni-detail">~600k electores · UxP · Anclaje del sur CONURBANO. LLA entró pero no dominó.</div></div>
-      </div>
-      <div class="muni-item">
-        <div class="muni-badge">🌆</div>
-        <div><div class="muni-n">Florencio Varela</div><div class="muni-detail">~500k electores · UxP · Bastión sólido. Municipio joven con alto crecimiento demográfico.</div></div>
-      </div>
-      <div class="muni-item">
-        <div class="muni-badge">🌆</div>
-        <div><div class="muni-n">Almirante Brown</div><div class="muni-detail">~580k electores · UxP · Peronismo arraigado. Uno de los más estables del CONURBANO sur.</div></div>
-      </div>
-      <div class="muni-item">
-        <div class="muni-badge">🏙️</div>
-        <div><div class="muni-n">La Plata</div><div class="muni-detail">~560k electores · UxP · Capital provincial. Universidad, empleados públicos. Piedra angular del peronismo no-conurbano.</div></div>
-      </div>
+    <div class="al-col natural">
+      <span class="al-col-title">✅ Aliados naturales · Buscan candidato</span>
+      <div class="al-item"><strong>SALADO · 21 municipios UxP</strong>Intendentes con LLA en crecimiento, sin respaldo nacional, sin facción que los proteja. Buscan candidato provincial que los legitime. Acuerdo: visitas, presencia, apoyo visible. Son los primeros que se suman y los que más necesitan que la candidatura exista.</div>
+      <div class="al-item"><strong>CORREDOR · Intendentes pares</strong>Pares del candidato — comparten la lógica municipal-industrial. Apoyo natural sin costos políticos. Acuerdo no requiere negociación: requiere reunión.</div>
+      <div class="al-item"><strong>Intendentes en último mandato</strong>En cualquier cluster: el intendente que no puede reelegirse piensa en su sucesor y su legado. Tiene libertad para apoyar sin depender de la estructura partidaria. Son los aliados más libres para moverse.</div>
+      <div class="al-nota">Objetivo: tener declaración de apoyo antes de Q1 2027. Son la base pública de la candidatura.</div>
     </div>
 
-    <div class="crit-col">
-      <div class="crit-col-title battle">⚔️ Battlegrounds — Conquistar</div>
-      <div class="muni-item">
-        <div class="muni-badge">🏙️</div>
-        <div><div class="muni-n">Bahía Blanca</div><div class="muni-detail">~270k · JxC · El más competitivo del SUR. Puerto, universidad, industria. LLA muy fuerte en 2025. El partido más ganable fuera del CONURBANO.</div></div>
-      </div>
-      <div class="muni-item">
-        <div class="muni-badge">🏙️</div>
-        <div><div class="muni-n">Gral. Pueyrredón (MdP)</div><div class="muni-detail">~570k · JxC (Montenegro) · La 2ª ciudad de la Provincia. LLA arrasó en 2025 nacional. UNMDP y economía mixta dan palanca.</div></div>
-      </div>
-      <div class="muni-item">
-        <div class="muni-badge">🌆</div>
-        <div><div class="muni-n">Quilmes</div><div class="muni-detail">~640k · JxC · Gran electores, historia peronista. PJ quedó a 8 puntos en 2025. Recuperable con trabajo territorial.</div></div>
-      </div>
-      <div class="muni-item">
-        <div class="muni-badge">🏙️</div>
-        <div><div class="muni-n">San Nicolás</div><div class="muni-detail">~130k · JxC · Acero, sindicatos, tradición obrera. LLA tomó el voto anti-PJ. Discurso industrial puede recuperar terreno.</div></div>
-      </div>
-      <div class="muni-item">
-        <div class="muni-badge">🌾</div>
-        <div><div class="muni-n">Pergamino</div><div class="muni-detail">~115k · JxC · PJ fue 1° en concejales PBA 2025 (30,3%). La señal más alentadora del norte interior. Necesita profundización.</div></div>
-      </div>
+    <div class="al-col cond">
+      <span class="al-col-title">⚠️ Aliados condicionales · Se suman si ven chance</span>
+      <div class="al-item"><strong>CONURBANO K-alineado</strong>No declaran públicamente pero tampoco activan en contra. El acuerdo es implícito: el candidato respeta su estructura local, ellos no ponen obstáculos. Si el candidato sube en las encuestas, algunos se mueven a zona "natural."</div>
+      <div class="al-item"><strong>INTERIOR con intendente UxP</strong>Algunos INTERIOR tienen intendentes UxP que tienen tensión con la estructura K. Están disponibles pero esperan ver resultado de encuestas antes de comprometerse.</div>
+      <div class="al-item"><strong>COSTERO · Intendentes no-K</strong>Prefieren no elegir bando. Se suman si el candidato tiene propuesta concreta para su territorio. La negociación es programática, no política.</div>
+      <div class="al-nota">Estrategia: no pedir declaración pública. Pedir neutralidad activa. Eso ya es un activo.</div>
     </div>
 
-    <div class="crit-col">
-      <div class="crit-col-title micro">⚠️ Márgenes mínimos — Cada voto</div>
-      <div class="muni-item">
-        <div class="muni-badge">🌿</div>
-        <div><div class="muni-n">Tordillo (Gral. Conesa)</div><div class="muni-detail">Padrón 2.470 · UxP · LLA ganó la nacional 2025 por <strong>62 votos</strong>. El municipio menos poblado de PBA. Cada intervención provincial es recuperable.</div></div>
-      </div>
-      <div class="muni-item">
-        <div class="muni-badge">🌿</div>
-        <div><div class="muni-n">General Guido</div><div class="muni-detail">Padrón 3.051 · UxP · PJ ganó la nacional 2025 por <strong>72 votos</strong>. Emergencia económica declarada en 2025. Frigorífico municipal como activo.</div></div>
-      </div>
-      <div class="muni-item">
-        <div class="muni-badge">🌿</div>
-        <div><div class="muni-n">Pila</div><div class="muni-detail">Padrón 3.724 · UxP · PJ ganó la nacional 2025 por <strong>~100 votos</strong>. El municipio más peronista del SALADO en 2023 — LLA llegó al 41% en dos años.</div></div>
-      </div>
-      <div class="muni-item">
-        <div class="muni-badge">🌿</div>
-        <div><div class="muni-n">General Lavalle</div><div class="muni-detail">Padrón 5.718 · UxP · JxC ganó 2023 por 71 votos. LLA al 51% en nacional 2025. El equilibrio más precario del cluster.</div></div>
-      </div>
-      <div class="muni-item">
-        <div class="muni-badge">🌿</div>
-        <div><div class="muni-n">Lezama</div><div class="muni-detail">Padrón 5.140 · UxP · Municipio más joven PBA (creado 2009). LLA al 49,8% nacional 2025. PJ creció 9,6 pts entre 2023 y 2025 PBA — señal de recuperación posible.</div></div>
-      </div>
+    <div class="al-col neutro">
+      <span class="al-col-title">⚙️ Sin aliado local · Trabajo territorial directo</span>
+      <div class="al-item"><strong>CIUDADES con intendente JxC</strong>Mar del Plata, Bahía Blanca, Tandil, San Nicolás, Junín, Pergamino. El intendente JxC no es aliado. Pero su electorado está disponible. El trabajo es: sindicatos, organizaciones sociales, referentes locales no-partidarios, presencia en medios locales.</div>
+      <div class="al-item"><strong>SUR profundo · Sin estructura peronista local</strong>Villarino, Patagones, parte del SUR. No hay estructura aliada. El candidato construye presencia directa — visitas, recorrida, medios locales. La novedad es el argumento.</div>
+      <div class="al-item"><strong>CONURBANO opositor</strong>San Isidro, Vicente López, San Miguel, San Fernando (algunas zonas). No hay aliado. El trabajo es el voto peronista disperso en municipios opositores — que existe aunque no tenga intendente propio.</div>
+      <div class="al-nota">No buscar alianza. Buscar presencia directa con los votantes. Son territorios de campaña, no de estructura.</div>
     </div>
+
   </div>
 
-  <div class="alert-box">
-    <strong>⚠️ Señal de alerta: la tendencia en municipios aliados pequeños</strong>
-    En el cluster SALADO, LLA pasó de un promedio de 5% en 2023 a 38–47% en la elección nacional 2025 — todo en dos años, sin estructura territorial, sin intendente, sin campaña local. Ese crecimiento no se detiene solo. En 2027, si la tendencia se mantiene, varios municipios hoy aliados podrían perder la elección nacional por márgenes similares a Tordillo. La ventana de intervención es 2026.
+  <div class="alert-box" style="margin-top:0">
+    <strong>⚠️ La trampa que hay que evitar: priorizar el intendente sobre el votante</strong>
+    El mapa de alianzas no reemplaza la campaña. Un intendente aliado que no activa su estructura vale lo mismo que un intendente neutral. El acuerdo con el intendente es la condición necesaria para trabajar el territorio — no es la estrategia. La estrategia es lo que se hace con el territorio después de tener el acuerdo.
   </div>
 </div>
 
-<!-- SECCIÓN 4: PALANCAS -->
+<!-- ── PALANCAS ── -->
 <div class="sec">
-  <div class="sec-title">🔧 Las 5 palancas provinciales que generan retorno electoral</div>
-  <p style="font-size:.82rem;color:#6b7280;margin-bottom:18px">Estas cinco categorías de acción aparecen recurrentemente en las 134 fichas como los programas que los vecinos reconocen, que los intendentes mencionan y que construyen relato de presencia provincial. No son elucubraciones — surgen del análisis municipio por municipio.</p>
+  <div class="sec-title">🔧 Las palancas del candidato — lo que es suyo, no de otro</div>
+  <p style="font-size:.82rem;color:#6b7280;margin-bottom:18px">Estas son las palancas que pertenecen al candidato — no son programas ajenos que avala, sino argumentos que construyó en su propia gestión o que puede construir en 2026 sin depender de ninguna otra estructura.</p>
   <div class="palancas">
 
     <div class="palanca">
-      <div class="palanca-icon">🏥</div>
+      <div class="palanca-icon">🏛️</div>
       <div>
-        <div class="palanca-title">Salud con presencia territorial</div>
-        <div class="palanca-text">UPA Trauma en rutas de alto accidentalidad, equipamiento hospitalario, rondas médicas rurales itinerantes, telemedicina con especialistas desde hospitales de referencia. En municipios aislados —SALADO, SUR, INTERIOR profundo— el hospital local es el servicio más visible de la Provincia. Cada tomógrafo, cada ambulancia, cada guardia reforzada construye argumento concreto.</div>
-        <div class="palanca-clusters">
-          <span class="pcl" style="background:#6b2a2a;color:#fff">SALADO</span>
-          <span class="pcl" style="background:#22303f;color:#fff">SUR</span>
-          <span class="pcl" style="background:#5c4700;color:#fff">INTERIOR</span>
-        </div>
+        <div class="palanca-title">Dos mandatos de gestión ejecutiva propia</div>
+        <div class="palanca-text">El candidato no promete lo que haría: muestra lo que hizo. Dos períodos como intendente en un municipio del Conurbano-norte con más de 300.000 habitantes. Infraestructura municipal, salud local, empleo, obras verificables. Ese currículum no lo tiene ningún candidato que venga del Congreso o de la burocracia provincial. Y no se puede inventar en 12 meses de campaña.</div>
+        <div class="palanca-nota">Argumento: "Yo ya gobernié. Sé lo que cuesta y sé lo que funciona."</div>
       </div>
     </div>
 
     <div class="palanca">
-      <div class="palanca-icon">🛣️</div>
+      <div class="palanca-icon">🤝</div>
       <div>
-        <div class="palanca-title">Infraestructura vial rural</div>
-        <div class="palanca-text">Caminos rurales, mantenimiento de ripio y acceso a campos inundables, consolidación de rutas provinciales secundarias, conectividad entre localidades dentro del mismo partido. Es el reclamo número uno en prácticamente todo el interior bonaerense — y el que más rápido genera visibilidad cuando se ejecuta. Un camino inaugurado tiene foto, nombre y dirección.</div>
-        <div class="palanca-clusters">
-          <span class="pcl" style="background:#5c4700;color:#fff">INTERIOR</span>
-          <span class="pcl" style="background:#6b2a2a;color:#fff">SALADO</span>
-          <span class="pcl" style="background:#1d4a28;color:#fff">CORREDOR</span>
-        </div>
+        <div class="palanca-title">La red de intendentes como estructura de campaña</div>
+        <div class="palanca-text">Una candidatura provincial que construye desde los municipios hacia arriba — no desde la cúpula hacia abajo — tiene una ventaja estructural: la maquinaria electoral ya existe. Cada intendente aliado aporta fiscales, movilización, listas, conocimiento del padrón local. La red de intendentes no es el premio de ganar: es la condición para ganar.</div>
+        <div class="palanca-nota">Trabajo de 2026: identificar, reunirse y cerrar acuerdos municipio a municipio.</div>
       </div>
     </div>
 
     <div class="palanca">
-      <div class="palanca-icon">🎓</div>
+      <div class="palanca-icon">⚙️</div>
       <div>
-        <div class="palanca-title">Arraigo universitario joven</div>
-        <div class="palanca-text">Residencias estudiantiles en La Plata y Mar del Plata, becas provinciales de arraigo, articulación con universidades regionales para acercar carreras sin obligar a migrar. Aparece en fichas de municipios de todos los tamaños — desde Tordillo (2.470 electores) hasta municipios del INTERIOR con 40.000. Los jóvenes que se quedan votan; los que emigran no.</div>
-        <div class="palanca-clusters">
-          <span class="pcl" style="background:#6b2a2a;color:#fff">SALADO</span>
-          <span class="pcl" style="background:#5c4700;color:#fff">INTERIOR</span>
-          <span class="pcl" style="background:#22303f;color:#fff">SUR</span>
-        </div>
+        <div class="palanca-title">La agenda municipal escalada a nivel provincial</div>
+        <div class="palanca-text">El candidato propone lo que probó que funciona en municipio: gestión eficiente, acceso a servicios, infraestructura básica, empleo local. No son promesas nacionales — son propuestas concretas que cualquier habitante puede verificar porque ya existen en algún municipio. La credibilidad viene de que lo hizo, no de que lo piensa.</div>
+        <div class="palanca-nota">Diferenciador: propuestas con ejemplo concreto ya implementado.</div>
+      </div>
+    </div>
+
+    <div class="palanca">
+      <div class="palanca-icon">🧭</div>
+      <div>
+        <div class="palanca-title">El argumento de renovación sin ruptura</div>
+        <div class="palanca-text">El candidato no es anti-Peronismo: es Peronismo que arranca de nuevo desde los municipios. No carga las derrotas de 2023 ni las polémicas de los ciclos anteriores. No tiene que defender decisiones que no tomó. Esa libertad es una palanca política concreta: puede hablarle al electorado que se fue a LLA sin ponerse a la defensiva.</div>
+        <div class="palanca-nota">El mensaje: "Peronismo que vuelve a ganar — desde abajo, desde los municipios."</div>
       </div>
     </div>
 
     <div class="palanca">
       <div class="palanca-icon">🌾</div>
       <div>
-        <div class="palanca-title">Cadena de valor productiva</div>
-        <div class="palanca-text">Apoyo a frigoríficos municipales y cooperativas, articulación INTA para asistencia técnica agropecuaria, programas de manejo hídrico para ganadería en cuenca inundable, créditos para PyME agroindustrial. En municipios donde la economía es 100% agropecuaria, hablar de gestión sin hablar de producción es no hablar de nada.</div>
-        <div class="palanca-clusters">
-          <span class="pcl" style="background:#6b2a2a;color:#fff">SALADO</span>
-          <span class="pcl" style="background:#1d4a28;color:#fff">CORREDOR</span>
-          <span class="pcl" style="background:#5c4700;color:#fff">INTERIOR</span>
-        </div>
+        <div class="palanca-title">La agenda productiva sin peso ideológico</div>
+        <div class="palanca-text">El candidato que viene de gestionar un municipio industrial puede hablarle al sector productivo — campo, industria, PyME — sin el peso de los últimos años de política económica nacional. La propuesta es concreta: conectividad, logística, cadena de valor, empleo privado. No es ideología: es gestión. Y eso es lo que el electorado del INTERIOR y las CIUDADES está buscando.</div>
+        <div class="palanca-nota">Clave: hablar de producción en lenguaje de gestión, no en lenguaje ideológico.</div>
       </div>
     </div>
 
     <div class="palanca">
-      <div class="palanca-icon">♻️</div>
+      <div class="palanca-icon">📍</div>
       <div>
-        <div class="palanca-title">Gestión ambiental visible</div>
-        <div class="palanca-text">GIRSU (cierre de basurales, plantas de clasificación, puntos verdes), agua potable en localidades sin red, manejo hídrico de la Cuenca del Salado para control de inundaciones. Son programas con impacto inmediato en calidad de vida cotidiana — y en municipios de 5.000–20.000 habitantes, la diferencia entre tener basural a cielo abierto o no se nota todos los días.</div>
-        <div class="palanca-clusters">
-          <span class="pcl" style="background:#3b1a60;color:#fff">CONURBANO</span>
-          <span class="pcl" style="background:#5c4700;color:#fff">INTERIOR</span>
-          <span class="pcl" style="background:#6b2a2a;color:#fff">SALADO</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="palanca">
-      <div class="palanca-icon">🏭</div>
-      <div>
-        <div class="palanca-title">Empleo industrial y desarrollo económico local</div>
-        <div class="palanca-text">Parques industriales, apoyo a zonas francas y puertos, programas de empleo para municipios con industria metalmecánica, petroquímica o agroalimentaria. Crítico en el CORREDOR (Zárate, Campana, Ensenada, Ramallo) y en ciudades medianas como San Nicolás y Bahía Blanca donde el trabajador industrial es el eje del voto disputado.</div>
-        <div class="palanca-clusters">
-          <span class="pcl" style="background:#1d4a28;color:#fff">CORREDOR</span>
-          <span class="pcl" style="background:#22303f;color:#fff">SUR</span>
-          <span class="pcl" style="background:#1a3a5c;color:#fff">CIUDADES</span>
-        </div>
+        <div class="palanca-title">La presencia territorial como diferenciador</div>
+        <div class="palanca-text">El candidato que recorre el territorio municipio a municipio, se reúne con intendentes, conoce a los actores locales y aparece en los medios locales — no solo en Buenos Aires — construye una imagen que los candidatos nacionales no pueden replicar. En el interior y en el SUR, ser "el que vino" ya es un argumento. La recorrida de 2026 es campaña, no logística.</div>
+        <div class="palanca-nota">Regla: ningún municipio aliado sin visita personal en 2026.</div>
       </div>
     </div>
 
   </div>
 </div>
 
-<!-- SECCIÓN 5: PRÓXIMOS PASOS -->
+<!-- ── MUNICIPIOS CRÍTICOS ── -->
 <div class="sec">
-  <div class="sec-title">📋 Lo que viene — tres líneas de profundización</div>
-  <div class="steps">
+  <div class="sec-title">🎯 Municipios prioritarios — dónde se gana o se pierde el resultado</div>
+  <div class="crit-grid">
 
-    <div class="step">
-      <div class="step-n">01</div>
-      <div class="step-title">Performance electoral desagregada</div>
-      <div class="step-text">Cruzar los resultados electorales 2023 y 2025 por circuito/sección dentro de cada municipio. Identificar qué barrios o localidades dentro de un partido se movieron hacia LLA y cuáles resistieron. Esa capa de análisis permite intervenciones sub-municipales precisas — no hablarle al municipio sino al barrio.</div>
-      <div class="step-tag">Padrón por circuito + mesa</div>
+    <div class="crit-col">
+      <div class="crit-col-title hold">✅ Bastiones — Sostener</div>
+      <div class="muni-item"><div class="muni-badge">🌆</div><div><div class="muni-n">La Matanza <span class="al-tag b">condicionado</span></div><div class="muni-detail">~1,2M electores · UxP/K · El bastión más grande. El candidato no pelea este intendente — lo necesita neutral o silenciosamente favorable. Si La Matanza no activa en contra, la base CONURBANO aguanta.</div></div></div>
+      <div class="muni-item"><div class="muni-badge">🌆</div><div><div class="muni-n">Lomas de Zamora <span class="al-tag b">condicionado</span></div><div class="muni-detail">~600k · UxP · Sur CONURBANO. Acuerdo de neutralidad es el objetivo. La estructura barrial es más importante que la declaración del intendente.</div></div></div>
+      <div class="muni-item"><div class="muni-badge">🌆</div><div><div class="muni-n">Florencio Varela <span class="al-tag b">condicionado</span></div><div class="muni-detail">~500k · UxP · Joven y sólido. Peronismo arraigado. Misma lógica que Lomas: no necesita activación — necesita no-oposición.</div></div></div>
+      <div class="muni-item"><div class="muni-badge">🏙️</div><div><div class="muni-n">La Plata <span class="al-tag b">condicionado</span></div><div class="muni-detail">~560k · UxP/K · Capital provincial. Universidad, empleados públicos, estructura sindical. Intendente K pero electorado diverso. El candidato trabaja directamente en el electorado, no a través del intendente.</div></div></div>
+      <div class="muni-item"><div class="muni-badge">🛤️</div><div><div class="muni-n">Corredor norte <span class="al-tag a">aliado</span></div><div class="muni-detail">Zárate, Campana, San Pedro, Ramallo. Home turf de la candidatura. Los intendentes del Corredor son pares. Consolidar primero, antes de recorrer el resto de la Provincia.</div></div></div>
     </div>
 
-    <div class="step">
-      <div class="step-n">02</div>
-      <div class="step-title">Finanzas municipales</div>
-      <div class="step-text">Incorporar la situación fiscal de cada municipio: nivel de deuda, dependencia de coparticipación, masa salarial como % del presupuesto, obras en ejecución. Municipios en tensión fiscal (como General Guido, que declaró emergencia en 2025) son aliados en riesgo que necesitan apoyo provincial proactivo — y son también los más vulnerables al discurso libertario.</div>
-      <div class="step-tag">Datos RAFAM · Hacienda PBA</div>
+    <div class="crit-col">
+      <div class="crit-col-title battle">⚔️ Battlegrounds — El candidato tiene ventana</div>
+      <div class="muni-item"><div class="muni-badge">🏙️</div><div><div class="muni-n">Gral. Pueyrredón (MdP) <span class="al-tag c">sin aliado</span></div><div class="muni-detail">~570k · JxC · La 2ª ciudad. LLA arrasó en 2025. Intendente JxC. El candidato que se presenta como "otro Peronismo" tiene una oportunidad real que la continuidad no tiene. Trabajo directo con sindicatos de pesca, universitarios, PyME.</div></div></div>
+      <div class="muni-item"><div class="muni-badge">🏙️</div><div><div class="muni-n">Bahía Blanca <span class="al-tag c">sin aliado</span></div><div class="muni-detail">~270k · JxC · Muy competitivo. Puerto, universidad, industria. El electorado industrial del puerto es el más recuperable. Sin intendente aliado, pero con sindicatos y cámara empresaria como punto de entrada.</div></div></div>
+      <div class="muni-item"><div class="muni-badge">🌆</div><div><div class="muni-n">Quilmes <span class="al-tag c">sin aliado</span></div><div class="muni-detail">~640k · JxC · Historia peronista profunda. PJ quedó a 8 puntos en 2025. El candidato trabaja el voto peronista disperso en un municipio sin intendente propio. Referentes barriales son la entrada.</div></div></div>
+      <div class="muni-item"><div class="muni-badge">🌾</div><div><div class="muni-n">Pergamino <span class="al-tag b">condicionado</span></div><div class="muni-detail">~115k · JxC · PJ fue 1° en concejales PBA 2025 (30,3%). La señal más alentadora del norte interior. Intendente JxC pero con concejales propios — hay estructura de base para activar.</div></div></div>
+      <div class="muni-item"><div class="muni-badge">🏙️</div><div><div class="muni-n">San Nicolás <span class="al-tag b">condicionado</span></div><div class="muni-detail">~130k · JxC · Sindicatos de acero, tradición obrera. El argumento industrial del candidato es más potente aquí que en cualquier otro municipio JxC. La CGT local es la puerta de entrada.</div></div></div>
     </div>
 
-    <div class="step">
-      <div class="step-n">03</div>
-      <div class="step-title">Mapa de acción 2026</div>
-      <div class="step-text">Con los 134 diagnósticos completos, las finanzas municipales y el desagregado electoral, construir un mapa de intervención priorizado: qué municipios visitar primero, qué programas anunciar en qué orden, y cuáles son los 30 municipios donde la presencia provincial directa tiene mayor retorno electoral antes de 2027.</div>
-      <div class="step-tag">Priorización · Agenda territorial</div>
+    <div class="crit-col">
+      <div class="crit-col-title micro">⚠️ SALADO — Cada voto, cada visita</div>
+      <div class="muni-item"><div class="muni-badge">🌿</div><div><div class="muni-n">Tordillo <span class="al-tag a">aliado</span></div><div class="muni-detail">Padrón 2.470 · UxP · LLA ganó por 62 votos en 2025. Con intendente aliado y una visita concreta del candidato, el resultado 2027 se puede invertir. Municipio mínimo, impacto máximo en términos de señal política.</div></div></div>
+      <div class="muni-item"><div class="muni-badge">🌿</div><div><div class="muni-n">General Guido <span class="al-tag a">aliado</span></div><div class="muni-detail">Padrón 3.051 · UxP · PJ ganó por 72 votos. Intendente aliado natural. La candidatura tiene que aparecer aquí antes de que lo haga cualquier otro.</div></div></div>
+      <div class="muni-item"><div class="muni-badge">🌿</div><div><div class="muni-n">Pila <span class="al-tag a">aliado</span></div><div class="muni-detail">Padrón 3.724 · UxP · PJ ganó por ~100 votos. LLA llegó al 41%. El intendente necesita apoyo visible. Una visita + acuerdo concreto es toda la campaña necesaria en este municipio.</div></div></div>
+      <div class="muni-item"><div class="muni-badge">🌿</div><div><div class="muni-n">General Lavalle <span class="al-tag a">aliado</span></div><div class="muni-detail">Padrón 5.718 · UxP · LLA al 51% en 2025. El más precario del cluster. Requiere trabajo propio del candidato con el intendente antes de Q4 2026.</div></div></div>
+      <div class="muni-item"><div class="muni-badge">🌿</div><div><div class="muni-n">SALADO en bloque <span class="al-tag a">aliados</span></div><div class="muni-detail">21 municipios en total. Si el candidato cierra el SALADO en bloque antes de que lo haga otro candidato, tiene la red de intendentes rurales más densa de la Provincia. Eso es estructura de base real.</div></div></div>
     </div>
 
   </div>
 </div>
 
-<!-- CIERRE -->
+<!-- ── HOJA DE RUTA 2026 ── -->
+<div class="sec">
+  <div class="sec-title">📋 Hoja de ruta 2026 — el año que define si hay candidatura real</div>
+  <div class="ruta-grid">
+
+    <div class="ruta-col">
+      <div class="ruta-q">Q3 2026 · Jul–Sep</div>
+      <div class="ruta-title">Construcción de la red</div>
+      <div class="ruta-items">
+        <li>Reuniones bilaterales con intendentes SALADO y CORREDOR (aliados naturales)</li>
+        <li>Mapeo de intendentes CONURBANO: quién es neutral, quién puede moverse</li>
+        <li>Identificar intendentes en último mandato en todos los clusters</li>
+        <li>Primer anuncio público de construcción de candidatura</li>
+      </div>
+    </div>
+
+    <div class="ruta-col">
+      <div class="ruta-q">Q4 2026 · Oct–Dic</div>
+      <div class="ruta-title">Recorrida e instalación</div>
+      <div class="ruta-items">
+        <li>Recorrida territorial CIUDADES: MdP, Bahía, San Nicolás, Tandil (sin aliado: trabajo directo)</li>
+        <li>Recorrida INTERIOR: agenda productiva propia, sin defensa de gestión ajena</li>
+        <li>Visitas SALADO: municipio a municipio, con el intendente local en el acto</li>
+        <li>Presencia en medios locales de cada cluster</li>
+      </div>
+    </div>
+
+    <div class="ruta-col">
+      <div class="ruta-q">Q1 2027 · Ene–Mar</div>
+      <div class="ruta-title">Plataforma y lanzamiento</div>
+      <div class="ruta-items">
+        <li>Anuncio de plataforma propia diferenciada — propuestas concretas, no generales</li>
+        <li>Presentación de la red de intendentes aliados como acto político</li>
+        <li>Encuestas de posicionamiento por cluster para ajustar estrategia</li>
+        <li>Definición del perfil de campaña según resultado de encuestas</li>
+      </div>
+    </div>
+
+    <div class="ruta-col">
+      <div class="ruta-q">Q2 2027 · Abr–Jun</div>
+      <div class="ruta-title">Campaña activa</div>
+      <div class="ruta-items">
+        <li>Internas o definición de posicionamiento en el frente</li>
+        <li>Activación de estructura de intendentes aliados (fiscales, movilización)</li>
+        <li>Foco en CIUDADES y battlegrounds con recursos propios de campaña</li>
+        <li>Cierre de acuerdos pendientes con condicionados que se definieron</li>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── CIERRE ── -->
 <div class="sec" style="border-left-color:#c9a84c;background:#fdfaf4">
-  <div class="sec-title" style="color:#92400e">📌 Una síntesis para la toma de decisiones</div>
+  <div class="sec-title" style="color:#92400e">📌 Lo que este análisis dice — y lo que no puede decir</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:.82rem;color:#374151;line-height:1.7">
     <div>
-      <p style="margin-bottom:10px"><strong style="color:#1a1a2e">La Provincia de Buenos Aires no se gana con una sola estrategia.</strong> Necesita una política diferente para el CONURBANO (consolidar, no ceder), para las ciudades medianas (penetrar con programas visibles), para el interior (hablarle al productor) y para los municipios pequeños aliados (micro-intervenciones con nombre y apellido).</p>
-      <p>El análisis municipio por municipio revela que la gestión provincial ya tiene activos concretos en el territorio — UPA, caminos, GIRSU, residencias estudiantiles. El desafío no es crear nuevos programas: es comunicarlos mejor y focalizarlos donde más impactan electoralmente.</p>
+      <p style="margin-bottom:10px"><strong style="color:#1a1a2e">Lo que los datos confirman:</strong> hay espacio electoral para una candidatura peronista diferenciada. El electorado que se fue a LLA entre 2023 y 2025 no se fue por convicción ideológica — se fue porque no había alternativa. Si la candidatura es creíble y diferenciada, ese espacio existe en casi todos los clusters. El mapa de 134 municipios lo confirma con datos de tres elecciones cruzadas.</p>
+      <p><strong style="color:#1a1a2e">Lo que los datos no pueden decir:</strong> si la candidatura va a ser suficientemente creíble para aprovechar ese espacio. Eso depende de cómo se construye en 2026 — qué acuerdos se cierran, qué territorio se recorre, qué propuesta se instala. Los datos son el diagnóstico. La construcción es la tarea.</p>
     </div>
     <div>
-      <p style="margin-bottom:10px"><strong style="color:#1a1a2e">La candidatura provincial tiene un activo concreto que los datos confirman en casi todos los municipios analizados:</strong> la elección provincial 2025 superó a la nacional entre 8 y 15 puntos porcentuales. Esa brecha no es ideología — es el efecto medible de la gestión visible en el territorio. El trabajo de 2026 es ampliarla al máximo posible antes de 2027: cada camino rural, cada hospital equipado, cada residencia estudiantil es un punto de diferencia entre el resultado provincial y el nacional. Y en una elección que se puede definir por márgenes estrechos, esos puntos son exactamente lo que está en juego.</p>
-      <p>La ventana es 2026. El análisis está hecho. La hoja de ruta, también.</p>
+      <p style="margin-bottom:10px"><strong style="color:#1a1a2e">La candidatura provincial tiene un activo concreto que los datos confirman:</strong> la elección provincial 2025 superó a la nacional entre 8 y 15 puntos en casi todos los municipios. Esa brecha es el piso desde el cual se construye — y pertenece a los intendentes que sostuvieron el territorio, no a ninguna estructura nacional. Un candidato que viene de ese mundo puede reclamarla como propia.</p>
+      <p>La ventana es 2026. El análisis está hecho. Lo que viene es construcción.</p>
     </div>
   </div>
 </div>
 
 </div><!-- /page -->
 
-<div class="footer">Provincia de Buenos Aires · Análisis Estratégico Territorial 2026 · Documento confidencial de uso interno · 134 municipios · 7 clusters</div>
+<div class="footer">Provincia de Buenos Aires · Análisis Estratégico Territorial 2026 · Documento confidencial · Mesa decisora · 134 municipios · 7 clusters</div>
 
 </body>
 </html>
