@@ -18,7 +18,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f4f1ec;color:#1a1a2e;li
 .stat-n{font-size:2rem;font-weight:900;color:#c9a84c;display:block;line-height:1}
 .stat-l{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;opacity:.7;margin-top:4px;display:block}
 
-.page{max-width:1040px;margin:0 auto;padding:40px 24px}
+.page{max-width:100%;margin:0;padding:40px 2.5rem}
 .sec{background:#fff;border-radius:14px;padding:32px 36px;margin-bottom:24px;border-left:5px solid #0d1b3e}
 .sec-title{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#0d1b3e;margin-bottom:18px;display:flex;align-items:center;gap:8px}
 .sec-title::after{content:'';flex:1;height:1px;background:#e5e0d8}
@@ -109,10 +109,35 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f4f1ec;color:#1a1a2e;li
 .footer{text-align:center;font-size:.67rem;color:#b0a898;padding:24px 0 32px;letter-spacing:.08em;text-transform:uppercase}
 
 @media print{
-  body{background:#fff}
-  .hero{print-color-adjust:exact;-webkit-print-color-adjust:exact}
-  .sec{break-inside:avoid;margin-bottom:16px;padding:20px 24px}
-  .page{padding:16px 0}
+  @page{size:A4 portrait;margin:12mm 14mm 14mm 14mm}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  body{background:#fff;font-size:10pt}
+  .hero{padding:28px 24px 22px}
+  .hero-title{font-size:1.6rem}
+  .hero-sub{font-size:.85rem}
+  .hero-stats{max-width:100%;grid-template-columns:repeat(4,1fr);gap:8px}
+  .stat{padding:8px 10px}
+  .stat-n{font-size:1.3rem}
+  .page{padding:10px 0;max-width:100%}
+  .sec{break-inside:avoid;margin-bottom:12px;padding:16px 18px;border-radius:8px}
+  .sintesis-grid{grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .findings{grid-template-columns:1fr 1fr;gap:10px}
+  .clusters{grid-template-columns:repeat(3,1fr);gap:8px}
+  .cl-card{padding:10px 12px}
+  .alianzas-grid{grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .palancas{grid-template-columns:1fr 1fr;gap:10px}
+  .palanca{padding:12px 14px}
+  .crit-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+  .ruta-grid{grid-template-columns:repeat(4,1fr);gap:8px}
+  .ruta-col{padding:10px 12px}
+  .insight{padding:12px 16px;font-size:.78rem}
+  .footer{padding:12px 0 16px;font-size:.6rem}
+  .s-bloque{padding:12px 14px}
+  .finding{padding:12px 14px}
+  .finding-n{font-size:1.1rem}
+  .finding-text,.finding-title,.palanca-text,.al-item,.muni-detail,.step-text,.ruta-items{font-size:.72rem}
+  .sec-title{font-size:.62rem;margin-bottom:10px}
+  h2,h3{break-after:avoid}
 }
 </style>
 </head>
